@@ -6,10 +6,6 @@ For Golang related skills, please visit [cc-skills-golang](https://github.com/sa
 
 ## 🚀 How to use ?
 
-- **Fork it** to adapt the skills to your own company conventions (not recommended: [reference](#-overlap) this skill instead)
-- **Copy-paste it** to create your own skills based on this repository (not recommended)
-- **Install it** with the [skills CLI](https://skills.sh) or a tool-specific method below
-
 **Install with [skills](https://skills.sh/) CLI** (universal — works with any [Agent Skills](https://agentskills.io)-compatible tool):
 
 ```bash
