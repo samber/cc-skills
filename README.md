@@ -133,16 +133,11 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 
 **Engineering:**
 
-| Skill | Name | Cmd | Ultrathink | Overridable | Error rate gap | Description (tok) | SKILL.md (tok) | Directory (tok) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| Conventional commits | `conventional-git` | `/conventional-git` |  |  | -36% | 73 | 1,446 | 1,446 |
-| PromQL CLI | `promql-cli` |  |  |  | -39% | 87 | 1,257 | 6,248 |
-
-**Marketing:**
-
-| Skill | Name | Cmd | Ultrathink | Overridable | Error rate gap | Description (tok) | SKILL.md (tok) | Directory (tok) |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| LinkedIn ghostwriting | `linkedin-ghostwriting` |  |  |  | -31% | 87 | 1,045 | 1,993 |
+| Skill | Error rate gap | Description (tok) | SKILL.md (tok) | Directory (tok) |
+| --- | --- | --- | --- | --- |
+| `conventional-git` | -36% | 73 | 1,446 | 1,446 |
+| `promql-cli` | -39% | 87 | 1,257 | 6,248 |
+| `linkedin-ghostwriting` | -31% | 87 | 1,045 | 1,993 |
 
 Token counts are measured with `npm exec -- tiktoken-cli --exclude "evals" skills/{name}/`. Description tokens extracted with:
 
