@@ -34,7 +34,7 @@ New skills go in `skills/<skill-name>/SKILL.md`. Each SKILL.md has YAML frontmat
 | `description` | Spec-required | 1-1024 chars. Describes what the skill does **and when to use it** — this is the primary triggering mechanism. Be specific and slightly "pushy" to avoid under-triggering. |
 | `license` | Project-required | License name or reference to a bundled license file. Use `MIT` for this project. |
 | `compatibility` | Project-required | 1-500 chars. Describe actual requirements. Base: `Designed for Claude Code or similar AI coding agents.` Extend when needed: add `Requires git`, `Requires internet access`, `Requires Python 3.14+ and uv`, etc. Skills with no special requirements use the base string only. |
-| `metadata` | Project-required | Must include `author` (string) and `version` (semver `a.b.c` string, e.g. `"1.0.0"`). |
+| `metadata` | Project-required | Must include `author` (string), `version` (semver `a.b.c` string, e.g. `"1.0.0"`), and `openclaw` (ClawHub discoverability fields — see below). |
 | `user-invocable` | Project-required | Boolean. `true` for skills invocable as slash commands (e.g. `/skill-name`), `false` (default) for contextual skills that auto-trigger. |
 | `allowed-tools` | Project-required | Space-delimited list of pre-approved tools. See "Allowed tools" below. |
 
@@ -52,9 +52,33 @@ compatibility: Designed for Claude Code or similar AI coding agents. Requires gi
 metadata:
   author: samber
   version: "1.0.0"
+  openclaw:
+    emoji: "🔧"
+    homepage: https://github.com/samber/cc-skills
+    install:
+      - kind: brew
+        formula: jq
+        bins: [jq]
+    requires:
+      bins:
+        - git
+        - jq
 allowed-tools: Read Edit Write Glob Grep Bash(git:*) Agent
 ---
 ```
+
+### ClawHub metadata (`metadata.openclaw`)
+
+All skills MUST include `metadata.openclaw` fields for [ClawHub](https://github.com/openclaw/clawhub) discoverability and dependency management. See the [ClawHub skill format spec](https://github.com/openclaw/clawhub/blob/main/docs/skill-format.md) for the full reference.
+
+| Field | Required | Description |
+| --- | --- | --- |
+| `emoji` | Yes | Display emoji for the skill |
+| `homepage` | Yes | URL to the skill's homepage or docs. Use `https://github.com/samber/cc-skills` for this project |
+| `install` | When deps exist | Array of install specs for dependencies. Supported kinds: `brew`, `node`, `go`, `uv`. Each entry has `kind`, `package`/`formula`, and `bins` |
+| `requires.bins` | When bins needed | CLI binaries that must be installed at runtime. Omit for pure content skills with no CLI dependencies |
+
+`install` describes _how_ to get a dependency. `requires.bins` declares _what_ must exist at runtime. A skill can have `requires.bins` without `install` (e.g. `git` — assumed pre-installed) or both (e.g. `promql` — installable via `go install`).
 
 **Version discipline:** Versions follow semver (`a.b.c`). New skills start at `1.0.0`. When modifying a skill, the developer must increment its `metadata.version` and the plugin version in `.claude-plugin/plugin.json` before merging. CI enforces both checks on PRs. Do not auto-increment versions — remind the developer as a next step.
 
