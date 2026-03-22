@@ -131,8 +131,6 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 - **SKILL.md (tok)** — weight of the full `SKILL.md` file loaded when the skill triggers
 - **Directory (tok)** — weight of all files in the skill directory (SKILL.md + referenced markdown files)
 
-**Engineering:**
-
 | Skill | Error rate gap | Description (tok) | SKILL.md (tok) | Directory (tok) |
 | --- | --- | --- | --- | --- |
 | `conventional-git` | -36% | 73 | 1,446 | 1,446 |
