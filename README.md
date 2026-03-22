@@ -4,6 +4,8 @@ AI agent skills are reusable instruction sets that extend your assistant with do
 
 For Golang related skills, please visit [cc-skills-golang](https://github.com/samber/cc-skills-golang).
 
+<img width="3808" height="1280" alt="image" src="https://github.com/user-attachments/assets/95139f6f-c19c-4041-a010-d94bca594bba" />
+
 ## 🚀 How to use ?
 
 **Install with [skills](https://skills.sh/) CLI** (universal — works with any [Agent Skills](https://agentskills.io)-compatible tool):
