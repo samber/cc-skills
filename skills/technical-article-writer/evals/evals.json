@@ -1,0 +1,237 @@
+[
+  {
+    "id": 1,
+    "name": "Phase-gated workflow — ask before writing",
+    "prompt": "Write a blog post about Java performance.",
+    "assertions": [
+      "Does NOT write a full article immediately",
+      "Asks about the specific aspect of Java performance to cover",
+      "Asks about the target audience (junior devs, senior engineers, CTOs, etc.)",
+      "Asks about the content type (tutorial, benchmark, explainer, etc.)",
+      "Asks about the thesis or key takeaway"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Idea quality filter — push back on textbook topic",
+    "prompt": "I want to write about how to use Docker Compose. Just the basic getting-started stuff.",
+    "assertions": [
+      "Pushes back on or questions the generic 'basics of Docker Compose' angle",
+      "References or applies a novelty filter (counter-intuitive, counter-narrative, surprise, etc.)",
+      "Suggests finding a specific struggle, surprise, or counterintuitive insight",
+      "Does NOT immediately write a basic Docker Compose tutorial",
+      "Helps the user find a more compelling angle"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "10 title variants, not 3-5",
+    "prompt": "I've decided to write about how we migrated our main database from MongoDB to PostgreSQL. It took 6 months and we learned a lot. Give me title options.",
+    "assertions": [
+      "Generates 10 or more title variants",
+      "Uses different hook strategies/types across the titles (not all the same pattern)",
+      "Includes specific technical keywords (MongoDB, PostgreSQL, migration)",
+      "Avoids superlatives like 'ultimate', 'complete', 'everything you need'",
+      "Provides brief notes or rankings on why each title works"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Content type matching — Bug Hunt template",
+    "prompt": "I spent 3 days debugging a memory leak in our Python service. It turned out to be a circular reference in our cache invalidation code. I want to write about it. How should I structure it?",
+    "assertions": [
+      "Identifies or recommends the Bug Hunt content type / debugging narrative structure",
+      "Includes a 'first hypothesis' or 'dead ends' section in the structure",
+      "Recommends building tension with wrong hypotheses before the revelation",
+      "Includes the fix/solution as a distinct section",
+      "Ends with a generalizable lesson beyond this specific bug"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Show-then-tell principle for code",
+    "prompt": "Write a section explaining Go's interface satisfaction mechanism. Make sure readers understand how implicit interfaces work.",
+    "assertions": [
+      "Leads with a code example or demonstration BEFORE the conceptual explanation",
+      "Code snippet is under 20 lines and focused on one concept",
+      "Annotates or explains non-obvious lines in the code",
+      "Conceptual explanation follows the code example, not the other way around"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Steelman for opinion piece",
+    "prompt": "Write an article arguing that microservices are overused and most teams should stick with monoliths. Go all in on the monolith argument.",
+    "assertions": [
+      "Includes a section honestly addressing the strongest arguments FOR microservices (steelman)",
+      "The steelman is substantive, not a straw man dismissal",
+      "Uses concrete examples, not just abstract reasoning",
+      "Quantifies claims where possible (performance numbers, team size thresholds, etc.)"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Anti-pattern detection — burying the lede",
+    "prompt": "Here's my draft intro: 'In today's rapidly evolving tech landscape, software development has undergone tremendous changes. As teams grow and codebases expand, the question of testing becomes increasingly important. Many developers wonder about the best approach. In this article, we'll explore property-based testing, which we found reduced our bug count by 73%.' Can you improve this intro?",
+    "assertions": [
+      "Moves the 73% finding or the property-based testing insight to the opening sentence(s)",
+      "Removes or rewrites the 'In today's rapidly evolving tech landscape' preamble",
+      "Explicitly calls out the buried lede as the problem with the original",
+      "Removes 'In this article, we'll explore' or similar meta-framing",
+      "The rewritten intro hooks the reader immediately"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Copywriting framework application",
+    "prompt": "I need a compelling intro for my article about how we cut our CI pipeline from 45 minutes to 3 minutes. Make it really grab the reader.",
+    "assertions": [
+      "Uses or references a named copywriting framework (PAS, AIDA, BAB, etc.)",
+      "Hook addresses the reader's pain (slow CI) before presenting the solution",
+      "Includes stakes or agitation — what's the cost of slow CI pipelines?",
+      "Intro accomplishes: hook + stakes + promise of what the reader will learn"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Tutorial completeness — prerequisites and verification",
+    "prompt": "Write a tutorial on setting up a Go gRPC service from scratch.",
+    "assertions": [
+      "Includes an explicit prerequisites section (Go version, protoc, etc.)",
+      "Shows expected result/output after key steps so readers can verify progress",
+      "Includes a verification section at the end to confirm everything works",
+      "Includes next steps or related topics section",
+      "Steps are numbered and sequential"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Title finalization after full draft",
+    "prompt": "I've finished writing my 2500-word article about our PostgreSQL migration. During brainstorming I picked 'Why We Switched to PostgreSQL' as the title. The article ended up focusing heavily on the 4 data integrity issues we hit with MongoDB. Should I keep the title?",
+    "assertions": [
+      "Recommends reconsidering the title now that the full article exists",
+      "Suggests 2-3 alternative titles that better reflect the actual content (data integrity focus)",
+      "Explains that titles should be revisited after writing since the article's real focus emerges during drafting",
+      "The suggested alternatives are more specific than the original generic title"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Diataxis — mixing content types diagnosis",
+    "prompt": "My article starts as a step-by-step tutorial on setting up Kubernetes but halfway through it shifts into explaining the theory behind container orchestration, scheduling algorithms, and why pods work the way they do. A reviewer said it feels disjointed. What's wrong?",
+    "assertions": [
+      "Identifies the problem as mixing content types (tutorial + explanation)",
+      "References or applies the Diataxis framework or a similar content type taxonomy",
+      "Recommends splitting into separate pieces (a tutorial and an explainer)",
+      "Explains why tutorials should not drift into theoretical explanation"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Image suggestions with Midjourney specifics",
+    "prompt": "My 2000-word technical article about database sharding strategies is drafted. It has 4 sections: intro, horizontal vs vertical sharding, implementation patterns, and lessons learned. Suggest images.",
+    "assertions": [
+      "Suggests 1-3 images with specific placement (e.g., 'after the intro', 'between section X and Y')",
+      "Each image has a stated purpose (break up text, illustrate concept, set tone, etc.)",
+      "Each image has a description of what it should depict",
+      "Offers to generate Midjourney prompts",
+      "Mentions aspect ratio conventions (16:9 or 3:1 for hero, 3:2 for inline)"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "We Rewrote It missing 'what went wrong' section",
+    "prompt": "We rewrote our billing service from Ruby to Go. It was a huge success — 10x faster, way more reliable, team loves it. I want to write about it but keep it positive. Just the wins.",
+    "assertions": [
+      "Pushes back on omitting difficulties/failures",
+      "Explains the 'what went wrong' section is critical for credibility",
+      "Notes that without failures, the article reads like a press release, not a real engineering story",
+      "Suggests specific prompts to surface challenges (migration pain, unexpected bugs, timeline slips)",
+      "Recommends the 'We Rewrote It in X' structure with all sections including 'what went wrong' (~15%)"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Benchmark article burying methodology",
+    "prompt": "I benchmarked 5 different JSON parsers in Rust. The results are amazing — sonic-rs is 4x faster than serde_json for large payloads. Help me write the article. Let's open with the results since that's the exciting part.",
+    "assertions": [
+      "Recommends NOT leading with results",
+      "Explains methodology must come before results to establish trust",
+      "References or applies the Benchmark/Data-Driven content type structure",
+      "Suggests methodology section at ~20% of article before the results section",
+      "Notes that 'no trust in setup = no trust in conclusions'"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Too many lessons diluting impact",
+    "prompt": "I just left my role as CTO of a 200-person startup after 5 years. I have 9 hard-won lessons I want to share in a blog post. All 9 are important.",
+    "assertions": [
+      "Advises limiting to 3-5 lessons maximum",
+      "Explains more lessons dilute impact and reduce memorability",
+      "Suggests leading with the most surprising lesson, not the first chronologically",
+      "Recommends each lesson needs a specific story, not just an abstract principle",
+      "Helps prioritize which 3-5 lessons are strongest"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Momentum killers in transitions",
+    "prompt": "Review these section transitions in my article draft: 'Now let's talk about caching strategies.' ... 'Another important topic is error handling.' ... 'Moving on to deployment, we need to...' Are these transitions OK?",
+    "assertions": [
+      "Identifies ALL three transitions as momentum killers",
+      "Names them as an anti-pattern (not just 'could be better')",
+      "Suggests specific alternatives using forward reference, question, contrast, or escalation techniques",
+      "Provides rewritten examples that pull the reader forward",
+      "Does NOT say the transitions are acceptable"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "Explainer starting with edge cases",
+    "prompt": "I'm writing an explainer about Rust's borrow checker. I want to start with the tricky cases — multiple mutable references, lifetime elision, NLL edge cases — because that's where the real complexity is. The basics are boring.",
+    "assertions": [
+      "Recommends starting with the simplest mental model, not edge cases",
+      "References or applies progressive disclosure principle",
+      "Explains starting complex loses readers who need the foundation first",
+      "Suggests the Explainer structure: simple model (20%) then going deeper (40%) then misconceptions (15%) then implications (15%)",
+      "Does NOT agree to start with edge cases"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Hook type mismatch — celebration for a bug hunt",
+    "prompt": "I found and fixed a critical memory leak that was costing us $40K/month in AWS bills. Write a hook for my article. Start with something celebratory like 'We just saved $40K/month!'",
+    "assertions": [
+      "Suggests a Curiosity or Surprise hook instead of Celebration",
+      "Explains celebration hooks resolve tension upfront, killing the narrative",
+      "The suggested hook creates tension (the problem) before revealing the resolution",
+      "References or applies named hook types from a taxonomy",
+      "Does NOT open with 'We just saved $40K/month' or similar celebration"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Wall of code anti-pattern — 50-line block",
+    "prompt": "Here's my article section with a 50-line Terraform configuration. I want to include it all inline so readers have the complete picture without leaving the page.",
+    "assertions": [
+      "Flags the 50-line code block as a wall of code anti-pattern",
+      "Recommends breaking it into smaller annotated chunks (<20 lines each)",
+      "Suggests linking to the full config in a repo/Gist",
+      "Recommends showing only the interesting/relevant parts inline",
+      "Explains unannotated large code blocks lose readers"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "PASTOR framework — too much 'offer'",
+    "prompt": "Write an intro for my article about how we built a real-time analytics pipeline. Use the PASTOR framework. I want the intro to spend most of its time explaining what the article covers and what readers will learn.",
+    "assertions": [
+      "Applies PASTOR framework correctly with all components",
+      "Devotes ~80% of the intro to the problem/transformation, not the article description",
+      "Only ~20% describes what the article covers (the 'offer')",
+      "Explains the 80/20 rule for PASTOR intros",
+      "Does NOT spend majority of intro on 'what you'll learn' meta-framing"
+    ]
+  }
+]

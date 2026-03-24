@@ -1,0 +1,250 @@
+[
+  {
+    "id": 1,
+    "name": "Evergreen content → web post, not newsletter",
+    "prompt": "I want to write an evergreen guide about Go error handling for my Substack.",
+    "assertions": [
+      "Identifies this as a web post (not newsletter issue) based on 'evergreen' keyword",
+      "Mentions SEO title field or SEO optimization specific to web posts",
+      "Suggests a URL slug (short, keyword-rich)",
+      "Does NOT treat this as a newsletter issue (no subject line / preview text focus)",
+      "Mentions table of contents for long content or web-specific formatting"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Ghostwriting — interview before writing",
+    "prompt": "I need to ghostwrite a Substack newsletter for my CEO about our Series B fundraising journey. Write it.",
+    "assertions": [
+      "Does NOT write a full post immediately",
+      "Asks for voice samples (transcripts, past writing, or media appearances)",
+      "Prioritizes transcripts over published writing as voice source",
+      "Mentions building a voice guide before drafting",
+      "Asks about the CEO's natural speaking/writing patterns"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Gmail truncation warning for long newsletter",
+    "prompt": "Write a 4000-word deep dive newsletter issue about microservices for my Substack audience. Make it comprehensive.",
+    "assertions": [
+      "Warns about Gmail truncation at ~102KB / ~3000 words",
+      "Suggests keeping content under ~3000 words or acknowledges truncation risk",
+      "Uses short paragraphs (2-3 sentences) for email readability",
+      "Suggests code blocks under 10 lines with links to Gist for longer code",
+      "Recommends a TL;DR at top for issues over 1500 words"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Web post SEO — separate fields awareness",
+    "prompt": "I'm publishing a web post on Substack about Kubernetes cost optimization. Help me optimize it for search engines.",
+    "assertions": [
+      "Mentions the separate SEO title field (distinct from main title)",
+      "Writes or recommends an SEO description of 150-160 characters",
+      "Suggests a URL slug (short, keyword-rich, no dates)",
+      "Mentions Substack has high domain authority for SEO",
+      "Recommends internal linking to other Substack posts"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Algorithm — subscriptions not engagement",
+    "prompt": "What's the best strategy to grow on Substack? I've been doing engagement bait and hot takes on Notes but it's not working.",
+    "assertions": [
+      "Explains algorithm optimizes for subscriptions/paid conversions, NOT engagement metrics",
+      "Explicitly discourages engagement bait, outrage, or hot takes as strategy",
+      "Mentions Recommendations from other publications as a top growth lever",
+      "Mentions Notes as a testing pipeline for long-form content",
+      "References quality/consistency as primary growth driver"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Notes — not threads, concise standalone",
+    "prompt": "I want to start a series of 10-part thread-style Notes on Substack, like I do on Twitter. Each thread will be a detailed multi-part analysis.",
+    "assertions": [
+      "Advises against thread-style content on Notes",
+      "Recommends concise Notes (2-5 sentences or short standalone pieces)",
+      "Suggests using Notes as testing pipeline for long-form posts",
+      "Mentions likes as the primary Notes ranking signal",
+      "Explains that Notes should have standalone value, not be a thread"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Monetization — don't paywall under 1000 subs",
+    "prompt": "I have 300 Substack subscribers and great engagement. Should I launch my paid tier at $10/month? I think I'm ready.",
+    "assertions": [
+      "Advises against launching paid tier at 300 subscribers",
+      "Explains growth compounds faster than paid conversion at small scale",
+      "References the ~3% free-to-paid conversion baseline (or similar data)",
+      "Recommends keeping everything free and focusing on growth first",
+      "Suggests alternative monetization paths (coaching, consulting, products)"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Social distribution — don't announce, lead with insight",
+    "prompt": "Write a LinkedIn post to promote my new Substack newsletter issue about how we cut database query times by 90%.",
+    "assertions": [
+      "Does NOT start with 'I just published' or 'Check out my latest' or similar announcement framing",
+      "Leads with an insight, hook, or the 90% result — not the meta-action of publishing",
+      "Gives 30-40% of value upfront so the post works standalone",
+      "Uses line breaks between sentences for LinkedIn feed readability",
+      "Post works even if the reader never clicks the link"
+    ]
+  },
+  {
+    "id": 9,
+    "name": "Voice matching — single source warning",
+    "prompt": "Here's one blog post from my client: [hypothetical blog post about leadership]. Capture their voice perfectly from this and write a Substack newsletter about building remote teams in their style.",
+    "assertions": [
+      "Warns against anchoring voice analysis on a single source",
+      "Asks for additional sources (transcripts, social media, Slack messages, talks)",
+      "Explains that blog posts are edited and may differ from the person's natural voice",
+      "Prioritizes transcripts or spoken content over published writing",
+      "Does NOT immediately write in a 'captured' voice from one blog post"
+    ]
+  },
+  {
+    "id": 10,
+    "name": "Paywall placement — value above the fold",
+    "prompt": "I want to paywall the very beginning of my Substack post so only paid subscribers can read anything at all. Where should I put the paywall divider?",
+    "assertions": [
+      "Advises against paywalling the intro/hook/beginning",
+      "Recommends giving enough free value above the fold to hook readers",
+      "Explains that free content drives growth and recommendations",
+      "Suggests placing the paywall after delivering strong value or a key insight"
+    ]
+  },
+  {
+    "id": 11,
+    "name": "Subject line + preview text complementarity",
+    "prompt": "My newsletter subject line is 'How We Cut AWS Costs by 60%'. Write the email preview text for me.",
+    "assertions": [
+      "Preview text does NOT simply repeat or paraphrase 'cutting AWS costs by 60%'",
+      "Preview text complements/extends the subject line with new information",
+      "Preview text is approximately 90 characters or under",
+      "Explains or demonstrates that subject line + preview text should work as a pair"
+    ]
+  },
+  {
+    "id": 12,
+    "name": "Substack special blocks — contextual suggestions",
+    "prompt": "I'm writing a free Substack newsletter issue. There's a really strong counterintuitive insight about 5 paragraphs in. Any formatting or structural suggestions to maximize impact?",
+    "assertions": [
+      "Suggests a subscribe button for free readers (at a strategic placement)",
+      "Suggests a share button after the strong insight",
+      "Mentions pull quote for the most quotable/shareable line",
+      "Recommends a reply prompt or question at the end (replies are an algorithm signal)",
+      "References Substack-specific content blocks (not generic markdown formatting)"
+    ]
+  },
+  {
+    "id": 13,
+    "name": "Email paragraph walls — 4-5 sentence paragraphs in newsletter",
+    "prompt": "Here's a draft paragraph for my Substack newsletter issue: 'We spent three months migrating our monolith to microservices. The process involved splitting our user service first, then the payment processing module. We chose gRPC for inter-service communication because it offered strong typing and better performance than REST. The team had to learn Protocol Buffers from scratch, which added two weeks to our timeline. Despite the challenges, we shipped on time and reduced our deploy frequency from weekly to daily.' Is the formatting good for a newsletter?",
+    "assertions": [
+      "Flags the paragraph as too long for email newsletter format",
+      "Recommends breaking into 2-3 sentence paragraphs",
+      "Explains email clients render narrow columns making long paragraphs feel like walls",
+      "Does NOT say the paragraph is fine as-is"
+    ]
+  },
+  {
+    "id": 14,
+    "name": "Notes don't support video — user wants to upload video to Notes",
+    "prompt": "I recorded a quick 2-minute screencast demo of my new tool. I want to upload it directly as a Substack Note to get engagement before writing the full newsletter issue.",
+    "assertions": [
+      "Warns that Substack Notes does not support video uploads",
+      "Suggests alternatives (GIF, screenshots, link to video hosted elsewhere)",
+      "Still recommends using Notes as a testing pipeline for the idea",
+      "Does NOT help upload video to Notes as if it's supported"
+    ]
+  },
+  {
+    "id": 15,
+    "name": "Long code in newsletter — 30+ lines inline",
+    "prompt": "I'm writing a Substack newsletter issue about our custom Kubernetes operator. I want to include the full 35-line Go reconciliation function inline so readers can see the whole thing.",
+    "assertions": [
+      "Advises against including 35 lines of code in a newsletter email",
+      "Recommends linking to a GitHub Gist or repo for the full code",
+      "Suggests including a short 2-5 line excerpt inline for context",
+      "Explains code rendering varies by email client (Outlook may strip formatting)",
+      "Mentions the ~10 line threshold for email code blocks"
+    ]
+  },
+  {
+    "id": 16,
+    "name": "Embeds in newsletter issue — YouTube + tweets",
+    "prompt": "My Substack newsletter issue about our open-source launch includes an embedded YouTube demo video and 3 embedded tweets from users praising the project. The embeds look great in the Substack editor.",
+    "assertions": [
+      "Warns that embeds (YouTube, tweets) degrade to links/previews in email",
+      "Recommends not relying on embeds for critical content in newsletter issues",
+      "Suggests alternatives (screenshots of tweets, link to video with description)",
+      "Distinguishes between web rendering (embeds work) and email rendering (they don't)",
+      "Does NOT just say 'looks great, go ahead'"
+    ]
+  },
+  {
+    "id": 17,
+    "name": "URL slug with dates for evergreen web post",
+    "prompt": "I'm publishing an evergreen web post on Substack about 'How to Design REST APIs in 2026'. For the URL slug, I'm thinking: `how-to-design-rest-apis-2026`. Good?",
+    "assertions": [
+      "Advises removing the date from the URL slug",
+      "Explains dates in URLs make evergreen content look stale over time",
+      "Suggests a dateless alternative (e.g., 'design-rest-apis' or 'rest-api-design')",
+      "Keeps slug to 3-6 words, keyword-rich",
+      "May also flag the date in the title as problematic for evergreen content"
+    ]
+  },
+  {
+    "id": 18,
+    "name": "Gaming the Recommendations system algorithmically",
+    "prompt": "I want to hack the Substack Recommendations algorithm. What engagement signals do I need to optimize for so other publications automatically recommend me?",
+    "assertions": [
+      "Explains the Recommendations system is fully human-curated, not algorithmic",
+      "Clarifies you cannot game Recommendations through engagement signals",
+      "Describes the actual path: write quality content, engage with other writers, build genuine relationships",
+      "Mentions Recommendations appear during subscribe flow (highest conversion moment)",
+      "Does NOT describe algorithmic tricks to optimize for recommendations"
+    ]
+  },
+  {
+    "id": 19,
+    "name": "Prioritizing Substack Boost at 200 subscribers",
+    "prompt": "I have 200 Substack subscribers. Should I invest in Substack Boost (paid promotion) to accelerate growth? It seems like the fastest path.",
+    "assertions": [
+      "Advises against prioritizing Boost at 200 subscribers",
+      "Explains Boost is low impact at small scale (Tier 4 or equivalent)",
+      "Recommends higher-impact levers: consistent publishing, Notes as testing pipeline, engaging with other writers for Recommendations",
+      "Mentions Recommendations from larger publications as the highest-impact growth lever",
+      "Does NOT endorse Boost as the primary growth strategy at this stage"
+    ]
+  },
+  {
+    "id": 20,
+    "name": "Subject line too long for mobile — 80+ chars",
+    "prompt": "My newsletter subject line is: 'The Complete Step-by-Step Guide to Migrating Your Production Database from MongoDB to PostgreSQL Without Downtime'. Does it work?",
+    "assertions": [
+      "Flags the subject line as too long (especially for mobile at ~35-40 chars visible)",
+      "Recommends front-loading the interesting part in the first 35-40 characters",
+      "Suggests a shorter alternative under 60 characters",
+      "Mentions specific character limits for different clients (mobile, Gmail, Yahoo)",
+      "Does NOT just evaluate the subject line on content quality alone"
+    ]
+  },
+  {
+    "id": 21,
+    "name": "Sections overload at 5 posts",
+    "prompt": "I just started my Substack and have 5 published posts. I want to organize them into 7 sections: Tutorials, Deep Dives, News, Opinion, Tools, Career, and Community. How do I set these up?",
+    "assertions": [
+      "Advises against creating 7 sections with only 5 posts",
+      "Recommends starting with 2-4 sections maximum",
+      "Explains sections should wait until 20+ posts to be meaningful",
+      "Notes each section gets its own RSS feed and subscribe option",
+      "Suggests consolidating into fewer, broader sections"
+    ]
+  }
+]
