@@ -13,10 +13,11 @@
 | -------------------------- | ------- | ---------- | ---------- | ------------- | --------- | --------- | -------------------------------- |
 | `linkedin-ghostwriting`    | v1.0.0  | 46         | 98%        | 67%           | +31pp     | 1.46×     | **Low delta, high without**      |
 | `technical-article-writer` | v1.1.0  | 95         | 100%       | 67%           | +33pp     | 1.49×     | **High without**                 |
+| `press-release-writer`     | v1.1.0  | 66         | 95%        | 61%           | +34pp     | 1.56×     | **Low with-skill score**         |
 | `conventional-git`         | v1.0.0  | 50         | 100%       | 64%           | +36pp     | 1.56×     |                                  |
 | `promql-cli`               | v1.0.0  | 36         | 100%       | 61%           | +39pp     | 1.64×     |                                  |
 | `substack-ghostwriting`    | v1.1.0  | 101        | 100%       | 49%           | +51pp     | 2.04×     |                                  |
-| **Total (5 skills)**       |         | **328**    | **100%**   | **60%**       | **+40pp** | **1.67×** |                                  |
+| **Total (6 skills)**       |         | **394**    | **99%**    | **61%**       | **+38pp** | **1.62×** |                                  |
 
 
 ## `conventional-git` — v1.0.0
@@ -498,6 +499,101 @@ Model: claude-opus-4-6 — 1 run each — graded inline — adversarial evals (e
 | 20.3 | only ~20% describes what the article covers (the 'offer') | <span class="g">✓</span> | <span class="g">✓</span> |
 | 20.4 | explains the 80/20 rule for PASTOR intros | <span class="g">✓</span> | <span class="r">✗ no explicit 80/20 ratio stated</span> |
 | 20.5 | does NOT spend majority of intro on 'what you'll learn' meta-framing | <span class="g">✓</span> | <span class="g">✓</span> |
+
+</details>
+
+
+## `press-release-writer` — v1.1.0
+
+| With Skill | Without Skill | Delta | Assertions |
+| ---------- | ------------- | ----- | ---------- |
+| 95%        | 61%           | +34pp | 66         |
+
+<details>
+<summary>Full breakdown (66 assertions)</summary>
+
+Model: claude-opus-4-6 — 1 run each — graded by LLM-as-judge (strict adversarial) — adversarial evals (each has a trap the model falls into without the skill). Note: eval 12 with_skill skipped (API overload), with_skill total is 61.
+
+| # | Assertion | With | Without |
+| --- | --- | --- | --- |
+| | **1. US product launch** — sentence case, AP style, banned phrases, attribution verbs | **<span class="g">8/8</span>** | **<span class="r">4/8</span>** |
+| 1.1 | headline uses sentence case (not Title Case) | <span class="g">✓</span> | <span class="r">✗ Title Case on every word</span> |
+| 1.2 | lead answers 5W1H in ≤35 words | <span class="g">✓</span> | <span class="r">✗ ~45 words, two sentences</span> |
+| 1.3 | no banned phrases (thrilled, excited to announce, innovative, etc.) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.4 | attribution verb is only "said" | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.5 | no first person outside quotes | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.6 | Nashville standalone (no state) per AP style | <span class="g">✓</span> | <span class="r">✗ "Nashville, TN"</span> |
+| 1.7 | ends with ### or -30- | <span class="g">✓</span> | <span class="r">✗ no end mark</span> |
+| 1.8 | total length 300-500 words | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **2. French market launch** — guillemets, AFP dateline, third person | **<span class="g">5/5</span>** | **<span class="r">4/5</span>** |
+| 2.1 | uses French guillemets « » for quotes | <span class="g">✓</span> | <span class="r">✗ English quotation marks</span> |
+| 2.2 | dateline includes "le" per AFP format | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.3 | third person throughout (no nous/notre outside quotes) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.4 | release designation (POUR DIFFUSION IMMEDIATE) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.5 | "A propos de" boilerplate section | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **3. Crisis data breach** — Care-Control-Commitment, no speculation | **<span class="g">6/7</span>** | **<span class="r">3/7</span>** |
+| 3.1 | first paragraph acknowledges impact before company actions | <span class="g">✓</span> | <span class="r">✗ leads with company actions</span> |
+| 3.2 | does not speculate on cause or assign blame | <span class="g">✓</span> | <span class="g">✓</span> |
+| 3.3 | lists specific corrective actions | <span class="g">✓</span> | <span class="g">✓</span> |
+| 3.4 | next steps with timeline | <span class="g">✓</span> | <span class="r">✗ no timeline for next update</span> |
+| 3.5 | dedicated media contact | <span class="r">✗ placeholder only</span> | <span class="r">✗ generic press email</span> |
+| 3.6 | zero positive marketing language | <span class="g">✓</span> | <span class="r">✗ "a leading cloud security provider"</span> |
+| 3.7 | neutral headline framing | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **4. Series B funding** — all-four-in-lead, investor quote | **<span class="g">5/5</span>** | **<span class="r">4/5</span>** |
+| 4.1 | first paragraph: amount + round + investor + use of funds | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.2 | investor quote from Sequoia | <span class="g">✓</span> | <span class="r">✗ no investor quote</span> |
+| 4.3 | key metrics (ARR, growth, customers) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.4 | no banned phrases | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.5 | attribution verb only "said" | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **5. Partnership double dateline** — both cities, both boilerplates | **<span class="g">5/5</span>** | **<span class="g">5/5</span>** |
+| 5.1 | double dateline (London and New York) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 5.2 | both companies in headline | <span class="g">✓</span> | <span class="g">✓</span> |
+| 5.3 | quotes from both organizations | <span class="g">✓</span> | <span class="g">✓</span> |
+| 5.4 | both boilerplates | <span class="g">✓</span> | <span class="g">✓</span> |
+| 5.5 | media contacts for both | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **6. Open source milestone** — zero marketing, benchmarks, community | **<span class="g">5/5</span>** | **<span class="g">5/5</span>** |
+| 6.1 | zero marketing language | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.2 | specific benchmarks (40% faster, 60% less memory) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.3 | acknowledges community/contributors | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.4 | license type and/or GitHub URL | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.5 | maintainer quote thanks community | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **7. US earnings release** — GAAP-first, safe harbor, reconciliation | **<span class="r">4/5</span>** | **<span class="r">4/5</span>** |
+| 7.1 | GAAP before non-GAAP | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.2 | ticker symbol (NYSE: MEGA) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.3 | forward-looking statement safe harbor | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.4 | non-GAAP reconciliation mention | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.5 | release timing guidance (before/after market) | <span class="r">✗ not in release body</span> | <span class="r">✗ no timing guidance</span> |
+| | **8. Journalist email pitch** — subject line, hook, CTA | **<span class="r">5/6</span>** | **<span class="r">3/6</span>** |
+| 8.1 | subject line under 60 characters | <span class="r">✗ 62 chars</span> | <span class="r">✗ ~100 chars</span> |
+| 8.2 | pitch ≤3 paragraphs | <span class="g">✓</span> | <span class="r">✗ 4+ sections</span> |
+| 8.3 | full PR pasted in body (not attachment) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 8.4 | recognizable hook type | <span class="g">✓</span> | <span class="r">✗ "I hope this finds you well"</span> |
+| 8.5 | specific CTA (interview, exclusive, demo) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 8.6 | references journalist's beat | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **9. German market LIDAR** — dpa style, mandatory image, formality | **<span class="g">5/5</span>** | **<span class="r">1/5</span>** |
+| 9.1 | no unsupported superlatives | <span class="g">✓</span> | <span class="r">✗ "führenden", "höchsten Ansprüchen"</span> |
+| 9.2 | mentions mandatory press image | <span class="g">✓</span> | <span class="r">✗ no image mention</span> |
+| 9.3 | extremely formal tone | <span class="g">✓</span> | <span class="r">✗ "bahnbrechenden", "setzt Maßstäbe"</span> |
+| 9.4 | dpa dateline format (CAPS city, period after day) | <span class="g">✓</span> | <span class="r">✗ lowercase city, no double dash</span> |
+| 9.5 | uses "Pressemitteilung" or equivalent | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **10. Local award trap** — proportionate tone, no overselling | **<span class="g">5/5</span>** | **<span class="r">3/5</span>** |
+| 10.1 | no "prestigious"/"world-renowned" for local award | <span class="g">✓</span> | <span class="g">✓</span> |
+| 10.2 | identifies granting organization | <span class="g">✓</span> | <span class="g">✓</span> |
+| 10.3 | proportionate tone (no overselling) | <span class="g">✓</span> | <span class="r">✗ "exceptional achievement", "raises the bar"</span> |
+| 10.4 | no banned phrases | <span class="g">✓</span> | <span class="r">✗ "innovative software solutions"</span> |
+| 10.5 | mentions award criteria/category | <span class="g">✓</span> | <span class="g">✓</span> |
+| | **11. Next steps suggestion** — distribution, pitch, social, angle | **<span class="g">5/5</span>** | **<span class="r">1/5</span>** |
+| 11.1 | suggests distribution timing/channel | <span class="g">✓</span> | <span class="r">✗</span> |
+| 11.2 | offers to draft journalist email pitch | <span class="g">✓</span> | <span class="r">✗</span> |
+| 11.3 | suggests social media teaser | <span class="g">✓</span> | <span class="r">✗</span> |
+| 11.4 | concrete data point in PR | <span class="g">✓</span> | <span class="g">✓</span> |
+| 11.5 | angle note explaining news angle choice | <span class="g">✓</span> | <span class="r">✗</span> |
+| | **12. Broadcast adaptation** — short sentences, contractions, attribution-first | **n/a (API overload)** | **<span class="r">3/5</span>** |
+| 12.1 | majority of sentences ≤12 words | n/a | <span class="r">✗ multiple 14-16 word sentences</span> |
+| 12.2 | uses contractions | n/a | <span class="r">✗ no contractions</span> |
+| 12.3 | attribution before quote content | n/a | <span class="g">✓</span> |
+| 12.4 | numbers written out/rounded | n/a | <span class="g">✓</span> |
+| 12.5 | pronunciation guide or no abbreviations on first ref | n/a | <span class="g">✓</span> |
 
 </details>
 

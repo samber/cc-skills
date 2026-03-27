@@ -29,4 +29,12 @@ for skill_dir in skills/*/; do
 
   echo "Publishing ${skill_name} v${version}..."
   npx -y clawhub publish "$PWD/${skill_dir}" --version "$version" || true
+
+  if [ -n "${CLAWHUB_TOKEN:-}" ]; then
+      # executed from in ci
+      continue
+  fi
+
+  # rate limits: 5 skills per hour / 20 skills per day
+  sleep 3600
 done

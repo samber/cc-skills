@@ -1,0 +1,47 @@
+name: Update golang-xxxx libraries skill
+on:
+  schedule:
+    - cron: '0 10 2 * *'  # 2nd of every month at 10am UTC
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+  pull-requests: write
+  id-token: write
+
+jobs:
+  update-libraries:
+    if: github.repository_owner == 'samber'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+
+      - uses: actions/setup-go@v6
+        with:
+          go-version: stable
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            You maintain the {dev-tool} skill at skills/{dev-tool}/SKILL.md in this repository.
+
+            The tool name is {dev-tool}. Not all skills describe a library or a technical tool.
+            Examples of tech skills:
+            - promql-cli
+            - crxj- chrome-extension
+            Examples of non-tech skills:
+            - press-release-writer
+            - substack-ghostwriting
+
+            If the skill does not describe a library, do nothing.
+
+            Your job is to check if those skill needs updating:
+            1. Check the tool README, documentation, changelog and released notes for the latest version. If a new version has been released that is not yet covered in the skill, research its changelog and add a new section with modernization opportunities.
+            2. Check if any suggestions in the skill have been deprecated or too old to be relevant. Suggest removing them or moving them to a "baseline" note.
+            3. Update the README.md if needed.
+            4. Increment skill version + plugin version.
+
+            If there are changes to make, open a PR with a clear description of what was updated and why.
+          claude_args: |
+            --allowedTools Read,Write,Edit,Glob,Grep,Bash,WebFetch,WebSearch,mcp__github__get_file_contents,mcp__github__search_code,mcp__github__list_releases,mcp__github__get_latest_release,mcp__github__list_tags,mcp__github__create_pull_request,mcp__github__create_branch,mcp__github__push_files

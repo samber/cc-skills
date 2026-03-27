@@ -3,10 +3,10 @@ name: substack-ghostwriting
 description: "Write, optimize, and grow Substack content — both newsletter issues (email-first) and web posts (web-first articles/essays). Covers ghostwriting with voice matching, Substack algorithm optimization, Notes strategy, email formatting, SEO, growth tactics, and monetization planning. Use when the user mentions Substack, newsletters, write a newsletter issue, Substack post, Substack article, web post on Substack, evergreen content, SEO for Substack, newsletter growth, Notes strategy, ghostwrite for, match someone's voice, write in the style of, newsletter monetization, paid subscribers, or any task involving Substack as a platform. Also trigger for general article/newsletter writing even if Substack isn't named explicitly, or when the user wants to adapt existing content (blog post, talk, thread) into newsletter or web post format. Do NOT use for generic blog post writing without a newsletter/Substack context (-> See samber/cc-skills@technical-article-writer skill)."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills

@@ -1,0 +1,155 @@
+{
+  "skill_name": "press-release-writer",
+  "evals": [
+    {
+      "id": 1,
+      "name": "us-product-launch",
+      "prompt": "Write a press release for TechFlow, a SaaS company based in Nashville, announcing their new AI-powered analytics dashboard. Price is $49/mo, launching March 15. CEO is Sarah Chen. They have 10,000 users and grew 200% last year.",
+      "assertions": [
+        {"id": "1.1", "text": "Headline uses sentence case (not Title Case for every word)", "type": "llm"},
+        {"id": "1.2", "text": "Lead paragraph answers 5W1H (who/what/where/when/why/how) in 35 words or fewer", "type": "llm"},
+        {"id": "1.3", "text": "Contains NONE of these banned phrases: thrilled, excited to announce, proud to, innovative, cutting-edge, world-class, synergy, game-changing, revolutionary", "type": "llm"},
+        {"id": "1.4", "text": "All quote attributions use only the verb 'said' (not stated, commented, shared, noted, expressed, remarked, added, explained)", "type": "llm"},
+        {"id": "1.5", "text": "No first person (we/our/us) appears outside of direct quotes", "type": "llm"},
+        {"id": "1.6", "text": "Dateline treats Nashville as a standalone city (no state abbreviation) per AP style", "type": "llm"},
+        {"id": "1.7", "text": "Ends with a recognized end mark: ### or -30-", "type": "llm"},
+        {"id": "1.8", "text": "Total length is between 300 and 500 words", "type": "llm"}
+      ]
+    },
+    {
+      "id": 2,
+      "name": "french-market-launch",
+      "prompt": "Write a press release in French for DataViz, a Paris-based data visualization startup, announcing their new platform for retail analytics. CEO is Marc Dupont. Price starts at 29 euros/mois, available April 1. 500 clients in beta.",
+      "assertions": [
+        {"id": "2.1", "text": "Uses French guillemets (« ») for all quotes, not English quotation marks", "type": "llm"},
+        {"id": "2.2", "text": "Dateline includes 'le' per AFP format (e.g., PARIS, le 1er avril 2026 --)", "type": "llm"},
+        {"id": "2.3", "text": "Written entirely in third person — no 'nous', 'notre', 'nos' outside quotes", "type": "llm"},
+        {"id": "2.4", "text": "Contains a release designation such as 'POUR DIFFUSION IMMEDIATE' or embargo notice", "type": "llm"},
+        {"id": "2.5", "text": "Includes an 'A propos de' or 'A propos de DataViz' boilerplate section", "type": "llm"}
+      ]
+    },
+    {
+      "id": 3,
+      "name": "crisis-data-breach",
+      "prompt": "Our company CloudSafe (cloud security provider, San Francisco) just discovered a data breach affecting 50,000 customer accounts. Personal data including email addresses and hashed passwords were exposed. We've notified law enforcement. Write the press release.",
+      "assertions": [
+        {"id": "3.1", "text": "First substantive paragraph acknowledges impact on affected people BEFORE describing company actions (Care before Control)", "type": "llm"},
+        {"id": "3.2", "text": "Does NOT speculate on the cause of the breach or assign blame to any party", "type": "llm"},
+        {"id": "3.3", "text": "Lists specific corrective actions already taken (not vague promises)", "type": "llm"},
+        {"id": "3.4", "text": "States specific next steps with a timeline or date for next update", "type": "llm"},
+        {"id": "3.5", "text": "Provides a dedicated media contact (not a generic press line or company phone number)", "type": "llm"},
+        {"id": "3.6", "text": "Contains ZERO positive marketing language (no 'thrilled', 'excited', 'proud', 'innovative', 'leading')", "type": "llm"},
+        {"id": "3.7", "text": "Headline uses neutral framing like 'Statement Regarding' — not sensationalist or minimizing", "type": "llm"}
+      ]
+    },
+    {
+      "id": 4,
+      "name": "series-b-funding",
+      "prompt": "Write a press release: GreenLogic raised $45M Series B led by Sequoia Capital, with participation from a16z. Company does supply chain sustainability software, based in Berlin. CEO is Thomas Weber. They'll use funds to expand to US market and hire 100 engineers. Current ARR is $12M, 300% YoY growth, 200 enterprise customers.",
+      "assertions": [
+        {"id": "4.1", "text": "First paragraph contains ALL FOUR: amount ($45M), round type (Series B), lead investor (Sequoia), and primary use of funds", "type": "llm"},
+        {"id": "4.2", "text": "Includes a quote attributed to the lead investor (Sequoia) explaining their investment thesis", "type": "llm"},
+        {"id": "4.3", "text": "Mentions key company metrics (ARR, growth rate, customer count)", "type": "llm"},
+        {"id": "4.4", "text": "No banned phrases (thrilled, excited to announce, proud to, innovative, cutting-edge, world-class, synergy)", "type": "llm"},
+        {"id": "4.5", "text": "Attribution verb is only 'said' for all quotes", "type": "llm"}
+      ]
+    },
+    {
+      "id": 5,
+      "name": "partnership-double-dateline",
+      "prompt": "Write a press release about a partnership between PayFlow (London fintech) and ShopEase (New York e-commerce platform). They're integrating PayFlow's payment API into ShopEase's platform to offer one-click checkout to ShopEase's 50,000 merchants. PayFlow CEO is James Wilson, ShopEase CEO is Lisa Park.",
+      "assertions": [
+        {"id": "5.1", "text": "Dateline includes BOTH cities (London and New York) as a double dateline", "type": "llm"},
+        {"id": "5.2", "text": "Both company names appear in the headline", "type": "llm"},
+        {"id": "5.3", "text": "Contains quotes from BOTH organizations (PayFlow and ShopEase)", "type": "llm"},
+        {"id": "5.4", "text": "Both company boilerplates are included (About PayFlow AND About ShopEase)", "type": "llm"},
+        {"id": "5.5", "text": "Media contacts listed for both companies", "type": "llm"}
+      ]
+    },
+    {
+      "id": 6,
+      "name": "open-source-milestone",
+      "prompt": "Write a press release: The open-source project FastQuery (a database query optimizer) just released v3.0. Key changes: 40% faster query parsing, new PostgreSQL support, reduced memory usage by 60%. 15,000 GitHub stars, 500 contributors, 2M monthly downloads. Maintained by the FastQuery Foundation. Lead maintainer is Priya Sharma.",
+      "assertions": [
+        {"id": "6.1", "text": "Contains ZERO marketing language: no 'revolutionary', 'game-changing', 'cutting-edge', 'disruptive', 'world-class', 'innovative'", "type": "llm"},
+        {"id": "6.2", "text": "Includes specific concrete benchmarks (40% faster, 60% less memory) — not vague 'significant improvements'", "type": "llm"},
+        {"id": "6.3", "text": "Explicitly acknowledges the community and contributors", "type": "llm"},
+        {"id": "6.4", "text": "Mentions the license type and/or provides a GitHub URL reference", "type": "llm"},
+        {"id": "6.5", "text": "Quote from maintainer thanks or acknowledges the community, not corporate marketing speak", "type": "llm"}
+      ]
+    },
+    {
+      "id": 7,
+      "name": "us-earnings-release",
+      "prompt": "Write a press release for Q3 2026 earnings: MegaCorp (NYSE: MEGA), based in Chicago. Revenue $2.3B (+15% YoY), net income $340M (+22% YoY), EPS $4.52 vs $3.71 last year. Non-GAAP EPS $5.10. Guidance: Q4 revenue $2.5-2.6B. CEO is Robert Kim.",
+      "assertions": [
+        {"id": "7.1", "text": "GAAP figures are presented BEFORE non-GAAP figures (not the other way around)", "type": "llm"},
+        {"id": "7.2", "text": "Includes the ticker symbol (NYSE: MEGA) in the release", "type": "llm"},
+        {"id": "7.3", "text": "Contains forward-looking statement safe harbor / cautionary language", "type": "llm"},
+        {"id": "7.4", "text": "Mentions non-GAAP reconciliation or where to find it", "type": "llm"},
+        {"id": "7.5", "text": "Includes guidance about release timing relative to market hours (before open or after close)", "type": "llm"}
+      ]
+    },
+    {
+      "id": 8,
+      "name": "journalist-email-pitch",
+      "prompt": "Draft an email pitch to a tech journalist at TechCrunch about the GreenLogic $45M Series B funding. The journalist covers enterprise SaaS and sustainability tech. Include the full press release in the email body.",
+      "assertions": [
+        {"id": "8.1", "text": "Subject line is under 60 characters", "type": "llm"},
+        {"id": "8.2", "text": "Pitch text above the press release is 3 paragraphs or fewer", "type": "llm"},
+        {"id": "8.3", "text": "Full press release is pasted in the email body, NOT described as an attachment", "type": "llm"},
+        {"id": "8.4", "text": "Opening uses a recognizable hook type (data hook, trend hook, exclusive hook, etc.) — not a generic 'I am writing to inform you'", "type": "llm"},
+        {"id": "8.5", "text": "Includes a specific CTA: interview offer, exclusive data, demo, or similar", "type": "llm"},
+        {"id": "8.6", "text": "References the journalist's beat (SaaS, sustainability) to show personalization", "type": "llm"}
+      ]
+    },
+    {
+      "id": 9,
+      "name": "german-market-lidar",
+      "prompt": "Write a press release in German for AutoTech GmbH, a Munich-based autonomous driving startup. They're launching a new LIDAR sensor for European automakers. CEO is Dr. Klaus Fischer. Product available Q2 2026, pricing on request. 5 pilot customers including BMW and Audi.",
+      "assertions": [
+        {"id": "9.1", "text": "Does NOT use 'weltfuhrend', 'weltweit fuhrend', or equivalent superlatives like 'marktfuhrend' without data backing", "type": "llm"},
+        {"id": "9.2", "text": "Mentions or notes that a press image/photo should accompany the release (mandatory for German media)", "type": "llm"},
+        {"id": "9.3", "text": "Maintains extremely formal tone throughout — no casual or promotional language", "type": "llm"},
+        {"id": "9.4", "text": "Dateline follows dpa format with period after day number (e.g., MUNCHEN, 27. Marz 2026 --)", "type": "llm"},
+        {"id": "9.5", "text": "Uses the term 'Pressemitteilung' or appropriate German equivalent for the release type", "type": "llm"}
+      ]
+    },
+    {
+      "id": 10,
+      "name": "local-award-trap",
+      "prompt": "Write a press release: Our company InnoSoft won the 'Tech Innovation Award 2026' from the Regional Business Chamber of Commerce in Dubuque, Iowa. We're a 15-person software consultancy. CEO is Mike Thompson.",
+      "assertions": [
+        {"id": "10.1", "text": "Does NOT use 'prestigious' or 'world-renowned' to describe a local/regional award from a chamber of commerce", "type": "llm"},
+        {"id": "10.2", "text": "Clearly identifies the granting organization (Regional Business Chamber of Commerce, Dubuque)", "type": "llm"},
+        {"id": "10.3", "text": "Keeps proportionate tone — does not oversell a local award as if it were a global recognition", "type": "llm"},
+        {"id": "10.4", "text": "No banned phrases (thrilled, excited to announce, proud to, innovative, cutting-edge, world-class, synergy)", "type": "llm"},
+        {"id": "10.5", "text": "Mentions the criteria or category for which the award was given", "type": "llm"}
+      ]
+    },
+    {
+      "id": 11,
+      "name": "next-steps-suggestion",
+      "prompt": "Write a press release for HealthAI, a Boston-based health tech startup launching an AI diagnostic tool for dermatologists. CEO Dr. Amanda Liu. FDA 510(k) cleared. $199/month per practice. 95% accuracy in clinical trials with 10,000 cases.",
+      "assertions": [
+        {"id": "11.1", "text": "After the press release, suggests optimal distribution timing/channel for the target market", "type": "llm"},
+        {"id": "11.2", "text": "After the press release, offers to draft a journalist email pitch", "type": "llm"},
+        {"id": "11.3", "text": "After the press release, suggests social media teaser or amplification", "type": "llm"},
+        {"id": "11.4", "text": "The press release itself contains at least one concrete data point (95% accuracy, 10,000 cases, FDA clearance)", "type": "llm"},
+        {"id": "11.5", "text": "Includes angle note explaining why this news angle was chosen", "type": "llm"}
+      ]
+    },
+    {
+      "id": 12,
+      "name": "broadcast-adaptation",
+      "prompt": "Adapt this news for a TV broadcast script: TechFlow launched an AI analytics dashboard priced at $49/month. CEO Sarah Chen says the product reduces data analysis time by 70%. 10,000 users signed up during beta.",
+      "assertions": [
+        {"id": "12.1", "text": "Majority of sentences are 12 words or fewer (writing for the ear)", "type": "llm"},
+        {"id": "12.2", "text": "Uses contractions (it's, don't, won't, they're, etc.) for natural speech", "type": "llm"},
+        {"id": "12.3", "text": "Attribution comes BEFORE the quote content (e.g., 'The CEO said the product...' not '...the CEO said')", "type": "llm"},
+        {"id": "12.4", "text": "Large numbers are written out or rounded for readability (e.g., 'about ten-thousand' or 'nearly fifty dollars' rather than '10,000' or '$49')", "type": "llm"},
+        {"id": "12.5", "text": "Includes pronunciation guide for any unusual names, OR avoids abbreviations on first reference", "type": "llm"}
+      ]
+    }
+  ]
+}

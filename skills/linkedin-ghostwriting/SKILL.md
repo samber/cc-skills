@@ -3,10 +3,10 @@ name: linkedin-ghostwriting
 description: B2B LinkedIn ghostwriting — strategic interview, hook engineering, and post body. Use when the user wants to write LinkedIn content, create ghostwritten posts, ghostwrite for a founder or executive, develop a B2B social strategy, or needs hooks, post structures, or copywriting frameworks for LinkedIn. Apply when the user shares a story, result, or insight and wants it turned into a post.
 user-invocable: false
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "✍️"
     homepage: https://github.com/samber/cc-skills

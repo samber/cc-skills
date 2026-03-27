@@ -3,10 +3,10 @@ name: technical-article-writer
 description: "Write compelling technical articles and blog posts for developer audiences. Use this skill whenever the user asks to write a blog post, technical article, or any long-form technical content. Also trigger when the user says 'write about [technical topic]', 'help me draft an article', 'turn this into a blog post', 'write a post about', 'I want to publish something about', or mentions writing for a developer audience. Covers the full pipeline: idea sharpening, hook/title generation, article structure, body drafting, and editing. Even if the user just says 'I want to write about X' without specifying format, use this skill. Do NOT use for platform-specific optimization, newsletter strategy, or ghostwriting voice matching."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "📝"
     homepage: https://github.com/samber/cc-skills

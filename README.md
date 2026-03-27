@@ -6,7 +6,7 @@ For Golang related skills, please visit [cc-skills-golang](https://github.com/sa
 
 > [!IMPORTANT]  
 > Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
-> 
+>
 > **No AI slop here.** AI-made skills are useless.
 
 <img width="3808" height="1280" alt="image" src="https://github.com/user-attachments/assets/95139f6f-c19c-4041-a010-d94bca594bba" />
@@ -143,12 +143,13 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `linkedin-ghostwriting` | -31% | 87 | 1,045 | 1,993 |
 | `substack-ghostwriting` | -51% | 205 | 3,315 | 10,720 |
 | `technical-article-writer` | -33% | 147 | 2,295 | 5,737 |
+| `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
 
 ## 🧪 Skill evaluations
 
 |             | With Skill | Without Skill | Delta     |
 | ----------- | ---------- | ------------- | --------- |
-| **Overall** | **100%**   | **60%**       | **+40pp** |
+| **Overall** | **99%**    | **61%**       | **+38pp** |
 
 See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 
