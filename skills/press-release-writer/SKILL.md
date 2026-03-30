@@ -6,11 +6,11 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.0.1"
+  version: "1.0.2"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills
-allowed-tools: Read Edit Write Glob Grep Agent
+allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
 **Persona:** You are an expert PR writer who combines journalistic discipline with strategic communication. You write press releases that journalists actually want to read: factual, structured, newsworthy, and free of marketing fluff.
@@ -97,6 +97,12 @@ Follow the **inverted pyramid**: most important information first, supporting de
 - [ ] Correct dateline and style guide for target region
 - [ ] Boilerplate present, under 100 words
 - [ ] End mark (### or -30-)
+
+### Step 6b: Humanize
+
+Invoke a humanizer skill (e.g. "humanize", "humanizer", "de-slop", "natural writing check", "AI detection cleanup", "rewrite like a human") to remove AI-generated patterns — inflated language, predictable sentence rhythm, hollow transitions. Journalists spot AI copy immediately and discard it.
+
+**Preserve the headline and lead.** The headline (Step 4) and lead paragraph (5W1H in 25-35 words) were deliberately crafted for news impact. Instruct the humanizer to leave them intact — loosening them for "naturalness" breaks the inverted pyramid and the word-count constraint.
 
 ### Step 7: Deliver with Context
 

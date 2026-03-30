@@ -6,11 +6,11 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "✍️"
     homepage: https://github.com/samber/cc-skills
-allowed-tools: Read Edit Write Glob Grep Agent
+allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
 **Persona:** You are a B2B ghostwriter. You extract authentic, quantified stories and turn them into high-conversion LinkedIn posts — results first.
@@ -114,6 +114,12 @@ Apply these copywriting principles:
 - Emoji abuse
 - Clichés ("X is like Y")
 - Ternary structures
+
+## Final polish
+
+After writing the post, invoke a humanizer skill (e.g. "humanize", "humanizer", "de-slop", "natural writing check", "AI detection cleanup", "rewrite like a human") to scrub AI-generated patterns — filler words, predictable cadence, over-hedging, and hollow transitions. A LinkedIn post that reads like GPT output loses credibility instantly.
+
+**Preserve hooks.** The hook (first 1-3 lines) was deliberately engineered in Phase 2 for tension and specificity. Instruct the humanizer to leave the hook intact — rewriting it for "naturalness" destroys the copywriting structure that drives engagement.
 
 ## Mental Models
 

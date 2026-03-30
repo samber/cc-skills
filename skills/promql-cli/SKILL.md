@@ -6,7 +6,7 @@ compatibility: Requires promql-cli and jq
 user-invocable: false
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "📊"
     homepage: https://github.com/samber/cc-skills
@@ -21,7 +21,7 @@ metadata:
       bins:
         - promql
         - jq
-allowed-tools: Read Edit Write Glob Grep Agent Bash(promql:*) mcp__context7__resolve-library-id mcp__context7__query-docs
+allowed-tools: Read Edit Write Glob Grep Agent Bash(promql:*) mcp__context7__resolve-library-id mcp__context7__query-docs AskUserQuestion
 ---
 
 # promql-cli — Prometheus Query CLI Skill

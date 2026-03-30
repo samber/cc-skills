@@ -137,6 +137,7 @@ Read Edit Write Glob Grep Agent
 | `Bash(curl:*)` | API testing or GraphQL skills |
 | `WebFetch` | Skills fetching external docs, references, or resources — for both engineering (library docs, specs) and non-engineering (brand guidelines, platform help pages, editorial references) |
 | `WebSearch` | Skills requiring research or competitive analysis — engineering (security advisories, performance benchmarks) and non-engineering (market research, content trends, audience insights) |
+| `AskUserQuestion` | Skills that need user input to proceed — interviews, multi-step workflows with decision points, audits requiring clarification, or any skill where assumptions are risky and asking is cheap |
 
 When creating a new skill, suggest a tailored `allowed-tools` list based on the skill's purpose.
 
@@ -333,6 +334,10 @@ Always use the fully-qualified `owner/repo@skill` form in backticks, even for re
 
 - `samber/cc-skills@conventional-git` → `npx skills add samber/cc-skills --skill conventional-git`
 - `samber/cc-skills` → `npx skills add samber/cc-skills`
+
+### Writing skills and humanizer
+
+All content-producing skills (`linkedin-ghostwriting`, `press-release-writer`, `technical-article-writer`, `substack-ghostwriting`) MUST include a humanizer step that invokes a humanizer skill after the draft is written. This ensures AI-generated content is scrubbed of detectable patterns before delivery. When creating new writing or content skills, include a similar humanizer step. The instruction should be generic (not pinned to a specific humanizer skill) so it works with any humanizer available in the user's environment.
 
 ### Large scope research
 
