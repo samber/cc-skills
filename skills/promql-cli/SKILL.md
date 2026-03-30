@@ -6,7 +6,7 @@ compatibility: Requires promql-cli and jq
 user-invocable: false
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "📊"
     homepage: https://github.com/samber/cc-skills
@@ -92,4 +92,4 @@ promql --config ~/.promql-cli-prod.yaml 'up'         # target a specific host
 
 This skill is not exhaustive. Please refer to the [official promql-cli documentation](https://github.com/nalbury/promql-cli) and examples for up-to-date information. Context7 can help as a discoverability platform.
 
-If you encounter a bug or unexpected behavior in promql-cli itself, open an issue at https://github.com/nalbury/promql-cli/issues.
+If you encounter a bug or unexpected behavior in promql-cli itself, open an issue at [https://github.com/nalbury/promql-cli/issues](https://github.com/nalbury/promql-cli/issues).

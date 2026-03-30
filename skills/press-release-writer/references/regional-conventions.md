@@ -11,7 +11,7 @@ Covers France, Germany/DACH, UK, Ireland, Benelux, Iberian Peninsula, Italy, and
 ### Dominant Style Guides
 
 - **France**: AFP (Agence France-Presse) style. Strict informational tone. No promotional language.
-- **Germany/DACH**: dpa (Deutsche Presse-Agentur) style. Formality is paramount. Marketing language like "weltfuhrend" (world-leading) is prohibited.
+- **Germany/DACH**: dpa (Deutsche Presse-Agentur) style. Formality is paramount. Marketing language like "weltführend" (world-leading) is prohibited.
 - **UK/Ireland**: PA Media style (formerly Press Association). British English. Oxford comma IS used (unlike AP).
 - **Spain**: EFE (Agencia EFE) style. Formal, institutional tone.
 - **Italy**: ANSA (Agenzia Nazionale Stampa Associata) style. Formal, relationship-driven media culture.
@@ -30,7 +30,7 @@ Covers France, Germany/DACH, UK, Ireland, Benelux, Iberian Peninsula, Italy, and
 | Country | Format | Example |
 | --- | --- | --- |
 | France | `CITY, le [day] [month] [year] --` | `PARIS, le 26 mars 2026 --` |
-| Germany | `CITY, [Day]. [Month] [Year] --` | `BERLIN, 26. Marz 2026 --` |
+| Germany | `CITY, [Day]. [Month] [Year] --` | `BERLIN, 26. März 2026 --` |
 | UK | `CITY, [Day] [Month] [Year] --` | `LONDON, 26 March 2026 --` |
 | Spain | `CITY, [day] de [month] de [year] --` | `MADRID, 26 de marzo de 2026 --` |
 | Italy | `CITY, [day] [month] [year] --` | `MILANO, 26 marzo 2026 --` |
@@ -129,7 +129,7 @@ Covers Sweden, Denmark, Norway, Finland, and Iceland.
 ### Regulatory Landscape
 
 - **Sweden (Finansinspektionen)**, **Norway (Finanstilsynet)**, **Denmark (Finanstilsynet)**, **Finland (Finanssivalvonta)**: EU MAR applies (Norway via EEA agreement)
-- Nordic markets have strict transparency requirements — listed companies must disclose promptly via Nasdaq Nordic or Oslo Bors
+- Nordic markets have strict transparency requirements — listed companies must disclose promptly via Nasdaq Nordic or Oslo Børs
 
 ### Distribution Norms
 

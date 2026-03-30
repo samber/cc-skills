@@ -1,6 +1,6 @@
 # promql-cli — Installation
 
-Latest release: **v0.3.0** — macOS and Linux only (no official Windows binary). Please [releases](https://github.com/nalbury/promql-cli/releases) to find the latest version.
+Latest release: **v0.3.0** — macOS and Linux only (no official Windows binary). Please check the [releases](https://github.com/nalbury/promql-cli/releases) to find the latest version.
 
 ## macOS
 
@@ -78,7 +78,7 @@ $env:GOOS="windows"; $env:GOARCH="amd64"; go build -o promql.exe ./
 
 ## Verify Installation
 
-Test against your local Prometheus instance (default: http://localhost:9090):
+Test against your local Prometheus instance (default: [http://localhost:9090](http://localhost:9090)):
 
 ```bash
 promql --version
@@ -119,7 +119,7 @@ promql --config ~/.promql-cli-staging.yaml 'up'
 
 ## Authentication
 
-Never pass tokens or passwords as CLI arguments — they appear in shell history (`~/.bash_history`, `~/.zsh_history`), in process listings (`ps aux`) and are sent to LLM. Always store secrets in files under `$HOME` with restricted permissions.
+Never pass tokens or passwords as CLI arguments — they appear in shell history (`~/.bash_history`, `~/.zsh_history`), in process listings (`ps aux`) and are sent to an LLM. Always store secrets in files under `$HOME` with restricted permissions.
 
 **Bearer token:**
 

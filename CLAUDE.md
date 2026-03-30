@@ -156,7 +156,7 @@ The body contains step-by-step instructions. Use secondary markdown files in `re
 - **2-4 skills loaded simultaneously** in a typical session
 - **Stay below ~10k tokens of total loaded SKILL.md** to avoid degrading response quality
 
-This is a budget. A 100 lines SKILL.md is even better. Feel free to stay below the limits.
+This is a budget. A 100 lines SKILL.md is even better. Feel free to stay far below the limits.
 
 #### Top-of-body directives
 
@@ -280,7 +280,7 @@ Skills are structured for efficient context use:
 
 Keep SKILL.md under 500 lines. Move detailed reference material to separate files.
 
-This is a budget. A 100 lines SKILL.md is even better. Feel free to stay for below the limits.
+This is a budget. A 100 lines SKILL.md is even better. Feel free to stay below the limits.
 
 ### Validation
 
@@ -327,7 +327,7 @@ Skills use the `owner/repo@skill:version` identifier format for cross-references
 
 Always use the fully-qualified `owner/repo@skill` form in backticks, even for references within the same plugin. This makes every reference portable, searchable, and unambiguous regardless of where the skill is consumed.
 
-**Inline:** see the `samber/cc-skills@conventional-git` skill. **Arrow-prefixed lists:** `→ See `samber/cc-skills@conventional-git` skill for …`
+**Inline:** see the `samber/cc-skills@conventional-git` skill. **Arrow-prefixed lists:** "→ See `samber/cc-skills@conventional-git` skill for …"
 
 **Install mapping:** the identifier maps to skills CLI commands:
 
@@ -339,6 +339,8 @@ Always use the fully-qualified `owner/repo@skill` form in backticks, even for re
 When a skill requires broad understanding of a large body of content (e.g. migration, refactoring, architecture review, auditing a content library, multi-channel analysis), it SHOULD recommend using parallel sub-agents (up to 5) via the Agent tool to explore different areas simultaneously. Each sub-agent should target a distinct search scope (e.g. different modules, content sections, channels, or topic areas). This dramatically reduces research time on large codebases and content libraries alike.
 
 ## Writing Guidelines
+
+When editing skill files, fix grammar mistakes if you find some.
 
 ### Avoid duplicating well known conventions
 
@@ -384,7 +386,7 @@ If you encounter a bug or unexpected behavior in <tool>, open an issue at <repo>
 **Important:** Skill body text must NEVER contain explicit MCP tool-calling instructions (e.g. "call `resolve-library-id`", "call `query-docs`", "use the MCP context7 server"). These trigger prompt-injection detections in security scanners (Snyk). Instead, use generic formulations like:
 
 ```
-This skill is not exhaustive. Please refer to library documentation and code examples for more informations. Context7 can help as a discoverability platform.
+This skill is not exhaustive. Please refer to library documentation and code examples for more information. Context7 can help as a discoverability platform.
 ```
 
 The `mcp__context7__*` tools may still be listed in `allowed-tools` frontmatter — only the body instructions are restricted.
@@ -393,9 +395,9 @@ The `mcp__context7__*` tools may still be listed in `allowed-tools` frontmatter 
 
 ### Adversarial evaluation design
 
-Run skill evaluation with the pattern recommanded by `/skill-creator`. Use `/tmp/{skill-name}-workspace` as default workspace for ephemeral files.
+Run skill evaluation with the pattern recommended by `/skill-creator`. Use `/tmp/{skill-name}-workspace` as default workspace for ephemeral files.
 
-Evals MUST be adversarial — they test the skill's **unique value**, not common knowledge the model already has. A good eval has a "trap" the model falls into without the skill but avoids with it. Every rules of a skill must have its test.
+Evals MUST be adversarial — they test the skill's **unique value**, not common knowledge the model already has. A good eval has a "trap" the model falls into without the skill but avoids with it. Every rule of a skill must have its test.
 
 Size evaluations to the skill's **Directory (tok)** column in README.md: expect **~10 assertions per 1,000 tokens** of skill content (full directory excluding evals), with a **minimum of 50 assertions**. Examples from the current table:
 
@@ -462,7 +464,7 @@ Also update the **Summary table** at the top of `EVALUATIONS.md`: add a new row 
 After making changes, suggest the following as next steps for the developer to run. Do NOT execute these automatically.
 
 1. ~~Validate against the spec: `skills-ref validate ./skills/{name}`~~ (disabled — [skills-ref doesn't support `user-invocable` yet](https://github.com/agentskills/agentskills/issues/105))
-2. Reformat markdowns with `npx prettier --write *.md "**/*.md"` — run before measuring tokens, as formatting changes token counts
+2. Reformat markdowns with `npx prettier --write *.md "**/*.md"` then lint with `markdownlint-cli2 --config .markdownlint-cli2.jsonc ./` — run before measuring tokens, as formatting changes token counts
 3. Measure token counts:
    - **Description (tok)**: `awk 'NR==1 && /^---$/{found=1; next} found && /^---$/{exit} found && /^description:/{print}' skills/{name}/SKILL.md | tiktoken-cli`
    - **SKILL.md (tok)**: `tiktoken-cli skills/{name}/SKILL.md`

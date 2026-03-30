@@ -7,9 +7,18 @@
       "expected_output": "Should use rate() with a time window, not raw counter. Should explain why raw counters are meaningless.",
       "files": [],
       "assertions": [
-        { "id": "1.1", "description": "uses rate() function — does NOT suggest querying raw counter like 'http_requests_total' without rate()" },
-        { "id": "1.2", "description": "includes a time window in rate() e.g. [5m] or [1m]" },
-        { "id": "1.3", "description": "explains why raw counter values are not meaningful (they only ever increase)" }
+        {
+          "id": "1.1",
+          "description": "uses rate() function — does NOT suggest querying raw counter like 'http_requests_total' without rate()"
+        },
+        {
+          "id": "1.2",
+          "description": "includes a time window in rate() e.g. [5m] or [1m]"
+        },
+        {
+          "id": "1.3",
+          "description": "explains why raw counter values are not meaningful (they only ever increase)"
+        }
       ]
     },
     {
@@ -18,10 +27,22 @@
       "expected_output": "Should recommend isolating by pod/instance label, not aggregating across all pods. Should not suggest avg across fleet.",
       "files": [],
       "assertions": [
-        { "id": "2.1", "description": "recommends filtering/isolating by pod or instance label to identify the specific slow pod" },
-        { "id": "2.2", "description": "does NOT suggest using avg() or sum() across all pods as the first debugging step" },
-        { "id": "2.3", "description": "suggests using histogram or rate-based latency metrics (not raw values)" },
-        { "id": "2.4", "description": "includes label matcher syntax to filter by specific pod or instance" }
+        {
+          "id": "2.1",
+          "description": "recommends filtering/isolating by pod or instance label to identify the specific slow pod"
+        },
+        {
+          "id": "2.2",
+          "description": "does NOT suggest using avg() or sum() across all pods as the first debugging step"
+        },
+        {
+          "id": "2.3",
+          "description": "suggests using histogram or rate-based latency metrics (not raw values)"
+        },
+        {
+          "id": "2.4",
+          "description": "includes label matcher syntax to filter by specific pod or instance"
+        }
       ]
     },
     {
@@ -30,10 +51,22 @@
       "expected_output": "histogram_quantile(0.99, ...) with rate() on buckets, preserving le label in by() clause.",
       "files": [],
       "assertions": [
-        { "id": "3.1", "description": "uses histogram_quantile(0.99, ...)" },
-        { "id": "3.2", "description": "preserves the 'le' label — either with 'by (le, ...)' or without dropping it" },
-        { "id": "3.3", "description": "applies rate() to the histogram _bucket series before histogram_quantile" },
-        { "id": "3.4", "description": "does NOT suggest dropping 'le' in a by() clause before histogram_quantile (which would produce NaN)" }
+        {
+          "id": "3.1",
+          "description": "uses histogram_quantile(0.99, ...)"
+        },
+        {
+          "id": "3.2",
+          "description": "preserves the 'le' label — either with 'by (le, ...)' or without dropping it"
+        },
+        {
+          "id": "3.3",
+          "description": "applies rate() to the histogram _bucket series before histogram_quantile"
+        },
+        {
+          "id": "3.4",
+          "description": "does NOT suggest dropping 'le' in a by() clause before histogram_quantile (which would produce NaN)"
+        }
       ]
     },
     {
@@ -42,10 +75,22 @@
       "expected_output": "Range query with --start 2h, --output graph recommended, rate() on error counter.",
       "files": [],
       "assertions": [
-        { "id": "4.1", "description": "uses --start 2h (or equivalent range query flag)" },
-        { "id": "4.2", "description": "recommends --output graph for visualizing the trend" },
-        { "id": "4.3", "description": "uses rate() on the error counter metric" },
-        { "id": "4.4", "description": "does NOT just suggest a plain instant query without a time range" }
+        {
+          "id": "4.1",
+          "description": "uses --start 2h (or equivalent range query flag)"
+        },
+        {
+          "id": "4.2",
+          "description": "recommends --output graph for visualizing the trend"
+        },
+        {
+          "id": "4.3",
+          "description": "uses rate() on the error counter metric"
+        },
+        {
+          "id": "4.4",
+          "description": "does NOT just suggest a plain instant query without a time range"
+        }
       ]
     },
     {
@@ -54,10 +99,22 @@
       "expected_output": "Should NOT write config file content with the token. Should guide user to create the config manually. Mentions chmod 600.",
       "files": [],
       "assertions": [
-        { "id": "5.1", "description": "does NOT write out config file content containing the token value" },
-        { "id": "5.2", "description": "instructs user to create the config file manually themselves" },
-        { "id": "5.3", "description": "mentions chmod 600 to protect the credentials file" },
-        { "id": "5.4", "description": "does NOT suggest passing the token as a CLI flag (which would expose it in shell history)" }
+        {
+          "id": "5.1",
+          "description": "does NOT write out config file content containing the token value"
+        },
+        {
+          "id": "5.2",
+          "description": "instructs user to create the config file manually themselves"
+        },
+        {
+          "id": "5.3",
+          "description": "mentions chmod 600 to protect the credentials file"
+        },
+        {
+          "id": "5.4",
+          "description": "does NOT suggest passing the token as a CLI flag (which would expose it in shell history)"
+        }
       ]
     },
     {
@@ -66,9 +123,18 @@
       "expected_output": "Label matchers in innermost selector, filter before aggregation. Not filtering after sum/avg.",
       "files": [],
       "assertions": [
-        { "id": "6.1", "description": "places label matchers {namespace='production', container='api'} in the innermost metric selector" },
-        { "id": "6.2", "description": "filtering appears before any aggregation function (sum, avg, etc.) — not after" },
-        { "id": "6.3", "description": "does NOT suggest applying label filters outside the selector in a way that scans all time series first" }
+        {
+          "id": "6.1",
+          "description": "places label matchers {namespace='production', container='api'} in the innermost metric selector"
+        },
+        {
+          "id": "6.2",
+          "description": "filtering appears before any aggregation function (sum, avg, etc.) — not after"
+        },
+        {
+          "id": "6.3",
+          "description": "does NOT suggest applying label filters outside the selector in a way that scans all time series first"
+        }
       ]
     },
     {
@@ -77,10 +143,22 @@
       "expected_output": "Identifies as configuration/connectivity problem. Refers to installation setup. Does not try to run more queries.",
       "files": [],
       "assertions": [
-        { "id": "7.1", "description": "identifies this as a host configuration problem (not a query syntax error)" },
-        { "id": "7.2", "description": "guides the user to check their host configuration or installation" },
-        { "id": "7.3", "description": "does NOT suggest modifying the PromQL query to fix the connection error" },
-        { "id": "7.4", "description": "does NOT try to create a config file with credentials on behalf of the user" }
+        {
+          "id": "7.1",
+          "description": "identifies this as a host configuration problem (not a query syntax error)"
+        },
+        {
+          "id": "7.2",
+          "description": "guides the user to check their host configuration or installation"
+        },
+        {
+          "id": "7.3",
+          "description": "does NOT suggest modifying the PromQL query to fix the connection error"
+        },
+        {
+          "id": "7.4",
+          "description": "does NOT try to create a config file with credentials on behalf of the user"
+        }
       ]
     },
     {
@@ -89,9 +167,18 @@
       "expected_output": "Uses 'promql metrics' subcommand, not a raw PromQL query.",
       "files": [],
       "assertions": [
-        { "id": "8.1", "description": "suggests the 'promql metrics' subcommand" },
-        { "id": "8.2", "description": "does NOT suggest a PromQL query like '{__name__=~\".+\"}' as the primary approach" },
-        { "id": "8.3", "description": "shows correct CLI syntax for the metrics subcommand" }
+        {
+          "id": "8.1",
+          "description": "suggests the 'promql metrics' subcommand"
+        },
+        {
+          "id": "8.2",
+          "description": "does NOT suggest a PromQL query like `{__name__=~\".+\"}` as the primary approach"
+        },
+        {
+          "id": "8.3",
+          "description": "shows correct CLI syntax for the metrics subcommand"
+        }
       ]
     },
     {
@@ -100,9 +187,18 @@
       "expected_output": "Distinguishes between gauge (raw value OK) and counter (needs rate()). Explains the difference.",
       "files": [],
       "assertions": [
-        { "id": "9.1", "description": "distinguishes between gauge metrics (raw value meaningful) and counter metrics (need rate())" },
-        { "id": "9.2", "description": "if the metric is a gauge: confirms raw value is appropriate for active connections" },
-        { "id": "9.3", "description": "suggests checking metric type with 'promql meta <metric>' if type is unknown" }
+        {
+          "id": "9.1",
+          "description": "distinguishes between gauge metrics (raw value meaningful) and counter metrics (need rate())"
+        },
+        {
+          "id": "9.2",
+          "description": "if the metric is a gauge: confirms raw value is appropriate for active connections"
+        },
+        {
+          "id": "9.3",
+          "description": "suggests checking metric type with 'promql meta <metric>' if type is unknown"
+        }
       ]
     },
     {
@@ -111,10 +207,22 @@
       "expected_output": "Range query with --start spanning the deploy time, --output graph for trend, rate() on request/error metrics.",
       "files": [],
       "assertions": [
-        { "id": "10.1", "description": "uses a range query with --start flag to span a time window around the deploy" },
-        { "id": "10.2", "description": "recommends --output graph to visualize the performance trend" },
-        { "id": "10.3", "description": "uses rate() for request/error rate metrics in the comparison" },
-        { "id": "10.4", "description": "does NOT just suggest a single instant query without time context" }
+        {
+          "id": "10.1",
+          "description": "uses a range query with --start flag to span a time window around the deploy"
+        },
+        {
+          "id": "10.2",
+          "description": "recommends --output graph to visualize the performance trend"
+        },
+        {
+          "id": "10.3",
+          "description": "uses rate() for request/error rate metrics in the comparison"
+        },
+        {
+          "id": "10.4",
+          "description": "does NOT just suggest a single instant query without time context"
+        }
       ]
     }
   ]
