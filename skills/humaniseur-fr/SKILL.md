@@ -2,6 +2,16 @@
 name: humaniseur-fr
 version: 1.0.0
 description: Remove signs of AI-generated writing from French text. Humanize, humanise, and déslopifier French content produced by LLMs. Use when editing, reviewing, rewriting, or cleaning up French text to make it sound more natural and human-written. Detects and fixes 27 patterns including: inflated significance, promotional language, superficial participle analyses (-ant), vague attributions, AI vocabulary overuse (crucial, essentiel, notamment, par ailleurs, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, em dash overuse, formulaic openings (À l'ère de, Dans le paysage actuel), redundant adjective doublets, rule of three, sycophantic tone, and typographic tells (curly quotes instead of guillemets). Also injects voice, personality, and soul into sterile cleaned text. Trigger on: humaniser, humanize, humanise, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, remove AI writing, make it sound human, detect AI patterns, or any French text that reads like ChatGPT/Claude output.
+user-invocable: false
+license: MIT
+compatibility: Designed for Claude or similar AI agents.
+metadata:
+  author: samber
+  version: "1.0.0"
+  openclaw:
+    emoji: "🤖"
+    homepage: https://github.com/samber/cc-skills
+allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
 # Humaniseur : supprimer les patterns d'écriture IA du français
@@ -123,20 +133,20 @@ The single most flagged word in French AI text is **crucial**. The adverb **nota
 
 **High-frequency AI vocabulary (find-and-replace checklist):**
 
-| AI word/phrase | Replacement strategy |
-| --- | --- |
-| crucial, essentiel | Use domain-specific terms, or just drop |
-| significatif, robuste, substantiel | Be precise: give numbers instead |
-| holistique | Remove (calque of English "holistic") |
-| compréhensif (= exhaustif) | Use « exhaustif » or « complet » (compréhensif = empathetic in French) |
-| disruptif | « de rupture » or describe the actual change |
-| notamment (if >1 per 800 words) | « en particulier », « entre autres », or restructure |
-| par ailleurs, en outre, de plus | Use « or », « reste que », « n'empêche que », « soit dit en passant » |
-| il convient de noter que | Delete, start sentence directly |
-| dans le paysage [actuel/numérique] | Delete entirely |
-| au cœur de | Replace with specific location/concept |
-| la pierre angulaire | Just say what it is |
-| un levier puissant | Describe the actual mechanism |
+| AI word/phrase                     | Replacement strategy                                                   |
+| ---------------------------------- | ---------------------------------------------------------------------- |
+| crucial, essentiel                 | Use domain-specific terms, or just drop                                |
+| significatif, robuste, substantiel | Be precise: give numbers instead                                       |
+| holistique                         | Remove (calque of English "holistic")                                  |
+| compréhensif (= exhaustif)         | Use « exhaustif » or « complet » (compréhensif = empathetic in French) |
+| disruptif                          | « de rupture » or describe the actual change                           |
+| notamment (if >1 per 800 words)    | « en particulier », « entre autres », or restructure                   |
+| par ailleurs, en outre, de plus    | Use « or », « reste que », « n'empêche que », « soit dit en passant »  |
+| il convient de noter que           | Delete, start sentence directly                                        |
+| dans le paysage [actuel/numérique] | Delete entirely                                                        |
+| au cœur de                         | Replace with specific location/concept                                 |
+| la pierre angulaire                | Just say what it is                                                    |
+| un levier puissant                 | Describe the actual mechanism                                          |
 
 **Formulaic openings to kill on sight:**
 
