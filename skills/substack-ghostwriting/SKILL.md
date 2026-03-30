@@ -6,11 +6,11 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.2"
+  version: "1.1.3"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills
-allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch
+allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestion
 ---
 
 # Substack Ghostwriting & Content Optimization
@@ -168,6 +168,12 @@ If the user has a paid tier, advise on the free/paid split:
 - The most effective model: free issues that demonstrate value so clearly that readers want more
 
 Common mistake: paywalling too early. At < 1000 subscribers, everything should be free. Growth compounds faster than paid conversion at small scale.
+
+### Phase 5b: Humanize
+
+Invoke a humanizer skill (e.g. "humanize", "humanizer", "de-slop", "natural writing check", "AI detection cleanup", "rewrite like a human") to strip AI-generated patterns — filler words, predictable cadence, over-hedging, hollow transitions, inflated language. Substack readers pay for authentic voice; AI-sounding prose kills trust and cancels subscriptions.
+
+**Preserve hooks and subject lines.** The hook and title/subject line (Phase 2) were deliberately engineered for open rate and curiosity. Instruct the humanizer to leave them intact — rewriting them for "naturalness" destroys the copywriting structure that drives opens and first-scroll retention.
 
 ### Phase 6: Image suggestions
 

@@ -144,12 +144,13 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `substack-ghostwriting` | -51% | 205 | 3,315 | 10,720 |
 | `technical-article-writer` | -33% | 147 | 2,295 | 5,737 |
 | `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
+| `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
 
 ## 🧪 Skill evaluations
 
 |             | With Skill | Without Skill | Delta     |
 | ----------- | ---------- | ------------- | --------- |
-| **Overall** | **99%**    | **61%**       | **+38pp** |
+| **Overall** | **99%**    | **64%**       | **+35pp** |
 
 See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 
