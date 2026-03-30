@@ -2,7 +2,7 @@
 
 AI agent skills are reusable instruction sets that extend your assistant with domain-specific expertise, loaded on demand so they don't bloat your context. This repository covers marketing and engineering skills authored by [@samber](https://github.com/samber).
 
-For Golang related skills, please visit [cc-skills-golang](https://github.com/samber/cc-skills-golang).
+For Golang-related skills, please visit [cc-skills-golang](https://github.com/samber/cc-skills-golang).
 
 > [!IMPORTANT]  
 > Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
@@ -11,7 +11,7 @@ For Golang related skills, please visit [cc-skills-golang](https://github.com/sa
 
 <img width="3808" height="1280" alt="image" src="https://github.com/user-attachments/assets/95139f6f-c19c-4041-a010-d94bca594bba" />
 
-## 🚀 How to use ?
+## 🚀 How to use?
 
 **Install with [skills](https://skills.sh/) CLI** (universal, works with any [Agent Skills](https://agentskills.io)-compatible tool):
 
@@ -155,7 +155,7 @@ See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 
 ## 🎯 Tuning Skill Triggers
 
-If a skill triggers too often or not often enough, please [open an issue](https://github.com/samber/cc-skills-golang/issues) suggesting a description change. The `description` field in SKILL.md frontmatter is the primary triggering mechanism: small wording adjustments can significantly improve trigger accuracy. Some `SKILL.md` might have `When to use` section which is another level of exclusion. Finally, `SKILL.md` are a entrypoint for lazy loading references with deep knowledge located in `references/`.
+If a skill triggers too often or not often enough, please [open an issue](https://github.com/samber/cc-skills-golang/issues) suggesting a description change. The `description` field in SKILL.md frontmatter is the primary triggering mechanism: small wording adjustments can significantly improve trigger accuracy. Some `SKILL.md` might have a `When to use` section which is another level of exclusion. Finally, `SKILL.md` is an entrypoint for lazy loading references with deep knowledge located in `references/`.
 
 ## 🔄 Overlap
 
@@ -163,7 +163,7 @@ If your team has its own conventions, create a company skill and declare the ove
 
 ## ✍️ Contribute
 
-- **100 tokens per skill description** - what ? when use this skill ?
+- **100 tokens per skill description** - what? when to use this skill?
 - **1.000–2.500 tokens per SKILL.md** — keep the main file focused on essentials
 - **Use secondary markdown files for depth** — reference them from SKILL.md with relative links (e.g., `[Logging](./logging.md)`). Claude reads these on demand when the topic is relevant, so they don't count against the context budget until needed
 - **Up to 10.000 tokens** for full skill and secondary files

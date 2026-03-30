@@ -164,6 +164,7 @@ await chrome.scripting.removeCSS({
   ```
 
 - Script injection at document_start with `world: "MAIN"` runs before ANY page scripts, making it ideal for API interception:
+
   ```javascript
   // main-world-early.js (run_at: document_start, world: MAIN)
   const originalFetch = window.fetch;

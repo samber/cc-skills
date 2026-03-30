@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills
@@ -179,7 +179,7 @@ After the content is drafted, suggest **1-3 images** with specific placement. Fo
 
 For newsletter issues: use images sparingly — many email clients block them by default. Prioritize a strong cover image and at most 1-2 inline images. For web posts: images render reliably — use more freely (diagrams, charts, screenshots).
 
-Offer to generate a **Midjourney prompt** for each suggested image. If the user accepts, use the latest Midjourney model conventions to write the prompt. Use `--ar 16:9` pr `--ar 3:1` for cover images and wide illustrations (optimal for Substack headers and social sharing), `--ar 3:2` for smaller inline images. Refer to up-to-date Midjourney documentation for current prompt syntax and parameters.
+Offer to generate a **Midjourney prompt** for each suggested image. If the user accepts, use the latest Midjourney model conventions to write the prompt. Use `--ar 16:9` or `--ar 3:1` for cover images and wide illustrations (optimal for Substack headers and social sharing), `--ar 3:2` for smaller inline images. Refer to up-to-date Midjourney documentation for current prompt syntax and parameters.
 
 ### Phase 7: Social distribution posts (optional — offer, don't auto-generate)
 
