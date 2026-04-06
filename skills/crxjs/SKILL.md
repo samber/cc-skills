@@ -15,6 +15,7 @@ metadata:
         - git
         - node
         - npm
+    skill-library-version: "2.4.0"
 allowed-tools: Read Edit Write Glob Grep Bash(git:*) Bash(gh:*) Bash(npm:*)
 ---
 

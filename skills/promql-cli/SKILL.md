@@ -21,6 +21,7 @@ metadata:
       bins:
         - promql
         - jq
+    skill-library-version: "0.3.0"
 allowed-tools: Read Edit Write Glob Grep Agent Bash(promql:*) mcp__context7__resolve-library-id mcp__context7__query-docs AskUserQuestion
 ---
 

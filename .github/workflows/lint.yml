@@ -3,9 +3,9 @@ name: Lint
 on:
   push:
     branches: [main]
-    paths: ['skills/**', 'CLAUDE.md', 'README.md', 'EVALUATIONS.md']
+    paths: ['skills/**', 'CLAUDE.md', 'README.md', 'EVALUATIONS.md', '.markdownlint-cli2.jsonc', '.github/workflows/lint.yml']
   pull_request:
-    paths: ['skills/**', 'CLAUDE.md', 'README.md', 'EVALUATIONS.md']
+    paths: ['skills/**', 'CLAUDE.md', 'README.md', 'EVALUATIONS.md', '.markdownlint-cli2.jsonc', '.github/workflows/lint.yml']
   workflow_dispatch: {}
 
 jobs:
@@ -17,7 +17,7 @@ jobs:
 
       # Markdown linting
       - name: markdownlint-cli2-action
-        uses: DavidAnson/markdownlint-cli2-action@main
+        uses: DavidAnson/markdownlint-cli2-action@v23
         with:
           config: '.markdownlint-cli2.jsonc'
           globs: '**/*.md'

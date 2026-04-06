@@ -63,6 +63,7 @@ metadata:
       bins:
         - git
         - jq
+    skill-library-version: "1.2.3"
 allowed-tools: Read Edit Write Glob Grep Bash(git:*) Agent
 ---
 ```
@@ -77,6 +78,7 @@ All skills MUST include `metadata.openclaw` fields for [ClawHub](https://github.
 | `homepage` | Yes | URL to the skill's homepage or docs. Use `https://github.com/samber/cc-skills` for this project |
 | `install` | When deps exist | Array of install specs for dependencies. Supported kinds: `brew`, `node`, `go`, `uv`. Each entry has `kind`, `package`/`formula`, and `bins` |
 | `requires.bins` | When bins needed | CLI binaries that must be installed at runtime. Omit for pure content skills with no CLI dependencies |
+| `skill-library-version` | Optional (when covering a library/framework) | Semver or release tag of the library/framework/platform the skill was written against (e.g. `"2.1.0"`). Required for skills that document a specific third-party project so staleness can be detected. Omit for generic/content skills with no versioned dependency. |
 
 `install` describes _how_ to get a dependency. `requires.bins` declares _what_ must exist at runtime. A skill can have `requires.bins` without `install` (e.g. `git` — assumed pre-installed) or both (e.g. `promql` — installable via `go install`).
 
@@ -480,6 +482,18 @@ After making changes, suggest the following as next steps for the developer to r
 7. Depending on evaluation final report, suggest improvements and loop
 
 For initial evaluation of skills, use Human-as-Judge.
+
+### Checking for outdated skills
+
+Skills covering a specific library or framework can become stale when the project releases breaking changes or new APIs. Run this check periodically (e.g. monthly) to surface outdated skills.
+
+1. Grep all SKILL.md files for `skill-library-version` entries to build the inventory.
+2. For each skill with a `skill-library-version`, fetch the latest release from the project's GitHub releases page or changelog via web search.
+3. Compare the skill's recorded version against the latest release. Flag skills where the latest version is a higher major or minor than `skill-library-version`.
+4. For flagged skills, skim the changelog between the recorded version and the latest to identify breaking changes or new APIs that the skill should cover.
+5. Suggest a skill update for each flagged skill, summarizing the relevant changelog entries.
+
+After updating a skill to reflect a new library version, bump `skill-library-version` to the new version and follow the [After updating a skill](#after-updating-a-skill) checklist.
 
 ## Plugin Configuration
 
