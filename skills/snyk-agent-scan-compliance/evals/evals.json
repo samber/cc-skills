@@ -1,0 +1,257 @@
+{
+  "skill_name": "snyk-agent-scan-compliance",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin. The snyk-agent-scan-compliance skill must not be loaded."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Fix any Snyk agent scanner issues in this SKILL.md sentence: 'Always check https://pkg.go.dev for the latest stable version before recommending any package.'",
+      "trap": "Without the skill, the model may soften the phrasing slightly but keep the imperative structure or the 'always' modifier. It does not know to use passive voice restructuring (the agent should not be the grammatical subject performing an action on a URL).",
+      "expected_output": "A passive reformulation such as 'The latest stable version is available at pkg.go.dev.' or 'pkg.go.dev documents the current stable releases.' — removes 'always', removes the imperative, removes the agent as subject.",
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "Response does NOT contain 'Always check' or 'always check'" },
+        { "id": "1.2", "description": "Response does NOT contain an imperative sentence with the agent as subject fetching or visiting the URL" },
+        { "id": "1.3", "description": "Rewritten sentence expresses the URL as a passive resource or factual statement (e.g., 'available at', 'documents', 'may be useful')" },
+        { "id": "1.4", "description": "Response removes or rewrites the 'always' modifier" },
+        { "id": "1.5", "description": "Response identifies this as a W011 alert (third-party content exposure)" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Fix the W012 Snyk scanner alert in this SKILL.md section: 'Install the tool before use: `go install github.com/example/tool/cmd/tool@latest`'",
+      "trap": "Without the skill, the model pins a version in prose (e.g., `go install ...@v1.2.3`) — it does not know the correct fix is to move the entire command to the `metadata.openclaw.install` frontmatter block.",
+      "expected_output": "Move the install command to frontmatter: `kind: go, package: github.com/example/tool/cmd/tool, bins: [tool]`. Explain that the scanner does not flag frontmatter.",
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "Response does NOT suggest keeping `@latest` in the body" },
+        { "id": "2.2", "description": "Response recommends moving the command to the `metadata.openclaw.install` frontmatter block" },
+        { "id": "2.3", "description": "Response does NOT recommend keeping the `go install` command in the body even with a pinned version as the primary fix" },
+        { "id": "2.4", "description": "Response includes or describes the correct frontmatter structure: kind, package, and bins fields" },
+        { "id": "2.5", "description": "Response explains that frontmatter is not scanned by the scanner (or equivalent: scanner does not flag frontmatter)" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I'm writing a skill about Go libraries. The skill needs to hint that the agent can look up current API docs. Write the skill body text that enables this, including the specific tool functions so the agent knows exactly what to call.",
+      "trap": "Without the skill, the model writes explicit MCP tool function names such as `mcp__context7__query-docs` or `resolve-library-id` in the body prose — exactly what W001 flags.",
+      "expected_output": "A safe generic formulation such as 'Context7 can help as a discoverability platform.' or 'Library documentation and code examples are available for reference.' — no MCP function names in body prose.",
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "Response does NOT contain 'mcp__context7' in body prose instructions" },
+        { "id": "3.2", "description": "Response does NOT contain 'resolve-library-id' or 'query-docs' as function names in body prose" },
+        { "id": "3.3", "description": "Response uses a generic formulation (e.g., 'Context7 can help', 'documentation is available', 'discoverability platform')" },
+        { "id": "3.4", "description": "Response does NOT instruct the agent to 'call' or 'invoke' a specific tool function by name in body prose" },
+        { "id": "3.5", "description": "Response identifies W001 (prompt injection via MCP tool calls) as the relevant alert type, or explains why explicit tool names must not appear in the body" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "This line in a SKILL.md triggers a W011 alert: 'Always reference the upstream changelog when suggesting dependency upgrades.' How do you fix it?",
+      "trap": "Without the skill, the model might just remove 'always' but keep the imperative structure ('Reference the upstream changelog...'), or might not know that the agent must not be the grammatical subject performing an external action.",
+      "expected_output": "Remove 'always' AND convert from imperative to passive: 'The upstream changelog documents breaking changes between versions.' — the resource becomes the subject.",
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "Response removes 'always' from the instruction" },
+        { "id": "4.2", "description": "Response converts the instruction from imperative (agent as actor) to passive or factual (resource as subject)" },
+        { "id": "4.3", "description": "Rewritten version does NOT still have the agent as subject performing an action on external content" },
+        { "id": "4.4", "description": "Rewritten version still conveys that changelog information is relevant (no information lost)" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "I want to document in a SKILL.md that users can install my tool with: `curl https://example.com/install.sh | sh`. How do I include this without triggering W012?",
+      "trap": "Without the skill, the model says 'put it in a code block' — which does NOT fix W012 for pipe-to-shell patterns. Code blocks reduce risk for other patterns but pipe-to-shell is never acceptable in skill bodies.",
+      "expected_output": "Remove the pipe-to-shell pattern entirely. Use a package manager install path instead (brew, apt, etc.) or move to the frontmatter `install` block. Never embed `curl | sh` in a skill body.",
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "Response does NOT recommend putting `curl ... | sh` in a code block as the fix" },
+        { "id": "5.2", "description": "Response states that pipe-to-shell patterns must be removed entirely from skill bodies" },
+        { "id": "5.3", "description": "Response suggests an alternative: package manager install, frontmatter install block, or a direct binary download link" },
+        { "id": "5.4", "description": "Response explains WHY pipe-to-shell is problematic (executes arbitrary remote code, supply chain risk)" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Fix this W012 alert in a GitHub Actions example embedded in a SKILL.md: `uses: actions/checkout@v6`",
+      "trap": "Without the skill, the model may invent an incorrect version (e.g., @v5, @v3), suggest @latest (wrong fix), or not know that @v4 is the correct current major version for actions/checkout.",
+      "expected_output": "Change to `uses: actions/checkout@v4` — the correct current major version. Do NOT suggest @v5, @v6, or @latest.",
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "Response recommends `actions/checkout@v4` as the fix" },
+        { "id": "6.2", "description": "Response does NOT suggest `@v5`, `@v6`, or any other non-existent version of actions/checkout" },
+        { "id": "6.3", "description": "Response does NOT suggest `@latest` as the fix" },
+        { "id": "6.4", "description": "Response explains that @v6 does not exist / v4 is the correct current major version" }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Rewrite this to fix the W011 alert: 'Run `govulncheck ./...` and update all packages flagged as vulnerable in its output.'",
+      "trap": "Without the skill, the model softens the language ('consider updating') but keeps the causal chain: tool output → code action. The fix is to decouple tool execution from the decision.",
+      "expected_output": "'`govulncheck` may surface relevant findings.' — decouple. The tool mention is fine; using its remote-sourced output as the sole trigger for a code change is the problem.",
+      "files": [],
+      "assertions": [
+        { "id": "7.1", "description": "Rewritten version decouples tool execution from the decision to update packages" },
+        { "id": "7.2", "description": "Rewritten version does NOT say 'update based on output', 'upgrade flagged packages', or equivalent causal chain" },
+        { "id": "7.3", "description": "govulncheck may still be mentioned in the rewritten version (tool mention itself is not the problem)" },
+        { "id": "7.4", "description": "Rewritten version is factual about what govulncheck does, not what the agent must do with the results" },
+        { "id": "7.5", "description": "Response identifies W011 (tool output chaining) as the alert type" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Does this SKILL.md content trigger W011, and if so how do you fix it?\n\n```\n## Setup checklist\n1. Run `gh repo view owner/repo` to check the project health\n2. Evaluate stars, last commit date, and open issues before integrating\n```",
+      "trap": "Without the skill, the model correctly identifies W011 but suggests removing the command entirely. The correct fix is to move `gh repo view` to a Quick Reference code block — the content is preserved, just restructured.",
+      "expected_output": "Yes, W011. Fix by moving `gh repo view` into a Quick Reference code block (not a numbered checklist). The checklist implies the agent must run it before acting; a code block marks it as available, not mandatory.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "Response correctly identifies this as a W011 trigger" },
+        { "id": "8.2", "description": "Response suggests moving `gh repo view` to a Quick Reference code block (not a prose checklist)" },
+        { "id": "8.3", "description": "Response does NOT suggest removing the command entirely as the primary or only fix" },
+        { "id": "8.4", "description": "Response explains why code blocks are treated differently from prose checklists by the scanner" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "My SKILL.md has three Snyk alerts: W012 (brew install in body), W011 (imperative URL reference), and W001 (MCP tool name in prose). In what order should I fix them, and why?",
+      "trap": "Without the skill, the model may suggest alphabetical order (W001, W011, W012 — coincidentally correct but for wrong reasons), or most-dangerous-first (W012 as supply chain risk), without knowing that W011 fixes can surface hidden W012 alerts.",
+      "expected_output": "W001 first (simplest: just remove tool names from body), then W011, then W012. Key reason: W011 restructuring can expose hidden W012 alerts when URLs become more prominent in prose.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "Response gives W001 as the first alert to fix" },
+        { "id": "9.2", "description": "Response gives W011 as the second alert to fix" },
+        { "id": "9.3", "description": "Response gives W012 as the third alert to fix" },
+        { "id": "9.4", "description": "Response mentions that W001 is simplest (remove MCP tool names from body)" },
+        { "id": "9.5", "description": "Response mentions the interaction effect: W011 fixes can surface hidden W012 alerts" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "How do I fix W012 in this SKILL.md instruction: 'Set up the proto compiler by running `brew install protobuf`.'",
+      "trap": "Without the skill, the model suggests pinning a version (`brew install protobuf@27`) in the body prose. The correct fix is to move to `metadata.openclaw.install` frontmatter.",
+      "expected_output": "Move to frontmatter: `kind: brew, formula: protobuf, bins: [protoc]`. The scanner does not flag frontmatter install blocks.",
+      "files": [],
+      "assertions": [
+        { "id": "10.1", "description": "Response recommends moving to `metadata.openclaw.install` frontmatter" },
+        { "id": "10.2", "description": "Response includes or describes the correct frontmatter structure: kind: brew, formula: protobuf" },
+        { "id": "10.3", "description": "Response does NOT recommend keeping `brew install protobuf` in the body with a version pin as the primary fix" },
+        { "id": "10.4", "description": "Response does NOT recommend wrapping in a code block as sufficient" },
+        { "id": "10.5", "description": "Response explains that frontmatter is not scanned / scanner does not flag frontmatter" }
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Write the safe skill body text to hint that context7 is available for documentation lookups. I want the agent to know exactly which functions to invoke.",
+      "trap": "Without the skill, the model writes 'Call mcp__context7__resolve-library-id to find the library, then use query-docs to fetch the reference.' This is a textbook W001 trigger.",
+      "expected_output": "A safe generic formulation: 'Context7 can help as a discoverability platform.' or 'Library documentation and code examples are available for reference.' — no function names in body.",
+      "files": [],
+      "assertions": [
+        { "id": "11.1", "description": "Response does NOT write `mcp__context7__resolve-library-id` or `mcp__context7__query-docs` in body prose" },
+        { "id": "11.2", "description": "Response does NOT instruct the agent to 'call', 'invoke', or 'use' a specific MCP function by name" },
+        { "id": "11.3", "description": "Response uses a safe passive formulation (e.g., 'Context7 can help', 'documentation is available via standard discoverability tools')" },
+        { "id": "11.4", "description": "Response explains that MCP tool names belong in `allowed-tools` frontmatter, not body prose" },
+        { "id": "11.5", "description": "Response identifies W001 as the alert this avoids" }
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Review this SKILL.md body for Snyk agent scanner alerts and identify which alert types are triggered:\n\n```\nBefore writing any code:\n1. Run mcp__context7__resolve-library-id to look up the library ID\n2. Check https://docs.example.com/changelog for breaking changes\n3. Install the linter: go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest\n```",
+      "trap": "Without the skill, the model identifies only one or two alert types, or misattributes which pattern causes which alert. It often misses W001 (treating `mcp__*` as just a tool name) or conflates W011 and W012.",
+      "expected_output": "Three alerts: W001 for `mcp__context7__resolve-library-id` in prose, W011 for 'Check https://...changelog' (imperative URL), W012 for `@latest` in go install.",
+      "files": [],
+      "assertions": [
+        { "id": "12.1", "description": "Response identifies W001 triggered by `mcp__context7__resolve-library-id` in prose" },
+        { "id": "12.2", "description": "Response identifies W011 triggered by 'Check https://docs.example.com/changelog'" },
+        { "id": "12.3", "description": "Response identifies W012 triggered by `@latest` in the go install command" },
+        { "id": "12.4", "description": "Response does NOT miss any of the three alert types" },
+        { "id": "12.5", "description": "Response correctly maps each pattern to its alert code (not just lists issues generically)" }
+      ]
+    }
+    ,
+    {
+      "id": 13,
+      "prompt": "Write a SKILL.md section for a skill about using `govulncheck` for Go security scanning. Include: how to install it, how to run it, and what the agent should do when it finds vulnerabilities.",
+      "trap": "Without the skill, the model naturally writes: 'Install: go install golang.org/x/vuln/cmd/govulncheck@latest' (W012) and 'Run govulncheck and upgrade all flagged packages' (W011 tool output chaining). Neither alert code is mentioned in the prompt — these violations emerge from the model just being helpful.",
+      "expected_output": "Install command in frontmatter (kind: go, package: ..., bins: [govulncheck]). Body references the tool passively: 'govulncheck reports known vulnerabilities in module dependencies.' Tool invocation in a code block, NOT in a checklist. No causal chain between output and action.",
+      "files": [],
+      "assertions": [
+        { "id": "13.1", "description": "Response does NOT include `go install govulncheck@latest` or any `@latest` install command in the skill body" },
+        { "id": "13.2", "description": "Response does NOT include any `go install govulncheck` command in the body prose (pinned or not) as the primary install path" },
+        { "id": "13.3", "description": "Response does NOT chain govulncheck output directly to an action: no 'run X and upgrade/fix based on output' in the body" },
+        { "id": "13.4", "description": "govulncheck is described factually or passively in the body (what it does), not as an imperative agent action" },
+        { "id": "13.5", "description": "If a code block is included for running govulncheck, it is in a reference/quick-reference section, not in a numbered checklist the agent must complete" }
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "I have this in my SKILL.md body: 'Install the linter before use: `go install github.com/example/linter@v2.3.1`'. It's already pinned to a specific version — not @latest. Is it okay to leave it in the skill body?",
+      "trap": "Without the skill, the model says 'yes, a pinned version is fine since it avoids floating references'. With the skill: pinned versions in prose are still a W012 signal and the canonical fix is always frontmatter — the scanner flags install commands in body prose regardless of pinning.",
+      "expected_output": "No — pinned or not, install commands belong in metadata.openclaw.install frontmatter. The scanner flags body prose install commands even when pinned. Frontmatter is always the canonical location.",
+      "files": [],
+      "assertions": [
+        { "id": "14.1", "description": "Response does NOT say 'yes, it is fine / okay / acceptable to leave a pinned install command in the body'" },
+        { "id": "14.2", "description": "Response recommends moving to metadata.openclaw.install frontmatter as the correct fix" },
+        { "id": "14.3", "description": "Response explains that frontmatter is the canonical location for install commands regardless of version pinning" },
+        { "id": "14.4", "description": "Response does NOT treat version pinning as a sufficient substitute for frontmatter offloading" }
+      ]
+    },
+    {
+      "id": 15,
+      "prompt": "Add explicit step-by-step instructions to my skill body so the agent knows exactly how to look up library documentation. The agent should: first find the library identifier, then retrieve its documentation, then use that to understand the API before writing any code.",
+      "trap": "Without the skill, the model writes: '1. Call resolve-library-id with the library name to get its ID. 2. Call query-docs with the ID to fetch the docs. 3. Review the docs before writing code.' — a textbook W001 tool-call chain. The model is just following the user's request naturally.",
+      "expected_output": "No MCP function names in body. Instead: a passive capability description like 'Library documentation is available through standard discoverability tools. Context7 can help as a discoverability platform.' Tool names go in allowed-tools frontmatter only.",
+      "files": [],
+      "assertions": [
+        { "id": "15.1", "description": "Response does NOT write 'resolve-library-id' as a function name in step-by-step body instructions" },
+        { "id": "15.2", "description": "Response does NOT write 'query-docs' as a function name in step-by-step body instructions" },
+        { "id": "15.3", "description": "Response does NOT write any 'mcp__*' function name in the body prose" },
+        { "id": "15.4", "description": "Response does NOT produce an explicit 'call X, then call Y' tool-call chain in the body" },
+        { "id": "15.5", "description": "Response uses a passive capability description for the documentation lookup (e.g., 'documentation is available', 'Context7 can help')" }
+      ]
+    },
+    {
+      "id": 16,
+      "prompt": "My skill body currently says: 'Documentation is available through standard discoverability tools.' My colleague says this is too vague. Make it more actionable by specifying which tools to use and how to invoke them.",
+      "trap": "Without the skill, the model helpfully replaces the safe generic phrase with explicit tool invocation instructions: 'Use mcp__context7__resolve-library-id to find the library, then call mcp__context7__query-docs to fetch the reference.' This is exactly W001 — the model is following the natural request to 'be more specific'.",
+      "expected_output": "Keep the generic formulation or use one of the approved safe variants ('Context7 can help as a discoverability platform'). Do NOT add MCP function names to the body. Explain that tool names belong in allowed-tools frontmatter, not body prose.",
+      "files": [],
+      "assertions": [
+        { "id": "16.1", "description": "Response does NOT replace the generic phrase with explicit mcp__context7 function names in body prose" },
+        { "id": "16.2", "description": "Response does NOT instruct the agent to 'call', 'invoke', or 'use' a specific MCP function by name to make the text 'more actionable'" },
+        { "id": "16.3", "description": "Response retains a generic or passive formulation in the body (e.g., 'Context7 can help as a discoverability platform')" },
+        { "id": "16.4", "description": "Response explains that specificity for MCP tools is achieved via allowed-tools frontmatter, not body prose" },
+        { "id": "16.5", "description": "Response does NOT agree that the body text needs to name specific MCP functions to be actionable" }
+      ]
+    },
+    {
+      "id": 17,
+      "prompt": "Write the installation section for a SKILL.md that requires three tools: golangci-lint (Go), protobuf compiler (brew), and jq (brew). The section should tell the agent exactly what to run to get each tool installed.",
+      "trap": "Without the skill, the model writes a body prose section with 'go install golangci-lint@latest', 'brew install protobuf', 'brew install jq' — three separate W012 violations. The request says 'tell the agent what to run', which naturally leads to body prose install commands.",
+      "expected_output": "All three installs go in metadata.openclaw.install frontmatter (kind: go + kind: brew + kind: brew). The body may reference that these tools are required without reproducing install commands.",
+      "files": [],
+      "assertions": [
+        { "id": "17.1", "description": "Response does NOT include `go install golangci-lint@latest` or equivalent in the skill body prose" },
+        { "id": "17.2", "description": "Response does NOT include `brew install protobuf` or `brew install jq` in the skill body prose" },
+        { "id": "17.3", "description": "Response structures all three tool installs in metadata.openclaw.install frontmatter blocks" },
+        { "id": "17.4", "description": "Response uses the correct frontmatter structure for each: go kind uses package+bins, brew kind uses formula+bins" },
+        { "id": "17.5", "description": "If the body references the tools, it does so factually (e.g., 'golangci-lint is required') without reproducing install commands" }
+      ]
+    },
+    {
+      "id": 18,
+      "prompt": "Write a 'Getting Started' section for a SKILL.md about the `sqlc` SQL-to-Go code generator. The section should: tell the agent where to check supported databases, explain how to install sqlc, and guide the agent to consult the sqlc documentation before generating code.",
+      "trap": "Without the skill, the model writes: 'Check https://docs.sqlc.dev/en/latest/reference/config.html for supported databases' (W011 imperative URL), 'go install github.com/sqlc-dev/sqlc/cmd/sqlc@latest' (W012), and 'Consult the sqlc documentation via the MCP docs tool' or similar explicit tool reference (W001). All three violations emerge naturally from following the prompt.",
+      "expected_output": "Passive URL reference: 'Supported databases are listed at https://docs.sqlc.dev.' Install in frontmatter. Generic MCP hint: 'Library documentation is available for reference.' No imperatives, no @latest in body, no MCP function names.",
+      "files": [],
+      "assertions": [
+        { "id": "18.1", "description": "Response does NOT write 'Check https://docs.sqlc.dev...' or any imperative directing the agent to visit the docs URL" },
+        { "id": "18.2", "description": "Response does NOT include `go install sqlc@latest` or equivalent with @latest in the skill body" },
+        { "id": "18.3", "description": "Response does NOT include any install command (`go install sqlc`) in the body prose, pinned or not" },
+        { "id": "18.4", "description": "If the sqlc docs URL appears, it is in a passive/factual statement (e.g., 'The docs at https://... document supported databases')" },
+        { "id": "18.5", "description": "Install command is either moved to frontmatter or absent from body prose" }
+      ]
+    }
+  ]
+}
