@@ -35,6 +35,7 @@ Fix:      <external-resource> <contains/documents/may be useful>
 Any sentence of the form `Check/Visit/See/Fetch/Review <url>` triggers W011 when it implies the agent should act on the fetched content.
 
 **Safe alternatives:**
+
 - Passive: `The release notes at <url> may be useful.`
 - Factual: `<url> documents the migration path.`
 - Remove: if the URL is not essential, delete it and keep only the concept.
@@ -44,6 +45,7 @@ Any sentence of the form `Check/Visit/See/Fetch/Review <url>` triggers W011 when
 The phrase "check the changelog" with the agent as subject is flagged, regardless of whether a URL is present.
 
 **Safe alternatives:**
+
 - `Major version upgrades may contain breaking changes — the package's changelog documents them.`
 - `Breaking changes between versions are listed in the project's CHANGELOG.md.`
 
@@ -52,6 +54,7 @@ The phrase "check the changelog" with the agent as subject is flagged, regardles
 Using external tool output (e.g., `govulncheck`, `gh repo view`) as the direct trigger for a code change triggers W011.
 
 **Safe alternatives:**
+
 - Describe the tool as producing a local report, not as an external data source.
 - Decouple: `govulncheck may surface relevant findings.` — not `Run govulncheck and upgrade based on its output.`
 
@@ -60,6 +63,7 @@ Using external tool output (e.g., `govulncheck`, `gh repo view`) as the direct t
 Checklist items that require the agent to fetch GitHub metadata (stars, last commit, open issues) before proceeding trigger W011.
 
 **Safe alternatives:**
+
 - Keep `gh repo view` in a Quick Reference code block — not in a checklist the agent must complete.
 - Remove "evaluate package health" from pre-action checklists entirely.
 
@@ -82,11 +86,13 @@ Any `always` modifier on an instruction involving external retrieval amplifies t
 The scanner applies different heuristics to fenced code blocks vs. prose text. Moving a tool invocation from a prose checklist into a Quick Reference code block often eliminates the alert without changing the content.
 
 **Triggering (prose checklist):**
+
 ```
 - Package health: `gh repo view` → stars, last commit, open issues
 ```
 
 **Safe (code block):**
+
 ````markdown
 ```bash
 gh repo view owner/repo   # check stars, last commit, open issues
@@ -99,11 +105,11 @@ gh repo view owner/repo   # check stars, last commit, open issues
 
 Any sentence matching `<agent> <imperative-verb> <external-resource>` can be mechanically rewritten as a factual statement. Apply this transform:
 
-| Component | Before | After |
-| --- | --- | --- |
-| Subject | agent ("Check the...") | resource ("The changelog...") |
-| Verb | imperative action | existence/containment verb |
-| Object | external resource | the information sought |
+| Component | Before                 | After                         |
+| --------- | ---------------------- | ----------------------------- |
+| Subject   | agent ("Check the...") | resource ("The changelog...") |
+| Verb      | imperative action      | existence/containment verb    |
+| Object    | external resource      | the information sought        |
 
 ```
 Before: Check the changelog for breaking changes.

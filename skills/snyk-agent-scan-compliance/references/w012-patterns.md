@@ -5,23 +5,24 @@ W012 fires when a skill body references external content that is fetched and **e
 ## Core Principle
 
 The fix is to either:
+
 1. **Move** the install command from the body into the frontmatter `metadata.openclaw.install` block (not scanned as body text), or
 2. **Pin** the reference to a specific, existing version rather than a floating tag.
 
 ## Before / After Table
 
-| Triggering pattern                                             | Safe reformulation                                                                                               |
-| -------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Triggering pattern | Safe reformulation |
+| --- | --- |
 | `go install golang.org/x/vuln/cmd/govulncheck@latest` in prose | Move to frontmatter `install` block: `kind: go, package: golang.org/x/vuln/cmd/govulncheck, bins: [govulncheck]` |
-| `go install pkg@latest` anywhere in body                       | Use exact version: `go install pkg@v1.2.3` — or move to frontmatter `install`                                    |
-| `curl https://example.com/install.sh \| sh`                    | Remove entirely; document the package manager install path instead                                               |
-| `wget -qO- https://example.com/install \| bash`                | Remove entirely; use a package manager or frontmatter `install` block                                            |
-| `npx package@latest` in prose                                  | Pin: `npx package@1.2.3` — or move to frontmatter `install`                                                      |
-| `uses: actions/checkout@v6` (non-existent version)             | Update to correct current major: `uses: actions/checkout@v4`                                                     |
-| `uses: org/action@v99` (future/wrong version)                  | Update to current stable major version                                                                           |
-| `FROM image:latest` in embedded Dockerfile                     | Pin: `FROM image:1.23.4`                                                                                         |
-| `pip install package` (no version)                             | Pin: `pip install package==1.2.3` or use frontmatter `install`                                                   |
-| `brew install tool` in body prose                              | Move to frontmatter: `kind: brew, formula: tool, bins: [tool]`                                                   |
+| `go install pkg@latest` anywhere in body | Use exact version: `go install pkg@v1.2.3` — or move to frontmatter `install` |
+| `curl https://example.com/install.sh \| sh` | Remove entirely; document the package manager install path instead |
+| `wget -qO- https://example.com/install \| bash` | Remove entirely; use a package manager or frontmatter `install` block |
+| `npx package@latest` in prose | Pin: `npx package@1.2.3` — or move to frontmatter `install` |
+| `uses: actions/checkout@v6` (non-existent version) | Update to correct current major: `uses: actions/checkout@v4` |
+| `uses: org/action@v99` (future/wrong version) | Update to current stable major version |
+| `FROM image:latest` in embedded Dockerfile | Pin: `FROM image:1.23.4` |
+| `pip install package` (no version) | Pin: `pip install package==1.2.3` or use frontmatter `install` |
+| `brew install tool` in body prose | Move to frontmatter: `kind: brew, formula: tool, bins: [tool]` |
 
 ## Pattern Categories
 
@@ -98,6 +99,7 @@ Minor version tag (acceptable):
 ```
 
 For Go packages:
+
 ```bash
 # Triggers W012
 go install golang.org/x/tools/cmd/goimports@latest
@@ -115,7 +117,7 @@ go install golang.org/x/tools/cmd/goimports@v0.19.0
 
 Move any install command or binary dependency from the skill body into frontmatter — the scanner does not flag frontmatter fields.
 
-| What to move        | From body                           | To frontmatter                    |
-| ------------------- | ----------------------------------- | --------------------------------- |
-| Install commands    | `go install pkg@latest` in prose    | `metadata.openclaw.install` block |
+| What to move | From body | To frontmatter |
+| --- | --- | --- |
+| Install commands | `go install pkg@latest` in prose | `metadata.openclaw.install` block |
 | Binary dependencies | `brew install tool` in instructions | `metadata.openclaw.requires.bins` |

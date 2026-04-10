@@ -4,7 +4,7 @@ W001 fires when the skill body contains explicit MCP server tool function names.
 
 ## Core Principle
 
-MCP tool names belong in the `allowed-tools` frontmatter field, never in the body. The body should describe *what capability is available* without naming the tool function the agent must call.
+MCP tool names belong in the `allowed-tools` frontmatter field, never in the body. The body should describe _what capability is available_ without naming the tool function the agent must call.
 
 ## Before / After Table
 
