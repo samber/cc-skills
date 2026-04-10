@@ -145,7 +145,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `technical-article-writer` | -33% | 147 | 2,295 | 5,737 |
 | `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
 | `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
-| `snyk-agent-scan-compliance` | -27% | TBD | TBD | TBD |
+| `snyk-agent-scan-compliance` | -27% | 144 | 1,907 | 5,615 |
 
 ## 🧪 Skill evaluations
 
