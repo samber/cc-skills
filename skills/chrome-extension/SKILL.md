@@ -1,12 +1,12 @@
 ---
 name: chrome-extension
-description: "Comprehensive guide for building Chrome extensions with Manifest V3. Use this skill whenever the user mentions Chrome extension, browser extension, manifest.json, content script, service worker (in extension context), popup, side panel, chrome.runtime, chrome.tabs, chrome.storage, chrome.scripting, background script, MV3, Manifest V3, or any Chrome extension API. Also trigger when the user wants to inject scripts into web pages, communicate between page and background, bypass CSP from a content script, build an RPC layer over chrome messaging, or publish to the Chrome Web Store. Covers both new extension projects and adding features to existing ones. Do NOT use for framework-specific questions.
+description: "Comprehensive guide for building Chrome extensions with Manifest V3. Use this skill whenever the user mentions Chrome extension, browser extension, manifest.json, content script, service worker (in extension context), popup, side panel, chrome.runtime, chrome.tabs, chrome.storage, chrome.scripting, background script, MV3, Manifest V3, or any Chrome extension API. Also trigger when the user wants to inject scripts into web pages, communicate between page and background, bypass CSP from a content script, build an RPC layer over chrome messaging, or publish to the Chrome Web Store. Covers both new extension projects and adding features to existing ones. Do NOT use for framework-specific questions."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code or similar AI coding agents. Requires git, node.
 metadata:
   author: samber
-  version: "1.0.1"
+  version: "1.0.2"
   openclaw:
     emoji: "📝"
     homepage: https://github.com/samber/cc-skills
@@ -26,21 +26,21 @@ This skill covers everything needed to build, debug, and publish Chrome extensio
 
 Read only the reference files relevant to the current task. Each file is self-contained.
 
-| File | When to read |
-| --- | --- |
-| `references/manifest-v3.md` | Setting up or modifying manifest.json, configuring icons, versioning |
-| `references/service-worker.md` | Background logic, lifecycle, state persistence, alarms, events |
-| `references/content-scripts.md` | Injecting code into pages, isolated/main world, dynamic injection, SPA handling, orphaning |
-| `references/messaging-rpc.md` | Communication between any contexts, typed protocols, RPC layer, async handler patterns |
-| `references/ui-surfaces.md` | Popup, options page, side panel, context menus, commands, notifications, omnibox, devtools panel |
-| `references/storage.md` | chrome.storage (local/sync/session), quotas, reactive patterns, framework hooks |
-| `references/network-csp.md` | HTTP requests from content scripts, CSP bypass relay, declarativeNetRequest, offscreen docs, CORS |
-| `references/permissions.md` | Required/optional permissions, host permissions, activeTab, runtime request flow |
-| `references/web-accessible-resources.md` | Exposing extension files to web pages, security implications |
-| `references/typescript-build.md` | TypeScript setup, project structure, build tools comparison, bundling |
-| `references/publishing.md` | Chrome Web Store submission, review process, rejection reasons, updates, privacy policy |
-| `references/execution-contexts.md` | Communication flow diagrams, per-context capabilities/limits, choosing the right messaging method |
-| `references/debugging-mistakes.md` | DevTools for extensions, testing SW termination, common gotchas, error patterns |
+| File                                     | When to read                                                                                      |
+| ---------------------------------------- | ------------------------------------------------------------------------------------------------- |
+| `references/manifest-v3.md`              | Setting up or modifying manifest.json, configuring icons, versioning                              |
+| `references/service-worker.md`           | Background logic, lifecycle, state persistence, alarms, events                                    |
+| `references/content-scripts.md`          | Injecting code into pages, isolated/main world, dynamic injection, SPA handling, orphaning        |
+| `references/messaging-rpc.md`            | Communication between any contexts, typed protocols, RPC layer, async handler patterns            |
+| `references/ui-surfaces.md`              | Popup, options page, side panel, context menus, commands, notifications, omnibox, devtools panel  |
+| `references/storage.md`                  | chrome.storage (local/sync/session), quotas, reactive patterns, framework hooks                   |
+| `references/network-csp.md`              | HTTP requests from content scripts, CSP bypass relay, declarativeNetRequest, offscreen docs, CORS |
+| `references/permissions.md`              | Required/optional permissions, host permissions, activeTab, runtime request flow                  |
+| `references/web-accessible-resources.md` | Exposing extension files to web pages, security implications                                      |
+| `references/typescript-build.md`         | TypeScript setup, project structure, build tools comparison, bundling                             |
+| `references/publishing.md`               | Chrome Web Store submission, review process, rejection reasons, updates, privacy policy           |
+| `references/execution-contexts.md`       | Communication flow diagrams, per-context capabilities/limits, choosing the right messaging method |
+| `references/debugging-mistakes.md`       | DevTools for extensions, testing SW termination, common gotchas, error patterns                   |
 
 ## Architecture overview
 
@@ -117,13 +117,13 @@ For detailed flow diagrams (three-layer bridge, cross-extension, storage broadca
 
 ### Communication methods at a glance
 
-| Method | Direction | Best for |
-| --- | --- | --- |
-| `chrome.runtime.sendMessage` | Any ext context → SW | One-shot request/response (90% of cases) |
-| `chrome.tabs.sendMessage` | SW → content script (by tabId) | Pushing data to a specific tab |
-| `chrome.runtime.connect` (Port) | Bidirectional | Streaming, progress, SW ↔ popup |
-| `window.postMessage` | Between worlds on same page | Page JS ↔ content script bridge |
-| `chrome.storage.onChanged` | Broadcast to all contexts | Settings sync, no messaging needed |
+| Method                          | Direction                      | Best for                                 |
+| ------------------------------- | ------------------------------ | ---------------------------------------- |
+| `chrome.runtime.sendMessage`    | Any ext context → SW           | One-shot request/response (90% of cases) |
+| `chrome.tabs.sendMessage`       | SW → content script (by tabId) | Pushing data to a specific tab           |
+| `chrome.runtime.connect` (Port) | Bidirectional                  | Streaming, progress, SW ↔ popup          |
+| `window.postMessage`            | Between worlds on same page    | Page JS ↔ content script bridge          |
+| `chrome.storage.onChanged`      | Broadcast to all contexts      | Settings sync, no messaging needed       |
 
 → Full matrix with limits and edge cases: `references/execution-contexts.md` → Implementation patterns, typed protocols, RPC layer: `references/messaging-rpc.md`
 
