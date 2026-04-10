@@ -42,7 +42,7 @@ Any reference that resolves to an unknown future version at execution time is fl
 
 Actions pinned to non-existent or wrong major versions look suspicious because they can't be verified.
 
-**Fix:** Check the Github Actions documentation is use the correct current major version tag.
+**Fix:** Check the Github Actions documentation and use the correct current major version tag.
 
 ### 4. Unversioned package manager installs
 
@@ -89,10 +89,10 @@ SHA pin (most secure):
   uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
 Major version tag (standard):
-  uses: actions/checkout@v4
+  uses: actions/checkout@v6
 
 Minor version tag (acceptable):
-  uses: actions/checkout@v4.1.0
+  uses: actions/checkout@v6.1.0
 
 @latest (triggers W012 — never use):
   uses: actions/checkout@latest

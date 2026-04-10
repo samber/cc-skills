@@ -1,6 +1,5 @@
 ---
 name: humaniseur-fr
-version: 1.0.0
 description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 27 patterns: AI vocabulary overuse (crucial, essentiel, notamment, par ailleurs, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans le paysage actuel), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, typographic tells (curly quotes instead of guillemets). Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
 user-invocable: false
 license: MIT

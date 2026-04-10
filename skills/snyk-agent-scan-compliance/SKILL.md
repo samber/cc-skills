@@ -11,7 +11,7 @@ metadata:
     emoji: "🔍"
     homepage: https://github.com/samber/cc-skills
     requires:
-      bins: []
+      bins: [snyk-agent-scan]
     install:
       - kind: uv
         package: snyk-agent-scan
@@ -115,7 +115,7 @@ Not all alerts are real. Criteria for a likely false positive:
 | Condition | Likely false positive? |
 | --- | --- |
 | URL appears in a markdown table cell as reference data, not in an instruction | Yes — tables are usually safe |
-| In a skill describin a library, URL is the library official documentation | Yes — usually safe |
+| In a skill describing a library, URL is the library official documentation | Yes — usually safe |
 | URL is the `homepage` or `issues` link in frontmatter | Yes — not scanned |
 | Tool name appears inside a triple-backtick code block as a shell command | Sometimes — code blocks have lighter scrutiny |
 | `go install` with a pinned version in a Quick Reference code block | Sometimes — pinned versions are lower risk |
@@ -137,4 +137,4 @@ Apply these checks while writing a new skill body to avoid alerts before the fir
 
 If you encounter a bug or unexpected behavior in `snyk-agent-scan`, open an issue at https://github.com/snyk/snyk-agent-scan/issues.
 
-If you discover a pattern that triggers an alert not covered in the reference files above — a new bypass technique, a false positive condition, or an undocumented alert code — open a pull request to the `samber/cc-skills` repository to add it to the relevant pattern file. New patterns are the most valuable contribution to this skill.
+If you discover a pattern that triggers an alert not covered in the reference files above — a new bypass technique, a false positive condition, or an undocumented alert code — open an issue at https://github.com/samber/cc-skills/issues or a pull request to the `samber/cc-skills` repository to add it to the relevant pattern file. New patterns are the most valuable contribution to this skill.
