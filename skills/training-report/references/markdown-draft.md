@@ -235,7 +235,7 @@ These annotations are invisible to the reader of the Markdown file and serve as 
 
 After saving the .md file, present the content inline in the conversation — do not just say "the file is ready". The user needs to read and react to the actual text.
 
-Use `present_files` to make the .md file downloadable in parallel.
+If the environment supports inline file delivery (e.g. `present_files` on Claude.ai), use it to make the .md downloadable. Otherwise, print the absolute path to the saved file.
 
 End the presentation with a focused prompt:
 

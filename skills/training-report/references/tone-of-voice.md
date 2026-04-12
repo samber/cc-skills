@@ -92,7 +92,7 @@ Goal: complete record for future reference.
 **Typography:**
 
 - Curly quotes: `"..."` and `'...'`
-- Em dash `—` without spaces (American) or with spaces `—` (British)
+- Em dash: `word—word` without spaces (American) or `word — word` with spaces (British)
 - Numerals: spell out one through nine; use figures from 10 upward
 
 **Vocabulary:**

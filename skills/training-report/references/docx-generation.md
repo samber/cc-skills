@@ -82,73 +82,9 @@ For each `<!-- DOCX: convert to styled Table -->` block:
 
 For other `<!-- DOCX: [instruction] -->` annotations: follow the instruction literally.
 
-## Image handling
-
-1. Attempt embedding via `ImageRun` (PNG, JPEG, GIF, BMP, SVG)
-2. Resize to fit content width (max 9026 DXA)
-3. On failure: insert a labeled placeholder paragraph and instruct the user to insert manually
-
-Never silently skip an image.
-
-## Formatting hints for a professional document
-
-These are strong recommendations — deviate only if the template or client brand overrides.
-
-**Typography**
-
-- Body text: Arial 11pt (22 half-points in docx-js). Never mix more than 2 font families.
-- Headings: same family as body, differentiated by size and weight only
-- Line spacing: `{ before: 60, after: 60 }` on body paragraphs; `{ before: 240, after: 80 }` on H1; `{ before: 180, after: 60 }` on H2
-- Never use ALL CAPS except in the cover block title if the brand requires it
-
-**Color**
-
-- Use at most 3 colors: brand accent (headings, cover), dark near-black (body), gray (metadata, header/footer). A fourth color only if the template provides it.
-- Default brand color if none provided: `#2E75B6`
-- Body text: `#1F2D3D` (dark navy, softer than pure black)
-- Metadata/secondary: `#666666`
-
-**Spacing and rhythm**
-
-- Separators between major sections: paragraph with bottom border `{ style: SINGLE, size: 6, color: D0D0D0 }` — never use a Table as a divider (cells have minimum height)
-- Consistent vertical spacing: do not mix spacer paragraphs and paragraph spacing — pick one and apply it uniformly
-- Bullet indentation: `{ left: 720, hanging: 360 }` (standard 0.5 inch indent)
-
-**Lists**
-
-- Always use `LevelFormat.BULLET` with a `numbering` config — never unicode bullet characters
-- Bold label pattern for recommendations: first `TextRun` bold, colon, second `TextRun` normal
-- Nested bullets: add a level to the numbering config rather than indenting manually
-
-**Tables**
-
-- Always set `width` on both the `Table` and each `TableCell` (dual-width requirement)
-- Use `WidthType.DXA` — never `WidthType.PERCENTAGE` (breaks in Google Docs)
-- Column widths must sum exactly to the table width
-- Header row: `ShadingType.CLEAR` with brand color fill, bold white or dark text
-- Borders: `{ style: SINGLE, size: 1, color: CCCCCC }` — subtle, not heavy
-
-**Page setup**
-
-- A4: `{ width: 11906, height: 16838 }` DXA
-- Margins: `{ top: 1440, right: 1440, bottom: 1440, left: 1440 }` (1 inch all sides)
-- Content width: 11906 − 2880 = 9026 DXA
-
-**Accessibility basics**
-
-- Use heading styles (not bold paragraphs) for all section titles — screen readers and Word's navigation pane depend on this
-- Alt text for embedded images: set `description` in the `ImageRun` config
-- Do not rely on color alone to convey meaning
-
 ## Validation and delivery
 
-Run the validation script provided by the `docx` skill against the output file. Use the same `$OUTDIR` as the Markdown draft (both files live in the same directory):
-
-```bash
-python scripts/office/validate.py "$OUTDIR/training_report_[team]_[date].docx"
-```
-
-Fix any errors before presenting. Deliver both files:
+Run the validation step as directed by the `docx` skill. Fix any errors before presenting. Deliver both files:
 
 - `$OUTDIR/training_report_[team]_[date].docx`
 - `$OUTDIR/training_report_[team]_[date].md` (source for future reference)
