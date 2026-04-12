@@ -135,6 +135,6 @@ Apply these checks while writing a new skill body to avoid alerts before the fir
 - [ ] Tool invocations are in code blocks, not in ordered-list checklists
 - [ ] "always" does not precede any external resource instruction
 
-If you encounter a bug or unexpected behavior in `snyk-agent-scan`, open an issue at https://github.com/snyk/snyk-agent-scan/issues.
+If you encounter a bug or unexpected behavior in `snyk-agent-scan`, open an issue at <https://github.com/snyk/snyk-agent-scan/issues>.
 
-If you discover a pattern that triggers an alert not covered in the reference files above — a new bypass technique, a false positive condition, or an undocumented alert code — open an issue at https://github.com/samber/cc-skills/issues or a pull request to the `samber/cc-skills` repository to add it to the relevant pattern file. New patterns are the most valuable contribution to this skill.
+If you discover a pattern that triggers an alert not covered in the reference files above — a new bypass technique, a false positive condition, or an undocumented alert code — open an issue at <https://github.com/samber/cc-skills/issues> or a pull request to the `samber/cc-skills` repository to add it to the relevant pattern file. New patterns are the most valuable contribution to this skill.

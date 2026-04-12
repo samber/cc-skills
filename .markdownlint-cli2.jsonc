@@ -22,6 +22,8 @@
         "MD033": false,
         // Emphasis as heading: disable (common for prose/READMEs)
         "MD036": false,
+        // Table column alignment: disable — HTML spans in eval tables make raw pipe alignment impossible
+        "MD060": false,
         // No language for code blocks: disable (common for prose/READMEs)
         "MD040": false,
         // Blank lines around fences: disable (common for prose/READMEs)
