@@ -6,7 +6,9 @@
     // Glob patterns to ignore
     "ignores": [
         "node_modules",
-        "vendor/**"
+        "vendor/**",
+        "skills/*/evals/workspace/**",
+        ".claude/worktrees/**"
     ],
     // Fix violations automatically (--fix)
     "fix": false,

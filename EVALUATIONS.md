@@ -19,7 +19,8 @@
 | `promql-cli`                    | v1.0.0  | 36         | 100%       | 61%           | +39pp     | 1.64×     |                             |
 | `snyk-agent-scan-compliance`    | v1.0.0  | 85         | 100%       | 49%           | +51pp     | 2.04×     |                             |
 | `substack-ghostwriting`         | v1.1.0  | 101        | 100%       | 49%           | +51pp     | 2.04×     |                             |
-| **Total (8 skills)**            |         | **550**    | **99%**    | **62%**       | **+37pp** | **1.60×** |                             |
+| `training-report`               | v1.0.0  | 67         | 99%        | 37%           | +61pp     | 2.64×     |                             |
+| **Total (9 skills)**            |         | **617**    | **99%**    | **59%**       | **+40pp** | **1.68×** |                             |
 
 ## `conventional-git` — v1.0.0
 
@@ -812,6 +813,103 @@ Model: claude-sonnet-4-6 — 1 run each — graded inline — adversarial evals 
 | 18.3 | response does NOT include any install command in the body prose, pinned or not                             | <span class="g">✓</span>       | <span class="r">✗ go install sqlc@latest in body</span>                                               |
 | 18.4 | if the sqlc docs URL appears, it is in a passive/factual statement                                         | <span class="g">✓</span>       | <span class="r">✗ "Consult the sqlc documentation at..." is imperative</span>                         |
 | 18.5 | install command is either moved to frontmatter or absent from body prose                                   | <span class="g">✓</span>       | <span class="r">✗ install command in body prose</span>                                                |
+
+</details>
+
+## `training-report` — v1.0.0
+
+| With Skill | Without Skill | Delta | Assertions |
+| ---------- | ------------- | ----- | ---------- |
+| 99%        | 37%           | +61pp | 67         |
+
+<details>
+<summary>Full breakdown (67 assertions)</summary>
+
+Model: claude-sonnet-4-6 — 1 run each — LLM-as-Judge — adversarial evals (each has a trap the model falls into without the skill)
+
+| #    | Assertion                                                                                                   | With                           | Without                                                                                  |
+| ---- | ----------------------------------------------------------------------------------------------------------- | ------------------------------ | ---------------------------------------------------------------------------------------- |
+|      | **Eval 1: Step 0 + Step 1 ordering — docx check then language + audience before session questions**         | **<span class="g">5/5</span>** | **<span class="r">2/5</span>**                                                           |
+| 1.1  | model checks for or mentions the docx skill dependency before starting the interview                        | <span class="g">✓</span>       | <span class="r">✗ no docx skill check</span>                                             |
+| 1.2  | model asks what language the report should be written in (English / French / other)                         | <span class="g">✓</span>       | <span class="r">✗ asks about format/topics, not report language specifically</span>      |
+| 1.3  | model asks who the primary reader is (executive / HR / management / client / archive)                       | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 1.4  | model does NOT begin drafting or asking session-content questions before language and audience are confirmed | <span class="g">✓</span>       | <span class="r">✗ asks about topics/outcomes (session content) immediately</span>        |
+| 1.5  | model does NOT immediately generate a .docx file                                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 2: ML pipeline over-trigger — model should NOT start training-report workflow**                      | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                                           |
+| 2.1  | model does NOT ask about report language or audience                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 2.2  | model does NOT start a training session interview (Batch A metadata, session walkthrough, etc.)             | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 2.3  | model does NOT mention .docx generation or Word document output                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 2.4  | model responds to the ML training pipeline request directly                                                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 3: French trigger — 'compte rendu de formation' activates structured workflow**                      | **<span class="g">5/5</span>** | **<span class="r">2/5</span>**                                                           |
+| 3.1  | model recognizes this as a training report request and engages the structured workflow                      | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 3.2  | model asks to confirm language (or confirms French based on the French prompt)                              | <span class="g">✓</span>       | <span class="r">✗ asks for title/date/etc without language confirmation</span>           |
+| 3.3  | model asks who the primary reader is                                                                        | <span class="g">✓</span>       | <span class="r">✗ asks for participant profile but not primary reader role</span>        |
+| 3.4  | model does NOT start asking about session content (walkthrough, participants) before confirming audience    | <span class="g">✓</span>       | <span class="r">✗ asks programme/objectifs before confirming audience</span>             |
+| 3.5  | model does NOT write a draft immediately                                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 4: No immediate draft even when session data is volunteered upfront**                                | **<span class="g">5/5</span>** | **<span class="r">0/5</span>**                                                           |
+| 4.1  | model does NOT write a full draft immediately despite receiving session details                             | <span class="g">✓</span>       | <span class="r">✗ writes a complete report immediately</span>                            |
+| 4.2  | model asks what language the report should be in                                                            | <span class="g">✓</span>       | <span class="r">✗ no language question</span>                                            |
+| 4.3  | model asks who the primary reader is                                                                        | <span class="g">✓</span>       | <span class="r">✗ no audience question</span>                                            |
+| 4.4  | model asks about a Word template or brand color                                                             | <span class="g">✓</span>       | <span class="r">✗ no template question</span>                                            |
+| 4.5  | model confirms it will ask remaining interview questions (batches it hasn't covered yet)                    | <span class="g">✓</span>       | <span class="r">✗ proceeds to full draft without any interview</span>                    |
+|      | **Eval 5: No fabrication — context section uses only provided facts**                                       | **<span class="g">5/5</span>** | **<span class="r">1/5</span>**                                                           |
+| 5.1  | context section does NOT invent a city or specific location that was not provided                           | <span class="g">✓</span>       | <span class="r">✗ "dans les locaux d'Acme Corp" invents on-site location</span>          |
+| 5.2  | context section does NOT invent a specific stated goal beyond 'public speaking skills'                      | <span class="g">✓</span>       | <span class="r">✗ invents elaborated objectives and context not provided</span>          |
+| 5.3  | context section does NOT invent materials, slides, or specific exercises that were not mentioned            | <span class="g">✓</span>       | <span class="r">✗ invents "cadre pratique et interactif" and HR policy context</span>    |
+| 5.4  | model either asks for missing details OR explicitly flags what was not provided and leaves placeholders     | <span class="g">✓</span>       | <span class="r">✗ does not ask for or flag any missing information</span>                |
+| 5.5  | context section reflects exactly 10 participants and a half-day duration                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 6: No .docx mid-conversation — outline confirmed ≠ draft approved**                                  | **<span class="g">4/4</span>** | **<span class="r">2/4</span>**                                                           |
+| 6.1  | model does NOT generate or attempt to generate a .docx file                                                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 6.2  | model explains that a Markdown draft must be produced and approved before .docx generation                  | <span class="g">✓</span>       | <span class="r">✗ says "can't create .docx directly" but doesn't explain MD-first rule</span> |
+| 6.3  | model offers to start writing the Markdown draft                                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 6.4  | model references that the .docx is generated once, at the end, from the approved .md file                  | <span class="g">✓</span>       | <span class="r">✗ no mention of terminal .docx generation rule</span>                   |
+|      | **Eval 7: French AI tells — humanized prose, phone constraint as blockquote**                               | **<span class="g">6/7</span>** | **<span class="r">3/7</span>**                                                           |
+| 7.1  | text does NOT contain 'Il convient de noter' or 'il convient de'                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 7.2  | text does NOT contain 'par ailleurs' as a sentence opener                                                   | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 7.3  | text does NOT contain 'dans le cadre de' as an opener                                                       | <span class="g">✓</span>       | <span class="r">✗ "dans le cadre d'un programme de montée en compétences"</span>         |
+| 7.4  | text does NOT contain 'notamment' as an opener or filler                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 7.5  | text uses active voice (e.g., 'La DRH a commandé' not 'La formation a été commandée par')                   | <span class="r">✗ "a été organisée à la demande de"</span> | <span class="r">✗ multiple passive constructions</span> |
+| 7.6  | the constraint about phones appears as a blockquote (> syntax) not as inline prose                          | <span class="g">✓</span>       | <span class="r">✗ inline prose: "il a été demandé aux participants de..."</span>         |
+| 7.7  | text does NOT use 'ainsi' or 'en effet' as sentence starters                                                | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 8: Individual feedback behaviors, not character labels**                                             | **<span class="g">6/6</span>** | **<span class="r">0/6</span>**                                                           |
+| 8.1  | Julien's feedback does NOT use the word 'obstructive'                                                       | <span class="g">✓</span>       | <span class="r">✗ "attitude was at times disruptive" — character judgment</span>         |
+| 8.2  | Julien's feedback describes specific behaviors or actions rather than character traits                      | <span class="g">✓</span>       | <span class="r">✗ "struggled to grasp the concepts" without behavioral specifics</span>  |
+| 8.3  | Marie's feedback does NOT use 'enthusiastic' as a standalone adjective without a specific factual anchor    | <span class="g">✓</span>       | <span class="r">✗ "Her enthusiasm was contagious" — standalone label</span>              |
+| 8.4  | Marie's feedback does NOT use 'natural leader' without grounding it in specific observable actions          | <span class="g">✓</span>       | <span class="r">✗ "naturally stepped into a leadership role" — cliché</span>             |
+| 8.5  | Marie's feedback includes at least one specific observable fact                                             | <span class="g">✓</span>       | <span class="r">✗ no specific fact: no "finished first", "asked about X topic"</span>   |
+| 8.6  | feedback describes behaviors, not character — at least one behavioral anchor per participant                | <span class="g">✓</span>       | <span class="r">✗ both paragraphs are character labels, not behavior descriptions</span> |
+|      | **Eval 9: Individual Feedback section omitted when no named observations provided**                         | **<span class="g">4/4</span>** | **<span class="r">1/4</span>**                                                           |
+| 9.1  | model does NOT write Individual Feedback paragraphs with invented names or generic placeholders             | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 9.2  | model explains that Individual Feedback is only written when trainer explicitly provides observations       | <span class="g">✓</span>       | <span class="r">✗ explains it can't write without data, but not that section is optional</span> |
+| 9.3  | model does NOT ask the trainer to provide feedback for each participant one by one                          | <span class="g">✓</span>       | <span class="r">✗ asks for "list of participant names" and "per-person observations"</span> |
+| 9.4  | model omits or explicitly marks the Individual Feedback section as not applicable                           | <span class="g">✓</span>       | <span class="r">✗ asks for data to fill section rather than omitting it</span>           |
+|      | **Eval 10: Recommendations grouped with Pacing subgroup**                                                   | **<span class="g">5/5</span>** | **<span class="r">3/5</span>**                                                           |
+| 10.1 | recommendations are grouped under at least 2 distinct subheadings — NOT a flat bullet list                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 10.2 | a Pacing subgroup is present advising management not to rush advanced material                              | <span class="g">✓</span>       | <span class="r">✗ no Pacing subgroup anywhere in the recommendations</span>              |
+| 10.3 | each bullet uses a bold label followed by a colon and explanation                                           | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 10.4 | at least one recommendation is actionable with specificity (time, owner, or concrete action)               | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 10.5 | the Pacing recommendation advises a specific caution (e.g., consolidate fundamentals before advanced)      | <span class="g">✓</span>       | <span class="r">✗ no pacing caution present</span>                                       |
+|      | **Eval 11: Survey synthesis presented in conversation first, confirmation before document**                 | **<span class="g">4/4</span>** | **<span class="r">2/4</span>**                                                           |
+| 11.1 | model presents a synthesis in the conversation: overall score, top 3 positives, top 3 negatives, outlier   | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 11.2 | model asks the trainer to confirm the synthesis before it enters the document                               | <span class="g">✓</span>       | <span class="r">✗ says "yes include it" and writes the section without asking confirmation</span> |
+| 11.3 | model does NOT immediately write this as a final document section without confirmation                      | <span class="g">✓</span>       | <span class="r">✗ writes "Here is how the section might read:" and provides final prose</span> |
+| 11.4 | model does NOT use verbatim quotes without noting that paraphrasing is required                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 12: Annex type-specific handling — image embed, PDF reference, deliverable dual-placement**          | **<span class="g">5/5</span>** | **<span class="r">3/5</span>**                                                           |
+| 12.1 | whiteboard photo is flagged for auto-embedding (not silently skipped or referenced-only)                    | <span class="g">✓</span>       | <span class="r">✗ listed as numbered annex only, no embed flag</span>                   |
+| 12.2 | slide deck PDF is flagged as reference-only (not embedded)                                                  | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 12.3 | Alice's diagram is flagged to appear in both the relevant Walkthrough step AND in the Annexes section       | <span class="g">✓</span>       | <span class="r">✗ only mentions body reference; dual-placement not explicit</span>       |
+| 12.4 | Alice is identified as the author of the diagram in the annex entry                                         | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 12.5 | model does NOT silently skip any of the three annexes                                                       | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+|      | **Eval 13: External client — caution on naming, group-level language for negatives**                        | **<span class="g">4/4</span>** | **<span class="r">2/4</span>**                                                           |
+| 13.1 | model does NOT simply say 'yes, name all three participants'                                                | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 13.2 | model advises using group-level language for any negative observations when writing for an external client  | <span class="g">✓</span>       | <span class="g">✓</span>                                                                 |
+| 13.3 | model explains that named individual feedback is appropriate for clearly positive observations OR significant blockers | <span class="g">✓</span> | <span class="r">✗ mentions consent/legal but not "significant blockers" carve-out</span> |
+| 13.4 | model notes that the external client may not know team dynamics — the report reflects professional reputation | <span class="g">✓</span>      | <span class="r">✗ frames as consent/privacy risk, not trainer professional reputation</span> |
+|      | **Eval 14: General Observations optional — omit when nothing notable**                                      | **<span class="g">4/4</span>** | **<span class="r">0/4</span>**                                                           |
+| 14.1 | model recommends omitting or skipping the General Observations section                                      | <span class="g">✓</span>       | <span class="r">✗ writes a full General Observations section</span>                      |
+| 14.2 | model explains this section is optional and should only be included if there is notable content             | <span class="g">✓</span>       | <span class="r">✗ no mention that the section is optional</span>                         |
+| 14.3 | model does NOT write a General Observations section filled with generic positive phrases                    | <span class="g">✓</span>       | <span class="r">✗ "logistical arrangements functioned", "engagement was notably positive"</span> |
+| 14.4 | model does NOT editorialize                                                                                 | <span class="g">✓</span>       | <span class="r">✗ "session can be considered a successful delivery"</span>               |
 
 </details>
 

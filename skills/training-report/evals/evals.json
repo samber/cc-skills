@@ -1,0 +1,202 @@
+{
+  "skill_name": "training-report",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin AND any external document/writing skills. Writing skills may partially compensate for missing training-report guidance and inflate without-skill scores."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "I just finished a 3-hour Python onboarding workshop for 8 junior engineers. Can you help me write it up?",
+      "trap": "Without the skill, the model jumps into drafting content or asks random questions. With the skill, it must first check for the docx skill, then ask language and audience before anything else.",
+      "expected_output": "Model checks for the docx skill (or warns if absent), then asks at minimum: (1) language and (2) who is the primary reader — before asking anything about the session content.",
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "model checks for or mentions the docx skill dependency before starting the interview" },
+        { "id": "1.2", "description": "model asks what language the report should be written in (English / French / other)" },
+        { "id": "1.3", "description": "model asks who the primary reader is (executive / HR / management / client / archive)" },
+        { "id": "1.4", "description": "model does NOT begin drafting or asking session-content questions before language and audience are confirmed" },
+        { "id": "1.5", "description": "model does NOT immediately generate a .docx file" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I need to train a neural network on a new dataset. Can you help me set up the training pipeline?",
+      "trap": "The word 'training' triggers over-eager activation of the skill. The model should NOT start the training-report interview workflow for an ML training pipeline task.",
+      "expected_output": "Model helps with the ML training pipeline task. It does NOT start a training-report interview, does NOT ask about language/audience for a document, does NOT mention .docx output.",
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "model does NOT ask about report language or audience" },
+        { "id": "2.2", "description": "model does NOT start a training session interview (Batch A metadata, session walkthrough, etc.)" },
+        { "id": "2.3", "description": "model does NOT mention .docx generation or Word document output" },
+        { "id": "2.4", "description": "model responds to the ML training pipeline request directly" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "j'ai besoin d'un compte rendu de formation pour la session d'hier",
+      "trap": "Without the skill, the model may just ask generic questions or start writing immediately. With the skill, it recognizes the French trigger 'compte rendu de formation', checks dependencies, then asks language + audience in the correct order.",
+      "expected_output": "Model triggers the skill workflow: checks docx dependency, asks language (confirming French), asks audience — in that order.",
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "model recognizes this as a training report request and engages the structured workflow" },
+        { "id": "3.2", "description": "model asks to confirm language (or confirms French based on the French prompt)" },
+        { "id": "3.3", "description": "model asks who the primary reader is" },
+        { "id": "3.4", "description": "model does NOT start asking about session content (walkthrough, participants) before confirming audience" },
+        { "id": "3.5", "description": "model does NOT write a draft immediately" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "I ran a leadership workshop last week. Here are the details: trainer: Sarah Chen, date: June 3 2025, location: Paris, 12 participants, 2 hours. Goal: improve team communication. Three exercises: icebreaker, conflict-resolution role-play, retrospective. Energy was good overall. Please write the full report now.",
+      "trap": "Without the skill, the model writes a full report from this info. With the skill, it must first run Step 1 (language + audience) and Step 2 (template) before drafting anything — even if the user provides all content upfront.",
+      "expected_output": "Model does NOT immediately draft the report. It runs Step 1: asks language + audience. It also asks about a Word template. It does not skip batches B through J just because some data was volunteered.",
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "model does NOT write a full draft immediately despite receiving session details" },
+        { "id": "4.2", "description": "model asks what language the report should be in" },
+        { "id": "4.3", "description": "model asks who the primary reader is" },
+        { "id": "4.4", "description": "model asks about a Word template or brand color" },
+        { "id": "4.5", "description": "model confirms it will ask remaining interview questions (batches it hasn't covered yet)" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Training report — French — audience: HR. Trainer: Marc Dupont, date: March 14, company: Acme Corp, 10 participants, half-day. Topic: public speaking skills. Please write the context section.",
+      "trap": "Without the skill, the model writes a context section and fabricates plausible details (location, specific goal phrasing, materials). With the skill, it only uses facts explicitly provided and asks for missing details rather than inventing them.",
+      "expected_output": "Context section uses ONLY the provided facts. Model asks for missing details (specific goal, materials used, location) rather than inventing them.",
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "context section does NOT invent a city or specific location that was not provided" },
+        { "id": "5.2", "description": "context section does NOT invent a specific stated goal beyond 'public speaking skills'" },
+        { "id": "5.3", "description": "context section does NOT invent materials, slides, or specific exercises that were not mentioned" },
+        { "id": "5.4", "description": "model either asks for the missing details OR explicitly flags what was not provided and leaves placeholders" },
+        { "id": "5.5", "description": "context section reflects exactly 10 participants and a half-day duration" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "We've finished the interview. Here's the outline I agreed to. Please generate the Word document now.",
+      "trap": "Without the skill, the model might proceed directly to .docx generation. With the skill, it knows that .docx generation requires an approved Markdown draft first — the outline agreement is NOT the draft approval.",
+      "expected_output": "Model does NOT generate a .docx. It explains that the Markdown draft must be written and approved first. It offers to start the draft.",
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "model does NOT generate or attempt to generate a .docx file" },
+        { "id": "6.2", "description": "model explains that a Markdown draft must be produced and approved before .docx generation" },
+        { "id": "6.3", "description": "model offers to start writing the Markdown draft" },
+        { "id": "6.4", "description": "model references that the .docx is generated once, at the end, from the approved .md file" }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Write the context section in French for this training report: a 4-hour AI literacy workshop for the finance team at BNP Paribas, commissioned by the HR director, with 15 participants, using ChatGPT as the practical support tool. Participants were asked not to use their phones during exercises.",
+      "trap": "Without the skill, the model writes French prose with common AI tells: 'Il convient de noter', 'par ailleurs', 'dans le cadre de', 'notamment', passive voice, long nominalizations. With the skill it eliminates these.",
+      "expected_output": "French context section free of AI tells. Active voice. No 'Il convient de noter', 'par ailleurs', 'dans le cadre de', 'notamment', 'en effet' at sentence start. Formal register with 'vous'. Guillemets with non-breaking spaces.",
+      "files": [],
+      "assertions": [
+        { "id": "7.1", "description": "text does NOT contain 'Il convient de noter' or 'il convient de'" },
+        { "id": "7.2", "description": "text does NOT contain 'par ailleurs' as a sentence opener" },
+        { "id": "7.3", "description": "text does NOT contain 'dans le cadre de' as an opener" },
+        { "id": "7.4", "description": "text does NOT contain 'notamment' as an opener or filler" },
+        { "id": "7.5", "description": "text uses active voice (e.g., 'La DRH a commandé' not 'La formation a été commandée par')" },
+        { "id": "7.6", "description": "the constraint about phones appears as a blockquote (> syntax) not as inline prose" },
+        { "id": "7.7", "description": "text does NOT use 'ainsi' or 'en effet' as sentence starters" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Write individual feedback for two participants. Julien: he was obstructive and didn't understand the exercises. Marie: she was enthusiastic and a natural leader.",
+      "trap": "Without the skill, the model echoes the trainer's character judgments ('obstructive', 'enthusiastic', 'natural leader') directly into the report. With the skill, it translates these into specific behaviors, not character labels.",
+      "expected_output": "Julien paragraph describes behaviors (declined exercises, required additional explanation) — NOT 'obstructive'. Marie paragraph gives specific observable facts (completed exercises early, asked follow-up questions) — NOT 'enthusiastic' or 'natural leader'.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "Julien's feedback does NOT use the word 'obstructive'" },
+        { "id": "8.2", "description": "Julien's feedback describes specific behaviors or actions rather than character traits (e.g., 'declined to complete', 'required additional explanation')" },
+        { "id": "8.3", "description": "Marie's feedback does NOT use 'enthusiastic' as a standalone adjective without a specific factual anchor" },
+        { "id": "8.4", "description": "Marie's feedback does NOT use 'natural leader' without grounding it in specific observable actions" },
+        { "id": "8.5", "description": "Marie's feedback includes at least one specific observable fact (e.g., finished first, asked questions on a specific topic)" },
+        { "id": "8.6", "description": "feedback describes behaviors, not character — at least one behavioral anchor per participant" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "I've given you all the session details. I didn't mention any individual participants specifically. Please write the full Individual Feedback section.",
+      "trap": "Without the skill, the model might produce generic Individual Feedback paragraphs or ask to fill them in. With the skill, if the trainer provided no named participant observations, this section must be omitted entirely — it is not prompted.",
+      "expected_output": "Model does NOT write an Individual Feedback section. It explains this section is omitted because no individual observations were provided. It does NOT invent or prompt for generic participant names.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "model does NOT write Individual Feedback paragraphs with invented names or generic placeholders" },
+        { "id": "9.2", "description": "model explains that Individual Feedback is only written when the trainer explicitly provides observations about named participants" },
+        { "id": "9.3", "description": "model does NOT ask the trainer to provide feedback for each participant one by one" },
+        { "id": "9.4", "description": "model omits or explicitly marks the Individual Feedback section as not applicable" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Write the Recommendations & Next Steps section for a React workshop. Here's what I'd recommend: provide access to the official React docs, assign a practice project, run a follow-up in 4 weeks, connect participants to the internal Slack channel.",
+      "trap": "Without the skill, the model writes a flat bullet list. With the skill, it groups under subheadings AND includes a Pacing subgroup — a specific requirement the model wouldn't add on its own.",
+      "expected_output": "Recommendations grouped under subheadings (Resources & Access, Practices, Follow-Up, etc.). A dedicated Pacing subgroup must be present advising not to rush participants into advanced material.",
+      "files": [],
+      "assertions": [
+        { "id": "10.1", "description": "recommendations are grouped under at least 2 distinct subheadings — NOT a flat bullet list" },
+        { "id": "10.2", "description": "a Pacing subgroup is present (advising management not to rush advanced material before basics are consolidated)" },
+        { "id": "10.3", "description": "each bullet uses a bold label followed by a colon and explanation (e.g., '**React Docs:** Provide read access...')" },
+        { "id": "10.4", "description": "at least one recommendation is actionable with specificity (time, owner, or concrete action — not just 'encourage practice')" },
+        { "id": "10.5", "description": "the Pacing recommendation advises a specific caution (e.g., consolidate fundamentals before hooks/advanced patterns)" }
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "The trainer provided a satisfaction survey: average score 4.1/5, 12 responses. Top positive themes: clear explanations, good pace, practical exercises. Top negative: too short, wanted more hands-on time. One outlier gave 2/5 citing irrelevant content. Should this go in the report?",
+      "trap": "Without the skill, the model may dump raw survey data into the report without synthesis, or include verbatim quotes without trainer confirmation. With the skill, it runs Step 4: synthesizes first in the conversation, confirms with trainer before it enters the document.",
+      "expected_output": "Model produces a synthesis in the conversation (score, distribution, themes, outlier). Asks trainer to confirm before it enters the document. Does NOT immediately write the satisfaction section into the draft.",
+      "files": [],
+      "assertions": [
+        { "id": "11.1", "description": "model presents a synthesis in the conversation: overall score (4.1/5), top 3 positives, top 3 negatives, outlier" },
+        { "id": "11.2", "description": "model asks the trainer to confirm the synthesis before it enters the document" },
+        { "id": "11.3", "description": "model does NOT immediately write this as a final document section without confirmation" },
+        { "id": "11.4", "description": "model does NOT use verbatim quotes without noting that paraphrasing is required unless the trainer confirms exact wording" }
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "I have three annexes: a photo of the whiteboard at the end of the session, the slide deck PDF, and a prototype diagram created by one participant (Alice) during exercise 3.",
+      "trap": "Without the skill, the model may list annexes generically or silently ignore the image. With the skill, each annex type has specific treatment: image → attempt embed; PDF → reference only; participant deliverable → reference in Walkthrough AND in Annexes.",
+      "expected_output": "Whiteboard photo: mark for auto-embedding at Step 6 (ImageRun). Slide deck PDF: reference-only in Annexes, no embed. Alice's diagram: reference in the Walkthrough at Exercise 3 AND listed in Annexes with author + context.",
+      "files": [],
+      "assertions": [
+        { "id": "12.1", "description": "whiteboard photo is flagged for auto-embedding (not silently skipped or referenced-only)" },
+        { "id": "12.2", "description": "slide deck PDF is flagged as reference-only (not embedded)" },
+        { "id": "12.3", "description": "Alice's diagram is flagged to appear in both the relevant Walkthrough step AND in the Annexes section" },
+        { "id": "12.4", "description": "Alice is identified as the author of the diagram in the annex entry" },
+        { "id": "12.5", "description": "model does NOT silently skip any of the three annexes" }
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "This report is for an external client (the company that hired me to run the workshop). I have detailed feedback on three specific participants. Should I name them in the report?",
+      "trap": "Without the skill, the model says 'yes, name them' or gives a generic answer. With the skill, it applies the external-client audience rule: naming individuals in negative feedback is risky; suggest group-level language for negatives; reserve named entries for clear positives or significant blockers management must address.",
+      "expected_output": "Model advises caution: for an external client, consider group-level language for any negative feedback ('some participants', 'a minority of the group'). Reserve named entries for clearly positive observations or significant blockers requiring direct management action.",
+      "files": [],
+      "assertions": [
+        { "id": "13.1", "description": "model does NOT simply say 'yes, name all three participants'" },
+        { "id": "13.2", "description": "model advises using group-level language for any negative observations when writing for an external client" },
+        { "id": "13.3", "description": "model explains that named individual feedback is appropriate for clearly positive observations OR significant blockers" },
+        { "id": "13.4", "description": "model notes that the external client may not know team dynamics — the report reflects the trainer's professional reputation" }
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "The session went smoothly. No incidents, no logistical issues, no surprises. Everything ran on schedule. The group was engaged. Can you write the General Observations section?",
+      "trap": "Without the skill, the model writes a General Observations section anyway, padding with generic positive statements. With the skill, it knows this section is optional and should be skipped entirely when the trainer has nothing notable to add beyond the walkthrough.",
+      "expected_output": "Model skips the General Observations section (or recommends omitting it) because no notable observations were provided. It does NOT pad this section with generic positive statements.",
+      "files": [],
+      "assertions": [
+        { "id": "14.1", "description": "model recommends omitting or skipping the General Observations section" },
+        { "id": "14.2", "description": "model explains this section is optional and should only be included if there is notable content" },
+        { "id": "14.3", "description": "model does NOT write a General Observations section filled with generic positive phrases ('the group was engaged and motivated', etc.)" },
+        { "id": "14.4", "description": "model does NOT editorialize — no interpretation like 'this shows the training was well-designed'" }
+      ]
+    }
+  ]
+}
