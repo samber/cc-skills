@@ -142,7 +142,7 @@ These are strong recommendations — deviate only if the template or client bran
 
 ## Validation and delivery
 
-Run the validation script provided by the `docx` skill against the output file. Use the same `$OUTDIR` determined in Step 5 (see `references/markdown-draft.md` — File naming and location):
+Run the validation script provided by the `docx` skill against the output file. Use the same `$OUTDIR` as the Markdown draft (both files live in the same directory):
 
 ```bash
 python scripts/office/validate.py "$OUTDIR/training_report_[team]_[date].docx"

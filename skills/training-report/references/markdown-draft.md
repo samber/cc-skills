@@ -15,10 +15,11 @@ The conversion to .docx is the last operation of the conversation. It is not rev
 
 ## File naming and location
 
-Save the draft to:
+Save the draft to the same output directory that the `docx` skill will use for the final `.docx`. Determine that directory before writing — ask the `docx` skill or use the same `$OUTDIR` you will use at Step 6. Both files must end up in the same directory:
 
 ```
-/mnt/user-data/outputs/training_report_[team]_[date].md
+$OUTDIR/training_report_[team]_[date].md
+$OUTDIR/training_report_[team]_[date].docx   ← written at Step 6
 ```
 
 Keep a single file. Do not create `_v2`, `_final`, `_revised` variants. Every iteration overwrites the same file. The conversation history is the version history.
