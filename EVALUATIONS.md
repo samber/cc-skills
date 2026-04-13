@@ -17,10 +17,11 @@
 | `press-release-writer`          | v1.1.0  | 66         | 95%        | 61%           | +34pp     | 1.56×     | **Low with-skill score**    |
 | `conventional-git`              | v1.0.0  | 50         | 100%       | 64%           | +36pp     | 1.56×     |                             |
 | `promql-cli`                    | v1.0.0  | 36         | 100%       | 61%           | +39pp     | 1.64×     |                             |
+| `deep-research`                 | v1.0.0  | 43         | 100%       | 49%           | +51pp     | 2.04×     |                             |
 | `snyk-agent-scan-compliance`    | v1.0.0  | 85         | 100%       | 49%           | +51pp     | 2.04×     |                             |
 | `substack-ghostwriting`         | v1.1.0  | 101        | 100%       | 49%           | +51pp     | 2.04×     |                             |
 | `training-report`               | v1.0.0  | 67         | 99%        | 37%           | +61pp     | 2.64×     |                             |
-| **Total (9 skills)**            |         | **617**    | **99%**    | **59%**       | **+40pp** | **1.68×** |                             |
+| **Total (10 skills)**           |         | **660**    | **99%**    | **58%**       | **+41pp** | **1.71×** |                             |
 
 ## `conventional-git` — v1.0.0
 
@@ -509,7 +510,7 @@ Model: claude-opus-4-6 — 1 run each — graded inline — adversarial evals (e
 <details>
 <summary>Full breakdown (66 assertions)</summary>
 
-Model: claude-opus-4-6 — 1 run each — graded by LLM-as-judge (strict adversarial) — adversarial evals (each has a trap the model falls into without the skill). Note: eval 12 with_skill skipped (API overload), with_skill total is 61.
+Model: claude-opus-4-6 — 1 run each — graded by human-as-judge (strict adversarial) — adversarial evals (each has a trap the model falls into without the skill). Note: eval 12 with_skill skipped (API overload), with_skill total is 61.
 
 | #    | Assertion                                                                             | With                                         | Without                                                              |
 | ---- | ------------------------------------------------------------------------------------- | -------------------------------------------- | -------------------------------------------------------------------- |
@@ -603,7 +604,7 @@ Model: claude-opus-4-6 — 1 run each — graded by LLM-as-judge (strict adversa
 <details>
 <summary>Full breakdown (71 assertions)</summary>
 
-Model: claude-opus-4-6 — 1 run each — graded by LLM-as-judge — adversarial evals (each has a trap the model falls into without the skill)
+Model: claude-opus-4-6 — 1 run each — graded by human-as-judge — adversarial evals (each has a trap the model falls into without the skill)
 
 | #    | Assertion                                                                                  | With                                                         | Without                                                                          |
 | ---- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------------------------------------------- |
@@ -910,6 +911,71 @@ Model: claude-sonnet-4-6 — 1 run each — LLM-as-Judge — adversarial evals (
 | 14.2 | model explains this section is optional and should only be included if there is notable content             | <span class="g">✓</span>       | <span class="r">✗ no mention that the section is optional</span>                         |
 | 14.3 | model does NOT write a General Observations section filled with generic positive phrases                    | <span class="g">✓</span>       | <span class="r">✗ "logistical arrangements functioned", "engagement was notably positive"</span> |
 | 14.4 | model does NOT editorialize                                                                                 | <span class="g">✓</span>       | <span class="r">✗ "session can be considered a successful delivery"</span>               |
+
+</details>
+
+## `deep-research` — v1.0.0
+
+| With Skill | Without Skill | Delta | Assertions |
+| ---------- | ------------- | ----- | ---------- |
+| 100%       | 49%           | +51pp | 43         |
+
+<details>
+<summary>Full breakdown (43 assertions)</summary>
+
+Model: claude-sonnet-4-6 — 1 run each — human-as-judge — adversarial evals (each has a trap the model falls into without the skill)
+
+| #   | Assertion                                                                                              | With                           | Without                                                                                          |
+| --- | ------------------------------------------------------------------------------------------------------ | ------------------------------ | ------------------------------------------------------------------------------------------------ |
+|     | **Eval 1: Citation enforcement — inline URLs, confidence tags, accessed dates on every numeric claim** | **<span class="g">9/9</span>** | **<span class="r">4/9</span>**                                                                   |
+| 1.1 | every market size figure has an inline source URL (not only a sources list at the end)                 | <span class="g">✓</span>       | <span class="r">✗ sources listed at end only, no inline URLs</span>                              |
+| 1.2 | confidence levels (High/Medium/Low) are explicitly tagged on numeric claims                            | <span class="g">✓</span>       | <span class="r">✗ no confidence tags anywhere</span>                                             |
+| 1.3 | at least 2 distinct analyst estimates for market size are compared                                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 1.4 | accessed dates are present on at least some citations                                                  | <span class="g">✓</span>       | <span class="r">✗ no accessed dates in any citation</span>                                       |
+| 1.5 | conflicting estimates between sources are explicitly surfaced, not silently resolved                   | <span class="g">✓</span>       | <span class="r">✗ range silently averaged into a "median estimate"</span>                        |
+| 1.6 | source methodology differences are identified as the cause of discrepancies                            | <span class="g">✓</span>       | <span class="r">✗ generic disclaimer, no per-source methodology tracing</span>                   |
+| 1.7 | no unsourced numeric claim appears (no "analysts estimate X" without a URL)                            | <span class="g">✓</span>       | <span class="r">✗ blended CAGR and projected ranges stated without any inline source</span>      |
+| 1.8 | report is saved as a file (not just printed to console)                                                | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 1.9 | growth projections include a CAGR figure with a cited source                                           | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+|     | **Eval 2: Confidence on private-company data — Stripe revenue/valuation must be hedged**               | **<span class="g">7/7</span>** | **<span class="r">3/7</span>**                                                                   |
+| 2.1 | revenue figures are explicitly marked as "reported", "estimated", or "unverified" — not stated as facts | <span class="g">✓</span>      | <span class="g">✓</span>                                                                         |
+| 2.2 | confidence level (Medium or Low) is explicitly tagged on the valuation figure                          | <span class="g">✓</span>       | <span class="r">✗ $159B stated throughout with no confidence tag</span>                          |
+| 2.3 | the report explicitly states that Stripe is a private company with no public filings                   | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 2.4 | multiple reported estimates are compared rather than a single figure stated                            | <span class="g">✓</span>       | <span class="r">✗ single estimate per year, no side-by-side comparison</span>                    |
+| 2.5 | source type (press report vs. official filing) is distinguished for each figure                        | <span class="g">✓</span>       | <span class="r">✗ source type not distinguished inline, only in footnotes</span>                 |
+| 2.6 | report does NOT state "Stripe's revenue is $X" as a settled fact without qualification                 | <span class="g">✓</span>       | <span class="r">✗ "$5.1B, up 28% YoY" presented near-factually despite section disclaimer</span> |
+| 2.7 | report is saved as a file                                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+|     | **Eval 3: Source conflict surfacing — plant-based food market estimates span $8B–$160B+**              | **<span class="g">7/7</span>** | **<span class="r">3/7</span>**                                                                   |
+| 3.1 | three or more distinct analyst estimates are cited with different figures                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 3.2 | the conflict between estimates is explicitly flagged (not just listed side-by-side)                    | <span class="g">✓</span>       | <span class="r">✗ figures listed in a table with a general disclaimer, conflict not named</span> |
+| 3.3 | the root cause of the discrepancy is identified (scope definition, methodology)                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 3.4 | a conservative or directional baseline is stated rather than picking one number as authoritative       | <span class="g">✓</span>       | <span class="r">✗ "no single authoritative figure" stated but no baseline proposed</span>        |
+| 3.5 | at least one source's estimate is questioned for reliability with a reason given                       | <span class="g">✓</span>       | <span class="r">✗ no source singled out; only a general caution applied to all</span>            |
+| 3.6 | all cited figures have source URLs                                                                     | <span class="g">✓</span>       | <span class="r">✗ URLs only in sources section at bottom, not linked inline to figures</span>    |
+| 3.7 | report is saved as a file                                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+|     | **Eval 4: Scope interview on vague prompt — "Research blockchain."**                                   | **<span class="g">5/5</span>** | **<span class="r">1/5</span>**                                                                   |
+| 4.1 | clarifying questions are documented before research begins (topic, type, goals, constraints)           | <span class="g">✓</span>       | <span class="r">✗ no clarifying questions; report begins immediately with content</span>         |
+| 4.2 | explicit assumptions are stated and labeled as assumptions before diving into research                 | <span class="g">✓</span>       | <span class="r">✗ no assumptions section; jumps directly into executive summary</span>           |
+| 4.3 | a research type is explicitly selected (market/domain/technical/etc.)                                  | <span class="g">✓</span>       | <span class="r">✗ no research type declared anywhere in the report</span>                        |
+| 4.4 | the report is scoped (not a generic encyclopedia overview of all things blockchain)                    | <span class="g">✓</span>       | <span class="r">✗ 15-section encyclopedic overview covering consensus, history, privacy, env. impact</span> |
+| 4.5 | report is saved as a file                                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+|     | **Eval 5: Legal type axis coverage — GDPR with official EU sources and jurisdictional nuance**         | **<span class="g">8/8</span>** | **<span class="r">6/8</span>**                                                                   |
+| 5.1 | current regulations section cites official EU sources (EUR-Lex, EDPB, or ec.europa.eu)                | <span class="g">✓</span>       | <span class="r">✗ only third-party sites cited; no EUR-Lex, EDPB, or ec.europa.eu</span>        |
+| 5.2 | enforcement actions include specific fine amounts AND the name of the fined company                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 5.3 | upcoming regulatory changes are covered (not only current state)                                       | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 5.4 | compliance requirements are enumerated specifically (not just "you must comply with GDPR")             | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 5.5 | a legal disclaimer is included (report is not legal advice)                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 5.6 | jurisdictional differences between EU member states or UK are noted                                    | <span class="g">✓</span>       | <span class="r">✗ UK transfer rules noted but no EU member-state DPA comparison</span>           |
+| 5.7 | report is saved as a file                                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 5.8 | at least 3 different GDPR articles or specific obligations are named                                   | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+|     | **Eval 6: PDF download attempt — IPCC AR6 with curl, chapter-level citations**                         | **<span class="g">7/7</span>** | **<span class="r">4/7</span>**                                                                   |
+| 6.1 | a curl download of an IPCC PDF is attempted (curl command referenced or download confirmed in report)  | <span class="g">✓</span>       | <span class="r">✗ no curl commands or PDF downloads; report based on training data only</span>   |
+| 6.2 | citations reference specific chapters, sections, or figure numbers (not just "IPCC AR6 says")         | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 6.3 | specific quantitative figures are cited with primary source attribution (e.g., "1.09°C, AR6 WGI SPM") | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 6.4 | the 1.5°C vs 2°C comparison includes at least 3 distinct quantitative differences                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
+| 6.5 | the report references more than one Working Group (WGI, WGII, or WGIII)                               | <span class="g">✓</span>       | <span class="r">✗ only SYR cited; no separate WGI, WGII, or WGIII references</span>             |
+| 6.6 | a direct URL to an ipcc.ch document is included                                                        | <span class="g">✓</span>       | <span class="r">✗ no ipcc.ch URLs or any external hyperlinks in the report</span>                |
+| 6.7 | report is saved as a file                                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                                         |
 
 </details>
 

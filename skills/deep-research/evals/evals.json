@@ -1,0 +1,47 @@
+{
+  "skill_name": "deep-research",
+  "evals": [
+    {
+      "id": 1,
+      "name": "citation-enforcement",
+      "prompt": "Research the global cybersecurity market: current size, growth projections for the next 5 years, and the top 3 demand drivers. I need a sourced report.",
+      "expected_output": "A markdown report where every numeric claim (market size, CAGR, projections) has an inline citation with a URL, an accessed date, and a confidence level. Conflicting analyst estimates are surfaced and compared rather than silently picking one. No figure is stated without a source.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "name": "confidence-private-company",
+      "prompt": "What is Stripe's current annual revenue and valuation? I want a financial research report.",
+      "expected_output": "A markdown report where all revenue and valuation figures are explicitly marked as reported/unverified (confidence: Medium or Low), since Stripe is a private company with no public filings. The report cites press sources, not official filings, and clearly hedges on figure accuracy. Multiple reported estimates are compared where available.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "name": "source-conflict-surfacing",
+      "prompt": "What is the current global market size of the plant-based food market? Research this and give me the figures.",
+      "expected_output": "A markdown report that surfaces the wide discrepancy between analyst estimates (figures range from ~$8B to $160B+ depending on definition and scope). Conflicts between sources are explicitly flagged, methodology differences identified as the root cause, and a conservative directional estimate stated rather than picking one authoritative number.",
+      "files": []
+    },
+    {
+      "id": 4,
+      "name": "scope-interview-vague",
+      "prompt": "Research blockchain.",
+      "expected_output": "The report documents that the prompt is too vague to research without scoping — it lists the clarifying questions that would normally be asked (type, goals, constraints, geographic focus, time horizon), states explicit assumptions before proceeding, and produces a scoped report rather than a generic blockchain overview.",
+      "files": []
+    },
+    {
+      "id": 5,
+      "name": "legal-type-axis-coverage",
+      "prompt": "What does a B2B SaaS company need to know about GDPR compliance when handling EU user data? Research the current requirements, recent enforcement actions, and upcoming regulatory changes.",
+      "expected_output": "A structured markdown report organized around the legal research axes: current regulations (with official EU sources), recent enforcement actions with fine amounts and offending companies cited, upcoming changes (e.g., DMA, AI Act interactions), and specific compliance requirements enumerated. Includes a legal disclaimer. Sources from EUR-Lex, EDPB, or reputable legal publishers.",
+      "files": []
+    },
+    {
+      "id": 6,
+      "name": "pdf-download-attempt",
+      "prompt": "Research the key findings of the IPCC Sixth Assessment Report (AR6) on climate risks, adaptation strategies, and the 1.5°C vs 2°C warming scenarios. I want specific data points, not a general summary.",
+      "expected_output": "The report attempts to download the IPCC AR6 PDF via curl, cites specific chapters and sections (not just 'the IPCC says'), includes precise figures with chapter-level attribution, and goes beyond training data paraphrasing with direct URL references to the official ipcc.ch documents.",
+      "files": []
+    }
+  ]
+}

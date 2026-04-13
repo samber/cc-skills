@@ -147,12 +147,13 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
 | `snyk-agent-scan-compliance` | -27% | TBD | TBD | TBD |
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
+| `deep-research` | -51% | 316 | 2,914 | 12,850 |
 
 ## 🧪 Skill evaluations
 
 |             | With Skill | Without Skill | Delta     |
 | ----------- | ---------- | ------------- | --------- |
-| **Overall** | **99%**    | **59%**       | **+40pp** |
+| **Overall** | **99%**    | **58%**       | **+41pp** |
 
 See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 
