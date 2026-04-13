@@ -41,7 +41,7 @@ Fan out these 3 axes:
 
 Academic citations follow the same URL + confidence format, but also include:
 
-- DOI when available: `[Author et al. (Year)](https://doi.org/...)  `
+- DOI when available: `[Author et al. (Year)](https://doi.org/...)`
 - arXiv IDs for preprints: `[Author et al. (Year)](https://arxiv.org/abs/XXXX.XXXXX)`
 - Distinguish peer-reviewed publications (High) from preprints (Medium) from blog posts summarizing papers (Low)
 

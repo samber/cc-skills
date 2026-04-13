@@ -55,7 +55,7 @@ allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestio
 - Critical claims (market size, growth rates, competitive positioning...) require **2+ independent sources** or get `confidence: Low`.
 - Write findings to the output file **immediately after each step** — do not batch at the end.
 - Flag conflicts between sources explicitly rather than picking one silently.
-- **Prose-first:** Write in full sentences and paragraphs (aim for ≥80% prose). Use bullets only for true lists — never as the primary content delivery. "The market reached $4.2B in 2024 [Source]" is better than "* Market: $4.2B".
+- **Prose-first:** Write in full sentences and paragraphs (aim for ≥80% prose). Use bullets only for true lists — never as the primary content delivery. "The market reached $4.2B in 2024 [Source]" is better than "\* Market: $4.2B".
 - **Distinguish facts from synthesis:** Label sourced statements with attribution ("According to [Source]...") and analytical conclusions with hedges ("This suggests...", "The pattern across sources indicates..."). Never present inference as fact.
 - **Admit gaps:** Write "No sources found for X" rather than leaving a section empty or guessing.
 
