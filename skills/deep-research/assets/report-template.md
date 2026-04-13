@@ -1,6 +1,6 @@
 ---
 topic: "{TOPIC}"
-type: "{market|domain|technical}"
+type: "{market|domain|technical|competitive|product|academic|person-org|financial|legal|trend|community}"
 goals: "{GOALS}"
 date: "{YYYY-MM-DD}"
 methodology: "Parallel web research via sub-agents. Citations inline per references/citations.md. Confidence levels: High / Medium / Low."
@@ -8,7 +8,7 @@ methodology: "Parallel web research via sub-agents. Citations inline per referen
 
 # Research Report — {TOPIC}
 
-> **Type:** {market|domain|technical} | **Date:** {YYYY-MM-DD} | **Constraints:** {CONSTRAINTS or "none"}
+> **Type:** {type} | **Date:** {YYYY-MM-DD} | **Constraints:** {CONSTRAINTS or "none"}
 >
 > **Goals:** {BULLET_GOALS}
 
