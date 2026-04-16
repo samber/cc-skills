@@ -41,16 +41,14 @@ npm create crxjs@latest
 npm install @crxjs/vite-plugin -D
 ```
 
-## Vite config by framework
+## Vite config
 
-CRXJS is added as a Vite plugin. The setup varies slightly per framework.
-
-### React
+CRXJS is added as a Vite plugin. The pattern is the same for all frameworks — swap the framework plugin:
 
 ```typescript
 // vite.config.ts
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
+import react from "@vitejs/plugin-react"; // or vue(), svelte(), or omit for vanilla
 import { crx } from "@crxjs/vite-plugin";
 import manifest from "./manifest.json";
 
@@ -59,47 +57,9 @@ export default defineConfig({
 });
 ```
 
-Use `@vitejs/plugin-react` (not `plugin-react-swc`) for best HMR compatibility. If you must use SWC, cast the manifest:
+**React note:** Use `@vitejs/plugin-react` (not `plugin-react-swc`) for best HMR compatibility. If you must use SWC, cast the manifest: `const manifest = manifestJson as ManifestV3Export;`
 
-```typescript
-import { ManifestV3Export } from "@crxjs/vite-plugin";
-const manifest = manifestJson as ManifestV3Export;
-```
-
-### Vue
-
-```typescript
-import vue from "@vitejs/plugin-vue";
-import { crx } from "@crxjs/vite-plugin";
-import manifest from "./manifest.json";
-
-export default defineConfig({
-  plugins: [vue(), crx({ manifest })],
-});
-```
-
-### Svelte
-
-```typescript
-import { svelte } from "@sveltejs/vite-plugin-svelte";
-import { crx } from "@crxjs/vite-plugin";
-import manifest from "./manifest.json";
-
-export default defineConfig({
-  plugins: [svelte(), crx({ manifest })],
-});
-```
-
-### Vanilla TypeScript
-
-```typescript
-import { crx } from "@crxjs/vite-plugin";
-import manifest from "./manifest.json";
-
-export default defineConfig({
-  plugins: [crx({ manifest })],
-});
-```
+**Vanilla TS:** Omit the framework plugin — just `[crx({ manifest })]`.
 
 ## defineManifest — type-safe dynamic manifest
 
@@ -222,27 +182,21 @@ crx({
 # Start dev server (outputs to dist/ with HMR)
 npm run dev
 
-# 1. Open chrome://extensions
-# 2. Enable "Developer mode"
-# 3. Click "Load unpacked"
-# 4. Select the dist/ directory
-# 5. Edit code — popup/content scripts update instantly via HMR
-# 6. Service worker changes trigger automatic extension reload
+# 1. Open chrome://extensions → Enable "Developer mode" → "Load unpacked" → select dist/
+# 2. Edit code — popup/content scripts update instantly via HMR
+# 3. Service worker changes trigger automatic extension reload
 ```
 
-After loading once, subsequent `npm run dev` sessions reconnect automatically. No need to re-load the extension unless manifest.json changes.
+**Verify:** After loading, confirm popup opens and console shows the HMR connection. Subsequent `npm run dev` sessions reconnect automatically — no re-load needed unless manifest.json changes.
 
 ## Production build
 
 ```bash
 npm run build    # outputs to dist/
-```
-
-The dist/ directory is ready to zip and upload to Chrome Web Store:
-
-```bash
 cd dist && zip -r ../extension.zip .
 ```
+
+**Verify:** Load `dist/` in a fresh Chrome profile before submitting to CWS.
 
 Disable Vite's module preload to avoid CWS rejection of inline scripts:
 
@@ -282,56 +236,6 @@ Chrome requires the user to enable "Allow access to file URLs" in the extension 
 
 CRXJS's HMR relies on injecting a content script that connects to the dev server's WebSocket. Chrome security updates occasionally break this. **Fix**: update to the latest CRXJS version, which tracks Chrome changes.
 
-## CRXJS vs alternatives
-
-| Feature | CRXJS | WXT | Plasmo |
-| --- | --- | --- | --- |
-| Content script HMR | True HMR | File-based reload | Partial |
-| Framework support | Any Vite framework | Any | React-focused |
-| Abstraction level | Thin (Vite plugin) | Full framework | Full framework |
-| Messaging helpers | None (use chrome.\* directly) | Built-in | Built-in |
-| Storage wrappers | None | Built-in | Built-in |
-| Cross-browser | Chrome + Firefox | Chrome + Firefox + Safari | Chrome + Firefox |
-| File-based routing | No | Yes | Yes |
-| Learning curve | Low (know Vite, know CRXJS) | Medium | Medium |
-
-**Choose CRXJS when**: you want minimal abstraction over raw Chrome APIs and value content script HMR above all. CRXJS stays out of the way — no magic routing, no wrapper APIs, just your code with HMR.
-
-**Choose WXT when**: you want conventions, built-in utilities, and cross-browser support.
-
-**Choose Plasmo when**: you're React-focused and want the highest-level abstraction.
-
-## Project structure (recommended)
-
-```
-my-extension/
-├── src/
-│   ├── background/
-│   │   └── index.ts
-│   ├── content/
-│   │   ├── index.ts
-│   │   └── styles.css
-│   ├── popup/
-│   │   ├── index.html        <- CRXJS resolves HTML entry points
-│   │   ├── App.tsx
-│   │   └── main.tsx
-│   ├── options/
-│   │   ├── index.html
-│   │   └── main.tsx
-│   ├── sidepanel/
-│   │   ├── index.html
-│   │   └── main.tsx
-│   └── shared/
-│       ├── messages.ts
-│       └── storage.ts
-├── public/
-│   └── icons/
-├── manifest.ts               <- or manifest.json
-├── vite.config.ts
-├── tsconfig.json
-└── package.json
-```
-
-CRXJS resolves HTML files referenced in the manifest automatically. Your popup.html can use standard `<script type="module" src="./main.tsx">` and it works.
+**Choose CRXJS when** you want minimal abstraction over raw Chrome APIs and value content script HMR. **Choose WXT** for conventions and cross-browser. **Choose Plasmo** for React-focused high-level abstraction. → Full comparison and recommended project structure: [alternatives-and-structure.md](references/alternatives-and-structure.md)
 
 If you encounter a bug or unexpected behavior in CRXJS, open an issue at github.com/crxjs/chrome-extension-tools/issues.

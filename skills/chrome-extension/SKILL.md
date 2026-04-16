@@ -47,41 +47,6 @@ Read only the reference files relevant to the current task. Each file is self-co
 A Chrome extension has up to 5 execution contexts that communicate via message passing:
 
 ```
-┌──────────────────────────────────────────────────────────┐
-│ Extension Process                                        │
-│  ┌─────────────────┐  ┌───────┐  ┌─────────┐  ┌──────┐ │
-│  │ Service Worker   │  │ Popup │  │ Options │  │ Side │ │
-│  │ (background)     │  │       │  │  Page   │  │Panel │ │
-│  │ - No DOM         │  │ Full  │  │  Full   │  │ Full │ │
-│  │ - Ephemeral      │  │ DOM   │  │  DOM    │  │ DOM  │ │
-│  │ - All chrome.*   │  │ All   │  │  All    │  │ All  │ │
-│  │   APIs           │  │ APIs  │  │  APIs   │  │ APIs │ │
-│  └────────┬─────────┘  └───┬───┘  └────┬────┘  └──┬───┘ │
-│           │ chrome.runtime.sendMessage / connect   │     │
-└───────────┼────────────────┼───────────┼──────────┼──────┘
-            │                │           │          │
-    chrome.tabs.sendMessage  │           │          │
-            │                │           │          │
-┌───────────┼────────────────┼───────────┼──────────┼──────┐
-│ Web Page  ▼                                              │
-│  ┌──────────────────┐    ┌──────────────────┐            │
-│  │ Content Script    │    │ Main World Script │            │
-│  │ (isolated world)  │◄──►│ (page context)    │            │
-│  │ - Shared DOM      │    │ - Shared DOM      │            │
-│  │ - Own JS scope    │    │ - Page JS scope   │            │
-│  │ - chrome.runtime  │    │ - No chrome.* API │            │
-│  │ - chrome.storage  │    │ - Full page access│            │
-│  │ - Subject to CSP  │    │ - Subject to CSP  │            │
-│  │   (network only)  │    │   (fully)         │            │
-│  └──────────────────┘    └──────────────────┘            │
-│           ▲ window.postMessage                           │
-│           │ (through shared DOM)                         │
-└──────────────────────────────────────────────────────────┘
-```
-
-### Communication flows (labeled channels)
-
-```
 ┌───────────────────────────────────────────────────────────────────────────┐
 │ Extension Process                                                         │
 │                                                                           │
@@ -184,16 +149,19 @@ For detailed flow diagrams (three-layer bridge, cross-extension, storage broadca
 ## Workflow: new extension from scratch
 
 1. **Define the manifest** with minimum permissions. Start with `activeTab` + `scripting`. → Read `references/manifest-v3.md`
+   **Verify:** Load unpacked in `chrome://extensions` — no manifest errors.
 
 2. **Set up TypeScript and build tooling** (or use CRXJS for Vite-based dev). → Read `references/typescript-build.md`
 
 3. **Implement the service worker** with all event listeners at the top level. → Read `references/service-worker.md`
+   **Verify:** Terminate SW from DevTools, confirm it restarts and re-registers listeners.
 
 4. **Add content scripts** if you need page interaction. → Read `references/content-scripts.md`
 
 5. **Build UI surfaces** (popup, options, side panel) as needed. → Read `references/ui-surfaces.md`
 
 6. **Wire up messaging** between all contexts. → Read `references/messaging-rpc.md`
+   **Verify:** Test message round-trip between each context pair before proceeding.
 
 7. **Test with DevTools**, specifically test service worker termination. → Read `references/debugging-mistakes.md`
 

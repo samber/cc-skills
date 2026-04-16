@@ -15,19 +15,7 @@ allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestio
 
 # Substack Ghostwriting & Content Optimization
 
-A skill for writing Substack content — both newsletter issues (email-first) and web posts (web-first articles/essays) — that grows subscribers and converts readers. Handles two voice modes (own voice, ghostwriting) and two format modes (newsletter issue, web post).
-
-## Core philosophy
-
-Substack is not a blog with an email list. It's a social-media-newsletter hybrid with an algorithm that optimizes for subscriptions, not engagement. This changes everything about how you write, format, and distribute content on the platform.
-
-The algorithm's incentives genuinely align with quality. Substack's revenue comes from subscription cuts (not ads), so gaming engagement metrics doesn't help. What helps: writing content good enough that readers convert to paid subscribers and recommend you to others.
-
-For ghostwriting specifically: the job is capturing someone's existing insights in their voice, not generating insights from scratch. As Nicolas Cole frames it: clients are "insights-rich and time-poor", writers are "time-rich but insights-poor." The art is extraction and voice matching.
-
----
-
-## Platform formatting constraints
+Handles two voice modes (own voice, ghostwriting) and two format modes (newsletter issue, web post).
 
 Substack is a social-media-newsletter hybrid with an algorithm that optimizes for subscriptions, not engagement. Revenue comes from subscription cuts (not ads), so quality genuinely wins. For ghostwriting: the job is capturing someone's existing insights in their voice — clients are "insights-rich and time-poor."
 
@@ -89,9 +77,9 @@ If they don't have an existing Substack, ask: "How do you want to sound? Casual 
 5. **Context**: Part of a series? What have recent posts covered?
 6. **Length**: Short (500-800 words), Standard (1000-1500), Deep dive (2000+)
 
-If critical pieces are missing (especially topic, audience, objective, or format), **ask and wait** — don't guess. A wrong assumption wastes an entire draft.
+If critical pieces are missing (especially topic, audience, objective, or format), **ask and wait** — don't guess.
 
-If the user has Notes data (which Notes got engagement), use that to validate topic selection. Notes function as a cheap testing pipeline for long-form content.
+If the user has Notes data (which Notes got engagement), use that to validate topic selection.
 
 ### Phase 2: Title and hook selection
 
@@ -99,10 +87,8 @@ Generate **5 title/subject line variants** and **3 hook options** (opening 2-3 s
 
 **Title principles:**
 
-- Specificity beats vagueness
-- Promise a clear benefit or reveal
-- 6-10 words (readable on mobile and in search results)
-- For dev audiences: technical keywords filter for the right audience; "How to" and numbers perform well; avoid urgency/scarcity tactics
+- Promise a clear benefit or reveal in 6-10 words
+- For dev audiences: technical keywords filter for the right audience; numbers signal rigor
 
 **Hook types** — write 3 distinct hooks using different strategies (e.g. credibility, counter-narrative, curiosity, surprise, data). Each hook should be 2-3 sentences that could open the piece. Present them labeled (Hook A, Hook B, Hook C) with a brief note on the strategy used.
 
@@ -131,24 +117,11 @@ Using the chosen title and hook, write the full piece. The hook opens the articl
 4. **Takeaway** (1-2 sentences): The one thing the reader should remember.
 5. **CTA** (1-2 sentences): Ask for a specific action. Questions that invite replies are strongest (replies are an algorithm signal).
 
-**Newsletter issue formatting** — read `references/email-formatting.md` for full rules:
+**Newsletter issue formatting** — read `references/email-formatting.md` for full rules. Key constraints: 2-3 sentence paragraphs, code blocks < 10 lines, images sparingly, TL;DR at top for issues > 1500 words.
 
-- Paragraphs: 2-3 sentences max (email clients make long paragraphs feel like walls)
-- Code blocks: < 10 lines (link to Gist for longer code)
-- Images: sparingly (many email clients block them by default)
-- TL;DR at top for issues > 1500 words
+**Web post formatting** — read `references/web-post-formatting.md` for full rules. More forgiving: longer paragraphs and code blocks OK, images render reliably, add table of contents for posts > 2000 words.
 
-**Web post formatting** — read `references/web-post-formatting.md` for full rules:
-
-- Paragraphs: 3-4 sentences acceptable (full-width web rendering is more forgiving)
-- Longer code blocks OK (up to 30-40 lines with full syntax highlighting)
-- Images and embeds render reliably — use more liberally
-- Table of contents for posts > 2000 words
-
-**Shared formatting rules:**
-
-- Subheadings every 200-400 words. Bold key phrases so skimmers catch the argument.
-- Descriptive anchor text on links, not "click here."
+Subheadings every 200-400 words. Bold key phrases so skimmers catch the argument. Descriptive anchor text on links.
 
 ### Phase 4: Growth-optimized elements
 
@@ -161,13 +134,7 @@ Add elements that leverage the Substack algorithm. Read `references/substack-alg
 
 ### Phase 5: Paid vs. free strategy
 
-If the user has a paid tier, advise on the free/paid split:
-
-- Free issues should be your best work (they drive growth and recommendations)
-- Paid issues should offer depth, exclusivity, or access (not just a paywall on normal content)
-- The most effective model: free issues that demonstrate value so clearly that readers want more
-
-Common mistake: paywalling too early. At < 1000 subscribers, everything should be free. Growth compounds faster than paid conversion at small scale.
+If the user has a paid tier: free issues should be your best work (they drive growth). Paid issues offer depth, exclusivity, or access — not just a paywall on normal content. At < 1000 subscribers, everything should be free (growth compounds faster than paid conversion at small scale).
 
 ### Phase 5b: Humanize
 

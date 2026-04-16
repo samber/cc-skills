@@ -15,15 +15,7 @@ allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestio
 
 # Technical Article Writer
 
-Write technical articles that developers actually want to read. This skill combines structural frameworks from technical writing, hook engineering from copywriting, and practitioner-tested patterns for developer content.
-
-## Core philosophy
-
-Most technical articles fail because of structural problems, not bad ideas: burying the lede, mixing content types, weak openings, no clear motivation, or trying to cover too much.
-
-Developer audiences have a built-in BS detector. The best technical content leads with specificity and honesty. It sounds like a smart colleague explaining something interesting, not a marketer pitching. Acknowledge your expertise level, solve a specific problem, use real examples.
-
----
+Combines structural frameworks from technical writing, hook engineering from copywriting, and practitioner-tested patterns for developer content. Lead with specificity and honesty — sound like a smart colleague, not a marketer.
 
 ## Workflow
 
@@ -46,30 +38,16 @@ Follow these phases in order. Each phase produces a concrete artifact the user r
 5. **Length target**: Short (800-1200), Medium (1500-2500), Long (3000+)
 6. **One-sentence thesis**: The single claim or takeaway. If the user can't state this, help them.
 
-If the user already provided most of this, extract from conversation and confirm. But if critical pieces are missing, **stop and ask before proceeding**. Don't guess at the audience, content type, or thesis. A wrong assumption here wastes an entire draft.
+If the user already provided most of this, extract from conversation and confirm. If critical pieces are missing, **stop and ask before proceeding**:
 
-Specifically:
+- Vague topic → ask what specific aspect and what the reader should walk away knowing
+- Unclear audience → ask (junior devs vs senior engineers need different structure)
+- No thesis → ask "What's the one thing you want the reader to remember?"
+- Ambiguous content type → ask: following along hands-on, or building a mental model?
 
-- If the topic is vague ("write about Java performance"), ask what specific aspect and what the reader should walk away knowing.
-- If the audience is unclear, ask. A post for junior devs has a completely different structure than one for senior engineers.
-- If you can't infer a thesis, ask the user: "What's the one thing you want the reader to remember?" If they can't answer, help them find it through questions about what surprised them, what they'd tell a colleague, or what they wish they'd known earlier.
-- If the content type is ambiguous (could be a tutorial or an explainer), ask which experience the reader should have: following along hands-on, or building a mental model.
+Only proceed to Phase 2 once you have clarity on topic, audience, content type, and thesis.
 
-Only proceed to Phase 2 once you have enough clarity on topic, audience, content type, and thesis to write a coherent outline. It's cheaper to ask one question now than to rewrite 2000 words later.
-
-**Idea quality filters.** Apply these before investing in a draft:
-
-Julia Evans's heuristic: the best technical content comes from what you struggled with, not what you mastered. If the topic feels too "textbook", push toward the specific struggle, surprise, or counterintuitive finding.
-
-Julian Shapiro's novelty filter. The idea should fit at least one:
-
-- **Counter-intuitive**: "I never realized the world worked that way"
-- **Counter-narrative**: "That's not how I was told it worked"
-- **Shock and awe**: "I had no idea that was possible"
-- **Elegant articulation**: "I always felt that way but couldn't put it into words"
-- **Makes you feel seen**: "Finally someone gets my experience"
-
-If the idea doesn't pass any filter, say so. Help the user find the angle that does.
+**Idea quality filters.** The best technical content comes from struggles and surprises, not textbook mastery (Julia Evans). The idea should fit at least one novelty filter (Julian Shapiro): counter-intuitive, counter-narrative, shock and awe, elegant articulation, or makes you feel seen. If none fit, help the user find an angle that does.
 
 ### Phase 2: Title generation
 
@@ -96,19 +74,7 @@ The intro must accomplish three things:
 2. **Stakes** (1-2 sentences): Why should the reader care? What's the cost of not knowing this?
 3. **Promise** (1 sentence): What will the reader gain by the end?
 
-Address three reader objections:
-
-- **Untrustworthy**: Why should I listen to you? (credibility hook or specific experience)
-- **Irrelevant**: Why does this matter to me? (stakes)
-- **Implausible**: Will this actually deliver? (promise + specificity)
-
-Anti-patterns to avoid:
-
-- Starting with a dictionary definition
-- "In today's fast-paced world..."
-- "Have you ever wondered..."
-- Burying the interesting part after 3 paragraphs of context
-- Explaining what the article will cover instead of demonstrating value
+Address three reader objections: **Untrustworthy** (credibility hook), **Irrelevant** (stakes), **Implausible** (promise + specificity). Never bury the interesting part after paragraphs of context.
 
 ### Phase 4: Body structure
 
