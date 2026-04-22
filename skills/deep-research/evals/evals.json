@@ -1,47 +1,100 @@
 {
   "skill_name": "deep-research",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin. The deep-research skill enforces citation discipline, confidence tracking, and source conflict surfacing that the model does not apply by default."
+  },
   "evals": [
     {
       "id": 1,
       "name": "citation-enforcement",
       "prompt": "Research the global cybersecurity market: current size, growth projections for the next 5 years, and the top 3 demand drivers. I need a sourced report.",
+      "trap": "Without the skill, the model produces a report with numeric claims (market size, CAGR) but omits inline citation URLs, accessed dates, and confidence levels. It may also pick one analyst estimate and present it as fact rather than surfacing conflicting figures.",
       "expected_output": "A markdown report where every numeric claim (market size, CAGR, projections) has an inline citation with a URL, an accessed date, and a confidence level. Conflicting analyst estimates are surfaced and compared rather than silently picking one. No figure is stated without a source.",
-      "files": []
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "every numeric claim includes an inline citation with a source URL" },
+        { "id": "1.2", "description": "every citation includes an accessed date in YYYY-MM-DD format" },
+        { "id": "1.3", "description": "every citation includes a confidence level (High, Medium, or Low)" },
+        { "id": "1.4", "description": "conflicting analyst estimates are surfaced and compared rather than silently picking one" },
+        { "id": "1.5", "description": "no market size or CAGR figure is stated without a named source" },
+        { "id": "1.6", "description": "findings are written as prose paragraphs, not bullet lists" }
+      ]
     },
     {
       "id": 2,
       "name": "confidence-private-company",
       "prompt": "What is Stripe's current annual revenue and valuation? I want a financial research report.",
+      "trap": "Without the skill, the model states Stripe revenue and valuation figures from training data as if they were verified facts, without flagging that Stripe is private and has no public filings. It typically picks one reported figure and presents it authoritatively.",
       "expected_output": "A markdown report where all revenue and valuation figures are explicitly marked as reported/unverified (confidence: Medium or Low), since Stripe is a private company with no public filings. The report cites press sources, not official filings, and clearly hedges on figure accuracy. Multiple reported estimates are compared where available.",
-      "files": []
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "explicitly states that Stripe is a private company with no public financial filings" },
+        { "id": "2.2", "description": "all revenue and valuation figures are labeled as reported or unverified (not presented as fact)" },
+        { "id": "2.3", "description": "confidence level is Medium or Low for all financial figures" },
+        { "id": "2.4", "description": "cites press sources rather than claiming official filings as the source" },
+        { "id": "2.5", "description": "compares multiple reported estimates rather than picking one authoritative number" }
+      ]
     },
     {
       "id": 3,
       "name": "source-conflict-surfacing",
       "prompt": "What is the current global market size of the plant-based food market? Research this and give me the figures.",
+      "trap": "Without the skill, the model picks a single analyst figure and states it as the market size, without noting the wide discrepancy between estimates that results from differing scope definitions.",
       "expected_output": "A markdown report that surfaces the wide discrepancy between analyst estimates (figures range from ~$8B to $160B+ depending on definition and scope). Conflicts between sources are explicitly flagged, methodology differences identified as the root cause, and a conservative directional estimate stated rather than picking one authoritative number.",
-      "files": []
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "surfaces the wide discrepancy between analyst estimates (multiple different figures cited)" },
+        { "id": "3.2", "description": "explicitly flags that conflicting estimates exist rather than silently picking one" },
+        { "id": "3.3", "description": "identifies methodology or scope differences as the root cause of the discrepancy" },
+        { "id": "3.4", "description": "does not present a single figure as the definitive market size" },
+        { "id": "3.5", "description": "states a directional or conservative estimate with appropriate hedging" }
+      ]
     },
     {
       "id": 4,
       "name": "scope-interview-vague",
       "prompt": "Research blockchain.",
+      "trap": "Without the skill, the model dives into a generic blockchain overview (history, consensus mechanisms, use cases) without scoping the request. With the skill, it recognizes this as vague, either asks clarifying questions or explicitly states assumptions before proceeding.",
       "expected_output": "The report documents that the prompt is too vague to research without scoping — it lists the clarifying questions that would normally be asked (type, goals, constraints, geographic focus, time horizon), states explicit assumptions before proceeding, and produces a scoped report rather than a generic blockchain overview.",
-      "files": []
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "recognizes the prompt as vague or ambiguous rather than diving in immediately" },
+        { "id": "4.2", "description": "either asks clarifying questions or explicitly states scoping assumptions before producing the report" },
+        { "id": "4.3", "description": "the stated assumptions cover at least: research type, goals, and constraints" },
+        { "id": "4.4", "description": "produces a scoped report rather than a generic blockchain overview" },
+        { "id": "4.5", "description": "does not present inference or training-data summaries as sourced research findings" }
+      ]
     },
     {
       "id": 5,
       "name": "legal-type-axis-coverage",
       "prompt": "What does a B2B SaaS company need to know about GDPR compliance when handling EU user data? Research the current requirements, recent enforcement actions, and upcoming regulatory changes.",
+      "trap": "Without the skill, the model gives a general GDPR summary from training data without structuring around legal research axes, without citing official EU sources, and without including enforcement actions with specific fine amounts and companies.",
       "expected_output": "A structured markdown report organized around the legal research axes: current regulations (with official EU sources), recent enforcement actions with fine amounts and offending companies cited, upcoming changes (e.g., DMA, AI Act interactions), and specific compliance requirements enumerated. Includes a legal disclaimer. Sources from EUR-Lex, EDPB, or reputable legal publishers.",
-      "files": []
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "report is structured around legal axes: IP/regulations, enforcement, compliance requirements, upcoming changes" },
+        { "id": "5.2", "description": "enforcement actions include specific fine amounts and named companies" },
+        { "id": "5.3", "description": "upcoming regulatory changes are mentioned (e.g., AI Act, DMA interactions with GDPR)" },
+        { "id": "5.4", "description": "includes a legal disclaimer stating this is not legal advice" },
+        { "id": "5.5", "description": "cites official sources such as EUR-Lex, EDPB, or DPA decisions rather than only blog posts" }
+      ]
     },
     {
       "id": 6,
       "name": "pdf-download-attempt",
       "prompt": "Research the key findings of the IPCC Sixth Assessment Report (AR6) on climate risks, adaptation strategies, and the 1.5°C vs 2°C warming scenarios. I want specific data points, not a general summary.",
+      "trap": "Without the skill, the model paraphrases training data about IPCC AR6 as if it were a sourced finding, without attempting to fetch the actual documents and without chapter-level attribution for specific figures.",
       "expected_output": "The report attempts to download the IPCC AR6 PDF via curl, cites specific chapters and sections (not just 'the IPCC says'), includes precise figures with chapter-level attribution, and goes beyond training data paraphrasing with direct URL references to the official ipcc.ch documents.",
-      "files": []
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "attempts to download or fetch the IPCC AR6 document via curl or WebFetch rather than relying on training data" },
+        { "id": "6.2", "description": "cites specific chapters and sections of AR6 rather than attributing everything to 'the IPCC'" },
+        { "id": "6.3", "description": "includes precise numeric figures with chapter-level attribution" },
+        { "id": "6.4", "description": "references official ipcc.ch URLs rather than only secondary sources" },
+        { "id": "6.5", "description": "distinguishes sourced claims from synthesis using 'According to [chapter]...' attribution" }
+      ]
     }
   ]
 }

@@ -8,7 +8,7 @@ The axes below are a starting point — include any additional relevant findings
 
 ## Step 2 axes — Product fundamentals
 
-Fan out these 4 axes as sub-agents in a single message:
+Fan out these 5 axes as sub-agents in a single message:
 
 | Agent | Axis | Key questions |
 | --- | --- | --- |
