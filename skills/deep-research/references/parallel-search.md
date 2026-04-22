@@ -10,7 +10,9 @@ Do not fan out when axes have ordering dependencies (e.g., you need competitor n
 
 ## Maximum agents per step
 
-Spawn at most **5 sub-agents per step**. Beyond 5, diminishing returns and context overhead outweigh the speed gain.
+Default to **3–5 sub-agents per step**. This range balances coverage, speed, and coordination overhead for most research tasks.
+
+You may exceed 5 — up to **20 in a single step** — only when all three conditions hold: axes are truly independent, the topic is broad enough to justify the extra coverage, and each sub-agent can be given a clear self-contained prompt. Beyond 5, diminishing returns and context overhead increase quickly, so treat larger fan-out as an explicit exception, not the default.
 
 ## Sub-agent prompt template
 
