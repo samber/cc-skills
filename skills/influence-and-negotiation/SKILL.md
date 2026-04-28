@@ -138,11 +138,11 @@ Read [references/memory.md](references/memory.md) for the full system, naming co
 
 **If yes:** ask the user to paste or share the `memory.md` entrypoint (and any other files open). Read them in full before proceeding. The mandate, stakeholder map, and next session plan from the previous session replace the intake questions that are already answered — don't re-ask what the memory already covers. Resume from the `## Next session plan` section in `strategy.md`.
 
-**If no:** proceed to Phase 1. At the end of the session (or after Phase 3 at the latest), detect the best available persistence method (see [references/memory.md](references/memory.md#platform-detection--choose-the-best-persistence-method)) and create the full memory directory. Announce what was created and how to resume:
+**If no:** proceed to Phase 1. At the end of the session (or after Phase 3 at the latest), detect the best available access method (see [references/memory.md](references/memory.md#platform-detection--how-to-access-the-files)) and create the full memory directory as flat markdown files. Announce what was created and how to resume:
 
-> _"I've created your negotiation memory in `negotiation-{slug}/` [or: as Artifacts titled `negotiation-{slug}-{file}` / in your Obsidian vault at `negotiations/negotiation-{slug}/`]. Share it at the start of the next session and we'll pick up exactly here."_
+> _"I've created your negotiation memory in `negotiation-{slug}/` [or: as Artifacts titled `negotiation-{slug}-{file}` / in your Obsidian vault]. Share the files at the start of the next session and we'll pick up exactly here."_
 
-If the only option is Artifacts or Canvas, warn explicitly that they don't persist across new conversations and instruct the user to save the content locally.
+If the only option is Artifacts or Canvas, warn explicitly: they don't persist across new conversations — the user must copy the content and save it locally.
 
 ### Phase 1: Mode + domain detection, then intake
 

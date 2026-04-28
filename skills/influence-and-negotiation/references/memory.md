@@ -2,38 +2,27 @@
 
 A negotiation rarely closes in one session. Between sessions — switching tools, losing context, resuming days or weeks later — the accumulated intelligence evaporates and you re-explain everything from scratch. The memory system is a structured set of markdown files that persist across sessions and let you resume exactly where you left off.
 
-## Platform detection — choose the best persistence method
+## The memory system is always flat markdown files
 
-Before creating the memory, detect what's available. Use the highest-priority method that works in the current environment. **Artifacts and Canvas do not persist across new conversations** — they are useful within a session but require the user to manually share them next time. Prefer native file access or an MCP-connected tool whenever possible.
-
-| Priority | Platform / tool | Persistence | Method |
-| -------- | --------------- | ----------- | ------ |
-| 1 | **Claude Code, Codex, or any agent with file write access** | ✅ Native | Write files to `negotiation-{slug}/` in the repo or workspace. Read them directly next session. |
-| 2 | **Obsidian MCP** (if available) | ✅ Native | Write notes to the vault at `negotiations/negotiation-{slug}/`. Opens cross-session and cross-tool. Ideal for long negotiations. |
-| 3 | **Notion, Linear, or other MCP-connected tool** (if available) | ✅ Native | Create a page/document per file. Use the tool's native linking to group them. |
-| 4 | **Claude (claude.ai) — within a Project** | ⚠️ Partial | Artifacts in a Project are accessible across conversations in that Project. Use one Artifact per file; title: `negotiation-{slug}-{file}`. |
-| 5 | **Claude (claude.ai) — no Project** | ❌ Not cross-session | Artifacts exist only within the current conversation. At session end, instruct the user to copy the markdown content and save it locally. Warn them explicitly. |
-| 6 | **ChatGPT Canvas** | ❌ Not cross-session | Canvas is per-conversation. Same as above — warn the user to save locally at session end. |
-| 7 | **Any other tool** | ❌ Manual | Generate markdown files, instruct the user to save them. At next session start, the user pastes them into context. |
-
-**When Obsidian MCP is available**, prefer it even over file access — the vault is persistent, searchable, and available across tools. Create one note per file, link them from the `memory.md` note, and use the vault's graph to track stakeholder relationships if useful.
-
-**When only Artifacts or Canvas are available**, always warn the user at session end:
-> _"Artifacts/Canvas don't persist across new conversations. Copy the content of each file and save it locally — or start a Claude Project and move this conversation there."_
+The memory lives in a directory of plain markdown files — `negotiation-{slug}/` — regardless of tool or platform. This is the source of truth. What varies across platforms is only **how those files are read, written, and surfaced between sessions**.
 
 ## Naming convention
 
-All memory files share a **slug**: a short, lowercase, hyphenated identifier for the negotiation (e.g. `acme-renewal`, `q3-salary`, `nao-2026`).
+All memory files share a **slug**: a short, lowercase, hyphenated identifier for the negotiation (e.g. `acme-renewal`, `q3-salary`, `nao-2026`). The directory is always named `negotiation-{slug}/` and the files inside always use short names (`memory.md`, `context.md`, etc.).
 
-| Platform | Directory / container | File names |
-| -------- | --------------------- | ---------- |
-| **File-based agents (Claude Code, Codex)** | `negotiation-{slug}/` in repo root | `memory.md`, `context.md`, `numbers.md`, `log.md`, `strategy.md`, `stakeholders.md` |
-| **Obsidian MCP** | Vault folder `negotiations/negotiation-{slug}/` | Same short names |
-| **Claude Artifact (Project)** | N/A — one Artifact per file | Title: `negotiation-{slug}-{file}` (e.g. `negotiation-acme-renewal-memory`) |
-| **ChatGPT Canvas** | N/A — one Canvas per file | Title: `negotiation-{slug}-{file}` |
-| **Local files / any other tool** | `negotiation-{slug}/` folder | Same short names |
+## Platform detection — how to access the files
 
-The `negotiation-{slug}` prefix groups all memory items together when sorted. Always include it.
+Detect what's available and use the best method for reading and writing the flat files.
+
+| Priority | Access method | Cross-session? | How |
+| -------- | ------------- | -------------- | --- |
+| 1 | **Agent with file write access** (Claude Code, Codex, etc.) | ✅ Yes | Write directly to `negotiation-{slug}/` in the repo or workspace. Read next session with the Read tool. |
+| 2 | **Obsidian MCP** (if available) | ✅ Yes | Write the flat files into the Obsidian vault at `negotiations/negotiation-{slug}/`. Obsidian indexes and links them automatically — the files remain plain markdown, Obsidian is just the viewer. |
+| 3 | **Claude (claude.ai) — within a Project** | ⚠️ Partial | Create one Artifact per file (markdown type). Artifacts in a Project persist across conversations. Title each artifact `negotiation-{slug}-{file}` (e.g. `negotiation-acme-renewal-memory`). |
+| 4 | **Claude (claude.ai) — no Project / ChatGPT Canvas** | ❌ Per-conversation | Create one Artifact or Canvas per file within the session. **Warn the user at session end**: _"These don't persist across new conversations — copy each file's content and save it locally, or paste them at the start of the next session."_ |
+| 5 | **Any other tool** | ❌ Manual | Output the markdown files as text blocks. The user saves them locally and pastes them into context at the next session start. |
+
+**Obsidian as a format layer.** When Obsidian MCP is available, the flat files are written to the vault unchanged. Obsidian adds backlinks, graph view, and search on top — useful for mapping stakeholder relationships across a long negotiation — but the files themselves stay plain markdown. Any agent can read them without Obsidian.
 
 ## Default structure
 
