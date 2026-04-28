@@ -49,6 +49,13 @@ If you see ANY of these patterns, **load this skill, follow the auto-load direct
 
 The user will rarely ask you to "explain BATNA" or "use this skill". They'll say _"they just said X, what do I respond?"_ or paste an email and ask for a reply. **Read the right reference file BEFORE drafting your response. Do not improvise from the SKILL.md body alone — the depth lives in the references.** Each reference below has explicit Load / Don't-load rules so the routing is unambiguous.
 
+### `references/memory.md` — negotiation memory system
+
+- **Load when:** any session starts — before intake, before tactics, before anything else. The memory system persists the negotiation state across sessions and tools.
+- **Always load on activation** to check whether a memory document exists for this negotiation.
+
+---
+
 ### `references/tactics.md` — the in-the-room toolkit
 
 **Always load on activation.** This is the script library that powers every live response, email reply, or rehearsed phrase: calibrated-question library, mirroring/labeling templates, accusation audit, "no" framing, "that's right" vs "you're right", late-night DJ voice, Ackerman bargaining, TLS écoute and questionnement, the four powers, the four relational stances, anchoring with bolstering range, reframing, concession patterns, strategy choice, OCP statement, pause tactique scripts, back-brief / wrap-up, Pipe de négociation.
@@ -120,6 +127,22 @@ Three operating principles inherited from the references:
 - **Personal / family conflicts** — the methodology transfers but the worked examples and emotional stakes are different enough that you'll get better fit from a domain-specific resource.
 
 ## Workflow
+
+### Phase 0: Session start — check for existing memory
+
+Read [references/memory.md](references/memory.md) for the full system, naming convention, and file templates.
+
+**Before anything else**, use `AskUserQuestion` to ask:
+
+> _"Is this a continuation of an ongoing negotiation? If yes, do you have a memory document — an Artifact, Canvas, or file — from a previous session?"_
+
+**If yes:** ask the user to paste or share the `memory.md` entrypoint (and any other files open). Read them in full before proceeding. The mandate, stakeholder map, and next session plan from the previous session replace the intake questions that are already answered — don't re-ask what the memory already covers. Resume from the `## Next session plan` section in `strategy.md`.
+
+**If no:** proceed to Phase 1. At the end of the session (or after Phase 3 at the latest), detect the best available persistence method (see [references/memory.md](references/memory.md#platform-detection--choose-the-best-persistence-method)) and create the full memory directory. Announce what was created and how to resume:
+
+> _"I've created your negotiation memory in `negotiation-{slug}/` [or: as Artifacts titled `negotiation-{slug}-{file}` / in your Obsidian vault at `negotiations/negotiation-{slug}/`]. Share it at the start of the next session and we'll pick up exactly here."_
+
+If the only option is Artifacts or Canvas, warn explicitly that they don't persist across new conversations and instruct the user to save the content locally.
 
 ### Phase 1: Mode + domain detection, then intake
 
