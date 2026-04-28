@@ -989,7 +989,7 @@ Model: claude-sonnet-4-6 — 1 run each — human-as-judge — adversarial evals
 <details>
 <summary>Full breakdown (230 assertions)</summary>
 
-_Model: claude-sonnet-4-6 · 40 evals · 1 run each · LLM-as-judge_
+_Model: claude-sonnet-4-6 · 40 evals · 1 run each · Human-as-judge_
 
 | # | Assertion | With | Without |
 |---|---|---|---|
