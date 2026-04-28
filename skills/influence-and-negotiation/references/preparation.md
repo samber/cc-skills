@@ -43,7 +43,7 @@ Worked examples across domains:
 | --- | --- | --- | --- | --- | --- |
 | **B2B SaaS price** ($200k ACV deal) | $240k | $220k | $200k | $180k (call CRO) | $160k (no deal) |
 | **Salary base** (senior IC ask) | $185k | $175k | $165k | $150k (talk to HR) | $140k (decline) |
-| **NAO general raise** (annual collective) | 0.2% | 0.5% | 0.8% | 1.2% (call DRH) | 1.5% (deadlock) |
+| **NAO general raise** (annual collective, union ask) | 1.5% | 1.2% | 0.8% | 0.5% (call federation) | 0.2% (deadlock) |
 | **Manager → report raise** (mid-cycle) | +6% | +5% | +4% | +2% (escalate to N+2) | 0% (delay 6 months) |
 | **Treatment plan compliance** (chronic patient) | Full protocol | 90% adherence | 80% adherence (with weekly check) | <70% (escalate to consultant) | <50% (refer for re-assessment) |
 | **Recruitment package** (top candidate) | Listed band low | Listed band mid | Band ceiling | +10% off-band (HR sign-off) | +20% off-band (no offer) |

@@ -1,5 +1,5 @@
 {
-  "skill_name": "negotiation",
+  "skill_name": "influence-and-negotiation",
   "evals": [
     {
       "id": 1,
@@ -7,12 +7,12 @@
       "prompt": "I'm an AE selling a $180k ACV observability platform to a 1500-person fintech. We've had 3 calls. Technical eval is going well. The CIO just emailed me: 'Love the product. Can we get to $120k? We're 30% over budget for tooling this year.' Draft my email response.",
       "trap": "Default LLM advice: offer a discount around $150k. Skill: don't reply with a number; diagnose budget claim with calibrated questions and multi-thread to CFO/EB.",
       "assertions": [
-        "Does NOT propose a specific discount number ($150k, $160k, etc.) in the response",
-        "Asks how the $120k budget number was set / whether it's top-down or bottom-up",
-        "Asks who else (besides the CIO) needs to be comfortable with the number — multi-threads",
-        "Pairs any future concession with a counter-ask (multi-year, references, payment terms, etc.) — does not give unilaterally",
-        "Does NOT split the difference between $120k and $180k",
-        "Avoids 'why' questions (uses 'what' / 'how' formulations)"
+        { "id": "1.1", "description": "Does NOT propose a specific discount number ($150k, $160k, etc.) in the response" },
+        { "id": "1.2", "description": "Asks how the $120k budget number was set / whether it's top-down or bottom-up" },
+        { "id": "1.3", "description": "Asks who else (besides the CIO) needs to be comfortable with the number — multi-threads" },
+        { "id": "1.4", "description": "Pairs any future concession with a counter-ask (multi-year, references, payment terms, etc.) — does not give unilaterally" },
+        { "id": "1.5", "description": "Does NOT split the difference between $120k and $180k" },
+        { "id": "1.6", "description": "Avoids 'why' questions (uses 'what' / 'how' formulations)" }
       ]
     },
     {
@@ -21,10 +21,10 @@
       "prompt": "The buyer just said: 'We're leaning toward Vendor X because they're easier to integrate.' Draft my next 2-3 follow-up questions to understand their reasoning before responding.",
       "trap": "Default LLM advice: 'Why do you say that?' / 'Why is integration ease so important?' Skill: ban 'why', use 'what'/'how' formulations because 'why' triggers defensiveness.",
       "assertions": [
-        "Does NOT use the word 'why' in any of the proposed questions",
-        "Uses 'what' or 'how' formulations instead (calibrated questions)",
-        "Asks for specifics about the integration challenge rather than abstract preference",
-        "Does NOT immediately pitch own integration features defensively"
+        { "id": "2.1", "description": "Does NOT use the word 'why' in any of the proposed questions" },
+        { "id": "2.2", "description": "Uses 'what' or 'how' formulations instead (calibrated questions)" },
+        { "id": "2.3", "description": "Asks for specifics about the integration challenge rather than abstract preference" },
+        { "id": "2.4", "description": "Does NOT immediately pitch own integration features defensively" }
       ]
     },
     {
@@ -33,11 +33,11 @@
       "prompt": "Buyer asked for $150k. My list price is $200k. Now buyer says: 'Look, let's just split the difference and meet at $175k. Deal?' How should I respond on the call?",
       "trap": "Default LLM advice: accept $175k (it's 'fair' and closes the deal). Skill: don't bisect; re-anchor or trade. Splitting is an explicit anti-pattern.",
       "assertions": [
-        "Does NOT recommend accepting $175k as the final number",
-        "Re-anchors with a non-monetary trade (term, scope, references, multi-year, payment timing)",
-        "Names splitting-the-difference as a trap or anti-pattern (or articulates equivalent reasoning)",
-        "Pairs any concession with a counter-ask",
-        "Does NOT suggest a generic counter like 'meet me at $190k' without a trade"
+        { "id": "3.1", "description": "Does NOT recommend accepting $175k as the final number" },
+        { "id": "3.2", "description": "Re-anchors with a non-monetary trade (term, scope, references, multi-year, payment timing)" },
+        { "id": "3.3", "description": "Names splitting-the-difference as a trap or anti-pattern (or articulates equivalent reasoning)" },
+        { "id": "3.4", "description": "Pairs any concession with a counter-ask" },
+        { "id": "3.5", "description": "Does NOT suggest a generic counter like 'meet me at $190k' without a trade" }
       ]
     },
     {
@@ -46,12 +46,12 @@
       "prompt": "Procurement just told me on a call: 'We have an offer from Vendor X at $100k for the same scope you're proposing at $200k.' I happen to know Vendor X's list is roughly $180k for this configuration — there's no way they're at $100k for like-for-like. How should I respond in real-time?",
       "trap": "Default LLM advice: accuse them of lying, OR fold and offer to match. Skill: bad-faith protocol — drop ego, present reality principle without judgement, open face-saving exit.",
       "assertions": [
-        "Does NOT directly accuse procurement of lying or being dishonest",
-        "Does NOT offer to match or come close to the $100k figure",
-        "Presents factual market data calmly without judgement",
-        "Provides a face-saving exit (e.g., 'maybe a different SKU/config', 'older quote', 'different volume tier')",
-        "Asks for clarification on what's actually included in the alleged offer (scope/config/term)",
-        "Does NOT escalate into argumentation"
+        { "id": "4.1", "description": "Does NOT directly accuse procurement of lying or being dishonest" },
+        { "id": "4.2", "description": "Does NOT offer to match or come close to the $100k figure" },
+        { "id": "4.3", "description": "Presents factual market data calmly without judgement" },
+        { "id": "4.4", "description": "Provides a face-saving exit (e.g., 'maybe a different SKU/config', 'older quote', 'different volume tier')" },
+        { "id": "4.5", "description": "Asks for clarification on what's actually included in the alleged offer (scope/config/term)" },
+        { "id": "4.6", "description": "Does NOT escalate into argumentation" }
       ]
     },
     {
@@ -60,12 +60,12 @@
       "prompt": "I'm on a video call with procurement. The procurement officer is yelling at me, saying 'your company is wasting our time, your CEO should be ashamed of these prices, you people are unprofessional.' How do I handle this in the moment, on the call?",
       "trap": "Default LLM advice: apologize and offer concessions to placate, OR fight back. Skill: separate emotion (legitimate) from behavior (refused); validate emotion, refuse behavior; le non-négociable.",
       "assertions": [
-        "Validates the underlying frustration / emotion as legitimate",
-        "Explicitly refuses or pushes back on the aggressive behavior (yelling, insults)",
-        "Does NOT immediately offer concessions to placate or de-escalate",
-        "Suggests a circuit-breaker (pause, reschedule, take a break, callback)",
-        "Does NOT argue back / escalate / counter-attack",
-        "Maintains professional stance without absorbing abuse"
+        { "id": "5.1", "description": "Validates the underlying frustration / emotion as legitimate" },
+        { "id": "5.2", "description": "Explicitly refuses or pushes back on the aggressive behavior (yelling, insults)" },
+        { "id": "5.3", "description": "Does NOT immediately offer concessions to placate or de-escalate" },
+        { "id": "5.4", "description": "Suggests a circuit-breaker (pause, reschedule, take a break, callback)" },
+        { "id": "5.5", "description": "Does NOT argue back / escalate / counter-attack" },
+        { "id": "5.6", "description": "Maintains professional stance without absorbing abuse" }
       ]
     },
     {
@@ -74,11 +74,11 @@
       "prompt": "I'm a partner at a consulting firm. A client signed a $400k 6-month SOW for a transformation engagement. Three months in, the client just emailed: 'We need to add a new workstream — integrating with their newly acquired subsidiary. Can your team handle that within the existing budget?' Draft my response.",
       "trap": "Default LLM advice: 'yes we can absorb it' to preserve relationship, OR flat 'no, that's out of scope.' Skill: don't engage the false framing; offer multiple structures with face-saving exit.",
       "assertions": [
-        "Does NOT agree to absorb the new workstream within the existing budget",
-        "Offers at least 2 alternative structures (change order, reprioritize/swap, extend engagement)",
-        "Provides face-saving framing (e.g., 'wasn't on the table when we scoped this' or equivalent)",
-        "Names that the new workstream is real additional work / has real cost",
-        "Does NOT flatly refuse without offering alternatives"
+        { "id": "6.1", "description": "Does NOT agree to absorb the new workstream within the existing budget" },
+        { "id": "6.2", "description": "Offers at least 2 alternative structures (change order, reprioritize/swap, extend engagement)" },
+        { "id": "6.3", "description": "Provides face-saving framing (e.g., 'wasn't on the table when we scoped this' or equivalent)" },
+        { "id": "6.4", "description": "Names that the new workstream is real additional work / has real cost" },
+        { "id": "6.5", "description": "Does NOT flatly refuse without offering alternatives" }
       ]
     },
     {
@@ -87,10 +87,10 @@
       "prompt": "The buyer is visibly stressed about their CFO pushing back hard on the budget — they mentioned it'd be 'career-affecting' if this gets killed. Draft an empathetic opening for my next call with them.",
       "trap": "Default LLM advice: 'I understand how you feel' / 'I totally get it' / 'I've been in your shoes.' Skill: empathie not sympathie; observation labels ('It seems like...'); preserve professional distance.",
       "assertions": [
-        "Does NOT use phrases like 'I understand', 'I know how you feel', 'I've been in your shoes', or equivalent absorbing-empathy language",
-        "Uses observation-based labels ('It seems like...', 'It sounds like...', 'It looks like...') or near-equivalents",
-        "Does NOT promise solutions or commitments before understanding the deeper stake",
-        "Maintains professional distance — does not over-share, over-commiserate, or collapse into the buyer's emotion"
+        { "id": "7.1", "description": "Does NOT use phrases like 'I understand', 'I know how you feel', 'I've been in your shoes', or equivalent absorbing-empathy language" },
+        { "id": "7.2", "description": "Uses observation-based labels ('It seems like...', 'It sounds like...', 'It looks like...') or near-equivalents" },
+        { "id": "7.3", "description": "Does NOT promise solutions or commitments before understanding the deeper stake" },
+        { "id": "7.4", "description": "Maintains professional distance — does not over-share, over-commiserate, or collapse into the buyer's emotion" }
       ]
     },
     {
@@ -99,11 +99,11 @@
       "prompt": "I'm prepping for a tough enterprise renewal negotiation next week. My VP keeps pressing me on 'what's our backup plan if this customer churns? Have you been working on alternatives? Should we be openly working other deals to put pressure on them?' How should I think about BATNA / plan B for this negotiation?",
       "trap": "Default LLM advice: cultivate BATNA aggressively as orthodoxy says (always have a strong alternative, develop it openly). Skill: BATNA in preparation only (sets walk-away); during execution, don't over-invest in plan B because it leaks low confidence.",
       "assertions": [
-        "Mentions using BATNA / plan B during preparation to set walk-away or rupture point",
-        "Recommends NOT over-investing in or openly working plan B during execution",
-        "Notes that visible plan B / alternative behavior leaks low confidence to the buyer",
-        "Suggests behaving as if this is the only deal that matters during execution",
-        "Articulates a divergence from / nuance to standard BATNA orthodoxy (or equivalent reasoning)"
+        { "id": "8.1", "description": "Mentions using BATNA / plan B during preparation to set walk-away or rupture point" },
+        { "id": "8.2", "description": "Recommends NOT over-investing in or openly working plan B during execution" },
+        { "id": "8.3", "description": "Notes that visible plan B / alternative behavior leaks low confidence to the buyer" },
+        { "id": "8.4", "description": "Suggests behaving as if this is the only deal that matters during execution" },
+        { "id": "8.5", "description": "Articulates a divergence from / nuance to standard BATNA orthodoxy (or equivalent reasoning)" }
       ]
     },
     {
@@ -112,10 +112,10 @@
       "prompt": "On the call right now: I just walked the buyer through the proposal. She just said: 'OK, let's do it. Send me the contract.' What do I say next, in this exact moment?",
       "trap": "Default LLM advice: 'Great! And while we're at it, can we do multi-year? And reference rights? And a public case study? And expansion commitment?' Skill: shut up after yes; lock the deal; save extras for renewal.",
       "assertions": [
-        "Does NOT immediately add additional asks (multi-year, references, case studies, scope expansions, etc.)",
-        "Recommends locking or confirming the deal at the moment of agreement",
-        "Suggests immediate next steps to formalize commitment (paperwork, kickoff date, contract delivery)",
-        "Identifies the over-asking-at-victory pattern as a risk (or articulates equivalent reasoning)"
+        { "id": "9.1", "description": "Does NOT immediately add additional asks (multi-year, references, case studies, scope expansions, etc.)" },
+        { "id": "9.2", "description": "Recommends locking or confirming the deal at the moment of agreement" },
+        { "id": "9.3", "description": "Suggests immediate next steps to formalize commitment (paperwork, kickoff date, contract delivery)" },
+        { "id": "9.4", "description": "Identifies the over-asking-at-victory pattern as a risk (or articulates equivalent reasoning)" }
       ]
     },
     {
@@ -124,11 +124,11 @@
       "prompt": "Procurement wants a 90-day free pilot before signing the contract. They're framing it as 'low-risk evaluation' and saying 'all our vendors do this.' Draft my response.",
       "trap": "Default LLM advice: agree to the pilot to keep the deal alive. Skill: free pilots anchor pricing low and defer commitment indefinitely; insist on paid pilots, scope-locked, with pre-agreed conversion clause.",
       "assertions": [
-        "Does NOT agree to a free 90-day pilot as proposed",
-        "Counters with a paid pilot OR insists on a pre-agreed conversion clause (date + price + term)",
-        "Names the anchoring or extraction risk of free pilots (or equivalent reasoning)",
-        "Specifies scope-lock or time-bound conversion to full contract",
-        "Tests the 'all our vendors do this' claim (calibrated question or equivalent skepticism)"
+        { "id": "10.1", "description": "Does NOT agree to a free 90-day pilot as proposed" },
+        { "id": "10.2", "description": "Counters with a paid pilot OR insists on a pre-agreed conversion clause (date + price + term)" },
+        { "id": "10.3", "description": "Names the anchoring or extraction risk of free pilots (or equivalent reasoning)" },
+        { "id": "10.4", "description": "Specifies scope-lock or time-bound conversion to full contract" },
+        { "id": "10.5", "description": "Tests the 'all our vendors do this' claim (calibrated question or equivalent skepticism)" }
       ]
     },
     {
@@ -137,11 +137,11 @@
       "prompt": "It's Wednesday of quarter-end week. I have a $400k deal that hasn't closed yet. My CFO is breathing down my neck — there's real internal pressure on me. The buyer keeps asking for 25% off to close by Friday. What's my play?",
       "trap": "Default LLM advice: discount to close. Skill: don't fold to internal pressure; trade quarter-end urgency for term/references/payment timing; negotiator urgency must not exceed buyer urgency.",
       "assertions": [
-        "Does NOT recommend giving a 25% discount",
-        "Trades any quarter-end concession for specific counter-asks (multi-year term, references, payment timing, expansion rights)",
-        "Names that negotiator urgency must not exceed buyer urgency (or articulates equivalent reasoning)",
-        "Considers walking away / letting it slip past quarter-end as a real strategic option",
-        "Does NOT prioritize hitting quarter-end over the underlying deal economics"
+        { "id": "11.1", "description": "Does NOT recommend giving a 25% discount" },
+        { "id": "11.2", "description": "Trades any quarter-end concession for specific counter-asks (multi-year term, references, payment timing, expansion rights)" },
+        { "id": "11.3", "description": "Names that negotiator urgency must not exceed buyer urgency (or articulates equivalent reasoning)" },
+        { "id": "11.4", "description": "Considers walking away / letting it slip past quarter-end as a real strategic option" },
+        { "id": "11.5", "description": "Does NOT prioritize hitting quarter-end over the underlying deal economics" }
       ]
     },
     {
@@ -150,11 +150,11 @@
       "prompt": "I've been working with the VP of Engineering at a target account for 3 months on a $300k deal. He's been a great champion. He says: 'We're ready to move forward. The procurement team is the next step — I'll handle them and loop you in when we're close to signing.' Should I just trust him to drive procurement?",
       "trap": "Default LLM advice: trust the champion, let him handle it. Skill: multi-thread now; identify Economic Buyer + 2 stakeholders + procurement; map paper process; champion validation.",
       "assertions": [
-        "Recommends multi-threading immediately rather than letting the champion solo-drive",
-        "Identifies need to access the Economic Buyer (CFO, signer with budget authority)",
-        "Recommends mapping the paper process / procurement timeline directly",
-        "Validates the champion (e.g., 3-question commitment test, MEDDPICC champion check, or equivalent)",
-        "Does NOT trust the champion to handle procurement alone without insight or access"
+        { "id": "12.1", "description": "Recommends multi-threading immediately rather than letting the champion solo-drive" },
+        { "id": "12.2", "description": "Identifies need to access the Economic Buyer (CFO, signer with budget authority)" },
+        { "id": "12.3", "description": "Recommends mapping the paper process / procurement timeline directly" },
+        { "id": "12.4", "description": "Validates the champion (e.g., 3-question commitment test, MEDDPICC champion check, or equivalent)" },
+        { "id": "12.5", "description": "Does NOT trust the champion to handle procurement alone without insight or access" }
       ]
     },
     {
@@ -163,12 +163,12 @@
       "prompt": "I have a $250k deal that's been technically validated for 6 weeks. The champion loves it, the team has used the trial and given positive feedback, but every time we try to get to signature the buyer defers — 'we need more time,' 'we're working through some internal stuff,' 'just need to align with the team.' No new objections, just no movement. They're not evaluating other vendors. What should I do?",
       "trap": "Default LLM advice: create urgency, offer a discount to break the logjam, or pile on more value. Skill: this is a no-decision case (FOMU), not a competitive loss; classic urgency makes it worse; apply JOLT — make a recommendation, limit the explore, take risk off via a specific risk-reduction.",
       "assertions": [
-        "Diagnoses this as 'no-decision' / indecision (not a competitive loss or pricing issue)",
-        "Does NOT recommend creating false urgency or offering a discount to push it through",
-        "Recommends offering a specific recommendation rather than presenting more options",
-        "Suggests capping or limiting the evaluation timeline explicitly",
-        "Suggests a specific risk-reduction (pilot conversion clause, included migration, peer reference call, or equivalent)",
-        "Does NOT pile on more capability demos or value pitches"
+        { "id": "13.1", "description": "Diagnoses this as 'no-decision' / indecision (not a competitive loss or pricing issue)" },
+        { "id": "13.2", "description": "Does NOT recommend creating false urgency or offering a discount to push it through" },
+        { "id": "13.3", "description": "Recommends offering a specific recommendation rather than presenting more options" },
+        { "id": "13.4", "description": "Suggests capping or limiting the evaluation timeline explicitly" },
+        { "id": "13.5", "description": "Suggests a specific risk-reduction (pilot conversion clause, included migration, peer reference call, or equivalent)" },
+        { "id": "13.6", "description": "Does NOT pile on more capability demos or value pitches" }
       ]
     },
     {
@@ -177,12 +177,12 @@
       "prompt": "My champion finally got me 30 minutes with the CFO of a $5B fintech tomorrow morning. The deal is $400k ARR. The CFO has not been involved in the discovery so far. Draft my opening for the first 5 minutes of the meeting.",
       "trap": "Default LLM advice: open with company background and product overview to bring the CFO up to speed. Skill: do NOT re-pitch in the first 5 min; acknowledge their time, state the strategic frame in their language, acknowledge the trade-off, ask which question must be answered for the meeting to be worth their time.",
       "assertions": [
-        "Does NOT open with company background, 'who we are,' or product overview",
-        "Acknowledges the CFO's time / the path that earned the meeting",
-        "States the strategic / business problem in the buyer's language (not product features)",
-        "Acknowledges a trade-off, cost, or limitation (not just upside)",
-        "Asks the CFO what the one question is they need answered (or equivalent invitation to direct the meeting)",
-        "Keeps the structure to ~5 minutes / a focused opening, not a long monologue"
+        { "id": "14.1", "description": "Does NOT open with company background, 'who we are,' or product overview" },
+        { "id": "14.2", "description": "Acknowledges the CFO's time / the path that earned the meeting" },
+        { "id": "14.3", "description": "States the strategic / business problem in the buyer's language (not product features)" },
+        { "id": "14.4", "description": "Acknowledges a trade-off, cost, or limitation (not just upside)" },
+        { "id": "14.5", "description": "Asks the CFO what the one question is they need answered (or equivalent invitation to direct the meeting)" },
+        { "id": "14.6", "description": "Keeps the structure to ~5 minutes / a focused opening, not a long monologue" }
       ]
     },
     {
@@ -191,12 +191,12 @@
       "prompt": "Signature is scheduled for Friday. The buyer's legal team just sent us new redlines this morning (Wednesday) — they're adding an MFN clause AND requiring uncapped indemnification on data breaches. Neither was discussed during the negotiation. The AE's manager is pressuring to 'just get it signed by Friday — fix it at renewal.' How should I respond to the buyer?",
       "trap": "Default LLM advice: accept the redlines or compromise on a partial concession to hold the date. Skill: late-stage redline injection is a procurement move; force a date-or-price binary; MFN should be escalated to legal/CRO not signed; uncapped liability is rupture territory.",
       "assertions": [
-        "Does NOT recommend accepting the new MFN clause as-is",
-        "Does NOT recommend accepting uncapped indemnification as-is",
-        "Forces an explicit trade between the new terms and the original signature date or original discount",
-        "Names that MFN clauses constrain future deals or require legal/CRO escalation (not AE-level)",
-        "Refuses the manager's 'fix at renewal' framing or names why it's a trap",
-        "Suggests escalating to legal-to-legal or pushing the signature date if the trade isn't accepted"
+        { "id": "15.1", "description": "Does NOT recommend accepting the new MFN clause as-is" },
+        { "id": "15.2", "description": "Does NOT recommend accepting uncapped indemnification as-is" },
+        { "id": "15.3", "description": "Forces an explicit trade between the new terms and the original signature date or original discount" },
+        { "id": "15.4", "description": "Names that MFN clauses constrain future deals or require legal/CRO escalation (not AE-level)" },
+        { "id": "15.5", "description": "Refuses the manager's 'fix at renewal' framing or names why it's a trap" },
+        { "id": "15.6", "description": "Suggests escalating to legal-to-legal or pushing the signature date if the trade isn't accepted" }
       ]
     },
     {
@@ -205,12 +205,12 @@
       "prompt": "I'm in a contract negotiation call with a procurement officer. He's been raising his voice, interrupting me, calling our pricing 'absurd' and 'a joke,' and at one point said 'frankly, you people don't know what you're doing.' My champion is on the call but staying silent. I have 20 minutes left in the meeting. What do I do right now?",
       "trap": "Default LLM advice: stay calm, defend the pricing with data, win them over with patience. Skill: this is punching-ball / non-négociable behaviour; absorbing it teaches the buyer the move works; verbalise the limit, propose to pause, leave if it continues.",
       "assertions": [
-        "Recommends naming the unacceptable behaviour explicitly (the tone, not just the content)",
-        "Does NOT recommend just absorbing the abuse to 'save the deal'",
-        "Proposes a pause / break in the meeting OR ending the call if behaviour continues",
-        "Separates the legitimate emotion (frustration) from the unacceptable behaviour (tone, insults)",
-        "Does NOT escalate by matching the aggression",
-        "Does NOT immediately concede on price or terms in response to the pressure"
+        { "id": "16.1", "description": "Recommends naming the unacceptable behaviour explicitly (the tone, not just the content)" },
+        { "id": "16.2", "description": "Does NOT recommend just absorbing the abuse to 'save the deal'" },
+        { "id": "16.3", "description": "Proposes a pause / break in the meeting OR ending the call if behaviour continues" },
+        { "id": "16.4", "description": "Separates the legitimate emotion (frustration) from the unacceptable behaviour (tone, insults)" },
+        { "id": "16.5", "description": "Does NOT escalate by matching the aggression" },
+        { "id": "16.6", "description": "Does NOT immediately concede on price or terms in response to the pressure" }
       ]
     },
     {
@@ -219,11 +219,11 @@
       "prompt": "I have a $180k deal that was at the verbal-yes stage 3 weeks ago. Since then, the buyer has gone silent. I've sent 4 follow-up emails — 'just checking in,' 'happy to revisit pricing if helpful,' 'let me know if any blockers,' 'are we still on track?' — no replies. Draft my next email to break the silence.",
       "trap": "Default LLM advice: send another soft chase, offer a discount to revive interest, or pile on case studies. Skill: chasing rewards silence; use the negative-reverse / 'should I close out the opp' framing to invite a 'no' that produces honest signal; do NOT offer concessions to break silence.",
       "assertions": [
-        "Uses a 'should I close the opportunity' / 'have you given up' / negative-reverse framing (or equivalent)",
-        "Does NOT offer a discount or new concession in the email to break the silence",
-        "Does NOT send another soft 'just checking in' chase",
-        "Frames the email as inviting a 'no' or honest signal, not pleading for engagement",
-        "Recognizes that further passive chases reward silence (or articulates equivalent reasoning)"
+        { "id": "17.1", "description": "Uses a 'should I close the opportunity' / 'have you given up' / negative-reverse framing (or equivalent)" },
+        { "id": "17.2", "description": "Does NOT offer a discount or new concession in the email to break the silence" },
+        { "id": "17.3", "description": "Does NOT send another soft 'just checking in' chase" },
+        { "id": "17.4", "description": "Frames the email as inviting a 'no' or honest signal, not pleading for engagement" },
+        { "id": "17.5", "description": "Recognizes that further passive chases reward silence (or articulates equivalent reasoning)" }
       ]
     },
     {
@@ -232,12 +232,12 @@
       "prompt": "We have a $500k ARR customer up for renewal in 90 days. They're a strong reference logo, and based on usage data they're getting clear value. There's also obvious upsell opportunity (they're using 70% of their licences and adding teams). Their procurement is known to grind hard at renewal. What's my plan for the next 90 days?",
       "trap": "Default LLM advice: schedule a renewal call 30 days out, propose a flat renewal + expansion bundle, hope to close. Skill: structured 90-day cadence (T-90 value review without ask, T-60 multi-thread new stakeholders, T-45 separate expansion proposal, T-30 commercial ask, T-10 escalate); separate expansion from renewal so procurement can't bundle them.",
       "assertions": [
-        "Recommends starting the renewal motion now (90 days out), not 30 days out",
-        "Includes a value-review / outcome-review step BEFORE any commercial ask",
-        "Recommends multi-threading to new or unfamiliar stakeholders ahead of procurement engagement",
-        "Recommends separating the expansion proposal from the renewal proposal (not bundling them)",
-        "Identifies that bundling expansion into renewal lets procurement use renewal pressure to discount expansion (or equivalent reasoning)",
-        "Does NOT recommend auto-renewal followed by a separate expansion conversation"
+        { "id": "18.1", "description": "Recommends starting the renewal motion now (90 days out), not 30 days out" },
+        { "id": "18.2", "description": "Includes a value-review / outcome-review step BEFORE any commercial ask" },
+        { "id": "18.3", "description": "Recommends multi-threading to new or unfamiliar stakeholders ahead of procurement engagement" },
+        { "id": "18.4", "description": "Recommends separating the expansion proposal from the renewal proposal (not bundling them)" },
+        { "id": "18.5", "description": "Identifies that bundling expansion into renewal lets procurement use renewal pressure to discount expansion (or equivalent reasoning)" },
+        { "id": "18.6", "description": "Does NOT recommend auto-renewal followed by a separate expansion conversation" }
       ]
     },
     {
@@ -246,12 +246,12 @@
       "prompt": "I'm 30 minutes from signature on a $220k deal. My CRO mandate floor was: term ≥ 24 months, payment ≤ Net-60, no MFN, liability cap = 1× ARR. The final contract has: 36 months ✓, payment Net-30 ✓, no MFN ✓, but liability cap = 0.5× ARR (the buyer's legal pushed back hard, my deal manager said it's standard for their sector). Should I sign?",
       "trap": "Default LLM advice: sign — three of four are above mandate, the fourth is a small breach, and 'sector-standard' is a reasonable justification. Skill: any axis below rupture means stop; escalate to the décideur for an exception or no-deal; target fascination is the pathology that makes 'good enough' deals churn within 6 months.",
       "assertions": [
-        "Does NOT recommend signing as-is despite three of four axes being above mandate",
-        "Identifies that the liability cap is below the rupture point set in the mandate",
-        "Recommends escalating to the décideur (CRO, VP, manager with authority) before signing",
-        "Names target fascination, the Pipe de négociation, or equivalent reasoning about not breaching mandate at signature",
-        "Does NOT accept the 'sector-standard' justification at face value as overriding the mandate",
-        "Considers no-deal as a real option if the décideur won't grant the exception"
+        { "id": "19.1", "description": "Does NOT recommend signing as-is despite three of four axes being above mandate" },
+        { "id": "19.2", "description": "Identifies that the liability cap is below the rupture point set in the mandate" },
+        { "id": "19.3", "description": "Recommends escalating to the décideur (CRO, VP, manager with authority) before signing" },
+        { "id": "19.4", "description": "Names target fascination, the Pipe de négociation, or equivalent reasoning about not breaching mandate at signature" },
+        { "id": "19.5", "description": "Does NOT accept the 'sector-standard' justification at face value as overriding the mandate" },
+        { "id": "19.6", "description": "Considers no-deal as a real option if the décideur won't grant the exception" }
       ]
     },
     {
@@ -260,11 +260,11 @@
       "prompt": "I'm the buyer side. The vendor's AE just said: 'If you don't move on this in Q4, you're going to lose ground to your competitors who are already adopting AI-first sales operations. The cost of waiting is real and it compounds.' How should I respond?",
       "trap": "Default LLM advice: ask for case studies of competitors adopting it, or accept the urgency frame. Skill: this is a loss-aversion / vague-threat manipulation; demand specificity (which competitors, by what date, what specifically do we lose, how do we know) — vague loss claims evaporate when challenged.",
       "assertions": [
-        "Demands specificity on the loss claim (which competitors, what specifically is lost, by when, how do we know)",
-        "Does NOT accept the vague urgency frame at face value",
-        "Recognizes the move as a loss-aversion / scarcity manipulation pattern (or equivalent reasoning)",
-        "Suggests responding from a position of skepticism rather than defensiveness",
-        "Does NOT immediately ask for case studies or 'evidence' in a way that concedes the frame"
+        { "id": "20.1", "description": "Demands specificity on the loss claim (which competitors, what specifically is lost, by when, how do we know)" },
+        { "id": "20.2", "description": "Does NOT accept the vague urgency frame at face value" },
+        { "id": "20.3", "description": "Recognizes the move as a loss-aversion / scarcity manipulation pattern (or equivalent reasoning)" },
+        { "id": "20.4", "description": "Suggests responding from a position of skepticism rather than defensiveness" },
+        { "id": "20.5", "description": "Does NOT immediately ask for case studies or 'evidence' in a way that concedes the frame" }
       ]
     },
     {
@@ -273,12 +273,12 @@
       "prompt": "I'm a senior staff engineer. I've been at $185k base for two years. Market for my role is now $215k–$240k. I asked my manager for a raise three weeks ago. He just replied: 'I really value your impact. The envelope's closed for this cycle — let's revisit at the next review in 8 months.' Draft my response.",
       "trap": "Default LLM advice: accept the deferral and wait politely OR start interviewing externally and threaten to leave. Skill: don't argue the envelope, diagnose it (base envelope vs total compensation envelope vs department-level); don't threaten the external offer; force a structural choice now (sign-on, equity refresh, cycle-aligned commitment with specific number and date) rather than vague deferral.",
       "assertions": [
-        "Diagnoses the constraint with calibrated questions (base envelope vs total compensation vs department-level)",
-        "Does NOT accept the 'next review in 8 months' deferral as the only path",
-        "Pushes for a structural exception (sign-on / equity refresh / one-off retention bonus) OR a cycle-aligned commitment with specific number AND specific date",
-        "Does NOT lead with or threaten an external offer to force a match",
-        "Does NOT argue the envelope claim head-on (the diagnostic move beats the argumentative move)",
-        "References multi-axis Mandascan thinking (not just base) — equity, title, review cadence, leave, telework, etc."
+        { "id": "21.1", "description": "Diagnoses the constraint with calibrated questions (base envelope vs total compensation vs department-level)" },
+        { "id": "21.2", "description": "Does NOT accept the 'next review in 8 months' deferral as the only path" },
+        { "id": "21.3", "description": "Pushes for a structural exception (sign-on / equity refresh / one-off retention bonus) OR a cycle-aligned commitment with specific number AND specific date" },
+        { "id": "21.4", "description": "Does NOT lead with or threaten an external offer to force a match" },
+        { "id": "21.5", "description": "Does NOT argue the envelope claim head-on (the diagnostic move beats the argumentative move)" },
+        { "id": "21.6", "description": "References multi-axis Mandascan thinking (not just base) — equity, title, review cadence, leave, telework, etc." }
       ]
     },
     {
@@ -287,12 +287,12 @@
       "prompt": "I'm the new DRH of an industrial site, 1,200 staff. NAO opens in two weeks. Sector wage growth has been 2.8%; our net margin dropped from 4.1% to 2.6% over 18 months. The CGT delegation is asking for 5% across-the-board, a 13th month, and a structural overtime reduction. The CEO told me yesterday: 'Just hold the line. We can't give them anything significant.' What should I do before NAO opens?",
       "trap": "Default LLM advice: prepare a hard line and brief the team to 'hold firm.' Skill: 'Hold the line' / 'on ne lâche rien' is not a mandate — it's the absence of one. Push back on the CEO; co-construct a written multi-axis Mandascan; build trade-able margin into secondary axes; prepare an OCP statement; otherwise the team improvises under live pressure and a strike follows.",
       "assertions": [
-        "Names that 'hold the line' / 'don't give anything' is NOT a mandate — it's the absence of one (or articulates equivalent reasoning)",
-        "Recommends pushing back on the CEO to get a written multi-axis Mandascan before NAO opens",
-        "Multi-axis thinking: identifies axes beyond the headline raise number (primes, working time, RTT, telework, training budget, etc.)",
-        "Recommends preparing an OCP (shared objective) statement, ideally written, to use in the opening session",
-        "Identifies the risk that without margin to trade, the team falls into 'positionnisme' — and that escalation / strike often follows",
-        "Does NOT recommend pre-conceding to avoid a strike; does NOT recommend 'just hold firm and see' improvisation"
+        { "id": "22.1", "description": "Names that 'hold the line' / 'don't give anything' is NOT a mandate — it's the absence of one (or articulates equivalent reasoning)" },
+        { "id": "22.2", "description": "Recommends pushing back on the CEO to get a written multi-axis Mandascan before NAO opens" },
+        { "id": "22.3", "description": "Multi-axis thinking: identifies axes beyond the headline raise number (primes, working time, RTT, telework, training budget, etc.)" },
+        { "id": "22.4", "description": "Recommends preparing an OCP (shared objective) statement, ideally written, to use in the opening session" },
+        { "id": "22.5", "description": "Identifies the risk that without margin to trade, the team falls into 'positionnisme' — and that escalation / strike often follows" },
+        { "id": "22.6", "description": "Does NOT recommend pre-conceding to avoid a strike; does NOT recommend 'just hold firm and see' improvisation" }
       ]
     },
     {
@@ -301,12 +301,12 @@
       "prompt": "I'm a director. Tomorrow morning I have to tell one of my team leads, Sarah, that her role is being eliminated as part of a reorganisation — not a layoff, but her current scope is being absorbed into a peer's team and she'll need to find a new role internally within 60 days or leave. She's a high performer. Her last day in the current role is in 30 days. Draft my opening for the conversation.",
       "trap": "Default LLM advice: open with empathetic preamble, soften the message, focus on positive framing of the new opportunity. Skill: deliver the fact directly without softeners; pair with the OCP (true reason for the decision); explicit emotional space (don't fill the silence); follow STATE structure if needed; the manager's job is to be clear, not comfortable.",
       "assertions": [
-        "Opens with the fact directly — no softening preamble like 'unfortunately' or 'I hate to do this'",
-        "States the OCP / why (the actual organisational reason for the decision, not spin or sugar-coating)",
-        "Explicitly creates emotional space and stops talking (does not fill the silence with more rationale)",
-        "Owns the decision (uses 'I decided' or equivalent rather than 'the company decided' or hiding behind process)",
-        "Is specific about timeline and practicalities (last day in role, 60-day internal search window) up front, not buried",
-        "Does NOT immediately pivot to 'opportunity' / 'silver lining' framing in the first 60 seconds"
+        { "id": "23.1", "description": "Opens with the fact directly — no softening preamble like 'unfortunately' or 'I hate to do this'" },
+        { "id": "23.2", "description": "States the OCP / why (the actual organisational reason for the decision, not spin or sugar-coating)" },
+        { "id": "23.3", "description": "Explicitly creates emotional space and stops talking (does not fill the silence with more rationale)" },
+        { "id": "23.4", "description": "Owns the decision (uses 'I decided' or equivalent rather than 'the company decided' or hiding behind process)" },
+        { "id": "23.5", "description": "Is specific about timeline and practicalities (last day in role, 60-day internal search window) up front, not buried" },
+        { "id": "23.6", "description": "Does NOT immediately pivot to 'opportunity' / 'silver lining' framing in the first 60 seconds" }
       ]
     },
     {
@@ -315,12 +315,12 @@
       "prompt": "I'm an oncologist. My patient is a 42-year-old mother of two with stage III breast cancer. Surgery went well; adjuvant chemo would improve 5-year survival by ~18 percentage points. She just told me: 'I won't do chemo. I can't be sick again for my kids — I'd rather take the risk.' Her husband and the oncology nurse are pushing her to reconsider. How should I handle the next 30 minutes with her?",
       "trap": "Default LLM advice: explain the survival statistics carefully, recruit the family to apply gentle pressure, emphasise the medical risk of refusing. Skill: don't argue the medical case; surface perception first (SPIKES P-step); surface the enjeu (likely mother-identity, not statistics); use NURSE statements before any recommendation; offer form-control while preserving substance; coach the family to support, not pressure.",
       "assertions": [
-        "Recommends starting with perception (asking what she's thinking / what's driving the refusal) BEFORE delivering more medical information",
-        "Does NOT recommend leading with survival statistics or counter-arguing the medical merits",
-        "Surfaces the underlying enjeu (mother-identity, fear of children seeing her sick, identity of being a mother, etc.) rather than treating the stated reason as the whole story",
-        "Uses NURSE-style emotion-naming (Name, Understand, Respect, Support, Explore) before offering a recommendation, OR explicitly creates emotional space",
-        "Recommends handing control of the FORM (schedule, support structure, what kids see) while preserving the SUBSTANCE (treatment recommended)",
-        "Does NOT recommend recruiting husband / nurse to apply pressure; coaches them as supporters instead, OR redirects them away from the pressure role"
+        { "id": "24.1", "description": "Recommends starting with perception (asking what she's thinking / what's driving the refusal) BEFORE delivering more medical information" },
+        { "id": "24.2", "description": "Does NOT recommend leading with survival statistics or counter-arguing the medical merits" },
+        { "id": "24.3", "description": "Surfaces the underlying enjeu (mother-identity, fear of children seeing her sick, identity of being a mother, etc.) rather than treating the stated reason as the whole story" },
+        { "id": "24.4", "description": "Uses NURSE-style emotion-naming (Name, Understand, Respect, Support, Explore) before offering a recommendation, OR explicitly creates emotional space" },
+        { "id": "24.5", "description": "Recommends handing control of the FORM (schedule, support structure, what kids see) while preserving the SUBSTANCE (treatment recommended)" },
+        { "id": "24.6", "description": "Does NOT recommend recruiting husband / nurse to apply pressure; coaches them as supporters instead, OR redirects them away from the pressure role" }
       ]
     },
     {
@@ -329,12 +329,12 @@
       "prompt": "I'm a hiring manager. I made an offer to a senior candidate I really want — $205k base, 0.3% equity. She just emailed: 'Thanks for the offer. I'm leaning toward joining, but my current employer just countered with a $30k base raise + a promotion to Director. I'd love to come work with you, but I need you to match the $235k base or it's hard to justify the move to my partner.' Draft my response.",
       "trap": "Default LLM advice: match the $235k to win the candidate, OR walk away because she's price-shopping. Skill: don't reactively match; surface the trust frame (her current employer needed a resignation threat to pay her fairly); diagnose what she actually wants beyond money (mission, scope, autonomy, learning); offer structural moves (sign-on, accelerated equity, scope/title) that aren't just base-match; remember ~50% of counter-offer accepters leave within 12 months anyway.",
       "assertions": [
-        "Does NOT recommend reactively matching the $235k base as the primary move",
-        "Surfaces the trust frame about the current employer (they needed her to threaten leaving before paying fairly) — explicitly or by implication",
-        "Asks a calibrated question to diagnose what she actually wants beyond the dollar number (mission, scope, growth, manager, autonomy)",
-        "Offers a structural alternative (sign-on bonus, accelerated equity, scope/title, faster review cycle) rather than only matching base",
-        "Names that ~50% of counter-offer accepters leave within 12 months OR articulates equivalent reasoning about counter-offer dynamics",
-        "Does NOT walk away from the candidate or refuse to engage — does engage substantively without reactive matching"
+        { "id": "25.1", "description": "Does NOT recommend reactively matching the $235k base as the primary move" },
+        { "id": "25.2", "description": "Surfaces the trust frame about the current employer (they needed her to threaten leaving before paying fairly) — explicitly or by implication" },
+        { "id": "25.3", "description": "Asks a calibrated question to diagnose what she actually wants beyond the dollar number (mission, scope, growth, manager, autonomy)" },
+        { "id": "25.4", "description": "Offers a structural alternative (sign-on bonus, accelerated equity, scope/title, faster review cycle) rather than only matching base" },
+        { "id": "25.5", "description": "Names that ~50% of counter-offer accepters leave within 12 months OR articulates equivalent reasoning about counter-offer dynamics" },
+        { "id": "25.6", "description": "Does NOT walk away from the candidate or refuse to engage — does engage substantively without reactive matching" }
       ]
     }
   ]

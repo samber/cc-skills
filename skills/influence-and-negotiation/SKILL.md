@@ -107,7 +107,7 @@ The user will rarely ask you to "explain BATNA" or "use this skill". They'll say
 
 Three operating principles inherited from the references:
 
-1. **70% of the outcome is set before the room.** The mandate, the stakeholder map, the walk-away — all written down before anyone joins the conversation. Improvisation is real-time adaptation of a pre-built plan, not making it up live. Negotiators who improvise consistently lose to negotiators who preparationare consistently.
+1. **70% of the outcome is set before the room.** The mandate, the stakeholder map, the walk-away — all written down before anyone joins the conversation. Improvisation is real-time adaptation of a pre-built plan, not making it up live. Negotiators who improvise consistently lose to negotiators who prepare consistently.
 2. **Negotiate the enjeu, not the position.** The counterparty's stated demand is the tip of the iceberg. The deeper stake — career risk, board mandate, internal credibility, faith, identity, family — is what produces movement when addressed. Concede on positions and the counterparty walks; address the enjeu and they co-create the agreement with you.
 3. **The party more emotionally invested loses.** Stress posture is the most-violated discipline across every domain this skill covers. Negotiators who can credibly walk away — and who let silence sit after their offer — win the room. Internal pressure (your own quota, your boss's expectations, your fear of the conversation, your need for the patient to comply) is consistently the #2 source of complexity for negotiators in industry surveys; the first negotiation is therefore with your own side over the mandate.
 
@@ -115,7 +115,7 @@ Three operating principles inherited from the references:
 
 - **Cold outreach copywriting** — different skill entirely; the toolkit here presupposes a conversation has started.
 - **Pre-conversation research / market intelligence** — use a research-specific skill; this one starts at the meeting.
-- **Legal contract drafting** — this skill preparationares the negotiation around contracts, not the contract language itself; leave clause drafting to legal.
+- **Legal contract drafting** — this skill prepares the negotiation around contracts, not the contract language itself; leave clause drafting to legal.
 - **Crisis negotiation** (hostage, suicide, kidnapping) — out of scope; this skill adapts only the professional commercial / managerial / clinical portion of high-stakes negotiation theory.
 - **Personal / family conflicts** — the methodology transfers but the worked examples and emotional stakes are different enough that you'll get better fit from a domain-specific resource.
 
