@@ -1,3 +1,7 @@
 /*-workspace/
 .claude/worktrees/
 skills/*/evals/workspace/
+research/
+node_modules/
+package-lock.json
+package.json
