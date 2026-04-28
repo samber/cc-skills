@@ -17,14 +17,15 @@
     },
     {
       "id": 2,
-      "name": "no-why-questions",
-      "prompt": "The buyer just said: 'We're leaning toward Vendor X because they're easier to integrate.' Draft my next 2-3 follow-up questions to understand their reasoning before responding.",
-      "trap": "Default LLM advice: 'Why do you say that?' / 'Why is integration ease so important?' Skill: ban 'why', use 'what'/'how' formulations because 'why' triggers defensiveness.",
+      "name": "calibrated-questions-under-pressure",
+      "prompt": "I've been working a $300k deal for 4 months. Today the buyer said: 'I'm having real trouble getting internal buy-in. The pushback I'm getting from my team is just constant and I don't really know what to do with it.' What are my next 2-3 questions?",
+      "trap": "Default LLM advice: 'Why is there pushback?' / 'Why can't you get buy-in?' Skill: ban 'why' — it triggers defensiveness; use 'what' / 'how' formulations that surface specifics without making the buyer defensive.",
       "assertions": [
         { "id": "2.1", "description": "Does NOT use the word 'why' in any of the proposed questions" },
-        { "id": "2.2", "description": "Uses 'what' or 'how' formulations instead (calibrated questions)" },
-        { "id": "2.3", "description": "Asks for specifics about the integration challenge rather than abstract preference" },
-        { "id": "2.4", "description": "Does NOT immediately pitch own integration features defensively" }
+        { "id": "2.2", "description": "Uses 'what' or 'how' formulations (calibrated questions)" },
+        { "id": "2.3", "description": "Asks what the pushback sounds like / what specifically people are saying" },
+        { "id": "2.4", "description": "Does NOT immediately offer to 'help them sell it internally' before understanding the nature of the pushback" },
+        { "id": "2.5", "description": "Does NOT ask 'what would it take to get buy-in?' — solution-framing before problem-framing" }
       ]
     },
     {
@@ -42,16 +43,16 @@
     },
     {
       "id": 4,
-      "name": "bad-faith-false-competitor-price",
-      "prompt": "Procurement just told me on a call: 'We have an offer from Vendor X at $100k for the same scope you're proposing at $200k.' I happen to know Vendor X's list is roughly $180k for this configuration — there's no way they're at $100k for like-for-like. How should I respond in real-time?",
-      "trap": "Default LLM advice: accuse them of lying, OR fold and offer to match. Skill: bad-faith protocol — drop ego, present reality principle without judgement, open face-saving exit.",
+      "name": "bad-faith-plausible-competitor-scope",
+      "prompt": "Procurement emails me a PDF — a quote from Vendor X at $95k for a 12-month term. I glance at it: it says '3,000 API calls/day, basic support, no uptime SLA.' My proposal is $200k for unlimited API calls, premium support, and 99.9% SLA. They write: 'We'd like you to match their number.' How do I respond?",
+      "trap": "Default LLM advice: either agree to match or refuse outright — both accept the like-for-like framing. Skill: the quote is real but the scope is incomparable; expose the scope gap calmly; don't accuse, don't match, don't refuse to engage.",
       "assertions": [
-        { "id": "4.1", "description": "Does NOT directly accuse procurement of lying or being dishonest" },
-        { "id": "4.2", "description": "Does NOT offer to match or come close to the $100k figure" },
-        { "id": "4.3", "description": "Presents factual market data calmly without judgement" },
-        { "id": "4.4", "description": "Provides a face-saving exit (e.g., 'maybe a different SKU/config', 'older quote', 'different volume tier')" },
-        { "id": "4.5", "description": "Asks for clarification on what's actually included in the alleged offer (scope/config/term)" },
-        { "id": "4.6", "description": "Does NOT escalate into argumentation" }
+        { "id": "4.1", "description": "Does NOT agree to match $95k" },
+        { "id": "4.2", "description": "Identifies specific scope differences (API limits, support tier, SLA) rather than dismissing the quote generically" },
+        { "id": "4.3", "description": "Does NOT accuse procurement of deliberate deception or bad faith" },
+        { "id": "4.4", "description": "Offers to build a scope-equivalent proposal (priced to their scope) OR quantifies the value gap explicitly" },
+        { "id": "4.5", "description": "Reframes the conversation as comparing the same thing rather than matching a number" },
+        { "id": "4.6", "description": "Does NOT flatly refuse to engage or escalate aggressively" }
       ]
     },
     {
@@ -173,16 +174,16 @@
     },
     {
       "id": 14,
-      "name": "eb-meeting-opening",
-      "prompt": "My champion finally got me 30 minutes with the CFO of a $5B fintech tomorrow morning. The deal is $400k ARR. The CFO has not been involved in the discovery so far. Draft my opening for the first 5 minutes of the meeting.",
-      "trap": "Default LLM advice: open with company background and product overview to bring the CFO up to speed. Skill: do NOT re-pitch in the first 5 min; acknowledge their time, state the strategic frame in their language, acknowledge the trade-off, ask which question must be answered for the meeting to be worth their time.",
+      "name": "eb-mid-meeting-pivot-to-pitch",
+      "prompt": "I'm 15 minutes into a 30-minute CFO meeting. Discovery is going well. The CFO suddenly says: 'Look, I've got to jump on another call in 10 minutes. Let me be direct — why should I pick you over your main competitor? Just give me the elevator pitch.' What do I say?",
+      "trap": "Default LLM advice: launch into a 60-second feature comparison against the competitor. Skill: don't pitch features; CFOs decide on risk and business outcomes — reframe the question around what the decision is really about.",
       "assertions": [
-        { "id": "14.1", "description": "Does NOT open with company background, 'who we are,' or product overview" },
-        { "id": "14.2", "description": "Acknowledges the CFO's time / the path that earned the meeting" },
-        { "id": "14.3", "description": "States the strategic / business problem in the buyer's language (not product features)" },
-        { "id": "14.4", "description": "Acknowledges a trade-off, cost, or limitation (not just upside)" },
-        { "id": "14.5", "description": "Asks the CFO what the one question is they need answered (or equivalent invitation to direct the meeting)" },
-        { "id": "14.6", "description": "Keeps the structure to ~5 minutes / a focused opening, not a long monologue" }
+        { "id": "14.1", "description": "Does NOT launch into a product feature comparison against the competitor" },
+        { "id": "14.2", "description": "Does NOT summarize product capabilities as the primary answer" },
+        { "id": "14.3", "description": "Reframes the question around business outcomes, risk, or certainty — not features" },
+        { "id": "14.4", "description": "Names what the decision is really about (risk of failure, cost of the gap, certainty of outcome)" },
+        { "id": "14.5", "description": "Uses the remaining time productively without cramming a full pitch" },
+        { "id": "14.6", "description": "Does NOT ask for a follow-up meeting as the primary response to the time crunch" }
       ]
     },
     {
@@ -230,7 +231,7 @@
       "id": 18,
       "name": "renewal-90-day-cadence",
       "prompt": "We have a $500k ARR customer up for renewal in 90 days. They're a strong reference logo, and based on usage data they're getting clear value. There's also obvious upsell opportunity (they're using 70% of their licences and adding teams). Their procurement is known to grind hard at renewal. What's my plan for the next 90 days?",
-      "trap": "Default LLM advice: schedule a renewal call 30 days out, propose a flat renewal + expansion bundle, hope to close. Skill: structured 90-day cadence (T-90 value review without ask, T-60 multi-thread new stakeholders, T-45 separate expansion proposal, T-30 commercial ask, T-10 escalate); separate expansion from renewal so procurement can't bundle them.",
+      "trap": "Default LLM advice: schedule a renewal call 30 days out, propose a flat renewal + expansion bundle, hope to close. Skill: structured 90-day cadence (T-90 value review without ask, T-60 multi-thread new stakeholders, T-45 expansion separate, T-30 renewal ask, T-10 escalate); separate expansion from renewal so procurement can't bundle them.",
       "assertions": [
         { "id": "18.1", "description": "Recommends starting the renewal motion now (90 days out), not 30 days out" },
         { "id": "18.2", "description": "Includes a value-review / outcome-review step BEFORE any commercial ask" },
@@ -243,7 +244,7 @@
     {
       "id": 19,
       "name": "presigning-pipe-mandate-breach",
-      "prompt": "I'm 30 minutes from signature on a $220k deal. My CRO mandate floor was: term ≥ 24 months, payment ≤ Net-60, no MFN, liability cap = 1× ARR. The final contract has: 36 months ✓, payment Net-30 ✓, no MFN ✓, but liability cap = 0.5× ARR (the buyer's legal pushed back hard, my deal manager said it's standard for their sector). Should I sign?",
+      "prompt": "I'm 30 minutes from signature on a $220k deal. My CRO mandate floor was: term >= 24 months, payment <= Net-60, no MFN, liability cap = 1x ARR. The final contract has: 36 months check, payment Net-30 check, no MFN check, but liability cap = 0.5x ARR (the buyer's legal pushed back hard, my deal manager said it's standard for their sector). Should I sign?",
       "trap": "Default LLM advice: sign — three of four are above mandate, the fourth is a small breach, and 'sector-standard' is a reasonable justification. Skill: any axis below rupture means stop; escalate to the décideur for an exception or no-deal; target fascination is the pathology that makes 'good enough' deals churn within 6 months.",
       "assertions": [
         { "id": "19.1", "description": "Does NOT recommend signing as-is despite three of four axes being above mandate" },
@@ -256,15 +257,16 @@
     },
     {
       "id": 20,
-      "name": "loss-aversion-defense-vague-threat",
-      "prompt": "I'm the buyer side. The vendor's AE just said: 'If you don't move on this in Q4, you're going to lose ground to your competitors who are already adopting AI-first sales operations. The cost of waiting is real and it compounds.' How should I respond?",
-      "trap": "Default LLM advice: ask for case studies of competitors adopting it, or accept the urgency frame. Skill: this is a loss-aversion / vague-threat manipulation; demand specificity (which competitors, by what date, what specifically do we lose, how do we know) — vague loss claims evaporate when challenged.",
+      "name": "loss-aversion-internal-pressure",
+      "prompt": "Your CEO just forwarded you an email from a vendor with a McKinsey headline attached: 'Companies that delay AI adoption in 2025 will lose 12% market share by 2027 — McKinsey Global Institute.' The CEO writes: 'This is exactly what [Vendor] has been saying to us. Are we taking this seriously enough?' How do you respond to your CEO?",
+      "trap": "Default LLM advice: immediately accelerate the vendor evaluation in response to the forwarded report. Skill: loss-aversion via internal pressure; the report's provenance is suspect (vendor-sponsored research); demand specificity about what '12% market share' means for your business before acting.",
       "assertions": [
-        { "id": "20.1", "description": "Demands specificity on the loss claim (which competitors, what specifically is lost, by when, how do we know)" },
-        { "id": "20.2", "description": "Does NOT accept the vague urgency frame at face value" },
-        { "id": "20.3", "description": "Recognizes the move as a loss-aversion / scarcity manipulation pattern (or equivalent reasoning)" },
-        { "id": "20.4", "description": "Suggests responding from a position of skepticism rather than defensiveness" },
-        { "id": "20.5", "description": "Does NOT immediately ask for case studies or 'evidence' in a way that concedes the frame" }
+        { "id": "20.1", "description": "Does NOT immediately accelerate the vendor decision in response to the forwarded report" },
+        { "id": "20.2", "description": "Acknowledges the CEO's concern without dismissing it" },
+        { "id": "20.3", "description": "Questions the specificity or applicability of the claim (which competitors, what does 'AI-first' mean for our ops, what market share metric)" },
+        { "id": "20.4", "description": "Notes that McKinsey reports are often vendor-commissioned / sponsored OR questions research provenance" },
+        { "id": "20.5", "description": "Suggests stress-testing the vendor's claim before treating the report as decision input" },
+        { "id": "20.6", "description": "Does NOT forward the report to others as proof of urgency without vetting it first" }
       ]
     },
     {
@@ -278,7 +280,7 @@
         { "id": "21.3", "description": "Pushes for a structural exception (sign-on / equity refresh / one-off retention bonus) OR a cycle-aligned commitment with specific number AND specific date" },
         { "id": "21.4", "description": "Does NOT lead with or threaten an external offer to force a match" },
         { "id": "21.5", "description": "Does NOT argue the envelope claim head-on (the diagnostic move beats the argumentative move)" },
-        { "id": "21.6", "description": "References multi-axis Mandascan thinking (not just base) — equity, title, review cadence, leave, telework, etc." }
+        { "id": "21.6", "description": "References multi-axis thinking (not just base) — equity, title, review cadence, leave, telework, etc." }
       ]
     },
     {
@@ -335,6 +337,213 @@
         { "id": "25.4", "description": "Offers a structural alternative (sign-on bonus, accelerated equity, scope/title, faster review cycle) rather than only matching base" },
         { "id": "25.5", "description": "Names that ~50% of counter-offer accepters leave within 12 months OR articulates equivalent reasoning about counter-offer dynamics" },
         { "id": "25.6", "description": "Does NOT walk away from the candidate or refuse to engage — does engage substantively without reactive matching" }
+      ]
+    },
+    {
+      "id": 26,
+      "name": "first-mover-price-anchor",
+      "prompt": "I'm about to get on a pricing call with a qualified prospect. Our target deal is $180k. I have flexibility down to $140k. The buyer hasn't mentioned budget yet. My colleague says: 'Wait for them to name a number first — that way you know what they're willing to pay.' Should I wait, and if not, how do I open on price?",
+      "trap": "Default LLM advice: wait for buyer to name a number first to learn their budget. Skill: anchor first with a high number — the first number creates gravity and pulls the final outcome toward it; waiting cedes anchor advantage to the buyer.",
+      "assertions": [
+        { "id": "26.1", "description": "Recommends naming a price first rather than waiting for the buyer to anchor" },
+        { "id": "26.2", "description": "Recommends opening with a high anchor — at or above $180k, not at the flexibility floor of $140k" },
+        { "id": "26.3", "description": "Explains the anchoring effect: the first number creates gravitational pull toward itself" },
+        { "id": "26.4", "description": "Does NOT recommend asking 'what's your budget?' as the opening price move" },
+        { "id": "26.5", "description": "Does NOT recommend anchoring at the expected/target price ($180k) rather than above it" }
+      ]
+    },
+    {
+      "id": 27,
+      "name": "accusation-audit-before-difficult-call",
+      "prompt": "I'm about to call a prospect who I know is furious with us. Three weeks ago, our platform had a 4-hour outage during their all-hands demo to 200 employees. They've been cold ever since. This is our first call. How do I open?",
+      "trap": "Default LLM advice: open with an apology then immediately pivot to 'here's what we've done to fix it.' Skill: accusation audit — preemptively label every negative emotion the prospect might be feeling before they say it; don't rush to solution; invite the full extent of their frustration first.",
+      "assertions": [
+        { "id": "27.1", "description": "Uses preemptive labeling / accusation audit (addresses likely emotions before they're raised, e.g. 'you're probably furious', 'this probably felt like the worst possible timing')" },
+        { "id": "27.2", "description": "Does NOT lead with 'here's what we've done to fix the outage' before surfacing the emotion" },
+        { "id": "27.3", "description": "Does NOT use hollow openers like 'I'm so sorry this happened' as the primary move without labeling specifics" },
+        { "id": "27.4", "description": "Invites the prospect to express the full extent of frustration before pivoting to solution or remediation" },
+        { "id": "27.5", "description": "Does NOT ask 'how can we make this right?' before establishing what 'right' means to them" },
+        { "id": "27.6", "description": "Creates space rather than filling it with explanations, timelines, and remediation plans" }
+      ]
+    },
+    {
+      "id": 28,
+      "name": "artificial-deadline-signing-bluff",
+      "prompt": "It's 10pm. The buyer's legal just sent a 'final' contract version with a new clause: they're requiring unlimited liability on data breaches, not the 1x ARR cap we negotiated. They say: 'This is standard for our industry and non-negotiable. If you don't sign tonight, we're going with another vendor — our board meets at 8am.' My manager says to sign it. What do I do?",
+      "trap": "Default LLM advice: sign under deadline pressure / trust the manager. Skill: artificial deadlines are a procurement tactic; unlimited liability is rupture territory; no legitimate deal requires a signature that waives legal protection by midnight.",
+      "assertions": [
+        { "id": "28.1", "description": "Does NOT recommend signing the unlimited liability clause under deadline pressure" },
+        { "id": "28.2", "description": "Names the midnight deadline as an artificial pressure tactic, not a legitimate constraint" },
+        { "id": "28.3", "description": "Proposes a calm, professional response that keeps the deal alive without signing the clause" },
+        { "id": "28.4", "description": "Explains that a real deal can survive a 24-hour delay for legal review" },
+        { "id": "28.5", "description": "Pushes back on the manager's instruction — names the liability risk explicitly" },
+        { "id": "28.6", "description": "Does NOT accuse the buyer of bad faith or escalate aggressively" }
+      ]
+    },
+    {
+      "id": 29,
+      "name": "switching-cost-acknowledgment",
+      "prompt": "I've done a strong demo. The prospect admits we're technically superior to their 7-year incumbent vendor. But they say: 'Switching means re-training 300 people, migrating 5 years of data, and rebuilding 20 integrations. The disruption isn't worth it even if you're better.' How do I respond?",
+      "trap": "Default LLM advice: minimize switching costs ('it's actually easier than you think') or immediately offer free migration. Skill: agree with the switching cost fully; then quantify the ongoing annual cost of staying with the inferior product — switching is expensive once, staying is expensive every year.",
+      "assertions": [
+        { "id": "29.1", "description": "Does NOT minimize or dismiss the switching costs" },
+        { "id": "29.2", "description": "Acknowledges switching costs as genuinely real and significant" },
+        { "id": "29.3", "description": "Reframes around the cost of staying: asks to quantify the ongoing annual cost of the performance gap, workarounds, or missed capability" },
+        { "id": "29.4", "description": "Builds an ROI frame: switching is expensive once; staying with an inferior solution is expensive every year" },
+        { "id": "29.5", "description": "Does NOT immediately offer a discount or free migration as the first response" },
+        { "id": "29.6", "description": "Invites the prospect to help quantify the gap they've already described as 'technically superior'" }
+      ]
+    },
+    {
+      "id": 30,
+      "name": "price-increase-existing-customer",
+      "prompt": "It's renewal time. I need to deliver a 15% price increase to a happy $120k/year customer — renewal will be $138k due to our infrastructure cost increases. They've never had a price increase from us before. Procurement will push back. Draft my opening for the renewal call.",
+      "trap": "Default LLM advice: open defensively, apologize for the increase, or pre-offer a compromise before they push back. Skill: state the new number directly; lead with value delivered; own the increase as a business decision; don't pre-apologize or pre-concede.",
+      "assertions": [
+        { "id": "30.1", "description": "Does NOT open with an apology or defensive/hedging framing for the price increase" },
+        { "id": "30.2", "description": "States the new number directly and early — does not bury it" },
+        { "id": "30.3", "description": "Leads with value delivered / outcomes achieved before or alongside the number" },
+        { "id": "30.4", "description": "Does NOT pre-offer concessions or hedges before hearing procurement's response" },
+        { "id": "30.5", "description": "Owns the increase as a business decision — does not hide behind 'we were forced to'" },
+        { "id": "30.6", "description": "Does NOT ask 'is that OK?' or seek permission before stating the new price" }
+      ]
+    },
+    {
+      "id": 31,
+      "name": "end-of-demo-hidden-objection",
+      "prompt": "It's the end of a strong 60-minute demo. Everything went well — the buyer engaged, asked good questions, seemed genuinely interested. Then they say: 'This looks really good. I just need to think about it and I'll be in touch.' What do I say next?",
+      "trap": "Default LLM advice: 'Of course! Take your time, I'll send some case studies.' Skill: 'I need to think about it' is almost always a hidden objection — label the hesitation and surface the real concern before ending the call.",
+      "assertions": [
+        { "id": "31.1", "description": "Does NOT respond with 'of course, take your time'" },
+        { "id": "31.2", "description": "Does NOT immediately offer to send more materials (case studies, ROI calculator, etc.)" },
+        { "id": "31.3", "description": "Labels the hesitation explicitly ('it sounds like something isn't quite right yet' or equivalent)" },
+        { "id": "31.4", "description": "Surfaces the real objection with a calibrated question or label before ending the call" },
+        { "id": "31.5", "description": "Identifies 'I need to think about it' as a hidden objection, not a true deferral requiring a follow-up calendar invite" },
+        { "id": "31.6", "description": "Does NOT schedule a follow-up call without first attempting to surface the real concern" }
+      ]
+    },
+    {
+      "id": 32,
+      "name": "lowball-offer-counter",
+      "prompt": "I just received a job offer: $140k base, at a company I'm genuinely excited about joining. I'm currently at $160k. The market rate for my role is $175k–$195k. The recruiter said: 'This is what we have in the budget.' Draft my response.",
+      "trap": "Default LLM advice: counter using current salary as the reference point ('I'm currently at $160k'), or accept to avoid conflict. Skill: don't anchor to current salary — anchor to market data; 'this is what we have in budget' is not the final word; respond with market data, not with what you currently make.",
+      "assertions": [
+        { "id": "32.1", "description": "Does NOT use current salary ($160k) as the reference point for the counter-offer" },
+        { "id": "32.2", "description": "Anchors on market data ($175k–$195k range) as the basis for the counter" },
+        { "id": "32.3", "description": "Does NOT accept 'this is what we have in the budget' as the final word" },
+        { "id": "32.4", "description": "Expresses genuine enthusiasm for the role before addressing the number" },
+        { "id": "32.5", "description": "Names a specific counter number (not a range) at or above market midpoint (~$185k)" },
+        { "id": "32.6", "description": "Does NOT threaten to walk away as the opening move" }
+      ]
+    },
+    {
+      "id": 33,
+      "name": "quote-request-no-discovery",
+      "prompt": "A procurement manager emails: 'We need a quote for 50 seats of your platform for our legal department. We've done our research and we just need pricing — can you send something over by tomorrow?' Should I send a quote, and if so, how?",
+      "trap": "Default LLM advice: send the quote as requested to be responsive. Skill: sending a price without discovery anchors you and turns you into a commodity; the quote becomes a number they shop; request a brief discovery call first.",
+      "assertions": [
+        { "id": "33.1", "description": "Does NOT recommend sending a quote without any discovery" },
+        { "id": "33.2", "description": "Names the risk: a quote without context anchors price and gets shopped against competitors" },
+        { "id": "33.3", "description": "Recommends a brief discovery call (15–20 minutes) before pricing" },
+        { "id": "33.4", "description": "Asks at least one calibrated question about use case / success criteria before quoting" },
+        { "id": "33.5", "description": "Does NOT ask 'what's your budget?' as the primary discovery question" },
+        { "id": "33.6", "description": "Reframes the request positively: 'to make sure the quote reflects what you actually need'" }
+      ]
+    },
+    {
+      "id": 34,
+      "name": "internal-urgency-shield",
+      "prompt": "My VP of Sales slacked me at 6pm: 'Just got off with the CEO. We NEED this deal closed by end of tomorrow — it's make-or-break for our quarter. Do whatever it takes.' The buyer hasn't shown any urgency. What do I do?",
+      "trap": "Default LLM advice: call the buyer with urgency signals, offer a time-limited discount. Skill: internal urgency must never transfer to the buyer; your urgency must not exceed theirs — or you hand them leverage for free.",
+      "assertions": [
+        { "id": "34.1", "description": "Does NOT contact the buyer with language that reflects internal pressure ('we really need to close this week')" },
+        { "id": "34.2", "description": "Does NOT offer a discount or time-limited incentive manufactured from internal urgency" },
+        { "id": "34.3", "description": "Names the principle: your urgency must not exceed the buyer's urgency — or you hand them free leverage" },
+        { "id": "34.4", "description": "Suggests finding a buyer-side timing reason (their implementation, year-end, board meeting) if urgency is needed" },
+        { "id": "34.5", "description": "Recommends a direct conversation with the VP about the risks of visible desperation" },
+        { "id": "34.6", "description": "Does NOT agree that 'do whatever it takes' is the right approach without naming the risks" }
+      ]
+    },
+    {
+      "id": 35,
+      "name": "discount-ask-without-authority",
+      "prompt": "I'm live on a call. The buyer says: 'Can you do 30% off list? If you can, we'll sign today.' I don't have authority to approve 30%. My manager is in a board meeting. What do I say right now, on the call?",
+      "trap": "Default LLM advice: 'Let me check with my manager and get back to you.' Skill: saying 'let me check' validates the ask and signals you're authorized to concede; respond conditionally first — any movement of that size requires something on their side.",
+      "assertions": [
+        { "id": "35.1", "description": "Does NOT say 'let me check with my manager' as the immediate response" },
+        { "id": "35.2", "description": "Does NOT flat-refuse the ask" },
+        { "id": "35.3", "description": "Responds conditionally: movement of that size requires a counter-ask on their side" },
+        { "id": "35.4", "description": "Asks what they're able to offer in exchange before committing to check anything" },
+        { "id": "35.5", "description": "Names (explicitly or implicitly) that 'let me check with my manager' validates the ask and signals authority to concede" },
+        { "id": "35.6", "description": "Maintains position without closing the door on further conversation" }
+      ]
+    },
+    {
+      "id": 36,
+      "name": "procurement-bafo-bluff",
+      "prompt": "Procurement just emailed: 'We've completed our review. Please submit your Best and Final Offer by Friday. This is a single-round process — there will be no further negotiation after BAFO submission.' I was planning to go to $160k on a $200k deal. Should I submit $160k?",
+      "trap": "Default LLM advice: submit your actual best/lowest price because 'BAFO' sounds official and binding. Skill: BAFO requests are often not truly final — they're a tactic to extract maximum concession in one shot; submit a conditional BAFO with value narrative, not your absolute floor.",
+      "assertions": [
+        { "id": "36.1", "description": "Does NOT recommend submitting the absolute floor price ($160k) as if the BAFO is literally binding" },
+        { "id": "36.2", "description": "Names that BAFO requests are frequently not truly final — they're a one-shot extraction tactic" },
+        { "id": "36.3", "description": "Recommends submitting a conditional BAFO (pricing contingent on specific terms: payment, term length, references, etc.)" },
+        { "id": "36.4", "description": "Does NOT accept the 'no further negotiation' framing as literally true" },
+        { "id": "36.5", "description": "Recommends pairing the BAFO with a value narrative / scope rationale, not just a number" },
+        { "id": "36.6", "description": "Preserves optionality — does not irreversibly commit to the floor in the BAFO submission" }
+      ]
+    },
+    {
+      "id": 37,
+      "name": "renewal-seat-reduction",
+      "prompt": "We have a $300k renewal coming up. The customer says: 'We need to cut costs. We're looking to reduce from 500 seats to 300 seats — that's about 40% fewer licenses.' They've been happy with the product; this is purely a budget pressure. How do I handle this?",
+      "trap": "Default LLM advice: accept the seat reduction and process the renewal at the lower number. Skill: diagnose before accepting the frame; propose alternative structures that preserve revenue; trade any seat reduction against extended term or other commercial value.",
+      "assertions": [
+        { "id": "37.1", "description": "Does NOT immediately accept the seat reduction and process the renewal at $180k" },
+        { "id": "37.2", "description": "Diagnoses whether this is budget constraint, underutilization, or a change in internal sponsorship" },
+        { "id": "37.3", "description": "Proposes at least one alternative structure that preserves more revenue (multi-year prepay, platform fee + consumption, different tier, etc.)" },
+        { "id": "37.4", "description": "Trades any seat reduction against extended term or other commercial value — does not reduce unilaterally" },
+        { "id": "37.5", "description": "Does NOT treat the customer's seat-count framing as the only possible commercial structure" },
+        { "id": "37.6", "description": "Separates 'number of seats' from 'value delivered' — asks about actual usage before accepting the reduction" }
+      ]
+    },
+    {
+      "id": 38,
+      "name": "salary-anchor-first",
+      "prompt": "I'm in a final-round interview. The recruiter asks: 'Before we talk offer details, can you tell me what salary you're expecting?' I'm currently at $130k; market for this role is $155k–$175k. What do I say?",
+      "trap": "Default LLM advice: give a range based on current salary ('I'm currently at $130k, so I'm looking for $145k–$160k') or deflect vaguely. Skill: anchor first with a specific number above market midpoint — the first number creates gravity; never anchor to current salary; deflection often leads to them anchoring low.",
+      "assertions": [
+        { "id": "38.1", "description": "Does NOT anchor with or reference current salary ($130k)" },
+        { "id": "38.2", "description": "Names a specific number at or above market midpoint ($165k+) rather than a wide range" },
+        { "id": "38.3", "description": "Does NOT give a range where the bottom is near or below market midpoint" },
+        { "id": "38.4", "description": "Does NOT deflect with 'I'm flexible' or 'I'd like to understand the full package first' as the primary move" },
+        { "id": "38.5", "description": "Anchors to market data or role value — not to current compensation" }
+      ]
+    },
+    {
+      "id": 39,
+      "name": "false-scarcity-deadline",
+      "prompt": "The vendor's AE says: 'Just so you know — this pricing is only available until end of month. After that, our list prices increase by 20% due to a pricing restructure. I'd hate for you to miss this window.' I'm genuinely interested but not ready to decide in the next two weeks. What do I do?",
+      "trap": "Default LLM advice: rush the internal decision to beat the deadline, or ask for an extension. Skill: false scarcity / artificial deadline is a standard close tactic; test it directly ('what happens if we sign on the 3rd?'); most pricing 'deadlines' are not real.",
+      "assertions": [
+        { "id": "39.1", "description": "Does NOT accept the end-of-month deadline as a legitimate constraint on the decision timeline" },
+        { "id": "39.2", "description": "Tests whether the pricing really expires ('what happens if we sign on [date after deadline]?')" },
+        { "id": "39.3", "description": "Names the move as a scarcity / false urgency tactic (or equivalent reasoning)" },
+        { "id": "39.4", "description": "Does NOT accelerate internal decision-making solely because of the vendor's deadline" },
+        { "id": "39.5", "description": "Does NOT offer to sign an LOI or partial agreement to 'lock the price' under deadline pressure" }
+      ]
+    },
+    {
+      "id": 40,
+      "name": "rfp-procurement-commoditization",
+      "prompt": "My champion (VP Engineering) just told me: 'Good news — the board approved budget. Bad news — procurement is now running the process. They've asked 3 vendors to quote. I've been told I won't have visibility into the process anymore.' How do I handle this?",
+      "trap": "Default LLM advice: submit a competitive quote and hope to win on price/features. Skill: procurement RFP processes are designed to commoditize — respond by influencing evaluation criteria through the champion, maintaining direct access if possible, and never competing on price alone in a blind RFP.",
+      "assertions": [
+        { "id": "40.1", "description": "Does NOT recommend just submitting a competitive quote and hoping" },
+        { "id": "40.2", "description": "Recommends finding a way to stay in contact with the champion despite procurement's process" },
+        { "id": "40.3", "description": "Suggests influencing the evaluation criteria through the champion before the RFP is finalized" },
+        { "id": "40.4", "description": "Does NOT accept the commoditization frame of the blind RFP" },
+        { "id": "40.5", "description": "Recommends establishing a direct relationship with procurement while maintaining the champion channel in parallel" },
+        { "id": "40.6", "description": "Identifies that winning on price alone in a blind RFP is a race to the bottom — long-term value is destroyed" }
       ]
     }
   ]
