@@ -125,16 +125,24 @@ MICE per stakeholder shapes how you talk to each one. The Compromise person need
 
 ## Pre-meeting checklist
 
-Run through this 24 hours before any high-stakes meeting (sales call, salary review, NAO opening, hard 1:1, clinical consultation, recruitment final round, cross-cultural deal):
+Run this interactively with the user 24 hours before any high-stakes meeting. Don't hand them a list — walk through it with them. For each item, ask a question, surface gaps, and help fill them in before moving to the next.
 
-1. Mandate — written, axis-by-axis, validated by whoever's authority you're operating under.
-2. Mandascan — 5 points per axis, including the rupture.
-3. Stakeholder map — organigramme + sociogramme + MICE per name.
-4. POE per stakeholder — best-guess Position / Objectif / Enjeu.
-5. BATNA — yours and your best estimate of theirs.
-6. Top 6 calibrated questions (see [references/discovery.md](discovery.md)).
-7. Concession ladder — 3–4 concessions paired with counter-asks.
-8. Pre-emptive labels — accusation-audit lines for the most likely objections.
-9. Surprise-move pre-mortem — name the gambit you'd least like to see (procurement escalation, union ultimatum, family taking over the consultation, candidate's current employer counter-offer), write the redirect.
+1. **Mandate** — _"Has your mandate been validated by whoever's authority you're operating under? What can you sign without checking?"_ If fuzzy: surface the gap. An unvalidated mandate means you'll need to call for a pause mid-meeting — decide now who you call and how fast they respond.
 
-If any of these are fuzzy, fix them before the meeting starts. They will not improve under live pressure.
+2. **Mandascan** — _"For each axis, do you have all 5 points — Entry, Ideal, Objective, Escalation, Rupture?"_ Walk through axis by axis if not. If the Rupture is missing, derive it from BATNA.
+
+3. **Stakeholder map** — _"Who's on the formal map (title, role, reports-to)? Who's on the informal map — the person people glance at before answering, the one who'll influence the outcome without being in the room?"_
+
+4. **POE per stakeholder** — _"For each person on the counterparty side: what have they said (Position), what outcome are they targeting (Objectif), and what's their deeper personal or organisational stake (Enjeu)?"_ The Enjeu is the one that unlocks movement; if it's missing, plan a calibrated question to surface it live.
+
+5. **BATNA** — _"What's your best alternative if this negotiation fails? What's your estimate of theirs?"_ Thin BATNA = low leverage. Name it now so you can set the Rupture point clearly.
+
+6. **Top calibrated questions** — _"What are your top 5–6 'what' and 'how' questions for the meeting — the ones designed to surface their real Enjeu?"_ (→ see [discovery.md](discovery.md) for question library.) No "why" questions — they trigger defensiveness.
+
+7. **Concession ladder** — _"Name 3–4 concessions you're willing to make. For each one: what do you ask for in return?"_ Every concession is a trade. No trades pre-approved without a counter-ask.
+
+8. **Pre-emptive labels** — _"What objections are most likely to come up? For each one, what's your accusation-audit line that disarms it before it forms?"_ Examples: _"You're probably thinking our price doesn't fit your envelope"_ / _"You may be wondering whether this raise sets a team precedent"_.
+
+9. **Surprise-move pre-mortem** — _"What's the one gambit you'd least like to see — procurement escalation, union ultimatum, family member taking over the clinical consultation, candidate's current employer counter-offer? Write the redirect now."_
+
+If any of these produce a fuzzy or missing answer, fix it before the meeting. They will not improve under live pressure — gaps in preparation become concessions in the room.

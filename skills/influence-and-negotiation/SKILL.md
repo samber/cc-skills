@@ -135,48 +135,54 @@ Detect the mode AND the domain from the user's prompt. Domain cues:
 
 Domain shapes which axes matter and which references to load first; the workflow itself is the same.
 
-For Prep mode, ask 6 intake questions before anything else (adapt wording to the domain):
+For Prep mode, run a live intake before anything else. Use `AskUserQuestion` to ask each question individually — don't dump them all at once. Adapt phrasing to the domain (B2B, salary, NAO, clinical, etc.).
 
-1. **Stage** — early / mid / late / post-verbal-yes?
-2. **Stakes** — size, scope, who's affected.
-3. **Counterparty** — who's at the table, by name and role.
-4. **What's been said so far** — the last 3 things the counterparty said, verbatim. The exact words carry signal that paraphrase loses.
-5. **Your authority limits** — what can you commit to without escalation?
-6. **Walk-away** — when would you actively recommend stopping?
+Ask in this order, one at a time, and wait for the answer before continuing:
 
-Fuzzy answers reveal the mandate gap to fix first. Don't proceed past intake until they're crisp — improvising on top of a fuzzy mandate produces the "Monsieur Plus" pathology where you over-ask at the moment of victory and lose the agreement in sight of the line.
+1. **Stage** — _"Where are you in the process — early exploration, mid-negotiation, close to agreement, or post-verbal-yes?"_
+2. **Stakes** — _"What's the size and scope here, and who's affected if this goes well or badly?"_
+3. **Counterparty** — _"Who's at the table — names and roles? Is the decision-maker in the room, or is there someone off-stage?"_
+4. **What's been said so far** — _"What are the last 2–3 things the counterparty said, as close to verbatim as you can get?"_ (Exact words carry signal that paraphrase loses — push for quotes.)
+5. **Authority limits** — _"What can you commit to without checking with anyone? Where's your escalation threshold?"_
+6. **Walk-away** — _"At what point would you walk away from this entirely — what's your hard stop?"_
+
+Fuzzy answers reveal the mandate gap to fix first. If an answer is vague (e.g. "I don't know my walk-away"), surface that explicitly before proceeding — improvising on top of a fuzzy mandate produces the "Monsieur Plus" pathology where you over-ask at the moment of victory and lose the agreement in sight of the line.
 
 ### Phase 2: Map the room
 
-Read [references/discovery.md](references/discovery.md). Build a stakeholder + decision map, layered over the organigramme/sociogramme split:
+Read [references/discovery.md](references/discovery.md). Then use `AskUserQuestion` to fill in any gaps from Phase 1 — don't assume what you don't know. Ask:
 
-- **Formal (organigramme)** — title, role, reports-to.
-- **Informal (sociogramme)** — who actually influences whom: champion, blocker, hidden veto, sponsor invisible on the org chart.
-- **Motivation per stakeholder** — MICE (Money, Ideology, Compromise, Ego). Most systems-of-record track role but not motivation.
-- **Decision criteria + paper process** — explicit (RFP, NAO agenda, performance-plan template, treatment protocol, hiring rubric) and implicit (the security review, the legal sign-off, the family meeting they didn't mention).
-- **Alternatives** — who or what else is in the conversation, real or anchored.
+- **Formal structure** — _"Who else is involved on their side? What's the decision-making chain — who approves, who can veto?"_
+- **Informal influence** — _"Who do people defer to in the room even if they don't have the title? Is there someone off-stage who'll influence the outcome?"_
+- **Motivation per stakeholder** — _"What does [name] personally get if this goes well? What do they lose if it doesn't?"_ (MICE: Money, Ideology, Compromise, Ego)
+- **Process gaps** — _"What formal steps still need to happen — legal review, board sign-off, infosec, family meeting, HR validation?"_
+- **Alternatives** — _"What's their fallback if this doesn't close? Have they mentioned any other options or comparisons?"_
 
-Output is a one-page map. Whose names go on it varies by domain — Economic Buyer + Champion + Procurement (sales); manager + skip-level + HR + compensation-band owner (salary); union delegates + their constituencies + internal-election dates (NAO); report + close peers + likely survivors (decision announcement); patient + family decision-makers + faith/community influences + supervising consultant (clinical); candidate + partner + current manager (recruitment).
+Build the map from what the user tells you — formal (organigramme) layered with informal (sociogramme). Domain shapes who's on it: Economic Buyer + Champion + Procurement (sales); manager + skip-level + HR (salary); union delegates + internal-election dates (NAO); patient + family + supervising consultant (clinical); candidate + partner + current manager (recruitment).
 
-**Run the champion / advocate test before relying on one.** The 3-question commitment test plus the 3 observable behaviours of a real champion (proactive coordination, unsolicited information, action between calls) live in [references/playbooks.md](references/playbooks.md#1-champion-test--is-your-champion-actually-a-coach). Equivalents in non-commercial domains: the manager promising to "go to bat for you" on salary; the family member claiming to "speak for" the patient. Skipping this validation is the highest-leverage error in any complex negotiation.
+**If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/playbooks.md](references/playbooks.md#1-champion-test--is-your-champion-actually-a-coach). Skipping this validation is the highest-leverage error in complex negotiations.
 
 ### Phase 3: Set the mandate (Mandascan)
 
-Read [references/preparation.md](references/preparation.md). For each negotiable axis, define **5 points** — sharper than the typical 3-point walk-away thinking:
+Read [references/preparation.md](references/preparation.md). Then guide the user through the mandate axis by axis — don't hand them a template to fill in alone.
 
-| Point      | Meaning                                                      |
-| ---------- | ------------------------------------------------------------ |
-| Entry      | Opening anchor you state out loud                            |
-| Ideal      | What you'd love to get                                       |
-| Objective  | Realistic target you commit to internally                    |
-| Escalation | Threshold above which you escalate / consult before agreeing |
-| Rupture    | Hard walk-away — below this, no agreement                    |
+Start by asking: _"What are the axes you're negotiating? List everything on the table — price, payment terms, timeline, scope, SLAs, equity, leave, title, etc."_
 
-Axes vary by domain — price/term/SLA/scope for sales; base/variable/equity/leave for salary; raise/primes/working time for NAO; treatment intensity/follow-up cadence for clinical; compensation/start date/title for recruitment. See the worked examples in [references/preparation.md](references/preparation.md#the-mandascan--5-points-per-axis).
+Then, for **each axis** the user names, use `AskUserQuestion` to work through the 5 Mandascan points:
 
-POE the counterparty (Position / Objectif / Enjeu) on each axis: what they say, what they target, what they actually need. The enjeu is rarely stated — it's surfaced through calibrated questions in Phase 6.
+- _"What's your opening number / position for [axis]?"_ (Entry)
+- _"What would a great outcome look like for [axis]?"_ (Ideal)
+- _"What's your realistic internal target — what you'd genuinely commit to?"_ (Objective)
+- _"At what point would you need to pause and check with someone before agreeing on [axis]?"_ (Escalation)
+- _"What's your hard walk-away on [axis] — below this, no deal?"_ (Rupture)
 
-**Note on plan B / BATNA.** The orthodox view says cultivate your alternative aggressively as a strength. The operational counter-view: over-investing in plan B at closing erodes commitment to plan A and leaks through your behaviour, which the counterparty reads as low confidence. Use BATNA for setting your rupture point during preparation, then put it away when the conversation starts. This skill follows that operational framing — it matches what consistently outperforming negotiators already do across every domain studied.
+If the user is fuzzy on Rupture ("I don't know, I really need this deal"), flag it: a fuzzy rupture is a mandate gap, not a tough situation. Help them derive it from their BATNA — _"If this negotiation fails, what's your next best option? That should set your floor."_
+
+After the mandate, POE the counterparty for each axis: ask _"What have they actually said about [axis]?"_ (Position), _"What outcome do you think they're optimising for?"_ (Objectif), _"What's the deeper stake for them — what's at risk personally or organisationally if this fails?"_ (Enjeu). The enjeu is rarely stated; Phase 6 calibrated questions surface it live.
+
+Axes by domain — price/term/SLA/scope (sales); base/variable/equity/leave/title (salary); raise/primes/working time/télétravail (NAO); treatment intensity/follow-up cadence (clinical); compensation/start date/title/non-compete (recruitment). Worked examples: [references/preparation.md](references/preparation.md#the-mandascan--5-points-per-axis).
+
+**BATNA discipline.** Use BATNA to set the Rupture point — then put it away. Over-investing in plan B at closing leaks through tone and body language, which the counterparty reads as low confidence and uses to squeeze harder.
 
 ### Phase 4: Plan the moves
 
@@ -231,14 +237,21 @@ For the four root commercial objections — price, timing, authority, no-need �
 
 ### Phase 7: Debrief
 
-Read [references/debrief.md](references/debrief.md). Whether you won or lost, run two passes:
+Read [references/debrief.md](references/debrief.md). Then guide the user through it — don't just describe the framework.
 
-- **Defusing first** if emotions ran high — uncouples the team's frustration from the facts before analysis. Confidentiality, no judgement, named facilitator.
-- **RetEx second** — cold, factual: what was the mandate, what was achieved, what tactics worked, what would you do differently next round.
+**Step 1 — check emotions first.** Ask: _"Before we analyse what happened — how are you and the team feeling about it?"_ If the answer carries visible frustration or blame, run defusing before RetEx. Ask: _"What happened that was hard? What are you still carrying from it?"_ Let it land, reflect it back, then move to facts.
 
-The 5 closing pathologies to look for: refus-de-l'échec (settling on a bad partial deal to avoid no-deal), prééminence-du-plan-B (defending the backup harder than the primary), ego, "Monsieur Plus" (over-asking at the moment of victory), target-fascination (fixated on close date, missing safety conditions).
+**Step 2 — RetEx, question by question.** Use `AskUserQuestion` to walk through each step:
 
-Only ~17% of negotiators systematically debrief, per published industry survey data. Doing it puts you in the top 20% on iteration speed.
+1. _"Walk me through the timeline of events — what happened, in order, as factually as you can?"_
+2. _"Looking at those facts: what worked? Which tactics, moments, or scripts actually moved things?"_
+3. _"What landed flat or created backlash? Where did you lose leverage you didn't need to lose?"_
+4. _"If you ran this negotiation again from the same starting point, what would you change first?"_
+5. _"What's transferable — what pattern would you teach to someone facing a similar situation?"_
+
+**Step 3 — check for closing pathologies.** After the RetEx, scan for the 5 patterns (see [references/debrief.md](references/debrief.md#the-5-closing-pathologies)): refus-de-l'échec (bad partial deal to avoid no-deal), prééminence-du-plan-B, ego, "Monsieur Plus" (over-asked at the moment of victory), target-fascination. If one shows up, name it directly — pattern recognition is 80% of the fix.
+
+Only ~17% of negotiators systematically debrief. Doing it puts you in the top 20% on iteration speed — the compounding is in the next round, not this one.
 
 ### Phase 8: Humanize (only when output is counterparty-facing)
 
