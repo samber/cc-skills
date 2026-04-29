@@ -38,7 +38,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator loses cognitive bandwidth, makes errors, or concedes just to escape the discomfort.
 
-**Response.** This is a **non-négociable** behaviour — see [references/objections.md](objections.md#le-non-négociable). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a pause tactique — see [references/tactics.md](tactics.md#back-brief-and-wrap-up). If the behaviour continues on resumption, end the meeting.
+**Response.** This is a **non-négociable** behaviour — see [references/objections.md](objections.md#le-non-négociable). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a pause tactique — see [references/tactics.md](tactics.md#pause-tactique--the-strategic-break). If the behaviour continues on resumption, end the meeting.
 
 ### 5. Faux pivot (false-pivot diversion)
 
@@ -86,7 +86,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator has mentally booked the deal, has internal pressure to close, and concedes to avoid re-opening.
 
-**Response.** Always run a **wrap-up / back-brief** before signature — see [references/tactics.md](tactics.md#back-brief--wrap-up). Have the buyer reformulate every key term in their own words. New asks at signature are an explicit signal to delay: _"Adding that changes the deal structure. Let me take it back internally and come back to you with what's possible."_ The buyer's urgency is your leverage in this round; trade it.
+**Response.** Always run a **wrap-up / back-brief** before signature — see [references/tactics.md](tactics.md#back-brief-and-wrap-up). Have the buyer reformulate every key term in their own words. New asks at signature are an explicit signal to delay: _"Adding that changes the deal structure. Let me take it back internally and come back to you with what's possible."_ The buyer's urgency is your leverage in this round; trade it.
 
 ## Detection summary — the four tells
 
