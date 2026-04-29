@@ -42,7 +42,7 @@ This shifts the conversation from your AE-level authority (limited) to your VP's
 - Legal — pre-approved redlines you can sign without re-routing. Anything else escalates.
 - Term and rate — what trades does the company actually want (multi-year, payment terms, reference rights, expansion commitments)?
 
-Without this, you're improvising under fiscal-year pressure — exactly the conditions that produce the closing pathologies (Monsieur Plus, target fascination, refus de l'échec).
+Without this, you're improvising under fiscal-year pressure — exactly the conditions that produce the closing pathologies (Syndrome Monsieur Plus, target fascination, refus de l'échec).
 
 **Phase 6 — Live response to procurement.** Don't engage with the redlines individually. Engage with the **structure**.
 

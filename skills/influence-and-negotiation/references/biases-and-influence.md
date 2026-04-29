@@ -21,7 +21,7 @@ For each: definition, ethical use in B2B, classic mistake, defence when used aga
 
 The first number sets the perceptual frame. Already detailed in [references/tactics.md](tactics.md#anchoring) — pre-anchor with your range, counter-extreme if they go first, use non-round numbers, hold silence after the anchor.
 
-**Defence when anchored against you.** Use the principle of reality: name the public market data that contradicts their number. _"Your $100K reference doesn't match the public list pricing — let me share what we're seeing in the market."_ Then immediately counter-anchor.
+**Defence when anchored against you.** Use the reality principle: name the public market data that contradicts their number. _"Your $100K reference doesn't match the public list pricing — let me share what we're seeing in the market."_ Then immediately counter-anchor.
 
 ### 2. Loss aversion (aversion à la perte)
 

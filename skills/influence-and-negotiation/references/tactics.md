@@ -87,7 +87,7 @@ Use sparingly. Voice modulation comes across as theatrical when you push it; it 
 
 ### Ackerman bargaining model
 
-Used for price counter-offers when you must engage on a number:
+Used for price counter-offers when you must engage on a number. **Buyer-side model** (buyer opens low, converges up toward seller's asking price — selling-side flips the math):
 
 1. Set your target price.
 2. First offer: **65%** of target.
@@ -95,8 +95,6 @@ Used for price counter-offers when you must engage on a number:
 4. Use lots of empathy and "no" questions to make them counter before raising your offer.
 5. On final offer, use **non-round figures** ($37,893 not $38,000) — signals careful calculation.
 6. On final offer, throw in a **non-monetary item** — proves you're at the limit.
-
-(Confidence note on the 65/85/95/100 numbers: widely cited in summaries; verify against _Never Split the Difference_ if precision matters.)
 
 ## TLS — Tactical Listening Skills
 

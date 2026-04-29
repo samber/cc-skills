@@ -14,7 +14,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator argues the truth, gets dragged into a "no it isn't / yes it is" loop, and either concedes to escape or breaks the relationship by cornering the buyer.
 
-**Response.** The full bad-faith protocol lives in [references/objections.md](objections.md#bad-faith-no): drop ego → principle of reality → face-saving exit. The lighter-touch alternative is **park-it** — _"Let me set that point aside and continue on the technical terms."_ Then never come back to it. Choose park-it when the relationship is fragile and confronting risks more than letting pass.
+**Response.** The full bad-faith protocol lives in [references/objections.md](objections.md#bad-faith-no): drop ego → reality principle → face-saving exit. The lighter-touch alternative is **park-it** — _"Let me set that point aside and continue on the technical terms."_ Then never come back to it. Choose park-it when the relationship is fragile and confronting risks more than letting pass.
 
 ### 2. Bluff
 
