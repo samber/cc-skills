@@ -44,7 +44,7 @@ Salary translation: a manager says _"we don't give raises mid-cycle on principle
 
 **Why it happens.** Procurement training. Sometimes ego. Sometimes they're parroting an internal directive they don't fully believe themselves.
 
-**Response — the three-step bad-faith protocol:**
+**Response — bad-faith protocol (three core steps + an alternative move):**
 
 1. **Drop your ego.** Do not engage with the false claim itself. Do not get into a "no it isn't / yes it is" loop. Your goal is not to win the truth contest; it's to move the deal.
 2. **Present the principle of reality.** State the facts cleanly, without judgement. _"Our list is $X. Vendor Y's list is $Z. I'm sure there's a way you saw a different number — maybe a different SKU or a different volume tier — but at the configuration we're discussing, those are the public numbers."_

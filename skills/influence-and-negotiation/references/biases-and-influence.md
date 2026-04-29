@@ -67,7 +67,7 @@ One salient trait colours all others. A consultant from a prestigious firm is ju
 
 How a question is posed shapes the answer.
 
-- **Ethical use.** Reframe pure cost into TCO. _"$200K is the licence. The question is the 5-year operating cost — what does keeping the legacy system cost you per quarter?"_ See reframing in [references/tactics.md](tactics.md#reframing).
+- **Ethical use.** Reframe pure cost into TCO. _"$200K is the licence. The question is the 5-year operating cost — what does keeping the legacy system cost you per quarter?"_ See reframing in [references/tactics.md](tactics.md#reframing-recadrage).
 - **Classic mistake.** Reframing past the buyer's actual frame ("you're not buying software, you're buying transformation"). Reads as evasive.
 - **Defence.** Surface the frame: _"Help me understand which lens you're using to evaluate — cost, risk, or strategic fit?"_ Naming it neutralises it.
 
@@ -89,7 +89,7 @@ Receive a favour, feel pressure to return one.
 
 ## The 7 ethical influence levers
 
-The first 7 biases above also operate as **levers** the negotiator deliberately deploys. The discipline is precision: the right lever for the right phase, deployed visibly enough that the buyer recognises the legitimacy.
+Five of the nine biases above — Reciprocity, Commitment-consistency, Scarcity, Social proof, and Contrast — also operate as **levers** the negotiator deliberately deploys. Two additional levers (Liking/sympathy and Authority) are relational and positional strategies not listed as cognitive biases above. The discipline is precision: the right lever for the right phase, deployed visibly enough that the buyer recognises the legitimacy.
 
 | Lever | When to use it | One-line tactic |
 | --- | --- | --- |
@@ -100,6 +100,8 @@ The first 7 biases above also operate as **levers** the negotiator deliberately 
 | Authority | Technical objection handling, redline rounds | Bring the specialist in (named architect, customer-success lead). |
 | Scarcity | Closing window | Real constraints only; document them. |
 | Contrast | Pricing presentation | 3-tier offer; design the middle tier to match the buyer's need. |
+
+_Cialdini's seventh lever, Unity (shared identity — "we're the same kind"), is intentionally omitted. It is real but rarely the primary driver in B2B negotiation; embed it through stakeholder alignment and multi-threading rather than as a standalone tactic._
 
 ## Combining biases — the high-leverage moments
 

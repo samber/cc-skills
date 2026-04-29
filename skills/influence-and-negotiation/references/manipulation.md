@@ -30,7 +30,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator feels their personal reputation or career is on the line and concedes to protect themselves rather than the organisation.
 
-**Response.** Maintain emotional control. Verbalise the underlying concern, not the threat. _"It seems like the timing is creating real pressure on your side. Help me understand the deadline so we can think through it together."_ Refuse to engage with the personal frame; redirect to the OCP (Objectif Commun Partagé — see [references/tactics.md](tactics.md#ocp-objectif-commun-partagé)).
+**Response.** Maintain emotional control. Verbalise the underlying concern, not the threat. _"It seems like the timing is creating real pressure on your side. Help me understand the deadline so we can think through it together."_ Refuse to engage with the personal frame; redirect to the OCP (Objectif Commun Partagé — see [references/tactics.md](tactics.md#ocp--objectif-commun-partagé)).
 
 ### 4. Punching-ball (verbal harassment)
 
@@ -38,7 +38,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator loses cognitive bandwidth, makes errors, or concedes just to escape the discomfort.
 
-**Response.** This is a **non-négociable** behaviour — see [references/objections.md](objections.md#le-non-négociable). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a pause tactique — see [references/tactics.md](tactics.md#pause-tactique). If the behaviour continues on resumption, end the meeting.
+**Response.** This is a **non-négociable** behaviour — see [references/objections.md](objections.md#le-non-négociable). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a pause tactique — see [references/tactics.md](tactics.md#back-brief-and-wrap-up). If the behaviour continues on resumption, end the meeting.
 
 ### 5. Faux pivot (false-pivot diversion)
 

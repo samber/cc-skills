@@ -97,7 +97,7 @@
     {
       "id": 8,
       "name": "batna-not-during-execution",
-      "prompt": "I'm prepping for a tough enterprise renewal negotiation next week. My VP keeps pressing me on 'what's our backup plan if this customer churns? Have you been working on alternatives? Should we be openly working other deals to put pressure on them?' How should I think about BATNA / plan B for this negotiation?",
+      "prompt": "I'm preparing for a tough enterprise renewal negotiation next week. My VP keeps pressing me on 'what's our backup plan if this customer churns? Have you been working on alternatives? Should we be openly working other deals to put pressure on them?' How should I think about BATNA / plan B for this negotiation?",
       "trap": "Default LLM advice: cultivate BATNA aggressively as orthodoxy says (always have a strong alternative, develop it openly). Skill: BATNA in preparation only (sets walk-away); during execution, don't over-invest in plan B because it leaks low confidence.",
       "assertions": [
         { "id": "8.1", "description": "Mentions using BATNA / plan B during preparation to set walk-away or rupture point" },
