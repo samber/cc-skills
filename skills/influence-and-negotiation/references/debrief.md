@@ -1,6 +1,6 @@
 # Debrief
 
-Per industry survey data, only ~17% of professional negotiators systematically debrief. The rest repeat their mistakes. Debriefing is the cheapest performance lever in any negotiation-heavy role — a 15-minute structured pass after every commercial milestone, every NAO round, every difficult one-on-one, every clinical consultation that didn't land — catches patterns that pipeline reviews, HR records, and clinical notes miss.
+Per industry survey data, only ~17% of professional negotiators systematically debrief. The rest repeat their mistakes. Debriefing is the cheapest performance lever in any negotiation-heavy role — a 15-minute structured pass after every commercial milestone, every NAO round, every difficult one-on-one — catches patterns that pipeline reviews, HR records, and CRM notes miss.
 
 This file covers two debrief modes (RetEx and defusing), the 5 closing pathologies, the lost-outcome taxonomy, and a structured win/loss interview template.
 
@@ -74,7 +74,7 @@ Run BRRAC over 30–60 minutes, often a few days after the loss (not the same da
 
 ## The 5 closing pathologies
 
-The named ways high-stakes outcomes die in sight of the line — across deals, salary asks, NAO rounds, internal decisions, clinical care plans. Use these as a debrief checklist — for any lost outcome, ask which pathology hit.
+The named ways high-stakes outcomes die in sight of the line — across deals, salary asks, NAO rounds, and internal decisions. Use these as a debrief checklist — for any lost outcome, ask which pathology hit.
 
 ### 1. Refus de l'échec (refusing to accept failure)
 
@@ -85,11 +85,10 @@ The negotiator locks onto a partial outcome as a "consolation prize" because the
 - **B2B sales.** Team accepts a contract at terms outside the original mandate, customer churns early, the "win" was net-negative.
 - **Salary.** You accept a 3% raise when your real ask was 12% and the market gap is closer to 18%, just to avoid the awkwardness of declining or the perceived threat of leaving. You're now anchored low for the next two cycles and likely leave anyway in 9 months.
 - **NAO.** The DRH signs an agreement at terms outside the COMEX-validated mandate to avoid a strike. The agreement creates a precedent that costs more over the next 3 NAO cycles than the strike would have.
-- **Clinical.** The clinician accepts a watered-down treatment plan they don't believe in (e.g., half-dose, no follow-up imaging) to avoid the patient walking out, knowing the plan won't deliver the outcome.
 
-**Sign in retrospect.** The outcome closed but at terms outside the original mandate, AND the relationship soured shortly after (early churn, the negotiator leaves, the patient drops out of treatment, the staff strikes anyway next year).
+**Sign in retrospect.** The outcome closed but at terms outside the original mandate, AND the relationship soured shortly after (early churn, the negotiator leaves, the staff strikes anyway next year).
 
-**Counter.** Walk-away is a real option. "No outcome" is sometimes the best outcome. Internalise that no-deal / no-raise / no-agreement / patient-refusal-with-informed-consent is a normal outcome, not a personal failure.
+**Counter.** Walk-away is a real option. "No outcome" is sometimes the best outcome. Internalise that no-deal / no-raise / no-agreement is a normal outcome, not a personal failure.
 
 ### 2. Prééminence du plan B (premature plan B)
 
@@ -100,7 +99,6 @@ You start defending the backup plan harder than the primary. The counterparty re
 - **B2B sales.** The team mentions "we have other quarter-end deals" too often; the buyer reads it as low commitment and slow-walks.
 - **Salary.** You mention the external offer too early or too often; your manager reads it as "you're already gone" and stops investing in retention.
 - **NAO.** Management starts preparing the strike-day operational plan before the round opens; the union senses the resignation and pushes harder.
-- **Clinical.** The clinician opens the conversation with the palliative pathway alongside curative treatment; the patient defaults to the lower-effort path.
 
 **Sign in retrospect.** The outcome felt like it slipped slowly over multiple rounds. You can't point to the moment it died.
 
@@ -130,11 +128,10 @@ The counterparty says "OK, let's do it" and the negotiator responds with "great,
 - **B2B sales.** Buyer says "let's do it"; negotiator adds "great, and one more thing — multi-year, reference rights, case study, MFN…" Buyer goes silent.
 - **Salary.** Manager says "OK, $185k base"; you add "and an extra week of leave, and equity refresh, and an early review." Manager re-engages HR, the offer gets pulled apart.
 - **Recruitment.** Candidate says "I'm in"; recruiter adds "great, and let's also lock in the non-compete, the IP-assignment for prior work, and the relocation clawback." Candidate withdraws.
-- **Clinical.** Patient agrees to start treatment; clinician adds "and we'll also need three additional appointments, a psychiatric consult, and dietary modifications." Patient wavers.
 
 **Sign in retrospect.** The counterparty agreed verbally and then went silent or backed off after the negotiator added "just one more thing."
 
-**Counter.** When you hear "yes," shut up. Lock the agreement at the moment of agreement. Anything you wanted to add can come at the next round (renewal, next review, follow-up consultation).
+**Counter.** When you hear "yes," shut up. Lock the agreement at the moment of agreement. Anything you wanted to add can come at the next round (renewal, next review).
 
 ### 5. Target fascination
 
@@ -145,7 +142,6 @@ Aviation analogy: pilot fixated on landing, missing safety conditions.
 - **B2B sales.** Negotiator fixated on quarter-end close date, missing that the buyer raised a real risk in the last meeting that hasn't been resolved. Customer churns in 6 months.
 - **Salary.** You're fixated on getting "any raise" before the cycle locks; you accept a base bump without checking the equity refresh, title commitment, or review-cadence terms — and 6 months later you realise the package was structurally weaker than what you had.
 - **NAO.** DRH fixated on closing before the strike notice deadline, signs an agreement with vague language on overtime that becomes the next round's flashpoint.
-- **Clinical.** Clinician fixated on "getting the patient to start treatment," skips the perception-and-NURSE steps; patient starts treatment but drops out after cycle 1 because the underlying enjeu was never surfaced.
 
 **Sign in retrospect.** The outcome closed by the date, but it unravelled within 6 months because a real concern was papered over to hit the date.
 
@@ -170,7 +166,7 @@ The taxonomy matters because the corrective action is different for each. _"We l
 
 Run this 2–4 weeks after the decision (won or lost). Ask the **non-champion** stakeholder if possible — your champion will protect the relationship and soften the truth.
 
-The structure (adapt language to domain — buyer / candidate / patient / employee / counterpart):
+The structure (adapt language to domain — buyer / candidate / employee / counterpart):
 
 **Context.**
 
@@ -205,6 +201,6 @@ The debrief is only valuable if it changes the next outcome. Lightweight discipl
 
 - **Personal level.** Each negotiator keeps a 1-page running list of patterns: top 3 mistakes, top 3 winning moves, things to try next round.
 - **Team level.** A monthly 30-minute team review of debriefs across recent outcomes. Look for repeating patterns — the same closing pathology hitting multiple cases = team-level capability gap.
-- **Organisation level.** Update the playbook (scripts, redline library, calibrated-question library, manager-conversation templates, clinical-conversation guides) with patterns that recur.
+- **Organisation level.** Update the playbook (scripts, redline library, calibrated-question library, manager-conversation templates) with patterns that recur.
 
 Negotiators who debrief 5 outcomes per quarter improve faster than negotiators who close 5 outcomes per quarter without reflection. The compounding is real.

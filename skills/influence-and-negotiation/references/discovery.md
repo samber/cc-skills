@@ -1,6 +1,6 @@
 # Discovery
 
-Discovery is where deals are won or lost — and the same principle applies in salary negotiation, recruitment, clinical consultations, and difficult management conversations. This file covers qualification frameworks (MEDDIC/MEDDPICC), the discovery question framework (SPIN), the conversation contract (upfront agreement), the calibrated-question playbook, and behavioural reading.
+Discovery is where deals are won or lost — and the same principle applies in salary negotiation, recruitment, and difficult management conversations. This file covers qualification frameworks (MEDDIC/MEDDPICC), the discovery question framework (SPIN), the conversation contract (upfront agreement), the calibrated-question playbook, and behavioural reading.
 
 The mainstream consensus across modern professional negotiation: layer the frameworks. MEDDPICC for qualification + SPIN for discovery questions + tactical empathy for live response. Don't pick one.
 
@@ -54,7 +54,7 @@ Template: _"I want to make sure we use this 30 minutes well. My plan was to walk
 
 Why it works: it removes the buyer's defensive crouch (_"this guy is going to pitch me"_) and earns you permission to ask harder questions. Reduces wasted cycles dramatically. Common mistake: negotiators treat it as a script and rush through it; the value is in the counterparty's verbal _"yes, that works"_ — that's the contract.
 
-The same pattern applies in domains beyond commercial selling: a hiring manager opens an interview with _"my plan is to spend 20 minutes on your background, then dig into one specific project, then leave 10 minutes for your questions — by the end you'll know whether to advance or not"_; a clinician opens a hard consultation with _"I'd like to share where things stand and then leave plenty of time for your questions and decisions"_; a manager opens a difficult one-on-one with _"I want to share something hard, hear your reaction, and figure out together what we do — does that work as a structure?"_
+The same pattern applies in domains beyond commercial selling: a hiring manager opens an interview with _"my plan is to spend 20 minutes on your background, then dig into one specific project, then leave 10 minutes for your questions — by the end you'll know whether to advance or not"_; a manager opens a difficult one-on-one with _"I want to share something hard, hear your reaction, and figure out together what we do — does that work as a structure?"_
 
 ## Calibrated questions library
 
@@ -86,7 +86,7 @@ A library of 20 calibrated questions, organised by what they surface:
 
 **Deflect unreasonable demands:**
 
-- _"How am I supposed to do that?"_ (canonical line — works across sales, salary, NAO, internal, clinical)
+- _"How am I supposed to do that?"_ (canonical line — works across sales, salary, NAO, internal management)
 - _"What would you do in my position?"_
 - _"Help me understand what makes that the right number for you."_
 
@@ -138,14 +138,14 @@ The four conventional proxemic zones (research consensus):
 
 | Zone | Distance | Meaning when adopted |
 | --- | --- | --- |
-| Intimate | 0–45 cm | Reserved for trust + private conversations; rare in professional contexts (clinical exam-room a known exception) |
+| Intimate | 0–45 cm | Reserved for trust + private conversations; rare in professional contexts |
 | Personnelle | 45–60 cm | Comfort, confidence — the counterparty is open |
 | Sociale | 60–360 cm | Neutral / formal — default for first meetings |
 | Publique | > 360 cm | Disengagement — the counterparty is mentally elsewhere |
 
 **Reading the counterparty's choice.** Where they sit and how far they lean tells you their state. Leaning forward into personal zone during your offer = they like it; pulling back into social zone = they're disengaging or running internal cost calc.
 
-**The positionnement désaxé technique.** When in-person, place yourself at right angles to the counterparty rather than directly opposite. Direct facing reads as competitive (boxing stance); right-angle reads as cooperative (working on a shared problem). Use a corner of the table or a side-by-side seating where possible. The clinical equivalent: take the chair beside the patient's bed, not the chair across the desk.
+**The positionnement désaxé technique.** When in-person, place yourself at right angles to the counterparty rather than directly opposite. Direct facing reads as competitive (boxing stance); right-angle reads as cooperative (working on a shared problem). Use a corner of the table or a side-by-side seating where possible.
 
 **Video-call proxémie.** On video, watch:
 

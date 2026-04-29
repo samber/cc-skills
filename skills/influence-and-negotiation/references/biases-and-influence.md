@@ -2,7 +2,7 @@
 
 Negotiation is an exchange between two limbic systems wearing suits. The prepared negotiator recognises the biases at play — both the ones they want to use ethically, and the ones the counterparty is using on them — and adapts.
 
-This file maps the 9 cognitive biases and 7 ethical influence levers, with applications across B2B sales, salary negotiation, NAO, internal management, clinical, and recruitment contexts. The frontier between influence and manipulation lives in [references/manipulation.md](manipulation.md).
+This file maps the 9 cognitive biases and 7 ethical influence levers, with applications across B2B sales, salary negotiation, NAO, internal management, and recruitment contexts. The frontier between influence and manipulation lives in [references/manipulation.md](manipulation.md).
 
 ## The line — influence vs manipulation
 
@@ -11,7 +11,7 @@ The criterion is the counterparty's free will:
 - **Influence** — propose a new perception of reality; the counterparty consents in full awareness. Their decision remains theirs.
 - **Manipulation** — coerce, hide, or trick. The counterparty acts in a way they would not have chosen with full information.
 
-Practical implication: every lever below has an ethical use AND a manipulative version. The negotiator who closes via manipulation wins this deal and loses the next three (lost references, lost expansion, lost trust, lost adherence). The discipline is to win without crossing the line — see [references/manipulation.md](manipulation.md) for the named patterns to refuse.
+Practical implication: every lever below has an ethical use AND a manipulative version. The negotiator who closes via manipulation wins this deal and loses the next three (lost references, lost expansion, lost trust). The discipline is to win without crossing the line — see [references/manipulation.md](manipulation.md) for the named patterns to refuse.
 
 ## The 9 cognitive biases
 

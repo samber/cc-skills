@@ -298,26 +298,7 @@ The legitimacy of the emotion is granted; the behaviour is not. Conflating them 
 
 **Failure signal.** The report leaves the meeting saying "thank you" or "I appreciate it." That's almost always a face-saving exit, not understanding. Schedule a follow-up within 48 hours to confirm landing.
 
-## 10. Bad-news consultation (clinical or analogue)
-
-**Trigger.** You need to deliver a hard fact to someone who will react emotionally — diagnosis, prognosis, treatment recommendation that contradicts what they hoped, or any situation where the recipient's stake is personal.
-
-**The structure:**
-
-1. **Setting.** Private space, both seated, no time pressure. Phones off. If you're delivering by phone or video, name the constraint up front and arrange a follow-up in person if possible.
-2. **Perception — ask before tell.** _"Before I share what we found, what's your understanding of where things stand?"_ The recipient's words tell you what frame they're already in — which determines how you deliver the next sentence. Skipping this step is the most common error; you end up correcting a frame you didn't realise was wrong.
-3. **Invitation.** _"How much detail would you like — the headline first, then context?"_ Some people want the full picture; others need it staged. Letting them choose preserves agency.
-4. **Knowledge — the fact.** Specific, complete, no euphemism. _"The biopsy shows [diagnosis]."_ Pause for at least 5 seconds before continuing.
-5. **Emotion — name it before responding to it.** Use **NURSE** statements: **N**ame the emotion ("This is hard news"), **U**nderstand ("It makes sense to feel overwhelmed"), **R**espect ("You've been managing this with real strength"), **S**upport ("We're going to work through this together"), **E**xplore ("What's coming up for you right now?"). Do not pivot to logistics until the emotion has been acknowledged — comprehension halts under unaddressed affect.
-6. **Strategy / summary.** Only when the recipient is ready. Frame as collaborative: _"My recommendation is X. Here's why. What's your reaction?"_
-
-**Treatment refusal — surface the enjeu.** When the recipient refuses the recommendation, the instinct is to argue the medical / technical merit. Skip the argument. Surface the enjeu hiding behind the position — see [references/objections.md](objections.md#belief-based-no). _"You're refusing because of [stated reason] — or is there something else I'm not seeing about what's at stake for you?"_
-
-**Adolescent / identity-protective recipient.** Hand control of the form, preserve the substance. _"On the substance, the treatment is necessary. On the form — when, how, who knows — that's yours to shape."_
-
-**Failure signal.** The recipient agrees verbally but their body language is closed (arms crossed, eye contact lost, monosyllabic responses). The emotion wasn't processed; the agreement won't hold. Pause and return to NURSE statements.
-
-## 11. Cross-cultural deal — opening the room
+## 10. Cross-cultural deal — opening the room
 
 **Trigger.** First substantive meeting in a cross-cultural commercial or diplomatic context (joint venture, M&A, international procurement, multi-country licensing).
 

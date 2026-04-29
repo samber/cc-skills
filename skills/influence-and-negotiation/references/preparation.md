@@ -45,7 +45,6 @@ Worked examples across domains:
 | **Salary base** (senior IC ask) | $185k | $175k | $165k | $150k (talk to HR) | $140k (decline) |
 | **NAO general raise** (annual collective, union ask) | 1.5% | 1.2% | 0.8% | 0.5% (call federation) | 0.2% (deadlock) |
 | **Manager → report raise** (mid-cycle) | +6% | +5% | +4% | +2% (escalate to N+2) | 0% (delay 6 months) |
-| **Treatment plan compliance** (chronic patient) | Full protocol | 90% adherence | 80% adherence (with weekly check) | <70% (escalate to consultant) | <50% (refer for re-assessment) |
 | **Recruitment package** (top candidate) | Listed band low | Listed band mid | Band ceiling | +10% off-band (HR sign-off) | +20% off-band (no offer) |
 
 Define a Mandascan for **every** axis. In commercial deals: price, term length, payment terms, services scope, SLAs, IP, exclusivity, references, expansion rights, auto-renewal, change-control, security clauses. In salary: base, variable, equity, leave, training budget, telework, title, review cadence. In NAO: general raise, individual raise, primes, working time, telework policy. In recruitment: base, sign-on, equity, start date, title, scope, non-compete length. Negotiators who Mandascan only the headline axis get steamrolled on the secondary ones.
@@ -110,7 +109,7 @@ A discipline borrowed from intelligence work that prevents both under-preparatio
 - **Grey** — active monitoring. Calls with mutual contacts, sales-intel platforms (ZoomInfo, Gong public data), conference attendance lists, alumni networks. Legal but requires discipline.
 - **Black** — targeted investigation. Pretexting, paying for non-public information, accessing private channels. Often illegal, ethically corrosive, will burn the relationship if discovered. This skill rules it out.
 
-Effort scales with stakes. For a $50K+ ACV commercial deal, expect 2–4 hours on white-source intel before the first call. For $500K+ deals or major NAO rounds, 1–2 days minimum. For a salary ask, 2–4 hours on market data plus internal-pattern intel. For a high-stakes clinical consultation, 30–60 minutes on the patient's prior record, the family situation, and any relevant cultural / faith context.
+Effort scales with stakes. For a $50K+ ACV commercial deal, expect 2–4 hours on white-source intel before the first call. For $500K+ deals or major NAO rounds, 1–2 days minimum. For a salary ask, 2–4 hours on market data plus internal-pattern intel.
 
 ## MICE — motivation per stakeholder
 
@@ -118,8 +117,8 @@ For each named person on the counterparty side (or your own side, for internal n
 
 - **M**oney — bonus, commission, P&L responsibility, compensation tied to the outcome.
 - **I**deology — they personally believe in your category / mission / approach (or in the cause behind the union demand, the family's faith, the candidate's mission alignment).
-- **C**ompromise — they're the broker; their goal is consensus, not the best technical answer. Common in: procurement, HR business partners, family mediators in clinical conversations, hiring committees.
-- **E**go — visibility, reputation, "I want to be the one who brought this in / led this NAO / saved this patient / hired this person".
+- **C**ompromise — they're the broker; their goal is consensus, not the best technical answer. Common in: procurement, HR business partners, hiring committees.
+- **E**go — visibility, reputation, "I want to be the one who brought this in / led this NAO / hired this person".
 
 MICE per stakeholder shapes how you talk to each one. The Compromise person needs you to make their job (building consensus) easier; pitching them on technical excellence is wasted air. The Ego person needs you to give them visibility; underplaying them ruins the relationship.
 
@@ -143,6 +142,6 @@ Run this interactively with the user 24 hours before any high-stakes meeting. Do
 
 8. **Pre-emptive labels** — _"What objections are most likely to come up? For each one, what's your accusation-audit line that disarms it before it forms?"_ Examples: _"You're probably thinking our price doesn't fit your envelope"_ / _"You may be wondering whether this raise sets a team precedent"_.
 
-9. **Surprise-move pre-mortem** — _"What's the one gambit you'd least like to see — procurement escalation, union ultimatum, family member taking over the clinical consultation, candidate's current employer counter-offer? Write the redirect now."_
+9. **Surprise-move pre-mortem** — _"What's the one gambit you'd least like to see — procurement escalation, union ultimatum, candidate's current employer counter-offer? Write the redirect now."_
 
 If any of these produce a fuzzy or missing answer, fix it before the meeting. They will not improve under live pressure — gaps in preparation become concessions in the room.

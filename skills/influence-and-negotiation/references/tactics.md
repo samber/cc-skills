@@ -129,12 +129,12 @@ The "no pourquoi" / "no why" rule shows up across multiple negotiation tradition
 
 The legitimacy you bring to the table comes from one of four sources:
 
-1. **Pouvoir institutionnel** — title, status, "I'm the VP of Sales." Most fragile because it depends on the counterparty recognising it. The buyer's procurement officer doesn't care about your title. In clinical contexts, this is the white coat — reassures children, triggers resistance with adolescents.
+1. **Pouvoir institutionnel** — title, status, "I'm the VP of Sales." Most fragile because it depends on the counterparty recognising it. The buyer's procurement officer doesn't care about your title.
 2. **Pouvoir situationnel** — knowledge, expertise, technical competence. "I've solved this exact problem 50 times." Powerful when relevant.
 3. **Pouvoir personnel** — physical presence, age, energy level. Includes negative variants: fatigue and stress are personal-power leaks.
-4. **Pouvoir relationnel** — capacity for empathy, relationship-building, presence. **Most effective in conflict** — across commercial, social, clinical, and managerial contexts.
+4. **Pouvoir relationnel** — capacity for empathy, relationship-building, presence. **Most effective in conflict** — across commercial, social, and managerial contexts.
 
-The lesson: in tense moments, drop institutional claims ("As your VP, I'm telling you…" / "As the doctor, I'm telling you…") and lean into relational power (real listening, empathy, naming what's at stake for them). Institutional power often backfires because it triggers resistance to authority. The classic clinical move — taking off the white coat, sitting at the patient's level, switching from "doctor" to "person who's been with you on this" — is the same move as a manager dropping the title in a hard one-on-one.
+The lesson: in tense moments, drop institutional claims ("As your VP, I'm telling you…") and lean into relational power (real listening, empathy, naming what's at stake for them). Institutional power often backfires because it triggers resistance to authority — the same move as a manager dropping the title in a hard one-on-one.
 
 ## The four relational stances
 
@@ -147,7 +147,7 @@ The four ways you can show up emotionally with the counterparty:
 | Empathie | Perception + verbalisation + acceptance of legitimacy, **without sharing** | Productive, lowers heat |
 | Sympathie | Sharing the emotion | Dangerous — costs you objectivity |
 
-The right stance in any professional negotiation is **empathie**, not sympathie. Verbalise their emotion without absorbing it. Sympathie ("I feel terrible too about this contract delay" / "I'm devastated by your diagnosis too") collapses your distance and removes your ability to push back when needed. The clinician who falls into sympathy with a refusing patient negotiates against themselves; the manager who absorbs a report's frustration personally cannot then deliver a hard performance message.
+The right stance in any professional negotiation is **empathie**, not sympathie. Verbalise their emotion without absorbing it. Sympathie ("I feel terrible too about this contract delay") collapses your distance and removes your ability to push back when needed. The manager who absorbs a report's frustration personally cannot then deliver a hard performance message.
 
 ## Anchoring
 
@@ -205,7 +205,6 @@ Cross-domain examples:
 - **B2B sales.** _"You need a vendor your CISO will sign off on without a second review. I need a deal structure that makes implementation viable. The shared objective is a contract that both teams can defend internally."_
 - **NAO / social.** _"We're both in a situation that's costly for everyone. My proposal: we want this site operating sustainably so we can guarantee the 500 jobs here over the next three years. Can we negotiate within that frame?"_
 - **Internal management.** _"Our shared goal is to preserve every role in the department through this cycle. The salary freeze is what makes that possible — the alternative was reductions. Are you willing to work within that constraint with me?"_
-- **Clinical.** _"We both want you on a regimen you'll actually follow for the next 12 months. The substance is the dose. The form — when, how, what we tell whom — is yours to shape. Let's negotiate what makes adherence possible."_
 
 When to use it. Three high-leverage moments:
 
@@ -286,14 +285,6 @@ The Pipe at signature time — three worked examples:
 | Title | IC senior | Staff | Staff | ✓ |
 | Review cadence | 18-month | 12-month | 12-month | ✓ |
 
-**Clinical** (treatment plan signature):
-
-| Axis | Rupture | Objective | Final | Within mandate? |
-| --- | --- | --- | --- | --- |
-| Treatment regimen | <50% adherence projected | 80%+ adherence | Modified-schedule plan, 85% projected | ✓ |
-| Follow-up cadence | None scheduled | Weekly first month | Bi-weekly first month + on-demand | ✓ |
-| Family / support involvement | Patient isolated | Coached support team | Spouse coached, oncology psych referred | ✓ |
-
 Run before signature in any domain. If any axis is below rupture, **stop**. No pressure, no "we've come this far." Either escalate to the décideur for an exception, or no-agreement. The Pipe protects against target fascination — the natural urge to land the outcome even when the landing has gone wrong.
 
-Diagnostic counter-question. When you're tempted to skip the Pipe ("it's done, why slow it down"), that urge is itself the signal that you should run it. Calm, well-going closes survive the Pipe trivially. Closes that are tempting to rush are the ones that produce 6-month-out churn / regret / non-adherence.
+Diagnostic counter-question. When you're tempted to skip the Pipe ("it's done, why slow it down"), that urge is itself the signal that you should run it. Calm, well-going closes survive the Pipe trivially. Closes that are tempting to rush are the ones that produce 6-month-out churn / regret.

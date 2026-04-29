@@ -1,6 +1,6 @@
 # Worked scenarios
 
-Seven realistic end-to-end scenarios applying the skill across its supported domains: four B2B (sales pricing pushback, enterprise RFP, services SOW, asymmetric power) plus three non-commercial (salary ask, NAO opening, clinical refusal of care). Names and numbers are illustrative; the patterns generalise.
+Six realistic end-to-end scenarios applying the skill across its supported domains: four B2B (sales pricing pushback, enterprise RFP, services SOW, asymmetric power) plus two non-commercial (salary ask, NAO opening). Names and numbers are illustrative; the patterns generalise.
 
 ## Scenario 1 — B2B SaaS price pushback + multi-threading
 
@@ -221,59 +221,3 @@ If the delegates accept the OCP, you've shifted from positionnisme to coopétiti
 - **Compétition:** OCP refused, hard strike (5+ days), agreement only after federation involvement. Outcome similar but trust damaged for next year.
 
 **The patterns illustrated.** Co-built written mandate, not "on ne lâche rien". OCP in writing in opening session. Don't concede mid-strike. Identify the union's single non-negotiable. Sociogramme of delegates by their internal incentives (election cycles, federation pressure, membership demographics).
-
-## Scenario 7 — Clinical refusal of care
-
-**Context.** You're a hospital oncologist. Your patient — a 42-year-old mother of two with a stage III breast cancer diagnosis — refuses adjuvant chemotherapy after surgery. The medical case for treatment is strong (estimated 5-year survival improvement +18 percentage points). Her stated reason: _"I can't be sick again for my kids — I'd rather take the risk."_ Her husband and oncology nurse are urging her to reconsider.
-
-**The trap.** Three parallel traps. (1) Argue the medical merits — the survival numbers, the protocol details — which lands as logical refutation against an emotional position and produces dug-in refusal. (2) Defer to autonomy without surfacing the actual enjeu — accepting the surface "no" without the deeper conversation that might change it. (3) Recruit the family to apply pressure — which creates a coercion frame, breaks the alliance, and often produces compliance without adherence (she takes the first cycle, then "forgets" the second).
-
-**The skill's playbook.**
-
-**Phase 1 — Setting + perception (SPIKES P-step).** Schedule a private conversation with the patient alone first (family separately afterwards if she chooses). Phones off. Both seated. Open with perception, not information:
-
-> _"Before I say anything more, I want to understand where you are. What's going through your mind about the diagnosis, and what's making chemotherapy feel like the wrong choice right now?"_
-
-This invitation surfaces the actual frame she's in. Her words tell you whether the refusal is rooted in fear of the side effects (suffering), fear of the impact on her children (mother-identity), distrust of medicine, religious belief, or something else — and the response strategy is completely different for each.
-
-**Phase 3 — Mandascan reframed for clinical.** The substance is the medically defensible care plan. The form is everything else — timing, sequencing, support structure, what the kids see, what the workplace knows. The mandate is to find a plan she'll actually adhere to over 12+ months — perfect protocol with 0% adherence is worse than partial protocol with 90% adherence.
-
-| Axis | Entry | Ideal | Objective | Escalation | Rupture |
-| --- | --- | --- | --- | --- | --- |
-| Treatment regimen | Full standard protocol | 90% adherence (one schedule modification) | 80% adherence (modified schedule + symptom management plan) | <70% (escalate to consultant for re-assessment) | Refusal of all curative treatment (palliative pathway) |
-
-**Phase 6 — Surface the enjeu (POE).** Her position is _"no chemo."_ Her objectif is _"protect my kids from seeing me sick."_ The likely enjeu is mother-identity: she experiences treatment as becoming the sick mother her own family member was, or as exposing her kids to fear, or as becoming someone she doesn't recognise. Surface it:
-
-> _"What you said earlier — about not being sick again for your kids — I want to make sure I understand. Is the fear about the side effects themselves, about what your kids will see, about how you'll feel about yourself, or something else I'm not seeing?"_
-
-The answer reshapes the conversation entirely. If it's "what my kids will see," the conversation is about scheduling, support structure, and what childcare looks like during low-energy weeks — not about cancer biology. If it's "how I'll feel about myself," the conversation involves an oncology psychologist before treatment starts.
-
-**Phase 6 — NURSE statements before any treatment recommendation.**
-
-- **N**ame: _"This is one of the hardest decisions someone can face."_
-- **U**nderstand: _"It makes complete sense to weigh treatment against what your kids will live through."_
-- **R**espect: _"You've been thinking about this carefully — that's the right way to approach it."_
-- **S**upport: _"Whatever you decide, I'm not going anywhere — we'll work through this together."_
-- **E**xplore: _"Tell me what a 'good outcome' would look like for you a year from now, given everything you're weighing."_
-
-**Phase 6 — Form vs substance handoff.** Once the enjeu is surfaced, hand control of the form, preserve the substance:
-
-> _"On the medicine, the recommendation is clear — chemo materially improves your outcome. That's my job to be honest about. On how — when we start, what schedule fits your kids' calendar, who supports you on hard weeks, what we tell your employer, whether your psychologist sees you alongside this — that's all yours to shape. I want a plan you'll actually live for the next twelve months, not the textbook plan that you'll abandon after cycle two."_
-
-This separates the medical fact (chemo recommended) from the operational form (schedule, support, framing). She gets agency over the form and is far more likely to adhere.
-
-**Phase 6 — Bad-news family conversation.** Separately, with her permission, address the family:
-
-- The husband and nurse pushing for compliance can become saboteurs of the alliance if they're not coached. Brief them: _"What's going to determine whether she completes treatment isn't pressure — it's her sense of control. I need you to back off the 'you have to do this' frame and become her support team. I'll handle the medicine; you handle the kids and the daily life."_
-- Reframe their role from "convince her" to "support whatever she decides, with my honest medical recommendation as a third voice in the room."
-
-**Phase 7 — Follow-up cadence.** First cycle is the riskiest moment for non-adherence. Schedule the follow-up call yourself, not via the nurse, 48–72 hours after cycle 1. Don't ask "did you take it" — ask _"how did the first 48 hours go, and what's coming up that worries you about the next two weeks?"_ Pre-emptive support has higher adherence yield than reactive correction.
-
-**Likely outcomes.**
-
-- **Best:** patient agrees to a modified-schedule protocol (e.g., dose-dense schedule that compresses treatment, or split-week dosing that protects weekend energy for the kids). She completes treatment. Adherence high because the plan was co-designed.
-- **Acceptable:** patient agrees to the standard protocol after surfacing the enjeu and getting the form-control language; outcome similar to best case.
-- **Pathway change:** the actual enjeu turns out to be a conviction the medical case is weaker than presented, or a belief in alternative treatment, or a faith-based stance — and the conversation shifts toward shared decision-making with the alternatives genuinely on the table. Sometimes the right outcome is for the patient to refuse curative treatment, fully informed; the negotiator's job is to make sure the refusal is informed and not driven by an unaddressed enjeu.
-- **Worst case:** family pressure overrides the alliance, patient accepts treatment under duress, drops out after cycle 1. This is the failure mode the playbook is designed to prevent.
-
-**The patterns illustrated.** Perception-before-knowledge (SPIKES P-step). Surface the enjeu before arguing the substance. Form-vs-substance handoff. NURSE statements before any recommendation. Coach the family (don't recruit them as enforcers). Pre-emptive follow-up after cycle 1.

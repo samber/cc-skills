@@ -1,8 +1,8 @@
 # Objections
 
-Objection handling is the most-asked-for capability across high-stakes negotiation — sales, salary asks, NAO, internal management, clinical conversations. This file covers refusal triage (what type of "no" you're facing), tactical responses to the four root objections, procurement playbook awareness, the bad-faith protocol, le non-négociable, and face-saving exits.
+Objection handling is the most-asked-for capability across high-stakes negotiation — sales, salary asks, NAO, internal management. This file covers refusal triage (what type of "no" you're facing), tactical responses to the four root objections, procurement playbook awareness, the bad-faith protocol, le non-négociable, and face-saving exits.
 
-The opening discipline: **before responding, classify the objection**. The same words ("your price is too high" / "we don't have budget for raises this year" / "I won't take the medication") mean very different things depending on whether they're emotional, belief-based, bad-faith, identity-protective, or tactical. Answering the wrong type produces an answer that feels right but lands wrong.
+The opening discipline: **before responding, classify the objection**. The same words ("your price is too high" / "we don't have budget for raises this year") mean very different things depending on whether they're emotional, belief-based, bad-faith, identity-protective, or tactical. Answering the wrong type produces an answer that feels right but lands wrong.
 
 ## Refusal triage
 
@@ -34,8 +34,6 @@ The "emotion before facts" rule is the single most-violated discipline in object
 
 **Response.** Don't refute the belief. Your reference frame is not theirs, and arguing the belief produces dug-in trenches. Find the **enjeu** hiding behind the belief.
 
-The canonical clinical case: a patient refuses a vital transfusion citing religious belief. The clinician's instinct is to refute the religious belief — guaranteed to fail. The negotiator's move: surface the underlying enjeu (_"the social bond — exclusion from my community"_) and find a workaround (a confidential procedure) that satisfies the enjeu without crossing the belief.
-
 B2B sales translation: a buyer says _"we're a build-not-buy shop."_ Don't argue. Surface the enjeu — usually engineering pride, control, fear of vendor dependence, or career capital tied to the in-house team. Then find an offering shape that satisfies the enjeu (a hybrid model, an open-source tier, a "you build the wrapper, we provide the core" structure).
 
 Salary translation: a manager says _"we don't give raises mid-cycle on principle."_ Don't argue the principle. Surface the enjeu — usually a precedent worry, fairness perception across the team, or budget signalling to their own boss. Find a structure that addresses the enjeu (one-off retention bonus instead of base raise, a delayed but committed cycle-aligned raise, a scope/title change that justifies an exception) without crossing the principle.
@@ -64,8 +62,6 @@ The face-saving exit is non-negotiable. If you corner them publicly, they will d
 
 **Response.** Hand back a controllable scope. Negotiate on form, not substance.
 
-A canonical clinical case: an adolescent with a chronic illness defies parental and medical authority. The negotiator's move is not to force compliance — it's to give the patient agency over the form (_"you decide how you take it"_) while preserving the substance (_"that you take it"_).
-
 B2B translation: when an enterprise buyer pushes back hard on the proposal as a whole, often what they actually need is to control the **form** of the engagement (kickoff structure, named team members, escalation protocols) even when the **substance** (price, scope, terms) is settled. Hand them control of the form and the substance lands.
 
 ### Tactical "no"
@@ -76,7 +72,7 @@ B2B translation: when an enterprise buyer pushes back hard on the proposal as a 
 
 ## The four root commercial objections
 
-Almost all commercial objections reduce to one of four. Knowing which root you're facing tells you which calibrated question to ask first. (Equivalents in salary / clinical / NAO domains noted at the end of this section.)
+Almost all commercial objections reduce to one of four. Knowing which root you're facing tells you which calibrated question to ask first. (Equivalents in salary / NAO domains noted at the end of this section.)
 
 ### 1. Price
 
@@ -295,7 +291,6 @@ Cross-domain examples:
 - **B2B sales.** Buyer demands a deeply unprofessional concession (kickback, lying on a reference, falsifying capability claims): refuse explicitly. _"I can't do that. Let's see what else I can do."_
 - **NAO.** A union delegate insults a member of the management team during a session. _"I can hear the legitimate frustration on your side, and we'll address the substance. The personal insults aren't acceptable in this room — let's pause for 20 minutes and resume only when the conditions for productive dialogue are restored."_ If behaviour resumes, end the session and reschedule.
 - **Internal management.** A direct report insults a colleague in front of you during a heated 1:1. _"I understand you're frustrated about the situation, and the frustration is legitimate. The way you just spoke about [colleague] isn't acceptable, and we need to be clear about that going forward — separately from whatever else we're solving today."_
-- **Clinical.** A patient's family member berates the nurse in front of the patient. _"I understand this is a stressful time. The way you just spoke to [nurse] isn't something I can have happen on this team — for everyone's sake including yours, because we need this team functioning to get your relative the best care."_
 - **Recruitment.** A candidate makes an offensive comment about a protected category during the final round. _"I'm going to stop the conversation here. That comment isn't compatible with how we work, and the right outcome is for me to end this process today."_
 
 The non-négociable line is not about ego — it's about preserving the conditions for productive negotiation, mentorship, care, or trust. Negotiators who absorb abuse to "save the outcome" save the wrong outcome.

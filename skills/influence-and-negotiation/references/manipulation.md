@@ -1,6 +1,6 @@
 # Manipulation — taxonomy and counter-protocols
 
-Anyone running high-stakes negotiations is a target for manipulation more often than they realise. Procurement is trained, union delegates rotate tactics, aggressive candidates and patients cycle through moves, and even non-professional counterparties learn the patterns by osmosis. This file names the 10 manipulation patterns recurrent across negotiation traditions, with detection signals and counter-responses that don't escalate.
+Anyone running high-stakes negotiations is a target for manipulation more often than they realise. Procurement is trained, union delegates rotate tactics, aggressive candidates cycle through moves, and even non-professional counterparties learn the patterns by osmosis. This file names the 10 manipulation patterns recurrent across negotiation traditions, with detection signals and counter-responses that don't escalate.
 
 The line — see [references/biases-and-influence.md](biases-and-influence.md#the-line--influence-vs-manipulation). Influence acts on the counterparty while preserving free will. Manipulation strips it via coercion, deceit, or emotional hijack. The negotiator who wins by manipulation poisons the well for renewal, expansion, trust, and word-of-mouth.
 
