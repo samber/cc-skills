@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.0.0"
   openclaw:
     emoji: "🤝"
     homepage: https://github.com/samber/cc-skills
@@ -105,10 +105,16 @@ The user will rarely ask you to "explain BATNA" or "use this skill". They'll say
 - **Load when:** the user is post-action and analysing what happened. Triggers: _"we lost"_ / _"we won"_, _"what's transferable?"_, _"why did this go sideways?"_, _"the strike happened"_, _"the candidate accepted the counter-offer"_, _"the team got promoted instead of me"_, _"the layoff conversation went badly"_, _"how do I run a debrief?"_, _"how do I give the team / DRH feedback?"_, _"how do I help my colleague process this loss?"_ (BRRAC).
 - **Don't load when:** the conversation is still in progress or upcoming — debrief is strictly post-action.
 
-### `references/scenarios.md` — six worked end-to-end examples
+### Scenario references — six worked end-to-end examples
 
-- **Load when:** the user's situation closely matches one of the six scenarios and they need a complete pattern, OR when other references have given the tactics but the user is asking _"how does this all come together end-to-end?"_. The six scenarios: (1) B2B SaaS price pushback + multi-threading; (2) enterprise procurement RFP + fiscal-year leverage; (3) services / consulting SOW + change request; (4) asymmetric-power deal (small vendor vs much-larger buyer); (5) salary ask facing "envelope closed" + counter-offer; (6) NAO opening + strike de-escalation.
-- **Don't load when:** the user has a specific tactical question — `tactics.md` / `objections.md` / `playbooks.md` are more focused. `scenarios.md` is the integration layer; load it when integration is what's needed, not for individual tactics.
+Load the scenario file that matches the user's situation. Each file is self-contained. Don't load when the user has a specific tactical question — [tactics](references/tactics.md) / [objections](references/objections.md) / [playbooks](references/playbooks.md) are more focused.
+
+- **[B2B SaaS price pushback + multi-threading](references/scenario-saas-price-pushback.md)** — Triggers: AE receiving a discount ask on a SaaS deal, single-threaded into a CIO, budget objection, "we're over budget".
+- **[Enterprise procurement RFP + fiscal-year leverage](references/scenario-enterprise-rfp.md)** — Triggers: "best and final" letter, MSA redlines, uncapped liability, quarter-end pressure, competing bid claim.
+- **[Services / consulting SOW + change request](references/scenario-services-sow.md)** — Triggers: client asking to absorb new work within existing budget, scope creep, mid-engagement add-on.
+- **[Asymmetric power: small vendor vs. much-larger buyer](references/scenario-asymmetric-power.md)** — Triggers: F500 buyer imposing MFN, SLA, lock-out, or source-code escrow on a small vendor; "standard for vendors of your size".
+- **[Salary ask facing "envelope closed" + counter-offer](references/scenario-salary-ask.md)** — Triggers: manager deferring a raise to the next cycle, external offer in hand, deciding whether to accept a counter-offer.
+- **[NAO opening + strike de-escalation](references/scenario-nao-opening.md)** — Triggers: annual wage negotiations, union delegation, strike threat or active strike, DRH / HR director preparing for NAO.
 
 ## Core philosophy
 
