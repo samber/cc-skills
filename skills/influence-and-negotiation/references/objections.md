@@ -47,7 +47,7 @@ Salary translation: a manager says _"we don't give raises mid-cycle on principle
 **Response — bad-faith protocol (three core steps + an alternative move):**
 
 1. **Drop your ego.** Do not engage with the false claim itself. Do not get into a "no it isn't / yes it is" loop. Your goal is not to win the truth contest; it's to move the deal.
-2. **Present the principle of reality.** State the facts cleanly, without judgement. _"Our list is $X. Vendor Y's list is $Z. I'm sure there's a way you saw a different number — maybe a different SKU or a different volume tier — but at the configuration we're discussing, those are the public numbers."_
+2. **Present the reality principle.** State the facts cleanly, without judgement. _"Our list is $X. Vendor Y's list is $Z. I'm sure there's a way you saw a different number — maybe a different SKU or a different volume tier — but at the configuration we're discussing, those are the public numbers."_
 3. **Open a face-saving exit.** Give them a way to back out without losing face. _"It's possible the team that gave you that number was working from older information. Want to forward me the quote and we can compare?"_
 
 The face-saving exit is non-negotiable. If you corner them publicly, they will dig in and the deal will die out of sheer commitment to the false position. Their face matters more than your truth in the moment.
@@ -140,7 +140,6 @@ The same four roots appear in other domains under different surface forms. The d
 | **Salary** | "We're at the top of the band" / "envelope's closed" | "We'll revisit at the next review" | "I need to check with HR / my skip-level" | "You're tracking great where you are" |
 | **NAO / social** | "The wage envelope is fixed by the COMEX" | "Let's defer to next round / next year" | "We can't decide that here, it's federation-level" | "Things are stable, no need to renegotiate now" |
 | **Internal management** | "I don't have the headcount / promotion budget" | "Let's revisit at the next cycle" | "I'd need to escalate to my N+1 / HR" | "You're doing fine, no change needed" |
-| **Clinical** | "I can't afford the treatment / time off work" | "I want to wait and see / try alternative first" | "I need to discuss with my family" | "I feel fine, the problem isn't real" |
 | **Recruitment** | "Your compensation expectation is above our band" | "We're not hiring this quarter" | "I need to validate with the hiring committee" | "We're not sure we need this role yet" |
 
 The diagnostic questions translate directly. _"How was that number set?"_ becomes _"How was the band set?"_ in salary, _"How was the wage envelope sized?"_ in NAO. _"What happens if we miss [date]?"_ works unchanged across all domains. _"Walk me through how a decision like this typically gets made here?"_ is the universal authority diagnostic.

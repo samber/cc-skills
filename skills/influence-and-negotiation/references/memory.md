@@ -124,7 +124,7 @@ _⚠️ Flags that must not be forgotten: mandate approaching Escalation or Rupt
 
 ## Situation
 
-- **Type:** [B2B sales / Salary / NAO / Internal / Clinical / Recruitment / Cross-cultural]
+- **Type:** [B2B sales / Salary / NAO / Internal / Recruitment / Cross-cultural]
 - **Our side:** [name(s), role(s), authority level]
 - **Counterparty:** [name(s), company, role(s)]
 - **Stakes:** [size, scope, who's affected]

@@ -220,7 +220,7 @@ A pause tactique is a deliberate suspension of the negotiation, called by you, l
 
 When to call one:
 
-- **Mandate breach approaching.** You're about to concede past a Mandascan bascule; your N2 signals; the right move is to pause and validate with the décideur.
+- **Mandate breach approaching.** You're about to concede past the Escalation (bascule) point in your Mandascan; your N2 signals; the right move is to pause and validate with the décideur.
 - **Cognitive saturation.** You're tired, the buyer has been hammering for 40 minutes, decisions are getting sloppy. The pause restores judgement.
 - **Surprise.** A new ask, a new stakeholder, an unexpected redline appears. Don't react — pause, regroup, respond.
 - **Punching-ball.** The buyer has shifted to verbal harassment. Calling the break IS the response — see [references/manipulation.md](manipulation.md#4-punching-ball-verbal-harassment).
@@ -256,7 +256,7 @@ How to run a back-brief — three forms:
 2. **Structured back-brief** (15 minutes, end of pricing or term-sheet negotiation). The buyer reformulates each axis in their words. You note differences in interpretation immediately, while both parties are still in the room.
 3. **Pre-signature wrap-up** (30 minutes, before final signature). Walk through every key term — dates, prices, scope, exclusions, obligations. Have the buyer say each one out loud.
 
-The wrap-up is your insurance against the closing pathologies (Monsieur Plus, target fascination — see [references/debrief.md](debrief.md#the-5-closing-pathologies)) and against last-minute manipulation. Reps who skip it pay for it in implementation friction or churn within 6 months.
+The wrap-up is your insurance against the closing pathologies (Syndrome Monsieur Plus, target fascination — see [references/debrief.md](debrief.md#the-5-closing-pathologies)) and against last-minute manipulation. Reps who skip it pay for it in implementation friction or churn within 6 months.
 
 ## Pipe de négociation — the closing checklist
 

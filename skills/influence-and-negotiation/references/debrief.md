@@ -56,13 +56,13 @@ For commercial roles, an indicative scale:
 | Débutant (junior AE) | 5 (empathie, assertivité, POE, stratégie/tactique, débriefing) |
 | Confirmé (mid AE) | ~10 (+ Mandascan, calibrated questions, accusation audit, refusal triage, multi-thread sequence) |
 | Avancé (senior AE) | 15–20 (+ behavioural reading, manipulation taxonomy, MAP, JOLT, MFN escalation, team negotiation) |
-| Référent (principal / sales coach) | 23+ (full PACIFICAT + cross-deal pattern recognition + coaching delivery) |
+| Référent (principal / sales coach) | 23+ (full PACIFICAT process spine — Preparation → Accueil → Compréhension → Influence → Finalisation → Consolidation → Analyse → Transmission — + cross-deal pattern recognition + coaching delivery) |
 
 The PMR is not for HR scoring. It's a **self-assessment grid** — the negotiator names which competencies they're below threshold on, and structures development around closing those gaps. Using the PMR as a quarterly check-in produces faster compounding than ad-hoc skill development.
 
 ### BRRAC — for emotionally heavy losses
 
-When the loss is personally costly (a flagship deal, a negotiator's first big loss, a reputational hit, a strike that escalated, a treatment refusal that ended badly), defusing alone often isn't enough. **BRRAC** sequences the negotiator through 5 named stages so the post-mortem doesn't get stuck in any one of them:
+When the loss is personally costly (a flagship deal, a negotiator's first big loss, a reputational hit, a strike that escalated), defusing alone often isn't enough. **BRRAC** sequences the negotiator through 5 named stages so the post-mortem doesn't get stuck in any one of them:
 
 1. **B**lessure (wound) — name what hurt. Specific, factual.
 2. **R**iposte (counter-strike urge) — acknowledge the urge to retaliate (against the buyer, the manager, the organisation). Surface it before it leaks.
@@ -153,10 +153,10 @@ When you lose, distinguish among (commercial framing — equivalents in other do
 
 | Loss type | Description | Lesson |
 | --- | --- | --- |
-| **No-decision** | Counterparty stayed with the status quo (no deal, no raise, no agreement, no treatment). | The cost of inaction wasn't built; SPIN Implication was skipped. |
+| **No-decision** | Counterparty stayed with the status quo (no deal, no raise, no agreement). | The cost of inaction wasn't built; SPIN Implication was skipped. |
 | **Lost to alternative** | They chose a competitor, an external offer, a different candidate, an alternative provider. | Differentiation problem; learn what the alternative offered. |
 | **Lost to internal build** (or self-handling) | They chose to build / handle it themselves (in-house, no external resource, family-led care). | Often an enjeu issue (pride, control, autonomy); could a hybrid have worked? |
-| **Lost to envelope** | They wanted the agreement but the envelope didn't materialise (budget, compensation band, NAO mandate, treatment authorisation). | Timing was off; re-engage when the next cycle opens. |
+| **Lost to envelope** | They wanted the agreement but the envelope didn't materialise (budget, compensation band, NAO mandate). | Timing was off; re-engage when the next cycle opens. |
 | **Lost to mistake** | You blew it (botched discovery, missed stakeholder, wrong frame, leaked plan B). | Specific tactical lesson. The most useful losses if processed honestly. |
 | **Disqualified late** | Should have been disqualified earlier; you kept it active. | Stage gates were too lenient; pipeline / candidate / case discipline failed. |
 

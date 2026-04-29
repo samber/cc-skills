@@ -4,7 +4,7 @@ Discovery is where deals are won or lost — and the same principle applies in s
 
 The mainstream consensus across modern professional negotiation: layer the frameworks. MEDDPICC for qualification + SPIN for discovery questions + tactical empathy for live response. Don't pick one.
 
-## MEDDIC / MEDDPICC
+## MEDDPICC (extends MEDDIC)
 
 A B2B sales qualification methodology developed at scale-stage enterprise software companies. The right tool for $50K+ ACV with 5+ stakeholders and 90+ day cycles. MEDDPICC adds Paper process and Competition for enterprise (>$100K ACV). Roughly 73% of SaaS companies selling above $100K ARR use it — vendor-published number, treat as directional.
 
@@ -108,9 +108,9 @@ Use these instead of pitching. The buyer's answers carry the deal forward; your 
 
 Four observable signal families worth tracking, each with detect / interpret / react.
 
-### Micro-expressions — the 7 universal emotions
+### Micro-expressions — 7 widely documented emotions
 
-The 7 universal facial emotions (anger, fear, joy, sadness, surprise, disgust, contempt) flash for ½ to 1/25 of a second, often before the cortex suppresses them. You won't catch them all live; record calls (with permission), review afterward. Even imperfect detection rate beats no detection.
+The 7 facial emotions most consistently documented in cross-cultural research (anger, fear, joy, sadness, surprise, disgust, contempt) flash for ½ to 1/25 of a second, often before the cortex suppresses them. You won't catch them all live; record calls (with permission), review afterward. Even imperfect detection rate beats no detection.
 
 | Emotion | Detect | Interpret | React tactically |
 | --- | --- | --- | --- |

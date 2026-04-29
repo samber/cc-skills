@@ -76,7 +76,7 @@ Real competing bids generate specific differentiator answers; fake ones generate
 
 **Phase 6 — Triage.** This is a tactical-type ask, not an emotional or belief-based one. The client is testing what you'll absorb. They almost certainly know the new workstream is out of scope; they're hoping you'll fold.
 
-**The bad-faith protocol applies softly here** — there's no overt lie, but the implicit framing ("can your team handle that within the existing budget") is misleading. Don't engage with the false framing. Drop your ego, present the reality, open a face-saving exit:
+**The bad-faith protocol applies softly here** — there's no overt lie, but the implicit framing ("can your team handle that within the existing budget") is misleading. Don't engage with the false framing. Drop your ego, present the reality principle, open a face-saving exit:
 
 > _"Glad you're thinking about us for the subsidiary integration — that's a real signal of the work going well. Quick reality check: when we scoped this engagement in February, the subsidiary acquisition wasn't on the table, so the team and timeline are sized for the original four workstreams. Adding the integration is real work — roughly [estimate] of effort._
 >

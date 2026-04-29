@@ -12,7 +12,6 @@ The "own side" varies by domain:
 - **Salary:** the mandate is yours alone — what you'll accept across base, variable, equity, leave, training, telework.
 - **Social / NAO:** the mandate is co-built with the décideur (DRH, COMEX) and validated by legal.
 - **Internal management:** the mandate is what your scope, your N+1, and HR allow you to commit to (raise budget, role change, scope).
-- **Clinical:** the mandate is the medically defensible substance (treatment, dose, follow-up cadence) within which the form is negotiable.
 - **Diplomatic / cross-cultural:** the mandate is signed by ministry / executive sponsor and accounts for protocole.
 - **Recruitment:** the mandate is the compensation band, scope, and start-date flexibility approved by HR + hiring executive.
 
@@ -68,7 +67,6 @@ Concrete examples across domains:
 - **Salary.** Manager position: _"We can't raise you when the team is suffering."_ Objectif: _"Hold the compensation envelope flat this year."_ Enjeu: _"I don't want to set a precedent that breaks team-wide perceived equity."_ — Solving for enjeu via a one-off retention bonus (visibly different from a base raise) addresses the precedent issue; arguing for the raise on merit doesn't.
 - **NAO / social.** Union position: _"We demand 4% across-the-board."_ Objectif: _"Show membership we delivered something."_ Enjeu: _"The lead delegate has an internal election in 6 months and needs a visible win."_ — A package with a smaller across-the-board figure plus a visible structural improvement (telework expansion, training budget) addresses the enjeu; pure base-rate negotiation doesn't.
 - **Internal management.** Report position: _"I can't accept this scope change."_ Objectif: _"Keep the work I enjoy."_ Enjeu: _"I'm afraid the change makes me dispensable in 12 months."_ — Solving for enjeu with a written 12-month commitment + skill-development plan addresses the actual fear; arguing the change's logic doesn't.
-- **Clinical.** Patient position: _"I refuse the transfusion."_ Objectif: _"Stay aligned with my faith."_ Enjeu: _"Avoid being excluded from my community."_ — A confidentiality-protected procedure addresses the enjeu without crossing the religious position. Arguing the medical necessity doesn't.
 - **Recruitment.** Candidate position: _"I want $20k more in base."_ Objectif: _"Beat my current employer's counter-offer."_ Enjeu: _"I want to join, but I don't want to feel I left money on the table."_ — A modest base bump + sign-on bonus + accelerated equity vest addresses the enjeu; unilaterally matching the base doesn't.
 
 When you discover an enjeu mid-conversation, slow down. The room shifts.
