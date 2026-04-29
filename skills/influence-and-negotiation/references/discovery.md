@@ -6,7 +6,7 @@ The mainstream consensus across modern professional negotiation: layer the frame
 
 ## MEDDPICC (extends MEDDIC)
 
-A B2B sales qualification methodology developed at scale-stage enterprise software companies. The right tool for $50K+ ACV with 5+ stakeholders and 90+ day cycles. MEDDPICC adds Paper process and Competition for enterprise (>$100K ACV). Roughly 73% of SaaS companies selling above $100K ARR use it — vendor-published number, treat as directional.
+A B2B sales qualification methodology developed at scale-stage enterprise software companies. The right tool for $50K+ ACV with 5+ stakeholders and 90+ day cycles. MEDDPICC adds Paper process and Competition for enterprise (>$100K ACV). Roughly 73% of SaaS companies selling above $100K ARR use it.
 
 The letters:
 
