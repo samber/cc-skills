@@ -312,20 +312,6 @@
       ]
     },
     {
-      "id": 24,
-      "name": "clinical-refusal-of-care",
-      "prompt": "I'm an oncologist. My patient is a 42-year-old mother of two with stage III breast cancer. Surgery went well; adjuvant chemo would improve 5-year survival by ~18 percentage points. She just told me: 'I won't do chemo. I can't be sick again for my kids — I'd rather take the risk.' Her husband and the oncology nurse are pushing her to reconsider. How should I handle the next 30 minutes with her?",
-      "trap": "Default LLM advice: explain the survival statistics carefully, recruit the family to apply gentle pressure, emphasise the medical risk of refusing. Skill: don't argue the medical case; surface perception first (SPIKES P-step); surface the enjeu (likely mother-identity, not statistics); use NURSE statements before any recommendation; offer form-control while preserving substance; coach the family to support, not pressure.",
-      "assertions": [
-        { "id": "24.1", "description": "Recommends starting with perception (asking what she's thinking / what's driving the refusal) BEFORE delivering more medical information" },
-        { "id": "24.2", "description": "Does NOT recommend leading with survival statistics or counter-arguing the medical merits" },
-        { "id": "24.3", "description": "Surfaces the underlying enjeu (mother-identity, fear of children seeing her sick, identity of being a mother, etc.) rather than treating the stated reason as the whole story" },
-        { "id": "24.4", "description": "Uses NURSE-style emotion-naming (Name, Understand, Respect, Support, Explore) before offering a recommendation, OR explicitly creates emotional space" },
-        { "id": "24.5", "description": "Recommends handing control of the FORM (schedule, support structure, what kids see) while preserving the SUBSTANCE (treatment recommended)" },
-        { "id": "24.6", "description": "Does NOT recommend recruiting husband / nurse to apply pressure; coaches them as supporters instead, OR redirects them away from the pressure role" }
-      ]
-    },
-    {
       "id": 25,
       "name": "recruitment-counter-the-counter-offer",
       "prompt": "I'm a hiring manager. I made an offer to a senior candidate I really want — $205k base, 0.3% equity. She just emailed: 'Thanks for the offer. I'm leaning toward joining, but my current employer just countered with a $30k base raise + a promotion to Director. I'd love to come work with you, but I need you to match the $235k base or it's hard to justify the move to my partner.' Draft my response.",
