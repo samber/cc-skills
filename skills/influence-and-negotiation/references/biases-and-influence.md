@@ -121,4 +121,4 @@ Procurement is trained too. The biases above are also their playbook — fake sc
 2. **Test verifiability.** Real constraints survive a calibrated question; fake ones evaporate.
 3. **Decline the implicit trade** and propose a real one. _"Let me set the budget claim aside for the moment and continue on technical fit — we can come back."_
 
-This is the bridge into bad-faith territory. When detection turns to confirmation that the buyer is acting in bad faith, switch to the protocol in [references/objections.md](objections.md#bad-faith-no) and the manipulation taxonomy in [references/manipulation.md](manipulation.md).
+This is the bridge into bad-faith territory. When detection turns to confirmation that the buyer is acting in bad faith, switch to the protocol in [references/objection-refusal-triage.md](objection-refusal-triage.md#bad-faith-no) and the manipulation taxonomy in [references/manipulation.md](manipulation.md).

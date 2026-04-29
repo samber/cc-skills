@@ -93,7 +93,7 @@ The framing: it's for **your** discipline, you're asking them to correct **your*
 
 - _Stalls between #2 and #3._ Security or pricing isn't actually validated. Surface the real concern.
 - _Stalls between #3 and #4._ Champion can't get the EB meeting → champion test failed → re-qualify or rebuild capital.
-- _Stalls between #5 and #6._ Procurement is running the playbook (escalation, fixed budget) — see [references/objections.md](objections.md#procurement-playbook-awareness).
+- _Stalls between #5 and #6._ Procurement is running the playbook (escalation, fixed budget) — see [references/objection-procurement-playbook.md](objection-procurement-playbook.md).
 - _Stalls between #6 and #7._ Legal disagreement is real. Don't push date — push for legal-to-legal call.
 - _Stalls between #7 and #8._ Buyer signal of buyer's remorse or new objection. Diagnose with calibrated questions, not pressure.
 

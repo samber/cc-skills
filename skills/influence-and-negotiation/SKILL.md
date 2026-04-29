@@ -63,22 +63,29 @@ The user will rarely ask you to "explain BATNA" or "use this skill". They'll say
 - **Load when:** drafting any reply (email, message, script); coaching live ("they just said X"); rehearsing a script; anchoring a number; planning concession trades; calling a pause; deciding which power to use; calibrating tone.
 - **Don't skip even if:** the user only asks for a quick line — the right line depends on which tactic fits, and tactics.md has the canonical phrasing.
 
-### `references/objections.md` — refusal triage and procurement plays
+### Objection-handling references — refusal triage, procurement plays, and the four root objections
 
-**Always load when responding to any pushback or refusal.** Triage type (emotional / belief / bad-faith / identity-protective / tactical), four root commercial objections (price / timing / authority / no-need) with cross-domain equivalents, JOLT for no-decision, procurement plays, le non-négociable, face-saving exits, late-stage stall / ghosting, negative reverse.
+Objection handling is the most-asked-for capability across high-stakes negotiation. **Before responding, classify the objection.** The same words ("your price is too high" / "we don't have budget for raises this year") mean very different things depending on whether they're emotional, belief-based, bad-faith, identity-protective, or tactical. Answering the wrong type produces an answer that feels right but lands wrong.
 
-- **Load when:** _"they just said X"_, _"draft my reply"_, _"they pushed back on..."_, _"we're getting silence"_, _"they're ghosting me"_, _"counter-offer"_, _"they refused..."_, _"the deal is stuck"_, _"manager said no"_, _"union demands..."_, _"candidate threatened to walk"_, any procurement-style move named (escalation ladder, fixed budget, fake competing bid, free pilot anchor, MFN, nibbling, flinch, bogey, anchor-then-stall, good cop/bad cop).
-- **Don't load when:** the user is purely in early discovery and there's no pushback yet (use `discovery.md` instead); when the user is post-action analysing an outcome (use `debrief.md`).
+Each topic lives in its own file — load only the one that matches the user's situation. Don't load when the user is purely in early discovery and there's no pushback yet (use `discovery.md` instead); when the user is post-action analysing an outcome (use `debrief.md`).
+
+- **[Refusal triage](references/objection-refusal-triage.md)** — Triggers: classifying the type of "no" (emotional / belief-based / bad-faith / identity-protective / tactical); _"they just refused..."_, _"how do I respond to this pushback?"_, bad-faith / verifiably-false claims, identity-threat reactions.
+- **[The four root commercial objections](references/objection-four-root.md)** — Triggers: price / timing / authority / no-need objections in B2B sales, plus cross-domain equivalents in salary, NAO, internal management, recruitment.
+- **[The "no decision" trap (JOLT)](references/objection-jolt.md)** — Triggers: _"the deal is stuck"_, engaged buyer not converging, FOMU / fear-of-messing-up signals, indecision rather than disinterest.
+- **[Late-stage stall / ghosting](references/objection-ghosting.md)** — Triggers: radio silence post-proposal, 10-14 days no reply, deciding whether to chase, negative-reverse / champion-check / EB-escalation ladder.
+- **[Procurement playbook awareness](references/objection-procurement-playbook.md)** — Triggers: escalation ladder, fixed-budget claim, fake competing bid, free pilot, fiscal-year leverage, MSA redlines, MFN clauses, nibbling, flinch, bogey, anchor-then-stall, good cop / bad cop, 70/30 rule.
+- **[Le non-négociable](references/objection-non-negociable.md)** — Triggers: verbal abuse, kickback / unethical request, insults across negotiation table, behaviours that must be refused immediately to preserve dialogue.
+- **[Face-saving exits](references/objection-face-saving-exits.md)** — Triggers: counterparty needs to back down without admitting they were wrong; building the exit into your move so they can change position.
 
 ### `references/preparation.md` — mandate, Mandascan, stakeholder map
 
 - **Load when:** the user is preparing for an upcoming conversation more than ~30 minutes away. Triggers: _"I have a [meeting / call / review / NAO opening] [tomorrow / next week / in 2 weeks]"_, _"help me prepare"_, _"set my mandate"_, _"what's my walk-away?"_, _"who should be on the map?"_, _"how do I think through the BATNA?"_, _"what's the buyer / candidate really after?"_ (POE iceberg). Required for any Phases 1–3 work.
-- **Don't load when:** the user is mid-conversation and needs a quick live response (use `tactics.md` + `objections.md`); the user is post-action (use `debrief.md`).
+- **Don't load when:** the user is mid-conversation and needs a quick live response (use `tactics.md` + the objection-handling references); the user is post-action (use `debrief.md`).
 
 ### `references/discovery.md` — discovery questions, behavioural reading
 
 - **Load when:** the user is in early- or mid-stage discovery (first 1–3 conversations, before any commitment), or whenever they want to read the room. Triggers: _"first call with..."_, _"discovery call"_, _"I haven't yet figured out what they really want"_, _"what calibrated questions should I ask?"_, _"the buyer / candidate gave a strange signal"_, _"how do I tell if they're lying / hiding / about to walk?"_, _"what does that micro-expression mean?"_, _"what does the silence mean?"_, _"why are they leaning back?"_, _"why are they answering so slowly?"_.
-- **Don't load when:** the user is past discovery and into pricing / commitment / refusal handling (use `objections.md` + `tactics.md`); the user is preparing the mandate side (use `preparation.md`).
+- **Don't load when:** the user is past discovery and into pricing / commitment / refusal handling (use the objection-handling references + `tactics.md`); the user is preparing the mandate side (use `preparation.md`).
 
 ### `references/playbooks.md` — runbooks for named situations
 
@@ -93,12 +100,12 @@ The user will rarely ask you to "explain BATNA" or "use this skill". They'll say
 ### `references/biases-and-influence.md` — 9 cognitive biases, 7 ethical levers
 
 - **Load when:** the conversation is about which influence lever to use ethically OR how to defend against one. Triggers: _"they're using anchoring on me"_, _"how do I anchor?"_, _"is scarcity a real claim or a manipulation?"_, _"social proof — which references should I bring?"_, _"loss aversion — should I frame this as risk or upside?"_, _"contrast tier — Basic/Standard/Enterprise"_, _"halo effect"_, _"reciprocity"_, _"the buyer is using a Cialdini move"_. Also load when planning the influence-side of a Phase 4 move and you're choosing between levers.
-- **Don't load when:** the user just needs a script for a specific objection (use `objections.md`) or a specific situation (use `playbooks.md`).
+- **Don't load when:** the user just needs a script for a specific objection (use the objection-handling references) or a specific situation (use `playbooks.md`).
 
 ### `references/manipulation.md` — the 10 named manipulation patterns
 
 - **Load when:** the counterparty's behaviour matches a named pattern: mauvaise foi (verifiable lie), bluff (unverifiable assertion of capability/constraint), intimidation (implied negative consequences), punching-ball (verbal harassment), faux pivot (false-pivot diversion), désintérêt (sudden engagement collapse), coopétition simulée (cooperative-then-extractive switch), refus de négocier (tactical silence), démoralisation (defeatism induction), manipulation de clôture (new term at signature). Also load when the user describes a counterparty acting in bad faith, gaslighting, threatening, withdrawing, or applying personal pressure.
-- **Don't load when:** the counterparty is acting in good faith with normal hard negotiation — using `objections.md` + `tactics.md` is enough. Misclassifying ordinary procurement plays as "manipulation" causes over-escalation.
+- **Don't load when:** the counterparty is acting in good faith with normal hard negotiation — using the objection-handling references + `tactics.md` is enough. Misclassifying ordinary procurement plays as "manipulation" causes over-escalation.
 
 ### `references/debrief.md` — RetEx, defusing, BRRAC, closing pathologies, PMR
 
@@ -107,7 +114,7 @@ The user will rarely ask you to "explain BATNA" or "use this skill". They'll say
 
 ### Scenario references — six worked end-to-end examples
 
-Load the scenario file that matches the user's situation. Each file is self-contained. Don't load when the user has a specific tactical question — [tactics](references/tactics.md) / [objections](references/objections.md) / [playbooks](references/playbooks.md) are more focused.
+Load the scenario file that matches the user's situation. Each file is self-contained. Don't load when the user has a specific tactical question — [tactics](references/tactics.md) / [objection-handling references](#objection-handling-references--refusal-triage-procurement-plays-and-the-four-root-objections) / [playbooks](references/playbooks.md) are more focused.
 
 - **[B2B SaaS price pushback + multi-threading](references/scenario-saas-price-pushback.md)** — Triggers: AE receiving a discount ask on a SaaS deal, single-threaded into a CIO, budget objection, "we're over budget".
 - **[Enterprise procurement RFP + fiscal-year leverage](references/scenario-enterprise-rfp.md)** — Triggers: "best and final" letter, MSA redlines, uncapped liability, quarter-end pressure, competing bid claim.
@@ -263,7 +270,7 @@ The pre-mortem is the cheapest insurance against the "perte d'objectif" patholog
 
 ### Phase 6: Live response (objections, refusal handling)
 
-**Read [references/objections.md](references/objections.md) NOW, before drafting any response.** This is the most-used reference in live coaching and email drafting; do not improvise from the SKILL.md body alone — the specific scripts and the four root objections live there.
+**Read the objection-handling references NOW, before drafting any response.** Start with [refusal triage](references/objection-refusal-triage.md) to classify the objection, then load [four-root](references/objection-four-root.md), [JOLT](references/objection-jolt.md), [procurement playbook](references/objection-procurement-playbook.md), [ghosting](references/objection-ghosting.md), [non-négociable](references/objection-non-negociable.md), or [face-saving exits](references/objection-face-saving-exits.md) as the situation requires. Do not improvise from the SKILL.md body alone — the specific scripts live in those files.
 
 Triage the counterparty's pushback by type **before** responding — the type determines the move:
 
@@ -275,7 +282,7 @@ Triage the counterparty's pushback by type **before** responding — the type de
 | Identity-protective | Aggression, theatrics, "you don't get it"            | Hand back a controllable scope. Negotiate on form before substance.                                                                                                                         |
 | Tactical            | Procurement playbook (time pressure, fixed budget)   | Name the pattern. Trade, never give.                                                                                                                                                        |
 
-For the four root commercial objections — price, timing, authority, no-need — see [references/objections.md](references/objections.md) for tactical scripts. Equivalents in other domains: salary objections (envelope fermée / band ceiling / mid-cycle / freeze / promotion-first); recruitment objections (counter-offer / relocation / equity scepticism).
+For the four root commercial objections — price, timing, authority, no-need — see [references/objection-four-root.md](references/objection-four-root.md) for tactical scripts. Equivalents in other domains: salary objections (envelope fermée / band ceiling / mid-cycle / freeze / promotion-first); recruitment objections (counter-offer / relocation / equity scepticism).
 
 **No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbooks.md](references/playbooks.md#4-jolt--the-no-decision-protocol). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
 
@@ -328,7 +335,7 @@ Manipulation closes the current outcome and loses the next one. Negotiators who 
 | 6   | "Happy ears" in discovery                                                    | SPIN Implication: _"What happens if you do nothing?"_ Test pain depth before pitching the solution.                                                                                                                                                                                         |
 | 7   | Anchoring on the counterparty's number                                       | Pre-anchor with your range. If they go first, counter-extreme then move. For salary: bolstering range with your real target as the bottom.                                                                                                                                                  |
 | 8   | Escalation ladder                                                            | Name it: _"We've discussed this twice already; I need to understand who has the final authority so we can have one conversation rather than three."_ Works for procurement and internal management escalation.                                                                              |
-| 9   | Fixed-envelope claim ("budget closed", "band ceiling", "we don't have flex") | _"How was that number set?"_ / _"What would unlock movement at the next review?"_ — see [references/objections.md](references/objections.md#the-fixed-budget-claim).                                                                                                                        |
+| 9   | Fixed-envelope claim ("budget closed", "band ceiling", "we don't have flex") | _"How was that number set?"_ / _"What would unlock movement at the next review?"_ — see [references/objection-procurement-playbook.md](references/objection-procurement-playbook.md#the-fixed-budget-claim).                                                                                                                        |
 | 10  | Internal-pressure self-concession                                            | Your urgency must not exceed the counterparty's. Trade close-by-date / quarter-end / fiscal-year for structural value, never give it.                                                                                                                                                       |
 | 11  | Filling silence                                                              | Count to 4 after every offer or label. The next person to speak loses leverage.                                                                                                                                                                                                             |
 | 12  | Mixing issues                                                                | Park: _"Let's resolve scope, then come back to price."_ One issue per round.                                                                                                                                                                                                                |

@@ -45,7 +45,7 @@ The N1's most useful refusal: _"I'd love to do that. I genuinely don't have the 
 
 The fuse only works if the décideur is genuinely absent from the room. Reps who let the décideur join early lose the fuse and now have to argue the mandate themselves. The discipline is to keep the décideur dialled in only at moments where their presence creates value: a senior alignment meeting, signature, or escalation arbitration.
 
-The fuse also works in reverse. When the buyer brings their own décideur in early, that's a signal — they're either cutting their own fuse (a sign of urgency on their side) or skipping a layer to apply pressure on you (a sign of escalation theatre — see [references/objections.md](objections.md#the-escalation-ladder)).
+The fuse also works in reverse. When the buyer brings their own décideur in early, that's a signal — they're either cutting their own fuse (a sign of urgency on their side) or skipping a layer to apply pressure on you (a sign of escalation theatre — see [references/objection-procurement-playbook.md](objection-procurement-playbook.md#the-escalation-ladder)).
 
 ## In-room signalling
 

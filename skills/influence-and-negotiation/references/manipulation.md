@@ -14,7 +14,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator argues the truth, gets dragged into a "no it isn't / yes it is" loop, and either concedes to escape or breaks the relationship by cornering the buyer.
 
-**Response.** The full bad-faith protocol lives in [references/objections.md](objections.md#bad-faith-no): drop ego → reality principle → face-saving exit. The lighter-touch alternative is **park-it** — _"Let me set that point aside and continue on the technical terms."_ Then never come back to it. Choose park-it when the relationship is fragile and confronting risks more than letting pass.
+**Response.** The full bad-faith protocol lives in [references/objection-refusal-triage.md](objection-refusal-triage.md#bad-faith-no): drop ego → reality principle → face-saving exit. The lighter-touch alternative is **park-it** — _"Let me set that point aside and continue on the technical terms."_ Then never come back to it. Choose park-it when the relationship is fragile and confronting risks more than letting pass.
 
 ### 2. Bluff
 
@@ -38,7 +38,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator loses cognitive bandwidth, makes errors, or concedes just to escape the discomfort.
 
-**Response.** This is a **non-négociable** behaviour — see [references/objections.md](objections.md#le-non-négociable). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a pause tactique — see [references/tactics.md](tactics.md#pause-tactique--the-strategic-break). If the behaviour continues on resumption, end the meeting.
+**Response.** This is a **non-négociable** behaviour — see [references/objection-non-negociable.md](objection-non-negociable.md). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a pause tactique — see [references/tactics.md](tactics.md#pause-tactique--the-strategic-break). If the behaviour continues on resumption, end the meeting.
 
 ### 5. Faux pivot (false-pivot diversion)
 
@@ -70,7 +70,7 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator escalates concessions in the follow-up emails ("happy to revisit pricing if helpful") to break the silence — concessions the buyer didn't ask for.
 
-**Response.** Don't fill the silence with concessions. Use the **negative reverse**: _"I haven't heard back — I want to make sure I'm not assuming something. Should I close the opportunity for now?"_ This invites a "no" that breaks the silence, and if the answer is "yes, close it," you've saved months of misallocated effort. See [references/objections.md](objections.md#late-stage-stall--ghosting).
+**Response.** Don't fill the silence with concessions. Use the **negative reverse**: _"I haven't heard back — I want to make sure I'm not assuming something. Should I close the opportunity for now?"_ This invites a "no" that breaks the silence, and if the answer is "yes, close it," you've saved months of misallocated effort. See [references/objection-ghosting.md](objection-ghosting.md).
 
 ### 9. Démoralisation (defeatism induction)
 
