@@ -39,7 +39,7 @@ Avoid _"I think you feel…"_ — sounds presumptive. Avoid _"I understand…"_ 
 
 When you label something they were about to say, the wind comes out of their objection. They often respond _"yeah, exactly"_ — and now they're working with you on solving it instead of fighting it.
 
-### Accusation Audit
+### Accusation audit
 
 Front-load every negative thing the counterparty might say about you. Saying it first kills its power.
 
@@ -123,7 +123,7 @@ Beyond the calibrated questions covered above:
 - **Closed questions** — confirm a fact ("Does the budget cover services as well as license?")
 - **Projection questions** — _"If you had to accept this proposal as it stands today, what would happen?"_ Forces the counterparty to mentally test the deal as if it were already done.
 
-The "no pourquoi" / "no why" rule shows up across multiple negotiation traditions — convergent finding from independent research streams.
+The "no why" rule is consistent across modern commercial negotiation traditions. Caveat: in root-cause problem-solving contexts (e.g. Toyota 5-Whys, postmortems), "why" is actively encouraged — the rule applies specifically to live negotiation exchanges where "why" triggers defensiveness, not to diagnostic analysis.
 
 ## The four powers of negotiation
 

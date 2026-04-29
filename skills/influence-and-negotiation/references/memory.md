@@ -143,6 +143,14 @@ _Update cells as the negotiation evolves. Strike through ~~old values~~ when a c
 
 - **Ours:** [best alternative if no deal]
 - **Theirs (estimated):** [their likely fallback]
+
+## Search history
+
+_Updated at the end of every deep research run. Used in subsequent sessions to skip already-covered sources and restrict date filters to documents newer than the last search date._
+
+| Source | Last searched | Coverage notes |
+| ------ | ------------- | -------------- |
+|        | YYYY-MM-DD    |                |
 ```
 
 ---
@@ -154,9 +162,9 @@ _Update cells as the negotiation evolves. Strike through ~~old values~~ when a c
 
 ## Org map
 
-| Name | Title | Reports to | Role in this deal | Champion / Neutral / Blocker |
-| ---- | ----- | ---------- | ----------------- | ---------------------------- |
-|      |       |            |                   |                              |
+| Name | Title | Reports to | Role in this deal | Champion / Neutral / Blocker | Source |
+| ---- | ----- | ---------- | ----------------- | ---------------------------- | ------ |
+|      |       |            |                   |                              |        |
 
 ## Informal influence (sociogramme)
 
@@ -164,13 +172,13 @@ _Update cells as the negotiation evolves. Strike through ~~old values~~ when a c
 
 ## MICE per stakeholder
 
-| Name | M (money) | I (ideology) | C (compromise) | E (ego) | Primary driver |
-| ---- | --------- | ------------ | -------------- | ------- | -------------- |
-|      |           |              |                |         |                |
+| Name | M (money) | I (ideology) | C (compromise) | E (ego) | Primary driver | Source | Confidence |
+| ---- | --------- | ------------ | -------------- | ------- | -------------- | ------ | ---------- |
+|      |           |              |                |         |                |        | 0–10 |
 
 ## POE per stakeholder
 
-_Format: **[Name]** — Position: … · Objectif: … · Enjeu (inferred): …_
+_Format: **[Name]** — Position: … · Objectif: … · Enjeu (inferred): … · Source: … · Confidence: 0–10_
 
 ## Mindset & position shifts
 
@@ -202,9 +210,9 @@ _Every figure that has appeared in this negotiation. Track movement over time �
 
 ## Offers table
 
-| Date | From | Axis | Value | Response | Notes |
-| --- | --- | --- | --- | --- | --- |
-|  |  |  |  | Accepted / Rejected / Countered / Pending |  |
+| Date | From | Axis | Value | Response | Source | Notes |
+| --- | --- | --- | --- | --- | --- | --- |
+|  |  |  |  | Accepted / Rejected / Countered / Pending |  |  |
 
 ## Key figures
 

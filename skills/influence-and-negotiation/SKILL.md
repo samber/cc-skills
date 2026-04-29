@@ -97,7 +97,7 @@ The user will rarely ask you to "explain BATNA" or "use this skill". They'll say
 
 ### `references/manipulation.md` — the 10 named manipulation patterns
 
-- **Load when:** the counterparty's behaviour matches a named pattern: mauvaise foi (verifiable lie), bluff (unverifiable assertion of capability/constraint), intimidation (implied negative consequences), punching-ball (verbal harassment), faux pivot (false-priority diversion), désintérêt (sudden engagement collapse), coopétition simulée (cooperative-then-extractive switch), refus de négocier (tactical silence), démoralisation (defeatism induction), manipulation de clôture (new term at signature). Also load when the user describes a counterparty acting in bad faith, gaslighting, threatening, withdrawing, or applying personal pressure.
+- **Load when:** the counterparty's behaviour matches a named pattern: mauvaise foi (verifiable lie), bluff (unverifiable assertion of capability/constraint), intimidation (implied negative consequences), punching-ball (verbal harassment), faux pivot (false-pivot diversion), désintérêt (sudden engagement collapse), coopétition simulée (cooperative-then-extractive switch), refus de négocier (tactical silence), démoralisation (defeatism induction), manipulation de clôture (new term at signature). Also load when the user describes a counterparty acting in bad faith, gaslighting, threatening, withdrawing, or applying personal pressure.
 - **Don't load when:** the counterparty is acting in good faith with normal hard negotiation — using `objections.md` + `tactics.md` is enough. Misclassifying ordinary procurement plays as "manipulation" causes over-escalation.
 
 ### `references/debrief.md` — RetEx, defusing, BRRAC, closing pathologies, PMR
@@ -130,90 +130,13 @@ Three operating principles inherited from the references:
 
 ### Phase 0: Session start — context intake
 
-#### Step 0a: Check for existing memory
-
-Read [references/memory.md](references/memory.md) for the full system, naming convention, and file templates.
-
-**First**, use `AskUserQuestion`:
+Read [references/memory.md](references/memory.md) for the full memory system. Then use `AskUserQuestion`:
 
 > _"Is this a continuation of an ongoing negotiation? If yes, do you have a memory document — an Artifact, Canvas, or file — from a previous session?"_
 
-**If yes:** ask the user to paste or share the `memory.md` entrypoint (and any other files open). Read them in full. The mandate, stakeholder map, and next session plan replace the intake questions already answered — don't re-ask what memory covers. Resume from the `## Next session plan` section in `strategy.md`.
+**If yes:** ask the user to paste or share the `memory.md` entrypoint (and any other files open). Then spawn a sub-agent to read all memory files — `memory.md`, `context.md`, `strategy.md`, `stakeholders.md`, `numbers.md`, and any others referenced from `memory.md` — and return their content to the main agent. The sub-agent may lightly consolidate repetitive or boilerplate sections, but must preserve all substantive detail: every named stakeholder and their MICE driver, every Mandascan axis with its 5 points, every source annotation, every strategic decision and its rationale. Thin compression is acceptable; lossy summarization that would force the main agent to re-ask is not. Once the sub-agent returns, read [references/context-intake.md](references/context-intake.md) in **incremental mode** — collect any new raw material shared this session, and run deep research only on sources not yet covered or on documents newer than the last session date (see the `## Search history` in `context.md`). Pass the quality gate, then resume from `## Next session plan` in `strategy.md`.
 
-**If no:** continue to Step 0b.
-
-#### Step 0b: Collect raw material
-
-**Before any intake question (Phase 1)**, ask the user to share everything they have. Use `AskUserQuestion`:
-
-> _"Before we build your strategy, share every piece of raw material available — the more context, the sharper the advice:_
->
-> - **Emails / messages:** the last message received (verbatim), your last reply, the full 2–3 message thread, a forwarded chain, a WhatsApp or SMS screenshot, a Teams / Slack DM
-> - **Previous communications with the counterpart:** every prior email thread, recorded call transcript, meeting recap sent to them, any written exchange going back to first contact
-> - **Meeting notes / transcripts:** call notes, voice-memo transcription, CRM activity log, Notion page, shared doc from the last meeting, auto-generated meeting summary (Fireflies, Otter, Granola, etc.)
-> - **Prior analyses / reports:** previous negotiation debrief, deal summary, internal briefing, consultant report, HR case file, union delegation minutes, board presentation, QBR deck
-> - **Counterparty-facing documents:** proposal you sent, term sheet, contract redlines, RFP received, statement of work, job offer letter, counter-offer email, union demands document, competitor quote, LOI
-> - **Internal documents:** org chart, sociogramme, salary band / compensation grid, HR policy, mandate letter, budget approval email, board directive, internal talking points, approval chain, legal constraints memo
-> - **Knowledge bases and wikis:** internal Confluence / Notion wiki, company handbook, HR policy portal, product documentation, pricing playbook, deal desk guidelines, legal FAQ
-> - **Counterparty intelligence:** LinkedIn profile, company press release, public financials, industry benchmark, Glassdoor reviews, funding announcement, recent news, analyst report, court filing, regulatory disclosure
-> - **Web / open sources:** web search on the counterparty's company, recent articles or interviews featuring the decision-maker, industry news, competitor announcements, job postings (signals priorities and pain), patents, conference talks
-> - **Side signals:** a Slack thread with your champion, a rumour from your N2, something said off-record after the last call, a reaction you noticed in the room, a mutual contact's opinion_
->
-> _Paste directly, attach, or link. Partial and messy is fine — raw beats polished summaries."_
-
-**External sources — use connectors and MCP servers.** If any of the following are connected to the session, proactively offer to pull context directly rather than waiting for the user to paste:
-
-- **Gmail / Outlook MCP** — full thread history with the counterparty; search by sender, subject, or date range
-- **Slack MCP** — relevant channel history, DMs with champion or internal stakeholders, deal room threads
-- **Salesforce / HubSpot / Pipedrive MCP** — opportunity record, activity log, contact notes, deal stage history, email sequences
-- **Notion / Confluence / Obsidian MCP** — deal room, project brief, HR policy page, internal wiki, company handbook
-- **Linear / Jira / Asana MCP** — linked issues for scope, timeline, or SLA disputes; sprint notes; project history
-- **Google Drive / OneDrive / SharePoint MCP** — shared proposals, redline documents, RFP folders, meeting decks
-- **Calendar MCP** — meeting history with the counterparty; past agenda items and attendees as a timeline
-- **LinkedIn / Apollo / Clay MCP** — counterparty's career history, recent posts, mutual connections, org changes
-
-Ask the user which system holds the relevant data, then retrieve it before proceeding — this surfaces far more signal than what users remember to paste manually.
-
-#### Step 0c: Deep research into sources
-
-Using 3 to 20 parallel sub-agents, actively search all available sources to surface context the user may not have thought to share. Each agent targets a distinct source or angle — do not wait for the user to hand everything over.
-
-**Deep research means exhaustive search, not a single query.** For each topic (counterparty, company, deal history, industry...), try many keyword combinations, vary phrasing, apply filters (date range, source type, region...), cross search across multiple platforms (web, LinkedIn, CRM, news archives, regulatory databases...), and follow leads from one result to the next. Stop only when new queries stop returning new signal.
-
-**How to run it:** use whichever method is available, in priority order:
-1. Invoke a `deep-research` skill if one is installed in the environment
-2. Use Claude.ai's built-in deep research feature if running on claude.ai
-3. Use ChatGPT's deep research feature if running on chatgpt.com
-4. Fall back to parallel sub-agents with `WebSearch` + MCP connectors
-
-For each source, extract:
-
-- **Counterparty signals:** stated positions, implied enjeux, emotional tone shifts, concessions already made, threats or promises, deadline pressure, things they avoided saying
-- **Relationship history:** prior agreements, broken commitments, trust-building events, known preferences and sensitivities, recurring friction points
-- **Organisational context:** who influenced past decisions, internal dynamics visible in the thread, budget cycles, approval chains, political constraints
-- **Our side's history:** commitments already given, anchors already set, concessions already made — these constrain the mandate and cannot be walked back
-- **Open questions:** anything material still unknown that must be surfaced in Phase 2 discovery; rank by impact on the mandate
-
-Cross-reference sources against each other. Flag contradictions explicitly — e.g., the CRM records budget at $200k but the email thread reveals the CFO approved $320k. Contradictions are leverage; missing them is preparation malpractice.
-
-Store the extraction as a `context.md` file in the negotiation memory directory (see [references/memory.md](references/memory.md)). This file feeds directly into Phases 2 and 3 and replaces re-asking questions the sources already answer.
-
-#### Step 0d: Context quality gate
-
-**Do not proceed to Phase 1 until all four are answered:**
-
-1. **Who is the counterparty?** Name, role, organisation — or at minimum role and level.
-2. **What is the substantive ask or conflict?** What is actually on the table.
-3. **What is the current state?** First contact / mid-negotiation / stalled / approaching close.
-4. **What did they say last?** Verbatim or close — paraphrase degrades tactical precision.
-
-If any gap remains after Step 0c, use `AskUserQuestion` to fill it specifically. A missing "what did they say last?" cannot be filled by assumption — push for the quote. Proceed to Phase 1 only once all four are solid.
-
-**Memory creation (if no prior memory).** At end of session (or after Phase 3 at the latest), detect the best access method (see [references/memory.md](references/memory.md#platform-detection--how-to-access-the-files)) and create the full memory directory. Announce:
-
-> _"I've created your negotiation memory in `negotiation-{slug}/` [or: as Artifacts / in your Obsidian vault]. Share at the start of the next session to pick up exactly here."_
-
-If only Artifacts or Canvas is available, warn: they don't persist across new conversations — the user must save locally.
+**If no:** read [references/context-intake.md](references/context-intake.md) and follow the three steps — collect raw material, run full deep research, and pass the quality gate — before proceeding to Phase 1.
 
 ### Phase 1: Mode + domain detection, then intake
 
@@ -239,7 +162,7 @@ Ask in this order, one at a time, and wait for the answer before continuing:
 5. **Authority limits** — _"What can you commit to without checking with anyone? Where's your escalation threshold?"_
 6. **Walk-away** — _"At what point would you walk away from this entirely — what's your hard stop?"_
 
-Fuzzy answers reveal the mandate gap to fix first. If an answer is vague (e.g. "I don't know my walk-away"), surface that explicitly before proceeding — improvising on top of a fuzzy mandate produces the "Monsieur Plus" pathology where you over-ask at the moment of victory and lose the agreement in sight of the line.
+Fuzzy answers reveal the mandate gap to fix first. If an answer is vague (e.g. "I don't know my walk-away"), surface that explicitly before proceeding — improvising on top of a fuzzy mandate produces the "Syndrome Monsieur Plus" pathology where you over-ask at the moment of victory and lose the agreement in sight of the line.
 
 ### Phase 2: Map the room
 
@@ -255,6 +178,8 @@ Build the map from what the user tells you — formal (organigramme) layered wit
 
 **If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/playbooks.md](references/playbooks.md#1-champion-test--is-your-champion-actually-a-coach). Skipping this validation is the highest-leverage error in complex negotiations.
 
+**Stakeholder deep research.** Once stakeholders are named, run up to 10 parallel sub-agents — one per named person, merging minor stakeholders if there are more than 10. Each agent profiles a single individual across all available sources: CRM activity log and email threads (all prior exchanges with or about this person), connected MCP servers (Slack DMs, calendar history, LinkedIn/Apollo/Clay if available), and open-source intelligence (LinkedIn profile and recent posts, conference talks, published articles, company announcements where they are named). Also surface any internal signal tied to this deal: promotion cycle, budget accountability, recent miss or win. Extract per stakeholder: inferred MICE primary driver, known public positions, career inflection points that shape risk appetite. Track the source of every inference (URL, system name, date, confidence 0–10) and store it in `stakeholders.md` with a `Source` annotation per claim. Do not surface grey-source inferences in counterparty-facing material.
+
 ### Phase 3: Set the mandate (Mandascan)
 
 Read [references/preparation.md](references/preparation.md). Then guide the user through the mandate axis by axis — don't hand them a template to fill in alone.
@@ -266,7 +191,7 @@ Then, for **each axis** the user names, use `AskUserQuestion` to work through th
 - _"What's your opening number / position for [axis]?"_ (Entry)
 - _"What would a great outcome look like for [axis]?"_ (Ideal)
 - _"What's your realistic internal target — what you'd genuinely commit to?"_ (Objective)
-- _"At what point would you need to pause and check with someone before agreeing on [axis]?"_ (Escalation)
+- _"At what point would you need to pause and check with someone before agreeing on [axis]?"_ (Escalation/bascule)
 - _"What's your hard walk-away on [axis] — below this, no deal?"_ (Rupture)
 
 If the user is fuzzy on Rupture ("I don't know, I really need this deal"), flag it: a fuzzy rupture is a mandate gap, not a tough situation. Help them derive it from their BATNA — _"If this negotiation fails, what's your next best option? That should set your floor."_
@@ -276,6 +201,17 @@ After the mandate, POE the counterparty for each axis: ask _"What have they actu
 Axes by domain — price/term/SLA/scope (sales); base/variable/equity/leave/title (salary); raise/primes/working time/télétravail (NAO); compensation/start date/title/non-compete (recruitment). Worked examples: [references/preparation.md](references/preparation.md#the-mandascan--5-points-per-axis).
 
 **BATNA discipline.** Use BATNA to set the Rupture point — then put it away. Over-investing in plan B at closing leaks through tone and body language, which the counterparty reads as low confidence and uses to squeeze harder.
+
+**BATNA market research.** Run 6 parallel sub-agents to ground BATNA estimates in data rather than assumption. Search across connected MCP servers (CRM deal history, email threads, Slack) and open sources:
+
+- Agent 1: Salary / price benchmarks — Glassdoor, Levels.fyi, LinkedIn Salary, Payscale, comparable job postings
+- Agent 2: Competitor offers — pricing pages, G2/Capterra reviews citing price, competitor job postings signalling their cost basis
+- Agent 3: Counterparty's own cost signals — budget announcements, job postings revealing priorities, Glassdoor reviews citing tool spend or compensation bands
+- Agent 4: Market trend data — sector wage indices, industry benchmarks, analyst reports covering this category
+- Agent 5: Regulatory or contractual constraints — recent rulings, sector-specific restrictions, collective agreements in force that limit their options
+- Agent 6: Alternative supply — how many credible alternatives exist for the counterparty; thin supply increases your leverage, abundant supply lowers it
+
+Track the source of every data point (URL, system name, date). Store in `numbers.md` Key figures with the Source column populated. Flag any data point older than 12 months as potentially stale.
 
 ### Phase 4: Plan the moves
 
@@ -294,7 +230,20 @@ Pre-write before the meeting:
 
 **Team negotiation preparation.** For high-stakes negotiations running with N1 + N2 or a full team (enterprise sales, NAO with HR + line management, M&A), read [references/team-negotiation.md](references/team-negotiation.md) and align on signalling protocol, mandate ownership, and effet fusible setup before the meeting.
 
+**When both MAP and team preparation apply**, spawn two parallel sub-agents: one drafts the MAP using `references/playbooks.md`; the other produces the team briefing (roles, signalling protocol, mandate split, effet fusible setup) using `references/team-negotiation.md`. Both return full output to the main agent before Phase 5.
+
 **Number discipline.** Specific anchor numbers and Mandascan figures belong in your private preparation notes — not in any counterparty-facing email, draft, or coaching artifact. Numbers leaked in writing become anchors for the other side or for your own commitment, and produce premature concessions. When coaching someone else, give them the strategic frame and the trade structure; let them say the number live on the call.
+
+**Pre-meeting competitive intelligence (B2B).** Before finalising anchors and the concession ladder for any commercial deal, run 6 parallel sub-agents. Search across CRM, email, Slack, shared drives, LinkedIn/Apollo, calendar, and any other connected connectors and MCPs, as well as open sources:
+
+- Agent 1: Current vendor — contract end date signals (job postings mentioning "migration" or legacy tech), known pain points from public reviews and forums
+- Agent 2: Competitor positioning — public pricing tiers, G2/Capterra feature comparisons, recent analyst reports
+- Agent 3: Buyer's strategic signals — press releases, earnings calls, job postings revealing priorities, recent M&A, product launches
+- Agent 4: Buyer's procurement history — LinkedIn of procurement lead, reviews of them as a buyer on vendor forums, past vendor award announcements or disputes
+- Agent 5: Industry analyst landscape — Gartner/Forrester positioning, recent market reports the buyer's team is likely to have read
+- Agent 6: Buyer's technical environment — tech stack signals (Stackshare, job postings listing required tools, GitHub org if public)
+
+Track the source of every claim (URL, system name, date, confidence 0–10). Store under a `## Competitive intel` section in `context.md`. Anchors and concession trades should reference this intelligence, not assumptions.
 
 ### Phase 5: Pre-mortem
 
@@ -342,7 +291,7 @@ Read [references/debrief.md](references/debrief.md). Then guide the user through
 4. _"If you ran this negotiation again from the same starting point, what would you change first?"_
 5. _"What's transferable — what pattern would you teach to someone facing a similar situation?"_
 
-**Step 3 — check for closing pathologies.** After the RetEx, scan for the 5 patterns (see [references/debrief.md](references/debrief.md#the-5-closing-pathologies)): refus-de-l'échec (bad partial deal to avoid no-deal), prééminence-du-plan-B, ego, "Monsieur Plus" (over-asked at the moment of victory), target-fascination. If one shows up, name it directly — pattern recognition is 80% of the fix.
+**Step 3 — check for closing pathologies.** Once the 5 RetEx answers are in hand, spawn a background agent: give it the complete RetEx narrative and instruct it to read `references/debrief.md` in full, then match the narrative exhaustively against all 5 pathology patterns (refus-de-l'échec, prééminence-du-plan-B, ego, "Syndrome Monsieur Plus", target-fascination) and return a complete analysis — which patterns fired, the specific evidence from the narrative for each, and the recommended counter. The main agent continues the debrief conversation while this runs. When the background agent returns, surface its findings: if one or more patterns fired, name them directly — pattern recognition is 80% of the fix.
 
 Only ~17% of negotiators systematically debrief. Doing it puts you in the top 20% on iteration speed — the compounding is in the next round, not this one.
 
@@ -380,4 +329,4 @@ Manipulation closes the current outcome and loses the next one. Negotiators who 
 | 13  | Sympathy collapse                                                            | When the counterparty's emotion is intense, slip into _empathie_ (verbalise without sharing) — never _sympathie_ (share the emotion). Sympathie costs you objectivity in the moment when you most need it — see [references/tactics.md](references/tactics.md#the-four-relational-stances). |
 | 14  | Skipping the back-brief                                                      | Before any agreement, the counterparty reformulates each term in their own words. Catches selective memory, manipulation de clôture, and misunderstanding before they become churn / strikes / counter-offers.                                                                              |
 
-Master rule (every serious negotiation tradition agrees): **"I might be able to move on X if you can help me with Y."** Trade. Never give.
+Master rule (every serious negotiation tradition agrees): **"I might be able to move on X if you can help me with Y."** Trade. Never give. Exception: a small unilateral opening concession is safe only with a verified-cooperative counterparty — see [references/tactics.md](references/tactics.md#concession-patterns).
