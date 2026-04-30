@@ -32,90 +32,38 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 
 # Influence and negotiation
 
-## Reference auto-load directives
+## Reference auto-load
 
-The user will rarely ask you to "explain BATNA" or "use this skill". They'll say _"they just said X, what do I respond?"_ or paste an email and ask for a reply. **Read the right reference file BEFORE drafting your response. Do not improvise from the SKILL.md body alone — the depth lives in the references.** Each reference below has explicit Load / Don't-load rules so the routing is unambiguous.
+The user rarely says "use this skill" — they paste an email or say "they just said X, what do I respond?". Read the right reference BEFORE drafting. Depth lives in the reference files; SKILL.md only routes.
 
-### `references/memory.md` — negotiation memory system
+**Always load on activation:** `references/memory.md` (check for prior session state), `references/tactics.md` (script library for any reply or live coach), `references/prepare.md` (Phases 1–3 mandate / stakeholder / discovery work).
 
-- **Load when:** any session starts — before intake, before tactics, before anything else. The memory system persists the negotiation state across sessions and tools.
-- **Always load on activation** to check whether a memory document exists for this negotiation.
+**Load on trigger:**
 
----
+| File | Load when |
+| --- | --- |
+| `references/objection-refusal-triage.md` | Classifying any "no" before responding (emotional / belief / bad-faith / identity / tactical) |
+| `references/objection-four-root.md` | Price, timing, authority, or no-need objections (and cross-domain equivalents) |
+| `references/objection-jolt.md` | "Stuck", "they like it but won't sign", FOMU, indecision rather than disinterest |
+| `references/objection-ghosting.md` | Radio silence post-proposal, 10–14 days no reply, chase-vs-walk decision |
+| `references/objection-procurement-playbook.md` | Escalation ladder, fixed-budget, fake bid, MFN, MSA redlines, nibbling, bogey |
+| `references/objection-non-negociable.md` | Verbal abuse, kickback, insults, ethical red lines |
+| `references/objection-face-saving-exits.md` | Counterparty needs to back down without admitting they were wrong |
+| `references/playbook-multi-threading.md` | Single-threaded deal; need access to EB / procurement / security / finance |
+| `references/playbook-map.md` | Mid-stage deal with hidden gating steps; drafting a Mutual Action Plan |
+| `references/playbook-jolt.md` | No-decision protocol (Judge / Offer / Limit / Take risk off) |
+| `references/playbook-eb-engagement.md` | First 5 minutes with a C-level; earned-right frame |
+| `references/playbook-renewal-expansion.md` | Renewal in 90 days; T-90 / T-60 / T-45 / T-30 / T-10 cadence |
+| `references/playbook-salary-ask.md` | Raise ask, job offer, counter-offer, bolstering-range anchor |
+| `references/playbook-decision-announcement.md` | Layoff, performance plan, hard 1:1, recadrage |
+| `references/playbook-cross-cultural.md` | International deal, M&A, joint venture, interpreter brief |
+| `references/team-negotiation.md` | Multiple people on your own side (N1+N2, SE, HR, hiring panel) |
+| `references/biases-and-influence.md` | Choosing or defending an influence lever (Cialdini, anchoring, contrast, loss aversion) |
+| `references/manipulation.md` | Counterparty fits a named manipulation pattern (mauvaise foi, bluff, intimidation, faux pivot, …) |
+| `references/debrief.md` | Post-action: lost, won, what's transferable, defusing, BRRAC |
+| `references/scenario-*.md` | Match user's situation to one of six worked end-to-end examples |
 
-### `references/tactics.md` — the in-the-room toolkit
-
-**Always load on activation.** This is the script library that powers every live response, email reply, or rehearsed phrase: calibrated-question library, mirroring/labeling templates, accusation audit, "no" framing, "that's right" vs "you're right", late-night DJ voice, Ackerman bargaining, TLS écoute and questionnement, the four powers, the four relational stances, anchoring with bolstering range, reframing, concession patterns, strategy choice, OCP statement, pause tactique scripts, back-brief / wrap-up, Pipe de négociation.
-
-- **Load when:** drafting any reply (email, message, script); coaching live ("they just said X"); rehearsing a script; anchoring a number; planning concession trades; calling a pause; deciding which power to use; calibrating tone.
-- **Don't skip even if:** the user only asks for a quick line — the right line depends on which tactic fits, and tactics.md has the canonical phrasing.
-
-### Objection-handling references — refusal triage, procurement plays, and the four root objections
-
-Objection handling is the most-asked-for capability across high-stakes negotiation. **Before responding, classify the objection.** The same words ("your price is too high" / "we don't have budget for raises this year") mean very different things depending on whether they're emotional, belief-based, bad-faith, identity-protective, or tactical. Answering the wrong type produces an answer that feels right but lands wrong.
-
-Each topic lives in its own file — load only the one that matches the user's situation. Don't load when the user is purely in early discovery and there's no pushback yet (use `discovery.md` instead); when the user is post-action analysing an outcome (use `debrief.md`).
-
-- **[Refusal triage](references/objection-refusal-triage.md)** — Triggers: classifying the type of "no" (emotional / belief-based / bad-faith / identity-protective / tactical); _"they just refused..."_, _"how do I respond to this pushback?"_, bad-faith / verifiably-false claims, identity-threat reactions.
-- **[The four root commercial objections](references/objection-four-root.md)** — Triggers: price / timing / authority / no-need objections in B2B sales, plus cross-domain equivalents in salary, NAO, internal management, recruitment.
-- **[The "no decision" trap (JOLT)](references/objection-jolt.md)** — Triggers: _"the deal is stuck"_, engaged buyer not converging, FOMU / fear-of-messing-up signals, indecision rather than disinterest.
-- **[Late-stage stall / ghosting](references/objection-ghosting.md)** — Triggers: radio silence post-proposal, 10-14 days no reply, deciding whether to chase, negative-reverse / champion-check / EB-escalation ladder.
-- **[Procurement playbook awareness](references/objection-procurement-playbook.md)** — Triggers: escalation ladder, fixed-budget claim, fake competing bid, free pilot, fiscal-year leverage, MSA redlines, MFN clauses, nibbling, flinch, bogey, anchor-then-stall, good cop / bad cop, 70/30 rule.
-- **[Le non-négociable](references/objection-non-negociable.md)** — Triggers: verbal abuse, kickback / unethical request, insults across negotiation table, behaviours that must be refused immediately to preserve dialogue.
-- **[Face-saving exits](references/objection-face-saving-exits.md)** — Triggers: counterparty needs to back down without admitting they were wrong; building the exit into your move so they can change position.
-
-### `references/prepare.md` — mandate, Mandascan, stakeholder map, discovery, behavioural reading
-
-- **Load when:** the user is preparing for an upcoming conversation, in early- or mid-stage discovery, or wants to read the room. Triggers: _"I have a [meeting / call / review / NAO opening] [tomorrow / next week / in 2 weeks]"_, _"help me prepare"_, _"set my mandate"_, _"what's my walk-away?"_, _"who should be on the map?"_, _"how do I think through the BATNA?"_, _"what's the buyer / candidate really after?"_, _"first call with..."_, _"discovery call"_, _"what calibrated questions should I ask?"_, _"the buyer gave a strange signal"_, _"what does that micro-expression mean?"_, _"what does the silence mean?"_. Required for any Phases 1–3 work.
-- **Don't load when:** the user is mid-conversation and needs a quick live response (use `tactics.md` + the objection-handling references); the user is post-action (use `debrief.md`).
-
-### Playbook references — runbooks for named high-stakes situations
-
-Tactical handbook for high-leverage moves across domains. Each playbook is a runbook: trigger → steps → scripts → failure signals. Framework-agnostic — load the one that matches the situation, not the one you read most recently.
-
-Each playbook lives in its own file — load only the one that matches the user's situation. Don't load when the user is in early discovery with no named situation yet; use `prepare.md` instead. Loading the wrong playbook produces script-not-from-this-situation responses.
-
-- **[Champion test](references/prepare.md#champion-test)** — Triggers: _"is my champion real?"_, 2–3 calls with a supportive contact, CRM champion flag to validate; 3-question commitment test.
-- **[Multi-threading sequence](references/playbook-multi-threading.md)** — Triggers: _"I need to multi-thread"_, single-threaded deal, gaining access to EB / procurement / security / finance before signature.
-- **[Mutual Action Plan (MAP)](references/playbook-map.md)** — Triggers: _"draft a MAP / mutual action plan"_, late-discovery or mid-stage deal, surfacing hidden gating steps, creating joint timeline ownership.
-- **[JOLT — no-decision protocol](references/playbook-jolt.md)** — Triggers: _"the deal is stuck and they like it but won't sign"_, FOMU / fear-of-messing-up signals, indecision rather than disinterest.
-- **[Executive sponsor (EB) engagement](references/playbook-eb-engagement.md)** — Triggers: _"I finally got the EB meeting"_, first 5 minutes with a C-level, earned-right frame, business-problem-class opening.
-- **[Renewal & expansion cadence](references/playbook-renewal-expansion.md)** — Triggers: _"renewal in 90 days"_, expansion possible, T-90 / T-60 / T-45 / T-30 / T-10 cadence.
-- **[Pre-call preparation](references/prepare.md#pre-call-prep-runbook)** — Triggers: any commercial call, SMB / mid-market / enterprise tiered prep, MEDDPICC review, concession ladder check, 1-page strategy note.
-- **[Salary ask](references/playbook-salary-ask.md)** — Triggers: _"asking for a raise"_, _"job offer to negotiate"_, bolstering-range anchor, defending against 5 classic employer objections, counter-offer decision rule.
-- **[Decision announcement / difficult 1:1](references/playbook-decision-announcement.md)** — Triggers: _"announcing a layoff / hard decision / performance plan"_, _"difficult 1:1"_, three-part structure, STATE move, recadrage variant.
-- **[Cross-cultural deal opening](references/playbook-cross-cultural.md)** — Triggers: _"first cross-cultural meeting"_, _"international deal"_, joint venture, M&A, interpreter briefing, indirect-refusal decoding.
-
-### `references/team-negotiation.md` — N1/N2/SUP roles, effet fusible
-
-- **Load when:** the user mentions multiple people on their own side going into a meeting. Triggers: _"we're going in as N1+N2"_, _"my SE will be on the call"_, _"I'll have HR with me"_, _"the COMEX wants to be in the NAO room"_, _"hiring committee panel"_, _"I'm bringing the architect"_, _"my legal will join the redline call"_, _"who should speak when?"_, _"how do I align with my colleague before the meeting?"_, _"how do I signal to my N2 mid-meeting?"_.
-- **Don't load when:** the negotiation is solo on the user's side — the role separation discipline doesn't apply.
-
-### `references/biases-and-influence.md` — 9 cognitive biases, 7 ethical levers
-
-- **Load when:** the conversation is about which influence lever to use ethically OR how to defend against one. Triggers: _"they're using anchoring on me"_, _"how do I anchor?"_, _"is scarcity a real claim or a manipulation?"_, _"social proof — which references should I bring?"_, _"loss aversion — should I frame this as risk or upside?"_, _"contrast tier — Basic/Standard/Enterprise"_, _"halo effect"_, _"reciprocity"_, _"the buyer is using a Cialdini move"_. Also load when planning the influence-side of a Phase 4 move and you're choosing between levers.
-- **Don't load when:** the user just needs a script for a specific objection (use the objection-handling references) or a specific situation (use the playbook references).
-
-### `references/manipulation.md` — the 10 named manipulation patterns
-
-- **Load when:** the counterparty's behaviour matches a named pattern: mauvaise foi (verifiable lie), bluff (unverifiable assertion of capability/constraint), intimidation (implied negative consequences), punching-ball (verbal harassment), faux pivot (false-pivot diversion), désintérêt (sudden engagement collapse), coopétition simulée (cooperative-then-extractive switch), refus de négocier (tactical silence), démoralisation (defeatism induction), manipulation de clôture (new term at signature). Also load when the user describes a counterparty acting in bad faith, gaslighting, threatening, withdrawing, or applying personal pressure.
-- **Don't load when:** the counterparty is acting in good faith with normal hard negotiation — using the objection-handling references + `tactics.md` is enough. Misclassifying ordinary procurement plays as "manipulation" causes over-escalation.
-
-### `references/debrief.md` — RetEx, defusing, BRRAC, closing pathologies, PMR
-
-- **Load when:** the user is post-action and analysing what happened. Triggers: _"we lost"_ / _"we won"_, _"what's transferable?"_, _"why did this go sideways?"_, _"the strike happened"_, _"the candidate accepted the counter-offer"_, _"the team got promoted instead of me"_, _"the layoff conversation went badly"_, _"how do I run a debrief?"_, _"how do I give the team / DRH feedback?"_, _"how do I help my colleague process this loss?"_ (BRRAC).
-- **Don't load when:** the conversation is still in progress or upcoming — debrief is strictly post-action.
-
-### Scenario references — six worked end-to-end examples
-
-Load the scenario file that matches the user's situation. Each file is self-contained. Don't load when the user has a specific tactical question — [tactics](references/tactics.md) / [objection-handling references](#objection-handling-references--refusal-triage-procurement-plays-and-the-four-root-objections) / [playbook references](#playbook-references--runbooks-for-named-high-stakes-situations) are more focused.
-
-- **[B2B SaaS price pushback + multi-threading](references/scenario-saas-price-pushback.md)** — Triggers: AE receiving a discount ask on a SaaS deal, single-threaded into a CIO, budget objection, "we're over budget".
-- **[Enterprise procurement RFP + fiscal-year leverage](references/scenario-enterprise-rfp.md)** — Triggers: "best and final" letter, MSA redlines, uncapped liability, quarter-end pressure, competing bid claim.
-- **[Services / consulting SOW + change request](references/scenario-services-sow.md)** — Triggers: client asking to absorb new work within existing budget, scope creep, mid-engagement add-on.
-- **[Asymmetric power: small vendor vs. much-larger buyer](references/scenario-asymmetric-power.md)** — Triggers: F500 buyer imposing MFN, SLA, lock-out, or source-code escrow on a small vendor; "standard for vendors of your size".
-- **[Salary ask facing "envelope closed" + counter-offer](references/scenario-salary-ask.md)** — Triggers: manager deferring a raise to the next cycle, external offer in hand, deciding whether to accept a counter-offer.
-- **[NAO opening + strike de-escalation](references/scenario-nao-opening.md)** — Triggers: annual wage negotiations, union delegation, strike threat or active strike, DRH / HR director preparing for NAO.
+**Don't load:** objection refs in pure discovery (use `prepare.md`); `prepare.md` mid-conversation (use `tactics.md`); `manipulation.md` for ordinary hard negotiation; `debrief.md` while the conversation is still in progress.
 
 ## Core philosophy
 
