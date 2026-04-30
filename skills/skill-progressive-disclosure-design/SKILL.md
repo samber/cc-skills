@@ -243,7 +243,7 @@ Before splitting any content out of SKILL.md, answer:
 2. Will splitting actually reduce context, accounting for the router prose added to SKILL.md?
 3. Is this reference data (lookup) or procedural (sequence)? Procedural content usually stays.
 4. Could a script handle this deterministically instead?
-5. Across realistic invocations, what fraction of runs would load this file? Below 20%, good candidate. Above 80%, inline it.
+5. Across realistic invocations, what fraction of runs would load this file? Below 20%, inline or delete — rarely-loaded references rarely justify the routing overhead. 20–80% is the split sweet spot. Above 80%, promote into SKILL.md — the routing cost exceeds the load savings.
 
 If the answer to question 1 is unclear, do not split.
 
@@ -312,8 +312,9 @@ Across all eval runs, for each `references/*.md`:
 
 | Observation | Action |
 | --- | --- |
-| Reference loaded in <20% of runs | Working as intended; verify content is used when loaded |
-| Reference loaded in >80% of runs | Promote into SKILL.md |
+| Reference loaded in <20% of runs | Inline into SKILL.md or delete — routing overhead not justified |
+| Reference loaded in 20–80% of runs | Leave split — the sweet spot; routing pays off |
+| Reference loaded in >80% of runs | Promote into SKILL.md — always-load cost beats routing cost |
 | Two references co-load in >70% of runs | Merge into one file |
 | Reference loaded but not used in output | Fix or remove the pointer in SKILL.md |
 | Reference re-read inside the same run | SKILL.md routing is unclear; clarify |
