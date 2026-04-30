@@ -141,7 +141,7 @@ Read [references/memory.md](references/memory.md) for the full memory system. Th
 
 > _"Is this a continuation of an ongoing negotiation? If yes, do you have a memory document — an Artifact, Canvas, or file — from a previous session?"_
 
-**If yes:** ask the user to paste or share the `memory.md` entrypoint (and any other files open). Then spawn a sub-agent to read all memory files — `memory.md`, `context.md`, `strategy.md`, `stakeholders.md`, `numbers.md`, and any others referenced from `memory.md` — and return their content to the main agent. The sub-agent may lightly consolidate repetitive or boilerplate sections, but must preserve all substantive detail: every named stakeholder and their MICE driver, every Mandascan axis with its 5 points, every source annotation, every strategic decision and its rationale. Thin compression is acceptable; lossy summarization that would force the main agent to re-ask is not. Once the sub-agent returns, read [references/context-intake.md](references/context-intake.md) in **incremental mode** — collect any new raw material shared this session, and run deep research only on sources not yet covered or on documents newer than the last session date (see the `## Search history` in `context.md`). Pass the quality gate, then resume from `## Next session plan` in `strategy.md`.
+**If yes:** ask the user to share the `memory.md` entrypoint. Spawn a sub-agent to read all referenced memory files per the load policy in [references/memory.md](references/memory.md) and return their content to the main agent. Then read [references/context-intake.md](references/context-intake.md) in **incremental mode** — collect new raw material only, run deep research only on new sources, pass the quality gate, resume from `## Next session plan` in `strategy.md`.
 
 **If no:** read [references/context-intake.md](references/context-intake.md) and follow the three steps — collect raw material, run full deep research, and pass the quality gate — before proceeding to Phase 1.
 
@@ -177,11 +177,11 @@ Read [references/prepare.md](references/prepare.md). Then use `AskUserQuestion` 
 
 - **Formal structure** — _"Who else is involved on their side? What's the decision-making chain — who approves, who can veto?"_
 - **Informal influence** — _"Who do people defer to in the room even if they don't have the title? Is there someone off-stage who'll influence the outcome?"_
-- **Motivation per stakeholder** — _"What does [name] personally get if this goes well? What do they lose if it doesn't?"_ (MICE: Money, Ideology, Compromise, Ego)
+- **Motivation per stakeholder** — _"What does [name] personally get if this goes well? What do they lose if it doesn't?"_
 - **Process gaps** — _"What formal steps still need to happen — legal review, board sign-off, infosec, exec sponsor alignment, HR validation?"_
 - **Alternatives** — _"What's their fallback if this doesn't close? Have they mentioned any other options or comparisons?"_
 
-Build the map from what the user tells you — formal (organigramme) layered with informal (sociogramme). Domain shapes who's on it: Economic Buyer + Champion + Procurement (sales); manager + skip-level + HR (salary); union delegates + internal-election dates (NAO); candidate + partner + current manager (recruitment).
+Layer formal organigramme + informal sociogramme — domain-specific stakeholder cast in [references/prepare.md](references/prepare.md#stakeholder-mapping).
 
 **If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/prepare.md#champion-test](references/prepare.md#champion-test). Skipping this validation is the highest-leverage error in complex negotiations.
 
@@ -201,13 +201,11 @@ Then, for **each axis** the user names, use `AskUserQuestion` to work through th
 - _"At what point would you need to pause and check with someone before agreeing on [axis]?"_ (Escalation/bascule)
 - _"What's your hard walk-away on [axis] — below this, no deal?"_ (Rupture)
 
-If the user is fuzzy on Rupture ("I don't know, I really need this deal"), flag it: a fuzzy rupture is a mandate gap, not a tough situation. Help them derive it from their BATNA — _"If this negotiation fails, what's your next best option? That should set your floor."_
+Fuzzy Rupture = mandate gap. Derive it from BATNA: _"If this fails, what's your next best option?"_ — that sets the floor.
 
-After the mandate, POE the counterparty for each axis: ask _"What have they actually said about [axis]?"_ (Position), _"What outcome do you think they're optimising for?"_ (Objectif), _"What's the deeper stake for them — what's at risk personally or organisationally if this fails?"_ (Enjeu). The enjeu is rarely stated; Phase 6 calibrated questions surface it live.
+After the mandate, POE the counterparty per axis — see [references/prepare.md](references/prepare.md#poe--position--objectif--enjeu). Axes by domain and worked examples also in [references/prepare.md](references/prepare.md#the-mandascan--5-points-per-axis).
 
-Axes by domain — price/term/SLA/scope (sales); base/variable/equity/leave/title (salary); raise/primes/working time/télétravail (NAO); compensation/start date/title/non-compete (recruitment). Worked examples: [references/prepare.md](references/prepare.md#the-mandascan--5-points-per-axis).
-
-**BATNA discipline.** Use BATNA to set the Rupture point — then put it away. Over-investing in plan B at closing leaks through tone and body language, which the counterparty reads as low confidence and uses to squeeze harder.
+BATNA sizes Rupture, then put it away — see [references/prepare.md](references/prepare.md#batna-zopa-poe-mandascan).
 
 **BATNA market research.** Run 6 parallel sub-agents to ground BATNA estimates in data rather than assumption. Search across connected MCP servers (CRM deal history, email threads, Slack) and open sources:
 
@@ -224,14 +222,14 @@ Track the source of every data point (URL, system name, date). Store in `numbers
 
 **Read [references/tactics.md](references/tactics.md) NOW.** This is the in-the-room toolkit (calibrated questions, mirroring, labeling, OCP, pause tactique scripts, back-brief, Pipe de négociation, anchoring with bolstering range). Do not draft scripts or pre-write moves without it — the specific phrasing matters.
 
-Pre-write before the meeting:
+Pre-write each artifact before the meeting; canonical phrasing in [references/tactics.md](references/tactics.md):
 
-- **Opening anchor** — your point d'entrée. Specific, defensible, slightly above your ideal. Use non-round numbers when applicable ($87,400 not $87,000; €184,500 base not €185,000) — signals careful calculation, not pulled-from-air. For salary asks, use a **bolstering range** whose bottom is your real target.
-- **Concession ladder** — 3–4 concessions you're willing to make, each paired with a counter-ask (contrepartie). One-for-one. Never given.
-- **Top calibrated questions** — 5–6 "what" / "how" questions designed to surface the counterparty's real enjeu. No "why" — it triggers defensiveness; replace with "what" formulations.
-- **Pre-emptive labels** — accusation-audit lines that disarm objections before they form ("You're probably thinking we're too small to deliver this" / "You may be wondering whether this raise sets a precedent").
-- **OCP statement** — see [references/tactics.md](references/tactics.md#ocp--objectif-commun-partagé). One sentence both sides can sign on, ready to deploy when the room turns competitive but cooperation is genuinely available.
-- **Pause tactique triggers** — pre-decide which signals will cause you to call a break (mandate breach approaching, surprise move, internal disagreement, punching-ball). Pre-decide the script.
+- **Opening anchor** (bolstering range for salary asks; non-round numbers)
+- **Concession ladder** (3–4 concessions, each paired with a counter-ask, one-for-one)
+- **5–6 calibrated questions** ("what" / "how", never "why")
+- **Accusation-audit labels** that disarm objections before they form
+- **OCP statement** — [references/tactics.md#ocp](references/tactics.md#ocp--objectif-commun-partagé)
+- **Pause tactique triggers + script** — pre-decide signals and break script
 
 **Mutual Action Plan (where applicable).** For mid-stage commercial deals, recruitment with multi-step approvals, or any negotiation with hidden gating steps, draft a MAP — see [references/playbook-map.md](references/playbook-map.md). It surfaces the legal / infosec / board / compliance-review / HR-validation steps that otherwise hide and creates joint ownership of the timeline. Stalls become diagnostic.
 
@@ -266,17 +264,9 @@ The pre-mortem is the cheapest insurance against the "perte d'objectif" patholog
 
 **Read the objection-handling references NOW, before drafting any response.** Start with [refusal triage](references/objection-refusal-triage.md) to classify the objection, then load [four-root](references/objection-four-root.md), [JOLT](references/objection-jolt.md), [procurement playbook](references/objection-procurement-playbook.md), [ghosting](references/objection-ghosting.md), [non-négociable](references/objection-non-negociable.md), or [face-saving exits](references/objection-face-saving-exits.md) as the situation requires. Do not improvise from the SKILL.md body alone — the specific scripts live in those files.
 
-Triage the counterparty's pushback by type **before** responding — the type determines the move:
+Triage the pushback type by reading [references/objection-refusal-triage.md](references/objection-refusal-triage.md) BEFORE drafting any reply — Emotional / Belief-based / Bad-faith / Identity-protective / Tactical each demand a different move; the reference has canonical signals and scripts.
 
-| Type                | Signal                                               | Response                                                                                                                                                                                    |
-| ------------------- | ---------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Emotional           | Visible micro-expressions (fear/anger), voice change | Verbalise the emotion first ("It seems like the timing is making this stressful?"). Then move to facts. The limbic brain is faster than the cortex; you cannot reason a person out of fear. |
-| Belief-based        | Calm, articulated, value-grounded refusal            | Find the enjeu hiding behind the belief. Don't refute the belief itself — your reference frame is not theirs.                                                                               |
-| Bad-faith           | Verifiably false claim, refuses to admit it          | Drop your ego → present the reality principle (facts only, no judgement) → open a face-saving exit.                                                                                         |
-| Identity-protective | Aggression, theatrics, "you don't get it"            | Hand back a controllable scope. Negotiate on form before substance.                                                                                                                         |
-| Tactical            | Procurement playbook (time pressure, fixed budget)   | Name the pattern. Trade, never give.                                                                                                                                                        |
-
-For the four root commercial objections — price, timing, authority, no-need — see [references/objection-four-root.md](references/objection-four-root.md) for tactical scripts. Equivalents in other domains: salary objections (envelope fermée / band ceiling / mid-cycle / freeze / promotion-first); recruitment objections (counter-offer / relocation / equity scepticism).
+For the four root commercial objections (price, timing, authority, no-need) and cross-domain equivalents, see [references/objection-four-root.md](references/objection-four-root.md).
 
 **No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbook-jolt.md](references/playbook-jolt.md). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
 
@@ -299,8 +289,6 @@ Read [references/debrief.md](references/debrief.md). Then guide the user through
 5. _"What's transferable — what pattern would you teach to someone facing a similar situation?"_
 
 **Step 3 — check for closing pathologies.** Once the 5 RetEx answers are in hand, spawn a background agent: give it the complete RetEx narrative and instruct it to read `references/debrief.md` in full, then match the narrative exhaustively against all 5 pathology patterns (refus-de-l'échec, prééminence-du-plan-B, ego, "Syndrome Monsieur Plus", target-fascination) and return a complete analysis — which patterns fired, the specific evidence from the narrative for each, and the recommended counter. The main agent continues the debrief conversation while this runs. When the background agent returns, surface its findings: if one or more patterns fired, name them directly — pattern recognition is 80% of the fix.
-
-Only ~17% of negotiators systematically debrief. Doing it puts you in the top 20% on iteration speed — the compounding is in the next round, not this one.
 
 ### Phase 8: Humanize (only when output is counterparty-facing)
 
