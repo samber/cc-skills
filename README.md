@@ -149,12 +149,13 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
 | `deep-research` | -51% | 316 | 2,915 | 14,070 |
 | `influence-and-negotiation` | -68% | 237 | 10,569 | 54,153 |
+| `skill-progressive-disclosure-design` | -58% | 154 | 3,533 | 3,533 |
 
 ## 🧪 Skill evaluations
 
 |             | With Skill | Without Skill | Delta     |
 | ----------- | ---------- | ------------- | --------- |
-| **Overall** | **99%**    | **52%**       | **+47pp** |
+| **Overall** | **99%**    | **51%**       | **+48pp** |
 
 See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 

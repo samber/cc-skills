@@ -1,0 +1,185 @@
+{
+  "skill_name": "skill-progressive-disclosure-design",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin. Do NOT load any skill that covers overlapping content about skill structure, SKILL.md organization, or context window management."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "My skill isn't triggering reliably — it activates maybe 30% of the time. The SKILL.md is 350 lines. Should I split it into a main file and reference files to make it lighter and easier for Claude to activate?",
+      "trap": "Without the skill, the model may suggest splitting as a solution to triggering problems, confusing context load with activation. The skill explicitly separates triggering (controlled entirely by the YAML description) from progressive disclosure (what loads after activation).",
+      "expected_output": "Identifies this as a triggering problem, not a disclosure problem. States clearly that file splitting does NOT affect triggering. Recommends fixing the YAML description field instead. Does NOT recommend splitting as a solution.",
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "response identifies this as a triggering problem, not a disclosure/context problem" },
+        { "id": "1.2", "description": "response explicitly states that file splitting does NOT affect whether a skill triggers" },
+        { "id": "1.3", "description": "response recommends fixing the YAML description field to improve triggering" },
+        { "id": "1.4", "description": "response does NOT recommend splitting files as a solution to the triggering problem" },
+        { "id": "1.5", "description": "response explains that triggering is driven entirely by the description field, not by file size or structure" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I have a testing skill (400 lines) covering unit tests, integration tests, and mocking patterns. I want to split it into SKILL.md + references/unit-tests.md + references/integration-tests.md + references/mocks.md for cleaner organization. Good idea?",
+      "trap": "Without the skill, the model likely approves this as 'clean organization' — the structure looks tidy conceptually. The skill explicitly warns that topic-based splits fail because real tasks span 2-3 topics, forcing multiple loads per invocation and losing the expected context savings.",
+      "expected_output": "Identifies this as a topic-based split anti-pattern. Warns that real tasks span multiple topics, forcing multiple reference loads. Explains that savings are theoretical. Recommends against this split.",
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "response identifies this as a topic-based split (not a variant, workflow, or depth split)" },
+        { "id": "2.2", "description": "response warns that real testing tasks typically span multiple topics (e.g., unit tests with mocks), requiring multiple file loads" },
+        { "id": "2.3", "description": "response explicitly recommends AGAINST this split structure" },
+        { "id": "2.4", "description": "response explains that context savings from this type of split are theoretical, not empirical" },
+        { "id": "2.5", "description": "response does NOT approve the split as a good organization strategy" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "I have a security scanning skill. There's a section covering critical authentication bypass checks — it's only needed when the code touches auth modules, which happens about 15% of runs. Should I move this to references/auth-checks.md to reduce context in normal runs?",
+      "trap": "Without the skill, the model likely approves this: 15% load rate sounds like a good candidate for a reference file. The skill explicitly warns that rare-but-critical content must NOT go in references/ because references are optional by design and the model may skip them.",
+      "expected_output": "Warns that references/ is optional and the model may skip reading it. Flags this as the rare-but-critical anti-pattern. Advises against moving critical security checks to references/. Suggests keeping it in SKILL.md or splitting into a separate skill.",
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "response warns that references/ is optional and the model may skip reading it" },
+        { "id": "3.2", "description": "response advises against putting critical content in references/" },
+        { "id": "3.3", "description": "response identifies or alludes to the 'rare but critical' anti-pattern" },
+        { "id": "3.4", "description": "response does NOT approve moving critical auth checks to references/auth-checks.md" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "My SKILL.md has a large 'Examples and Tips' section at the end (80 lines). I want to move it to references/examples.md to keep the main file clean. Thoughts?",
+      "trap": "Without the skill, the model often approves this as good hygiene. The skill warns that cosmetic splits (Examples, Notes, Tips files) either become dead content (never loaded) or always-loaded waste (no observable trigger), with no real benefit.",
+      "expected_output": "Identifies this as a cosmetic split anti-pattern. Warns there is no observable load condition for examples/tips. Explains this creates either dead content or a wasteful always-load. Advises against this split.",
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "response identifies this as a cosmetic split (Examples/Tips files are explicitly an anti-pattern)" },
+        { "id": "4.2", "description": "response warns there is no sharp, observable load condition for 'examples and tips' content" },
+        { "id": "4.3", "description": "response explains this creates either dead content (never loaded) or a wasteful always-load" },
+        { "id": "4.4", "description": "response advises against moving examples/tips to a separate reference file" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "My SKILL.md is 450 lines. Our project's convention is to keep SKILL.md under 400 lines. What's the best way to split it so I hit the target?",
+      "trap": "Without the skill, the model immediately suggests split plans (which sections to move, how to restructure). The skill explicitly warns against splitting to hit a line target without a real branching condition, and notes that router prose often eats back the savings.",
+      "expected_output": "Questions whether there is a real branching condition before suggesting any split. Warns against splitting purely to hit a line-count target. Notes that router prose added to SKILL.md eats back line savings. May suggest trimming redundant content as an alternative.",
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "response questions whether there is a real branching condition or load condition before suggesting any split" },
+        { "id": "5.2", "description": "response warns against splitting solely to meet an arbitrary line-count target" },
+        { "id": "5.3", "description": "response does NOT immediately jump to a split plan without first checking for branching conditions" },
+        { "id": "5.4", "description": "response mentions or implies that router prose added to SKILL.md offsets the line savings from splitting" },
+        { "id": "5.5", "description": "response suggests content reduction (trimming, deleting redundant sections) as an alternative to splitting" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "I'm building a cloud deployment skill that covers AWS, GCP, and Azure. Each cloud has completely different CLI commands, IAM models, and networking concepts. The SKILL.md is already 600 lines and growing. How should I structure this?",
+      "trap": "Without the skill, the model might suggest topic-based splits (commands.md, iam.md, networking.md) or just advise trimming content. The skill identifies cloud provider as a clean variant axis for variant-branch splits where user intent selects exactly one path.",
+      "expected_output": "Recommends a variant branch split with each cloud provider as its own reference file. Identifies cloud provider as a clean variant axis. Suggests SKILL.md holds decision logic and shared workflow. Explains that each invocation loads only the matching provider's reference.",
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "response recommends a variant branch split (not a topic-based split)" },
+        { "id": "6.2", "description": "response identifies cloud provider (AWS/GCP/Azure) as the variant axis" },
+        { "id": "6.3", "description": "response suggests each cloud provider gets its own references/ file" },
+        { "id": "6.4", "description": "response explains that SKILL.md holds decision logic and shared workflow, not provider-specific content" },
+        { "id": "6.5", "description": "response explains that each invocation loads only the matching variant, saving context" }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "My GraphQL skill has a 50-step procedure and a comprehensive table listing 200 GraphQL directives with their syntax, arguments, and usage examples. The whole thing is 900 lines. How should I structure this?",
+      "trap": "Without the skill, the model might suggest topic splits or general trimming. The skill specifically identifies 'lookup material queried by key' (like API surface listings, schemas) as the best candidate for workflow vs. reference data splits.",
+      "expected_output": "Recommends workflow vs. reference data split. Suggests keeping the procedure (steps, decisions) in SKILL.md. Suggests moving the directives table to references/. Explains the directives table is lookup material queried by key, not procedural content.",
+      "files": [],
+      "assertions": [
+        { "id": "7.1", "description": "response recommends a workflow vs. reference data split" },
+        { "id": "7.2", "description": "response suggests keeping the 50-step procedure in SKILL.md" },
+        { "id": "7.3", "description": "response suggests moving the directives table to a references/ file" },
+        { "id": "7.4", "description": "response identifies the directives table as lookup material queried by key (not procedural content)" },
+        { "id": "7.5", "description": "response explains that the model reads only the relevant entries, not the entire table" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "I want to add a depth-tier reference for edge cases to my GraphQL skill. The edge cases I'd put there are: complex nested queries, circular references between types, and union type resolver quirks. Should I create references/edge-cases.md?",
+      "trap": "Without the skill, the model likely approves: 'edge cases' sounds like a textbook depth-tier candidate. The skill warns that depth-tier splits only work when the load condition is sharp and observable from user input — vague conditions cause always-loading or never-loading.",
+      "expected_output": "Evaluates or asks whether the load conditions are sharp and observable from user input. Warns that vague conditions cause always-loading or never-loading. Questions whether these specific edge cases can be detected upfront. Does NOT unconditionally approve creating references/edge-cases.md.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "response questions or evaluates whether the load conditions are sharp and observable from user input" },
+        { "id": "8.2", "description": "response warns that vague conditions cause either always-loading (waste) or never-loading (dead weight)" },
+        { "id": "8.3", "description": "response evaluates whether these specific edge cases (nested queries, circular refs, union resolvers) can be detected from user input before loading" },
+        { "id": "8.4", "description": "response does NOT unconditionally approve creating references/edge-cases.md without addressing the load condition sharpness" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "I'm creating a brand new code review skill from scratch. It will cover readability, security, performance, maintainability, and testing concerns. I'm planning to start with separate reference files for each concern area. Is this a good starting structure?",
+      "trap": "Without the skill, the model may approve starting pre-split as organized. The skill's default is 'do not split' — a new skill should start monolithic. Pre-splitting without empirical evidence (eval transcripts) showing irrelevant sections loading is premature.",
+      "expected_output": "Recommends starting with a monolithic SKILL.md. Advises against pre-splitting a new skill before getting eval evidence. Warns that code review tasks typically span multiple concern areas. Applies the 'default: do not split' principle.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "response recommends starting with a single monolithic SKILL.md" },
+        { "id": "9.2", "description": "response advises against pre-splitting before gathering empirical evidence (evals or transcripts)" },
+        { "id": "9.3", "description": "response warns that code review tasks likely span multiple concern areas, similar to the testing topic-split failure" },
+        { "id": "9.4", "description": "response applies the 'default: do not split' principle explicitly or implicitly" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Review this pointer I wrote in my SKILL.md: 'For advanced scenarios, see references/advanced.md for more information.'",
+      "trap": "Without the skill, the model may accept this as reasonable. The skill has explicit pointer hygiene rules: the pointer must name a user-visible signal, must be one sentence, must not summarize content, and the filename must encode the load condition.",
+      "expected_output": "Identifies multiple pointer hygiene violations: no sharp user-visible signal named, 'advanced' filename is too vague and doesn't encode a load condition, 'for more information' is a non-trigger phrase. Suggests improvement with a specific observable signal.",
+      "files": [],
+      "assertions": [
+        { "id": "10.1", "description": "response identifies that the pointer lacks a sharp, observable user-facing signal (no 'if the user mentions X' trigger)" },
+        { "id": "10.2", "description": "response flags 'advanced.md' as too vague a filename that doesn't encode the load condition" },
+        { "id": "10.3", "description": "response flags 'for more information' as a weak non-trigger phrase (does not identify when to load)" },
+        { "id": "10.4", "description": "response suggests improving the pointer with a specific, observable signal from user input" },
+        { "id": "10.5", "description": "response recommends renaming the file to encode the actual load condition (e.g., not 'advanced.md')" }
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "My YAML configuration skill validates config files using 50 regex-based validation rules with specific error messages. I'm planning to put all 50 rules in references/validation-rules.md so the main file stays clean. Good approach?",
+      "trap": "Without the skill, the model might approve references/ as reasonable for large reference material. The skill explicitly recommends scripts/ over references/ for anything deterministic — regex validation is deterministic, repeatable, and better as a script.",
+      "expected_output": "Recommends scripts/ over references/ for deterministic regex validation. Explains zero context cost for script execution. Notes scripts can be unit tested independently. Does NOT recommend references/ as the primary solution.",
+      "files": [],
+      "assertions": [
+        { "id": "11.1", "description": "response identifies the validation rules as deterministic/repeatable content" },
+        { "id": "11.2", "description": "response recommends using scripts/ instead of references/ for the validation logic" },
+        { "id": "11.3", "description": "response mentions that scripts have zero context cost (they execute without loading into context)" },
+        { "id": "11.4", "description": "response notes that scripts can be unit tested independently" },
+        { "id": "11.5", "description": "response does NOT recommend references/validation-rules.md as the primary or preferred solution" }
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "I want to split my CI/CD skill: move the troubleshooting section (120 lines covering 8 failure types) to references/troubleshooting.md. The main workflow would stay in SKILL.md. Does this make sense?",
+      "trap": "Without the skill, the model may approve: 120 lines seems splittable, troubleshooting sounds like a good candidate for depth-tier or reference. The skill's decision checklist requires a sharp, observable load condition — the model must assess whether the 8 failure types can be detected from user input.",
+      "expected_output": "Applies the decision checklist before approving. Asks about a sharp, observable load condition for troubleshooting content. Considers whether router prose would eat back line savings. Does NOT immediately approve without addressing load condition sharpness.",
+      "files": [],
+      "assertions": [
+        { "id": "12.1", "description": "response applies or references a checklist/decision process before approving the split" },
+        { "id": "12.2", "description": "response asks or evaluates whether there is a sharp, observable load condition for the troubleshooting section" },
+        { "id": "12.3", "description": "response considers whether the added router prose in SKILL.md would reduce the net line savings" },
+        { "id": "12.4", "description": "response does NOT immediately approve the split without addressing load condition sharpness" }
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "My SQL skill has two reference files: references/basic-queries.md and references/joins.md. After reviewing my eval transcripts, I notice that in every single run, both files get loaded together. Should I keep them separate for organizational clarity?",
+      "trap": "Without the skill, the model may say 'yes, keep them separate — separation of concerns is good'. The skill has an explicit co-occurrence rule: when two references co-load in >70% of runs, merge them.",
+      "expected_output": "Identifies this as a co-occurrence problem. Recommends merging the two files. References the ~70% co-load threshold or explains that always-co-loaded references should be merged. Does NOT recommend keeping them separate for organizational reasons.",
+      "files": [],
+      "assertions": [
+        { "id": "13.1", "description": "response identifies the always-co-loading as a co-occurrence problem" },
+        { "id": "13.2", "description": "response recommends merging the two reference files into one" },
+        { "id": "13.3", "description": "response references a threshold (e.g., >70% co-load) or the principle that always-co-loaded files should be merged" },
+        { "id": "13.4", "description": "response does NOT recommend keeping them separate for organizational clarity" }
+      ]
+    }
+  ]
+}
