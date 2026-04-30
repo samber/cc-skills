@@ -21,7 +21,7 @@ Each section that recommends a direction includes explicit pros and cons. The de
 
 Two problems get conflated and need separating before any splitting decision.
 
-**Triggering** is whether Claude invokes the skill at all. Driven entirely by the YAML `description`. File splitting does not affect triggering. If the question is "my skill doesn't trigger reliably", do not split files, fix the description (use `scripts/run_loop.py` from skill-creator).
+**Triggering** is whether Claude invokes the skill at all. Driven entirely by the YAML `description`. File splitting does not affect triggering. If the question is "my skill doesn't trigger reliably", do not split files, fix the description (use `run_loop.py` from the `skill-creator` skill).
 
 **Progressive disclosure** is what loads after the skill activates. SKILL.md body always loads. `references/*` only loads when SKILL.md tells the model to read a specific file. `scripts/*` executes without loading into context at all. This is where context protection happens.
 
@@ -312,7 +312,7 @@ Across all eval runs, for each `references/*.md`:
 
 | Observation | Action |
 | --- | --- |
-| Reference loaded in <20% of runs | Inline into SKILL.md or delete |
+| Reference loaded in <20% of runs | Working as intended; verify content is used when loaded |
 | Reference loaded in >80% of runs | Promote into SKILL.md |
 | Two references co-load in >70% of runs | Merge into one file |
 | Reference loaded but not used in output | Fix or remove the pointer in SKILL.md |
@@ -336,7 +336,7 @@ A split that saves 15% tokens but adds variance in output quality is worse than 
 ### What the metrics will not tell you
 
 - Whether the SKILL.md prose is clear. Read transcripts for confused tool calls and dead-end attempts.
-- Whether the description triggers correctly. That is a separate eval (use `run_loop.py` from skill-creator).
+- Whether the description triggers correctly. That is a separate eval (use `run_loop.py` from the `skill-creator` skill).
 - Whether content placement matches user mental models. Subjective; review with a human.
 
 The split that looked clean at design time rarely matches real load patterns. Trust the transcripts over your intuitions.

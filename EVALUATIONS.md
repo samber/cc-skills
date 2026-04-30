@@ -17,13 +17,13 @@
 | `press-release-writer`          | v1.1.0  | 66         | 95%        | 61%           | +35pp     | 1.57×     | **Low with-skill score**    |
 | `conventional-git`              | v1.0.0  | 50         | 100%       | 64%           | +36pp     | 1.56×     |                             |
 | `promql-cli`                    | v1.0.0  | 36         | 100%       | 61%           | +39pp     | 1.64×     |                             |
+| `substack-ghostwriting`         | v1.1.0  | 101        | 100%       | 50%           | +50pp     | 2.02×     |                             |
 | `deep-research`                 | v1.0.0  | 43         | 100%       | 49%           | +51pp     | 2.05×     |                             |
 | `snyk-agent-scan-compliance`    | v1.0.0  | 85         | 100%       | 49%           | +51pp     | 2.02×     |                             |
-| `substack-ghostwriting`         | v1.1.0  | 101        | 100%       | 50%           | +50pp     | 2.02×     |                             |
 | `skill-progressive-disclosure-design` | v1.0.0 | 59    | 97%        | 39%           | +58pp     | 2.49×     |                             |
 | `training-report`               | v1.0.0  | 67         | 99%        | 37%           | +61pp     | 2.64×     |                             |
 | `influence-and-negotiation`     | v1.0.0  | 230        | 100%       | 32%           | +68pp     | 3.11×     |                             |
-| **Total (12 skills)**           |         | **949**    | **99%**    | **51%**       | **+48pp** | **1.93×** |                             |
+| **Total (12 skills)**           |         | **949**    | **99%**    | **51%**       | **+48pp** | **1.94×** |                             |
 
 ## `conventional-git` — v1.0.0
 
@@ -1275,7 +1275,7 @@ Model: claude-sonnet-4-6 — 1 run each — graded by human-as-judge — adversa
 
 | #    | Assertion                                                                                                          | With                           | Without                                                                                                  |
 | ---- | ------------------------------------------------------------------------------------------------------------------ | ------------------------------ | -------------------------------------------------------------------------------------------------------- |
-|      | **Eval 1: triggering vs disclosure — model conflates the two**                                                     | **<span class="g">5/5</span>** | **<span class="g">5/5</span>**                                                                           |
+|      | **Eval 1: triggering vs disclosure — both pass (common knowledge baseline)**                                       | **<span class="g">5/5</span>** | **<span class="g">5/5</span>**                                                                           |
 | 1.1  | identifies this as a triggering problem, not a disclosure/context problem                                          | <span class="g">✓</span>       | <span class="g">✓</span>                                                                                 |
 | 1.2  | explicitly states that file splitting does NOT affect whether a skill triggers                                      | <span class="g">✓</span>       | <span class="g">✓</span>                                                                                 |
 | 1.3  | recommends fixing the YAML description field to improve triggering                                                  | <span class="g">✓</span>       | <span class="g">✓</span>                                                                                 |
