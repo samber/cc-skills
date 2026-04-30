@@ -23,9 +23,9 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 | ----------------------------- | ------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------- |
 | Preparation                   | "I have a [sales call / salary review / NAO / hard 1:1 / recruitment close / cross-cultural deal] next week" | Phase 1 detects domain → Phases 1–5 with domain-specific axes                   |
 | Live coach                    | "They just said X, what do I respond?"                                                                       | Skip to Phase 6                                                                 |
-| No-decision triage            | "It's stuck — they like it but won't commit"                                                                 | JOLT runbook in [references/playbooks.md](references/playbooks.md)              |
-| Multi-thread / sponsor access | "I have a champion / advocate but no decider access"                                                         | Playbooks 1–2 in [references/playbooks.md](references/playbooks.md)             |
-| Renewal                       | "Renewal in 90 days, expansion possible"                                                                     | Playbook 6 in [references/playbooks.md](references/playbooks.md)                |
+| No-decision triage            | "It's stuck — they like it but won't commit"                                                                 | [references/playbook-jolt.md](references/playbook-jolt.md)                     |
+| Multi-thread / sponsor access | "I have a champion / advocate but no decider access"                                                         | [references/playbook-champion-test.md](references/playbook-champion-test.md) + [references/playbook-multi-threading.md](references/playbook-multi-threading.md) |
+| Renewal                       | "Renewal in 90 days, expansion possible"                                                                     | [references/playbook-renewal-expansion.md](references/playbook-renewal-expansion.md) |
 | Team preparation              | "We're going in as N1 + N2 (+ specialist)"                                                                   | [references/team-negotiation.md](references/team-negotiation.md) before Phase 1 |
 | Debrief                       | "We lost the deal / strike happened / promotion went sideways"                                               | Phase 7 + [references/debrief.md](references/debrief.md)                        |
 | Tactic look-up                | "What's BATNA?" / "How does mirroring work?"                                                                 | Direct to the relevant reference file                                           |
@@ -87,10 +87,22 @@ Each topic lives in its own file — load only the one that matches the user's s
 - **Load when:** the user is in early- or mid-stage discovery (first 1–3 conversations, before any commitment), or whenever they want to read the room. Triggers: _"first call with..."_, _"discovery call"_, _"I haven't yet figured out what they really want"_, _"what calibrated questions should I ask?"_, _"the buyer / candidate gave a strange signal"_, _"how do I tell if they're lying / hiding / about to walk?"_, _"what does that micro-expression mean?"_, _"what does the silence mean?"_, _"why are they leaning back?"_, _"why are they answering so slowly?"_.
 - **Don't load when:** the user is past discovery and into pricing / commitment / refusal handling (use the objection-handling references + `tactics.md`); the user is preparing the mandate side (use `preparation.md`).
 
-### `references/playbooks.md` — runbooks for named situations
+### Playbook references — runbooks for named high-stakes situations
 
-- **Load when:** the user's situation matches one of the named playbooks. Triggers: _"my champion went silent"_ or _"is my champion real?"_ (champion test); _"I need to multi-thread"_ (multi-threading sequence); _"draft a MAP / mutual action plan"_ (MAP); _"the deal is stuck and they like it but won't sign"_ (JOLT); _"I finally got the EB meeting"_ (EB engagement); _"renewal in 90 days"_ (renewal cadence); _"asking for a raise"_ / _"job offer to negotiate"_ (salary ask runbook); _"announcing a layoff / hard decision / performance plan"_ / _"difficult 1:1"_ (decision announcement / STATE / recadrage); _"first cross-cultural meeting"_ / _"international deal"_ (cross-cultural opening).
-- **Don't load when:** the user's situation doesn't match a named playbook — they may need preparation or tactics directly. Loading the wrong playbook produces script-not-from-this-situation responses.
+Tactical handbook for high-leverage moves across domains. Each playbook is a runbook: trigger → steps → scripts → failure signals. Framework-agnostic — load the one that matches the situation, not the one you read most recently.
+
+Each playbook lives in its own file — load only the one that matches the user's situation. Don't load when the user is in early discovery with no named situation yet; use `discovery.md` and `preparation.md` instead. Loading the wrong playbook produces script-not-from-this-situation responses.
+
+- **[Champion test](references/playbook-champion-test.md)** — Triggers: _"is my champion real?"_, 2–3 calls with a supportive contact, CRM champion flag to validate; 3-question commitment test.
+- **[Multi-threading sequence](references/playbook-multi-threading.md)** — Triggers: _"I need to multi-thread"_, single-threaded deal, gaining access to EB / procurement / security / finance before signature.
+- **[Mutual Action Plan (MAP)](references/playbook-map.md)** — Triggers: _"draft a MAP / mutual action plan"_, late-discovery or mid-stage deal, surfacing hidden gating steps, creating joint timeline ownership.
+- **[JOLT — no-decision protocol](references/playbook-jolt.md)** — Triggers: _"the deal is stuck and they like it but won't sign"_, FOMU / fear-of-messing-up signals, indecision rather than disinterest.
+- **[Executive sponsor (EB) engagement](references/playbook-eb-engagement.md)** — Triggers: _"I finally got the EB meeting"_, first 5 minutes with a C-level, earned-right frame, business-problem-class opening.
+- **[Renewal & expansion cadence](references/playbook-renewal-expansion.md)** — Triggers: _"renewal in 90 days"_, expansion possible, T-90 / T-60 / T-45 / T-30 / T-10 cadence.
+- **[Pre-call preparation](references/playbook-pre-call-prep.md)** — Triggers: any commercial call, SMB / mid-market / enterprise tiered prep, MEDDPICC review, concession ladder check, 1-page strategy note.
+- **[Salary ask](references/playbook-salary-ask.md)** — Triggers: _"asking for a raise"_, _"job offer to negotiate"_, bolstering-range anchor, defending against 5 classic employer objections, counter-offer decision rule.
+- **[Decision announcement / difficult 1:1](references/playbook-decision-announcement.md)** — Triggers: _"announcing a layoff / hard decision / performance plan"_, _"difficult 1:1"_, three-part structure, STATE move, recadrage variant.
+- **[Cross-cultural deal opening](references/playbook-cross-cultural.md)** — Triggers: _"first cross-cultural meeting"_, _"international deal"_, joint venture, M&A, interpreter briefing, indirect-refusal decoding.
 
 ### `references/team-negotiation.md` — N1/N2/SUP roles, effet fusible
 
@@ -100,7 +112,7 @@ Each topic lives in its own file — load only the one that matches the user's s
 ### `references/biases-and-influence.md` — 9 cognitive biases, 7 ethical levers
 
 - **Load when:** the conversation is about which influence lever to use ethically OR how to defend against one. Triggers: _"they're using anchoring on me"_, _"how do I anchor?"_, _"is scarcity a real claim or a manipulation?"_, _"social proof — which references should I bring?"_, _"loss aversion — should I frame this as risk or upside?"_, _"contrast tier — Basic/Standard/Enterprise"_, _"halo effect"_, _"reciprocity"_, _"the buyer is using a Cialdini move"_. Also load when planning the influence-side of a Phase 4 move and you're choosing between levers.
-- **Don't load when:** the user just needs a script for a specific objection (use the objection-handling references) or a specific situation (use `playbooks.md`).
+- **Don't load when:** the user just needs a script for a specific objection (use the objection-handling references) or a specific situation (use the playbook references).
 
 ### `references/manipulation.md` — the 10 named manipulation patterns
 
@@ -114,7 +126,7 @@ Each topic lives in its own file — load only the one that matches the user's s
 
 ### Scenario references — six worked end-to-end examples
 
-Load the scenario file that matches the user's situation. Each file is self-contained. Don't load when the user has a specific tactical question — [tactics](references/tactics.md) / [objection-handling references](#objection-handling-references--refusal-triage-procurement-plays-and-the-four-root-objections) / [playbooks](references/playbooks.md) are more focused.
+Load the scenario file that matches the user's situation. Each file is self-contained. Don't load when the user has a specific tactical question — [tactics](references/tactics.md) / [objection-handling references](#objection-handling-references--refusal-triage-procurement-plays-and-the-four-root-objections) / [playbook references](#playbook-references--runbooks-for-named-high-stakes-situations) are more focused.
 
 - **[B2B SaaS price pushback + multi-threading](references/scenario-saas-price-pushback.md)** — Triggers: AE receiving a discount ask on a SaaS deal, single-threaded into a CIO, budget objection, "we're over budget".
 - **[Enterprise procurement RFP + fiscal-year leverage](references/scenario-enterprise-rfp.md)** — Triggers: "best and final" letter, MSA redlines, uncapped liability, quarter-end pressure, competing bid claim.
@@ -189,7 +201,7 @@ Read [references/discovery.md](references/discovery.md). Then use `AskUserQuesti
 
 Build the map from what the user tells you — formal (organigramme) layered with informal (sociogramme). Domain shapes who's on it: Economic Buyer + Champion + Procurement (sales); manager + skip-level + HR (salary); union delegates + internal-election dates (NAO); candidate + partner + current manager (recruitment).
 
-**If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/playbooks.md](references/playbooks.md#1-champion-test--is-your-champion-actually-a-coach). Skipping this validation is the highest-leverage error in complex negotiations.
+**If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/playbook-champion-test.md](references/playbook-champion-test.md). Skipping this validation is the highest-leverage error in complex negotiations.
 
 **Stakeholder deep research.** Once stakeholders are named, run up to 10 parallel sub-agents — one per named person, merging minor stakeholders if there are more than 10. Each agent profiles a single individual across all available sources: CRM activity log and email threads (all prior exchanges with or about this person), connected MCP servers (Slack DMs, calendar history, LinkedIn/Apollo/Clay if available), and open-source intelligence (LinkedIn profile and recent posts, conference talks, published articles, company announcements where they are named). Also surface any internal signal tied to this deal: promotion cycle, budget accountability, recent miss or win. Extract per stakeholder: inferred MICE primary driver, known public positions, career inflection points that shape risk appetite. Track the source of every inference (URL, system name, date, confidence 0–10) and store it in `stakeholders.md` with a `Source` annotation per claim. Do not surface grey-source inferences in counterparty-facing material.
 
@@ -239,11 +251,11 @@ Pre-write before the meeting:
 - **OCP statement** — see [references/tactics.md](references/tactics.md#ocp--objectif-commun-partagé). One sentence both sides can sign on, ready to deploy when the room turns competitive but cooperation is genuinely available.
 - **Pause tactique triggers** — pre-decide which signals will cause you to call a break (mandate breach approaching, surprise move, internal disagreement, punching-ball). Pre-decide the script.
 
-**Mutual Action Plan (where applicable).** For mid-stage commercial deals, recruitment with multi-step approvals, or any negotiation with hidden gating steps, draft a MAP — see [references/playbooks.md](references/playbooks.md#3-mutual-action-plan-map--the-close-timeline-as-artifact). It surfaces the legal / infosec / board / family-meeting / HR-validation steps that otherwise hide and creates joint ownership of the timeline. Stalls become diagnostic.
+**Mutual Action Plan (where applicable).** For mid-stage commercial deals, recruitment with multi-step approvals, or any negotiation with hidden gating steps, draft a MAP — see [references/playbook-map.md](references/playbook-map.md). It surfaces the legal / infosec / board / family-meeting / HR-validation steps that otherwise hide and creates joint ownership of the timeline. Stalls become diagnostic.
 
 **Team negotiation preparation.** For high-stakes negotiations running with N1 + N2 or a full team (enterprise sales, NAO with HR + line management, M&A), read [references/team-negotiation.md](references/team-negotiation.md) and align on signalling protocol, mandate ownership, and effet fusible setup before the meeting.
 
-**When both MAP and team preparation apply**, spawn two parallel sub-agents: one drafts the MAP using `references/playbooks.md`; the other produces the team briefing (roles, signalling protocol, mandate split, effet fusible setup) using `references/team-negotiation.md`. Both return full output to the main agent before Phase 5.
+**When both MAP and team preparation apply**, spawn two parallel sub-agents: one drafts the MAP using `references/playbook-map.md`; the other produces the team briefing (roles, signalling protocol, mandate split, effet fusible setup) using `references/team-negotiation.md`. Both return full output to the main agent before Phase 5.
 
 **Number discipline.** Specific anchor numbers and Mandascan figures belong in your private preparation notes — not in any counterparty-facing email, draft, or coaching artifact. Numbers leaked in writing become anchors for the other side or for your own commitment, and produce premature concessions. When coaching someone else, give them the strategic frame and the trade structure; let them say the number live on the call.
 
@@ -284,7 +296,7 @@ Triage the counterparty's pushback by type **before** responding — the type de
 
 For the four root commercial objections — price, timing, authority, no-need — see [references/objection-four-root.md](references/objection-four-root.md) for tactical scripts. Equivalents in other domains: salary objections (envelope fermée / band ceiling / mid-cycle / freeze / promotion-first); recruitment objections (counter-offer / relocation / equity scepticism).
 
-**No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbooks.md](references/playbooks.md#4-jolt--the-no-decision-protocol). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
+**No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbook-jolt.md](references/playbook-jolt.md). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
 
 **Manipulation taxonomy.** When the counterparty's pushback fits a named manipulation pattern (mauvaise foi, bluff, intimidation, punching-ball, faux pivot, désintérêt, coopétition simulée, refus de négocier, démoralisation, manipulation de clôture), see [references/manipulation.md](references/manipulation.md) for detection and counter-protocols that don't escalate.
 

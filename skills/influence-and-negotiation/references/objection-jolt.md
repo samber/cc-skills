@@ -4,7 +4,7 @@ A separate failure mode from the four root objections. Industry research consist
 
 The diagnosis: **fear of messing up (FOMU)**, not fear of missing out (FOMO). The classic urgency / FOMO moves make FOMU **worse** because they amplify perceived risk.
 
-The full JOLT runbook lives in [references/playbooks.md](playbooks.md#4-jolt--the-no-decision-protocol). Summary of the four moves:
+The full JOLT runbook lives in [references/playbook-jolt.md](playbook-jolt.md). Summary of the four moves:
 
 - **J — Judge** the indecision. Distinguish indecision from disinterest with calibrated questions. Relief at "deal off" = no real fit; frustration = indecision.
 - **O — Offer** your recommendation. Stop laying out options. Make the call. The buyer's job becomes disagreeing with a specific recommendation, not constructing a decision.
