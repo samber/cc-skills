@@ -14,7 +14,7 @@
 - One-off retention bonus (separates from base envelope question)
 - Review cadence (cycle-aligned commitment, not vague "next review")
 
-For each, sketch entry / ideal / objective / escalation / rupture (see [references/preparation.md](preparation.md#the-mandascan--5-points-per-axis)).
+For each, sketch entry / ideal / objective / escalation / rupture (see [references/prepare.md](prepare.md#the-mandascan--5-points-per-axis)).
 
 **Phase 6 — Live response to "envelope closed."** Don't argue the envelope claim and don't fold to it. Use the reality-principle script:
 

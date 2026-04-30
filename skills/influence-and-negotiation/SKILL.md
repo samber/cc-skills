@@ -64,29 +64,24 @@ Each topic lives in its own file — load only the one that matches the user's s
 - **[Le non-négociable](references/objection-non-negociable.md)** — Triggers: verbal abuse, kickback / unethical request, insults across negotiation table, behaviours that must be refused immediately to preserve dialogue.
 - **[Face-saving exits](references/objection-face-saving-exits.md)** — Triggers: counterparty needs to back down without admitting they were wrong; building the exit into your move so they can change position.
 
-### `references/preparation.md` — mandate, Mandascan, stakeholder map
+### `references/prepare.md` — mandate, Mandascan, stakeholder map, discovery, behavioural reading
 
-- **Load when:** the user is preparing for an upcoming conversation more than ~30 minutes away. Triggers: _"I have a [meeting / call / review / NAO opening] [tomorrow / next week / in 2 weeks]"_, _"help me prepare"_, _"set my mandate"_, _"what's my walk-away?"_, _"who should be on the map?"_, _"how do I think through the BATNA?"_, _"what's the buyer / candidate really after?"_ (POE iceberg). Required for any Phases 1–3 work.
+- **Load when:** the user is preparing for an upcoming conversation, in early- or mid-stage discovery, or wants to read the room. Triggers: _"I have a [meeting / call / review / NAO opening] [tomorrow / next week / in 2 weeks]"_, _"help me prepare"_, _"set my mandate"_, _"what's my walk-away?"_, _"who should be on the map?"_, _"how do I think through the BATNA?"_, _"what's the buyer / candidate really after?"_, _"first call with..."_, _"discovery call"_, _"what calibrated questions should I ask?"_, _"the buyer gave a strange signal"_, _"what does that micro-expression mean?"_, _"what does the silence mean?"_. Required for any Phases 1–3 work.
 - **Don't load when:** the user is mid-conversation and needs a quick live response (use `tactics.md` + the objection-handling references); the user is post-action (use `debrief.md`).
-
-### `references/discovery.md` — discovery questions, behavioural reading
-
-- **Load when:** the user is in early- or mid-stage discovery (first 1–3 conversations, before any commitment), or whenever they want to read the room. Triggers: _"first call with..."_, _"discovery call"_, _"I haven't yet figured out what they really want"_, _"what calibrated questions should I ask?"_, _"the buyer / candidate gave a strange signal"_, _"how do I tell if they're lying / hiding / about to walk?"_, _"what does that micro-expression mean?"_, _"what does the silence mean?"_, _"why are they leaning back?"_, _"why are they answering so slowly?"_.
-- **Don't load when:** the user is past discovery and into pricing / commitment / refusal handling (use the objection-handling references + `tactics.md`); the user is preparing the mandate side (use `preparation.md`).
 
 ### Playbook references — runbooks for named high-stakes situations
 
 Tactical handbook for high-leverage moves across domains. Each playbook is a runbook: trigger → steps → scripts → failure signals. Framework-agnostic — load the one that matches the situation, not the one you read most recently.
 
-Each playbook lives in its own file — load only the one that matches the user's situation. Don't load when the user is in early discovery with no named situation yet; use `discovery.md` and `preparation.md` instead. Loading the wrong playbook produces script-not-from-this-situation responses.
+Each playbook lives in its own file — load only the one that matches the user's situation. Don't load when the user is in early discovery with no named situation yet; use `prepare.md` instead. Loading the wrong playbook produces script-not-from-this-situation responses.
 
-- **[Champion test](references/playbook-champion-test.md)** — Triggers: _"is my champion real?"_, 2–3 calls with a supportive contact, CRM champion flag to validate; 3-question commitment test.
+- **[Champion test](references/prepare.md#champion-test)** — Triggers: _"is my champion real?"_, 2–3 calls with a supportive contact, CRM champion flag to validate; 3-question commitment test.
 - **[Multi-threading sequence](references/playbook-multi-threading.md)** — Triggers: _"I need to multi-thread"_, single-threaded deal, gaining access to EB / procurement / security / finance before signature.
 - **[Mutual Action Plan (MAP)](references/playbook-map.md)** — Triggers: _"draft a MAP / mutual action plan"_, late-discovery or mid-stage deal, surfacing hidden gating steps, creating joint timeline ownership.
 - **[JOLT — no-decision protocol](references/playbook-jolt.md)** — Triggers: _"the deal is stuck and they like it but won't sign"_, FOMU / fear-of-messing-up signals, indecision rather than disinterest.
 - **[Executive sponsor (EB) engagement](references/playbook-eb-engagement.md)** — Triggers: _"I finally got the EB meeting"_, first 5 minutes with a C-level, earned-right frame, business-problem-class opening.
 - **[Renewal & expansion cadence](references/playbook-renewal-expansion.md)** — Triggers: _"renewal in 90 days"_, expansion possible, T-90 / T-60 / T-45 / T-30 / T-10 cadence.
-- **[Pre-call preparation](references/playbook-pre-call-prep.md)** — Triggers: any commercial call, SMB / mid-market / enterprise tiered prep, MEDDPICC review, concession ladder check, 1-page strategy note.
+- **[Pre-call preparation](references/prepare.md#pre-call-prep-runbook)** — Triggers: any commercial call, SMB / mid-market / enterprise tiered prep, MEDDPICC review, concession ladder check, 1-page strategy note.
 - **[Salary ask](references/playbook-salary-ask.md)** — Triggers: _"asking for a raise"_, _"job offer to negotiate"_, bolstering-range anchor, defending against 5 classic employer objections, counter-offer decision rule.
 - **[Decision announcement / difficult 1:1](references/playbook-decision-announcement.md)** — Triggers: _"announcing a layoff / hard decision / performance plan"_, _"difficult 1:1"_, three-part structure, STATE move, recadrage variant.
 - **[Cross-cultural deal opening](references/playbook-cross-cultural.md)** — Triggers: _"first cross-cultural meeting"_, _"international deal"_, joint venture, M&A, interpreter briefing, indirect-refusal decoding.
@@ -178,7 +173,7 @@ Fuzzy answers reveal the mandate gap to fix first. If an answer is vague (e.g. "
 
 ### Phase 2: Map the room
 
-Read [references/discovery.md](references/discovery.md). Then use `AskUserQuestion` to fill in any gaps from Phase 1 — don't assume what you don't know. Ask:
+Read [references/prepare.md](references/prepare.md). Then use `AskUserQuestion` to fill in any gaps from Phase 1 — don't assume what you don't know. Ask:
 
 - **Formal structure** — _"Who else is involved on their side? What's the decision-making chain — who approves, who can veto?"_
 - **Informal influence** — _"Who do people defer to in the room even if they don't have the title? Is there someone off-stage who'll influence the outcome?"_
@@ -188,13 +183,13 @@ Read [references/discovery.md](references/discovery.md). Then use `AskUserQuesti
 
 Build the map from what the user tells you — formal (organigramme) layered with informal (sociogramme). Domain shapes who's on it: Economic Buyer + Champion + Procurement (sales); manager + skip-level + HR (salary); union delegates + internal-election dates (NAO); candidate + partner + current manager (recruitment).
 
-**If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/playbook-champion-test.md](references/playbook-champion-test.md). Skipping this validation is the highest-leverage error in complex negotiations.
+**If the user names a champion or advocate**, ask: _"What concrete actions have they taken between meetings — have they proactively coordinated internally, shared information you didn't ask for, or moved things forward without prompting?"_ The 3-question commitment test lives in [references/prepare.md#champion-test](references/prepare.md#champion-test). Skipping this validation is the highest-leverage error in complex negotiations.
 
 **Stakeholder deep research.** Once stakeholders are named, run up to 10 parallel sub-agents — one per named person, merging minor stakeholders if there are more than 10. Each agent profiles a single individual across all available sources: CRM activity log and email threads (all prior exchanges with or about this person), connected MCP servers (Slack DMs, calendar history, LinkedIn/Apollo/Clay if available), and open-source intelligence (LinkedIn profile and recent posts, conference talks, published articles, company announcements where they are named). Also surface any internal signal tied to this deal: promotion cycle, budget accountability, recent miss or win. Extract per stakeholder: inferred MICE primary driver, known public positions, career inflection points that shape risk appetite. Track the source of every inference (URL, system name, date, confidence 0–10) and store it in `stakeholders.md` with a `Source` annotation per claim. Do not surface grey-source inferences in counterparty-facing material.
 
 ### Phase 3: Set the mandate (Mandascan)
 
-Read [references/preparation.md](references/preparation.md). Then guide the user through the mandate axis by axis — don't hand them a template to fill in alone.
+Read [references/prepare.md](references/prepare.md). Then guide the user through the mandate axis by axis — don't hand them a template to fill in alone.
 
 Start by asking: _"What are the axes you're negotiating? List everything on the table — price, payment terms, timeline, scope, SLAs, equity, leave, title, etc."_
 
@@ -210,7 +205,7 @@ If the user is fuzzy on Rupture ("I don't know, I really need this deal"), flag 
 
 After the mandate, POE the counterparty for each axis: ask _"What have they actually said about [axis]?"_ (Position), _"What outcome do you think they're optimising for?"_ (Objectif), _"What's the deeper stake for them — what's at risk personally or organisationally if this fails?"_ (Enjeu). The enjeu is rarely stated; Phase 6 calibrated questions surface it live.
 
-Axes by domain — price/term/SLA/scope (sales); base/variable/equity/leave/title (salary); raise/primes/working time/télétravail (NAO); compensation/start date/title/non-compete (recruitment). Worked examples: [references/preparation.md](references/preparation.md#the-mandascan--5-points-per-axis).
+Axes by domain — price/term/SLA/scope (sales); base/variable/equity/leave/title (salary); raise/primes/working time/télétravail (NAO); compensation/start date/title/non-compete (recruitment). Worked examples: [references/prepare.md](references/prepare.md#the-mandascan--5-points-per-axis).
 
 **BATNA discipline.** Use BATNA to set the Rupture point — then put it away. Over-investing in plan B at closing leaks through tone and body language, which the counterparty reads as low confidence and uses to squeeze harder.
 

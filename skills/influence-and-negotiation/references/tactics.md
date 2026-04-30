@@ -108,7 +108,7 @@ A core in-the-room toolkit for live negotiation, sub-divided into TLS écoute (l
 - **Retournement** (turning) — flip a statement back as a question. They say _"this is too expensive."_ You say _"too expensive?"_ — close to a mirror but in a more conversational register.
 - **Recentrage** (refocusing) — pull the conversation back to the actual axis after a digression. Lead-ins: _"Au final…"_ / _"To bring this back to…"_
 - **Identification of emotions** — verbalise what you see. Same family as labeling.
-- **Silence plein** — see [silence diagnosis in references/discovery.md](discovery.md).
+- **Silence plein** — see [silence diagnosis in references/prepare.md](prepare.md#silence-diagnosis).
 - **Écho** — echoing a key phrase to slow the conversation and weight the moment.
 - **Encourageurs minimaux** — minimal encouragements (_"hmm"_, _"go on"_, _"I see"_) that keep them talking without interrupting.
 - **Implication personnelle** — sharing a small piece of your own experience to deepen rapport. Use sparingly and authentically; manufactured stories destroy trust.
