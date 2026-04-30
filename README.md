@@ -148,7 +148,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `snyk-agent-scan-compliance` | -27% | 144 | 1,884 | 5,592 |
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
 | `deep-research` | -51% | 316 | 2,915 | 14,070 |
-| `influence-and-negotiation` | -68% | 237 | 10,569 | 54,153 |
+| `influence-and-negotiation` | -68% | 237 | 6,644 | 50,467 |
 | `skill-progressive-disclosure-design` | -58% | 154 | 3,533 | 3,533 |
 
 ## 🧪 Skill evaluations

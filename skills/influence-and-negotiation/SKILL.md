@@ -19,16 +19,16 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 
 **Modes:**
 
-| Mode                          | Trigger                                                                                                      | Action                                                                                                                                                          |
-| ----------------------------- | ------------------------------------------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Preparation                   | "I have a [sales call / salary review / NAO / hard 1:1 / recruitment close / cross-cultural deal] next week" | Phase 1 detects domain → Phases 1–5 with domain-specific axes                                                                                                   |
-| Live coach                    | "They just said X, what do I respond?"                                                                       | Skip to Phase 6                                                                                                                                                 |
-| No-decision triage            | "It's stuck — they like it but won't commit"                                                                 | [references/playbook-jolt.md](references/playbook-jolt.md)                                                                                                      |
-| Multi-thread / sponsor access | "I have a champion / advocate but no decider access"                                                         | [references/playbook-champion-test.md](references/playbook-champion-test.md) + [references/playbook-multi-threading.md](references/playbook-multi-threading.md) |
-| Renewal                       | "Renewal in 90 days, expansion possible"                                                                     | [references/playbook-renewal-expansion.md](references/playbook-renewal-expansion.md)                                                                            |
-| Team preparation              | "We're going in as N1 + N2 (+ specialist)"                                                                   | [references/team-negotiation.md](references/team-negotiation.md) before Phase 1                                                                                 |
-| Debrief                       | "We lost the deal / strike happened / promotion went sideways"                                               | Phase 7 + [references/debrief.md](references/debrief.md)                                                                                                        |
-| Tactic look-up                | "What's BATNA?" / "How does mirroring work?"                                                                 | Direct to the relevant reference file                                                                                                                           |
+| Mode | Trigger | Action |
+| --- | --- | --- |
+| Preparation | "I have a [sales call / salary review / NAO / hard 1:1 / recruitment close / cross-cultural deal] next week" | Phase 1 detects domain → Phases 1–5 with domain-specific axes |
+| Live coach | "They just said X, what do I respond?" | Skip to Phase 6 |
+| No-decision triage | "It's stuck — they like it but won't commit" | [references/playbook-jolt.md](references/playbook-jolt.md) |
+| Multi-thread / sponsor access | "I have a champion / advocate but no decider access" | [references/playbook-champion-test.md](references/playbook-champion-test.md) + [references/playbook-multi-threading.md](references/playbook-multi-threading.md) |
+| Renewal | "Renewal in 90 days, expansion possible" | [references/playbook-renewal-expansion.md](references/playbook-renewal-expansion.md) |
+| Team preparation | "We're going in as N1 + N2 (+ specialist)" | [references/team-negotiation.md](references/team-negotiation.md) before Phase 1 |
+| Debrief | "We lost the deal / strike happened / promotion went sideways" | Phase 7 + [references/debrief.md](references/debrief.md) |
+| Tactic look-up | "What's BATNA?" / "How does mirroring work?" | Direct to the relevant reference file |
 
 # Influence and negotiation
 
@@ -255,16 +255,16 @@ Manipulation closes the current outcome and loses the next one. Negotiators who 
 
 ## Common traps
 
-| #   | Trap                                                                         | Counter                                                                                                                                                                                                                                                                                     |
-| --- | ---------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| 1   | Premature concession in discovery                                            | Defer pricing / specific commitments until value or fit is established. _"Happy to discuss commercials once we've confirmed fit."_                                                                                                                                                          |
-| 2   | Splitting the difference                                                     | Re-anchor with a non-monetary trade. _"I can't do that, but help me understand…"_                                                                                                                                                                                                           |
-| 3   | Concession without trade                                                     | Always pair every move with a counter-ask (term, scope, references, payment timing, commitment level, sign-on, equity).                                                                                                                                                                     |
-| 4   | False time pressure                                                          | _"What happens if we miss that date?"_ Real deadlines have specific consequences; manufactured urgency evaporates under the question.                                                                                                                                                       |
-| 5   | Single-threading                                                             | Multi-thread early. In sales: Economic Buyer + champion + procurement. In NAO: line management + DRH + COMEX. In a hard 1:1: the report's peers and likely-survivors.                                                                                                                       |
-| 6   | "Happy ears" in discovery                                                    | SPIN Implication: _"What happens if you do nothing?"_ Test pain depth before pitching the solution.                                                                                                                                                                                         |
-| 7   | Anchoring on the counterparty's number                                       | Pre-anchor with your range. If they go first, counter-extreme then move. For salary: bolstering range with your real target as the bottom.                                                                                                                                                  |
-| 8   | Filling silence                                                              | Count to 4 after every offer or label. The next person to speak loses leverage.                                                                                                                                                                                                             |
+| # | Trap | Counter |
+| --- | --- | --- |
+| 1 | Premature concession in discovery | Defer pricing / specific commitments until value or fit is established. _"Happy to discuss commercials once we've confirmed fit."_ |
+| 2 | Splitting the difference | Re-anchor with a non-monetary trade. _"I can't do that, but help me understand…"_ |
+| 3 | Concession without trade | Always pair every move with a counter-ask (term, scope, references, payment timing, commitment level, sign-on, equity). |
+| 4 | False time pressure | _"What happens if we miss that date?"_ Real deadlines have specific consequences; manufactured urgency evaporates under the question. |
+| 5 | Single-threading | Multi-thread early. In sales: Economic Buyer + champion + procurement. In NAO: line management + DRH + COMEX. In a hard 1:1: the report's peers and likely-survivors. |
+| 6 | "Happy ears" in discovery | SPIN Implication: _"What happens if you do nothing?"_ Test pain depth before pitching the solution. |
+| 7 | Anchoring on the counterparty's number | Pre-anchor with your range. If they go first, counter-extreme then move. For salary: bolstering range with your real target as the bottom. |
+| 8 | Filling silence | Count to 4 after every offer or label. The next person to speak loses leverage. |
 
 Less frequent traps (escalation ladder, fixed-envelope claims, internal-pressure self-concession, mixing issues, sympathy collapse, back-brief) → [references/traps.md](references/traps.md).
 
