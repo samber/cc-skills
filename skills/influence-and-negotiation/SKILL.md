@@ -23,9 +23,9 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 | --- | --- | --- |
 | Preparation | "I have a [sales call / salary review / NAO / hard 1:1 / recruitment close / cross-cultural deal] next week" | Phase 1 detects domain → Phases 1–5 with domain-specific axes |
 | Live coach | "They just said X, what do I respond?" | Skip to Phase 6 |
-| No-decision triage | "It's stuck — they like it but won't commit" | [references/playbook-jolt.md](references/playbook-jolt.md) |
-| Multi-thread / sponsor access | "I have a champion / advocate but no decider access" | [references/playbook-champion-test.md](references/playbook-champion-test.md) + [references/playbook-multi-threading.md](references/playbook-multi-threading.md) |
-| Renewal | "Renewal in 90 days, expansion possible" | [references/playbook-renewal-expansion.md](references/playbook-renewal-expansion.md) |
+| No-decision triage | "It's stuck — they like it but won't commit" | [references/playbooks.md#jolt](references/playbooks.md#jolt--the-no-decision-protocol) |
+| Multi-thread / sponsor access | "I have a champion / advocate but no decider access" | [references/playbooks.md#multi-threading](references/playbooks.md#multi-threading-sequence--from-1-contact-to-47-stakeholders) |
+| Renewal | "Renewal in 90 days, expansion possible" | [references/playbooks.md#renewal](references/playbooks.md#renewal--expansion--the-90-day-coopétition-cadence) |
 | Team preparation | "We're going in as N1 + N2 (+ specialist)" | [references/team-negotiation.md](references/team-negotiation.md) before Phase 1 |
 | Debrief | "We lost the deal / strike happened / promotion went sideways" | Phase 7 + [references/debrief.md](references/debrief.md) |
 | Tactic look-up | "What's BATNA?" / "How does mirroring work?" | Direct to the relevant reference file |
@@ -42,21 +42,21 @@ The user rarely says "use this skill" — they paste an email or say "they just 
 
 | File | Load when |
 | --- | --- |
-| `references/objection-refusal-triage.md` | Classifying any "no" before responding (emotional / belief / bad-faith / identity / tactical) |
-| `references/objection-four-root.md` | Price, timing, authority, or no-need objections (and cross-domain equivalents) |
-| `references/objection-jolt.md` | "Stuck", "they like it but won't sign", FOMU, indecision rather than disinterest |
-| `references/objection-ghosting.md` | Radio silence post-proposal, 10–14 days no reply, chase-vs-walk decision |
-| `references/objection-procurement-playbook.md` | Escalation ladder, fixed-budget, fake bid, MFN, MSA redlines, nibbling, bogey |
-| `references/objection-non-negociable.md` | Verbal abuse, kickback, insults, ethical red lines |
-| `references/objection-face-saving-exits.md` | Counterparty needs to back down without admitting they were wrong |
-| `references/playbook-multi-threading.md` | Single-threaded deal; need access to EB / procurement / security / finance |
-| `references/playbook-map.md` | Mid-stage deal with hidden gating steps; drafting a Mutual Action Plan |
-| `references/playbook-jolt.md` | No-decision protocol (Judge / Offer / Limit / Take risk off) |
-| `references/playbook-eb-engagement.md` | First 5 minutes with a C-level; earned-right frame |
-| `references/playbook-renewal-expansion.md` | Renewal in 90 days; T-90 / T-60 / T-45 / T-30 / T-10 cadence |
-| `references/playbook-salary-ask.md` | Raise ask, job offer, counter-offer, bolstering-range anchor |
-| `references/playbook-decision-announcement.md` | Layoff, performance plan, hard 1:1, recadrage |
-| `references/playbook-cross-cultural.md` | International deal, M&A, joint venture, interpreter brief |
+| `references/objections.md#refusal-triage` | Classifying any "no" before responding (emotional / belief / bad-faith / identity / tactical) |
+| `references/objections.md#four-root` | Price, timing, authority, or no-need objections (and cross-domain equivalents) |
+| `references/objections.md#jolt` | "Stuck", "they like it but won't sign", FOMU, indecision rather than disinterest |
+| `references/objections.md#ghosting` | Radio silence post-proposal, 10–14 days no reply, chase-vs-walk decision |
+| `references/objections.md#procurement` | Escalation ladder, fixed-budget, fake bid, MFN, MSA redlines, nibbling, bogey |
+| `references/objections.md#non-negociable` | Verbal abuse, kickback, insults, ethical red lines |
+| `references/objections.md#face-saving` | Counterparty needs to back down without admitting they were wrong |
+| `references/playbooks.md#multi-threading` | Single-threaded deal; need access to EB / procurement / security / finance |
+| `references/playbooks.md#map` | Mid-stage deal with hidden gating steps; drafting a Mutual Action Plan |
+| `references/playbooks.md#jolt` | No-decision protocol (Judge / Offer / Limit / Take risk off) |
+| `references/playbooks.md#eb-engagement` | First 5 minutes with a C-level; earned-right frame |
+| `references/playbooks.md#renewal` | Renewal in 90 days; T-90 / T-60 / T-45 / T-30 / T-10 cadence |
+| `references/playbooks.md#salary-ask` | Raise ask, job offer, counter-offer, bolstering-range anchor |
+| `references/playbooks.md#decision-announcement` | Layoff, performance plan, hard 1:1, recadrage |
+| `references/playbooks.md#cross-cultural` | International deal, M&A, joint venture, interpreter brief |
 | `references/team-negotiation.md` | Multiple people on your own side (N1+N2, SE, HR, hiring panel) |
 | `references/biases-and-influence.md` | Choosing or defending an influence lever (Cialdini, anchoring, contrast, loss aversion) |
 | `references/manipulation.md` | Counterparty fits a named manipulation pattern (mauvaise foi, bluff, intimidation, faux pivot, …) |
@@ -179,7 +179,7 @@ Pre-write each artifact before the meeting; canonical phrasing in [references/ta
 - **OCP statement** — [references/tactics.md#ocp](references/tactics.md#ocp--objectif-commun-partagé)
 - **Pause tactique triggers + script** — pre-decide signals and break script
 
-**Mutual Action Plan (where applicable).** For mid-stage commercial deals, recruitment with multi-step approvals, or any negotiation with hidden gating steps, draft a MAP — see [references/playbook-map.md](references/playbook-map.md). It surfaces the legal / infosec / board / compliance-review / HR-validation steps that otherwise hide and creates joint ownership of the timeline. Stalls become diagnostic.
+**Mutual Action Plan (where applicable).** For mid-stage commercial deals, recruitment with multi-step approvals, or any negotiation with hidden gating steps, draft a MAP — see [references/playbooks.md#map](references/playbooks.md#mutual-action-plan-map--the-close-timeline-as-artifact). It surfaces the legal / infosec / board / compliance-review / HR-validation steps that otherwise hide and creates joint ownership of the timeline. Stalls become diagnostic.
 
 **Team negotiation preparation.** For high-stakes negotiations running with N1 + N2 or a full team (enterprise sales, NAO with HR + line management, M&A), read [references/team-negotiation.md](references/team-negotiation.md) and align on signalling protocol, mandate ownership, and effet fusible setup before the meeting.
 
@@ -210,13 +210,13 @@ The pre-mortem is the cheapest insurance against the "perte d'objectif" patholog
 
 ### Phase 6: Live response (objections, refusal handling)
 
-**Read the objection-handling references NOW, before drafting any response.** Start with [refusal triage](references/objection-refusal-triage.md) to classify the objection, then load [four-root](references/objection-four-root.md), [JOLT](references/objection-jolt.md), [procurement playbook](references/objection-procurement-playbook.md), [ghosting](references/objection-ghosting.md), [non-négociable](references/objection-non-negociable.md), or [face-saving exits](references/objection-face-saving-exits.md) as the situation requires. Do not improvise from the SKILL.md body alone — the specific scripts live in those files.
+**Read the objection-handling references NOW, before drafting any response.** Load [references/objections.md](references/objections.md) and navigate to the relevant section: [refusal triage](references/objections.md#refusal-triage), [four root objections](references/objections.md#the-four-root-commercial-objections), [JOLT](references/objections.md#the-no-decision-trap-jolt), [procurement playbook](references/objections.md#procurement-playbook-awareness), [ghosting](references/objections.md#late-stage-stall--ghosting), [non-négociable](references/objections.md#le-non-négociable), or [face-saving exits](references/objections.md#face-saving-exits). Do not improvise from the SKILL.md body alone — the specific scripts live in that file.
 
-Triage the pushback type by reading [references/objection-refusal-triage.md](references/objection-refusal-triage.md) BEFORE drafting any reply — Emotional / Belief-based / Bad-faith / Identity-protective / Tactical each demand a different move; the reference has canonical signals and scripts.
+Triage the pushback type by reading [references/objections.md#refusal-triage](references/objections.md#refusal-triage) BEFORE drafting any reply — Emotional / Belief-based / Bad-faith / Identity-protective / Tactical each demand a different move; the reference has canonical signals and scripts.
 
-For the four root commercial objections (price, timing, authority, no-need) and cross-domain equivalents, see [references/objection-four-root.md](references/objection-four-root.md).
+For the four root commercial objections (price, timing, authority, no-need) and cross-domain equivalents, see [references/objections.md#four-root](references/objections.md#the-four-root-commercial-objections).
 
-**No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbook-jolt.md](references/playbook-jolt.md). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
+**No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbooks.md#jolt](references/playbooks.md#jolt--the-no-decision-protocol). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
 
 **Manipulation taxonomy.** When the counterparty's pushback fits a named manipulation pattern (mauvaise foi, bluff, intimidation, punching-ball, faux pivot, désintérêt, coopétition simulée, refus de négocier, démoralisation, manipulation de clôture), see [references/manipulation.md](references/manipulation.md) for detection and counter-protocols that don't escalate.
 
