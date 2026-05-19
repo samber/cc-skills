@@ -2,6 +2,16 @@
 name: copywriting-hooks
 description: >
   Generate opening hooks for long-form articles in EN or FR — blog posts, Substack/Medium/dev.to, LinkedIn long-form, paid newsletters, opinion essays, reported features, technical deep-dives. Trigger whenever the user asks for a hook, opening, lede, intro, first sentence/paragraph, opener, accroche, attaque, phrase d'accroche, or première phrase — including making a flat intro punchier or rewriting a draft opening. Also trigger when ghostwriting skills reach the opening step. Proposes 3-4 hooks pulling distinct psychological levers (curiosity gap, contrarian, scene, promise, authority), 2 candidates each, waits for the user to pick. Do NOT trigger for social posts (LinkedIn feed, Twitter/X, TikTok, Bluesky, Threads), READMEs or doc first lines, taglines, email subjects or openers, ad copy (Google/Meta Ads), landing-page headlines, press releases, SEO meta, fiction openings, talk/podcast/video script intros, or body rewrites.
+user-invocable: false
+license: MIT
+compatibility: Designed for Claude Code or similar AI coding agents.
+metadata:
+  author: samber
+  version: "1.0.0"
+  openclaw:
+    emoji: "🪝"
+    homepage: https://github.com/samber/cc-skills
+allowed-tools: Read Edit Write Glob Grep Agent
 ---
 
 # Copywriting Hooks
