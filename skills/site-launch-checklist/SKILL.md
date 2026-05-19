@@ -67,14 +67,14 @@ Six skill packs are useful for site launches. **Never install full multi-skill p
 
 ### Pack inventory
 
-| Pack                                 | What it covers                                                                        | Typically useful for                                     |
-| ------------------------------------ | ------------------------------------------------------------------------------------- | -------------------------------------------------------- |
-| `AgriciDaniel/claude-seo`            | SEO + GEO + schema + hreflang + sitemaps audits, parallel sub-agents                  | All site types                                           |
-| `addyosmani/web-quality-skills`      | Lighthouse, Core Web Vitals, accessibility, performance, best practices               | All site types                                           |
-| `trailofbits/skills`                 | Security audit (OWASP, headers, dependencies)                                         | All site types                                           |
-| `aaron-he-zhu/seo-geo-claude-skills` | 20 SEO+GEO skills, CORE-EEAT + CITE frameworks, `/seo:` slash commands                | Content-heavy sites, competitive niches                  |
-| `coreyhaines31/marketingskills`      | ~30 marketing skills (CRO, copywriting, ads, popups, email, paywalls, etc.)           | `marketing/lead-gen`, `SaaS-app`, `training/paid-course` |
-| `jonathimer/devmarketing-skills`     | 33 developer-marketing skills (persona, docs-as-marketing, technical tutorials, etc.) | `doc-site`, `SaaS-app` for developers                    |
+| Pack | What it covers | Typically useful for |
+| --- | --- | --- |
+| `AgriciDaniel/claude-seo` | SEO + GEO + schema + hreflang + sitemaps audits, parallel sub-agents | All site types |
+| `addyosmani/web-quality-skills` | Lighthouse, Core Web Vitals, accessibility, performance, best practices | All site types |
+| `trailofbits/skills` | Security audit (OWASP, headers, dependencies) | All site types |
+| `aaron-he-zhu/seo-geo-claude-skills` | 20 SEO+GEO skills, CORE-EEAT + CITE frameworks, `/seo:` slash commands | Content-heavy sites, competitive niches |
+| `coreyhaines31/marketingskills` | ~30 marketing skills (CRO, copywriting, ads, popups, email, paywalls, etc.) | `marketing/lead-gen`, `SaaS-app`, `training/paid-course` |
+| `jonathimer/devmarketing-skills` | 33 developer-marketing skills (persona, docs-as-marketing, technical tutorials, etc.) | `doc-site`, `SaaS-app` for developers |
 
 ### Skill selection workflow (run at session start)
 
