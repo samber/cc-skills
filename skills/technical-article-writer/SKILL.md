@@ -46,7 +46,7 @@ Follow these phases in order. Each phase produces a concrete artifact the user r
    - Reader support (paid subscription, tip, sponsorship)
    - No conversion goal (purely informational / educational)
 
-   The objective shapes the CTA, how much you give away vs. tease, and where conversion points sit. It will be passed directly to the `copywriting-cta` skill in Phase 5c.
+   The objective shapes the CTA, how much you give away vs. tease, and where conversion points sit. It will be passed directly to the `copywriting-cta` skill in Phase 5b.
 3. **Audience**: Who reads this? (junior devs, senior engineers, CTOs, general tech, DBA, frontend developer...)
 4. **Content type**: Which pattern fits? (see `references/article-structures.md` for full templates)
    - The Bug Hunt / We Rewrote It in X / How We Built It / Lessons Learned
