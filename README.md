@@ -148,7 +148,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 │ conventional-git           │  │ linkedin-ghostwriting       │  │ technical-article-writer   │  │ deep-research              │  │ snyk-agent-scan-compliance │
 │ promql-cli                 │  │ press-release-writer        │  │ substack-ghostwriting      │  │ influence-and-negotiation  │  │ skill-progressive-         │
 │ chrome-extension           │  │ humaniseur-fr               │  │                            │  │ training-report            │  │   disclosure-design        │
-│ crxjs                      │  │                             │  │                            │  │                            │  │                            │
+│ crxjs                      │  │ copywriting-hooks           │  │                            │  │                            │  │                            │
 └────────────────────────────┘  └────────────────────────────┘  └────────────────────────────┘  └────────────────────────────┘  └────────────────────────────┘
 ```
 
@@ -167,6 +167,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `influence-and-negotiation` | -68% | 237 | 6,644 | 50,467 |
 | `skill-progressive-disclosure-design` | -58% | 154 | 3,533 | 3,533 |
 | `site-launch-checklist` | -59% | 222 | 6,772 | 13,350 |
+| `copywriting-hooks` | — | 213 | 5,483 | 10,303 |
 
 ## 🧪 Skill evaluations
 
