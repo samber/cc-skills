@@ -34,11 +34,19 @@ Follow these phases in order. Each phase produces a concrete artifact the user r
 **Stop and ask.** Before writing anything, present the intake questions below to the user and wait for their answers. Do not skip this phase, do not infer silently, and do not start drafting until you have explicit answers or confirmation on every item. Ask the user (or extract from context and confirm):
 
 1. **Topic**: What specific thing are you writing about?
-2. **Objective**: What's the concrete goal? Ask the user explicitly:
-   - Grow subscribers / build an audience?
-   - Drive signups or traffic to a product (SaaS, course, tool)?
-   - Establish authority / thought leadership in a niche?
-   - Something else? The objective shapes the CTA, how much you give away vs. tease, and where links and conversion points sit.
+2. **Objective**: What's the primary goal of this article? Use `AskUserQuestion` to present these options (push back if the user picks more than one — a single primary CTA converts far better than competing asks):
+   - Newsletter subscription / audience growth
+   - Personal branding / thought leadership / authority in a niche
+   - Product or service signup / free trial
+   - Direct purchase
+   - Lead generation (download, gated asset, whitepaper)
+   - Demo or sales call booking
+   - Community join (Discord, Slack, forum)
+   - Engagement (reply, share, comment, restack)
+   - Reader support (paid subscription, tip, sponsorship)
+   - No conversion goal (purely informational / educational)
+
+   The objective shapes the CTA, how much you give away vs. tease, and where conversion points sit. It will be passed directly to the `copywriting-cta` skill in Phase 5c.
 3. **Audience**: Who reads this? (junior devs, senior engineers, CTOs, general tech, DBA, frontend developer...)
 4. **Content type**: Which pattern fits? (see `references/article-structures.md` for full templates)
    - The Bug Hunt / We Rewrote It in X / How We Built It / Lessons Learned
@@ -88,11 +96,11 @@ Present 10 titles ranked by assessment, with a brief note on why each works. Let
 
 ### Phase 3: Hook and intro
 
-Write the opening 2-4 paragraphs. Read `references/hooks-and-titles.md` for the ten hook types.
+**Delegate the hook to the `copywriting-hooks` skill.** Pass the topic, audience, language, content type, and length target from Phase 1. The skill will propose 3-4 hook options (2 candidates each) and wait for the user to pick. Do not write the hook yourself — let the skill run its full workflow.
 
-The intro must accomplish three things:
+After the user picks a hook, write the remaining intro (2-3 paragraphs) around it:
 
-1. **Hook** (1-2 sentences): Create a reason to keep reading. Best for technical content: Credibility, Counter-narrative, Curiosity, or Surprise hooks.
+1. **Hook** (chosen by the user via `copywriting-hooks`)
 2. **Stakes** (1-2 sentences): Why should the reader care? What's the cost of not knowing this?
 3. **Promise** (1 sentence): What will the reader gain by the end?
 
@@ -144,7 +152,13 @@ For the **conclusion**, avoid restating the article. Instead pick one of:
 - **Open question**: What's still unresolved or worth exploring?
 - **Call to action**: What should the reader do next?
 
-### Phase 5b: Humanize
+### Phase 5b: CTA
+
+**Delegate to the `copywriting-cta` skill.** Pass the objective from Phase 1 as the primary objective. The skill will interview the user for any missing inputs (article context, audience relationship, funnel stage, mechanism) and produce the complete CTA recommendation — copy, form, mechanism, A/B test plan, and accessibility check.
+
+Place the CTA output at the end of the article, after the conclusion. Do not write a CTA yourself.
+
+### Phase 5c: Humanize
 
 Invoke a humanizer skill (e.g. "humanize", "humanizer", "de-slop", "natural writing check", "AI detection cleanup", "rewrite like a human") to strip AI-generated patterns — filler words, predictable cadence, over-hedging, hollow transitions, inflated language. Developer audiences have a built-in BS detector; AI-sounding prose kills trust before the reader reaches the technical content.
 
