@@ -185,6 +185,45 @@ BasedOnStyles = Brand, Microsoft, write-good
 
 Run on every pull request to the content repo. Fail the build on Vale errors. **Why**: the prose guide is enforced by tooling, not by editor fatigue. Editors should review judgment calls, not catch banned words.
 
+## Adversarial reading
+
+Quantitative tools surface signals. Adversarial reading surfaces what the numbers miss: the sentences that don't earn their place, the moments authority collapses, the reader questions that go unanswered.
+
+**Core posture:** the writer already believes the draft works. Challenge that assumption. Read to find what fails, not to confirm what succeeds.
+
+### Protocol (per piece)
+
+Read the piece once without stopping. Then re-read and mark:
+
+1. **Dead weight** — sentences or phrases that could be deleted without information loss. Count them. A ratio above 15% signals a draft, not a final piece.
+2. **Authority collapse** — claims that invite "says who?", statistics without sources, analogies that don't hold, jargon used to signal expertise rather than convey meaning.
+3. **Reader dropout points** — paragraphs where a reader would disengage: slow accumulation with no payoff, five consecutive medium-length sentences with no breath point, transitions that require re-reading.
+4. **Unanswered questions** — the "so what?" question every factual claim generates. If the paragraph raises a question and the next paragraph doesn't resolve it, the structure is broken.
+5. **Distance incoherence** — sudden shifts in psychic distance (see [five-layers.md § 4.11](five-layers.md)) with no structural reason (e.g., a close-second-person hook that snaps to third-person-corporate in paragraph two).
+
+### Critique dimensions for brand prose
+
+Adapted from fiction critique methodology (haowjy/creative-writing-skills@prose-critique):
+
+| Dimension | For brand prose | Key question |
+| --- | --- | --- |
+| **Structure** | Piece-level coherence, pacing, payoff mechanics | Does each section earn its length? Does the opening pay off at the close? |
+| **Voice** | POV stability, dialogue effectiveness, implicit meaning | Does the brand voice hold across the full piece, or drift mid-article? |
+| **Prose** | Sentence-level craft, rhythm, word repetition, descriptor-to-narrative ratio | Are there more than 3 consecutive sentences of the same type? |
+| **Brand persona** | Motivational consistency of the brand character | Does the brand's stated archetype match the brand's actual prose behavior? |
+| **Continuity** | Factual accuracy, claim consistency within the piece | Does the piece contradict itself across sections? |
+
+### Sorting findings
+
+Map each finding to a bucket:
+
+- **Signature** — recurring and working; codify as rules to preserve
+- **Default** — recurring and neutral; decide whether to keep or differentiate
+- **Noise** — accidental and inconsistent; no action needed
+- **Liability** — recurring and harmful to credibility or engagement; codify as explicit prohibitions
+
+The liability bucket is what adversarial reading surfaces that metrics miss.
+
 ## Limits of automation
 
 These tools surface signals; none replaces editorial judgment. A piece can pass every quantitative check and still read flat — because the voice markers are missing, or the structure is wrong, or the hook doesn't earn the close. Use audit tools as the first filter, then ship to human editorial review for the rest.

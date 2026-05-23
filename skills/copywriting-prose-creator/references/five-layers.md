@@ -1,5 +1,11 @@
 # The Five Layers of Prose
 
+Two organizing principles before codifying any layer.
+
+**Style is content, not decoration.** Presentation shapes meaning — a faulty rhythm in a sentence can wreck it as surely as a wrong word. Every syntax choice, every breath point, every clause depth decision is a semantic act, not an aesthetic afterthought.
+
+**Concision is the baseline.** Every word must justify its inclusion. Not brevity for its own sake — lean sentences carry more authority than padded ones because they never ask the reader to work without payoff.
+
 Codify each layer independently. The layers are orthogonal: a brand can have distinctive lexicon and generic syntax (Liquid Death), or distinctive syntax and generic lexicon (Basecamp). Decide per layer where to conform and where to differentiate.
 
 ## 1. Lexicon
@@ -182,6 +188,36 @@ Inline, frontloaded link text. **Never** "click here", "read more", "learn more"
 ### 4.10 Blockquotes
 
 Reserved for quotes of 25+ words or for high-emphasis claims.
+
+## 4.11 Reader positioning (psychic distance)
+
+Gardner's psychic distance continuum describes how close or far the reader sits from the action, the brand, or the subject matter. In brand prose (not fiction), the spectrum runs:
+
+| Distance | Register | Example |
+| --- | --- | --- |
+| **Far** | Third-person, external, historical | "Acme was founded in 2005 with a mission to reduce infrastructure costs." |
+| **Medium-far** | Category framing, industry truth | "Most infrastructure teams spend 40% of their time firefighting, not building." |
+| **Medium-close** | Reader-adjacent, hypothetical | "Your team is probably dealing with this right now." |
+| **Close** | Second-person present, internal experience | "You open the dashboard. The number is wrong. Again." |
+
+**Why it matters:** distance controls emotional temperature. Far establishes authority and context. Close creates empathy and drives conversion. Uncontrolled oscillation reads as schizophrenic; deliberate oscillation creates emotional shape.
+
+### Default positions per channel
+
+| Channel grouping | Default | Rationale |
+| --- | --- | --- |
+| Long-form articles | Medium-far opening → close at key anecdote → far for analysis → close at CTA | Authority frame, then humanity, then rigor, then conversion |
+| Social posts | Close hook → medium for argument → close for CTA | Hook must land immediately; brevity requires intimacy |
+| Email & newsletter | Medium-close default | Personalization convention; inbox is a private channel |
+| Marketing copy | Close default for emotional sections, far for proof/credibility | Conversion copy needs immersion; proof copy needs objectivity |
+
+### Shift signals
+
+Moving **closer**: second-person pronouns ("you", "your"), present tense, sensory detail, internal monologue framing ("You're wondering if…"), short sentences, concrete nouns.
+
+Moving **farther**: third-person, past tense, statistics, brand history, passive constructions, abstract nouns, long sentences.
+
+**Diagnose:** scan a 1500-word piece and annotate each paragraph with its distance level (F / MF / MC / C). A flat distribution (all one level) means the piece has no emotional shape. High variance without a pattern means oscillation is accidental. The target is an intentional arc.
 
 ## 5. Voice markers
 

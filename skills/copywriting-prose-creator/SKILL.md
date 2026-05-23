@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents. Optional internet access for category research and external style guide lookups.
 metadata:
   author: samber
-  version: "1.0.0"
+  version: "1.1.0"
   openclaw:
     emoji: "📝"
     homepage: https://github.com/samber/cc-skills
@@ -112,7 +112,7 @@ Codify each layer in order. Each rule needs a _why_ — bare prescriptions witho
 1. **Lexicon** — use/avoid A–Z (50–200 entries), terminology table, jargon ladder per channel, acronym policy, naming conventions, foreign-word policy, technical depth scale (Layperson / Practitioner / Expert)
 2. **Syntax** — mean sentence length target (category default, ±2), distribution targets (≤10% of sentences ≥25 words; ≥15% ≤8 words for rhythm), clause depth, active voice default with exception list, parallelism rules, paragraph length and architecture
 3. **Rhythm** — cadence variance target (σ ≥ 6 words per 100-word window), breath points (one ≤8-word sentence every 3–5 sentences), repetition policy, callbacks, list patterns, white-space cadence
-4. **Structure** — opening hook types (cross-ref `samber/cc-skills@copywriting-hooks`), closing types (cross-ref `samber/cc-skills@copywriting-cta`), transitions, headings (sentence case, frontloaded), subheadings, lists, asides, quotations, citations, blockquotes
+4. **Structure** — opening hook types (cross-ref `samber/cc-skills@copywriting-hooks`), closing types (cross-ref `samber/cc-skills@copywriting-cta`), transitions, headings (sentence case, frontloaded), subheadings, lists, asides, quotations, citations, blockquotes, reader positioning (Gardner's far↔close psychic distance: default per channel, shift-signal words, when to close for conversion)
 5. **Voice markers** — 5–12 signature moves, signoffs, recurring metaphors, idioms, taboos, intentional tics (all rationed; unrationed markers collapse into self-parody)
 
 **Diagnose** the corpus before locking the targets:
@@ -202,8 +202,9 @@ Extract current prose patterns from a corpus before codifying. Empirical pattern
    - Em-dash count per 1,000 words
    - Opening pattern map (first 50 words of 30 pieces, side by side)
    - Closing pattern map
-4. Sort findings into three buckets: **signature** (recurring, distinctive, working) · **default** (recurring, generic, neutral) · **noise** (inconsistent, accidental, weak).
-5. Produce `AUDIT-MEMO.md` (5–10 pages: quantitative tables + qualitative annotated samples + "keep, kill, differentiate" summary). Feed into BUILD Phase 3.
+4. Run an adversarial reading pass on 3–5 representative pieces — challenge the assumption that they work. Mark every sentence that doesn't earn its place, every unanswered reader question, every moment authority collapses, every paragraph where a reader would disengage. See [references/audit-tools.md](references/audit-tools.md#adversarial-reading) for the methodology.
+5. Sort findings into four buckets: **signature** (recurring, distinctive, working) · **default** (recurring, generic, neutral) · **noise** (inconsistent, accidental, weak) · **liability** (recurring, actively harming credibility or engagement — the adversarial pass surfaces these).
+6. Produce `AUDIT-MEMO.md` (5–10 pages: quantitative tables + qualitative annotated samples + "keep, kill, differentiate" summary). Feed into BUILD Phase 3.
 
 ---
 
