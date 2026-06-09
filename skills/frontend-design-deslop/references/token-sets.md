@@ -84,9 +84,9 @@ Swiss restraint. One vivid accent on perceptually-even grays. Authored entirely 
 
 Signature move: strict grid, one teal accent used only on links/CTAs/focus, generous negative space, everything else perceptually-even grays. Swap accent hue by changing one number (H): orange `oklch(0.70 0.19 40)`, grass `oklch(0.65 0.14 145)`, crimson `oklch(0.64 0.22 0.6)`.
 
-## Radix step-9 reference (solid accents, far from indigo)
+## Radix step-9 reference (solid accents)
 
-Teal `#12A594`, Jade `#29A383`, Amber `#FFC53D`, Crimson `#E93D82`, Grass `#46A758`, Bronze `#A18072`, Iris `#5B5BD6`. Use step 9 as the pure solid; override it to inject a brand color.
+Teal `#12A594`, Jade `#29A383`, Amber `#FFC53D`, Crimson `#E93D82`, Grass `#46A758`, Bronze `#A18072`. Use step 9 as the pure solid; override it to inject a brand color. Iris (`#5B5BD6`) is in the indigo/violet band — avoid it as a default accent per the color strategy in `color-oklch.md`.
 
 ## Shared motion tokens (all sets)
 

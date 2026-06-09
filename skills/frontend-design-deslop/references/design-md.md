@@ -120,7 +120,7 @@ Write DESIGN.md using this structure. Fill every section; use OKLCH with a hex f
 
 ## Tokens (source of truth)
 
-\`\`\`css :root { --font-display: ...; --font-body: ...; --font-mono: ...; /_ scale, spacing, radius, color in OKLCH _/ } @media (prefers-color-scheme: dark) { :root { /_ overrides _/ } } \`\`\`
+\`\`\`css :root { --font-display: ...; --font-body: ...; --font-mono: ...; /* scale, spacing, radius, color in OKLCH */ } @media (prefers-color-scheme: dark) { :root { /* overrides */ } } \`\`\`
 
 - Adapter: [plain CSS | Tailwind v4 @theme | shadcn semantic tokens] (see adapters.md)
 

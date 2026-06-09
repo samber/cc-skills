@@ -1,6 +1,16 @@
 ---
 name: frontend-design-deslop
 description: Produce distinctive, non-generic UI and design applications well, working strategy-first. Identify the project (landing page, SaaS app, dashboard, ecommerce, presentation, docs, portfolio...) and its positioning and personality, commit to brand adjectives, translate into a typography and color system, then apply the craft layer (layout, components and states, motion, iconography, imagery, dark mode and theming, accessibility), avoiding the AI-slop / Claude-esque default. This is both a de-slop and an expert app-design skill. Use this whenever building or styling any web frontend, app, dashboard, landing page, deck, or artifact, or when the user says "make it not look like AI", "de-slopify", "deslop", "less generic", "give it character", "design a UI for X", "design an app", "update DESIGN.md", or complains the output looks like every other AI site. Trigger even when the user just says "build a UI for X" without naming an aesthetic, because the default without this skill is slop.
+user-invocable: false
+license: MIT
+compatibility: Designed for Claude Code or similar AI coding agents.
+metadata:
+  author: samber
+  version: "1.0.0"
+  openclaw:
+    emoji: "🎨"
+    homepage: https://github.com/samber/cc-skills
+allowed-tools: Read Edit Write Glob Grep AskUserQuestion Agent WebSearch
 ---
 
 # frontend design deslop
