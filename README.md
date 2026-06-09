@@ -191,7 +191,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 
 |             | With Skill | Without Skill | Delta     |
 | ----------- | ---------- | ------------- | --------- |
-| **Overall** | **99%**    | **50%**       | **+49pp** |
+| **Overall** | **98%**    | **50%**       | **+48pp** |
 
 See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 

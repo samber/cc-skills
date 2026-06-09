@@ -1,0 +1,179 @@
+{
+  "skill_name": "frontend-design-deslop",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin. Do not load any design, frontend, or UI skill that could compensate for missing frontend-design-deslop guidance."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Build a landing page for a new AI coding assistant. Start with the design and begin coding.",
+      "trap": "Without the skill, the model jumps straight to code — Inter font, indigo palette, hero + 3 feature cards. With the skill, Phase 0 runs first: artifact type is classified, brand adjectives are committed to, and no visual decision is made until the strategy is locked.",
+      "expected_output": "The response classifies the artifact type (marketing landing page), asks for or states brand adjectives, and does NOT immediately write code or choose fonts/colors. Discovery runs before any visual or code work.",
+      "files": [],
+      "assertions": [
+        { "id": "1.1", "description": "Response identifies or names the artifact type (landing page, marketing page, or equivalent) before making any design decision" },
+        { "id": "1.2", "description": "Response commits to or asks for brand adjectives before any visual choice (font, color, layout)" },
+        { "id": "1.3", "description": "Response does NOT immediately write code or produce CSS/HTML with a font and color already chosen" },
+        { "id": "1.4", "description": "Response does NOT choose Inter, Roboto, or system-ui as the primary font without first establishing brand direction" }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "I'm designing a fintech dashboard. Choose a primary typeface. It should feel professional and trustworthy.",
+      "trap": "Without the skill, the model picks Inter or system-ui — 'professional, widely used, clean'. The skill bans these as primary faces and ties font selection to brand adjectives, not generic preference.",
+      "expected_output": "A distinctive typeface that is NOT Inter, Roboto, Arial, or system-ui, with the choice tied to the adjectives 'professional' and 'trustworthy'. Sourced from Fontshare, Google Fonts, or similar.",
+      "files": [],
+      "assertions": [
+        { "id": "2.1", "description": "Chosen primary typeface is NOT Inter" },
+        { "id": "2.2", "description": "Chosen primary typeface is NOT Roboto, Arial, or system-ui" },
+        { "id": "2.3", "description": "Response ties the font choice to brand adjectives or positioning, not just 'widely used' or 'clean'" },
+        { "id": "2.4", "description": "Response explains why a generic choice (Inter/system-ui) would undermine differentiation" }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Design the primary brand color palette for a modern B2B SaaS product. It should look contemporary and professional.",
+      "trap": "Without the skill, the model picks indigo or violet — the statistical median of 2019–2024 SaaS design. With the skill, the indigo/violet band is identified as the red ocean; the palette targets uncontested color territory.",
+      "expected_output": "A palette that avoids indigo/violet as the primary brand color, with an explanation that this space is saturated. Colors expressed in OKLCH. Differentiated territory chosen instead.",
+      "files": [],
+      "assertions": [
+        { "id": "3.1", "description": "Primary brand color is NOT indigo, violet, or purple (hue range roughly 260–310 deg)" },
+        { "id": "3.2", "description": "Response explains the indigo/violet band is overcrowded or is a 'red ocean'" },
+        { "id": "3.3", "description": "At least one color value is expressed in OKLCH notation" },
+        { "id": "3.4", "description": "Response mentions or applies the 60-30-10 distribution (dominant / brand / accent) or equivalent hierarchy" }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Define the design token for a vibrant teal brand color to be used across a web application.",
+      "trap": "Without the skill, the model outputs hex (#14b8a6) or hsl(). The skill requires OKLCH as the authoring format for all colors.",
+      "expected_output": "A CSS custom property with the color value expressed in OKLCH: e.g., --color-accent: oklch(0.72 0.18 192). NOT hex, NOT hsl, NOT rgb.",
+      "files": [],
+      "assertions": [
+        { "id": "4.1", "description": "Color value uses oklch(...) notation" },
+        { "id": "4.2", "description": "Color value is NOT expressed in hex (#...) format" },
+        { "id": "4.3", "description": "Color value is NOT expressed in hsl() or rgb() format" },
+        { "id": "4.4", "description": "Token is defined as a CSS custom property (--variable-name) with a semantic role name" }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Build a primary call-to-action button for a web app. Style it completely.",
+      "trap": "Without the skill, the model writes default and hover states only — the two most obvious states. The skill mandates the full state matrix: default, hover, active, focus-visible, disabled, loading, error.",
+      "expected_output": "A button with styles for ALL states: default, hover, active, :focus-visible (with a visible ring), disabled, loading (cursor and appearance), and error or destructive variant. Focus indicator is explicit and not removed.",
+      "files": [],
+      "assertions": [
+        { "id": "5.1", "description": "Button has :focus-visible styles with a visible outline or ring (not just :focus, and not removed)" },
+        { "id": "5.2", "description": "Button has :disabled styles (not just pointer-events: none; must visually communicate disabled state)" },
+        { "id": "5.3", "description": "Button has :active styles distinct from :hover" },
+        { "id": "5.4", "description": "Response mentions or implements a loading state for the button" },
+        { "id": "5.5", "description": "Focus outline is NOT set to 'none' or '0' without a replacement" }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "The app currently has a light theme with a white background and black text. Add dark mode support.",
+      "trap": "Without the skill, the model inverts: background → black, text → white, or uses filter: invert(). The skill requires dark mode to be designed, not inverted: near-black bg, off-white text, elevation via lightness, desaturated accents.",
+      "expected_output": "Dark mode tokens that do NOT use pure black (#000 / oklch(0 0 0)) for background or pure white for text. Elevation expressed via lightness. No filter: invert().",
+      "files": [],
+      "assertions": [
+        { "id": "6.1", "description": "Dark background is NOT pure black (#000000, #000, or oklch(0 0 0))" },
+        { "id": "6.2", "description": "Dark foreground text is NOT pure white (#ffffff, #fff, or oklch(1 0 0))" },
+        { "id": "6.3", "description": "Response does NOT use filter: invert() or similar blanket inversion technique" },
+        { "id": "6.4", "description": "Response mentions elevation via lightness (lighter surfaces = higher elevation in dark mode) or desaturated accents" }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Build a monthly revenue table. Columns: Month, Revenue, Growth %. Show 6 months of data.",
+      "trap": "Without the skill, numeric columns are center-aligned (default or habit). The skill mandates left-align text, right-align numeric columns with tabular-nums.",
+      "expected_output": "Revenue and Growth % columns are right-aligned with font-variant-numeric: tabular-nums. Month (text) column is left-aligned. Numbers do NOT use center alignment.",
+      "files": [],
+      "assertions": [
+        { "id": "7.1", "description": "Numeric columns (Revenue, Growth %) use text-align: right" },
+        { "id": "7.2", "description": "Numeric columns apply font-variant-numeric: tabular-nums (or equivalent)" },
+        { "id": "7.3", "description": "Text column (Month) uses text-align: left (not center)" },
+        { "id": "7.4", "description": "Numeric columns do NOT use text-align: center" }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Animate a sidebar panel opening and closing on click. The sidebar is 280px wide.",
+      "trap": "Without the skill, the model animates width from 0 to 280px — a layout property that forces reflow. The skill bans animating layout properties; transform: translateX() is the correct approach.",
+      "expected_output": "Sidebar animation uses transform: translateX(-280px) → translateX(0), NOT width: 0 → 280px. Duration under 300ms, ease-out easing.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "Sidebar animation uses transform (translateX or equivalent), NOT width animation" },
+        { "id": "8.2", "description": "Animation does NOT transition the width property from 0 to a fixed value" },
+        { "id": "8.3", "description": "Transition duration is 300ms or less" },
+        { "id": "8.4", "description": "Easing uses ease-out or a similar deceleration curve" }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Style three components for a web app: a primary button, a card, and a text input. The brand color is blue.",
+      "trap": "Without the skill, the model scatters hardcoded hex values and pixel values directly inside component CSS. The skill mandates emitting a token table first, then referencing tokens in all components.",
+      "expected_output": "A token table (CSS custom properties) is produced BEFORE any component styles. Component CSS references tokens (var(--...)), never raw hex or scattered px.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "A token table (CSS custom properties block or equivalent) is defined BEFORE any component styles are written" },
+        { "id": "9.2", "description": "Component styles reference tokens via var(--...) or equivalent, NOT hardcoded hex colors" },
+        { "id": "9.3", "description": "The same color value does NOT appear hardcoded in multiple component definitions" },
+        { "id": "9.4", "description": "At least spacing/padding tokens are defined alongside color tokens" }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Design an analytics dashboard with 6 KPI cards, a line chart, a bar chart, a filterable data table, and a left sidebar nav.",
+      "trap": "Without the skill, the model applies generous whitespace and airy spacing — appropriate for landing pages but wrong for dashboards. The skill teaches density fits the artifact: dashboards use tight spacing within groups.",
+      "expected_output": "Design decisions acknowledge high information density: compact padding on KPI cards, tight spacing within data groups, smaller text size acceptable, 12-column or bento grid rather than a centered narrow column.",
+      "files": [],
+      "assertions": [
+        { "id": "10.1", "description": "Response acknowledges that dashboards warrant higher information density than marketing or portfolio pages" },
+        { "id": "10.2", "description": "Spacing described as tight within data groups, not uniformly generous" },
+        { "id": "10.3", "description": "Response does NOT apply landing page whitespace conventions (e.g., large section padding, hero-style vertical space) to the dashboard" },
+        { "id": "10.4", "description": "Response mentions artifact type (dashboard) as the reason for density decisions" }
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Build a login form with email and password fields. Make it clean and minimal.",
+      "trap": "Without the skill, the model uses placeholder text as the only label (placeholder='Email address', no <label>). The skill forbids placeholder-as-label and requires real labels + inline validation.",
+      "expected_output": "Form uses real <label> elements associated via htmlFor/for. Placeholders (if present) are supplementary, NOT the sole identifier. Inline validation is mentioned.",
+      "files": [],
+      "assertions": [
+        { "id": "11.1", "description": "Form uses real <label> elements, not placeholder-only identification" },
+        { "id": "11.2", "description": "Labels are associated with their inputs via htmlFor (React) or for (HTML) attribute" },
+        { "id": "11.3", "description": "Placeholder text is NOT the sole means of identifying what the field expects" },
+        { "id": "11.4", "description": "Response mentions or implements inline validation (error message on the field, not just a toast)" }
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "I want to redesign my personal portfolio site. Where do we start?",
+      "trap": "Without the skill, the model immediately proposes aesthetics or starts designing. With the skill, Phase 0 runs first and DESIGN.md is named as the durable output.",
+      "expected_output": "Response classifies artifact type (portfolio), asks for or proposes brand adjectives, and mentions that a DESIGN.md will capture all decisions. Does NOT jump straight to color/font/code choices.",
+      "files": [],
+      "assertions": [
+        { "id": "12.1", "description": "Response mentions creating or writing a DESIGN.md file as a durable output" },
+        { "id": "12.2", "description": "Response asks for or proposes committing to brand adjectives before any visual decision" },
+        { "id": "12.3", "description": "Response does NOT immediately jump to suggesting a color palette or specific font" },
+        { "id": "12.4", "description": "Response identifies artifact type (portfolio / personal brand site) and its design priorities" }
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Make this landing page memorable and distinctive. Here is the current design: plain white background, Inter font, blue buttons, 3-column feature section.",
+      "trap": "Without the skill, the model piles on multiple competing 'signature' elements (gradient header, animation, pattern, custom font, bold typography, all at once). The skill teaches ONE signature move per project.",
+      "expected_output": "Response identifies exactly ONE primary signature move that defines the overall aesthetic. Does not propose 4+ competing special elements without committing to a single defining one. Ties the move to positioning/adjectives.",
+      "files": [],
+      "assertions": [
+        { "id": "13.1", "description": "Response names or commits to exactly ONE primary signature move" },
+        { "id": "13.2", "description": "Response does NOT list 4 or more competing signature elements as equally important without picking one" },
+        { "id": "13.3", "description": "The chosen signature move is connected to the site's positioning or personality" },
+        { "id": "13.4", "description": "Response flags Inter as generic and recommends replacing it with a distinctive alternative" }
+      ]
+    }
+  ]
+}
