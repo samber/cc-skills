@@ -1,0 +1,76 @@
+/* token-core.css
+   Framework-agnostic source of truth. Authored in OKLCH.
+   This is the "Editorial Ink" default; swap values from token-sets.md for other directions.
+   Adapters (Tailwind v4 @theme, shadcn :root) layer on top of this. */
+
+:root {
+  /* Type families: never Inter/Roboto/system as primary */
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Newsreader", Georgia, serif;
+  --font-mono: "JetBrains Mono", ui-monospace, monospace;
+
+  /* Type scale, ratio ~1.25, steps clearly distinct */
+  --text-xs: 0.8rem;
+  --text-sm: 1rem;
+  --text-md: 1.25rem;
+  --text-lg: 1.563rem;
+  --text-xl: 1.953rem;
+  --text-2xl: 2.441rem;
+  --text-3xl: 3.052rem;
+
+  /* Spacing: 4px base, constrained scale */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-8: 5rem;
+
+  /* Radius: committed, max two values. No blob-rounding. */
+  --radius: 2px;
+  --radius-pill: 999px;
+
+  /* Shadow approach: pick ONE. Here: a defined edge, no diffuse drop. */
+  --border: 1px solid oklch(0.85 0.01 250);
+
+  /* Color: dominant + one sharp accent. Not indigo/violet. */
+  --color-bg: oklch(0.97 0.008 95);      /* warm paper, used deliberately */
+  --color-fg: oklch(0.22 0.004 250);     /* deep ink */
+  --color-muted: oklch(0.55 0.01 250);
+  --color-border: oklch(0.85 0.01 250);
+  --color-accent: oklch(0.53 0.15 30);   /* brick red, the signature */
+  --color-accent-fg: oklch(0.99 0 0);
+
+  /* Motion: communicative only. ease-out under 300ms is the default.
+     Animate transform and opacity only. See references/motion.md. */
+  --duration-instant: 100ms;             /* press, toggle, tooltip */
+  --duration-fast: 150ms;                /* dropdowns, small popovers */
+  --duration-normal: 200ms;              /* standard transitions, fades */
+  --duration-slow: 300ms;                /* larger panels */
+  --duration-sheet: 500ms;               /* sheets, drawers */
+  --ease-out: cubic-bezier(0.23, 1, 0.32, 1);      /* enter, most UI */
+  --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);  /* on-screen movement */
+  --ease-sheet: cubic-bezier(0.32, 0.72, 0, 1);    /* iOS-like drawers */
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);         /* leaving the screen */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark is designed, not inverted: near-black base, off-white ink,
+       elevation by lightness (each raised surface +3 to 4 L), lighter
+       desaturated accent, borders lighter than the surface. See dark-mode.md. */
+    --color-bg: oklch(0.18 0.01 250);
+    --color-fg: oklch(0.95 0.008 95);
+    --color-muted: oklch(0.70 0.01 250);
+    --color-border: oklch(0.32 0.01 250);
+  }
+}
+
+/* Default to no motion; opt in when the user has not asked to reduce it. */
+@media (prefers-reduced-motion: no-preference) {
+  .animated {
+    transition: transform var(--duration-fast) var(--ease-out),
+                opacity var(--duration-fast) var(--ease-out);
+  }
+}
