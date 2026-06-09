@@ -1,7 +1,7 @@
 ---
 name: copywriting-hooks
 description: >
-  Generate opening hooks for long-form articles in EN or FR — blog posts, Substack/Medium/dev.to, LinkedIn long-form, paid newsletters, opinion essays, reported features, technical deep-dives. Trigger whenever the user asks for a hook, opening, lede, intro, first sentence/paragraph, opener, accroche, attaque, phrase d'accroche, or première phrase — including making a flat intro punchier or rewriting a draft opening. Also trigger when ghostwriting skills reach the opening step. Proposes 3-4 hooks pulling distinct psychological levers (curiosity gap, contrarian, scene, promise, authority), 2 candidates each, waits for the user to pick. Do NOT trigger for social posts (LinkedIn feed, Twitter/X, TikTok, Bluesky, Threads), READMEs or doc first lines, taglines, email subjects or openers, ad copy (Google/Meta Ads), landing-page headlines, press releases, SEO meta, fiction openings, talk/podcast/video script intros, or body rewrites.
+  Generate opening hooks and post titles for long-form articles in EN or FR — blog posts, Substack/Medium/dev.to, LinkedIn long-form, paid newsletters, opinion essays, reported features, technical deep-dives. Trigger whenever the user asks for a hook, opening, lede, intro, first sentence/paragraph, opener, accroche, attaque, phrase d'accroche, or première phrase — including making a flat intro punchier or rewriting a draft opening. Also trigger when user asks for a post title, titre d'article, headline, or when ghostwriting skills reach the opening or titling step. Proposes 3-4 hooks pulling distinct psychological levers (curiosity gap, contrarian, scene, promise, authority), 2 candidates each, waits for the user to pick. Do NOT trigger for social posts (LinkedIn feed, Twitter/X, TikTok, Bluesky, Threads), READMEs or doc first lines, taglines, email subjects or openers, ad copy (Google/Meta Ads), landing-page headlines, press releases, SEO meta, fiction openings, talk/podcast/video script intros, or body rewrites.
 
 user-invocable: true
 license: MIT
@@ -350,11 +350,87 @@ For deeper register guidance, see `references/anglophone-vs-francophone.md`.
 
 ---
 
+## Post Titles
+
+A **title** is what the reader sees before clicking. A **hook** is what they read after. Both earn attention through different mechanisms: the title competes for clicks in a feed or search result; the hook earns continued reading after the click.
+
+### The core mechanic: calibrated curiosity
+
+A title must open a gap without closing it — but the gap must feel real, not manufactured. Research on 8,977 A/B experiments (Upworthy, *Scientific Reports* 2024) found a curvilinear relationship: too vague produces confusion (no foothold for curiosity); too specific removes motivation to click. The sweet spot: name the stakes, withhold the resolution.
+
+**The craft test.** Does the title open a gap the reader cares about, and does the article genuinely close it? If yes, that's craft. If the content doesn't deliver what the title implied, that's clickbait — it destroys trust for future clicks.
+
+### Core formulas
+
+**Curiosity / Gap**
+- `The [Adjective] Truth About [Topic]` — "The Counterintuitive Truth About Go Generics"
+- `What [Group] Won't Tell You About [Topic]`
+- `The Real Reason [Phenomenon]` — "The Real Reason Most Content Gets Zero Shares"
+- `[Number] Things Every [Audience] Gets Wrong About [Topic]`
+
+**Contrarian / Negative** (negative superlatives: +63% CTR vs. positive — Outbrain, 65k titles)
+- `Stop [Doing X]. Here's Why.` / `Why [Common Belief] Is Wrong`
+- `[Number] [Myths/Mistakes] That Are Killing Your [Result]`
+
+**Specificity / Data**
+- `I Analyzed [Number] [Things] — Here's What I Found`
+- `[Number]% of [Group] Does This Wrong`
+- Brackets signal format honestly and add +38% CTR: `How I Cut Build Time by 60% [Benchmark]`
+
+**List / Number** (numbers: +36% CTR — Conductor; odd numbers: +20% CTR — CMI)
+- `[Number] [Adjective] Ways to [Goal]` / `[Number] Mistakes to Avoid When [Task]`
+
+**How-To** (3× more B2B shares than other formats — BuzzSumo, 10M LinkedIn articles)
+- `How to [Task] Without [Painful Constraint]` / `How to [Task] Even If [Limiting Belief]`
+
+### The "putaclic léger" zone
+
+Slightly clickbait but honest — maximum tension with a real promise:
+
+- Replace "won't believe" → "surprised to learn": same curiosity, honest register
+- Add specificity: "I saved €500/month" beats "I saved money"
+- Add a constraint: "without quitting your job" creates the gap
+- Use "the real reason" or "what nobody tells you" — they signal a non-consensus view you must substantiate
+- Add a bracket `[Étude]`, `[Template]`, `[Benchmark]` to signal payoff type
+
+**FR — putaclic carries stronger pejorative weight.** Apply the **70/30 rule**: 70% information, 30% mystery. Tension and contradiction work; faux drama ("J'arrête tout 😱") destroys credibility immediately in French professional contexts. Canonical FR structure: "Tout le monde vous dit de faire A. Voici pourquoi je fais B." Formulas saturated on LinkedIn FR in 2025+: "J'ai fait une erreur, voici ce que j'ai appris", "J'arrête [plateforme]".
+
+### Platform constraints
+
+| Platform | Max display | Key rule |
+| --- | --- | --- |
+| Blog / SEO | 50–60 chars | Front-load keyword. Power words reduce CTR by ~14% in search. |
+| LinkedIn article | 150 chars hard | Under 100 for clean display. |
+| LinkedIn feed | 120–140 chars | Opening line = the title. Engineer a "see more" click. |
+| Newsletter subject | 30–50 chars | First 30 chars carry the signal. Avoid "Newsletter" (−18.7% opens). |
+| X / Twitter | ≤200 chars | First tweet = the title. Must stand alone. |
+
+### Anti-patterns for titles
+
+- Generic superlatives without specificity: "The Ultimate Guide to X" — no gap
+- "You won't believe..." / "Vous n'allez pas y croire..." — overused, signals hype
+- Power words (Secret, Amazing, Ultimate) in SEO titles — signal hype, lower CTR
+- Titles that give away the full answer — if the title answers the question, there is no reason to click
+- Recycling saturated fingerprints: "I analyzed X things, here's what I found" — effective 2022–2023, saturating 2025–2026
+
+### Behavior for title requests
+
+1. Confirm topic, audience, language, platform
+2. Propose **3–5 titles** across distinct formulas — not three variants of the same type
+3. Include at minimum: one curiosity/gap, one contrarian or data, one list or how-to
+4. Use the same output format as hooks: numbered options, wait for the pick
+5. After the pick, note what the title commits the article's opening to
+
+For the full 58-formula catalog (EN + FR) with data citations, see `references/title-formulas.md`.
+
+---
+
 ## Reference files (load only when needed)
 
 - `references/anti-patterns.md`: extended cliché and AI-tell list.
 - `references/anglophone-vs-francophone.md`: register conventions, what does not translate.
 - `references/formulas.md`: 30 reusable templates (EN + FR) for quick template-based hooks.
+- `references/title-formulas.md`: 58-formula post title catalog (EN + FR), platform constraints table, data summary.
 
 The catalog above is sufficient for most invocations. Load references only when the user asks for templates, deeper register guidance, or to sanity-check anti-patterns.
 
