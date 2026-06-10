@@ -6,7 +6,7 @@ compatibility: Requires Claude Code
 user-invocable: true
 metadata:
   author: samber
-  version: "1.0.3"
+  version: "1.1.0"
   openclaw:
     emoji: "📊"
     homepage: https://github.com/samber/cc-skills
@@ -301,6 +301,22 @@ Set up one keyword per line at f5bot.com/add:
 - [ ] Domain name (catches link shares)
 - [ ] Key feature or library names
 - [ ] Common misspellings if applicable
+
+**Competitor analysis (`marketing/lead-gen`, `SaaS-app`, `training/paid-course` only):**
+
+Before writing copy, setting up ads, or planning content, run a competitor analysis to understand what is already working in the market — positioning, messaging angles, CTA patterns, pricing presentation, and content strategy.
+
+Use a deep research tool or a competitor analysis skill if one is available in the toolchain. Ask the user:
+
+- "Which competitors should we analyze?" (free text, 2-5 names or URLs)
+- "What are we looking to extract?" (`positioning-and-messaging` | `pricing-strategy` | `content-and-seo` | `full-spectrum`)
+
+Feed the output into:
+
+- Phase 5 keyword strategy (target queries they rank for but you can outrank or flank)
+- `TONE.md` voice calibration (deliberately differentiate from the dominant tone in the category)
+- Phase 6 OG copy and CTA language (borrow proven frames, don't clone verbatim)
+- Copywriting sub-skills invoked later (pass the competitor snapshot as context)
 
 **Conditional (ask user, default per site type from `references/decisions.md`):**
 
