@@ -18,7 +18,7 @@ The intake that produces the design system. Strategy drives design: resolve what
 
 ## 1. Asking questions (CRITICAL)
 
-ALWAYS use the AskUserQuestion tool for ANY question to the user. Never ask questions as plain text output. The tool gives a guided, interactive experience with structured options the user can answer in one tap. Every single user question must go through this tool. (On claude.ai use `ask_user_input_v0`.) Use it to gather preferences before deciding, present options with clear tradeoffs, validate direction before building, and confirm outputs before finishing. Never make a significant design decision without user input; the result belongs to them. Discipline on top: batch related questions, give 2 to 4 concrete options each, infer from context first and confirm inferences, ask only the high-signal subset. Do not interrogate.
+Ask through the question tool, one at a time — never as plain-text prose (see the SKILL.md **Questions:** directive). Use it to gather preferences before deciding, present options with clear tradeoffs, validate direction before building, and confirm outputs before finishing. Never make a significant design decision without user input; the result belongs to them. Discipline on top: batch related questions, give 2 to 4 concrete options each, infer from context first and confirm inferences, ask only the high-signal subset. Do not interrogate.
 
 ## 2. Protocol
 

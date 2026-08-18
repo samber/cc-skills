@@ -13,6 +13,8 @@ metadata:
 allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebSearch WebFetch
 ---
 
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
+
 # frontend design deslop
 
 AI-generated UI looks generic for two reasons. First, with no constraints the model samples the statistical median of 2019-2024 web code, which is Tailwind UI's `bg-indigo-500`, Inter, rounded cards, and soft shadows. You cannot out-prompt a vacuum. Second, and deeper: designing before you know what you are designing. A corporate landing page, a creative portfolio, a developer-tool landing page, an analytics dashboard, and an ecommerce product page share almost no design DNA. A beautiful aesthetic that fights the artifact's job is its own slop.
@@ -23,9 +25,7 @@ This skill does two jobs at once: it de-slops the default AI look, and it design
 
 ## Asking questions (CRITICAL)
 
-ALWAYS use the AskUserQuestion tool for ANY question to the user. Never ask questions as plain text output. The tool gives a guided, interactive experience with structured options that the user can answer in one tap. Every single user question must go through this tool. (On claude.ai the equivalent tool is `ask_user_input_v0`; use whichever structured question tool the environment provides.)
-
-Discipline on top of that rule: batch related questions, offer 2 to 4 concrete options each, and ask only the high-signal subset that changes the design system. Infer from context first and confirm inferences rather than re-asking. The bank is generous; the asking is selective. Do not interrogate.
+Every single user question must go through the question tool (see the **Questions:** directive above) — never as plain-text prose. Discipline on top: batch related questions, offer 2 to 4 concrete options each, and ask only the high-signal subset that changes the design system. Infer from context first and confirm inferences rather than re-asking. The bank is generous; the asking is selective. Do not interrogate.
 
 ## Phase 0: Discover and commit to words (do this FIRST, before any code)
 
@@ -102,7 +102,7 @@ Load on demand.
 Foundation and intake:
 
 - `references/design-theory.md` - the mechanisms behind every choice: hierarchy, Gestalt, CRAP, signal-vs-noise, affordances, interaction laws. Read once early.
-- `references/discovery.md` - design intake: AskUserQuestion protocol, commit-to-words, question bank, personality-to-token translation table. Read at the start of Phase 0.
+- `references/discovery.md` - design intake: question-tool protocol, commit-to-words, question bank, personality-to-token translation table. Read at the start of Phase 0.
 - `references/design-md.md` - the DESIGN.md schema and persistence conventions. The durable output of the whole skill. Read in Phase 0 (to consume an existing file) and Phase 3 (to write one).
 - `references/artifact-types.md` - artifact taxonomy with per-type priorities, layout grammar, density, positioning variants, anti-patterns. Read at the start of Phase 0.
 
