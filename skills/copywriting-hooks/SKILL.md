@@ -13,7 +13,7 @@ metadata:
   openclaw:
     emoji: "🪝"
     homepage: https://github.com/samber/cc-skills
-allowed-tools: Read Edit Write Glob Grep Agent
+allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
 # Copywriting Hooks
@@ -48,7 +48,7 @@ When this skill triggers:
 2. **Pick 3 to 4 hooks from the catalog** below that are genuinely different. Different levers, not three flavors of contrarian.
 3. **Write 2 candidates per hook**, specific to the user's article. The two candidates within one hook should explore different angles (different anecdote, different statistic, different scene), not be rewordings of each other.
 4. **Present using the Output format** below.
-5. **Use `ask_user_input_v0`** if available. The choice is a small fixed set, which is what that tool is for.
+5. **Ask through the question tool.** The choice is a small fixed set, which is what that tool is for.
 6. **Wait for the user's pick.** Do not pick for them.
 7. **After they pick**, name what the choice commits the rest of the article to. A contrarian hook commits paragraphs 2 to 3 to defending the non-consensus claim. A scene opener commits the next section to either resolving the scene or productively delaying it.
 

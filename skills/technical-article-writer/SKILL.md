@@ -13,6 +13,8 @@ metadata:
 allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestion
 ---
 
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
+
 # Technical Article Writer
 
 Write technical articles that developers actually want to read. This skill combines structural frameworks from technical writing, hook engineering from copywriting, and practitioner-tested patterns for developer content.
@@ -34,7 +36,7 @@ Follow these phases in order. Each phase produces a concrete artifact the user r
 **Stop and ask.** Before writing anything, present the intake questions below to the user and wait for their answers. Do not skip this phase, do not infer silently, and do not start drafting until you have explicit answers or confirmation on every item. Ask the user (or extract from context and confirm):
 
 1. **Topic**: What specific thing are you writing about?
-2. **Objective**: What's the primary goal of this article? Use `AskUserQuestion` to present these options (push back if the user picks more than one — a single primary CTA converts far better than competing asks):
+2. **Objective**: What's the primary goal of this article? Present these options through the question tool (push back if the user picks more than one — a single primary CTA converts far better than competing asks):
    - Newsletter subscription / audience growth
    - Personal branding / thought leadership / authority in a niche
    - Product or service signup / free trial
