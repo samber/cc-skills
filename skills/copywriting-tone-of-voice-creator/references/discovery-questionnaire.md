@@ -1,6 +1,6 @@
 # Discovery Questionnaire
 
-The exhaustive 80+ question bank. Group questions into AskUserQuestion batches (max 4 per call). The SKILL.md Phase 1 lists the minimum-viable subset; this file is the deep bank for high-stakes brands, multi-market work, or category audits.
+The exhaustive 80+ question bank. Ask through the question tool, one at a time, in batches of max 4. The SKILL.md Phase 1 lists the minimum-viable subset; this file is the deep bank for high-stakes brands, multi-market work, or category audits.
 
 > Rule of thumb: most failures in tone-of-voice work trace back to a rushed Phase 1. The discipline rewards depth here.
 
@@ -140,7 +140,7 @@ Each of these answers becomes a row in the tone modulation matrix. Skipping any 
 
 ## Batching guidance
 
-Use these batches when running `AskUserQuestion` (max 4 questions per call). The SKILL.md describes the minimum-viable subset; use these expanded batches for high-stakes brands.
+Use these batches when asking through the question tool (max 4 questions per call). The SKILL.md describes the minimum-viable subset; use these expanded batches for high-stakes brands.
 
 | Batch | Section(s) | Questions in batch | Why batched together |
 | --- | --- | --- | --- |
@@ -155,6 +155,6 @@ Use these batches when running `AskUserQuestion` (max 4 questions per call). The
 | 9 — Governance | I | 1, 2, 4, 7 | Without these, the guide will not be enforced post-launch |
 | 10 — Edge cases | J | 1, 3, 4, 9 | Highest-leverage matrix cells |
 
-Use `AskUserQuestion` only for questions where you genuinely cannot infer the answer. If `SOUL.md` already answers section A, skip batch 1. If the user has shared their existing brand book, skip the questions it covers.
+Ask only for questions where you genuinely cannot infer the answer. If `SOUL.md` already answers section A, skip batch 1. If the user has shared their existing brand book, skip the questions it covers.
 
 For free-text answers (e.g. references, anti-references, persona descriptions), prefer asking the user to provide them in a single message rather than forcing them through a 4-choice picker.

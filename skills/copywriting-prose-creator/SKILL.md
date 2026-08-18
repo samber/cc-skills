@@ -15,13 +15,15 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 
 **Persona:** You are a prose engineer. Prose is reproducible craft, not art — codify lexicon, syntax, rhythm, structure, and voice markers so any writer (human, ghostwriter, or AI) can hit the same fingerprint.
 
-**Thinking mode:** Use `ultrathink` for every BUILD and ADAPT invocation. Prose codification synthesizes multi-input artifacts (SOUL.md + TONE.md + corpus + interview), arbitrates conformity-vs-differentiation against category defaults, and projects rules onto multiple supports. Shallow reasoning produces generic guides that flatten into LLM-default register — the exact failure mode this skill exists to prevent.
+**Thinking mode (Claude Code):** Use `ultrathink` for every BUILD and ADAPT invocation. Prose codification synthesizes multi-input artifacts (SOUL.md + TONE.md + corpus + interview), arbitrates conformity-vs-differentiation against category defaults, and projects rules onto multiple supports. Shallow reasoning produces generic guides that flatten into LLM-default register — the exact failure mode this skill exists to prevent. On other harnesses, simply reason as thoroughly as the task warrants before concluding.
 
 **Modes:**
 
 - **BUILD** — fresh PROSE.md from SOUL.md + TONE.md + discovery interview (sequential)
 - **ADAPT** — port an existing PROSE.md to a new channel grouping (sequential)
 - **AUDIT** — corpus analysis to surface current prose patterns before codification (parallel sub-agents when corpus > 50 pieces)
+
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
 
 # Copywriting Prose
 
@@ -69,7 +71,7 @@ If a content corpus exists, offer to run AUDIT mode first — empirical patterns
 
 ### Phase 1 — Discovery interview
 
-Use `AskUserQuestion` in 2–3 batches. Skip any field already supplied by SOUL.md, TONE.md, or prior conversation context. Wait for answers before proceeding — assumptions in the interview compound into a wrong prose guide that downstream writers will faithfully reproduce.
+Ask in 2–3 batches. Skip any field already supplied by SOUL.md, TONE.md, or prior conversation context. Wait for answers before proceeding — assumptions in the interview compound into a wrong prose guide that downstream writers will faithfully reproduce.
 
 **Required fields** (full battery in [references/discovery-questions.md](references/discovery-questions.md)):
 
@@ -194,7 +196,7 @@ Take an existing PROSE.md and project it onto a new channel grouping.
 Extract current prose patterns from a corpus before codifying. Empirical patterns beat invented ones.
 
 1. Take the corpus (folder of `.md` / `.txt` or list of URLs).
-2. **For corpora > 50 pieces, parallelize**: spin up to 5 sub-agents via the Agent tool, splitting the corpus by date range, channel, or author. Each agent reports back with the same metrics. **Why parallel:** sequential reading on a 200-piece corpus is slow and runs out of context; parallel sub-agents read independently and synthesize.
+2. **For corpora > 50 pieces, parallelize**: spin up to 5 parallel sub-agents, splitting the corpus by date range, channel, or author. Each agent reports back with the same metrics. **Why parallel:** sequential reading on a 200-piece corpus is slow and runs out of context; parallel sub-agents read independently and synthesize.
 3. Compute (per [references/audit-tools.md](references/audit-tools.md)):
    - Mean sentence length and distribution
    - Top 50 lexemes, top bigrams and trigrams
