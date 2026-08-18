@@ -4,7 +4,7 @@
 
 ## Step 1: Collect raw material
 
-**Before any intake question (Phase 1)**, ask the user to share everything they have. Use `AskUserQuestion`:
+**Before any intake question (Phase 1)**, ask through the question tool, one at a time. Ask the user to share everything they have:
 
 > _"Before we build your strategy, share every piece of raw material available — the more context, the sharper the advice:_
 >
@@ -63,7 +63,7 @@ The table below is a **B2B example only** — this skill covers salary, annual c
 1. Invoke a `deep-research` skill if one is installed in the environment
 2. Use Claude.ai's built-in deep research feature if running on claude.ai
 3. Use ChatGPT's deep research feature if running on chatgpt.com
-4. Fall back to parallel sub-agents with `WebSearch` + MCP connectors
+4. Fall back to parallel sub-agents using web search plus any connected data sources
 
 For each source, extract:
 
@@ -94,7 +94,7 @@ Store the extraction as a `context.md` file in the negotiation memory directory 
 3. **What is the current state?** First contact / mid-negotiation / stalled / approaching close.
 4. **What did they say last?** Verbatim or close — paraphrase degrades tactical precision.
 
-If any gap remains after Step 2, use `AskUserQuestion` to fill it specifically. A missing "what did they say last?" cannot be filled by assumption — push for the quote. Proceed to Phase 1 only once all four are solid.
+If any gap remains after Step 2, ask to fill it specifically. A missing "what did they say last?" cannot be filled by assumption — push for the quote. Proceed to Phase 1 only once all four are solid.
 
 **Memory creation (if no prior memory).** At end of session (or after Phase 3 at the latest), detect the best access method (see [memory.md](memory.md#platform-detection--how-to-access-the-files)) and create the full memory directory. Announce:
 
