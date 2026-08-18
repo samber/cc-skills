@@ -1,6 +1,6 @@
 # Decisions and matrices
 
-Repeating decisions for site launches. Apply the matrix based on the site type the user confirmed at the start of the session. When a decision is ambiguous or borderline, ask the user via `ask_user_input_v0` rather than assuming.
+Repeating decisions for site launches. Apply the matrix based on the site type the user confirmed at the start of the session. When a decision is ambiguous or borderline, ask through the question tool, one at a time, rather than assuming.
 
 ## AI scraper policy by site type
 
@@ -31,7 +31,7 @@ Block all. Ask the user. Better to surface the decision than to silently expose 
 
 ## Observability tier by site type
 
-Decide which analytics and observability tools to install. Always confirm conditional tools with `ask_user_input_v0`.
+Decide which analytics and observability tools to install. Always confirm conditional tools with the user.
 
 ### Doc site / lib homepage
 
@@ -97,7 +97,7 @@ curl -sIL https://www.example.com
 
 ## CSP tightness level by site type
 
-Three levels. Pick one with `ask_user_input_v0` at the start of Phase 4.
+Three levels. Ask the user to pick one at the start of Phase 4.
 
 ### `strict-default-src-none`
 
@@ -117,4 +117,4 @@ See `templates.md` for the actual CSP strings per level.
 
 ## When a decision is unclear
 
-Always default to asking via `ask_user_input_v0` with the matrix options as tappable choices. Never silently apply a guess.
+Always default to asking, with the matrix options as tappable choices. Never silently apply a guess.

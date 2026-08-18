@@ -2,7 +2,7 @@
 name: site-launch-checklist
 description: Pre-launch checklist for shipping a new website. Orchestrates analytics setup (GA4, PostHog, Google Search Console, Ahrefs), legal compliance, security headers and audit, SEO and GEO with keyword research validated against Google Trends (robots.txt, sitemaps, llms.txt, AI policy, schema markup, hreflang), copywriting consistency via a TONE.md and a humanizer pass in the matching language, OpenGraph and social previews, full favicon set with manifest, quality gates (Lighthouse, Core Web Vitals, WCAG accessibility, mobile testing), and setup of a weekly SEO agent. Use this skill whenever the user mentions launching a site/app, deploying a domain to production, pre-launch audit, shipping a marketing/docs/SaaS site or lead magnet, or says "checklist for the site", "ready to ship", "before I go live", "audit before launch", "ready for prod", or asks for a site review.
 license: MIT
-compatibility: Requires Claude Code
+compatibility: Designed for Claude Code or similar AI coding agents.
 user-invocable: true
 metadata:
   author: samber
@@ -26,13 +26,15 @@ metadata:
 allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
+
 # Site Launch Checklist
 
 Pre-launch audit and setup workflow for shipping a new website. Opinionated for Cloudflare DNS + Vercel hosting + PostHog + Legal context.
 
 ## Interaction style (READ FIRST)
 
-This skill is intentionally interactive. **Use `ask_user_input_v0` aggressively** instead of assuming. Ask one question at a time with 2-4 tappable options. The user will tap, not type.
+This skill is intentionally interactive. Ask aggressively instead of assuming. The user will tap, not type.
 
 **Always ask these questions at the start of a run** (one at a time, in this order):
 
@@ -53,7 +55,7 @@ This skill is intentionally interactive. **Use `ask_user_input_v0` aggressively*
 
 Never proceed past a decision point without explicit user input. Verbose checklists without checkpoints are not the goal.
 
-**Never install any MCP server or skill without explicit user confirmation.** Always ask via `ask_user_input_v0` before running `npx skills add`, `claude mcp add`, or any equivalent install command — even when the skill selection workflow proposes a curated subset.
+**Never install any MCP server or skill without explicit user confirmation.** Always ask via the question tool before running `npx skills add`, `claude mcp add`, or any equivalent install command — even when the skill selection workflow proposes a curated subset.
 
 ## How to use this skill
 
@@ -82,7 +84,7 @@ After the user confirms site type, for **each pack relevant to that site type**:
 
 1. **List available sub-skills**: `npx skills add owner/repo --list`
 2. **Propose a curated subset** based on site type and the phases this skill will execute. Match each phase's needs to specific sub-skills the listing returns.
-3. **Confirm with the user** via `ask_user_input_v0`. Use multi-select when the proposed list has more than 3 items, single-select (`install-as-proposed` | `let-me-modify` | `skip-this-pack`) otherwise.
+3. **Confirm with the user.** Use multi-select when the proposed list has more than 3 items, single-select (`install-as-proposed` | `let-me-modify` | `skip-this-pack`) otherwise.
 4. **Bulk install the agreed subset**: `npx skills add owner/repo --skill A B C`
 
 Rules:
@@ -107,7 +109,7 @@ Every site has visible marketing copy (hero, features, CTAs, meta descriptions, 
 
 ### 1. Define `TONE.md` once per site
 
-Ask the user (`ask_user_input_v0`): "Does this site already have a `TONE.md`?" (`yes-already-exists` | `no-create-from-template` | `skip-use-default`).
+Ask the user: "Does this site already have a `TONE.md`?" (`yes-already-exists` | `no-create-from-template` | `skip-use-default`).
 
 If creating: write it to `.agents/TONE.md` or repo root `TONE.md`. See `references/templates.md` (section "TONE.md template") for the structure.
 
@@ -117,7 +119,7 @@ TONE.md specifies: voice (terse, contrarian, etc.), forbidden patterns (e.g., "d
 
 After every drafting step (whether by a copywriting skill, by hand, or by Claude directly), run a humanizer to strip AI patterns.
 
-Ask the user (`ask_user_input_v0`) for the site's primary audience language at the start of the session if not already known:
+Ask the user for the site's primary audience language at the start of the session if not already known:
 
 - `english-global` → `npx skills add https://github.com/blader/humanizer --skill humanizer`
 - `french` → use `samber/humaniseur-fr` (custom French humanizer) or equivalent French-tuned skill
@@ -133,7 +135,7 @@ When delegating to any copywriting or content-writing sub-skill (selected at inv
 
 Many checks require a real browser (Lighthouse runs, securityheaders.com scan, opengraph.xyz validation, Twitter card validator, mobile viewport, screen reader smoke, Network tab inspection).
 
-**Always prefer the Claude Chrome extension.** Fall back to Playwright only if the Chrome extension is unavailable. If neither is available, ask the user (`ask_user_input_v0`) whether to skip browser checks entirely or wait until they enable one.
+**Always prefer the Claude Chrome extension.** Fall back to Playwright only if the Chrome extension is unavailable. If neither is available, ask the user whether to skip browser checks entirely or wait until they enable one.
 
 ## Verification tools
 
@@ -205,7 +207,7 @@ curl -sI https://example.com/this-does-not-exist
 curl -sIL https://example.com/old-url     # verify 301 chain
 ```
 
-Always run the relevant command, paste the output to the user when reporting, then ask (via `ask_user_input_v0`) whether to fix immediately or queue.
+Always run the relevant command, paste the output to the user when reporting, then ask whether to fix immediately or queue.
 
 ---
 
@@ -233,7 +235,7 @@ Checklist:
 
 If you don't configure backups at launch, you never will. Do it now.
 
-Ask the user (`ask_user_input_v0`): "Which data stores does this app write to?" (`database-only` | `database-plus-file-storage` | `file-storage-only` | `stateless-no-persistent-data`). If `stateless-no-persistent-data`, skip this section.
+Ask the user: "Which data stores does this app write to?" (`database-only` | `database-plus-file-storage` | `file-storage-only` | `stateless-no-persistent-data`). If `stateless-no-persistent-data`, skip this section.
 
 **Database:**
 
@@ -264,7 +266,7 @@ Ask the user (`ask_user_input_v0`): "Which data stores does this app write to?" 
 
 Most third-party integrations are one-click via Cloudflare or Vercel.
 
-**For the conditional tools (Crisp, Sentry, BetterStack), use `ask_user_input_v0`** to confirm per site type. See `references/decisions.md` for the observability tier matrix.
+**For the conditional tools (Crisp, Sentry, BetterStack), ask the user** to confirm per site type. See `references/decisions.md` for the observability tier matrix.
 
 **Always-on:**
 
@@ -287,7 +289,7 @@ Set up one alert per keyword via alerts.google.com:
 - [ ] Domain name (e.g., `example.com`)
 - [ ] Brand or product name (quoted if multi-word, e.g., `"My Brand"`)
 - [ ] Key feature or library names if the site documents a project
-- [ ] Competitor brand names (optional — ask user via `ask_user_input_v0`: `yes-monitor-competitors` | `skip`)
+- [ ] Competitor brand names (optional — ask user: `yes-monitor-competitors` | `skip`)
 
 Ask the user: "Which additional keywords to monitor?" (`product-name-only` | `domain-plus-brand` | `full-set-with-competitors` | `custom-list`)
 
@@ -306,7 +308,7 @@ Set up one keyword per line at f5bot.com/add:
 
 Before writing copy, setting up ads, or planning content, run a competitor analysis to understand what is already working in the market — positioning, messaging angles, CTA patterns, pricing presentation, and content strategy.
 
-Use a deep research tool or a competitor analysis skill if one is available in the toolchain. Ask via `ask_user_input_v0`:
+Use a deep research tool or a competitor analysis skill if one is available in the toolchain. Ask:
 
 - "Do you already have competitor names/URLs to analyze?" (`yes-provide-list` | `no-discover-for-me` | `skip`)
 - If `yes-provide-list`: ask the user to paste 2-5 names or URLs (free text)
@@ -370,7 +372,7 @@ See `references/templates.md` for `robots.txt`, `llms.txt`, and `manifest.json` 
 - [ ] `/robots.txt` present, references sitemap (verify with `curl -s https://example.com/robots.txt`)
 - [ ] `/sitemap.xml` present, valid (verify with `curl -s https://example.com/sitemap.xml | head -40`). Sitemap-index with per-language sitemaps if multilingual.
 - [ ] `/llms.txt` present (per llmstxt.org spec, verify with `curl -s https://example.com/llms.txt`)
-- [ ] AI scraper policy encoded in `robots.txt`. Apply the matrix from `references/decisions.md` based on site type, then **ask user via `ask_user_input_v0` to confirm each non-default decision**.
+- [ ] AI scraper policy encoded in `robots.txt`. Apply the matrix from `references/decisions.md` based on site type, then **ask via the question tool to confirm each non-default decision** — this ships in a public file, get it right before it's crawled.
 - [ ] Schema markup (JSON-LD): `Organization` + `WebSite` + `BreadcrumbList` site-wide; per-page types where applicable (`SoftwareApplication` for lib homepages, `Article` for blog posts, `FAQPage` for FAQs, `Person` for author bio). Verify with `curl -s URL | grep -A 50 'application/ld+json'`. Validate structured data via **Google Rich Results Test** (<https://search.google.com/test/rich-results>) and **Schema.org Validator** (<https://validator.schema.org>) — Rich Results Test checks eligibility for rich snippets; Schema.org Validator catches spec violations that Google may silently ignore.
 - [ ] Meta tags per page: unique `<title>` (50-60 chars), unique `<meta description>` (150-160 chars), `<link rel="canonical">`, `<meta name="robots">` if needed
 - [ ] `hreflang` tags on every page if multilingual (every language version declares all alternates including self). Verify with `curl -s URL | grep -i hreflang`.
@@ -474,7 +476,7 @@ See `references/weekly-seo-agent.md` for the full agent definition. Copy it into
 - Web search (SERP monitoring, competitor checks)
 - Google Search Console (via community MCP or `curl` with service account credentials)
 
-Ask the user via `ask_user_input_v0`: "Set up the weekly SEO agent now?" (`yes-create-agent-file` | `yes-but-defer` | `skip-for-now`).
+**Ask via the question tool** before creating the file: "Set up the weekly SEO agent now?" (`yes-create-agent-file` | `yes-but-defer` | `skip-for-now`).
 
 When MCP are not available, use Claude for Chrome extension.
 
@@ -501,7 +503,7 @@ Followed by three lists, in order:
 2. **Recommended fixes** (should fix before announcing)
 3. **Optional improvements** (post-launch)
 
-End by asking via `ask_user_input_v0`: "Which list do you want to tackle next?" (`blockers` | `recommended` | `optional` | `done-for-now`).
+End by asking: "Which list do you want to tackle next?" (`blockers` | `recommended` | `optional` | `done-for-now`).
 
 ---
 

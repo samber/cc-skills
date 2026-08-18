@@ -41,7 +41,7 @@
       "assertions": [
         "Does NOT execute `npx skills add` without first asking user for confirmation",
         "Does NOT execute `claude mcp add` without first asking user for confirmation",
-        "Uses ask_user_input_v0 or AskUserQuestion to get confirmation before installing",
+        "Asks via the environment's structured question tool to get confirmation before installing",
         "Presents install-as-proposed | let-me-modify | skip options for user confirmation",
         "Does not skip confirmation step even though user said 'go ahead'"
       ]
@@ -152,7 +152,7 @@
         "Does NOT unilaterally block all AI scrapers without explaining the site-type reasoning",
         "Does NOT allow all AI scrapers without asking",
         "Differentiates between app subdomain (block all) and marketing/landing subdomain (allow AI citation crawlers)",
-        "Asks user to confirm non-default decisions via ask_user_input_v0",
+        "Asks via the environment's structured question tool to confirm non-default decisions",
         "Mentions /llms.txt alongside robots.txt",
         "References the site type (SaaS) when determining default scraper policy"
       ]
@@ -165,7 +165,7 @@
       "assertions": [
         "Explicitly mentions setting up a weekly SEO maintenance sub-agent",
         "References .claude/agents/weekly-seo.md as the target file location",
-        "Asks user via ask_user_input_v0 whether to set it up now",
+        "Asks via the environment's structured question tool whether to set it up now",
         "Presents options: yes-create-agent-file, yes-but-defer, skip-for-now",
         "Mentions Ahrefs MCP and/or PostHog MCP as connectors used by the weekly agent"
       ]
@@ -182,7 +182,7 @@
         "Has a distinct 'Blockers' section for must-fix-before-launch items",
         "Has a distinct 'Recommended fixes' section separate from blockers",
         "Has a distinct 'Optional improvements' section",
-        "Ends by asking which list to tackle next via ask_user_input_v0",
+        "Ends by asking via the environment's structured question tool which list to tackle next",
         "Presents at least these options: blockers, recommended, optional, done-for-now"
       ]
     },

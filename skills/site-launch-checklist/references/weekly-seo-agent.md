@@ -195,6 +195,8 @@ Report structure:
 
 ## Agent definition file (copy this into `.claude/agents/weekly-seo.md`)
 
+This file format is Claude Code-specific (subagent frontmatter with a `tools:` list). On other harnesses, create the equivalent scheduled/background agent definition with web access, shell, and file read/write, using whatever subagent or custom-agent mechanism the environment provides.
+
 ```markdown
 ---
 name: weekly-seo
@@ -254,4 +256,4 @@ target_keywords:
 site_type: doc-site # or marketing, saas-app, paid-course, portfolio
 ```
 
-The agent reads this config to scope every task. If the file is missing, the agent asks the user (via `ask_user_input_v0` if invoked interactively, or fails with a clear error if invoked headlessly).
+The agent reads this config to scope every task. If the file is missing, the agent asks the user if invoked interactively, or fails with a clear error if invoked headlessly.
