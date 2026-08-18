@@ -4,8 +4,7 @@ AI agent skills are reusable instruction sets that extend your assistant with do
 
 For Golang-related skills, please visit [cc-skills-golang](https://github.com/samber/cc-skills-golang).
 
-> [!IMPORTANT]
-> Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
+> [!IMPORTANT] Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
 >
 > **No AI slop here.** AI-made skills are useless.
 
@@ -124,7 +123,33 @@ Update with `cd ~/.antigravity/skills/cc-skills && git pull`.
 
 </details>
 
+<details>
+<summary>Mistral Vibe</summary>
+
+Vibe supports the Agent Skills standard natively. Clone into the cross-client discovery path:
+
+```bash
+git clone https://github.com/samber/cc-skills.git ~/.vibe/skills/cc-skills
+```
+
+Vibe also auto-discovers skills from `.agents/skills/` (project-level) alongside `~/.vibe/skills/` (user-level).
+
+</details>
+
+<details>
+<summary>Windsurf</summary>
+
+```bash
+git clone https://github.com/samber/cc-skills.git ~/.windsurf/skills/cc-skills
+```
+
+Windsurf currently discovers skills from `.windsurf/skills/`; a convergence onto the shared `.agents/skills/` path (used by Copilot, Cursor, Codex, Gemini CLI, and OpenCode) is proposed but not yet shipped.
+
+</details>
+
 <!-- prettier-ignore-end -->
+
+Cline, Amp, Zed, Aider, Devin, Replit Agent, and Warp Agent also support the Agent Skills standard and are already covered by the universal `npx skills add` installer above — no dedicated setup needed.
 
 ## 🧩 Skills
 
