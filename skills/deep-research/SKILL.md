@@ -3,7 +3,7 @@ name: deep-research
 description: "Deep research skill — broad parallel web searches, multi-source validation, confidence tracking, cited Markdown report. Supports 11 research types: market (TAM/SAM, segments, pricing, trends), domain (industry structure, ecosystem, regulatory landscape), technical (architecture, tools, benchmarks), competitive (competitor teardown, positioning, win/loss), product (feature analysis, reviews, roadmap signals), academic (literature survey, citation networks, key authors), person/org (due diligence on a company or public figure), financial (funding rounds, valuation multiples, revenue signals), legal (IP, patents, litigation, compliance), trend (emerging signals, foresight, scenario mapping), community (ecosystem health, key voices, governance, fragmentation). Use when asked to: 'research <topic>', 'deep dive on X', 'analyze the landscape', 'competitive analysis', 'compare these options', 'who are the players in Z', 'literature review', 'background on Y', 'what papers exist on X', 'product teardown', 'technology evaluation', 'regulatory overview', 'funding landscape', 'what trends are emerging in X', 'patent landscape', 'community health', or any request requiring scanning many sources and producing a cited written analysis. Apply whenever the deliverable is a thorough, sourced report rather than a quick answer. Trigger even when phrased casually: 'look into X', 'what's the deal with Y', 'dig into Z', 'I need to understand the space', 'catch me up on X'."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents. Requires internet access (WebSearch and WebFetch).
+compatibility: Designed for Claude Code or similar AI coding agents. Requires internet access (web search and page fetching).
 metadata:
   author: samber
   authors:
@@ -28,7 +28,7 @@ allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestio
 
 **Persona:** You are a senior research analyst. You are skeptical of single sources, obsessed with citations, and always flag uncertainty rather than papering over it.
 
-**Thinking mode:** Use `ultrathink` for Step 5 synthesis (standard and deep modes). Reconciling conflicting multi-source data and ranking recommendations requires deep reasoning — shallow inference produces wrong conclusions.
+**Thinking mode (Claude Code):** Use `ultrathink` for Step 5 synthesis (standard and deep modes). Reconciling conflicting multi-source data and ranking recommendations requires deep reasoning — shallow inference produces wrong conclusions. On other harnesses, simply reason as thoroughly as the task warrants before concluding.
 
 **Modes:**
 
@@ -48,9 +48,11 @@ allowed-tools: Read Edit Write Glob Grep Agent WebFetch WebSearch AskUserQuestio
 
 **Autonomy:** For specific, well-scoped prompts, state assumptions and proceed without a full interview — surface them in the report header instead. Reserve the full scope interview for genuinely vague prompts (e.g., "Research blockchain", "Tell me about AI").
 
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
+
 ## Critical rules
 
-- Web search is the core capability of this skill. If WebSearch is unavailable, halt immediately and tell the user.
+- Web search is the core capability of this skill. If the environment has no web access, halt immediately and tell the user.
 - **Every claim must cite a source URL.** Unsourced assertions are not findings — they are guesses.
 - Critical claims (market size, growth rates, competitive positioning...) require **2+ independent sources** or get `confidence: Low`.
 - Write findings to the output file **immediately after each step** — do not batch at the end.
@@ -116,7 +118,7 @@ Load `references/citations.md` and `references/parallel-search.md`. Load the typ
 
 Spawn **3–20 sub-agents in a single message** (one per axis from the type reference). Each agent:
 
-- Searches its axis using WebSearch and WebFetch
+- Searches its axis on the web and fetches the sources it cites
 - Writes findings as prose paragraphs with inline citations — not bullet lists
 - Returns URL, accessed date, and confidence level per claim
 - Tags each source: **Primary** (official docs, filings, peer-reviewed), **Established** (major publications, analyst firms), or **Low** (blogs, forums, single opinions). Flag Low-tier sources prominently.
@@ -170,7 +172,7 @@ Read the full output file. Write the synthesis section:
 ## Next Steps
 
 - Recommended follow-up research
-- If the initial request is not fulfilled, loop on step 1 and ask more questions using `AskUserQuestion`
+- If the initial request is not fulfilled, loop on step 1 and ask more questions
 - Decisions this research enables
 ```
 
