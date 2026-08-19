@@ -4,9 +4,14 @@ AI agent skills are reusable instruction sets that extend your assistant with do
 
 For Golang-related skills, please visit [cc-skills-golang](https://github.com/samber/cc-skills-golang).
 
-> [!IMPORTANT] Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
+<!-- prettier-ignore-start -->
+
+> [!IMPORTANT]
+> Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
 >
 > **No AI slop here.** AI-made skills are useless.
+
+<!-- prettier-ignore-end -->
 
 <img width="3808" height="1280" alt="image" src="https://github.com/user-attachments/assets/95139f6f-c19c-4041-a010-d94bca594bba" />
 
