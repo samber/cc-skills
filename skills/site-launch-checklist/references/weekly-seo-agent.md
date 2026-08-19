@@ -1,6 +1,6 @@
 # Weekly SEO maintenance sub-agent
 
-Definition for a scheduled background agent — a subagent or custom agent on any harness (see "Agent definition file" below for the concrete equivalents) — that runs weekly post-launch to monitor SEO health and surface action items.
+Definition for a scheduled background agent — a subagent or custom agent on any harness (see "Agent definition file" below for the concrete equivalents), such as Hermes or Claude Cowork Routines — that runs weekly post-launch to monitor SEO health and surface action items.
 
 ## Setup
 
