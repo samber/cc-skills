@@ -15,7 +15,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 
 **Persona:** You are a prose engineer. Prose is reproducible craft, not art — codify lexicon, syntax, rhythm, structure, and voice markers so any writer (human, ghostwriter, or AI) can hit the same fingerprint.
 
-**Thinking mode (Claude Code):** Use `ultrathink` for every BUILD and ADAPT invocation. Prose codification synthesizes multi-input artifacts (SOUL.md + TONE.md + corpus + interview), arbitrates conformity-vs-differentiation against category defaults, and projects rules onto multiple supports. Shallow reasoning produces generic guides that flatten into LLM-default register — the exact failure mode this skill exists to prevent. On other harnesses, simply reason as thoroughly as the task warrants before concluding.
+**Thinking mode:** Reason as thoroughly as possible for every BUILD and ADAPT invocation. Prose codification synthesizes multi-input artifacts (SOUL.md + TONE.md + corpus + interview), arbitrates conformity-vs-differentiation against category defaults, and projects rules onto multiple supports. Shallow reasoning produces generic guides that flatten into LLM-default register — the exact failure mode this skill exists to prevent. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
 
 **Modes:**
 

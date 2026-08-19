@@ -210,8 +210,8 @@ Place these directives at the very top of the body, before the first heading, in
 | Directive | Required | Format | When to include |
 | --- | --- | --- | --- |
 | **Persona** | Optional | `**Persona:** You are a <role>. <mindset or goal>.` | Analytical/generative/multi-mode skills |
-| **Thinking mode** | Optional | `**Thinking mode:** Use \`ultrathink\` for <task>. <Why deep reasoning matters>.` | Deep analysis: profiling, security auditing, root cause analysis |
-| **Orchestration mode** | Optional | `**Orchestration mode:** Use \`ultracode\` for <task>. <Why fan-out orchestration helps here>.` | Skills with a parallel fan-out audit/scan/cleanup mode (up to N sub-agents) |
+| **Thinking mode** | Optional | `**Thinking mode:** Reason as thoroughly as possible for <task> — <why deep reasoning matters>. On Claude Code, use \`ultrathink\` to trigger extended thinking explicitly.` | Deep analysis: profiling, security auditing, root cause analysis |
+| **Orchestration mode** | Optional | `**Orchestration mode:** Fan out N parallel sub-agents for <task> — <why fan-out orchestration helps here>. On Claude Code, use \`ultracode\` to opt into multi-agent orchestration explicitly.` | Skills with a parallel fan-out audit/scan/cleanup mode (up to N sub-agents) |
 | **Modes** | Optional | `**Modes:**` section listing each invocation mode and its sub-agent strategy | Skills invoked in distinct contexts (audit, coding, review, code understanding...) |
 | **Questions** | Optional | `**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.` | Interactive skills that ask the user more than twice. Declare once here; downstream mentions drop the tool name and just say "ask the user" — repeating the full clause at every question dilutes it into boilerplate and burns the token budget. Reserve up to 3 re-assertions of "ask via the question tool" for steps where a skipped or wrong answer is destructive or irreversible. |
 
@@ -286,27 +286,27 @@ Sub-agents can be used in three complementary ways:
 
 ### Ultrathink policy
 
-Skills that require deep analytical reasoning (profiling interpretation, root cause analysis, security auditing) include a **Thinking mode:** `ultrathink` instruction in their SKILL.md body. When you encounter this instruction, activate maximum extended thinking — these tasks punish shallow reasoning with wrong conclusions.
+Skills that require deep analytical reasoning (profiling interpretation, root cause analysis, security auditing) include a **Thinking mode:** instruction in their SKILL.md body. When you encounter this instruction, reason as thoroughly as the task warrants — these tasks punish shallow reasoning with wrong conclusions. On Claude Code, `ultrathink` is the explicit trigger for maximum extended thinking; treat it as the mechanism, not the instruction.
 
 When creating or modifying a skill that involves deep analysis, profiling, debugging methodology, or security auditing, or for non-engineering skills that involve synthesis of conflicting sources, competitive analysis, or complex audience/market strategy, add this line in the top-of-body directives block, after **Persona** (if present) and before the first heading:
 
 ```
-**Thinking mode (Claude Code):** Use `ultrathink` for <task description>. <Why deep reasoning matters for this skill>. On other harnesses, simply reason as thoroughly as the task warrants before concluding.
+**Thinking mode:** Reason as thoroughly as possible for <task description> — <why deep reasoning matters for this skill>. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
 ```
 
-`ultrathink` is a Claude Code trigger with no equivalent keyword elsewhere — on other harnesses it reads as inert prose at best, so the "(Claude Code)" label and the natural-language fallback sentence are required, not decorative.
+Lead with the reasoning instruction in plain language, since that's what every harness actually acts on — a model told to "reason as thoroughly as possible" does so regardless of vendor. `ultrathink` is a Claude Code-specific accelerator layered on top, not the instruction itself; mentioning it after the fact costs one clause and loses nothing elsewhere.
 
 ### Ultracode policy
 
-Skills that already describe a full-codebase audit/scan/cleanup mode with several parallel sub-agents (e.g. "launch up to 5 parallel sub-agents") include a **Orchestration mode:** `ultracode` instruction in their SKILL.md body. When you encounter this instruction and the user is requesting a broad, codebase-wide sweep, escalate to multi-agent fan-out orchestration instead of a single sequential pass.
+Skills that already describe a full-codebase audit/scan/cleanup mode with several parallel sub-agents (e.g. "launch up to 5 parallel sub-agents") include an **Orchestration mode:** instruction in their SKILL.md body. When you encounter this instruction and the user is requesting a broad, codebase-wide sweep, escalate to multi-agent fan-out orchestration instead of a single sequential pass. On Claude Code, `ultracode` is the explicit trigger for this; treat it as the mechanism, not the instruction.
 
 When creating or modifying a skill whose audit/scan/cleanup mode already fans out to parallel sub-agents, add this line in the top-of-body directives block, after **Thinking mode** (if present, otherwise after **Persona**) and before **Modes**:
 
 ```
-**Orchestration mode (Claude Code):** Use `ultracode` for <full-codebase audit/scan/cleanup task>. <Why fan-out orchestration helps here>. On other harnesses, simply fan out N parallel sub-agents for the same task using whatever delegation mechanism the environment provides.
+**Orchestration mode:** Fan out N parallel sub-agents for <full-codebase audit/scan/cleanup task> — <why fan-out orchestration helps here>. On Claude Code, use `ultracode` to opt into multi-agent orchestration explicitly.
 ```
 
-`ultracode` is a Claude Code-specific workflow trigger — the "(Claude Code)" label plus the natural-language fallback sentence keep the instruction meaningful on Codex, Gemini CLI, Cursor, and the rest, all of which support parallel sub-agents under a different name (→ See "Tool names belong in frontmatter, not in the body" under Allowed Tools).
+Same principle as Thinking mode: lead with "fan out N parallel sub-agents," which every researched harness supports under its own delegation mechanism (→ See "Tool names belong in frontmatter, not in the body" under Allowed Tools) — `ultracode` is Claude Code's explicit opt-in for it, mentioned second, not the whole instruction.
 
 ### Tool reference sections
 

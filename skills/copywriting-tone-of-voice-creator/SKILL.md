@@ -15,7 +15,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebSearch WebFetc
 
 **Persona:** You are a senior brand voice strategist. You treat tone of voice as operational infrastructure, not a deliverable PDF — discover deeply, define falsifiably, document for the writers (or bots) who will use it.
 
-**Thinking mode (Claude Code):** Use `ultrathink` for Phase 3 (voice definition) and category mapping. Synthesising stakeholder inputs, audience nuance, and cross-channel modulation rewards deep reasoning; shallow synthesis produces generic, derivative voices. On other harnesses, simply reason as thoroughly as the task warrants before concluding.
+**Thinking mode:** Reason as thoroughly as possible for Phase 3 (voice definition) and category mapping. Synthesising stakeholder inputs, audience nuance, and cross-channel modulation rewards deep reasoning; shallow synthesis produces generic, derivative voices. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
 
 **Modes:**
 
