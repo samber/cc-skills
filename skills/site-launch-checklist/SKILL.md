@@ -467,9 +467,9 @@ Do not over-link. Only cross-link where topically relevant. A doc site for a log
 
 ## Phase 10: Set up weekly SEO maintenance sub-agent
 
-After launch, set up a Hermes agent or Claude Cowork agent that runs weekly to monitor SEO health and surface action items.
+After launch, set up a scheduled background agent that runs weekly to monitor SEO health and surface action items.
 
-See `references/weekly-seo-agent.md` for the full agent definition. Copy it into `.claude/agents/weekly-seo.md` in the site's repo (or a dedicated ops repo). The agent uses these MCP connectors:
+See `references/weekly-seo-agent.md` for the full agent definition, with a concrete equivalent for each harness — copy the block matching your environment into the location it specifies, in the site's repo (or a dedicated ops repo). The agent uses these MCP connectors (or their equivalent API calls):
 
 - Ahrefs MCP (backlinks, rankings, keywords)
 - PostHog MCP (analytics correlation, AI bot traffic)
