@@ -175,7 +175,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `promql-cli` | -39% | 87 | 1,257 | 6,248 |
 | `chrome-extension` | — | 137 | 3,909 | 36,173 |
 | `crxjs` | — | 185 | 2,697 | 2,697 |
-| `site-launch-checklist` | -59% | 198 | 7,727 | 17,706 |
+| `site-launch-checklist` | -59% | 198 | 7,784 | 17,896 |
 | `frontend-design-deslop` | -28% | 220 | 3,947 | 41,234 |
 | `linkedin-ghostwriting` | -31% | 87 | 1,045 | 1,993 |
 | `substack-ghostwriting` | -51% | 205 | 3,315 | 10,720 |

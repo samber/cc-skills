@@ -512,3 +512,4 @@ End by asking: "Which list do you want to tackle next?" (`blockers` | `recommend
 - `references/decisions.md`: AI scraper policy matrix by site type, observability tier matrix
 - `references/templates.md`: robots.txt, llms.txt, manifest.json, CSP templates per tightness level, security headers reference
 - `references/weekly-seo-agent.md`: Full definition of the weekly SEO maintenance sub-agent (MCPs, tasks, output format)
+- `assets/weekly-seo-*.md`, `assets/weekly-seo-vibe.toml`: per-harness agent-definition files linked from `references/weekly-seo-agent.md` — copy the one matching your harness
