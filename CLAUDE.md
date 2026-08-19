@@ -284,7 +284,7 @@ Sub-agents can be used in three complementary ways:
 
 **Write / generate mode** — follow the skill's sequential instructions unless background agents are explicitly used for non-blocking analysis.
 
-### Ultrathink policy
+### Advanced thinking mode policy
 
 Skills that require deep analytical reasoning (profiling interpretation, root cause analysis, security auditing) include a **Thinking mode:** instruction in their SKILL.md body. When you encounter this instruction, reason as thoroughly as the task warrants — these tasks punish shallow reasoning with wrong conclusions. On Claude Code, `ultrathink` is the explicit trigger for maximum extended thinking; treat it as the mechanism, not the instruction.
 
