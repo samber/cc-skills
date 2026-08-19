@@ -42,7 +42,7 @@ New skills go in `skills/<skill-name>/SKILL.md`. Each SKILL.md has YAML frontmat
 
 **Choosing `user-invocable`:** Use `false` (contextual) for domain expertise that enriches any relevant conversation without being explicitly asked — code style, security patterns, brand voice, commit conventions. Use `true` (user-invocable) for multi-step workflows the user explicitly triggers — ghostwriting a post, running a full audit, generating a commit message.
 
-Do not add a `turbo_safe`-style field (seen on Antigravity, marks a skill safe for unattended execution) — it conflicts with this project's confirm-before-risky-action policy (see "Executing actions with care" in the top-level instructions).
+Do not add a `turbo_safe`-style field (seen on Antigravity, marks a skill safe for unattended execution) — it conflicts with this project's confirm-before-risky-action policy (see "Executing actions with care" in the top-level instructions). The same restriction applies to any harness-specific equivalent, e.g. Mistral Vibe's per-tool `permission = "always"` in generated agent configs (`.vibe/agents/*.toml`) — default write/shell/exec permissions to `"ask"`, not `"always"`, even when the harness makes unattended execution easy to opt into.
 
 Example frontmatter:
 
