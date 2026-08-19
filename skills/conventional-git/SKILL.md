@@ -3,7 +3,7 @@ name: conventional-git
 description: Conventional Commits v1.0.0 branch naming, worktree naming, and commit message standards for GitHub and GitLab projects. Use when creating branches, naming worktrees, writing commits, generating commit messages, reviewing branch conventions, or setting up changelog automation. Apply when your project needs consistent git history, SemVer-driven releases, parseable changelog generation, or automatic issue closing. Trigger when the user asks how to name a worktree, create a git worktree, or organize worktrees alongside branches.
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents. Requires git.
+compatibility: Designed for Claude Code, Codex or similar harness. Requires git.
 metadata:
   author: samber
   version: "1.2.0"

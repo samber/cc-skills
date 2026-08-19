@@ -5,7 +5,7 @@ description: >
 
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
   version: "1.0.0"

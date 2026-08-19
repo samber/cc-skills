@@ -3,7 +3,7 @@ name: crxjs
 description: "CRXJS Chrome extension development — true HMR for popup, options, content scripts, side panels, manifest-driven builds, dynamic content script imports (`?script`, `?script&module`), and `defineManifest` for type-safe manifests. Uses Vite as its build tool. Use when the user mentions CRXJS, crxjs, @crxjs/vite-plugin, 'extension with hot reload', 'HMR for chrome extension', or wants to set up a CRXJS-based Chrome extension project with any framework (React, Vue, Svelte, Solid, Vanilla). Also trigger when the user has an existing CRXJS project and wants to add features, fix HMR issues, or configure content scripts with CRXJS. For general Chrome extension architecture (messaging, CSP, storage, permissions) -> See `samber/cc-skills@chrome-extension` skill."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents. Requires git, node.
+compatibility: Designed for Claude Code, Codex or similar harness. Requires git, node.
 metadata:
   author: samber
   version: "1.0.0"

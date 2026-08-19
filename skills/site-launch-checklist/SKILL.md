@@ -2,7 +2,7 @@
 name: site-launch-checklist
 description: Pre-launch checklist for shipping a new website. Orchestrates analytics setup (GA4, PostHog, Google Search Console, Ahrefs), legal compliance, security headers and audit, SEO and GEO with keyword research validated against Google Trends (robots.txt, sitemaps, llms.txt, AI policy, schema markup, hreflang), copywriting consistency via a TONE.md and a humanizer pass in the matching language, OpenGraph and social previews, full favicon set with manifest, quality gates (Lighthouse, Core Web Vitals, WCAG accessibility, mobile testing), and setup of a weekly SEO agent. Use this skill whenever the user mentions launching a site/app, deploying a domain to production, pre-launch audit, shipping a marketing/docs/SaaS site or lead magnet, or says "checklist for the site", "ready to ship", "before I go live", "audit before launch", "ready for prod", or asks for a site review.
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude Code, Codex or similar harness.
 user-invocable: true
 metadata:
   author: samber

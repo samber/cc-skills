@@ -3,7 +3,7 @@ name: snyk-agent-scan-compliance
 description: "Compliance expert for snyk-agent-scan — the agent skill file scanner — NOT for other Snyk CLI tools (snyk test, snyk code SAST, snyk iac, snyk container). Fixes alerts through content restructuring, never by suppressing or deleting information. Covers every file in a skill directory: SKILL.md, references/, assets/, and any secondary markdown. Apply when authoring a new skill, editing an existing one, triaging a failed snyk-agent-scan run locally or in CI, or unblocking a PR held by agent scanner failures. Not applicable to dependency vulnerabilities, code security findings, or infrastructure misconfigurations — those are out of scope."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
   version: "1.0.0"

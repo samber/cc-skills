@@ -33,7 +33,7 @@ New skills go in `skills/<skill-name>/SKILL.md`. Each SKILL.md has YAML frontmat
 | `name` | Spec-required | 1-64 chars. Lowercase `a-z`, digits, hyphens. No leading/trailing/consecutive hyphens. **Must match parent directory name.** |
 | `description` | Spec-required | 1-1000 chars (project hard cap; the AgentSkill spec allows 1024, but this project uses 1000 as a safety margin). Describes what the skill does **and when to use it** — this is the primary triggering mechanism. Be specific and slightly "pushy" to avoid under-triggering. |
 | `license` | Project-required | License name or reference to a bundled license file. Use `MIT` for this project. |
-| `compatibility` | Project-required | 1-500 chars. Describe actual requirements as **capabilities, never tool names** — `Requires internet access`, not `Requires WebSearch`; the capability holds on every harness, the tool name only on Claude Code. Base: `Designed for Claude Code or similar AI coding agents.` Extend when needed: add `Requires git`, `Requires internet access`, `Requires Python 3.14+ and uv`, etc. Skills with no special requirements use the base string only. |
+| `compatibility` | Project-required | 1-500 chars. Describe actual requirements as **capabilities, never tool names** — `Requires internet access`, not `Requires WebSearch`; the capability holds on every harness, the tool name only on Claude Code. Base: `Designed for Claude Code, Codex or similar harness.` Extend when needed: add `Requires git`, `Requires internet access`, `Requires Python 3.14+ and uv`, etc. Skills with no special requirements use the base string only. |
 | `metadata` | Project-required | Must include `author` (string), `version` (semver `a.b.c` string, e.g. `"1.0.0"`), and `openclaw` (ClawHub discoverability fields — see below). Caution: some harnesses (e.g. OpenCode) parse `metadata` as a flat string→string map and may not preserve the nested `openclaw` object — don't assume every field survives outside Claude Code. |
 | `user-invocable` | Project-required | Boolean. `true` for skills invocable as slash commands (e.g. `/skill-name`), `false` (default) for contextual skills that auto-trigger. |
 | `allowed-tools` | Project-required | Space-delimited list of pre-approved tools. See "Allowed tools" below. |
@@ -52,7 +52,7 @@ name: skill-example
 description: "Skill for X. Use when doing Y."
 user-invocable: false
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents. Requires git.
+compatibility: Designed for Claude Code, Codex or similar harness. Requires git.
 metadata:
   author: samber
   version: "1.0.0"
