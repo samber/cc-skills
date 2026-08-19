@@ -296,7 +296,7 @@ When creating or modifying a skill that involves deep analysis, profiling, debug
 
 Lead with the reasoning instruction in plain language, since that's what every harness actually acts on — a model told to "reason as thoroughly as possible" does so regardless of vendor. `ultrathink` is a Claude Code-specific accelerator layered on top, not the instruction itself; mentioning it after the fact costs one clause and loses nothing elsewhere.
 
-### Ultracode policy
+### Deep thinking over parallel sub-agents policy
 
 Skills that already describe a full-codebase audit/scan/cleanup mode with several parallel sub-agents (e.g. "launch up to 5 parallel sub-agents") include an **Orchestration mode:** instruction in their SKILL.md body. When you encounter this instruction and the user is requesting a broad, codebase-wide sweep, escalate to multi-agent fan-out orchestration instead of a single sequential pass. On Claude Code, `ultracode` is the explicit trigger for this; treat it as the mechanism, not the instruction.
 
@@ -559,7 +559,7 @@ After making changes, suggest the following as next steps for the developer to r
    - **SKILL.md (tok)**: `tiktoken-cli skills/{name}/SKILL.md`
    - **Directory (tok)**: `tiktoken-cli --exclude "evals" skills/{name}/` (exclude `evals/` subdirectory)
 6. Update the README.md table with the measured token counts, update the total rows, and update the **Error rate gap** column (`Without - With`, expressed as a negative percentage, e.g. `-39%`)
-7. Increment `metadata.version` in the changed SKILL.md and the plugin version in `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json` and `gemini-extension.json` — all three plugin files MUST have the same version. Also update the **Version** column for the skill in `README.md`.
+7. Increment `metadata.version` in the changed SKILL.md and the plugin version in `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json` and `gemini-extension.json` — all three plugin files MUST have the same version.
 8. Run the [Description Optimization Loop](#description-optimization-loop) — mandatory for new skills, required for updates when `description` or scope changed.
 9. Run skill evaluation via `/skill-creator`: 10+ evals, run them with and without the skill via parallel subagents, grade with LLM-as-judge (no human in the loop), print results, suggest improvements if needed, and append/update the report to `EVALUATIONS.md` following the format in [Evaluation Reporting](#evaluation-reporting)
 10. Depending on evaluation final report, suggest improvements and loop
