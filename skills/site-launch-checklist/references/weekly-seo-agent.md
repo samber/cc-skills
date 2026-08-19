@@ -1,24 +1,23 @@
 # Weekly SEO maintenance sub-agent
 
-Definition for a Hermes agent or Claude Cowork agent that runs weekly post-launch to monitor SEO health and surface action items.
+Definition for a scheduled background agent — a subagent or custom agent on any harness (see "Agent definition file" below for the concrete equivalents), such as Hermes or Claude Cowork Routines — that runs weekly post-launch to monitor SEO health and surface action items.
 
 ## Setup
 
-1. Copy the agent definition (the block at the bottom of this file) into `.claude/agents/weekly-seo.md` in the site's repo (or in a dedicated ops repo if you manage multiple sites).
-2. Confirm the following MCP servers are connected in Claude Code / Cowork:
+1. Copy the agent definition for your harness (see "Agent definition file" below) into the location that harness's block specifies, in the site's repo (or a dedicated ops repo if you manage multiple sites).
+2. Confirm the following MCP servers (or equivalent API access) are connected:
    - **Ahrefs MCP** (required, for backlinks and rankings)
    - **PostHog MCP** (required, for traffic correlation)
    - **Google Search Console** (recommended, via community MCP such as `gsc-mcp`; if no MCP, fall back to `curl` with a service account credential file)
-   - **Web search** (built-in, for SERP feature checks and competitor monitoring)
+   - **Web search** (built-in on most harnesses, for SERP feature checks and competitor monitoring)
 3. Confirm the agent has access to the project source code if they apply to the site's content.
-4. Schedule weekly execution. Three options:
-   - Cron + `claude --dangerously-skip-permissions -p "/agents weekly-seo"` (Linux/macOS, only if running in a trusted environment)
-   - Hermes agent
-   - Claude Cowork agent
+4. Schedule weekly execution. Options:
+   - Cron running that harness's headless/non-interactive invocation (e.g. `claude --dangerously-skip-permissions -p "/agents weekly-seo"` on Claude Code, `copilot -p "/agent weekly-seo"` on Copilot CLI) — only in a trusted environment
+   - The harness's own scheduled/background-agent feature, where one exists (e.g. Claude Cowork, Hermes)
    - GitHub Actions weekly schedule, posting the report to a Slack channel
    - Manual invocation each Monday morning
 
-When MCP are not available, use Claude for Chrome extension or a browser
+When MCP servers are not available, fall back to a browser extension or headless browser where the harness supports one, or to direct API calls per the "MCP usage" section in each harness's block below.
 
 ## What the agent does
 
@@ -193,47 +192,55 @@ Report structure:
 ### 10. Schema validity
 ```
 
-## Agent definition file (copy this into `.claude/agents/weekly-seo.md`)
+## Agent definition file
 
-```markdown
----
-name: weekly-seo
-description: Weekly SEO maintenance and monitoring for a launched site. Run every Monday. Pulls data from Google Search Console, Ahrefs, PostHog, and web search to monitor rankings, backlinks, Core Web Vitals, indexation, AI bot traffic, competitor SERPs, content freshness, and schema validity. Produces a Markdown report with blockers, should-fix items, and opportunities.
-tools: WebFetch, WebSearch, Bash, Read, Write
----
+Same 12 tasks, same `weekly-seo/config.yml`, same memory files, same fallback behavior on every harness below — only the agent-definition schema and file path change. Pick the block matching your harness; none of them is the "real" one. This skill is not exhaustive on harness internals; verify field names against each harness's current docs before relying on them in production.
 
-You are a weekly SEO maintenance agent for a single launched site. Your job is to run 12 health-check tasks every Monday and produce a structured Markdown report.
+<details>
+<summary>Google Antigravity — place at <code>.agents/agents/weekly-seo.md</code></summary>
 
-## Configuration
+[View agent definition](../assets/weekly-seo-antigravity.md)
 
-Read `weekly-seo/config.yml` for site-specific config: domain, target keywords (top 5), GSC property ID, Ahrefs project ID, PostHog project ID, Slack webhook URL (optional).
+</details>
 
-## Tasks
+<details>
+<summary>Claude Code — place at <code>.claude/agents/weekly-seo.md</code></summary>
 
-[Run all 12 tasks defined in references/weekly-seo-agent.md of the site-launch-checklist skill. For each task, follow the detailed instructions there.]
+[View agent definition](../assets/weekly-seo-claude-code.md)
 
-Tasks 11 and 12 are mandatory on every run:
+</details>
 
-- **Task 11 (stats memory)**: append to `weekly-seo/memory/stats.csv` and `weekly-seo/memory/keywords.csv`. Never skip.
-- **Task 12 (changelog validation)**: check `weekly-seo/memory/changelog.md` for `pending-validation` entries whose `measure_after` date has passed; update their status; emit the "What worked" section in the report.
+<details>
+<summary>Gemini CLI — place at <code>.gemini/agents/weekly-seo.md</code></summary>
 
-## MCP usage
+[View agent definition](../assets/weekly-seo-gemini-cli.md)
 
-- Ahrefs MCP: tasks 1, 3, 4
-- PostHog MCP: task 7
-- Google Search Console (via community MCP or curl): tasks 1, 2, 5, 6
-- Web search (built-in): tasks 2, 8
+</details>
 
-If an MCP is unavailable, fall back to Claude for Chrome, to a web browser, to the equivalent API call via `curl` or `web_fetch` with credentials stored in `.env` (do not commit). Surface any data-source unavailability in the report header so the user knows the run was partial.
+<details>
+<summary>OpenCode — place at <code>.opencode/agent/weekly-seo.md</code></summary>
 
-## Output
+[View agent definition](../assets/weekly-seo-opencode.md)
 
-Write the report to `weekly-seo/YYYY-MM-DD.md`. If a Slack webhook is configured, post the Summary + Blockers sections to Slack.
+</details>
 
-## Tone
+<details>
+<summary>GitHub Copilot CLI — place at <code>.github/agents/weekly-seo.agent.md</code></summary>
 
-Terse, action-oriented. Each blocker is one sentence stating the problem and one sentence stating the fix. No filler.
-```
+[View agent definition](../assets/weekly-seo-copilot-cli.md) — Copilot CLI has no built-in scheduler: invoke it interactively with `/agent weekly-seo`, or trigger it headlessly every Monday via an external cron job running `copilot -p "/agent weekly-seo"`.
+
+</details>
+
+<details>
+<summary>Mistral Vibe — place config at <code>.vibe/agents/weekly-seo.toml</code> and prompt at <code>.vibe/prompts/weekly-seo.md</code></summary>
+
+[View config](../assets/weekly-seo-vibe.toml) · [View prompt](../assets/weekly-seo-vibe-prompt.md)
+
+Reads and web access run unattended (`permission = "always"`); writing files and running shell commands ask for confirmation each time (`permission = "ask"`), since those are the two actions this agent could get wrong destructively. If you want fully unattended weekly runs (e.g. scheduled via cron, matching the Claude Code "Cron" option in Setup), raise `write_file` and `run_shell_command` to `"always"` yourself — that's a deliberate trust decision for the operator to make, not a default this doc should set.
+
+</details>
+
+Windsurf, Cursor, and Codex CLI don't have a confirmed, documented custom scheduled-agent-file schema at the time of writing — for those, take the same structure shown above (name, description, tool list, system prompt covering Configuration/Tasks/MCP usage/Output/Tone) and adapt it to whatever custom agent or automation mechanism the harness exposes, then verify against its current docs.
 
 ## Config file template
 
@@ -254,4 +261,4 @@ target_keywords:
 site_type: doc-site # or marketing, saas-app, paid-course, portfolio
 ```
 
-The agent reads this config to scope every task. If the file is missing, the agent asks the user (via `ask_user_input_v0` if invoked interactively, or fails with a clear error if invoked headlessly).
+The agent reads this config to scope every task. If the file is missing, the agent asks the user if invoked interactively, or fails with a clear error if invoked headlessly.

@@ -4,10 +4,14 @@ AI agent skills are reusable instruction sets that extend your assistant with do
 
 For Golang-related skills, please visit [cc-skills-golang](https://github.com/samber/cc-skills-golang).
 
+<!-- prettier-ignore-start -->
+
 > [!IMPORTANT]
 > Bootstrapped with Claude. **Edited, tested, reviewed and reworked by a human**.
 >
 > **No AI slop here.** AI-made skills are useless.
+
+<!-- prettier-ignore-end -->
 
 <img width="3808" height="1280" alt="image" src="https://github.com/user-attachments/assets/95139f6f-c19c-4041-a010-d94bca594bba" />
 
@@ -171,22 +175,22 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `promql-cli` | -39% | 87 | 1,257 | 6,248 |
 | `chrome-extension` | — | 137 | 3,909 | 36,173 |
 | `crxjs` | — | 185 | 2,697 | 2,697 |
-| `site-launch-checklist` | -59% | 222 | 6,772 | 13,350 |
-| `frontend-design-deslop` | -28% | 220 | 3,859 | 40,876 |
+| `site-launch-checklist` | -59% | 198 | 7,784 | 17,896 |
+| `frontend-design-deslop` | -28% | 220 | 3,947 | 41,234 |
 | `linkedin-ghostwriting` | -31% | 87 | 1,045 | 1,993 |
 | `substack-ghostwriting` | -51% | 205 | 3,315 | 10,720 |
-| `technical-article-writer` | -33% | 147 | 2,295 | 5,737 |
+| `technical-article-writer` | -33% | 147 | 2,755 | 6,197 |
 | `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
 | `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
-| `snyk-agent-scan-compliance` | -27% | 144 | 1,884 | 5,592 |
+| `snyk-agent-scan-compliance` | -27% | 144 | 1,904 | 5,612 |
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
-| `deep-research` | -51% | 316 | 2,915 | 14,070 |
-| `influence-and-negotiation` | -68% | 237 | 6,644 | 50,467 |
+| `deep-research` | -51% | 316 | 2,997 | 14,125 |
+| `influence-and-negotiation` | -68% | 232 | 6,667 | 49,043 |
 | `skill-progressive-disclosure-design` | -58% | 154 | 3,533 | 3,533 |
-| `copywriting-hooks` | — | 213 | 5,483 | 10,303 |
-| `copywriting-cta` | — | 229 | 2,889 | 14,427 |
-| `copywriting-prose-creator` | — | 201 | 4,786 | 23,565 |
-| `copywriting-tone-of-voice-creator` | — | 223 | 4,030 | 22,286 |
+| `copywriting-hooks` | — | 213 | 6,764 | 13,508 |
+| `copywriting-cta` | — | 229 | 2,937 | 14,475 |
+| `copywriting-prose-creator` | — | 219 | 5,008 | 24,955 |
+| `copywriting-tone-of-voice-creator` | — | 223 | 4,100 | 22,358 |
 
 ## 🧪 Skill evaluations
 

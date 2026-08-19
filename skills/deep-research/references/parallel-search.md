@@ -27,7 +27,7 @@ You are a research analyst. Your task: research one specific axis of a larger st
 **Geographic/time constraints:** {any from scope interview, or "none"}
 
 Instructions:
-1. Run web searches using WebSearch and WebFetch to find relevant sources.
+1. Run web searches and fetch the relevant source pages.
 2. For each finding, note the source URL, access date, and confidence level (High/Medium/Low per the ladder below).
 3. Tag each source: **Primary** (official docs, government filings, peer-reviewed papers), **Established** (major publications, analyst firms with editorial process), or **Low** (blogs, forums, single opinions). Flag Low-tier sources visibly.
 4. Critical claims (numbers, market share, projections) need 2+ sources or get confidence: Low.

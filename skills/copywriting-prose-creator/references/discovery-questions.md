@@ -1,6 +1,6 @@
 # Discovery Questions
 
-Full intake battery for BUILD Phase 1. Use `AskUserQuestion` in 2–3 batches; skip any field already supplied by SOUL.md, TONE.md, or prior conversation. Treat as a kickoff session checklist — a 90-minute interview fills the critical fields; subsequent sessions backfill the rest.
+Full intake battery for BUILD Phase 1. Ask through the question tool, one at a time, in 2–3 batches; skip any field already supplied by SOUL.md, TONE.md, or prior conversation. Treat as a kickoff session checklist — a 90-minute interview fills the critical fields; subsequent sessions backfill the rest.
 
 Organized by domain. Mandatory fields are marked **[M]**; the rest are nice-to-have and improve the guide but do not block it.
 

@@ -3,17 +3,16 @@ name: copywriting-hooks
 description: >
   Generate opening hooks and post titles for long-form articles in EN or FR — blog posts, Substack/Medium/dev.to, LinkedIn long-form, paid newsletters, opinion essays, reported features, technical deep-dives. Trigger whenever the user asks for a hook, opening, lede, intro, first sentence/paragraph, opener, accroche, attaque, phrase d'accroche, or première phrase — including making a flat intro punchier or rewriting a draft opening. Also trigger when user asks for a post title, titre d'article, headline, or when ghostwriting skills reach the opening or titling step. Proposes 3-4 hooks pulling distinct psychological levers (curiosity gap, contrarian, scene, promise, authority), 2 candidates each, waits for the user to pick. Do NOT trigger for social posts (LinkedIn feed, Twitter/X, TikTok, Bluesky, Threads), READMEs or doc first lines, taglines, email subjects or openers, ad copy (Google/Meta Ads), landing-page headlines, press releases, SEO meta, fiction openings, talk/podcast/video script intros, or body rewrites.
 
-
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
   version: "1.0.0"
   openclaw:
     emoji: "🪝"
     homepage: https://github.com/samber/cc-skills
-allowed-tools: Read Edit Write Glob Grep Agent
+allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
 # Copywriting Hooks
@@ -48,7 +47,7 @@ When this skill triggers:
 2. **Pick 3 to 4 hooks from the catalog** below that are genuinely different. Different levers, not three flavors of contrarian.
 3. **Write 2 candidates per hook**, specific to the user's article. The two candidates within one hook should explore different angles (different anecdote, different statistic, different scene), not be rewordings of each other.
 4. **Present using the Output format** below.
-5. **Use `ask_user_input_v0`** if available. The choice is a small fixed set, which is what that tool is for.
+5. **Ask through the question tool.** The choice is a small fixed set, which is what that tool is for.
 6. **Wait for the user's pick.** Do not pick for them.
 7. **After they pick**, name what the choice commits the rest of the article to. A contrarian hook commits paragraphs 2 to 3 to defending the non-consensus claim. A scene opener commits the next section to either resolving the scene or productively delaying it.
 

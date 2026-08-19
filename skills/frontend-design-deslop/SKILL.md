@@ -3,7 +3,7 @@ name: frontend-design-deslop
 description: Produce distinctive, non-generic UI and design applications well, working strategy-first. Identify the project (landing page, SaaS app, dashboard, ecommerce, presentation, docs, portfolio...) and its positioning and personality, commit to brand adjectives, translate into a typography and color system, then apply the craft layer (layout, components and states, motion, iconography, imagery, dark mode and theming, accessibility), avoiding the AI-slop / Claude-esque default. This is both a de-slop and an expert app-design skill. Use this whenever building or styling any web frontend, app, dashboard, landing page, deck, or artifact, or when the user says "make it not look like AI", "de-slopify", "deslop", "less generic", "give it character", "design a UI for X", "design an app", "update DESIGN.md", or complains the output looks like every other AI site. Trigger even when the user just says "build a UI for X" without naming an aesthetic, because the default without this skill is slop.
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents.
+compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
   version: "1.0.0"
@@ -12,6 +12,8 @@ metadata:
     homepage: https://github.com/samber/cc-skills
 allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebSearch WebFetch
 ---
+
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
 
 # frontend design deslop
 
@@ -23,9 +25,7 @@ This skill does two jobs at once: it de-slops the default AI look, and it design
 
 ## Asking questions (CRITICAL)
 
-ALWAYS use the AskUserQuestion tool for ANY question to the user. Never ask questions as plain text output. The tool gives a guided, interactive experience with structured options that the user can answer in one tap. Every single user question must go through this tool. (On claude.ai the equivalent tool is `ask_user_input_v0`; use whichever structured question tool the environment provides.)
-
-Discipline on top of that rule: batch related questions, offer 2 to 4 concrete options each, and ask only the high-signal subset that changes the design system. Infer from context first and confirm inferences rather than re-asking. The bank is generous; the asking is selective. Do not interrogate.
+Every single user question must go through the question tool (see the **Questions:** directive above) — never as plain-text prose. Discipline on top: batch related questions, offer 2 to 4 concrete options each, and ask only the high-signal subset that changes the design system. Infer from context first and confirm inferences rather than re-asking. The bank is generous; the asking is selective. Do not interrogate.
 
 ## Phase 0: Discover and commit to words (do this FIRST, before any code)
 
@@ -102,7 +102,7 @@ Load on demand.
 Foundation and intake:
 
 - `references/design-theory.md` - the mechanisms behind every choice: hierarchy, Gestalt, CRAP, signal-vs-noise, affordances, interaction laws. Read once early.
-- `references/discovery.md` - design intake: AskUserQuestion protocol, commit-to-words, question bank, personality-to-token translation table. Read at the start of Phase 0.
+- `references/discovery.md` - design intake: question-tool protocol, commit-to-words, question bank, personality-to-token translation table. Read at the start of Phase 0.
 - `references/design-md.md` - the DESIGN.md schema and persistence conventions. The durable output of the whole skill. Read in Phase 0 (to consume an existing file) and Phase 3 (to write one).
 - `references/artifact-types.md` - artifact taxonomy with per-type priorities, layout grammar, density, positioning variants, anti-patterns. Read at the start of Phase 0.
 

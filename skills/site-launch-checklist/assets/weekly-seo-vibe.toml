@@ -1,0 +1,17 @@
+agent_type = "subagent"
+system_prompt_id = "weekly-seo"
+
+[tools.read_file]
+permission = "always"
+
+[tools.write_file]
+permission = "ask"
+
+[tools.run_shell_command]
+permission = "ask"
+
+[tools.web_search]
+permission = "always"
+
+[tools.web_fetch]
+permission = "always"

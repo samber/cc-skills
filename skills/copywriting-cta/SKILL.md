@@ -13,6 +13,8 @@ metadata:
 allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 ---
 
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
+
 # End-of-Article CTA Designer
 
 Designing an end-of-article CTA is a function of three inputs: the **objective** (what action), the **audience** (who reads it, in what relationship to the author), and the **context** (independent writing, newsletter, brand publication). Get those three right and the copy + form follow almost mechanically. Skip them and you get the universal failure mode: a generic "Subscribe for more" or "Learn More" that converts at the noise floor.
@@ -27,7 +29,7 @@ Run the four steps below in order. Do not skip the interview. The user may have 
 
 ### Step 1 — Interview
 
-Use the `ask_user_input_v0` tool. Ask one question at a time. Do not stack questions in prose. Each question must have 2-4 tappable options. Fall back to free text only if the answer genuinely cannot be enumerated.
+Ask one question at a time. Do not stack questions in prose. Each question must have 2-4 tappable options. Fall back to free text only if the answer genuinely cannot be enumerated.
 
 Ask these in order, skipping any already answered:
 

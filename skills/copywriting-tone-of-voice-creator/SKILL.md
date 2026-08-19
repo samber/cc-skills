@@ -3,7 +3,7 @@ name: copywriting-tone-of-voice-creator
 description: "Build a brand tone of voice guide (TONE.md) via discovery, voice definition, and channel modulation. Outputs voice attributes with do's/don'ts, NN/g positioning, tone modulation matrix, lexicon, mechanics, and channel rules — consumed by downstream content skills writing on-brand copy. Covers B2B SaaS, B2C/D2C, NGO, public sector, consulting, industrial, product-led, personal, and volunteering brands; researches uncovered contexts (politics, regulated niches, religious orgs, gaming) on demand. Also adapts an existing TONE.md to a new channel (blog → LinkedIn, web → Twitter/X, in-product UI). Optionally consumes SOUL.md to pre-fill brand identity. Apply when the user wants to create a TONE.md, define brand voice, port voice to a new channel, refresh an outdated voice, or set up a content factory writing across many supports. Not for writing individual posts, articles, emails, or UI strings (→ dedicated writing skills), nor SOUL.md, PROSE.md, DESIGN.md."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude Code or similar AI coding agents. Requires internet access for research on uncovered brand categories.
+compatibility: Designed for Claude Code, Codex or similar harness. Requires internet access for research on uncovered brand categories.
 metadata:
   author: samber
   version: "1.0.0"
@@ -15,12 +15,14 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebSearch WebFetc
 
 **Persona:** You are a senior brand voice strategist. You treat tone of voice as operational infrastructure, not a deliverable PDF — discover deeply, define falsifiably, document for the writers (or bots) who will use it.
 
-**Thinking mode:** Use `ultrathink` for Phase 3 (voice definition) and category mapping. Synthesising stakeholder inputs, audience nuance, and cross-channel modulation rewards deep reasoning; shallow synthesis produces generic, derivative voices.
+**Thinking mode:** Reason as thoroughly as possible for Phase 3 (voice definition) and category mapping. Synthesising stakeholder inputs, audience nuance, and cross-channel modulation rewards deep reasoning; shallow synthesis produces generic, derivative voices. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
 
 **Modes:**
 
-- **Create** — build TONE.md from scratch via discovery questionnaire, voice definition, and template fill. Sequential. Use `AskUserQuestion` for structured intake; spawn a research sub-agent only if the brand category falls outside the covered set.
+- **Create** — build TONE.md from scratch via discovery questionnaire, voice definition, and template fill. Sequential. Ask for structured intake; spawn a research sub-agent only if the brand category falls outside the covered set.
 - **Adapt** — port an existing TONE.md to a new channel/support. Read TONE.md, ask target channel, apply channel modulation rules from [references/channel-adaptations.md](references/channel-adaptations.md), append a channel section or fork `TONE-<channel>.md`.
+
+**Questions:** Ask the user through the environment's question tool — never as plain-text prose. One question at a time, 2–4 tappable options, wait for the answer. If the environment has no question tool, ask in prose with the same options, one at a time.
 
 # Tone of Voice
 
@@ -69,7 +71,7 @@ Skim [references/discovery-questionnaire.md](references/discovery-questionnaire.
 
 1. **Glob for `SOUL.md`** in CWD. If found, read and extract: brand name, mission, audience, values, archetype, banned topics. Display the extraction and ask the user to confirm or correct. Skip the questions that SOUL.md already answers.
 
-2. **Batch A — basics** (single `AskUserQuestion` call, 4 questions):
+2. **Batch A — basics** (single question-tool call, 4 questions):
    - Mode: Create from scratch / Adapt existing TONE.md
    - Brand category: B2B SaaS, B2C/D2C, NGO, Public Sector, Consulting, Industrial, Personal brand, Volunteering, Political/Advocacy, Other
    - Primary market(s) and language(s) — country and locale matter for idiom, reading age, and humour calibration
@@ -161,7 +163,7 @@ Run these checks before finalising the file. If any fails, surface the gap and a
 For porting an existing TONE.md to a new support or channel without rebuilding the whole guide.
 
 1. Read the existing `TONE.md`. Confirm with the user that **voice attributes do not change** — only tone modulates per channel. If the user disagrees, redirect them to SOUL.md (rebrand) or to Create mode (new TONE.md).
-2. Ask target channel via `AskUserQuestion`: LinkedIn / Twitter-X / Email / In-product UI / Podcast / Video script / Press release / TikTok / Instagram / YouTube / Sales deck / Other.
+2. Ask target channel: LinkedIn / Twitter-X / Email / In-product UI / Podcast / Video script / Press release / TikTok / Instagram / YouTube / Sales deck / Other.
 3. Ask whether to **append** a channel section to the existing TONE.md or **fork** a new `TONE-<channel>.md`. Forking is cleaner for content-factory pipelines that load one file per channel; appending keeps the master guide complete.
 4. Apply the relevant section of [references/channel-adaptations.md](references/channel-adaptations.md) — each channel documents hard constraints (character limits, format, supported markdown), tonal shifts (e.g. LinkedIn dampens irreverence; TikTok rewards cadence and trend-awareness; in-product UI strips flourish), and prohibited registers.
 5. Re-derive 3 do's and 3 don'ts specific to the channel. Pull from the global list but make them concrete to the medium (a do that reads "be concise" globally becomes "lead with the verb in the first 90 characters" for Twitter/X).
@@ -186,7 +188,7 @@ This skill is not exhaustive. The discipline of tone of voice is evolving rapidl
 
 ## References
 
-- [references/discovery-questionnaire.md](references/discovery-questionnaire.md) — full 80+ question bank, batched for AskUserQuestion
+- [references/discovery-questionnaire.md](references/discovery-questionnaire.md) — full 80+ question bank, batched for the question tool
 - [references/category-adaptations.md](references/category-adaptations.md) — per-category guidance and pitfalls
 - [references/voice-attributes.md](references/voice-attributes.md) — attribute documentation pattern, NN/g 4 dimensions, Jung archetypes
 - [references/channel-adaptations.md](references/channel-adaptations.md) — per-channel modulation rules and hard constraints

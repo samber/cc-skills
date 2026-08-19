@@ -16,7 +16,7 @@ Detect what's available and use the best method for reading and writing the flat
 
 | Priority | Access method | Cross-session? | How |
 | --- | --- | --- | --- |
-| 1 | **Agent with file write access** (Claude Code, Codex, etc.) | ✅ Yes | Write directly to `negotiation-{slug}/` in the repo or workspace. Read next session with the Read tool. |
+| 1 | **Agent with file write access** (Claude Code, Codex, etc.) | ✅ Yes | Write directly to `negotiation-{slug}/` in the repo or workspace. Read them back at the start of the next session. |
 | 2 | **Obsidian MCP** (if available) | ✅ Yes | Write the flat files into the Obsidian vault at `negotiations/negotiation-{slug}/`. Obsidian indexes and links them automatically — the files remain plain markdown, Obsidian is just the viewer. |
 | 3 | **Claude (claude.ai) — within a Project** | ⚠️ Partial | Create one Artifact per file (markdown type). Artifacts in a Project persist across conversations. Title each artifact `negotiation-{slug}-{file}` (e.g. `negotiation-acme-renewal-memory`). |
 | 4 | **Claude (claude.ai) — no Project / ChatGPT Canvas** | ❌ Per-conversation | Create one Artifact or Canvas per file within the session. **Warn the user at session end**: _"These don't persist across new conversations — copy each file's content and save it locally, or paste them at the start of the next session."_ |
