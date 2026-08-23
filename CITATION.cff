@@ -1,0 +1,31 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "samber/cc-skills: AI agent skills for engineering, marketing and productivity"
+abstract: >-
+  A collection of reusable AI agent skills that extend AI coding assistants with
+  domain-specific expertise, loaded on demand so they do not bloat the context
+  window. Covers software engineering, SEO, marketing, content writing and
+  developer relations. Compliant with the Agent Skills specification and usable
+  with Claude Code, Codex, Cursor, Gemini CLI and other compatible harnesses.
+type: software
+authors:
+  - family-names: Berthe
+    given-names: Samuel
+    email: hello@samuel-berthe.fr
+    orcid: "https://orcid.org/0009-0000-2060-7721"
+doi: 10.5281/zenodo.22017565
+repository-code: "https://github.com/samber/cc-skills"
+url: "https://github.com/samber/cc-skills"
+license: MIT
+date-released: "2026-03-22"
+keywords:
+  - agent-skills
+  - ai-agent
+  - claude-code
+  - claude-code-plugin
+  - llm
+  - prompt-engineering
+  - developer-tools
+  - marketing
+  - seo
+  - productivity
