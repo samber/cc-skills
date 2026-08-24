@@ -1,6 +1,6 @@
 ---
 name: humaniseur-fr
-description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 27 patterns: AI vocabulary overuse (crucial, essentiel, notamment, par ailleurs, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans le paysage actuel), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, typographic tells (curly quotes instead of guillemets). Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
+description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 29 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude or similar AI agents.
@@ -19,7 +19,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 
 When given French text to humanize:
 
-1. **Identify AI patterns** - Scan for all 27 patterns listed below
+1. **Identify AI patterns** - Scan for all 29 patterns listed below
 2. **Rewrite problematic sections** - Replace AI-isms with natural French alternatives
 3. **Preserve meaning** - Keep the core message intact
 4. **Maintain voice** - Match the intended tone and register
@@ -130,11 +130,15 @@ The formulaic challenge-then-optimism sandwich.
 
 The single most flagged word in French AI text is **crucial**. The adverb **notamment** appears ~1/200 words in AI text vs. ~1/800 in human French (4x overuse).
 
+The strongest _measured_ French markers come from the only quantified corpus study (Labbé, Labbé & Savoy 2024, ChatGPT vs. French presidential addresses): **également** (+1 178 %, jumping from 37th to 3rd most frequent lemma) and **défi** (+696 %). « également » slips past most readers precisely because it is unremarkable — check its density first.
+
 **High-frequency AI vocabulary (find-and-replace checklist):**
 
 | AI word/phrase | Replacement strategy |
 | --- | --- |
 | crucial, essentiel | Use domain-specific terms, or just drop |
+| également (the top measured French AI marker) | « aussi », « de même », or drop — one per paragraph max |
+| défi | « problème », « difficulté », or name the actual obstacle |
 | significatif, robuste, substantiel | Be precise: give numbers instead |
 | holistique | Remove (calque of English "holistic") |
 | compréhensif (= exhaustif) | Use « exhaustif » or « complet » (compréhensif = empathetic in French) |
@@ -146,6 +150,9 @@ The single most flagged word in French AI text is **crucial**. The adverb **nota
 | au cœur de | Replace with specific location/concept |
 | la pierre angulaire | Just say what it is |
 | un levier puissant | Describe the actual mechanism |
+| permettre de, favoriser, optimiser | Use a concrete verb: say what actually happens |
+| mettre en lumière | « montrer », « révéler » |
+| que vous soyez X ou Y | Address the actual reader directly |
 
 **Formulaic openings to kill on sight:**
 
@@ -154,6 +161,8 @@ The single most flagged word in French AI text is **crucial**. The adverb **nota
 - « Dans un monde [où/trépidant/tumultueux]... »
 - « Il est essentiel/crucial de noter que... »
 - « Plongeons dans... » (the French "Let's dive into")
+
+**Formulaic closings to kill on sight:** « En conclusion », « En résumé », « En somme », « En fin de compte » opening a final paragraph. End on a concrete fact instead (see Pattern 26).
 
 **Connectors that signal human authorship** (AI almost never uses these): « Or », « Quoi qu'il en soit », « Toujours est-il que », « Force est de constater que », « Reste que », « N'empêche que », « Soit dit en passant »
 
@@ -216,6 +225,10 @@ AI overuses em dashes mimicking English "punchy" writing. French prefers commas 
 
 **Avant :** Le terme est promu par les institutions — pas par les habitants. Cet étiquetage — même dans les documents officiels — persiste. **Après :** Le terme est promu par les institutions, pas par les habitants. Cet étiquetage persiste, même dans les documents officiels.
 
+**French-specific test:** the closed English form `mot—mot` (no spaces) is an anomaly under every French typographic school; the open form `mot — mot` is legitimate French. Fix the closed form always; reduce the open form only when overused. French editorial usage also prefers the demi-cadratin (–) over the full cadratin (—).
+
+**Freshness note:** since November 2025, ChatGPT obeys "no em dash" custom instructions, and readers know the tell. Presence proves little (humans use it too), absence proves nothing. Still reduce overuse — the goal is natural French, not detector evasion.
+
 ### Pattern 16 — Abus de gras mécanique
 
 AI bolds terms mechanically to signal importance.
@@ -240,9 +253,19 @@ French headings capitalize only the first word (and proper nouns).
 
 **Avant :** ## Négociations Stratégiques Et Partenariats Globaux **Après :** ## Négociations stratégiques et partenariats globaux
 
-### Pattern 20 — Guillemets et typographie
+### Pattern 19 — Emojis décoratifs
 
-ChatGPT uses English curly quotes ("..."). French requires chevron quotes (« ... ») with non-breaking spaces. Also check: spaces before colons/semicolons/exclamation marks/question marks, and French number formatting (1 000,50 not 1,000.50).
+**Triggers:** emoji in headings or list bullets (💡 🚀 ✅ 📌), « 👉 » opening a paragraph, emoji added _next to_ a full sentence
+
+Humans use an emoji _in place of_ words; AI adds them _on top_, as decoration. The « 👉 » paragraph opener is a frequently cited French tell.
+
+**Rule:** Remove decorative emojis from headings and bullets. Keep an emoji only where it carries the message by itself.
+
+### Pattern 20 — Incohérence typographique
+
+Sources contradict on which quote style AI produces (perfect chevrons « », English curly quotes "…", or both). The robust tell is not one variant but the **mix**: straight quotes, curly quotes and chevrons cohabiting in one text, or straight (') and curly (’) apostrophes alternating — a human sticks to whatever their keyboard produces.
+
+**Rule:** Make typography _consistent_ and appropriate to the medium. For edited French prose: chevron quotes (« ... ») with non-breaking spaces, spaces before colons/semicolons/exclamation/question marks, French number formatting (1 000,50 not 1,000.50). For a forum post or chat message, hyper-correct typography itself can read as machine output — match what a human would realistically type there.
 
 ### Pattern 21 — Artéfacts de conversation
 
@@ -283,6 +306,24 @@ Replace with a concrete fact about what actually happens next.
 
 AI produces paragraphs of nearly identical length (std dev <30 words vs. >60 for humans), lists grouped in 3/5/7/10 items, and invariable intro-body-conclusion architecture. Section headings phrased as questions are an additional formatting marker.
 
+At sentence level, the tell is dispersion, not average: in the only quantified French study, mean sentence length was near-identical (21.0 human vs. 21.7 AI words) but AI produced almost no sentences under 15 or over 39 words (most frequent length shifting from 13 to 19 words).
+
+**Rule:** Reintroduce the tail. Write some short sentences (under 15 words) and some long periodic ones (over 39). The missing extremes are what betrays the machine, not the mean.
+
+### Pattern 28 — Markdown résiduel et artéfacts techniques
+
+**Kill on sight:** unrendered `**mot**` or `##` in plain-text contexts, `- **Titre :**` bullets pasted where Markdown doesn't render, citation artifacts like `:contentReference[oaicite:2]{index=2}`, leftover refusals (« Je suis désolé, mais je ne peux pas... »)
+
+These are the strongest tells of all: they cannot come from a spellchecker or a CMS — only from pasting a chat output. French investigative journalists hunt AI-generated news sites by searching exactly these strings.
+
+### Pattern 29 — Lyrisme de pacotille (registre narratif)
+
+French AI _fiction_ has its own register, distinct from blog slop.
+
+**Triggers:** un instant suspendu, une promesse murmurée/suspendue dans l'air, un secret brûlant, un désir/silence vibrant, comme si le temps s'était figé — recurring fetish words: _promesse, suspendu, vibrant, secret, brûlant, murmuré_
+
+**Grammar profile:** AI narrative French flattens tense and person. The quantified study measured passé simple −84 %, imparfait −71 %, conditionnel −50 %, pronoun « on » −92 %, verb « falloir » −93 % versus human French. Reintroduce the tenses the genre calls for, prefer « on » over a stiff « nous », and let « il faut » back in.
+
 ---
 
 ## Part 3: Personality and soul
@@ -318,12 +359,18 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 
 **Être précis sur les ressentis.** Not « cela est préoccupant » but « il y a quelque chose de dérangeant à voir des agents tourner à 3h du matin sans personne pour les surveiller. »
 
+**Utiliser des mots rares.** AI French avoids low-probability words in both directions: no « séide » or « nonobstant », no « chelou » or « relou ». One well-placed rare word — soutenu or argotique, matching the register — signals a human choosing, not a model averaging.
+
+**Ancrer géographiquement.** AI defaults to Parisian standard French. Regionalisms are strong authenticity markers where they fit the author: québécismes (« c'est correct », « niaiser »), belgicismes (« septante », « GSM »), helvétismes (« natel »). Their systematic absence in a supposedly Québécois or Belgian author's text is itself a tell.
+
+**Assumer l'oralité (registre familier uniquement).** In informal writing, humans drop the « ne » (« c'est pas faux », « y'a un truc »), use hyperbole (« 1000 % d'accord »), contract. AI keeps full negation everywhere. Never force this into formal prose — register first.
+
 ---
 
 ## Process
 
 1. Read the input text carefully
-2. Identify all instances of the 27 patterns
+2. Identify all instances of the 29 patterns
 3. Rewrite each problematic section
 4. Inject voice and personality (Part 3)
 5. Ensure the revised text:
@@ -412,5 +459,10 @@ Based on:
 - [Wikipedia:Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing) (WikiProject AI Cleanup)
 - [Wikipedia FR: Aide:Identifier l'usage d'une IA générative](https://fr.wikipedia.org/wiki/Aide:Identifier_l%27usage_d%27une_IA_g%C3%A9n%C3%A9rative)
 - [Wikipedia FR: Projet:Observatoire des IA](https://fr.wikipedia.org/wiki/Projet:Observatoire_des_IA)
+- [Labbé, Labbé & Savoy — ChatGPT as speechwriter for the French presidents](https://arxiv.org/abs/2411.18382) (the only quantified stylometric study of AI-generated French: « également », « défi », tense and pronoun profiles)
+- [The Conversation — Comment « dé-IA-iser » nos écrits](https://theconversation.com/comment-de-ia-iser-nos-ecrits-pour-eviter-la-disparition-des-particularites-des-langues-281811)
+- [Next — Comment reconnaître les sites d'infos générés par des IA](https://next.ink/165310/comment-reconnaitre-les-sites-dinfos-generes-par-des-ia/) (residual-artifact hunting method)
+
+**Freshness warning:** AI tells expire. The em dash lost most of its diagnostic value after OpenAI's November 2025 fix; published marker lists get reverse-engineered into evasion tools within months; and humans increasingly adopt AI vocabulary by exposure. Treat every lexical list here as dated — the structural principles (dispersion, register, specificity, soul) age far slower than the word lists.
 
 Key insight: LLMs generate the most statistically likely token sequence. The result trends toward the average across all possible contexts. Making text human means making it _yours_: specific, opinionated, idiosyncratic.
