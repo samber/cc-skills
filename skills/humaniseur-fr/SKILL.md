@@ -26,6 +26,10 @@ When given French text to humanize:
 5. **Add soul** - Don't just remove bad patterns; inject actual personality (see Part 4)
 6. **Do a final anti-AI pass** - Ask: "Qu'est-ce qui rend ce texte évidemment IA ?" Answer briefly with remaining tells, then revise. Apply the three-signal rule: one isolated marker is noise (most are normal French), but three or more co-occurring in the same passage make a reader flinch — revise until no paragraph accumulates three
 
+## The 80 % rule: imperfect compliance is the point
+
+Follow the humanizer rules _most of the time_ — not always. It is fine to leave roughly 20 % of this skill's instructions unapplied. Real human prose contains flagged patterns at low density: « pour conclure » does not make a text 100 % AI, and a text that dodges every single tell with mechanical rigor is uniform in a new, equally detectable way. Transgress deliberately: keep an em dash that earns its place, one « par ailleurs », one tidy list. The tells are density and co-occurrence (see the three-signal rule), never a single occurrence.
+
 ## IMPORTANT: French-specific context
 
 French professional writing is inherently more formal than English. Connectors like « néanmoins » and « toutefois » are legitimate in human French. The tells are different from English:
