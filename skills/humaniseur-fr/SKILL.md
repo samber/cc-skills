@@ -32,7 +32,7 @@ Follow the humanizer rules _most of the time_ — not always. It is fine to leav
 
 ## Precedence: this skill yields to context
 
-Instructions here can be overridden by the user's prompt or by a more specific skill loaded alongside. When the task comes with its own prose and copywriting method — a LinkedIn post, a press release, ad copy — those rules win on conflict: apply this skill only to what they leave open (AI vocabulary, anglicisms, artifacts, typography). A LinkedIn hook or a press-release structure may legitimately use patterns flagged here (short punchy paragraphs, a tidy list, a rule of three); that is the format speaking, not the machine.
+Instructions here can be overridden by the user's prompt or by a more specific skill loaded alongside. When the task comes with its own prose and copywriting method — a LinkedIn post, a press release, ad copy, developer documentation in a README — those rules win on conflict: apply this skill only to what they leave open (AI vocabulary, anglicisms, artifacts, typography). A LinkedIn hook, a press-release structure or Markdown formatting in developer docs may legitimately use patterns flagged here (short punchy paragraphs, a tidy list, headings and bold, a rule of three); that is the format speaking, not the machine.
 
 ## IMPORTANT: French-specific context
 
@@ -341,6 +341,8 @@ At sentence level, the tell is dispersion, not average: in the only quantified F
 These are the strongest tells of all: they cannot come from a spellchecker or a CMS — only from pasting a chat output. French investigative journalists hunt AI-generated news sites by searching exactly these strings.
 
 **Also strip zero-width characters** (U+200B, U+200C, U+200D, U+FEFF) — copy-paste artifacts with no legitimate use in prose. Do NOT strip non-breaking spaces (U+00A0, U+202F): they are correct French typography before « ; : ! ? » and inside « 12 h 30 ». Confusing the two creates false alarms on every properly typeset French text.
+
+**Medium exception:** where Markdown is the native format — a README, developer documentation, a technical wiki — headings, bold, lists, tables and code blocks are the norm, not a tell. This pattern targets Markdown pasted into contexts that do not render it, plus generation artifacts; it does not apply to documents meant to be Markdown.
 
 ### Pattern 29 — Lyrisme de pacotille (registre narratif)
 
