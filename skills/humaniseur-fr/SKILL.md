@@ -30,6 +30,10 @@ When given French text to humanize:
 
 Follow the humanizer rules _most of the time_ — not always. It is fine to leave roughly 20 % of this skill's instructions unapplied. Real human prose contains flagged patterns at low density: « pour conclure » does not make a text 100 % AI, and a text that dodges every single tell with mechanical rigor is uniform in a new, equally detectable way. Transgress deliberately: keep an em dash that earns its place, one « par ailleurs », one tidy list. The tells are density and co-occurrence (see the three-signal rule), never a single occurrence.
 
+## Precedence: this skill yields to context
+
+Instructions here can be overridden by the user's prompt or by a more specific skill loaded alongside. When the task comes with its own prose and copywriting method — a LinkedIn post, a press release, ad copy — those rules win on conflict: apply this skill only to what they leave open (AI vocabulary, anglicisms, artifacts, typography). A LinkedIn hook or a press-release structure may legitimately use patterns flagged here (short punchy paragraphs, a tidy list, a rule of three); that is the format speaking, not the machine.
+
 ## IMPORTANT: French-specific context
 
 French professional writing is inherently more formal than English. Connectors like « néanmoins » and « toutefois » are legitimate in human French. The tells are different from English:
