@@ -1,6 +1,6 @@
 ---
 name: humaniseur-fr
-description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 34 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
+description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 38 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude or similar AI agents.
@@ -19,7 +19,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 
 When given French text to humanize:
 
-1. **Identify AI patterns** - Scan for all 34 patterns listed below
+1. **Identify AI patterns** - Scan for all 38 patterns listed below
 2. **Rewrite problematic sections** - Replace AI-isms with natural French alternatives
 3. **Preserve meaning** - Keep the core message intact
 4. **Maintain voice** - Match the intended tone and register
@@ -348,11 +348,11 @@ The same study measured the over-uses: « devoir » (+101 %), « continuer » (+
 
 ## Part 3: Discourse architecture patterns
 
-Lexical scrubbing is not enough: the deepest AI tells are architectural. A text can contain zero flagged words and still read machine-made because of how it is built.
+Lexical scrubbing is not enough: the deepest AI tells are architectural. A text can contain zero flagged words and still read machine-made because of how it is built. Unlike the measured lexical data, these patterns are craft heuristics — convergent observations from experienced readers, not corpus-measured figures.
 
 ### Pattern 30 — Annonce, récapitulation et écho de la consigne
 
-**Triggers:** an intro announcing what the text will say, a conclusion repeating what it said, a first sentence rephrasing the question asked (« Vous vous demandez comment... ? », the assignment restated), a closing that loops back to the request
+**Triggers:** an intro announcing what the text will say, a conclusion repeating what it said, section headings mirroring the announced plan 1:1, a first sentence rephrasing the question asked (« Vous vous demandez comment... ? », the assignment restated), a closing that loops back to the request
 
 The information exists once but is served three times. Chatbot answers and school essays echo the prompt at both ends.
 
@@ -382,6 +382,10 @@ Sentence-level hedging (Pattern 25) scaled up to the whole text: the piece has n
 
 **Rule:** Take a position. Nuance once, where it genuinely matters — not after every claim. If the honest answer really is « ça dépend », say of what, precisely.
 
+**Deletion test:** remove the objection paragraph. If the conclusion still holds unchanged, the objection was ornament, not thought — a real antithesis _displaces_ the thesis. The discriminator matters in French: the dissertation tradition (thèse/antithèse/synthèse) makes announce-and-balance school-legitimate, so a courtesy counter-argument passes unnoticed.
+
+**Quebec caveat:** rédaction épicène and OQLF plain-language norms push human institutional writers toward exactly this flat, symmetrical shape — in Québec institutional prose, do not read balance alone as machine output.
+
 ### Pattern 34 — Sur-sectionnement SEO et question-réponse fantôme
 
 **Triggers:** H2/H3 every two paragraphs, a table of contents on a short text, an FAQ block, a closing quiz or « points clés à retenir » ; self-interrogation outside any real FAQ (« Pourquoi est-ce important ? Parce que... »)
@@ -389,6 +393,38 @@ Sentence-level hedging (Pattern 25) scaled up to the whole text: the piece has n
 This is the documented grid of French AI content farms. The ghost Q&A simulates a dialogue where none exists.
 
 **Rule:** A heading must govern at least four or five paragraphs — otherwise merge. Remove FAQ/quiz blocks unless the medium genuinely calls for them. Convert self-questions into direct statements.
+
+### Pattern 35 — Granularité constante
+
+**Triggers:** the whole text sits at one level of abstraction — no date, no name, no price, no error message, no quoted sentence; 1 500 words at mid-altitude
+
+Humans change altitude: they drop from the abstract to a hyper-specific detail (a date, a stack trace, a price) and climb back within a couple of paragraphs. LLMs cruise at mid-altitude for the whole text.
+
+**Rule:** Force at least one dive per section: a verifiable, dated, named detail. If the author has none to offer, that is a content problem, not a style problem (see the limits note in Part 4).
+
+### Pattern 36 — Absence de trous
+
+**Triggers:** every question the text raises gets answered; no abandoned thread, no unresolved tension, no open problem
+
+Real expertise leaves holes, because the author knows where the knowledge stops. AI text resolves everything it opens — the tidiness itself is the tell. This is the structural counterpart of never writing « je ne sais pas » (Part 4).
+
+**Rule:** Leave at least one raised question honestly open. Name the limit (« je n'ai pas testé au-delà de X ») instead of rounding it off.
+
+### Pattern 37 — La liste comme évitement
+
+**Triggers:** bullet lists appearing exactly where the reasoning gets hard — at the decision point, the trade-off, the prioritization
+
+Enumeration replaces the choice the author refused to make: listing five options is easier than defending one. Pattern 17 treats lists as formatting; this one treats them as an argumentative symptom.
+
+**Rule:** At each list, ask what decision it avoids. Replace it with a sentence that chooses — keep the list only when the items genuinely are peers.
+
+### Pattern 38 — Absence d'occasion d'écriture
+
+**Triggers:** nothing in the text explains why it exists, now, triggered by what, addressed to whom — no event, no encounter, no deadline, no request
+
+Human texts have an origin (an incident, a question someone asked, a release, an annoyance) and an addressee, and it shows. AI text is written from nowhere, to no one.
+
+**Rule:** Anchor the piece in its occasion within the first paragraphs: what happened that made this worth writing, and for whom. If no occasion exists, ask the author for it.
 
 ---
 
@@ -447,7 +483,7 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 ## Process
 
 1. Read the input text carefully
-2. Identify all instances of the 34 patterns
+2. Identify all instances of the 38 patterns
 3. Rewrite each problematic section
 4. Inject voice and personality (Part 4)
 5. Ensure the revised text:
