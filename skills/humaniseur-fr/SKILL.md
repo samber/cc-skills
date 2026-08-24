@@ -24,7 +24,7 @@ When given French text to humanize:
 3. **Preserve meaning** - Keep the core message intact
 4. **Maintain voice** - Match the intended tone and register
 5. **Add soul** - Don't just remove bad patterns; inject actual personality (see Part 3)
-6. **Do a final anti-AI pass** - Ask: "Qu'est-ce qui rend ce texte évidemment IA ?" Answer briefly with remaining tells, then revise
+6. **Do a final anti-AI pass** - Ask: "Qu'est-ce qui rend ce texte évidemment IA ?" Answer briefly with remaining tells, then revise. Apply the three-signal rule: one isolated marker is noise (most are normal French), but three or more co-occurring in the same passage make a reader flinch — revise until no paragraph accumulates three
 
 ## IMPORTANT: French-specific context
 
@@ -96,6 +96,8 @@ AI tacks participial phrases onto sentences to add fake analytical depth. The Fr
 
 > Le village est situé dans le Luberon, à une trentaine de kilomètres d'Apt. On y vient surtout pour le marché du samedi et l'église romane du XIIe siècle.
 
+**Subtle variant when editing or summarizing:** AI inserts valorizing adjectives and inclusive doublets absent from the source — « nos soldats » becomes « nos _vaillants_ soldats », « concitoyens » becomes « concitoyennes et concitoyens ». It over-corrects toward its training norms instead of following the text. Restore the source's wording.
+
 ### Pattern 5 — Attributions vagues et mots-fouines
 
 **Triggers:** Des rapports sectoriels, Les observateurs soulignent, Les experts estiment, Certains critiques avancent, plusieurs sources/publications (quand peu sont citées), il est communément admis que, il est largement reconnu que
@@ -148,9 +150,16 @@ The single most flagged word in French AI text is **crucial**. The adverb **nota
 | au cœur de | Replace with specific location/concept |
 | la pierre angulaire | Just say what it is |
 | un levier puissant | Describe the actual mechanism |
+| captivant, fascinant, passionnant | Say what is actually interesting, or drop |
+| révolutionnaire, transformateur | Describe the actual change |
 | permettre de, favoriser, optimiser | Use a concrete verb: say what actually happens |
 | mettre en lumière | « montrer », « révéler » |
+| naviguer dans, déverrouiller le potentiel de | Calques — describe the actual action |
+| garantir, assurer, offrir (as service-brochure verbs) | State the fact plainly |
+| dans cette optique, dans ce contexte, à cet égard | Delete, or link the ideas concretely |
 | que vous soyez X ou Y | Address the actual reader directly |
+
+**Jargon de ministre:** AI French leans on administrative vocabulary (« dispositif », « acteurs », « enjeux », « mise en œuvre », « dynamique territoriale ») even outside institutional contexts. Outside actual administrative prose, swap for plain words.
 
 **Formulaic openings to kill on sight:**
 
@@ -159,8 +168,9 @@ The single most flagged word in French AI text is **crucial**. The adverb **nota
 - « Dans un monde [où/trépidant/tumultueux]... »
 - « Il est essentiel/crucial de noter que... »
 - « Plongeons dans... » (the French "Let's dive into")
+- « Découvrez comment... », « Dans cet article, nous allons explorer... », « Bienvenue dans ce guide complet... » (meta-announcements — start with the content itself)
 
-**Formulaic closings to kill on sight:** « En conclusion », « En résumé », « En somme », « En fin de compte » opening a final paragraph. End on a concrete fact instead (see Pattern 26).
+**Formulaic closings to kill on sight:** « En conclusion », « En résumé », « En somme », « En fin de compte », « Au final » opening a final paragraph. End on a concrete fact instead (see Pattern 26).
 
 **Connectors that signal human authorship** (AI almost never uses these): « Or », « Quoi qu'il en soit », « Toujours est-il que », « Force est de constater que », « Reste que », « N'empêche que », « Soit dit en passant »
 
@@ -243,6 +253,8 @@ AI bolds terms mechanically to signal importance.
 
 > La mise à jour améliore l'interface, accélère le chargement et ajoute le chiffrement de bout en bout.
 
+**Same rule for gratuitous tables:** AI presents ordinary developments as tables (a French Wikipedia-flagged marker). Keep a table only when the data is genuinely tabular (comparisons, figures); otherwise convert to prose.
+
 ### Pattern 18 — Majuscules de titre à l'anglaise
 
 French headings capitalize only the first word (and proper nouns).
@@ -308,11 +320,17 @@ At sentence level, the tell is dispersion, not average: in the only quantified F
 
 **Rule:** Reintroduce the tail. Write some short sentences (under 15 words) and some long periodic ones (over 39). The missing extremes are what betrays the machine, not the mean.
 
+**Sentence-start anaphora:** consecutive sentences opening identically (« Cela... », « Cette approche... », « Ce système... »). Vary the attack of each sentence.
+
+**Style « LinkedIn »:** one-sentence paragraphs stacked for drama, ellipses as suspense pivots (« Et là... tout a changé »), relentlessly upbeat tone. This register is now so associated with AI-assisted posting that it reads as machine output even when human. Merge the fragments into real paragraphs.
+
 ### Pattern 28 — Markdown résiduel et artéfacts techniques
 
 **Kill on sight:** unrendered `**mot**` or `##` in plain-text contexts, `- **Titre :**` bullets pasted where Markdown doesn't render, citation artifacts like `:contentReference[oaicite:2]{index=2}`, leftover refusals (« Je suis désolé, mais je ne peux pas... »)
 
 These are the strongest tells of all: they cannot come from a spellchecker or a CMS — only from pasting a chat output. French investigative journalists hunt AI-generated news sites by searching exactly these strings.
+
+**Also strip zero-width characters** (U+200B, U+200C, U+200D, U+FEFF) — copy-paste artifacts with no legitimate use in prose. Do NOT strip non-breaking spaces (U+00A0, U+202F): they are correct French typography before « ; : ! ? » and inside « 12 h 30 ». Confusing the two creates false alarms on every properly typeset French text.
 
 ### Pattern 29 — Lyrisme de pacotille (registre narratif)
 
@@ -322,11 +340,15 @@ French AI _fiction_ has its own register, distinct from blog slop.
 
 **Grammar profile:** AI narrative French flattens tense and person. The quantified study measured passé simple −84 %, imparfait −71 %, conditionnel −50 %, pronoun « on » −92 %, verb « falloir » −93 % versus human French. Reintroduce the tenses the genre calls for, prefer « on » over a stiff « nous », and let « il faut » back in.
 
+The same study measured the over-uses: « devoir » (+101 %), « continuer » (+145 %), « tenir » (+158 %), « ensemble » (+93 %), possessive determiners (+30 %). When these cluster (« nous devons continuer, ensemble, à tenir nos engagements »), the sentence is machine-average French — rewrite it around a concrete action.
+
 ---
 
 ## Part 3: Personality and soul
 
 **Avoiding AI patterns is only half the job.** Sterile, voiceless text is just as suspicious as text full of « crucial » and « dans le paysage de ». This is the dimension most "humanization" guides ignore.
+
+**Know the limits.** Experienced French readers, moderators and investigators no longer rely on style: the signals they trust are behavioral and ecosystem-level (publishing cadence, whether the author exists, whether the sources check out). No amount of pattern-scrubbing fixes a text with nothing situated in it — no lived detail, no dated fact, no checkable source. If the input has no anchored content, flag it to the author instead of polishing the surface: ask for one real example, one date, one source, and build the rewrite around them.
 
 ### Préserver le registre
 
