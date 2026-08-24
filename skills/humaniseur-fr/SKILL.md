@@ -19,6 +19,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 
 When given French text to humanize:
 
+0. **Clarify the target register first** - Abbreviations, argot, orality, emojis and typography all depend on the expected niveau de langage. If it is not clear from the request or the input (soutenu, courant, familier ? for which medium ?), ask the user before starting to humanize
 1. **Identify AI patterns** - Scan for all 38 patterns listed below
 2. **Rewrite problematic sections** - Replace AI-isms with natural French alternatives
 3. **Preserve meaning** - Keep the core message intact
@@ -29,6 +30,8 @@ When given French text to humanize:
 ## The 80 % rule: imperfect compliance is the point
 
 Follow the humanizer rules _most of the time_ — not always. It is fine to leave roughly 20 % of this skill's instructions unapplied. Real human prose contains flagged patterns at low density: « pour conclure » does not make a text 100 % AI, and a text that dodges every single tell with mechanical rigor is uniform in a new, equally detectable way. Transgress deliberately: keep an em dash that earns its place, one « par ailleurs », one tidy list. The tells are density and co-occurrence (see the three-signal rule), never a single occurrence.
+
+**One pass only.** Do not run this skill repeatedly on the same text: each pass removes variance and injects its own habits, and quality degrades fast — by the second or third pass the voice the first one created is flattened again. If the result still smells AI after the final anti-AI pass, the fix is adding anchored content (a fact, a date, an opinion — see the limits note in Part 4), not another scrub.
 
 ## Precedence: this skill yields to context
 
@@ -488,11 +491,21 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 
 **Assumer l'oralité (registre familier uniquement).** In informal writing, humans drop the « ne » (« c'est pas faux », « y'a un truc »), use hyperbole (« 1000 % d'accord »), contract. AI keeps full negation everywhere. Never force this into formal prose — register first.
 
+**Abréger comme un humain.** AI spells everything out; humans abbreviate constantly. Sprinkle where the register allows:
+
+- **Sigles et marqueurs d'usage** : PS:, NB:, cf., etc., ex: / p. ex., càd, RDV, ASAP, FYI, pour info, cc (mettre en copie), CR (compte rendu), retex, N+1, RH, WE
+- **Unités et chiffres** : min (« 5 min de marche »), h collé (« 14h30 », « 2h de route »), km, € collé (« 30€ »), ~ pour « environ », nb (nombre)
+- **Raccourcis d'écrit courant** : pb, tjs, bcp, qqch, qqn, svp / stp, dispo, perso, pro
+- **Apocopes** : ordi, appart, resto, apéro, ciné, fac, prof, exam, visio, réu, présa, la doc, la config, l'admin, le labo, la manif, l'expo, la promo, l'info, l'aprem
+- **Clôtures d'email** : A+, Cdlt, « à plus »
+
+An LLM never spontaneously writes « pb », « tjs » or « 14h30 » — these are cheap, strong authenticity markers. Calibrate to the medium and to the target register (see step 0): in formal documents, stick to cf., etc., NB and p. ex. ; and avoid full SMS-speak (slt, bjr) everywhere except actual chat.
+
 ---
 
 ## Process
 
-1. Read the input text carefully
+1. Read the input text carefully. If the target register is unclear, ask the user which niveau de langage is expected before rewriting anything
 2. Identify all instances of the 38 patterns
 3. Rewrite each problematic section
 4. Inject voice and personality (Part 4)
