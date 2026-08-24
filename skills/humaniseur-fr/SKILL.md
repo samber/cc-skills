@@ -225,8 +225,6 @@ AI overuses em dashes mimicking English "punchy" writing. French prefers commas 
 
 **Avant :** Le terme est promu par les institutions — pas par les habitants. Cet étiquetage — même dans les documents officiels — persiste. **Après :** Le terme est promu par les institutions, pas par les habitants. Cet étiquetage persiste, même dans les documents officiels.
 
-**French-specific test:** the closed English form `mot—mot` (no spaces) is an anomaly under every French typographic school; the open form `mot — mot` is legitimate French. Fix the closed form always; reduce the open form only when overused. French editorial usage also prefers the demi-cadratin (–) over the full cadratin (—).
-
 **Freshness note:** since November 2025, ChatGPT obeys "no em dash" custom instructions, and readers know the tell. Presence proves little (humans use it too), absence proves nothing. Still reduce overuse — the goal is natural French, not detector evasion.
 
 ### Pattern 16 — Abus de gras mécanique
@@ -261,11 +259,13 @@ Humans use an emoji _in place of_ words; AI adds them _on top_, as decoration. T
 
 **Rule:** Remove decorative emojis from headings and bullets. Keep an emoji only where it carries the message by itself.
 
-### Pattern 20 — Incohérence typographique
+### Pattern 20 — Guillemets et incohérence typographique
 
 Sources contradict on which quote style AI produces (perfect chevrons « », English curly quotes "…", or both). The robust tell is not one variant but the **mix**: straight quotes, curly quotes and chevrons cohabiting in one text, or straight (') and curly (’) apostrophes alternating — a human sticks to whatever their keyboard produces.
 
-**Rule:** Make typography _consistent_ and appropriate to the medium. For edited French prose: chevron quotes (« ... ») with non-breaking spaces, spaces before colons/semicolons/exclamation/question marks, French number formatting (1 000,50 not 1,000.50). For a forum post or chat message, hyper-correct typography itself can read as machine output — match what a human would realistically type there.
+**Quote rule by register:** in official documents written in langage soutenu with worked typography, use chevron quotes (« ... ») with non-breaking spaces. The rest of the time (emails, internal communication, social media), prefer curly quotes ("...") — chevron-perfection there reads as machine output.
+
+**Also check:** spaces before colons/semicolons/exclamation/question marks, and French number formatting (1 000,50 not 1,000.50). Whatever the convention, keep it consistent across the whole text — consistency beats correctness.
 
 ### Pattern 21 — Artéfacts de conversation
 
