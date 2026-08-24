@@ -130,8 +130,6 @@ The formulaic challenge-then-optimism sandwich.
 
 The single most flagged word in French AI text is **crucial**. The adverb **notamment** appears ~1/200 words in AI text vs. ~1/800 in human French (4x overuse).
 
-The strongest _measured_ French markers come from the only quantified corpus study (Labbé, Labbé & Savoy 2024, ChatGPT vs. French presidential addresses): **également** (+1 178 %, jumping from 37th to 3rd most frequent lemma) and **défi** (+696 %). « également » slips past most readers precisely because it is unremarkable — check its density first.
-
 **High-frequency AI vocabulary (find-and-replace checklist):**
 
 | AI word/phrase | Replacement strategy |
@@ -361,7 +359,14 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 
 **Utiliser des mots rares.** AI French avoids low-probability words in both directions: no « séide » or « nonobstant », no « chelou » or « relou ». One well-placed rare word — soutenu or argotique, matching the register — signals a human choosing, not a model averaging.
 
-**Ancrer géographiquement.** AI defaults to Parisian standard French. Regionalisms are strong authenticity markers where they fit the author: québécismes (« c'est correct », « niaiser »), belgicismes (« septante », « GSM »), helvétismes (« natel »). Their systematic absence in a supposedly Québécois or Belgian author's text is itself a tell.
+**Utiliser l'argot et le registre familier (quand le registre s'y prête).** AI French is uniformly standard; argot is one of the cheapest authenticity injections. A non-exhaustive palette, by region:
+
+- **France (familier/argot)** : chelou, relou, ouf, avoir le seum, la flemme, une galère, ça me saoule, bosser, un boulot, un bouquin, le fric, la thune, une bagnole, kiffer, se planter, un truc de dingue, grave (= très), carrément, vachement, se prendre le chou, bidouiller, une magouille, au taquet, à l'arrache
+- **Belgique** : septante, nonante, un GSM, un kot, tantôt (= tout à l'heure), à tantôt, une aubette, la guindaille, s'il te plaît (en tendant un objet), une farde, savoir (= pouvoir : « je ne saurais pas venir »), il drache
+- **Québec** : niaiser, jaser, magasiner, pantoute, c'est plate, c'est correct, un char, un dépanneur, une blonde / un chum, avoir de la misère, être dans le champ, ça prend pas la tête à Papineau, c'est tiguidou, se faire passer un sapin, présentement, à matin
+- **Suisse romande** : un natel, septante / huitante / nonante, une panosse, un cornet (= sac plastique), ça joue, se réjouir de (= avoir hâte), un linge (= serviette), une votation, faire la pièce droite
+
+**Ancrer géographiquement.** AI defaults to Parisian standard French. Regionalisms are strong authenticity markers where they fit the author — and their systematic absence in a supposedly Québécois, Belgian or Swiss author's text is itself a tell. Never force them: a misused regionalism (or the clichéd Belgian « une fois ») is worse than none. Match the author's real origin, medium and register.
 
 **Assumer l'oralité (registre familier uniquement).** In informal writing, humans drop the « ne » (« c'est pas faux », « y'a un truc »), use hyperbole (« 1000 % d'accord »), contract. AI keeps full negation everywhere. Never force this into formal prose — register first.
 
