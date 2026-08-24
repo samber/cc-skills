@@ -1,6 +1,6 @@
 ---
 name: humaniseur-fr
-description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 29 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
+description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 34 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude or similar AI agents.
@@ -19,11 +19,11 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 
 When given French text to humanize:
 
-1. **Identify AI patterns** - Scan for all 29 patterns listed below
+1. **Identify AI patterns** - Scan for all 34 patterns listed below
 2. **Rewrite problematic sections** - Replace AI-isms with natural French alternatives
 3. **Preserve meaning** - Keep the core message intact
 4. **Maintain voice** - Match the intended tone and register
-5. **Add soul** - Don't just remove bad patterns; inject actual personality (see Part 3)
+5. **Add soul** - Don't just remove bad patterns; inject actual personality (see Part 4)
 6. **Do a final anti-AI pass** - Ask: "Qu'est-ce qui rend ce texte évidemment IA ?" Answer briefly with remaining tells, then revise. Apply the three-signal rule: one isolated marker is noise (most are normal French), but three or more co-occurring in the same passage make a reader flinch — revise until no paragraph accumulates three
 
 ## IMPORTANT: French-specific context
@@ -261,13 +261,15 @@ French headings capitalize only the first word (and proper nouns).
 
 **Avant :** ## Négociations Stratégiques Et Partenariats Globaux **Après :** ## Négociations stratégiques et partenariats globaux
 
-### Pattern 19 — Emojis décoratifs
+### Pattern 19 — Emojis : décoratifs vs expressifs
 
-**Triggers:** emoji in headings or list bullets (💡 🚀 ✅ 📌), « 👉 » opening a paragraph, emoji added _next to_ a full sentence
+Emojis are a register feature, not a defect. Three tests:
 
-Humans use an emoji _in place of_ words; AI adds them _on top_, as decoration. The « 👉 » paragraph opener is a frequently cited French tell.
+1. **Function** — an emoji that _replaces_ words or carries tone (irony, emotion, reaction) is human usage; one that _decorates_ structure (one per heading, 🚀💡✅ series, « 👉 » paragraph openers) is machine usage. Remove the second, keep the first.
+2. **Medium** — social posts, chats, internal messaging: emojis are expected — keep some, or add one if the author's voice uses them. Formal documents, press releases, articles: none.
+3. **Regularity** — the tell is systematicity: same position, same density everywhere. Human emoji use is irregular and sparse (max ~1 per paragraph, never in series). Keep the irregular, kill the systematic.
 
-**Rule:** Remove decorative emojis from headings and bullets. Keep an emoji only where it carries the message by itself.
+When in doubt about the author's voice, ask.
 
 ### Pattern 20 — Guillemets et incohérence typographique
 
@@ -344,7 +346,53 @@ The same study measured the over-uses: « devoir » (+101 %), « continuer » (+
 
 ---
 
-## Part 3: Personality and soul
+## Part 3: Discourse architecture patterns
+
+Lexical scrubbing is not enough: the deepest AI tells are architectural. A text can contain zero flagged words and still read machine-made because of how it is built.
+
+### Pattern 30 — Annonce, récapitulation et écho de la consigne
+
+**Triggers:** an intro announcing what the text will say, a conclusion repeating what it said, a first sentence rephrasing the question asked (« Vous vous demandez comment... ? », the assignment restated), a closing that loops back to the request
+
+The information exists once but is served three times. Chatbot answers and school essays echo the prompt at both ends.
+
+**Rule:** Start in medias res — the first sentence delivers content, not a program. End somewhere the intro couldn't predict: a consequence, an open question, a concrete next fact. Delete prompt echoes at both ends.
+
+### Pattern 31 — Structure en catalogue, sans angle
+
+**Triggers:** sections that could be reordered without breaking anything; every aspect of the topic covered at equal depth (définition, avantages, inconvénients, bonnes pratiques, conclusion); no claim that later sections build on
+
+AI covers a subject; a human makes a point. The permutation test: if two sections can swap places without damage, the text is a disguised list, not an argument.
+
+**Rule:** Choose an angle and commit. Cut the aspects that don't serve it — visible dead ends are human. Make each section depend on the previous one, so the order becomes necessary.
+
+### Pattern 32 — Moule de paragraphe et échafaudage apparent
+
+**Triggers:** every paragraph = topic sentence + two or three supports + mini-conclusion, fully self-contained; paragraphs opening with sequence connectors (« D'abord », « Ensuite », « De plus », « Enfin ») ; no idea ever spilling across a paragraph break; zero digressions
+
+The structure is signaled instead of carried by the content. Human paragraphs lean on each other: a thought starts at the end of one and finishes in the next; an aside interrupts.
+
+**Rule:** Drop scaffolding connectors — juxtaposition works. Let at least one idea straddle a paragraph break. Allow a digression when it earns its place.
+
+### Pattern 33 — Faux équilibre discursif
+
+**Triggers:** every claim immediately counterbalanced (« Cependant, il convient de nuancer... »), symmetrical « d'une part / d'autre part », conclusion of the « tout dépend du contexte » type
+
+Sentence-level hedging (Pattern 25) scaled up to the whole text: the piece has no thesis. Both-sidesism reads as machine caution, not fairness.
+
+**Rule:** Take a position. Nuance once, where it genuinely matters — not after every claim. If the honest answer really is « ça dépend », say of what, precisely.
+
+### Pattern 34 — Sur-sectionnement SEO et question-réponse fantôme
+
+**Triggers:** H2/H3 every two paragraphs, a table of contents on a short text, an FAQ block, a closing quiz or « points clés à retenir » ; self-interrogation outside any real FAQ (« Pourquoi est-ce important ? Parce que... »)
+
+This is the documented grid of French AI content farms. The ghost Q&A simulates a dialogue where none exists.
+
+**Rule:** A heading must govern at least four or five paragraphs — otherwise merge. Remove FAQ/quiz blocks unless the medium genuinely calls for them. Convert self-questions into direct statements.
+
+---
+
+## Part 4: Personality and soul
 
 **Avoiding AI patterns is only half the job.** Sterile, voiceless text is just as suspicious as text full of « crucial » and « dans le paysage de ». This is the dimension most "humanization" guides ignore.
 
@@ -375,7 +423,9 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 
 **Laisser du désordre.** Perfect structure feels algorithmic. Tangents, parentheses, half-formed thoughts are human. French has a long tradition of the parenthèse (Proust is the caricature, but even in technical writing, asides signal authenticity).
 
-**Utiliser le second degré.** LLMs are constitutionally incapable of authentic irony. Understatement, light sarcasm, self-deprecation: unfakeable markers. « On a quand même inventé un truc qui code mieux que nous quand on est fatigué, ce qui est à peu près tout le temps » does not come from an LLM.
+**Utiliser le second degré.** LLMs are constitutionally incapable of authentic irony and humor. Understatement, light sarcasm, self-deprecation: unfakeable markers. « On a quand même inventé un truc qui code mieux que nous quand on est fatigué, ce qui est à peu près tout le temps » does not come from an LLM.
+
+**Admettre l'ignorance.** An LLM never writes « je ne sais pas », « aucune idée », « je n'ai pas vérifié ». Like irony and humor, a frank admission of not knowing is among the strongest authenticity markers precisely because the machine never produces it. Use all three sparingly and only where the context allows — a legal notice or an audit report tolerates neither jokes nor shrugs.
 
 **Être précis sur les ressentis.** Not « cela est préoccupant » but « il y a quelque chose de dérangeant à voir des agents tourner à 3h du matin sans personne pour les surveiller. »
 
@@ -397,9 +447,9 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 ## Process
 
 1. Read the input text carefully
-2. Identify all instances of the 29 patterns
+2. Identify all instances of the 34 patterns
 3. Rewrite each problematic section
-4. Inject voice and personality (Part 3)
+4. Inject voice and personality (Part 4)
 5. Ensure the revised text:
    - Sounds natural when read aloud in French
    - Varies sentence structure (measure paragraph length std dev)
@@ -477,7 +527,7 @@ Provide:
 - Section défis/perspectives supprimée (#6: « Malgré des défis... continue de prospérer »)
 - Hedging supprimé (#25), remplissage supprimé (#24: « Au cœur de »)
 - Conclusion positive générique supprimée (#26: « L'avenir s'annonce prometteur »)
-- Voix et personnalité injectées (Part 3: rythme varié, première personne, opinions, précision)
+- Voix et personnalité injectées (Part 4: rythme varié, première personne, opinions, précision)
 
 ## Reference
 
