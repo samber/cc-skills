@@ -11,7 +11,7 @@
 
 | Skill                      | Version | Assertions | With Skill | Without Skill | Delta     | Uplift    | Concern                     |
 | -------------------------- | ------- | ---------- | ---------- | ------------- | --------- | --------- | --------------------------- |
-| `humaniseur-fr`                 | v1.0.0  | 71         | 99%        | 85%           | +14pp     | 1.17×     | **Low delta, High without** |
+| `humaniseur-fr`                 | v1.0.3  | 72         | 99%        | 81%           | +18pp     | 1.22×     | **Low delta, High without** |
 | `frontend-design-deslop`        | v1.0.0  | 53         | 85%        | 57%           | +28pp     | 1.49×     | **Low delta, Low with-skill score** |
 | `linkedin-ghostwriting`         | v1.0.0  | 46         | 98%        | 67%           | +30pp     | 1.45×     | **Low delta, High without** |
 | `technical-article-writer`      | v1.1.0  | 95         | 100%       | 67%           | +33pp     | 1.48×     | **High without**            |
@@ -25,7 +25,7 @@
 | `site-launch-checklist`         | v1.0.0  | 101        | 99%        | 40%           | +59pp     | 2.50×     |                             |
 | `training-report`               | v1.0.0  | 67         | 99%        | 37%           | +61pp     | 2.64×     |                             |
 | `influence-and-negotiation`     | v1.0.0  | 230        | 100%       | 32%           | +68pp     | 3.11×     |                             |
-| **Total (14 skills)**           |         | **1103**   | **98%**    | **50%**       | **+48pp** | **1.96×** |                             |
+| **Total (14 skills)**           |         | **1104**   | **98%**    | **50%**       | **+48pp** | **1.97×** |                             |
 
 ## `conventional-git` — v1.0.0
 
@@ -599,106 +599,105 @@ Model: claude-opus-4-6 — 1 run each — graded by human-as-judge (strict adver
 
 </details>
 
-## `humaniseur-fr` — v1.0.0
+## `humaniseur-fr` — v1.0.3
 
 | With Skill | Without Skill | Delta | Assertions |
 | ---------- | ------------- | ----- | ---------- |
-| 99%        | 85%           | +14pp | 71         |
+| 99%        | 81%           | +18pp | 72         |
 
 <details>
-<summary>Full breakdown (71 assertions)</summary>
+<summary>Full breakdown (72 assertions)</summary>
 
-Model: claude-opus-4-6 — 1 run each — graded by human-as-judge — adversarial evals (each has a trap the model falls into without the skill)
+Model: claude-sonnet-5 — 1 run each — graded by human-as-judge — adversarial evals (each has a trap the model falls into without the skill)
 
 | #    | Assertion                                                                                  | With                                                         | Without                                                                          |
 | ---- | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------ | -------------------------------------------------------------------------------- |
-|      | **Eval 1: basic AI patterns — model already removes most without skill**                   | **<span class="g">7/7</span>**                               | **<span class="g">7/7</span>**                                                   |
-| 1.1  | no 'dans le paysage' (Pattern 7)                                                           | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 1.2  | no 'tournant décisif' (Pattern 1)                                                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 1.3  | no 'crucial' (Pattern 7)                                                                   | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 1.4  | no 'essentiel' doublet (Pattern 14)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 1.5  | no 'constitue' — simple copula (Pattern 8)                                                 | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 1.6  | no superficial participle (Pattern 3)                                                      | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 1.7  | no 'révolutionnaire'/'nichée' (Pattern 4)                                                  | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 2: vague attributions + stacked connectors — model keeps vague sources**            | **<span class="g">5/5</span>**                               | **<span class="r">4/5</span>**                                                   |
-| 2.1  | no vague attribution (Pattern 5)                                                           | <span class="g">✓</span>                                     | <span class="r">✗ « plusieurs observateurs confirment »</span>                   |
-| 2.2  | no 'il convient de noter que' (Pattern 24)                                                 | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 2.3  | no stacked connectors (Pattern 7)                                                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 2.4  | no 'contribuant à' (Pattern 3)                                                             | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 2.5  | no 'substantiel' (Pattern 7)                                                               | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 3: conversation artifacts + challenge/optimism — model keeps vague optimism**       | **<span class="g">5/5</span>**                               | **<span class="r">2/5</span>**                                                   |
-| 3.1  | no 'N'hésitez pas à' (Pattern 21)                                                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 3.2  | no 'J'espère que cela' (Pattern 21)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 3.3  | no generic positive conclusion (Pattern 26)                                                | <span class="g">✓</span>                                     | <span class="r">✗ « La suite s'annonce intéressante »</span>                     |
-| 3.4  | no 'Malgré... prospérer' formula (Pattern 6)                                               | <span class="g">✓</span>                                     | <span class="r">✗ « avance malgré les obstacles »</span>                         |
-| 3.5  | concrete facts replace vague optimism                                                      | <span class="g">✓</span>                                     | <span class="r">✗ no concrete facts</span>                                       |
-|      | **Eval 4: synonym cycling + copula avoidance + false ranges — model keeps verb list**      | **<span class="g">5/5</span>**                               | **<span class="r">4/5</span>**                                                   |
-| 4.1  | no 'Non seulement... mais' (Pattern 9)                                                     | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 4.2  | no 3+ synonym cycling (Pattern 11)                                                         | <span class="g">✓</span>                                     | <span class="r">✗ « planifier, exécuter, créer et analyser »</span>              |
-| 4.3  | no 'constitue'/'fait office de'/'se positionne comme' (Pattern 8)                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 4.4  | no false range structure (Pattern 12)                                                      | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 4.5  | no 'robuste et fiable' (Pattern 14)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 5: anglicisms — model already corrects most without skill**                         | **<span class="g">6/6</span>**                               | **<span class="g">6/6</span>**                                                   |
-| 5.1  | no 'adresse' anglicism (Pattern 13)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 5.2  | no 'fait du sens' (Pattern 13)                                                             | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 5.3  | no 'basiquement' (Pattern 13)                                                              | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 5.4  | no 'implémenter' outside IT (Pattern 13)                                                   | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 5.5  | no 'impacter' (Pattern 13)                                                                 | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 5.6  | no 'innovante et avant-gardiste' (Pattern 14)                                              | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 6: academic register preservation — both models handle well**                       | **<span class="g">6/6</span>**                               | **<span class="g">6/6</span>**                                                   |
-| 6.1  | no 'Il est essentiel de noter que' (Pattern 24+7)                                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 6.2  | no 'holistique' (Pattern 7)                                                                | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 6.3  | no 'impacté' (Pattern 13)                                                                  | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 6.4  | no 'crucial(e)' (Pattern 7)                                                                | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 6.5  | formal/academic register maintained                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 6.6  | complex academic sentence structures                                                       | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 7: list→prose + emojis + bold — model already handles well**                        | **<span class="g">5/5</span>**                               | **<span class="g">5/5</span>**                                                   |
-| 7.1  | no bullet+bold+colon pattern (Pattern 17)                                                  | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 7.2  | no emojis                                                                                  | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 7.3  | no 'Plongeons dans' (Pattern 7)                                                            | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 7.4  | list converted to prose                                                                    | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 7.5  | no mechanical bold (Pattern 16)                                                            | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 8: hedging + filler + generic positive — model keeps optimistic ending**            | **<span class="g">5/5</span>**                               | **<span class="r">4/5</span>**                                                   |
-| 8.1  | no stacked hedges (Pattern 25)                                                             | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 8.2  | no 'en ce qui concerne' (Pattern 24)                                                       | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 8.3  | no 'a la capacité de' (Pattern 24)                                                         | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 8.4  | no 'il est largement reconnu' (Pattern 5)                                                  | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 8.5  | no generic positive ending (Pattern 26)                                                    | <span class="g">✓</span>                                     | <span class="r">✗ « il y a de quoi être optimiste »</span>                       |
-|      | **Eval 9: formal register + synonym cycling + légitimate connectors — both handle well**   | **<span class="g">6/6</span>**                               | **<span class="g">6/6</span>**                                                   |
-| 9.1  | no 'À l'ère de' (Pattern 7)                                                                | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 9.2  | no 3+ synonym cycling (Pattern 11)                                                         | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 9.3  | no 'crucial' (Pattern 7)                                                                   | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 9.4  | formal register preserved                                                                  | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 9.5  | no 'riche et variée' (Pattern 14)                                                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 9.6  | 'néanmoins' kept as legitimate French                                                      | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 10: em dashes + copula avoidance + doublet — model keeps doublet**                  | **<span class="g">5/5</span>**                               | **<span class="r">4/5</span>**                                                   |
-| 10.1 | max 1 em dash (Pattern 15)                                                                 | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 10.2 | no 'dispose de' (Pattern 8)                                                                | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 10.3 | no 'un levier puissant' (Pattern 7)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 10.4 | no 'dynamique et en pleine expansion' (Pattern 14)                                         | <span class="g">✓</span>                                     | <span class="r">✗ doublet preserved</span>                                       |
-| 10.5 | commas/parens replace em dashes                                                            | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 11: legal register + filler — both handle well**                                    | **<span class="g">5/5</span>**                               | **<span class="g">5/5</span>**                                                   |
-| 11.1 | no 'il convient de souligner' filler (Pattern 24)                                          | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 11.2 | no 'la pierre angulaire' (Pattern 7)                                                       | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 11.3 | no 'robuste et fiable' (Pattern 14)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 11.4 | formal/legal register maintained                                                           | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 11.5 | simplifies at least one filler phrase                                                      | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 12: sycophancy + conversation artifacts — model keeps artifacts without skill**     | **<span class="r">4/5</span>**                               | **<span class="r">1/5</span>**                                                   |
-| 12.1 | no sycophantic opener (Pattern 23)                                                         | <span class="g">✓</span>                                     | <span class="r">✗ « Bonne question »</span>                                      |
-| 12.2 | no 'Bien sûr !'/'je serais ravi' (Pattern 21+23)                                           | <span class="g">✓</span>                                     | <span class="r">✗ « Je peux creuser un point précis si vous voulez »</span>      |
-| 12.3 | no knowledge-limitation hedge (Pattern 22)                                                 | <span class="r">✗ « D'après les données disponibles »</span> | <span class="g">✓</span>                                                         |
-| 12.4 | no 'Souhaitez-vous que' (Pattern 21)                                                       | <span class="g">✓</span>                                     | <span class="r">✗ « si vous voulez »</span>                                      |
-| 12.5 | substantive content                                                                        | <span class="g">✓</span>                                     | <span class="r">✗ empty pleasantries, no substance</span>                        |
-|      | **Eval 13: French typography — model already knows this**                                  | **<span class="g">4/4</span>**                               | **<span class="g">4/4</span>**                                                   |
-| 13.1 | French guillemets « »                                                                      | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 13.2 | French number format (1 250,50)                                                            | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 13.3 | French time format (14 h 30)                                                               | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 13.4 | spaces inside guillemets                                                                   | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-|      | **Eval 14: heading caps + triplet + participial stacking — model already handles**         | **<span class="g">4/4</span>**                               | **<span class="g">4/4</span>**                                                   |
-| 14.1 | French heading capitalization (Pattern 18)                                                 | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 14.2 | no standalone triplet (Pattern 10)                                                         | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 14.3 | no figurative 'vibrant' (Pattern 4)                                                        | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
-| 14.4 | no 2+ stacked participial clauses (Pattern 3)                                              | <span class="g">✓</span>                                     | <span class="g">✓</span>                                                         |
+|      | **Eval 1: self-diagnosis: structural uniformity + soullessness — model already detects this** | **<span class="g">7/7</span>** | **<span class="g">7/7</span>** |
+| 1.1  | identifies structural uniformity as a problem (Pattern 27): all sentences same length/structure | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.2  | identifies soullessness (Part 3): neutral reporting, no opinions, no specific facts, no first person | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.3  | does NOT say the text is already clean or only needs minor vocabulary tweaks | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.4  | rewrite varies sentence length meaningfully (at least one noticeably shorter or longer sentence) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.5  | rewrite includes at least one specific data point or opinion absent from the original | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.6  | rewrite uses at least one human connector (or, reste que, n'empêche que, quoi qu'il en soit) instead of AI connectors | <span class="g">✓</span> | <span class="g">✓</span> |
+| 1.7  | rewrite does NOT merely rephrase the same five claims in different words without changing structure | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 2: vague attributions + stacked connectors + filler — model already fixes this** | **<span class="g">5/5</span>** | **<span class="g">5/5</span>** |
+| 2.1  | output does NOT contain 'les experts estiment' or similar vague attribution (Pattern 5) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.2  | output does NOT contain 'il convient de noter que' (Pattern 24 filler) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.3  | output does NOT contain both 'par ailleurs' AND 'de plus' stacked together (Pattern 7 AI connector overuse) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.4  | output does NOT contain 'contribuant à' (Pattern 3 superficial participle) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 2.5  | output does NOT contain 'substantiel' (Pattern 7 AI vocabulary) | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 3: conversation artifacts + challenge/optimism sandwich — model keeps vague optimism** | **<span class="g">5/5</span>** | **<span class="r">3/5</span>** |
+| 3.1  | output does NOT contain 'N'hésitez pas à' (Pattern 21 conversation artifact) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 3.2  | output does NOT contain 'J'espère que cela' (Pattern 21 conversation artifact) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 3.3  | output does NOT contain 'L'avenir s'annonce prometteur' (Pattern 26 generic positive conclusion) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 3.4  | output does NOT contain the 'Malgré... continue de prospérer' formula (Pattern 6) | <span class="g">✓</span> | <span class="r">✗ reproduces same sandwich formula: "rencontre les difficultés habituelles... et continue pourtant de se développer"</span> |
+| 3.5  | the rewrite replaces vague optimism with at least one concrete fact or specific next step | <span class="g">✓</span> | <span class="r">✗ no concrete fact added, stays vague: "continue pourtant de se développer"</span> |
+|      | **Eval 4: negative parallelism + synonym cycling + false range — model already fixes this** | **<span class="g">5/5</span>** | **<span class="g">5/5</span>** |
+| 4.1  | output does NOT contain 'Non seulement... mais' structure (Pattern 9) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.2  | output does NOT cycle through 3+ synonyms for the same referent (Pattern 11 — e.g., outil/assistant/système) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.3  | output does NOT contain 'constitue', 'fait office de', or 'se positionne comme' (Pattern 8 copula avoidance) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.4  | output does NOT contain 'de X à Y, de A à B' false range structure (Pattern 12) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 4.5  | output does NOT contain the doublet 'robuste et fiable' (Pattern 14) | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 5: media-citation overload — model keeps the outlet enumeration** | **<span class="g">6/6</span>** | **<span class="r">1/6</span>** |
+| 5.1  | output does NOT list multiple media outlets in an enumeration (Pattern 2 media coverage overload) | <span class="g">✓</span> | <span class="r">✗ « Le Monde, Le Figaro et Les Échos l'ont citée, la BBC, The Guardian et le New York Times aussi »</span> |
+| 5.2  | output does NOT replace the list with a vague 'widely covered' summary (still Pattern 2) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 5.3  | if a citation is kept, it is specific: one outlet + date + a concrete claim or quote | <span class="g">✓</span> | <span class="r">✗ « Le Monde, Le Figaro et Les Échos l'ont citée » — no date, no concrete claim</span> |
+| 5.4  | the 10,000 Google Scholar citations are either given specific context or omitted | <span class="g">✓</span> | <span class="r">✗ « cumulent plus de 10 000 citations » — no context given</span> |
+| 5.5  | output does NOT contain 'a été citée dans' followed by a comma-separated list of multiple outlets | <span class="g">✓</span> | <span class="r">✗ « l'ont citée, la BBC, The Guardian et le New York Times aussi »</span> |
+| 5.6  | output uses a specific, grounded claim in place of the enumeration | <span class="g">✓</span> | <span class="r">✗ no specific claim/quote given, just enumeration of outlets</span> |
+|      | **Eval 6: academic register + mechanical bold — model already handles this** | **<span class="g">6/6</span>** | **<span class="g">6/6</span>** |
+| 6.1  | output removes ALL mechanical bold from technical terms (Pattern 16 — 'gouvernance algorithmique', 'mécanismes', 'systèmes automatisés', 'prise de décision', etc. all unbolded) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.2  | output does NOT add new bold on any terms | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.3  | output MAINTAINS formal/academic register — complex sentences, precise vocabulary, no colloquial language | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.4  | output uses complex sentence structures appropriate to academic writing (subordinate clauses, formal connectors) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.5  | output does NOT introduce AI vocabulary (holistique, crucial, etc.) while fixing the bold | <span class="g">✓</span> | <span class="g">✓</span> |
+| 6.6  | if any technical term needs emphasis, it is done through syntactic structure, not bold formatting | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 7: participial chain stacking — model drops the clauses but keeps vague framing** | **<span class="g">5/5</span>** | **<span class="r">4/5</span>** |
+| 7.1  | output does NOT contain 'soulignant' as a participial clause (Pattern 3) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.2  | output does NOT contain 'illustrant' as a participial clause (Pattern 3) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.3  | output does NOT contain 'confirmant' as a participial clause (Pattern 3) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.4  | output does NOT chain 3+ participial clauses after a main verb (Pattern 3) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 7.5  | information is presented in separate concrete sentences or the analytical filler is dropped entirely | <span class="g">✓</span> | <span class="r">✗ « c'est la preuve que le modèle économique tient » — restates vague claims as fact, no concrete detail added</span> |
+|      | **Eval 8: hedging + filler + generic positive — model already fixes this** | **<span class="g">5/5</span>** | **<span class="g">5/5</span>** |
+| 8.1  | output does NOT stack multiple hedges (potentiellement + pourrait + éventuellement + un certain) in one sentence (Pattern 25) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 8.2  | output does NOT contain 'en ce qui concerne' (Pattern 24 filler) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 8.3  | output does NOT contain 'a la capacité de' — uses 'peut' or similar (Pattern 24) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 8.4  | output does NOT contain 'il est largement reconnu' (Pattern 5 vague attribution) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 8.5  | output does NOT contain 'des temps passionnants' (Pattern 26 generic positive) | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 9: synonym cycling on product name — model loses a consistent referent** | **<span class="g">5/5</span>** | **<span class="r">4/5</span>** |
+| 9.1  | output does NOT use 'application', 'plateforme', 'solution', 'service' as rotating synonyms for the same product (Pattern 11) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 9.2  | output uses a single consistent referent throughout (product name, 'l'outil', or pronoun) | <span class="g">✓</span> | <span class="r">✗ shifts "application"→"l'ensemble"→"nous", no single consistent referent</span> |
+| 9.3  | output MAINTAINS professional register — no colloquial language introduced | <span class="g">✓</span> | <span class="g">✓</span> |
+| 9.4  | output does NOT introduce new AI vocabulary while fixing the cycle | <span class="g">✓</span> | <span class="g">✓</span> |
+| 9.5  | output reads naturally with the consistent referent — not awkward | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 10: em dash overuse + AI cliché — model keeps the 'levier' cliché** | **<span class="g">5/5</span>** | **<span class="r">4/5</span>** |
+| 10.1  | output has significantly fewer em dashes than input (max 1 em dash, down from 4) (Pattern 15) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 10.2  | output does NOT contain 'dispose de' — uses 'a' or equivalent (Pattern 8) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 10.3  | output does NOT contain 'un levier puissant' (Pattern 7 AI vocabulary) | <span class="g">✓</span> | <span class="r">✗ « un vrai levier de changement » — same AI cliché, only adjective swapped</span> |
+| 10.4  | output does NOT contain the doublet 'dynamique et en pleine expansion' (Pattern 14) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 10.5  | output uses commas or parentheses for at least one incidental clause that was an em dash in the input | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 11: legal register preservation — model wrongly casualizes legitimate legal French** | **<span class="g">5/5</span>** | **<span class="r">2/5</span>** |
+| 11.1  | output KEEPS 'nonobstant' or equivalent legal term — does NOT replace with 'malgré' or casual alternatives | <span class="g">✓</span> | <span class="r">✗ « Même si ce qui précède dit autre chose » replaces "Nonobstant"</span> |
+| 11.2  | output KEEPS 'cessionnaire' and 'cédant' — does NOT replace with 'acheteur/vendeur' or simplified terms | <span class="g">✓</span> | <span class="g">✓</span> |
+| 11.3  | output KEEPS 'dommages et intérêts' — does NOT simplify to 'compensation' or 'remboursement' | <span class="g">✓</span> | <span class="g">✓</span> |
+| 11.4  | output MAINTAINS the formal/legal register — no casual French introduced | <span class="g">✓</span> | <span class="r">✗ « Même si ce qui précède dit autre chose » is casual/conversational, not legal register</span> |
+| 11.5  | output either makes no substantive changes (recognizing no AI patterns present) or explicitly notes the text has no AI artifacts to remove | <span class="g">✓</span> | <span class="r">✗ casualized "nonobstant" clause and reworded "obligations contractuelles souscrites"</span> |
+|      | **Eval 12: sycophancy + conversation artifacts — model already fixes this** | **<span class="g">5/5</span>** | **<span class="g">5/5</span>** |
+| 12.1  | output does NOT contain 'Excellente question' or 'Vous avez tout à fait raison' (Pattern 23 sycophantic) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 12.2  | output does NOT contain 'Bien sûr !' or 'je serais ravi' (Pattern 23 sycophantic + Pattern 21) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 12.3  | output does NOT contain 'selon les informations disponibles' or 'en date de' (Pattern 22 knowledge limitation) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 12.4  | output does NOT contain 'Souhaitez-vous que' (Pattern 21 conversation artifact) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 12.5  | output provides substantive content rather than empty pleasantries | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 13: Oxford comma anglicism + copula avoidance — model already fixes this** | **<span class="g">4/4</span>** | **<span class="g">4/4</span>** |
+| 13.1  | output removes the Oxford comma: 'la qualité et l'innovation' NOT 'la qualité, et l'innovation' (Pattern 13 anglicism) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 13.2  | output removes or replaces 'constituent' with 'sont' or a simple copula (Pattern 8) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 13.3  | output removes or replaces 'les experts du secteur' with a specific attribution or drops the vague claim (Pattern 5) | <span class="g">✓</span> | <span class="g">✓</span> |
+| 13.4  | output reduces em dash usage — replaces with comma or parentheses (Pattern 15) | <span class="g">✓</span> | <span class="g">✓</span> |
+|      | **Eval 14: structural-uniformity diagnosis — mixed result both ways** | **<span class="r">3/4</span>** | **<span class="r">3/4</span>** |
+| 14.1  | identifies structural uniformity (Pattern 27) as the core remaining problem — not just vocabulary | <span class="g">✓</span> | <span class="g">✓</span> |
+| 14.2  | specifically notes the mechanical 3-sentence-per-section rhythm | <span class="g">✓</span> | <span class="r">✗ « phrases courtes, plates et de longueur identique » — notes uniform length generically but never names the 3-sentence-per-section count</span> |
+| 14.3  | rewrite varies paragraph length — at least one section substantially longer or shorter than the others | <span class="r">✗ WITH sections run ~39/44/44 words each (no substantial variation); WITHOUT sections run ~23/36/11 words (section 3 clearly shorter)</span> | <span class="g">✓</span> |
+| 14.4  | rewrite does NOT keep a 3-sentence rhythm for every section | <span class="g">✓</span> | <span class="g">✓</span> |
 
 </details>
 

@@ -87,8 +87,8 @@ These phrases or patterns currently signal "this was written by or with an LLM w
 - Em dash overuse in body prose (one per article is fine; one per paragraph is a tell)
 - Tricolons ("X, Y, and Z") where the three items are near-synonyms
 - "Crucially," "Notably," "Importantly," "Essentially," used as sentence openers
-- French equivalents: "Dans un monde en constante évolution", "À l'ère du numérique", "Plongez dans...", "Découvrez comment...", "Il est crucial de...", "Notamment,...", "Par ailleurs,..."
+- French equivalents: "Dans un monde en constante évolution", "À l'ère du numérique", "Plongez dans...", "Découvrez comment...", "Il est crucial de...", "Notamment,...", "Par ailleurs,..." (→ See `samber/cc-skills@humaniseur-fr` skill for the canonical French AI-tell catalog)
 
 Run candidate hooks through this list before presenting. If a candidate contains any of these, rewrite it.
 
-If the user has a `humanizer` or `humaniseur-fr` skill installed, defer to those skills for a final pass after the user picks a hook.
+If the user has a `humanizer` skill installed, defer to it for a final pass after the user picks a hook — for French copy, use `samber/cc-skills@humaniseur-fr`.

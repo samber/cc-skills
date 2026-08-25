@@ -122,7 +122,7 @@ After every drafting step (whether by a copywriting skill, by hand, or by Claude
 Ask the user for the site's primary audience language at the start of the session if not already known:
 
 - `english-global` → `npx skills add https://github.com/blader/humanizer --skill humanizer`
-- `french` → use `samber/humaniseur-fr` (custom French humanizer) or equivalent French-tuned skill
+- `french` → use `samber/cc-skills@humaniseur-fr` (custom French humanizer) or equivalent French-tuned skill
 - `other` → install matching humanizer if available; otherwise the skill writes a short language-specific anti-pattern checklist inline
 
 Apply the humanizer to: hero copy, feature descriptions, CTA buttons, meta descriptions, OG/Twitter card descriptions, blog posts, email signup confirmations, 404 page text. Skip for legal pages (mentions légales, CGV) since they have rigid wording requirements.
