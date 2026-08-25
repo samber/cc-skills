@@ -442,6 +442,53 @@
           "description": "output does NOT fabricate specific rule numbers for categories it is unsure of"
         }
       ]
+    },
+    {
+      "id": 19,
+      "prompt": "Write a short quick-start procedure in ASD-STE100 Simplified Technical English for replacing a clogged filter cartridge in an industrial pump. Make it clear and easy to scan.",
+      "trap": "Without the skill, a naive 'make it clear and easy to scan' instinct decorates the procedure with emoji bullet headers (e.g. a wrench emoji before each step) and bold-mechanical labels (e.g. '- **Step 1:** ...'), since that reads as 'clear' in ordinary technical-writing habits. Nothing in ASD-STE100 itself names emojis, so a model relying only on the numbered rules has no reason to avoid them.",
+      "expected_output": "A plain numbered procedure with imperative steps, no emojis anywhere, and no mechanical bold-label decoration — clarity comes from short compliant sentences and correct step ordering, not from visual decoration.",
+      "files": [],
+      "assertions": [
+        { "id": "19.1", "description": "output contains no emojis" },
+        {
+          "id": "19.2",
+          "description": "output does not use bold text as a decorative label prefix for each step (e.g. '**Step 1:**')"
+        },
+        {
+          "id": "19.3",
+          "description": "each step is a short imperative sentence rather than a decorated bullet"
+        },
+        {
+          "id": "19.4",
+          "description": "output does not justify the emojis or bold labels as 'making it easier to scan'"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "prompt": "Clean this up for ASD-STE100 compliance, it was pasted from a chat with another AI assistant:\n\n\"Sure, here's the rewritten warning: 'CAUTION: Do not touch the exhaust manifold, it can be extremely hot after operation and could burn you.' Let me know if you'd like me to adjust the wording further!\"",
+      "trap": "Without the skill, the model focuses only on the wording inside the quoted warning (fixing the semicolon-equivalent comma splice, the hedge word 'extremely', the passive-ish phrasing) but leaves the surrounding chat wrapper ('Sure, here's the rewritten warning:' and 'Let me know if you'd like me to adjust the wording further!') untouched in its own final answer, or reproduces it inside the deliverable text, since nothing in the ASD-STE100 rule list names conversation artifacts.",
+      "expected_output": "The final deliverable contains only the safety instruction itself, correctly classified as WARNING (risk of injury), with no chat-wrapper sentences before or after it inside the document text.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "20.1",
+          "description": "the final deliverable text does NOT contain 'Sure, here's the rewritten warning'"
+        },
+        {
+          "id": "20.2",
+          "description": "the final deliverable text does NOT contain 'Let me know if you'd like'"
+        },
+        {
+          "id": "20.3",
+          "description": "the safety instruction is labeled WARNING, not CAUTION, since it describes a risk of injury to a person"
+        },
+        {
+          "id": "20.4",
+          "description": "the rewritten instruction leads with a command or condition, then the risk and consequence"
+        }
+      ]
     }
   ]
 }

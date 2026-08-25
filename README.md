@@ -183,7 +183,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `technical-article-writer` | -33% | 147 | 2,755 | 6,197 |
 | `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
 | `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
-| `humanizer-en-asd-ste100` | — | 199 | 5,268 | 5,268 |
+| `humanizer-en-asd-ste100` | — | 205 | 5,838 | 5,838 |
 | `snyk-agent-scan-compliance` | -27% | 144 | 1,904 | 5,612 |
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
 | `deep-research` | -51% | 316 | 2,997 | 14,125 |
@@ -250,7 +250,7 @@ Removes AI-writing patterns from French text. Detects and fixes 27 patterns: AI 
 
 #### `humanizer-en-asd-ste100`
 
-Rewrites English into ASD-STE100 Simplified Technical English (Issue 9). Enforces the 53 rules across 9 sections — approved word meanings, technical noun/verb categories, sentence-length limits, banned verb tenses, passive-voice restrictions — for maintenance manuals, equipment procedures, and any technical text read by non-native speakers or machine translation.
+Rewrites English into ASD-STE100 Simplified Technical English (Issue 9) and de-slops technical documentation — decorative emojis, conversation leftovers, Markdown residue, mixed quote styles. Enforces the 53 rules across 9 sections — approved word meanings, technical noun/verb categories, sentence-length limits, banned verb tenses, passive-voice restrictions — for maintenance manuals, equipment procedures, and any technical text read by non-native speakers or machine translation.
 
 #### `linkedin-ghostwriting`
 

@@ -1,6 +1,6 @@
 ---
 name: humanizer-en-asd-ste100
-description: "Rewrite English into ASD-STE100 Simplified Technical English (Issue 9, 2025), the controlled-language standard for maintenance manuals, equipment procedures, medical device instructions, safety notices, API docs, and technical text read by non-native speakers or machine translation. Two modes: rewrite existing English into compliant text, or write new procedures and descriptions directly in STE. Enforces the 53 rules across 9 sections: approved word meanings, technical noun/verb categories, the 20/25-word sentence limits, banned verb tenses, the closed set of approved -ing words, passive-voice restrictions, vertical-list formatting, word-counting rules, warning/caution structure. Trigger on: simplified technical english, STE, ASD-STE100, controlled language, plain technical english, non-native readers, translation-ready docs, technical writing standard. NOT for marketing copy, brand voice, narrative writing, or French text (samber/cc-skills@humaniseur-fr)."
+description: "Rewrite English into ASD-STE100 Simplified Technical English (Issue 9, 2025) and strip AI-generated artifacts from technical documentation — decorative emojis, conversation leftovers, Markdown residue, mixed quote styles — for maintenance manuals, procedures, medical device instructions, safety notices, and API docs read by non-native speakers or machine translation. Two modes: rewrite existing English into compliant text, including de-slopping an AI-generated draft, or write new procedures directly in STE. Enforces 53 rules across 9 sections: approved word meanings, technical noun/verb categories, the 20/25-word sentence limits, banned verb tenses, passive-voice restrictions, word-counting rules. Trigger on: simplified technical english, STE, ASD-STE100, controlled language, de-slop this manual, clean up AI-generated documentation, non-native readers, translation-ready docs. NOT for marketing copy, brand voice, narrative writing, or French text (samber/cc-skills@humaniseur-fr)."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness. Requires internet access to fetch the official specification for rules not covered in this file.
@@ -26,10 +26,10 @@ The rules below are defined by **ASD-STE100, Issue 9 (published 2025-01-15)**, t
 
 ## Modes
 
-- **Rewrite** — convert supplied English text into STE-compliant text.
-- **Write** — author new procedures, descriptions, or warnings directly in STE from a brief.
+- **Rewrite** — convert supplied English text into STE-compliant text, including de-slopping an AI-generated draft in the same pass (see Strip generation artifacts first).
+- **Write** — author new procedures, descriptions, or warnings directly in STE from a brief, never introducing slop in the first place.
 
-Both modes share the same pipeline: classify the text, apply the rules for that text type, then self-audit (see Process).
+Both modes share the same pipeline: strip generation artifacts, classify the text, apply the rules for that text type, then self-audit (see Process).
 
 **Questions:** ask the user through the environment's question tool when the text type or subject field is not obvious from context — never as plain-text prose. Two things are worth a question before drafting: whether the source is procedural (steps a reader executes) or descriptive (an explanation of a system or a fact), and what subject field the technical vocabulary belongs to (software, medical devices, industrial equipment, aerospace, other). A wrong guess on either drives every downstream rule choice off course.
 
@@ -49,6 +49,17 @@ Example of why this matters — the identical passive sentence resolves two ways
 - Source: `The volume control can be adjusted.`
 - Procedural rewrite: `Adjust the volume control.`
 - Descriptive rewrite: `You can adjust the volume control.`
+
+## Strip generation artifacts first
+
+ASD-STE100 governs wording and structure, not formatting — it has no numbered rule against an emoji or a leftover chat sentence. That does not make them acceptable: a delivered technical document cannot carry chat leftovers, and a reader or a translation engine has no way to know they are not part of the instruction. Clear these before applying any numbered rule, in both modes — `Rewrite` strips them from the source, `Write` never introduces them.
+
+- **Zero decorative emojis, always.** A technical document has exactly one register — formal, plain, single-purpose — so there is no context in which an emoji belongs, unlike general prose where an emoji can carry tone.
+- **No conversation or meta text inside the deliverable.** Lines like `Here is the rewritten procedure:`, `Sure, I can help with that`, or `Let me know if you would like more detail` are chat artifacts, not content — remove them entirely rather than rewording them.
+- **No Markdown residue that is not native to the delivery format.** Unrendered `**bold**`, a mechanical `- **Torque:** 25 Nm` bullet-header pair, or a broken citation marker have no place in a plain-text manual or a rendered document that was not asked for in Markdown. Flatten to plain sentences unless the target format is genuinely Markdown-rendered documentation.
+- **One quote style, held throughout.** Pick straight quotes (`"..."`) as the default for plain-text technical documents and for downstream translation tooling, and do not mix them with curly quotes or apostrophes within the same document.
+
+This is a narrow, format-level pass — not a general rewrite for tone, rhythm, or personality. Those stay out of scope (see Limits and non-goals).
 
 ## Part 1 — Words (ASD-STE100 rules 1.1–1.14)
 
@@ -224,23 +235,26 @@ The PDF is large — fetch it when a specific answer is needed, not as a default
 
 ## Process
 
-1. Classify the source text (Step 0).
-2. Draft the rewrite, applying the rules for that classification.
-3. Check every sentence against its word limit using the counting table in Part 8 — recount, don't estimate.
-4. Check every verb against the allowed tenses in Part 3 — flag any perfect, progressive, or bare `-ing` verb form.
-5. Check technical nouns and technical verbs against their category tests in Part 1 — confirm each one is genuinely bound to a category in this context, not just familiar.
-6. Check Part 9 last — restricted meanings and phrasal verbs are the errors a word-swap pass misses.
-7. When a rule's application is unclear, fetch the specification (see above) rather than guessing.
-8. Self-audit: re-read the draft once as a reader with limited English, and once as a machine translator would — flag any sentence with more than one possible parse.
+1. Strip generation artifacts — emojis, conversation leftovers, Markdown residue, mixed quote styles.
+2. Classify the source text (Step 0).
+3. Draft the rewrite, applying the rules for that classification.
+4. Check every sentence against its word limit using the counting table in Part 8 — recount, don't estimate.
+5. Check every verb against the allowed tenses in Part 3 — flag any perfect, progressive, or bare `-ing` verb form.
+6. Check technical nouns and technical verbs against their category tests in Part 1 — confirm each one is genuinely bound to a category in this context, not just familiar.
+7. Check Part 9 last — restricted meanings and phrasal verbs are the errors a word-swap pass misses.
+8. When a rule's application is unclear, fetch the specification (see above) rather than guessing.
+9. Self-audit: re-read the draft once as a reader with limited English, and once as a machine translator would — flag any sentence with more than one possible parse.
 
 ## Output format
 
 1. **Compliant text.**
-2. **Change log**, one line per change, citing the ASD-STE100 rule number: `Rule 3.6 — passive converted to imperative`, `Rule 8.6 — "10 °C" counted as one word`.
+2. **Change log**, one line per change. Cite the ASD-STE100 rule number for rule-driven changes (`Rule 3.6 — passive converted to imperative`, `Rule 8.6 — "10 °C" counted as one word`); label artifact removals as `Hygiene` rather than inventing a rule number for them (`Hygiene — removed decorative emoji headers`, `Hygiene — removed conversation leftover "Let me know if..."`).
 3. **Residual non-compliance**, if any — cases that need a company or project terminology glossary this skill does not have access to (for example, choosing a single approved technical noun among several plausible candidates).
 
 ## Limits and non-goals
 
-STE governs wording, sentence structure, and paragraph structure — it does not regulate abbreviation choice, formatting conventions, or units of measurement, and it assumes those are set elsewhere. It is not an English course, and it is not usable alone: fluent English and a subject-field glossary are still required. It is built for technical documentation, not for marketing copy, brand voice, narrative writing, or oral scripts — a compliant STE paragraph reads as deliberately plain, which is the opposite of what those formats need. It does not fix hollow or unclear content; it only makes clear content unambiguous. For general AI-writing-pattern cleanup, or for French text, use a different skill — this one enforces a controlled vocabulary and grammar, not a style polish.
+STE governs wording, sentence structure, and paragraph structure — it does not regulate abbreviation choice, formatting conventions, or units of measurement, and it assumes those are set elsewhere. It is not an English course, and it is not usable alone: fluent English and a subject-field glossary are still required. It is built for technical documentation, not for marketing copy, brand voice, narrative writing, or oral scripts — a compliant STE paragraph reads as deliberately plain, which is the opposite of what those formats need. It does not fix hollow or unclear content; it only makes clear content unambiguous.
+
+This skill does de-slop, but a narrow slice of it: the generation artifacts that break a technical document's single formal register (see Strip generation artifacts first) — decorative emojis, conversation leftovers, Markdown residue, mixed quote styles. It does **not** do broader prose-craft de-slopping — vague attributions, hedging, rhythm variation, synonym cycling, personality or voice injection — because ASD-STE100's own rules already demand the opposite of those: plain, consistent, repeated wording, not variety. For that broader pass, or for French text, use a general-purpose humanizer skill or `samber/cc-skills@humaniseur-fr`.
 
 This skill is not exhaustive. Refer to the official ASD-STE100 documentation at <https://www.asd-ste100.org/> for anything beyond the rule index above — including the full dictionary, the complete technical noun and verb category lists, and future issues of the standard.
