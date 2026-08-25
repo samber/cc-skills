@@ -12,6 +12,7 @@
 | Skill                      | Version | Assertions | With Skill | Without Skill | Delta     | Uplift    | Concern                     |
 | -------------------------- | ------- | ---------- | ---------- | ------------- | --------- | --------- | --------------------------- |
 | `humaniseur-fr`                 | v1.0.0  | 71         | 99%        | 85%           | +14pp     | 1.17×     | **Low delta, High without** |
+| `humanizer-en-asd-ste100`       | v1.0.0  | 83         | 92%        | 76%           | +16pp     | 1.21×     | **Low delta, High without** |
 | `frontend-design-deslop`        | v1.0.0  | 53         | 85%        | 57%           | +28pp     | 1.49×     | **Low delta, Low with-skill score** |
 | `linkedin-ghostwriting`         | v1.0.0  | 46         | 98%        | 67%           | +30pp     | 1.45×     | **Low delta, High without** |
 | `technical-article-writer`      | v1.1.0  | 95         | 100%       | 67%           | +33pp     | 1.48×     | **High without**            |
@@ -25,7 +26,7 @@
 | `site-launch-checklist`         | v1.0.0  | 101        | 99%        | 40%           | +59pp     | 2.50×     |                             |
 | `training-report`               | v1.0.0  | 67         | 99%        | 37%           | +61pp     | 2.64×     |                             |
 | `influence-and-negotiation`     | v1.0.0  | 230        | 100%       | 32%           | +68pp     | 3.11×     |                             |
-| **Total (14 skills)**           |         | **1103**   | **98%**    | **50%**       | **+48pp** | **1.96×** |                             |
+| **Total (15 skills)**           |         | **1186**   | **98%**    | **52%**       | **+46pp** | **1.88×** |                             |
 
 ## `conventional-git` — v1.0.0
 
@@ -1564,6 +1565,129 @@ Note: evals 5, 6, and 11 test common knowledge (button states, dark mode basics,
 | 13.2 | Response does NOT list 4 or more competing signature elements as equally important without picking one        | <span class="g">✓</span>       | <span class="r">✗ Four elements treated equally</span> |
 | 13.3 | The chosen signature move is connected to the site's positioning or personality                               | <span class="g">✓</span>       | <span class="g">✓</span>                             |
 | 13.4 | Response flags Inter as generic and recommends replacing it with a distinctive alternative                    | <span class="g">✓</span>       | <span class="g">✓</span>                             |
+
+</details>
+
+## `humanizer-en-asd-ste100` — v1.0.0
+
+| With Skill | Without Skill | Delta | Assertions |
+| ---------- | ------------- | ----- | ---------- |
+| 92%        | 76%           | +16pp | 83         |
+
+<details>
+<summary>Full breakdown (83 assertions)</summary>
+
+Model: claude-sonnet-5 — 1 run each — graded by human-as-judge — adversarial evals (each has a trap the model falls into without the skill)
+
+Two evals (9, 13.3) exposed a real coverage gap in the skill rather than a model-knowledge gap: the "no comparative/superlative for colors" rule and the "wear" restricted-meaning example are real ASD-STE100 content that this skill's body did not document at the time of this run. See the note after the table.
+
+| #    | Assertion                                                                                                    | With                           | Without                                                                 |
+| ---- | -------------------------------------------------------------------------------------------------------------- | ------------------------------- | ------------------------------------------------------------------------ |
+|      | **Eval 1: word-counting rules (units, parentheses, hyphens) — model overcounts without STE rules**             | **<span class="g">5/5</span>** | **<span class="r">4/5</span>**                                          |
+| 1.1  | counts numbers-with-units, parenthetical, hyphenated compounds as 1 word each                                  | <span class="g">✓</span>       | <span class="r">✗ no explicit STE counting rule applied</span>          |
+| 1.2  | hyphenates 'carbon-fiber-reinforced' as a single compound                                                       | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 1.3  | keeps the '(see Figure 3)' reference rather than deleting it                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 1.4  | does NOT remove necessary content to hit an already-satisfied limit                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 1.5  | final sentence at or under 20 words counted using STE rules                                                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 2: NOTE follows the 25-word limit, not 20 — model already knew this**                                    | **<span class="g">5/5</span>** | **<span class="g">5/5</span>**                                          |
+| 2.1  | NOTE not forced to fit the 20-word procedural limit                                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 2.2  | NOTE remains purely informational, not rewritten as an instruction                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 2.3  | numbered steps stay imperative and within 20 words                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 2.4  | NOTE content not merged into a numbered step                                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 2.5  | does not claim the note itself violates the 20-word procedural limit                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 3: passive with unknown agent — model invents a false causal agent without the skill**                   | **<span class="r">3/4</span>** | **<span class="r">0/4</span>**                                          |
+| 3.1  | recognizes the passive is allowed because the agent is unknown                                                  | <span class="r">✗</span>       | <span class="r">✗ calls it non-compliant outright</span>                |
+| 3.2  | does NOT invent a false agent (e.g. 'transmission') as the actor                                                | <span class="g">✓</span>       | <span class="r">✗ 'A transmission error corrupted the data'</span>      |
+| 3.3  | does not fabricate a specific responsible party absent from the source                                          | <span class="g">✓</span>       | <span class="r">✗ same fabricated 'transmission error'</span>           |
+| 3.4  | reasoning references passive being permitted when the agent is unknown                                          | <span class="g">✓</span>       | <span class="r">✗ no mention of the agent-unknown rule</span>           |
+|      | **Eval 4: same passive resolves differently in a procedure vs. a description — model already knew this**       | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 4.1  | procedural version is an imperative command                                                                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 4.2  | descriptive version uses a reader-directed form ('you can')                                                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 4.3  | the two rewrites are meaningfully different                                                                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 4.4  | neither keeps the original passive 'can be adjusted' unchanged                                                  | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 5: technical noun verbified ('grease', 'clamp') — model misses the second one**                          | **<span class="g">4/4</span>** | **<span class="r">2/4</span>**                                          |
+| 5.1  | 'grease' used as a verb is rewritten                                                                            | <span class="g">✓</span>       | <span class="g">✓ 'Lubricate the fasteners'</span>                      |
+| 5.2  | 'clamp' used as a verb is rewritten                                                                             | <span class="g">✓</span>       | <span class="r">✗ 'Clamp the cable' left unchanged</span>               |
+| 5.3  | explains these words are technical nouns used as verbs                                                          | <span class="g">✓</span>       | <span class="r">✗ cites 'synonym consolidation' instead</span>          |
+| 5.4  | rewrite preserves the original sequence and meaning                                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 6: technical verb is context-bound ('enter') — model applies one rule to both sentences**                | **<span class="g">4/4</span>** | **<span class="r">2/4</span>**                                          |
+| 6.1  | first sentence keeps 'enter' or an equally valid computer-input phrasing                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 6.2  | second sentence replaces 'enter' with 'go into' or similar                                                      | <span class="g">✓</span>       | <span class="r">✗ still 'enter the restricted server room'</span>       |
+| 6.3  | the two sentences are NOT treated identically                                                                   | <span class="g">✓</span>       | <span class="g">✓ (different reason, not the enter rule)</span>         |
+| 6.4  | reasoning references technical verbs being context/category-bound                                               | <span class="g">✓</span>       | <span class="r">✗ no technical-verb reasoning at all</span>             |
+|      | **Eval 7: 'about' has a restricted approved meaning — model gets the substitution backwards**                   | **<span class="g">4/4</span>** | **<span class="r">2/4</span>**                                          |
+| 7.1  | does NOT replace the 'concerned with' sense of 'about' with 'approximately'                                     | <span class="g">✓</span>       | <span class="g">✓ (deleted instead of misreplaced)</span>               |
+| 7.2  | replaces 'about 2 liters' with 'approximately 2 liters'                                                         | <span class="g">✓</span>       | <span class="r">✗ kept 'about 2 liters'</span>                          |
+| 7.3  | does not apply one uniform find-and-replace to every 'about'                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 7.4  | explanation correctly distinguishes the two senses                                                              | <span class="g">✓</span>       | <span class="r">✗ claims 'about' is the approved quantity word — backwards</span> |
+|      | **Eval 8: semicolon ban and restructuring — model already knew this**                                           | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 8.1  | no semicolon                                                                                                     | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 8.2  | properly restructured, not just a semicolon swapped for a comma                                                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 8.3  | each sentence within its word limit                                                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 8.4  | meaning preserved                                                                                               | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 9: colors have no comparative/superlative form — skill gap, rule not in SKILL.md body**                  | **<span class="r">0/4</span>** | **<span class="g">4/4</span>**                                          |
+| 9.1  | no 'blacker'                                                                                                     | <span class="r">✗ kept</span>  | <span class="g">✓</span>                                                |
+| 9.2  | no 'reddest'                                                                                                     | <span class="r">✗ kept</span>  | <span class="g">✓</span>                                                |
+| 9.3  | rephrases without comparative/superlative color forms                                                           | <span class="r">✗</span>       | <span class="g">✓</span>                                                |
+| 9.4  | explanation notes colors have no comparative/superlative form                                                   | <span class="r">✗</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 10: vertical list formatting — model already knew this**                                                 | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 10.1 | every item starts with a capital letter                                                                         | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 10.2 | no item ends with a comma or semicolon                                                                          | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 10.3 | the last item ends with a period                                                                                | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 10.4 | the lead-in line ends with a colon                                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 11: condition-first ordering (rule 5.4) — model already knew this**                                      | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 11.1 | condition placed before the command                                                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 11.2 | comma separates condition from command                                                                          | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 11.3 | command stays imperative                                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 11.4 | does not simply keep the original condition-last order                                                          | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 12: phrasal verbs invisible to word-list checks — model leaves both untouched**                          | **<span class="g">4/4</span>** | **<span class="r">1/4</span>**                                          |
+| 12.1 | 'put out' replaced with a single-word verb                                                                      | <span class="g">✓</span>       | <span class="r">✗ 'Put out the fire' unchanged</span>                   |
+| 12.2 | 'give off' replaced with a single-word verb                                                                     | <span class="g">✓</span>       | <span class="r">✗ 'CAN GIVE OFF' unchanged</span>                       |
+| 12.3 | explicitly notes phrasal verbs are not caught by word-list checking                                             | <span class="g">✓</span>       | <span class="r">✗ no mention of phrasal verbs</span>                    |
+| 12.4 | meaning preserved                                                                                               | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 13: restricted meanings ('turns green', 'wear') — 'wear' is a second skill gap**                         | **<span class="r">3/4</span>** | **<span class="r">3/4</span>**                                          |
+| 13.1 | 'the indicator turns green' is rephrased                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 13.2 | reasoning identifies 'turn' as a restricted-meaning issue                                                       | <span class="g">✓ Rule 9.2 cited</span> | <span class="r">✗ changed incidentally, no rationale given</span> |
+| 13.3 | 'wear protective clothing' rephrased or flagged                                                                 | <span class="r">✗ left unchanged, skill has no 'wear' rule</span> | <span class="g">✓ flagged for hazard-level formatting</span> |
+| 13.4 | meaning preserved                                                                                               | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 14: WARNING vs. CAUTION structure — model reverses the required command-then-risk order**                | **<span class="g">4/4</span>** | **<span class="r">3/4</span>**                                          |
+| 14.1 | identifies this must be WARNING due to injury risk                                                              | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 14.2 | explains the warning/caution distinction                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 14.3 | rewritten instruction leads with the command, then the risk/consequence                                         | <span class="g">✓</span>       | <span class="r">✗ risk stated first, command last</span>                |
+| 14.4 | final answer uses WARNING, not CAUTION                                                                          | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 15: GR-6 Latin abbreviations — model deletes the example instead of spelling it out**                    | **<span class="r">4/5</span>** | **<span class="r">3/5</span>**                                          |
+| 15.1 | no 'e.g.'                                                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 15.2 | no 'i.e.'                                                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 15.3 | no 'etc.'                                                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 15.4 | 'e.g.' replaced with 'for example' or an equivalent spelled-out phrase                                          | <span class="g">✓</span>       | <span class="r">✗ example deleted, not spelled out</span>               |
+| 15.5 | 'i.e.' replaced with 'that is' or an equivalent spelled-out phrase                                              | <span class="r">✗ merged into the sentence instead</span> | <span class="r">✗ deleted, not spelled out</span> |
+|      | **Eval 16: multi-word noun word-count includes adjectives — model excludes 'horizontal' from the count**        | **<span class="g">4/4</span>** | **<span class="r">3/4</span>**                                          |
+| 16.1 | identifies the 4-word term exceeds the 3-word limit                                                             | <span class="g">✓</span>       | <span class="r">✗ counts only 3 nouns, calls it 'not over' the limit</span> |
+| 16.2 | proposes a compliant fix (short form or hyphenation)                                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 16.3 | specifies the same shortened term used consistently                                                             | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 16.4 | references the requirement to avoid multiple names for one item                                                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 17: attribution to ASD-STE100 by rule number — model without the skill hedges instead of citing**        | **<span class="g">4/4</span>** | **<span class="r">3/4</span>**                                          |
+| 17.1 | names ASD-STE100 / Simplified Technical English explicitly                                                      | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 17.2 | cites specific rule numbers                                                                                     | <span class="g">✓ 5.1, 6.3, 8.1</span> | <span class="r">✗ declines to cite numbers 'from memory'</span> |
+| 17.3 | does not present the rules as house style                                                                       | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 17.4 | does not claim ASD certification/endorsement                                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 18: technical noun category list — both runs handled uncertainty responsibly**                           | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 18.1 | does not invent categories                                                                                      | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 18.2 | gives an accurate complete list, or explicitly defers to the specification                                      | <span class="g">✓ full 22-category list, matches Issue 9</span> | <span class="g">✓ explicitly declines to fabricate a list</span> |
+| 18.3 | does not state a wrong category count with confidence                                                           | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 18.4 | does not fabricate rule numbers                                                                                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 19: emoji/bold decoration in Write mode — trap did not manifest this run**                               | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 19.1 | no emojis                                                                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 19.2 | no decorative bold step-label prefix                                                                            | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 19.3 | each step is a short imperative sentence, not a decorated bullet                                                | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 19.4 | does not justify decoration as 'easier to scan'                                                                 | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+|      | **Eval 20: chat wrapper leaking into a Rewrite deliverable — trap did not manifest this run**                   | **<span class="g">4/4</span>** | **<span class="g">4/4</span>**                                          |
+| 20.1 | deliverable does NOT contain 'Sure, here's the rewritten warning'                                               | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 20.2 | deliverable does NOT contain 'Let me know if you'd like'                                                        | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 20.3 | labeled WARNING, not CAUTION                                                                                    | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+| 20.4 | leads with command/condition, then risk and consequence                                                         | <span class="g">✓</span>       | <span class="g">✓</span>                                                |
+
+**Coverage gaps found by this run, fixed in the same commit as this report:** Eval 9 and assertion 13.3 tested real ASD-STE100 content — colors take no comparative/superlative form, and `wear` is restricted to "put on"/"use" — that `SKILL.md` did not document at the time of this run, so the with-skill agent had no way to apply either rule. `SKILL.md` now states both explicitly in Part 1 and Part 9. Re-running evals 9 and 13 is the natural next step to confirm the fix closes the gap.
 
 </details>
 

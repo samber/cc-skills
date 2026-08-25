@@ -183,7 +183,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `technical-article-writer` | -33% | 147 | 2,755 | 6,197 |
 | `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
 | `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
-| `humanizer-en-asd-ste100` | — | 205 | 5,838 | 5,838 |
+| `humanizer-en-asd-ste100` | -16% | 205 | 5,952 | 5,952 |
 | `snyk-agent-scan-compliance` | -27% | 144 | 1,904 | 5,612 |
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
 | `deep-research` | -51% | 316 | 2,997 | 14,125 |
@@ -198,7 +198,7 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 
 |             | With Skill | Without Skill | Delta     |
 | ----------- | ---------- | ------------- | --------- |
-| **Overall** | **98%**    | **50%**       | **+48pp** |
+| **Overall** | **98%**    | **52%**       | **+46pp** |
 
 See [EVALUATIONS.md](./EVALUATIONS.md) for the full per-skill breakdown.
 
