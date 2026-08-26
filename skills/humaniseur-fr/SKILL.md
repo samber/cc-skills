@@ -603,4 +603,4 @@ Based on:
 
 Key insight: LLMs generate the most statistically likely token sequence. The result trends toward the average across all possible contexts. Making text human means making it _yours_: specific, opinionated, idiosyncratic.
 
-Not for English text (→ See `samber/cc-skills@humanizer-en-asd-ste100` skill for ASD-STE100 Simplified Technical English, or an English-tuned humanizer for general prose).
+Not for English text (→ See `samber/cc-skills@humanizer-en-asd-ste100` skill for ASD-STE100 Simplified Technical English, or `blader/humanizer@humanizer` for general English prose).
