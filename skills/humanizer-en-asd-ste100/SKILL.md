@@ -224,6 +224,8 @@ These are reasoning heuristics — not a copy of the ASD-STE100 dictionary — t
 | `above` / `less than` | over / under (as limits) |
 | `person` / `personnel` | people |
 
+This is a starting set, not the full dictionary — it covers the substitutions that come up most often, not every approved or restricted word. For a word not listed here, reason from the same preference (shortest, most common, single-meaning word) rather than guessing, and fetch the official dictionary (see Consulting the specification, next) when the reasoning is not enough to be confident.
+
 ## Consulting the specification
 
 This file indexes all 53 rules by number so a reader can work unaided in common cases, but it does not transcribe the dictionary or the full category lists — that would reproduce a copyrighted work. Fetch and read the free official PDF at <https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf> (434 pages) when:
