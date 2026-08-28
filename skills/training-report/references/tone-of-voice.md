@@ -77,7 +77,7 @@ Goal: complete record for future reference.
 - `formation` not `training`, `participants` not `attendees`, `compte rendu` not `rapport` for this type of document
 - Verbs over nominalizations: `mettre en place` not `la mise en place de`
 
-**Common AI tells to eliminate:** `Il convient de noter`, `dans le cadre de`, `à cet égard`, `par ailleurs`, `ainsi`, `en effet` at sentence start, `crucial`, `essentiel`, `notamment`, `permettre de + infinitif` as a sentence opener
+**Common AI tells to eliminate:** `Il convient de noter`, `dans le cadre de`, `à cet égard`, `par ailleurs`, `ainsi`, `en effet` at sentence start, `crucial`, `essentiel`, `notamment`, `permettre de + infinitif` as a sentence opener (→ See `samber/cc-skills@humaniseur-fr` skill for the canonical French AI-tell catalog and removal patterns)
 
 ### English
 
