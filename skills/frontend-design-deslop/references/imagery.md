@@ -40,6 +40,7 @@ An illustration system defines a repeatable style so commissioned or generated a
 - **Corporate Memphis / "Alegria"**: flat figures with bendy limbs, tiny heads, oversized hands, non-representational skin colors. Created for a big-tech brand and then mass-replicated through component packs until it became shorthand for soulless startup. The defensible critique is not flat-art-itself but undifferentiated, replication-optimized flat art that represents everyone and speaks to no one.
 - **Default Midjourney aesthetic**: the recognizable hyper-rendered, slightly-uncanny generative look used raw.
 - **Generic gradient mesh and 3D blobs**: decorative abstraction with no meaning. Flat illustration is not banned; undifferentiated flat illustration is. If a custom style has a clear, specific hand, it is the opposite of slop.
+- **Amateurish hand-coded SVG mascots and scenes**: hero art assembled by hand from generic SVG shapes (circles, rounded rects, simple paths) reads as an amateur doodle, not whimsy, however earnest the intent. If a real illustrator, a generated asset, or a licensed piece is not available, ship no illustration at all rather than a sketchy geometric fallback — a plain surface beats a bad mascot.
 
 ## 7. Graphic devices and texture
 

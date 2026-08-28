@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.2.0"
   openclaw:
     emoji: "🎨"
     homepage: https://github.com/samber/cc-skills
@@ -35,19 +35,19 @@ First, check for an existing `DESIGN.md` at the project root (and common locatio
 2. **WHO and WHY?** Audience, positioning (corporate vs creative vs technical vs luxury vs playful), and the single primary action or outcome.
 3. **Commit to words.** Lock 3 to 5 brand adjectives and a 3-word aesthetic essence before any visual exploration. This is the highest-leverage input; it drives type, color, density, radius, and motion. Strategy drives design, never the reverse.
 
-Run discovery adaptively: infer, state inferences, ask the high-signal subset through the question tool, and ground the direction in 1 to 3 references (web-search strong current examples of the exact artifact type and positioning if none are given, then transpose rather than originate). Do not proceed until artifact type, positioning, and the adjectives are locked.
+Run discovery adaptively: infer, state inferences, ask the high-signal subset through the question tool, and ground the direction in 1 to 3 references (web-search strong current examples of the exact artifact type and positioning if none are given, then transpose rather than originate). Do not proceed until artifact type, positioning, and the adjectives are locked. On a generic brief (another dashboard, another SaaS landing page) where the category itself has little to say, widen the reference search past the product's own category rather than asking for more creativity within it — see `references/divergence.md`.
 
 ## Phase 1: Translate strategy into a design system (the gate)
 
 State these commitments in prose, briefly. Each must follow from Phase 0, not from reflex.
 
-1. **Aesthetic commitment.** Pick ONE opinionated direction that fits the artifact and the adjectives; generic is the failure mode. See `references/aesthetics-library.md`. If the user gave a brand or reference, transpose it.
+1. **Aesthetic commitment.** Pick ONE opinionated direction that fits the artifact and the adjectives; generic is the failure mode. See `references/aesthetics-library.md`. If the user gave a brand or reference, transpose it. Derive 2-3 real candidates before picking one, commit to the winner fully before softening it for legibility, and check the bare structure (not just the styled surface) against the category default — see `references/divergence.md` for why each of these matters and how to do it without re-deliberating in the same pass.
 
 2. **Typography (brand-first).** Choose type from personality, not aesthetic preference. Match classification to the adjectives, pick a modular-scale ratio that fits the content, and pair for contrast (display + body) without typographic mud. Never Inter/Roboto/Arial/system as the primary face. See `references/typography.md`.
 
 3. **Color (appropriateness + differentiation).** Choose colors for fit with the brand and audience, then find uncontested territory (the indigo/violet band is the red ocean of AI UI; avoid it unless the brief demands it). Build one dominant plus a sharp accent plus neutrals plus semantic states, distributed roughly 60-30-10. Author in OKLCH. See `references/color-oklch.md`.
 
-4. **Token table (emit BEFORE components).** Display + body font; type scale (state the ratio and base, 6 steps); spacing base unit; max two radius values; ONE shadow approach (defined edge OR soft elevation, never both on one element); palette with roles (bg, fg, muted, border, accent, accent-fg, success, warning, error). Everything references tokens; no scattered hex/px. Pull a starting set from `references/token-sets.md`.
+4. **Token table (emit BEFORE components).** Display + body font; type scale (state the ratio and base, 6 steps); spacing base unit; max two radius values; ONE shadow approach (defined edge OR soft elevation, never both on one element); palette with roles (bg, surface, fg, muted, border, accent, accent-fg, success, warning, error) — `surface` is required, not optional: it is what elevation-by-lightness (see `references/dark-mode.md`) steps off of. Everything references tokens; no scattered hex/px. Pull a starting set from `references/token-sets.md`.
 
 5. **Signature move.** Name the single thing that makes this UI memorable and unmistakably not-default. One per project.
 
@@ -87,13 +87,13 @@ Everything this skill produces lives in a single `DESIGN.md` at the project root
 
 ## NEVER (negative prompt)
 
-NEVER use generic AI-generated aesthetics: overused fonts (Inter, Roboto, Arial, system-ui as the primary face); cliched color schemes (especially purple/indigo/violet gradients on white or dark); the hero + 3-feature-cards + testimonials + CTA boilerplate as the only structure; the icon-tile-above-heading feature-card template; side-tab accent borders on cards; hairline border and diffuse drop shadow stacked on the same element; gradient text on headings or metrics; decorative glassmorphism; blob-rounding (radius > 16px on small cards); cream/beige backgrounds by reflex; bounce/elastic easing and animate-everything micro-interactions. Use distinctive fonts, a cohesive committed palette, and motion only where it serves the interaction.
+NEVER use generic AI-generated aesthetics: overused fonts (Inter, Roboto, Arial, system-ui as the primary face); cliched color schemes (especially purple/indigo/violet gradients on white or dark); the hero + 3-feature-cards + testimonials + CTA boilerplate as the only structure; the icon-tile-above-heading feature-card template; side-tab accent borders on cards; hairline border and diffuse drop shadow stacked on the same element; gradient text on headings or metrics; decorative glassmorphism; blob-rounding (radius > 16px on small cards); cream/beige backgrounds by reflex; bounce/elastic easing and animate-everything micro-interactions; decorative grid-line backgrounds or radial spotlight glows with no structural purpose; pulsing status dots or auto-scrolling marquees on content that is not actually live; hand-coded SVG mascots standing in for real illustration. Use distinctive fonts, a cohesive committed palette, and motion only where it serves the interaction.
 
 Craft-layer NEVERs: do not ship components with only a resting state; do not use placeholder text as the label; do not color buttons by meaning instead of ranking them by importance; do not center-align numeric table columns or use non-tabular numerals for figures; do not let the unmodified shadcn/Tailwind default icon set define the look; do not use stock people-pointing-at-laptops, gradient blobs, floating orbs, glossy isometric tech illustrations, corporate-Memphis figures, or raw default-Midjourney imagery where a real product visual belongs; do not invert a light palette to make dark mode, use pure black backgrounds, pure white text, or glowing colored box-shadows by reflex; do not animate layout properties (width/height/top/left) or ignore prefers-reduced-motion; do not remove focus outlines without replacing them, convey meaning by color alone, or ship sub-24px targets.
 
 ## Self-audit before finishing
 
-Run the generated UI against `references/slop-checklist.md` and score it. Verify it serves the artifact type's priorities from `references/artifact-types.md` (a dashboard that reads as a portfolio piece, or a landing page with no clear primary action, has failed even if it is beautiful), and that the type and color choices match the committed adjectives. Verify the craft layer: components have full state matrices, layout has rhythm and an intentional move, motion is communicative and respects reduced-motion, icons are one coherent system, imagery is not stock/AI slop, and dark mode (if present) is designed not inverted. Run the accessibility gate in `references/accessibility.md` (focus, keyboard, contrast, targets, color independence); accessibility is a pass/fail gate, not a nicety. If any tell fires or the fit is wrong, regenerate that section before presenting. Record the result in the DESIGN.md slop-audit section and bump its changelog. State the artifact type, positioning, adjectives, aesthetic, type system, palette, and signature move used. All checklist items are detectable within a single generation; do not invent cross-generation rules the model cannot verify.
+Run the generated UI against `references/slop-checklist.md` and score it. Verify it serves the artifact type's priorities from `references/artifact-types.md` (a dashboard that reads as a portfolio piece, or a landing page with no clear primary action, has failed even if it is beautiful), and that the type and color choices match the committed adjectives. Verify the craft layer: components have full state matrices, layout has rhythm and an intentional move, motion is communicative and respects reduced-motion, icons are one coherent system, imagery is not stock/AI slop, and dark mode (if present) is designed not inverted. Run the accessibility gate in `references/accessibility.md` (focus, keyboard, contrast, targets, color independence); accessibility is a pass/fail gate, not a nicety. A tell-by-tell checklist pass alone can score clean on output that is still generic; also re-read the DESIGN.md aesthetic commitment against the actual render as if seeing it for the first time, and do the bare-structure check in `references/divergence.md` §6-7. If any tell fires or the fit is wrong, regenerate that section before presenting. Record the result in the DESIGN.md slop-audit section and bump its changelog. State the artifact type, positioning, adjectives, aesthetic, type system, palette, and signature move used. All checklist items are detectable within a single build; do not invent cross-generation rules the model cannot verify. A subset needs the rendered page rather than just source (see `references/slop-checklist.md`'s "Layout defects" and "Build correctness" sections) — run those whenever a screenshot or live browser is available.
 
 ## Reference files
 
@@ -105,6 +105,7 @@ Foundation and intake:
 - `references/discovery.md` - design intake: question-tool protocol, commit-to-words, question bank, personality-to-token translation table. Read at the start of Phase 0.
 - `references/design-md.md` - the DESIGN.md schema and persistence conventions. The durable output of the whole skill. Read in Phase 0 (to consume an existing file) and Phase 3 (to write one).
 - `references/artifact-types.md` - artifact taxonomy with per-type priorities, layout grammar, density, positioning variants, anti-patterns. Read at the start of Phase 0.
+- `references/divergence.md` - why a model converges on the same concept and how to force real variance: derive-then-externally-select instead of self-picking, ground borrowed forms in specific produced systems, commit fully before softening, and check bare structure separately from styled surface. Read once alongside `design-theory.md`; apply in Phase 0/1 and the self-audit.
 
 System (Phase 1):
 
