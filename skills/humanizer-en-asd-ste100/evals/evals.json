@@ -1,0 +1,494 @@
+{
+  "skill_name": "humanizer-en-asd-ste100",
+  "metadata": {
+    "eval_methodology": "adversarial — each eval has a trap the model falls into without the skill",
+    "without_skill_runner_note": "When running without-skill evals, disable ALL skills from this plugin AND any external humanizer, plain-language, or controlled-English skills. The model should rely only on its default knowledge of ASD-STE100 / Simplified Technical English."
+  },
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Rewrite this maintenance instruction to comply with ASD-STE100 Simplified Technical English, keeping it under the 20-word procedural sentence limit: 'Set the valve to 10 degrees Celsius (see Figure 3) and check the carbon fiber reinforced panel for cracks before you continue with the next step of the inspection.'",
+      "trap": "Without the skill, the model counts every token separately (treating '10 degrees Celsius' as 3 words, '(see Figure 3)' as 4 words, 'carbon fiber reinforced' as 3 words), overestimates the count, and either cuts necessary content or claims the sentence cannot fit in 20 words. ASD-STE100's counting rules (rules 8.5-8.7) make numbers-with-units, parenthetical text, and hyphenated compounds each count as one word.",
+      "expected_output": "Output hyphenates 'carbon-fiber-reinforced' into one compound word, keeps the parenthetical reference and the temperature intact, counts the sentence correctly under STE rules, and does not drop technical content just to hit an inflated word count.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "1.1",
+          "description": "output counts numbers-with-units, the parenthetical, and hyphenated compounds as one word each rather than counting every token"
+        },
+        {
+          "id": "1.2",
+          "description": "output hyphenates 'carbon-fiber-reinforced' as a single compound"
+        },
+        {
+          "id": "1.3",
+          "description": "output keeps the '(see Figure 3)' reference rather than deleting it to save word count"
+        },
+        {
+          "id": "1.4",
+          "description": "output does NOT remove necessary technical content just to hit a limit that was already satisfied once counted correctly"
+        },
+        {
+          "id": "1.5",
+          "description": "the final sentence is at or under 20 words when counted using STE rules"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "prompt": "Make this procedure ASD-STE100 compliant:\n\n'1. Disconnect the battery.\n2. Remove the access panel.\nNOTE: The access panel has four captive screws that do not fully separate from the panel when you loosen them, and this is a normal, expected design feature of this specific aircraft model.\n3. Examine the wiring harness for damage.'",
+      "trap": "Without the skill, the model applies the 20-word procedural sentence limit uniformly to the NOTE and force-splits or truncates it, not knowing notes follow the 25-word descriptive limit instead of the 20-word procedural one.",
+      "expected_output": "The numbered steps stay within 20 words and imperative form. The NOTE is treated as information only (never an instruction), is not needlessly split or shortened below its natural 25-word allowance, and is not merged into the numbered steps.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "2.1",
+          "description": "the NOTE is not forced to fit the 20-word procedural limit"
+        },
+        {
+          "id": "2.2",
+          "description": "the NOTE remains purely informational and is not rewritten as an instruction"
+        },
+        {
+          "id": "2.3",
+          "description": "the numbered steps stay in imperative form and within 20 words each"
+        },
+        {
+          "id": "2.4",
+          "description": "the NOTE's content is not merged into a numbered step"
+        },
+        {
+          "id": "2.5",
+          "description": "output does not claim the note itself violates the 20-word procedural limit"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "prompt": "Is this descriptive sentence ASD-STE100 compliant, and if not, fix it: 'During transmission, the data was corrupted.'",
+      "trap": "Without the skill, the model applies a blanket 'always convert passive to active' instinct and rewrites this as something like 'Transmission corrupted the data,' inventing a false agent, when the standard explicitly allows passive voice in descriptive text whenever the true agent is unknown.",
+      "expected_output": "Output recognizes the passive is legitimate here because no agent is known, and either leaves it as passive or rewrites it without inventing a false causal agent such as 'transmission' as the actor.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "3.1",
+          "description": "output recognizes this passive construction is allowed because the agent is unknown"
+        },
+        {
+          "id": "3.2",
+          "description": "output does NOT rewrite the sentence to claim 'transmission' or another non-agent as the actor that corrupted the data"
+        },
+        {
+          "id": "3.3",
+          "description": "if rewritten, it does not fabricate a specific responsible party that is absent from the source"
+        },
+        {
+          "id": "3.4",
+          "description": "output's reasoning references that passive voice is permitted in descriptive writing when the agent is unknown"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "prompt": "Rewrite 'The volume control can be adjusted.' twice for ASD-STE100 compliance: once as a step inside a numbered procedure, and once as a sentence inside a system description.",
+      "trap": "Without the skill, the model produces the same rewrite for both contexts (usually a bare imperative for both, or keeping 'can be adjusted' for both), missing that the two text types resolve identical passive constructions differently.",
+      "expected_output": "The procedural version is a direct imperative ('Adjust the volume control.'). The descriptive version keeps a reader-directed construction such as 'You can adjust the volume control,' not a bare command.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "4.1",
+          "description": "the procedural version is an imperative command"
+        },
+        {
+          "id": "4.2",
+          "description": "the descriptive version uses a reader-directed form (e.g., 'you can') rather than a bare imperative"
+        },
+        {
+          "id": "4.3",
+          "description": "the two rewrites are meaningfully different from each other"
+        },
+        {
+          "id": "4.4",
+          "description": "neither rewrite keeps the original passive 'can be adjusted' construction unchanged"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "prompt": "Rewrite for ASD-STE100 compliance: 'Grease the fasteners before you clamp the cable in position.'",
+      "trap": "Without the skill, the model leaves 'grease' and 'clamp' as verbs since they read as ordinary English, not recognizing that both are technical nouns being misused as verbs.",
+      "expected_output": "Both verbified technical nouns are rewritten using an approved verb plus the noun, e.g. 'Apply grease to the fasteners' and 'Put clamps on the cable to hold it in position.'",
+      "files": [],
+      "assertions": [
+        {
+          "id": "5.1",
+          "description": "'grease' used as a verb is rewritten (e.g., 'apply grease to')"
+        },
+        {
+          "id": "5.2",
+          "description": "'clamp' used as a verb is rewritten (e.g., 'put clamps on')"
+        },
+        {
+          "id": "5.3",
+          "description": "output explains that these words are technical nouns being used as verbs"
+        },
+        {
+          "id": "5.4",
+          "description": "the rewrite preserves the original sequence and meaning of the two actions"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "prompt": "Make both of these sentences from a software manual ASD-STE100 compliant: 'Enter your password to unlock the device.' and 'Do not enter the restricted server room without authorization.'",
+      "trap": "Without the skill, the model applies one blanket rule to 'enter' across both sentences — either accepting it everywhere as ordinary English, or rejecting it everywhere — missing that technical verbs like 'enter' are valid only inside their specific category (a computer input action here, not a physical-access action).",
+      "expected_output": "The first sentence keeps 'enter' (a valid computer-process technical verb). The second sentence replaces 'enter' with an approved general verb such as 'go into', since entering a physical room is outside that technical-verb category.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "6.1",
+          "description": "the first sentence keeps 'enter' or an equally valid computer-input phrasing"
+        },
+        {
+          "id": "6.2",
+          "description": "the second sentence replaces 'enter' with an approved general verb such as 'go into'"
+        },
+        {
+          "id": "6.3",
+          "description": "the two sentences are NOT treated identically"
+        },
+        {
+          "id": "6.4",
+          "description": "output's reasoning references that technical verbs are valid only within their specific category and context"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "prompt": "Rewrite for ASD-STE100: 'Refer to the wiring list for data about the location of circuit breakers. Drain about 2 liters of coolant from the tank.'",
+      "trap": "Without the skill, the model blanket-replaces every instance of 'about' with 'approximately', including the first sentence where 'about' correctly means 'concerned with' and is an approved use, not an approximation.",
+      "expected_output": "The first sentence keeps 'about' in its 'concerned with' sense unchanged. Only the second sentence's quantity sense of 'about' is replaced with 'approximately'.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "7.1",
+          "description": "output does NOT replace 'about' in 'data about the location' with 'approximately'"
+        },
+        {
+          "id": "7.2",
+          "description": "output replaces 'about 2 liters' with 'approximately 2 liters'"
+        },
+        {
+          "id": "7.3",
+          "description": "output does not apply one uniform find-and-replace to every instance of 'about'"
+        },
+        {
+          "id": "7.4",
+          "description": "output's explanation distinguishes the two different senses of 'about'"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "prompt": "Rewrite for ASD-STE100 compliance: 'Check the oil level; add oil if it is low.'",
+      "trap": "Without the skill, the model keeps the semicolon, or simply swaps it for a comma while leaving a run-on sentence, not knowing the semicolon is banned outright and the sentence needs restructuring into a compliant form.",
+      "expected_output": "Output contains no semicolon and restructures the sentence — for example into two short imperative sentences, or a condition-first structure with a comma — while keeping both actions clear.",
+      "files": [],
+      "assertions": [
+        { "id": "8.1", "description": "output contains no semicolon" },
+        {
+          "id": "8.2",
+          "description": "output is properly restructured (e.g., two sentences, or a condition-first construction), not just a semicolon swapped for a comma in a run-on"
+        },
+        {
+          "id": "8.3",
+          "description": "each resulting sentence stays within the applicable word limit"
+        },
+        {
+          "id": "8.4",
+          "description": "the meaning (check the oil, add oil if low) is fully preserved"
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "prompt": "Rewrite for ASD-STE100: 'The wire insulation on the left is blacker than the one on the right, and the connector on the far side is the reddest of the three.'",
+      "trap": "Without the skill, the model keeps 'blacker' and 'reddest' since they are grammatically ordinary comparative/superlative adjectives, missing that colors are technical nouns in STE and have no comparative or superlative form.",
+      "expected_output": "Output removes the comparative and superlative color forms and rephrases the comparison without them.",
+      "files": [],
+      "assertions": [
+        { "id": "9.1", "description": "output does NOT contain 'blacker'" },
+        { "id": "9.2", "description": "output does NOT contain 'reddest'" },
+        {
+          "id": "9.3",
+          "description": "output rephrases the comparison without using a comparative or superlative color form"
+        },
+        {
+          "id": "9.4",
+          "description": "output's explanation notes colors have no comparative or superlative form in STE"
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "prompt": "Make this vertical list ASD-STE100 compliant:\n\n'Before you start the test, do these checks:\n- check that the power supply is disconnected,\n- check that the area is clear of tools,\n- check that the safety guard is installed'",
+      "trap": "Without the skill, the model may correct the wording but leave the lowercase starts and the trailing commas unchanged, not knowing the specific formatting rules for STE vertical lists (capitalize each item, no trailing comma or semicolon, final item ends with a period).",
+      "expected_output": "Every item starts with a capital letter, no item ends in a comma or semicolon, and the last item ends with a period.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "10.1",
+          "description": "every list item starts with a capital letter"
+        },
+        {
+          "id": "10.2",
+          "description": "no list item ends with a comma or a semicolon"
+        },
+        { "id": "10.3", "description": "the last item ends with a period" },
+        { "id": "10.4", "description": "the lead-in line ends with a colon" }
+      ]
+    },
+    {
+      "id": 11,
+      "prompt": "Rewrite for ASD-STE100 compliance: 'Set the switch to NORMAL when the light comes on.'",
+      "trap": "Without the skill, the model may swap words for approved ones but keep the original word order, not knowing that when a condition applies, the condition must come first, separated from the command by a comma.",
+      "expected_output": "'When the light comes on, set the switch to NORMAL.' — condition first, command second, separated by a comma.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "11.1",
+          "description": "the condition ('when the light comes on') is placed before the command"
+        },
+        {
+          "id": "11.2",
+          "description": "a comma separates the condition from the command"
+        },
+        {
+          "id": "11.3",
+          "description": "the command remains in imperative form"
+        },
+        {
+          "id": "11.4",
+          "description": "output does not simply keep the original condition-last word order"
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "prompt": "Rewrite for ASD-STE100: 'After you put out the fire, close the valve on the fire extinguisher. This compound can give off poisonous fumes if it is heated.'",
+      "trap": "Without the skill, the model checks individual words against a mental list of banned terms and finds nothing wrong with 'put out' or 'give off', since phrasal verbs are not flagged by a simple word-by-word check — they need to be recognized as a unit.",
+      "expected_output": "'Put out' and 'give off' are each replaced with a single-word verb (such as 'extinguish' and 'release' or 'emit'), and the output notes that phrasal verbs are not caught by simple word-list checking.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "12.1",
+          "description": "'put out' is replaced with a single-word verb such as 'extinguish'"
+        },
+        {
+          "id": "12.2",
+          "description": "'give off' is replaced with a single-word verb such as 'release' or 'emit'"
+        },
+        {
+          "id": "12.3",
+          "description": "output explicitly notes that phrasal verbs are not caught by checking individual words against a banned-word list"
+        },
+        {
+          "id": "12.4",
+          "description": "the rewritten sentences preserve the original meaning"
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "prompt": "Rewrite for ASD-STE100: 'Wear protective clothing. The indicator turns green when the test is complete.'",
+      "trap": "Without the skill, the model leaves 'turns' unchanged because it looks like an ordinary simple verb, missing that this specific sense of 'turn' is a restricted meaning that needs a different construction.",
+      "expected_output": "'The indicator turns green' is rephrased, for example as 'The color of the indicator changes to green,' addressing the restricted verb sense rather than leaving it unchanged.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "13.1",
+          "description": "'the indicator turns green' is rephrased rather than left as-is"
+        },
+        {
+          "id": "13.2",
+          "description": "output's reasoning identifies this specific sense of 'turn' as a restricted meaning issue"
+        },
+        {
+          "id": "13.3",
+          "description": "the rewrite preserves the meaning (indicator becomes green when the test finishes)"
+        },
+        {
+          "id": "13.4",
+          "description": "output does not treat 'turns' as automatically compliant simply because it is a common short word"
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "prompt": "Is this safety instruction correctly classified per ASD-STE100? Fix it if not: 'CAUTION: KEEP THE FUEL LINE CLEAN. DIRT IN THE FUEL LINE CAN CAUSE A FIRE THAT CAN INJURE PERSONNEL.'",
+      "trap": "Without the skill, the model accepts CAUTION as-is because the wording itself reads as grammatically fine, missing that any risk of injury or death to a person must be labeled WARNING, not CAUTION, regardless of how well-written the surrounding text is.",
+      "expected_output": "Output identifies that this must be a WARNING, not a CAUTION, because it describes a risk of injury, explains the warning/caution distinction, and relabels the instruction accordingly.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "14.1",
+          "description": "output identifies that this must be a WARNING because it describes a risk of injury to a person"
+        },
+        {
+          "id": "14.2",
+          "description": "output explains the distinction: caution covers damage to equipment/material, warning covers injury or death to a person"
+        },
+        {
+          "id": "14.3",
+          "description": "the final rewritten instruction uses the word WARNING, not CAUTION"
+        },
+        {
+          "id": "14.4",
+          "description": "output does not accept the original CAUTION label as correct"
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "prompt": "Rewrite for ASD-STE100: 'Use the correct tool (e.g., a torque wrench) to tighten the bolt, i.e., apply the specified torque value, etc.'",
+      "trap": "Without the skill, the model keeps 'e.g.', 'i.e.', and 'etc.' since they are common and already short, not knowing STE recommends against Latin abbreviations in favor of spelled-out English equivalents.",
+      "expected_output": "'e.g.' becomes 'for example', 'i.e.' becomes 'that is', and 'etc.' is removed or replaced with a spelled-out equivalent such as 'and so on'.",
+      "files": [],
+      "assertions": [
+        { "id": "15.1", "description": "output does NOT contain 'e.g.'" },
+        { "id": "15.2", "description": "output does NOT contain 'i.e.'" },
+        { "id": "15.3", "description": "output does NOT contain 'etc.'" },
+        {
+          "id": "15.4",
+          "description": "'e.g.' is replaced with 'for example' or an equivalent spelled-out phrase"
+        },
+        {
+          "id": "15.5",
+          "description": "'i.e.' is replaced with 'that is' or an equivalent spelled-out phrase"
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "prompt": "This term appears throughout a manual: 'horizontal cylinder pivot bearing'. Is this ASD-STE100 compliant, and if the manual also refers to it informally elsewhere as just 'the bearing', how should it be fixed consistently?",
+      "trap": "Without the skill, the model doesn't know multi-word nouns are capped at 3 words, so it either leaves the 4-word term unchanged or invents a fix without noticing that the fix must also be applied consistently everywhere the term appears, not just once.",
+      "expected_output": "Output identifies the 4-word term as exceeding the 3-word limit, proposes one compliant short form or hyphenation, and specifies that the same short form must replace every occurrence of the term in the document.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "16.1",
+          "description": "output identifies that the 4-word term exceeds the STE limit of 3 words for multi-word nouns"
+        },
+        {
+          "id": "16.2",
+          "description": "output proposes a compliant fix (a shorter form or hyphenated compound)"
+        },
+        {
+          "id": "16.3",
+          "description": "output specifies the SAME shortened term should be used consistently throughout the document"
+        },
+        {
+          "id": "16.4",
+          "description": "output references the requirement to avoid multiple different terms for the same item"
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "prompt": "Where do the '20 words per sentence' and 'no semicolons' rules you're applying come from? Are these just your own style preferences?",
+      "trap": "Without the skill, the model either doesn't recognize these as coming from a specific named external standard, or attributes them vaguely to 'general technical writing best practice' instead of naming ASD-STE100 and citing rule numbers.",
+      "expected_output": "Output names ASD-STE100 (Simplified Technical English) explicitly, cites the relevant rule numbers, and does not present the rules as its own house style.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "17.1",
+          "description": "output explicitly names 'ASD-STE100' or 'Simplified Technical English' as the source"
+        },
+        {
+          "id": "17.2",
+          "description": "output cites specific rule numbers (e.g., a rule in the 5.x range for the word limit, a rule in the 8.x range for the semicolon ban)"
+        },
+        {
+          "id": "17.3",
+          "description": "output does NOT present the rules as the assistant's own house style or personal preference"
+        },
+        {
+          "id": "17.4",
+          "description": "output does NOT claim to be certified, endorsed, or authorized by ASD"
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "prompt": "List every one of the official ASD-STE100 technical noun categories, not just a few common examples.",
+      "trap": "Without the skill (and without consulting the specification), the model either refuses, invents a plausible-sounding but incomplete or incorrect list, or states a wrong category count with fabricated confidence.",
+      "expected_output": "Output either gives an accurate, complete list of the 22 categories, or explicitly states it needs to consult the official ASD-STE100 specification to guarantee completeness and accuracy, rather than inventing categories.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "18.1",
+          "description": "output does NOT invent categories that are not part of the real standard"
+        },
+        {
+          "id": "18.2",
+          "description": "output either gives an accurate complete list of 22 categories or explicitly says it needs to consult the official specification for a complete, accurate answer"
+        },
+        {
+          "id": "18.3",
+          "description": "output does NOT state a category count other than 22 with unwarranted confidence"
+        },
+        {
+          "id": "18.4",
+          "description": "output does NOT fabricate specific rule numbers for categories it is unsure of"
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "prompt": "Write a short quick-start procedure in ASD-STE100 Simplified Technical English for replacing a clogged filter cartridge in an industrial pump. Make it clear and easy to scan.",
+      "trap": "Without the skill, a naive 'make it clear and easy to scan' instinct decorates the procedure with emoji bullet headers (e.g. a wrench emoji before each step) and bold-mechanical labels (e.g. '- **Step 1:** ...'), since that reads as 'clear' in ordinary technical-writing habits. Nothing in ASD-STE100 itself names emojis, so a model relying only on the numbered rules has no reason to avoid them.",
+      "expected_output": "A plain numbered procedure with imperative steps, no emojis anywhere, and no mechanical bold-label decoration — clarity comes from short compliant sentences and correct step ordering, not from visual decoration.",
+      "files": [],
+      "assertions": [
+        { "id": "19.1", "description": "output contains no emojis" },
+        {
+          "id": "19.2",
+          "description": "output does not use bold text as a decorative label prefix for each step (e.g. '**Step 1:**')"
+        },
+        {
+          "id": "19.3",
+          "description": "each step is a short imperative sentence rather than a decorated bullet"
+        },
+        {
+          "id": "19.4",
+          "description": "output does not justify the emojis or bold labels as 'making it easier to scan'"
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "prompt": "Clean this up for ASD-STE100 compliance, it was pasted from a chat with another AI assistant:\n\n\"Sure, here's the rewritten warning: 'CAUTION: Do not touch the exhaust manifold, it can be extremely hot after operation and could burn you.' Let me know if you'd like me to adjust the wording further!\"",
+      "trap": "Without the skill, the model focuses only on the wording inside the quoted warning (fixing the semicolon-equivalent comma splice, the hedge word 'extremely', the passive-ish phrasing) but leaves the surrounding chat wrapper ('Sure, here's the rewritten warning:' and 'Let me know if you'd like me to adjust the wording further!') untouched in its own final answer, or reproduces it inside the deliverable text, since nothing in the ASD-STE100 rule list names conversation artifacts.",
+      "expected_output": "The final deliverable contains only the safety instruction itself, correctly classified as WARNING (risk of injury), with no chat-wrapper sentences before or after it inside the document text.",
+      "files": [],
+      "assertions": [
+        {
+          "id": "20.1",
+          "description": "the final deliverable text does NOT contain 'Sure, here's the rewritten warning'"
+        },
+        {
+          "id": "20.2",
+          "description": "the final deliverable text does NOT contain 'Let me know if you'd like'"
+        },
+        {
+          "id": "20.3",
+          "description": "the safety instruction is labeled WARNING, not CAUTION, since it describes a risk of injury to a person"
+        },
+        {
+          "id": "20.4",
+          "description": "the rewritten instruction leads with a command or condition, then the risk and consequence"
+        }
+      ]
+    }
+  ]
+}

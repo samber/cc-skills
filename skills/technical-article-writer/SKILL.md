@@ -25,6 +25,8 @@ Most technical articles fail because of structural problems, not bad ideas: bury
 
 Developer audiences have a built-in BS detector. The best technical content leads with specificity and honesty. It sounds like a smart colleague explaining something interesting, not a marketer pitching. Acknowledge your expertise level, solve a specific problem, use real examples.
 
+Not for reference documentation aimed at non-native readers or machine translation (→ See `samber/cc-skills@humanizer-en-asd-ste100` skill for ASD-STE100 Simplified Technical English).
+
 ---
 
 ## Workflow

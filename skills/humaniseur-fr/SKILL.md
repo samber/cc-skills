@@ -603,3 +603,5 @@ Based on:
 **Freshness warning:** AI tells expire. The em dash lost most of its diagnostic value after OpenAI's November 2025 fix; published marker lists get reverse-engineered into evasion tools within months; and humans increasingly adopt AI vocabulary by exposure. Treat every lexical list here as dated — the structural principles (dispersion, register, specificity, soul) age far slower than the word lists.
 
 Key insight: LLMs generate the most statistically likely token sequence. The result trends toward the average across all possible contexts. Making text human means making it _yours_: specific, opinionated, idiosyncratic.
+
+Not for English text (→ See `samber/cc-skills@humanizer-en-asd-ste100` skill for ASD-STE100 Simplified Technical English, or `blader/humanizer@humanizer` for general English prose).
