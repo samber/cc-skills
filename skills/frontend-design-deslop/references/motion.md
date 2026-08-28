@@ -67,6 +67,9 @@ Honor `prefers-reduced-motion`. Motion can trigger vestibular discomfort; large 
 - Animating layout properties (width/height/top/left) instead of transform.
 - Default browser easing everywhere; wrong transform-origin on menus and popovers.
 - Animating high-frequency actions.
+- A decorative pulse on a status dot or badge that is not actually changing state — animate only when the underlying data changes.
+- A fake blinking cursor on non-editable hero copy, dressing static text up as a live terminal. Let real inputs own the caret.
+- An auto-scrolling marquee or logo ticker that demands attention and hides content behind its own motion. Let people read at their own pace; if a strip of logos needs to fit, wrap or paginate it instead.
 
 ## 10. Token set
 

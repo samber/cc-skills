@@ -198,7 +198,7 @@ font-family:
 - Contrast (WCAG): AA 4.5:1 normal, 3:1 large (24px+ or about 18.66px bold). AAA 7:1 and 4.5:1.
 - Text resizing (1.4.4): resizable to 200 percent without loss; use relative units (rem, em, percent).
 - Text spacing (1.4.12): content must survive user overrides of line-height 1.5x, paragraph 2x, letter 0.12x, word 0.16x of font size.
-- Minimums: body 16px (desktop and mobile), buttons/links 14px (16 better), captions 12px (14 better).
+- Minimums: body 14px, 16px ideal (desktop and mobile — matches `slop-checklist.md`'s quality gate), buttons/links 14px (16 better), captions and dense supporting text (table cells, footnotes) 12px, 11px is the absolute floor below which legibility breaks down regardless of context.
 - Dyslexia-friendly: simple sans shapes, wider letter and word spacing, distinct b/d and p/q, upright (no italic body), 16px+. Recommended: Lexend (built for readability), Atkinson Hyperlegible (low-vision, benefits all), Open Sans, Verdana, Calibri. Sans, monospace, and roman are most readable for dyslexic readers; italics reduce readability.
 
 ## 16. Print vs digital
