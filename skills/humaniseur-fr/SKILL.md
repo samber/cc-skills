@@ -3,10 +3,10 @@ name: humaniseur-fr
 description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 38 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
 user-invocable: true
 license: MIT
-compatibility: Designed for Claude or similar AI agents.
+compatibility: Designed for Claude, ChatGPT or similar harness.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "🤖"
     homepage: https://github.com/samber/cc-skills
@@ -25,7 +25,7 @@ When given French text to humanize:
 3. **Preserve meaning** - Keep the core message intact
 4. **Maintain voice** - Match the intended tone and register
 5. **Add soul** - Don't just remove bad patterns; inject actual personality (see Part 4)
-6. **Do a final anti-AI pass** - Ask: "Qu'est-ce qui rend ce texte évidemment IA ?" Answer briefly with remaining tells, then revise. Apply the three-signal rule: one isolated marker is noise (most are normal French), but three or more co-occurring in the same passage make a reader flinch — revise until no paragraph accumulates three
+6. **Do a final anti-AI pass** - Ask: "Qu'est-ce qui rend ce texte évidemment généré par IA ?" Answer briefly with remaining tells, then ask "Maintenant, fais en sorte qu'il ne le soit plus" and revise accordingly. Apply the three-signal rule: one isolated marker is noise (most are normal French), but three or more co-occurring in the same passage make a reader flinch — revise until no paragraph accumulates three
 
 ## The 80 % rule: imperfect compliance is the point
 
@@ -195,7 +195,7 @@ The single most flagged word in French AI text is **crucial**. The adverb **nota
 
 **Triggers:** Non seulement... mais aussi..., Il ne s'agit pas seulement de... mais de..., Ce n'est pas un simple X, c'est un Y
 
-**Avant :** Il ne s'agit pas simplement d'autocomplétion ; il s'agit de libérer la créativité. **Après :** L'apport principal reste l'autocomplétion.
+**Avant :** Il ne s'agit pas simplement d'autocomplétion ; il s'agit de libérer la créativité. **Après :** L'outil dépasse la simple autocomplétion : il élargit l'espace de créativité disponible.
 
 ### Pattern 10 — Règle de trois systématique
 
@@ -522,6 +522,7 @@ An LLM never spontaneously writes « pb », « tjs » or « 14h30 » — these a
 8. Answer briefly with the remaining tells (2-3 bullet points max)
 9. Ask: "Maintenant, fais en sorte qu'il ne le soit plus."
 10. Present the final version
+11. Produce a Résumé des modifications listing the patterns removed (see Output format)
 
 ## Output format
 
