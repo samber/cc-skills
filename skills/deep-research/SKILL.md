@@ -204,6 +204,26 @@ Try each tool in order, stop at the first that works:
 
 Check which tools are available with `which pandoc`, `which md-to-pdf` before choosing. If neither is available, tell the user which to install.
 
+## Model Context Protocol (MCP) Integration
+
+This skill supports MCP connectors for extending research beyond web searches:
+
+**Public Open Knowledge MCP:**
+- `arxiv-mcp`: Search academic papers by subject, author, date, or citations. Returns abstracts, PDF links, and citation graphs.
+- `reddit-mcp`: Access subreddit data — top posts, comments, discussion threads. Good for community insights and developer sentiment.
+- `serp-mcp`: Wraps search engines (Google, Bing, DuckDuckGo) to return structured results: titles, snippets, URLs, related questions.
+
+**Private Data MCP:**
+- `gmail-mcp`: Queries email threads, attachments, senders, dates. Requires OAuth read-only scope.
+- `notion-mcp`: Accesses databases, pages, and their properties. Searchable by title, content, last edited, or custom properties.
+- `confluence-mcp`, `sharepoint-mcp`, or custom wiki MCPs for internal knowledge bases.
+
+**MCP in the Research Workflow:**
+- Spawn sub-agents against different MCP endpoints in parallel (Step 2 fan-out)
+- When an MCP returns no results, flag the evidence gap explicitly per critical rule #62
+- Critical claims from a single MCP source get `confidence: Low` per critical rule #57
+- MCP data counts as `Primary` tier if from official docs/filings, `Established` if from major publications, `Low` if from blogs/forums
+
 ## Pitfalls
 
 - Do not fabricate citations — if a source does not exist, say so and flag the gap.
