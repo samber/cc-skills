@@ -251,9 +251,7 @@ const rules = await chrome.declarativeNetRequest.getDynamicRules();
 
 // Session rules (cleared on browser restart)
 await chrome.declarativeNetRequest.updateSessionRules({
-  addRules: [
-    /* same format */
-  ],
+  addRules: [/* same format */],
 });
 ```
 

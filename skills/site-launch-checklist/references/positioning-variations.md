@@ -7,32 +7,38 @@ Never copy-paste the same description everywhere. AI engines penalize duplicate 
 ## Core Positioning Assets (Create Once, Adapt Per Tier)
 
 ### Master Tagline (under 10 words)
+
 ```
 [Product] — [One-sentence outcome for target user]
 ```
 
 ### Master Short Description (60 chars)
+
 ```
 [Product] helps [target user] [achieve outcome] via [key mechanism].
 ```
 
 ### Master Long Description (150 words)
+
 ```
 [Product] is a [category] that helps [target user] [solve problem/achieve outcome]. Unlike [top competitor], we [key differentiator 1] and [key differentiator 2]. Key features include: [feature 1], [feature 2], [feature 3]. Built for [specific use case/ICP]. [Social proof: X users, Y companies, Z% improvement]. Try it free at [URL].
 ```
 
 ### Master Category Tags (5-8)
+
 ```
 [category], [subcategory], [key feature 1], [key feature 2], [integration 1], [integration 2], [platform], [pricing model]
 ```
 
 ### Logo Assets Required
+
 - Logo: 1024×1024 PNG (square, transparent background)
 - Logo: SVG (vector, for scaling)
 - Logo: 512×512 PNG (for favicon generation)
 - Logo: Dark mode version (if brand has dark variant)
 
 ### Screenshots Required (5-8 at 1920×1080)
+
 1. Dashboard/overview (shows value at a glance)
 2. Key workflow 1 (core use case)
 3. Key workflow 2 (secondary use case)
@@ -43,6 +49,7 @@ Never copy-paste the same description everywhere. AI engines penalize duplicate 
 8. Unique differentiator feature
 
 ### Demo Video (60-90 seconds)
+
 - 0-5s: Hook — the problem
 - 5-15s: Solution overview
 - 15-45s: Live demo of core workflow
@@ -51,6 +58,7 @@ Never copy-paste the same description everywhere. AI engines penalize duplicate 
 - 75-90s: CTA + URL
 
 ### Founder Story (2-3 sentences)
+
 ```
 I built [Product] because [personal pain point]. Existing tools [failed in specific way]. We're [mission/vision]. [Credibility signal: background, traction, notable users].
 ```
@@ -60,31 +68,35 @@ I built [Product] because [personal pain point]. Existing tools [failed in speci
 ## Tier-Specific Variants
 
 ### Tier 1 — Flagship Launch (Product Hunt, BetaList, HN, DevHunt)
-**Audience:** Early adopters, tech enthusiasts, founders, investors
-**Lead with:** **Innovation + Story**
-**Tone:** Excited, transparent, builder-to-builder
+
+**Audience:** Early adopters, tech enthusiasts, founders, investors **Lead with:** **Innovation + Story** **Tone:** Excited, transparent, builder-to-builder
 
 **Tagline:**
+
 ```
 [Product] — The [category] that [unique approach] for [target user]
 ```
 
 **Short Description:**
+
 ```
 [Product] reimagines [category] by [unique approach] so [target user] can [outcome].
 ```
 
 **Long Description:**
+
 ```
 We built [Product] because [founder story — 1 sentence]. The problem: [specific pain point with numbers if possible]. Existing tools [specific failure mode]. Our approach: [unique technical/UX insight]. The result: [quantified outcome for early users]. We're launching today on [Platform] — try it free and tell us what you'd change.
 ```
 
 **Category Tags:**
+
 ```
 [category], developer-tools, [key-tech], open-source, free-tier, [platform], launch, early-access
 ```
 
 **First Comment (Post Yourself):**
+
 ```
 Hey hunters! 👋 I'm [Name], founder of [Product].
 
@@ -105,21 +117,23 @@ Try it: [direct signup link — no landing page redirect]
 ---
 
 ### Tier 2 — Startup/SaaS Directories (AlternativeTo, G2, Capterra, SaaSHub)
-**Audience:** Buyers actively comparing alternatives
-**Lead with:** **Alternative Framing**
-**Tone:** Objective, comparison-ready, buyer-focused
+
+**Audience:** Buyers actively comparing alternatives **Lead with:** **Alternative Framing** **Tone:** Objective, comparison-ready, buyer-focused
 
 **Tagline:**
+
 ```
 [Product] — The best [competitor] alternative for [specific use case]
 ```
 
 **Short Description:**
+
 ```
 [Product] is a [competitor] alternative that [key advantage] for [target user]. [Key differentiator].
 ```
 
 **Long Description:**
+
 ```
 Looking for a [competitor] alternative? [Product] helps [target user] [achieve outcome] without [competitor's main pain point].
 
@@ -136,6 +150,7 @@ See honest comparison: [yourdomain.com/alternatives/competitor]
 ```
 
 **Category Tags:**
+
 ```
 [category], [competitor]-alternative, [use-case], saas, b2b, [pricing-model], [integration-1], [integration-2]
 ```
@@ -143,21 +158,23 @@ See honest comparison: [yourdomain.com/alternatives/competitor]
 ---
 
 ### Tier 3 — AI Directories (TAAFT, Futurepedia, Toolify, Future Tools)
-**Audience:** AI tool seekers, prompt engineers, AI builders
-**Lead with:** **AI-First Architecture**
-**Tone:** Technical, capability-focused, prompt-ready
+
+**Audience:** AI tool seekers, prompt engineers, AI builders **Lead with:** **AI-First Architecture** **Tone:** Technical, capability-focused, prompt-ready
 
 **Tagline:**
+
 ```
 [Product] — AI-powered [category] that [unique AI capability]
 ```
 
 **Short Description:**
+
 ```
 [Product] uses [AI technique: agents, RAG, fine-tuning, etc.] to [outcome] for [target user].
 ```
 
 **Long Description:**
+
 ```
 [Product] is an AI-first [category] built on [model/framework: GPT-4, Claude, Llama, custom, LangChain, CrewAI, etc.].
 
@@ -174,6 +191,7 @@ Use cases: [use case 1], [use case 2], [use case 3]
 ```
 
 **Category Tags:**
+
 ```
 ai, artificial-intelligence, [specific-ai: agents, rag, llm, generative], [category], developer-tools, productivity, automation
 ```
@@ -181,21 +199,23 @@ ai, artificial-intelligence, [specific-ai: agents, rag, llm, generative], [categ
 ---
 
 ### Tier 4 — Agent/MCP Registries (Glama, APITracker, LF MCP Registry)
-**Audience:** Agent developers, MCP server builders, AI engineers
-**Lead with:** **Agent/MCP Angle**
-**Tone:** Highly technical, protocol-focused, integration-ready
+
+**Audience:** Agent developers, MCP server builders, AI engineers **Lead with:** **Agent/MCP Angle** **Tone:** Highly technical, protocol-focused, integration-ready
 
 **Tagline:**
+
 ```
 [Product] — [MCP server / Agent / Tool] for [specific capability] via [protocol]
 ```
 
 **Short Description:**
+
 ```
 [Product] exposes [capability] as an [MCP server / agent skill / function] for [AI framework: Claude, Cursor, LangChain, etc.].
 ```
 
 **Long Description:**
+
 ```
 [Product] is a [MCP server / agent / tool] that provides [specific capability] to AI assistants and agents.
 
@@ -215,6 +235,7 @@ License: [MIT / Apache 2.0 / etc.]
 ```
 
 **Category Tags:**
+
 ```
 mcp, model-context-protocol, agent, ai-agent, [framework], developer-tools, api, integration, open-source
 ```
@@ -222,21 +243,23 @@ mcp, model-context-protocol, agent, ai-agent, [framework], developer-tools, api,
 ---
 
 ### Tier 5 — No-Code Directories (NoCodeFinder, No Code MBA, MakerPad)
-**Audience:** No-code builders, citizen developers, non-technical founders
-**Lead with:** **Ease + Power**
-**Tone:** Accessible, outcome-focused, visual
+
+**Audience:** No-code builders, citizen developers, non-technical founders **Lead with:** **Ease + Power** **Tone:** Accessible, outcome-focused, visual
 
 **Tagline:**
+
 ```
 [Product] — Build [outcome] without code in [timeframe]
 ```
 
 **Short Description:**
+
 ```
 [Product] lets [non-technical user] [achieve outcome] using [visual interface / drag-drop / forms] — no code required.
 ```
 
 **Long Description:**
+
 ```
 Stop waiting for developers. [Product] gives you [powerful capability] through a [visual builder / spreadsheet interface / form / chat].
 
@@ -256,6 +279,7 @@ Community: [Discord/Slack/Forum size]
 ```
 
 **Category Tags:**
+
 ```
 no-code, low-code, visual-programming, citizen-development, [category], automation, workflow, templates, [platform]
 ```
@@ -263,21 +287,23 @@ no-code, low-code, visual-programming, citizen-development, [category], automati
 ---
 
 ### Tier 6 — Dev Directories (npm, PyPI, Cargo, Go pkg, Docker Hub)
-**Audience:** Developers evaluating libraries/frameworks
-**Lead with:** **Technical Depth**
-**Tone:** Precise, spec-driven, installation-first
+
+**Audience:** Developers evaluating libraries/frameworks **Lead with:** **Technical Depth** **Tone:** Precise, spec-driven, installation-first
 
 **Tagline:**
+
 ```
 [Product] — [Technical description: e.g., "Type-safe ORM for Go with zero reflection"]
 ```
 
 **Short Description:**
+
 ```
 [Product] is a [language] [library/framework] for [specific technical problem]. [Key technical differentiator].
 ```
 
 **Long Description:**
+
 ```
 [Product] solves [specific technical problem] for [language] developers.
 
@@ -302,6 +328,7 @@ Changelog: [URL]
 ```
 
 **Category Tags:**
+
 ```
 [language], [category], library, framework, [key-tech], performance, type-safe, zero-dependency, [license]
 ```
@@ -309,21 +336,23 @@ Changelog: [URL]
 ---
 
 ### Tier 7 — B2B Review Sites (G2, Capterra, TrustRadius, GetApp, Software Advice)
-**Audience:** B2B buyers, procurement, decision-makers
-**Lead with:** **ROI + Use Case**
-**Tone:** Professional, outcome-oriented, proof-heavy
+
+**Audience:** B2B buyers, procurement, decision-makers **Lead with:** **ROI + Use Case** **Tone:** Professional, outcome-oriented, proof-heavy
 
 **Tagline:**
+
 ```
 [Product] — [Category] that delivers [ROI metric] for [target buyer]
 ```
 
 **Short Description:**
+
 ```
 [Product] helps [target buyer] [achieve business outcome] with [key capability]. [ROI claim].
 ```
 
 **Long Description:**
+
 ```
 [Product] is a [category] designed for [target buyer: e.g., "mid-market B2B SaaS companies"].
 
@@ -347,6 +376,7 @@ Pricing: [Transparent pricing URL or "Contact for enterprise"]
 ```
 
 **Category Tags:**
+
 ```
 [category], b2b, saas, enterprise, [target-buyer], roi, [integration-1], [integration-2], [security-cert], [pricing-model]
 ```
@@ -356,7 +386,7 @@ Pricing: [Transparent pricing URL or "Contact for enterprise"]
 ## Positioning Matrix Quick Reference
 
 | Tier | Lead With | Audience | Tone | Key Differentiator |
-|---|---|---|---|---|
+| --- | --- | --- | --- | --- |
 | 1 Flagship | Innovation + Story | Early adopters, founders | Excited, builder-to-builder | Unique approach, founder story |
 | 2 SaaS | Alternative Framing | Buyers comparing tools | Objective, buyer-focused | "Better than [competitor] at X" |
 | 3 AI | AI-First Architecture | AI tool seekers | Technical, capability-focused | Specific AI technique + model |
@@ -371,7 +401,7 @@ Pricing: [Transparent pricing URL or "Contact for enterprise"]
 
 1. **Same description everywhere** → AI engines cross-reference and down-weight
 2. **Vague claims** ("powerful," "comprehensive," "seamless") → No one believes them
-3. **Feature lists without outcomes** → Buyers care what it *does for them*
+3. **Feature lists without outcomes** → Buyers care what it _does for them_
 4. **No competitor acknowledgment** → Alternative pages need honest comparisons
 5. **Missing technical specifics** (Tier 4, 6) → Devs check specs before trying
 6. **No social proof** → Even "10 beta users" is better than nothing

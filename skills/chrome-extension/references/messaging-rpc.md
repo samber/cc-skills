@@ -471,8 +471,7 @@ interface RPCResponseError {
 }
 
 type RPCResponse<M extends keyof RPCMethods = keyof RPCMethods> =
-  | RPCResponseOk<M>
-  | RPCResponseError;
+  RPCResponseOk<M> | RPCResponseError;
 
 // === rpc-client.ts (content script or popup) ===
 let rpcCounter = 0;

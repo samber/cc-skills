@@ -5,11 +5,12 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 1 — Flagship Launch (Launch Week Only)
+
 **Timing:** Launch week only  
 **Count:** ~15
 
 | Directory | URL | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Product Hunt | producthunt.com | Anchor event. 3-week prep required. |
 | BetaList | betalist.com | Pre-launch signups. |
 | Hacker News Show HN | news.ycombinator.com | Only if technical angle. |
@@ -29,11 +30,12 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 2 — Startup/SaaS Directories (Week 1 + Rolling)
+
 **Timing:** Week 1 + rolling  
 **Count:** ~50
 
 | Directory | URL | DR | Notes |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | AlternativeTo | alternativeto.net | 80 | "X alternative" intent. |
 | SaaSHub | saashub.com | 70 | SaaS comparisons. |
 | G2 | g2.com | 91 | Reviews required (10 min). |
@@ -75,59 +77,61 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 3 — AI Directories (Week 1–3)
+
 **Timing:** Week 1–3  
 **Count:** ~40
 
-| Directory | URL | Notes |
-|---|---|---|
-| There's An AI For That | theresanaiforthat.com | Largest AI directory. |
-| Futurepedia | futurepedia.io | Daily updates. |
-| Toolify | toolify.ai | Categorized AI tools. |
-| Future Tools | futuretools.io | Curated by Matt Wolfe. |
-| AI Tools Inc | aitools.inc | AI tool discovery. |
-| AI Stage | aistage.io | AI tool showcase. |
-| TopAI Tools | topai.tools | Ranked listings. |
-| AI Tool Hunt | ai-toolhunt.com | New tools daily. |
-| AI Depot | aidepot.com | Curated AI tools. |
-| AI Tools Club | aitoolsclub.com | Community-driven. |
-| All Things AI | allthingsai.com | Reviews + directory. |
-| AI Tools Directory | aitoolsdirectory.com | Categorized. |
-| AI Scout | aisout.com | AI tool finder. |
-| AI Tools Arena | aithetoolsarena.com | Comparison focus. |
-| AI Tools Hub | aitoolshub.com | Curated listings. |
-| AI Tools Guide | aitoolsguide.com | Guides + directory. |
-| AI Tools List | aitoolslist.com | Simple listings. |
-| AI Tools Database | aitoolsdatabase.com | Searchable. |
-| AI Tools Index | aitoolsindex.com | Index-style. |
-| AI Tools Catalog | aitoolscatalog.com | Catalog format. |
-| AI Tools Review | aitoolsreview.com | Review-focused. |
-| AI Tools Ranking | aitoolsranking.com | Ranked. |
-| AI Tools Compare | aitoolscompare.com | Comparison. |
-| AI Tools Search | aitoolssearch.com | Search engine. |
-| AI Tools Finder | aitoolsfinder.com | Discovery. |
-| AI Tools Explorer | aitoolsexplorer.com | Exploration. |
-| AI Tools Navigator | aitoolsnavigator.com | Navigation. |
-| AI Tools Directory Pro | aitoolsdirectorypro.com | Premium. |
-| AI Tools Master List | aitoolsmasterlist.com | Comprehensive. |
-| AI Tools Weekly | aitoolsweekly.com | Weekly updates. |
-| AI Tools Daily | aitoolsdaily.com | Daily updates. |
-| AI Tools Monthly | aitoolsmonthly.com | Monthly roundup. |
-| AI Tools Newsletter | aitoolsnewsletter.com | Email-based. |
-| AI Tools Blog | aitoolsblog.com | Blog + directory. |
-| AI Tools Wiki | aitoolswiki.com | Wiki-style. |
-| AI Tools Forum | aitoolsforum.com | Community. |
-| AI Tools Discord | discord.gg/aitools | Discord server. |
-| AI Tools Reddit | reddit.com/r/aitools | Subreddit. |
-| AI Tools Twitter | twitter.com/aitools | Twitter account. |
+| Directory              | URL                     | Notes                  |
+| ---------------------- | ----------------------- | ---------------------- |
+| There's An AI For That | theresanaiforthat.com   | Largest AI directory.  |
+| Futurepedia            | futurepedia.io          | Daily updates.         |
+| Toolify                | toolify.ai              | Categorized AI tools.  |
+| Future Tools           | futuretools.io          | Curated by Matt Wolfe. |
+| AI Tools Inc           | aitools.inc             | AI tool discovery.     |
+| AI Stage               | aistage.io              | AI tool showcase.      |
+| TopAI Tools            | topai.tools             | Ranked listings.       |
+| AI Tool Hunt           | ai-toolhunt.com         | New tools daily.       |
+| AI Depot               | aidepot.com             | Curated AI tools.      |
+| AI Tools Club          | aitoolsclub.com         | Community-driven.      |
+| All Things AI          | allthingsai.com         | Reviews + directory.   |
+| AI Tools Directory     | aitoolsdirectory.com    | Categorized.           |
+| AI Scout               | aisout.com              | AI tool finder.        |
+| AI Tools Arena         | aithetoolsarena.com     | Comparison focus.      |
+| AI Tools Hub           | aitoolshub.com          | Curated listings.      |
+| AI Tools Guide         | aitoolsguide.com        | Guides + directory.    |
+| AI Tools List          | aitoolslist.com         | Simple listings.       |
+| AI Tools Database      | aitoolsdatabase.com     | Searchable.            |
+| AI Tools Index         | aitoolsindex.com        | Index-style.           |
+| AI Tools Catalog       | aitoolscatalog.com      | Catalog format.        |
+| AI Tools Review        | aitoolsreview.com       | Review-focused.        |
+| AI Tools Ranking       | aitoolsranking.com      | Ranked.                |
+| AI Tools Compare       | aitoolscompare.com      | Comparison.            |
+| AI Tools Search        | aitoolssearch.com       | Search engine.         |
+| AI Tools Finder        | aitoolsfinder.com       | Discovery.             |
+| AI Tools Explorer      | aitoolsexplorer.com     | Exploration.           |
+| AI Tools Navigator     | aitoolsnavigator.com    | Navigation.            |
+| AI Tools Directory Pro | aitoolsdirectorypro.com | Premium.               |
+| AI Tools Master List   | aitoolsmasterlist.com   | Comprehensive.         |
+| AI Tools Weekly        | aitoolsweekly.com       | Weekly updates.        |
+| AI Tools Daily         | aitoolsdaily.com        | Daily updates.         |
+| AI Tools Monthly       | aitoolsmonthly.com      | Monthly roundup.       |
+| AI Tools Newsletter    | aitoolsnewsletter.com   | Email-based.           |
+| AI Tools Blog          | aitoolsblog.com         | Blog + directory.      |
+| AI Tools Wiki          | aitoolswiki.com         | Wiki-style.            |
+| AI Tools Forum         | aitoolsforum.com        | Community.             |
+| AI Tools Discord       | discord.gg/aitools      | Discord server.        |
+| AI Tools Reddit        | reddit.com/r/aitools    | Subreddit.             |
+| AI Tools Twitter       | twitter.com/aitools     | Twitter account.       |
 
 ---
 
 ## Tier 4 — Agent/MCP Registries (Week 1–3, if MCP)
+
 **Timing:** Week 1–3 (if MCP)  
 **Count:** ~10
 
 | Directory | URL | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Glama | glama.ai | MCP registry + agent marketplace. |
 | APITracker | apitracker.com | API + agent tracking. |
 | LF MCP Registry | lf-mcp-registry.org | Linux Foundation MCP. |
@@ -142,28 +146,30 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 5 — No-Code Directories (Week 1–3, if no-code)
+
 **Timing:** Week 1–3 (if no-code)  
 **Count:** ~8
 
-| Directory | URL | Notes |
-|---|---|---|
-| NoCodeFinder | nocodefinder.com | No-code tools. |
-| No Code MBA | nocode.mba | Education + tools. |
-| We Are No Code | wearenocode.com | Community + directory. |
-| MakerPad | makerpad.co | Tutorials + tools. |
-| Zeroqode | zeroqode.com | Bubble plugins. |
-| NoCode.Tech | nocode.tech | Resources + directory. |
-| NoCode List | nocodelist.co | Curated list. |
-| NoCode Tools | nocodetools.io | Tool directory. |
+| Directory      | URL              | Notes                  |
+| -------------- | ---------------- | ---------------------- |
+| NoCodeFinder   | nocodefinder.com | No-code tools.         |
+| No Code MBA    | nocode.mba       | Education + tools.     |
+| We Are No Code | wearenocode.com  | Community + directory. |
+| MakerPad       | makerpad.co      | Tutorials + tools.     |
+| Zeroqode       | zeroqode.com     | Bubble plugins.        |
+| NoCode.Tech    | nocode.tech      | Resources + directory. |
+| NoCode List    | nocodelist.co    | Curated list.          |
+| NoCode Tools   | nocodetools.io   | Tool directory.        |
 
 ---
 
 ## Tier 6 — "Best of" Listicles (Rolling Outreach)
+
 **Timing:** Rolling outreach  
 **Count:** ~10 inclusions
 
 | Strategy | Approach |
-|---|---|
+| --- | --- |
 | Cold outreach to DR 40+ blog posts | Find "best [category] tools 2024/2025" posts. Pitch inclusion with honest comparison data. |
 | Guest post with tool mention | Write "how we solved X" posts that naturally include your tool. |
 | Podcast appearance with tool mention | Appear on relevant podcasts, mention tool organically. |
@@ -173,11 +179,12 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 7 — Integration Marketplaces (When Integrations Ship)
+
 **Timing:** When integrations ship  
 **Count:** ~5
 
 | Marketplace | URL | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Zapier | zapier.com/apps | Highest DR, ~2.6M monthly organic. |
 | HubSpot | ecosystem.hubspot.com/marketplace | CRM-focused. |
 | Slack | slack.com/apps | Workplace tools. |
@@ -192,80 +199,83 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 8 — Profile & Content Platforms (Rolling)
+
 **Timing:** Rolling  
 **Count:** ~50
 
-| Platform | URL | Notes |
-|---|---|---|
-| GitHub | github.com | Repo + profile. |
-| GitLab | gitlab.com | Repo + profile. |
-| Bitbucket | bitbucket.org | Repo + profile. |
-| WordPress.com | wordpress.com | Blog hosting. |
-| Substack | substack.com | Newsletter. |
-| Dev.to | dev.to | Developer blog. |
-| Hashnode | hashnode.com | Developer blog. |
-| Medium | medium.com | Blog platform. |
-| SlideShare | slideshare.net | Presentations. |
-| Behance | behance.net | Design portfolio. |
-| Dribbble | dribbble.com | Design shots. |
-| Product Hunt | producthunt.com | Profile + launches. |
-| Indie Hackers | indiehackers.com | Founder stories. |
-| Makerlog | makerlog.org | Build in public. |
-| WIP | wip.chat | Work in progress. |
-| Twitter/X | twitter.com | Social + profile. |
-| LinkedIn | linkedin.com | Professional profile. |
-| YouTube | youtube.com | Video content. |
-| TikTok | tiktok.com | Short video. |
-| Instagram | instagram.com | Visual content. |
-| Reddit | reddit.com | Community. |
-| Quora | quora.com | Q&A. |
-| Stack Overflow | stackoverflow.com | Dev Q&A. |
-| Stack Exchange | stackexchange.com | Network Q&A. |
-| Hacker News | news.ycombinator.com | Tech news. |
-| Lobste.rs | lobste.rs | Tech links. |
-| Designer News | designernews.co | Design news. |
-| GrowthHackers | growthhackers.com | Growth content. |
-| Inbound.org | inbound.org | Marketing content. |
-| Product Hunt Comments | producthunt.com | Discussion. |
-| Indie Hackers Comments | indiehackers.com | Discussion. |
+| Platform               | URL                  | Notes                 |
+| ---------------------- | -------------------- | --------------------- |
+| GitHub                 | github.com           | Repo + profile.       |
+| GitLab                 | gitlab.com           | Repo + profile.       |
+| Bitbucket              | bitbucket.org        | Repo + profile.       |
+| WordPress.com          | wordpress.com        | Blog hosting.         |
+| Substack               | substack.com         | Newsletter.           |
+| Dev.to                 | dev.to               | Developer blog.       |
+| Hashnode               | hashnode.com         | Developer blog.       |
+| Medium                 | medium.com           | Blog platform.        |
+| SlideShare             | slideshare.net       | Presentations.        |
+| Behance                | behance.net          | Design portfolio.     |
+| Dribbble               | dribbble.com         | Design shots.         |
+| Product Hunt           | producthunt.com      | Profile + launches.   |
+| Indie Hackers          | indiehackers.com     | Founder stories.      |
+| Makerlog               | makerlog.org         | Build in public.      |
+| WIP                    | wip.chat             | Work in progress.     |
+| Twitter/X              | twitter.com          | Social + profile.     |
+| LinkedIn               | linkedin.com         | Professional profile. |
+| YouTube                | youtube.com          | Video content.        |
+| TikTok                 | tiktok.com           | Short video.          |
+| Instagram              | instagram.com        | Visual content.       |
+| Reddit                 | reddit.com           | Community.            |
+| Quora                  | quora.com            | Q&A.                  |
+| Stack Overflow         | stackoverflow.com    | Dev Q&A.              |
+| Stack Exchange         | stackexchange.com    | Network Q&A.          |
+| Hacker News            | news.ycombinator.com | Tech news.            |
+| Lobste.rs              | lobste.rs            | Tech links.           |
+| Designer News          | designernews.co      | Design news.          |
+| GrowthHackers          | growthhackers.com    | Growth content.       |
+| Inbound.org            | inbound.org          | Marketing content.    |
+| Product Hunt Comments  | producthunt.com      | Discussion.           |
+| Indie Hackers Comments | indiehackers.com     | Discussion.           |
 
 ---
 
 ## Tier 9 — Local Business Directories (Rolling, if applicable)
+
 **Timing:** Rolling (if applicable)  
 **Count:** ~20
 
-| Directory | URL | Notes |
-|---|---|---|
-| Google Business Profile | business.google.com | Critical for local. |
-| Yelp | yelp.com | Reviews + local. |
-| Bing Places | bingplaces.microsoft.com | Microsoft local. |
-| Apple Maps | mapsconnect.apple.com | Apple local. |
-| Facebook Business | business.facebook.com | Meta local. |
-| Foursquare | foursquare.com | Location data. |
-| Yellow Pages | yellowpages.com | Traditional. |
-| Manta | manta.com | Small business. |
-| Hotfrog | hotfrog.com | Free listing. |
-| Locanto | locanto.com | Classifieds. |
-| MerchantCircle | merchantcircle.com | Local network. |
-| Superpages | superpages.com | Directory. |
-| Citysearch | citysearch.com | Local guide. |
-| DexKnows | dexknows.com | Directory. |
-| Local.com | local.com | Local search. |
-| EZLocal | ezlocal.com | Local listings. |
-| MyLocalServices | mylocalservices.com | Services. |
-| Thumbtack | thumbtack.com | Services marketplace. |
-| Angie's List | angieslist.com | Reviews. |
-| HomeAdvisor | homeadvisor.com | Home services. |
+| Directory               | URL                      | Notes                 |
+| ----------------------- | ------------------------ | --------------------- |
+| Google Business Profile | business.google.com      | Critical for local.   |
+| Yelp                    | yelp.com                 | Reviews + local.      |
+| Bing Places             | bingplaces.microsoft.com | Microsoft local.      |
+| Apple Maps              | mapsconnect.apple.com    | Apple local.          |
+| Facebook Business       | business.facebook.com    | Meta local.           |
+| Foursquare              | foursquare.com           | Location data.        |
+| Yellow Pages            | yellowpages.com          | Traditional.          |
+| Manta                   | manta.com                | Small business.       |
+| Hotfrog                 | hotfrog.com              | Free listing.         |
+| Locanto                 | locanto.com              | Classifieds.          |
+| MerchantCircle          | merchantcircle.com       | Local network.        |
+| Superpages              | superpages.com           | Directory.            |
+| Citysearch              | citysearch.com           | Local guide.          |
+| DexKnows                | dexknows.com             | Directory.            |
+| Local.com               | local.com                | Local search.         |
+| EZLocal                 | ezlocal.com              | Local listings.       |
+| MyLocalServices         | mylocalservices.com      | Services.             |
+| Thumbtack               | thumbtack.com            | Services marketplace. |
+| Angie's List            | angieslist.com           | Reviews.              |
+| HomeAdvisor             | homeadvisor.com          | Home services.        |
 
 ---
 
 ## Tier 10 — Forums & Communities (Rolling, participate first)
+
 **Timing:** Rolling (participate first)  
 **Count:** ~13
 
 | Community | URL | Notes |
-|---|---|---|
+| --- | --- | --- |
 | Reddit r/SideProject | reddit.com/r/SideProject | Friendly to promo. |
 | Reddit r/SaaS | reddit.com/r/SaaS | "Share Your SaaS" threads. |
 | Reddit r/startups | reddit.com/r/startups | Feedback Friday. |
@@ -285,11 +295,12 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 11 — Press Release & Article Sites (Launch + Milestones)
+
 **Timing:** Launch + milestones  
 **Count:** ~25
 
 | Site | URL | Notes |
-|---|---|---|
+| --- | --- | --- |
 | PRLog | prlog.org | Free press releases. |
 | PR.com | pr.com | Free + paid. |
 | EzineArticles | ezinearticles.com | Article directory. |
@@ -319,51 +330,54 @@ Full catalog of directories for software product submissions. Submit in tier ord
 ---
 
 ## Tier 12 — Social Bookmarking (Rolling)
+
 **Timing:** Rolling  
 **Count:** ~5
 
-| Site | URL | Notes |
-|---|---|---|
-| Scoop.it | scoop.it | Content curation. |
-| Diigo | diigo.com | Social bookmarking. |
+| Site       | URL            | Notes               |
+| ---------- | -------------- | ------------------- |
+| Scoop.it   | scoop.it       | Content curation.   |
+| Diigo      | diigo.com      | Social bookmarking. |
 | Pearltrees | pearltrees.com | Visual bookmarking. |
-| Pocket | getpocket.com | Save for later. |
-| Mix | mix.com | Content discovery. |
+| Pocket     | getpocket.com  | Save for later.     |
+| Mix        | mix.com        | Content discovery.  |
 
 ---
 
 ## Tier 13 — Niche Vertical Directories (When Vertical Fits)
+
 **Timing:** When vertical fits  
 **Count:** ~20
 
-| Vertical | Directory | URL |
-|---|---|---|
-| Legal | Justia | justia.com |
-| Legal | Avvo | avvo.com |
-| Legal | FindLaw | findlaw.com |
-| Home Services | Porch | porch.com |
-| Home Services | Houzz | houzz.com |
-| Design | LandBook | land-book.com |
-| Design | SiteInspire | siteinspire.com |
-| Design | Awwwards | awwwards.com |
-| Design | CSS Design Awards | cssdesignawards.com |
-| Ecommerce | BuiltWith | builtwith.com |
-| Ecommerce | StoreLeads | storeleads.app |
-| Dev Tools | DevTools | devtools.com |
-| Dev Tools | LibHunt | libhunt.com |
-| Dev Tools | Awesome Lists | github.com/sindresorhus/awesome |
-| APIs | RapidAPI | rapidapi.com |
-| APIs | APILayer | apilayer.com |
-| APIs | Public APIs | github.com/public-apis/public-apis |
-| AI/ML | Papers With Code | paperswithcode.com |
-| AI/ML | Hugging Face | huggingface.co |
-| AI/ML | ModelScope | modelscope.cn |
+| Vertical      | Directory         | URL                                |
+| ------------- | ----------------- | ---------------------------------- |
+| Legal         | Justia            | justia.com                         |
+| Legal         | Avvo              | avvo.com                           |
+| Legal         | FindLaw           | findlaw.com                        |
+| Home Services | Porch             | porch.com                          |
+| Home Services | Houzz             | houzz.com                          |
+| Design        | LandBook          | land-book.com                      |
+| Design        | SiteInspire       | siteinspire.com                    |
+| Design        | Awwwards          | awwwards.com                       |
+| Design        | CSS Design Awards | cssdesignawards.com                |
+| Ecommerce     | BuiltWith         | builtwith.com                      |
+| Ecommerce     | StoreLeads        | storeleads.app                     |
+| Dev Tools     | DevTools          | devtools.com                       |
+| Dev Tools     | LibHunt           | libhunt.com                        |
+| Dev Tools     | Awesome Lists     | github.com/sindresorhus/awesome    |
+| APIs          | RapidAPI          | rapidapi.com                       |
+| APIs          | APILayer          | apilayer.com                       |
+| APIs          | Public APIs       | github.com/public-apis/public-apis |
+| AI/ML         | Papers With Code  | paperswithcode.com                 |
+| AI/ML         | Hugging Face      | huggingface.co                     |
+| AI/ML         | ModelScope        | modelscope.cn                      |
 
 ---
 
 ## Submission Order by Week
 
 ### Week 1 (Launch Week)
+
 - Tier 1: All ~15 flagship directories
 - Tier 2: Top 10 startup/SaaS (AlternativeTo, G2, Capterra, SaaSHub, F6S, SourceForge, Crunchbase, Product Hunt Ship, DevHunt, Fazier)
 - Tier 3: Top 10 AI directories (TAAFT, Futurepedia, Toolify, Future Tools, AI Stage, AI Tools Inc, TopAI Tools, AI Tool Hunt, AI Depot, All Things AI)
@@ -371,12 +385,14 @@ Full catalog of directories for software product submissions. Submit in tier ord
 - Tier 7: All integration marketplaces where integrations exist (~5)
 
 ### Week 2
+
 - Tier 2: Remaining ~40 startup/SaaS directories
 - Tier 3: Remaining ~30 AI directories
 - Tier 5: All if no-code (~8)
 - Tier 6: Begin outreach to "best of" listicles (~10)
 
 ### Week 3
+
 - Tier 8: Profile & content platforms (~50)
 - Tier 9: Local directories if applicable (~20)
 - Tier 10: Forums & communities (participate first, then share) (~13)
@@ -385,6 +401,7 @@ Full catalog of directories for software product submissions. Submit in tier ord
 - Tier 13: Niche vertical directories if applicable (~20)
 
 ### Ongoing (Monthly)
+
 - Tier 6: Continue "best of" outreach
 - Tier 8: Maintain profiles, post content
 - Tier 10: Participate in communities (90/10 rule)

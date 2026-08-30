@@ -114,21 +114,21 @@ Two failure modes kill launches from opposite ends:
 
 The middle path is **SLC — Simple, Lovable, Complete** (Jason Cohen), the antidote to shipping a bare MVP that's minimal but unlovable. Don't launch a stub nobody wants; don't wait for a bloated everything-app. A launchable v1 is:
 
-- **Simple** — it does *one* thing. Not many things poorly. One clear job, done well.
-- **Lovable** — people *want* to use it, not just tolerate it. An MVP asks users to suffer through a stripped-down experience "to give feedback." SLC gives them something they'd choose. If nobody would be sad to lose it, it isn't lovable yet.
-- **Complete** — it's a *whole* experience for that one thing, not a stub with obvious holes. Complete at its chosen scope, not a teaser of a bigger promise.
+- **Simple** — it does _one_ thing. Not many things poorly. One clear job, done well.
+- **Lovable** — people _want_ to use it, not just tolerate it. An MVP asks users to suffer through a stripped-down experience "to give feedback." SLC gives them something they'd choose. If nobody would be sad to lose it, it isn't lovable yet.
+- **Complete** — it's a _whole_ experience for that one thing, not a stub with obvious holes. Complete at its chosen scope, not a teaser of a bigger promise.
 
 **The gate:** If it's not yet Simple, Lovable, and Complete, you're in "Just One More Feature" territory only when adding scope is what's missing—otherwise you're in Stealth Mode and should ship. Cut scope until one thing is lovable and complete, then launch that. SLC gives you a real launch now instead of a perfect launch never.
 
 **Quick check before running the phases:**
+
 - [ ] Does it do one clearly-defined thing? (Simple)
-- [ ] Would a target user *choose* to use it, not just endure it? (Lovable)
+- [ ] Would a target user _choose_ to use it, not just endure it? (Lovable)
 - [ ] Is that one thing a whole experience, with no glaring stubs? (Complete)
 - [ ] Are you polishing past this bar? → Stop. You're in Stealth Mode. Ship.
 - [ ] Are you still adding new things to the scope? → Stop. You're in "Just One More Feature." Cut back to SLC.
 
-**Directory submission readiness (from directory-submissions skill):**
-Ask these 9 questions. If any are "no", they're not ready — help them build the missing piece first.
+**Directory submission readiness (from directory-submissions skill):** Ask these 9 questions. If any are "no", they're not ready — help them build the missing piece first.
 
 1. Is the product publicly accessible (no password wall)?
 2. Is there a pricing page (even "free while in beta")?
@@ -142,21 +142,26 @@ Ask these 9 questions. If any are "no", they're not ready — help them build th
 
 A "no" on any of 1–7 is a hard block. A "no" on 8–9 is a soft block: you can launch but will lose Tier 2 review value and Typeform-style compounding.
 
-**ORB Channel Strategy (from launch skill):**
-Structure your launch marketing across three channel types. Everything should ultimately lead back to owned channels.
+**ORB Channel Strategy (from launch skill):** Structure your launch marketing across three channel types. Everything should ultimately lead back to owned channels.
 
 ### Owned Channels
+
 You own the channel (though not the audience). Direct access without algorithms or platform rules.
+
 - Email list, Blog, Podcast, Branded community (Slack, Discord), Website/product
 - **Start with 1-2 based on audience:** Industry lacks quality content → Blog; People want direct updates → Email; Engagement matters → Community
 
 ### Rented Channels
+
 Platforms that provide visibility but you don't control. Algorithms shift, rules change, pay-to-play increases.
+
 - Social media (Twitter/X, LinkedIn, Instagram), App stores, YouTube, Reddit
 - **How to use correctly:** Pick 1-2 platforms where your audience is active; Use them to drive traffic to owned channels; Don't rely on them as your only strategy
 
 ### Borrowed Channels
+
 Tap into someone else's audience to shortcut the hardest part—getting noticed.
+
 - Guest content (blog posts, podcast interviews, newsletter features)
 - Collaborations (webinars, co-marketing, social takeovers)
 - Speaking engagements (conferences, panels, virtual summits)
@@ -450,41 +455,47 @@ See `references/templates.md` for `robots.txt`, `llms.txt`, and `manifest.json` 
 - [ ] Backlink profile audit: run **Ahrefs Backlink Checker** and **Moz Link Explorer** to assess domain authority and surface toxic or broken inbound links before launch — especially critical on migrations to ensure old-domain equity transfers correctly
 - [ ] Internal linking audit: every important page reachable in ≤3 clicks from the homepage
 
-**Destination Pages Strategy (from directory-submissions skill):**
-Directories are useless if the backlinks land on a generic homepage. Build these destination pages *before* submitting to directories:
+**Destination Pages Strategy (from directory-submissions skill):** Directories are useless if the backlinks land on a generic homepage. Build these destination pages _before_ submitting to directories:
 
 ### 1. Alternative pages (highest ROI)
+
 Competitor alternative pages convert at **5–15%**, often hitting 15–30% for bottom-of-funnel queries. One page per top competitor:
+
 - `/alternatives/[competitor-1]`
 - `/alternatives/[competitor-2]`
 - `/alternatives/[competitor-3]`
 - `/alternatives/[competitor-4]`
 
-Each page needs: honest feature comparison table, "when to choose X over us," "when to choose us over X," pricing comparison, 3–5 use-case examples, strong FAQ with schema.
-**Critical:** Be honest. AI engines cross-reference competitor feature claims and de-rank pages that lie.
+Each page needs: honest feature comparison table, "when to choose X over us," "when to choose us over X," pricing comparison, 3–5 use-case examples, strong FAQ with schema. **Critical:** Be honest. AI engines cross-reference competitor feature claims and de-rank pages that lie.
 
 ### 2. Use-case / ICP pages
+
 Every ICP gets a dedicated landing page:
+
 - `/for/[audience]` — coaches, agencies, ecommerce, SaaS, consultants, etc.
 - `/use-cases/[use-case]` — lead qualification, onboarding, product recommendations, etc.
 
 ### 3. Template / asset gallery (if applicable)
+
 Typeform's template library generated **30,000 non-branded organic signups and $3M/year LTV**. The pattern:
+
 - One indexable page per template at `/templates/[slug]`.
 - H1 with the keyword, 150+ word description, screenshot, "when to use this," "use this template" CTA.
 - Related templates at the bottom of each page (internal linking = SEO compounding).
 - 100 templates by day 30, 300 by day 90 is the realistic target.
 
 ### 4. "Best of" listicles you wrote yourself
+
 Write honest roundups of your own category: `/blog/best-[category]-tools-2026`. Include yourself + 10 competitors with real reviews. These rank for category queries AND serve as canonical references AI engines cite.
 
 ### 5. Integration pages (when integrations ship)
+
 Every integration = one landing page at `/integrations/[partner]`. Follows the Zapier playbook: Zapier gets **~2.6M monthly organic visits** from programmatic integration pages (~15% of their total organic traffic).
 
-**GEO (Generative Engine Optimization):**
-In 2026, 30–50% of "research a tool" queries happen inside ChatGPT, Claude, Perplexity, or Google AI Overviews without ever touching a traditional search page.
+**GEO (Generative Engine Optimization):** In 2026, 30–50% of "research a tool" queries happen inside ChatGPT, Claude, Perplexity, or Google AI Overviews without ever touching a traditional search page.
 
 ### Tactics that get pages cited
+
 1. **One H1 per page, sequential heading hierarchy.** 2.8× higher citation rate. 87% of cited pages use a single H1.
 2. **Dense, factual content with citable stats.** AI engines prefer specific numbers ("3× faster than X") over vague claims.
 3. **FAQ schema on every landing page.** AI engines heavily weight `FAQPage` JSON-LD for answer extraction.
@@ -496,6 +507,7 @@ In 2026, 30–50% of "research a tool" queries happen inside ChatGPT, Claude, Pe
 9. **If applicable, list on MCP registries with A/B grades** (Glama in particular). LLMs pull from these when answering MCP questions.
 
 ### Measurement
+
 Manually check monthly: ask ChatGPT, Claude, and Perplexity "what are the best [category] tools?" and log where the product appears. Free GEO tracking tools (GeoTracker, llmrefs) automate this.
 
 ---
@@ -597,8 +609,9 @@ When MCP are not available, use Claude for Chrome extension.
 Execute the directory submission workflow from the `directory-submissions` skill. This is the foundation layer of distribution — never the whole strategy.
 
 ### Step 1: Choose the tiers (from references/directory-list.md)
+
 | Tier | When | Examples | Typical count |
-|---|---|---|---|
+| --- | --- | --- | --- |
 | **Tier 1 — Flagship launch** | Launch week only | Product Hunt (anchor), BetaList, HN Show HN, Fazier, DevHunt | ~15 |
 | **Tier 2 — Startup/SaaS** | Week 1 + rolling | AlternativeTo, SaaSHub, G2, Capterra, F6S, SourceForge, Slashdot | ~50 |
 | **Tier 3 — AI directories** | Week 1–3 | TAAFT, Futurepedia, Toolify, Future Tools, aitools.inc, AIStage | ~40 |
@@ -616,7 +629,9 @@ Execute the directory submission workflow from the `directory-submissions` skill
 **Triage rule:** Only submit where the product is a genuine fit. Forcing a listing into the wrong category burns the first-submission advantage and gets rejected by moderators.
 
 ### Step 2: Prepare asset variations per tier
+
 For each tier, prep a distinct description variant (from `references/positioning-variations.md`):
+
 - **Tagline** under 10 words
 - **Short description** at 60 chars
 - **Long description** at 150 words
@@ -628,9 +643,11 @@ For each tier, prep a distinct description variant (from `references/positioning
 **Critical:** Don't copy-paste the same long description into every directory. Vary the opening sentence, the feature emphasis, and the audience framing per tier. AI engines cross-reference and down-weight duplicate content.
 
 ### Step 3: Batch submit with tracker
+
 Set up the tracker spreadsheet (`references/submission-tracker-template.csv`). Work left-to-right through it. 2–3 hours per batch is realistic.
 
 Per submission:
+
 1. Copy the tier-appropriate positioning variant.
 2. Fill in the form.
 3. Upload assets.
@@ -645,6 +662,7 @@ Per submission:
 Product Hunt is the single highest-leverage submission but also the most easily wasted. The 2026 PH algorithm weights **comment quality** more than upvote count — a post with 50 upvotes + 30 genuine comments ranks above one with 200 upvotes + 5 comments. **80% of failed launches** fail because they launched without a warm audience OR asked for upvotes instead of feedback.
 
 ### 3-week prep timeline
+
 - **Day -21 to -14:** Warm up hunter account. Upvote + thoughtfully comment on 3 launches/day. Follow 100+ active makers. Build history so your account looks real to the algorithm.
 - **Day -14:** Create "Upcoming" page on PH. Drive traffic to it to collect "notify on launch" subscribers.
 - **Day -10:** (Optional) book a hunter. Don't pay cash — trade a feature, shoutout, or intro. A known hunter adds ~15% to day-one momentum but isn't required.
@@ -653,6 +671,7 @@ Product Hunt is the single highest-leverage submission but also the most easily 
 - **Day -1:** Final check — product works in incognito, video autoplays, CTA goes to signup, PH listing preview looks right.
 
 ### Launch day execution
+
 - **Launch at 12:01 AM Pacific Time.** Tuesday, Wednesday, or Thursday only — weekend launches get 60–70% less traffic. The 12:01 AM PT start maximizes your 24-hour window.
 - **First 2 hours are everything.** Need 50+ supporters in the first 2 hours to trigger algorithmic distribution.
 - **Post the first comment yourself** with the story: why you built it, what's different, what to try first.
@@ -662,9 +681,10 @@ Product Hunt is the single highest-leverage submission but also the most easily 
 - **Don't message strangers.** The community flags this and moderators will hide your post.
 
 ### Post-launch
+
 - Write a launch recap blog post with numbers + lessons. Honest, not bragging. Publish on day 2.
 - Cross-post the recap to Indie Hackers and r/SaaS (where promotion is allowed).
-- Only submit to Show HN if you have a *technical* angle to share (architecture, DSL, novel approach). A generic "we launched a SaaS" post will get flagged to death.
+- Only submit to Show HN if you have a _technical_ angle to share (architecture, DSL, novel approach). A generic "we launched a SaaS" post will get flagged to death.
 
 ---
 
@@ -673,6 +693,7 @@ Product Hunt is the single highest-leverage submission but also the most easily 
 G2 and Capterra (now owned by G2 as of Feb 2026) listings are **worthless without reviews**. 10 reviews is the magic threshold for Grid appearance. Run the 10-in-30 protocol during launch month.
 
 ### The 10-in-30 protocol
+
 1. **Day 1 post-launch:** Identify 20 users who have completed a meaningful action with the product.
 2. **Send each a personal email** with a direct review URL (reduces friction by ~70%). No forms, no landing pages — direct link.
 3. **Offer a modest thank-you.** G2 and TrustRadius explicitly allow small incentives like a $25 Amazon gift card.
@@ -680,16 +701,19 @@ G2 and Capterra (now owned by G2 as of Feb 2026) listings are **worthless withou
 5. **Target:** 50% conversion → 10 reviews from 20 asks.
 
 ### Critical deadlines
+
 - **G2 Summer reports:** cut off ~April 28. Plan review drives to land before this.
 - **G2 Fall reports:** cut off ~July 28.
 - Missing a cutoff means waiting 3 months for the next grid update.
 
 ### Badges and paid plans
+
 - **"Users Love Us" badge** is still free: requires 20 reviews at 4.0+ average.
 - **Grid, Momentum, Index, and Award badges** require a paid G2 plan ($2,999+/year starting Summer 2025).
 - **Do not spend on paid G2 in year one.** The free listing + Users Love Us badge is sufficient.
 
 ### Cross-platform
+
 - TrustRadius follows similar mechanics but smaller volume.
 - Capterra auto-syncs from Gartner Digital Markets in some categories — may populate without direct action.
 
@@ -700,6 +724,7 @@ G2 and Capterra (now owned by G2 as of Feb 2026) listings are **worthless withou
 Your launch isn't over when the announcement goes live. Now comes adoption and retention work. Don't rely on a single launch event. Regular updates and feature rollouts sustain engagement.
 
 ### Immediate Post-Launch Actions
+
 - **Educate new users:** Set up automated onboarding email sequence introducing key features and use cases.
 - **Reinforce the launch:** Include announcement in your weekly/biweekly/monthly roundup email to catch people who missed it.
 - **Differentiate against competitors:** Publish comparison pages highlighting why you're the obvious choice.
@@ -707,24 +732,29 @@ Your launch isn't over when the announcement goes live. Now comes adoption and r
 - **Offer hands-on preview:** Create no-code interactive demo (using tools like Navattic) so visitors can explore before signing up.
 
 ### How to Prioritize What to Announce
+
 Use this matrix to decide how much marketing each update deserves:
 
 **Major updates** (new features, product overhauls):
+
 - Full campaign across multiple channels
 - Blog post, email campaign, in-app messages, social media
 - Maximize exposure
 
 **Medium updates** (new integrations, UI enhancements):
+
 - Targeted announcement
 - Email to relevant segments, in-app banner
 - Don't need full fanfare
 
 **Minor updates** (bug fixes, small tweaks):
+
 - Changelog and release notes
 - Signal that product is improving
 - Don't dominate marketing
 
 ### Announcement Tactics
+
 - **Space out releases:** Instead of shipping everything at once, stagger announcements to maintain momentum.
 - **Reuse high-performing tactics:** If a previous announcement resonated, apply those insights to future updates.
 - **Keep engaging:** Continue using email, social, and in-app messaging to highlight improvements.
@@ -736,18 +766,18 @@ Use this matrix to decide how much marketing each update deserves:
 
 Track weekly. If a number isn't moving, investigate — don't just submit more directories.
 
-| Metric | Day 0 | Day 30 target | Day 90 target |
-|---|---|---|---|
-| Domain Rating (DR) | 0 | 20 | 30+ |
-| Referring domains | 0 | 30 | 80+ |
-| Indexed pages | — | 50 | 200+ |
-| Organic clicks/day | 0 | 30 | 200+ |
-| Directory listings live | 0 | 50 | 70+ |
-| G2 reviews | 0 | 10 | 25 |
-| Capterra reviews | 0 | 5 | 15 |
-| AI citations (manual check) | 0 | 3 | 15+ |
-| Signups from directory referrals | 0 | 50 | 300 |
-| Signups from alt/use-case pages | 0 | 20 | 300 |
+| Metric                           | Day 0 | Day 30 target | Day 90 target |
+| -------------------------------- | ----- | ------------- | ------------- |
+| Domain Rating (DR)               | 0     | 20            | 30+           |
+| Referring domains                | 0     | 30            | 80+           |
+| Indexed pages                    | —     | 50            | 200+          |
+| Organic clicks/day               | 0     | 30            | 200+          |
+| Directory listings live          | 0     | 50            | 70+           |
+| G2 reviews                       | 0     | 10            | 25            |
+| Capterra reviews                 | 0     | 5             | 15            |
+| AI citations (manual check)      | 0     | 3             | 15+           |
+| Signups from directory referrals | 0     | 50            | 300           |
+| Signups from alt/use-case pages  | 0     | 20            | 300           |
 
 ---
 
