@@ -6,7 +6,7 @@ compatibility: Requires promql-cli and jq
 user-invocable: true
 metadata:
   author: samber
-  version: "1.1.3"
+  version: "1.2.0"
   openclaw:
     emoji: "📊"
     homepage: https://github.com/samber/cc-skills
@@ -38,7 +38,7 @@ Read the relevant reference file(s) before executing tasks:
 | `references/installation.md` | User needs to install promql-cli or set up configuration (hosts, auth, token, password, multi-host) |
 | `references/usage.md` | User wants to discover metrics/exporters/labels, run queries, or choose output formats |
 | `references/graphing.md` | User wants to visualize Prometheus data as an ASCII chart in the terminal |
-| `references/debugging.md` | User is investigating a performance issue, latency, errors, or saturation |
+| `references/debugging.md` | User is investigating a performance issue, latency, errors, saturation, data gaps, or query cost issues |
 | `references/promql-reference.md` | User needs help writing PromQL, understanding metric types, functions, or aggregations |
 
 For most tasks, read `references/usage.md`. For PromQL help, read `references/promql-reference.md`. When debugging, read both `references/debugging.md` and `references/promql-reference.md`.
@@ -88,8 +88,20 @@ promql --config ~/.promql-cli-prod.yaml 'up'         # target a specific host
 2. **When debugging, isolate a single instance** — aggregating across replicas masks per-instance anomalies. A single overloaded pod hidden behind healthy peers won't show up in averages.
 3. **Filter early with label matchers in the innermost selector** — Prometheus evaluates selectors before functions, so filtering late means scanning all time series. Early filters reduce data scanned and query latency.
 4. **For histograms, keep `le` in the `by` clause** before `histogram_quantile()` — the function needs all `le` buckets to interpolate percentiles; dropping `le` early produces `NaN` or wrong results.
-5. **Prefer `--output graph` for range queries** — ASCII sparklines convey trend direction (rising, falling, spiking) in a compact format that LLMs parse well; raw timestamp tables require mental modeling.
+5. **Prefer `--output graph` for range queries** — ASCII sparklines convey trend direction (rising, falling, spiking) in a compact format that LLMs parse well; raw timestamp tables require mental modeling. Never send thousands of raw JSON/CSV rows into the LLM context — use `--output graph` instead, or run `--output graph` first and `--output table` only to inspect a narrow window.
 6. **Store credentials in `~/.promql-cli.yaml` and `~/.promql_token`, chmod 600** — passing tokens as CLI args exposes them in shell history and process listings.
+
+## Query Cost Rules
+
+Always apply these before and during any query session:
+
+0. **Always use the promql CLI** — never call the Prometheus HTTP API from Python scripts or shell `curl`. The CLI handles auth, formatting, and output consistently; Python API calls bypass all of that and produce raw JSON that must be parsed, inflating context and masking the graph output that models interpret best.
+1. **Check cardinality first** — before querying an unfamiliar metric, count its time series (`count(metric_name)`). High-cardinality metrics without label filters time out or flood the output. See `references/debugging.md` for patterns.
+2. **Confirm the time window upfront** — always ask before running range queries. Large intervals are expensive; prefer multiple short-interval queries over one long one.
+3. **Clarify past vs. recent** — for new investigations, ask whether the user wants a past event (specific timestamp) or a recent trend. If recent, offer concrete choices: last hour, last day, last week, last month.
+4. **Aggregate in Prometheus** — never pull raw series to aggregate in Python or shell. Push `sum by(...)`, `avg by(...)`, or `topk()` into the PromQL expression — Prometheus collapses series server-side.
+5. **Timeout = query too broad** — if a query takes >15s, reduce scope: add label filters, shorten `--start`, or add an aggregation wrapper. Apply the same narrowed scope to all subsequent queries in the session.
+6. **Data gaps → check `up`** — when a metric shows missing data, run `up{job="...", instance="..."}` before diagnosing the application. A `0` value confirms the exporter was down. See `references/debugging.md`.
 
 This skill is not exhaustive. Please refer to the [official promql-cli documentation](https://github.com/nalbury/promql-cli) and examples for up-to-date information. Context7 can help as a discoverability platform.
 

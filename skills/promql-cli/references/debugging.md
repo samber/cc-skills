@@ -150,3 +150,81 @@ promql labels http_requests_total instance
 # Then filter down to the relevant one
 promql 'rate(http_requests_total{instance="api-1:8080"}[5m])' --output table
 ```
+
+## Query Cost & Cardinality
+
+High-cardinality or wide time-range queries are expensive: Prometheus must scan and evaluate every matching time series for every step in the range. Always assess cost before running an unknown query.
+
+**Check cardinality before querying an unfamiliar metric:**
+
+```bash
+promql 'count(metric_name)'                           # total time series count
+promql 'count by(label)(metric_name)'                 # per-label cardinality breakdown
+promql labels metric_name instance                    # list all values for a label
+```
+
+Only proceed with a full range query if the cardinality is manageable, or narrow with label filters first. A metric with 10,000 time series running over a 7-day range with a 1-minute step is ~10M data points — a likely timeout.
+
+**Prefer targeted queries with many label filters over broad ones:**
+
+```bash
+# ✗ Bad — scans all instances, all jobs, all paths
+promql 'rate(http_requests_total[5m])' --start 24h
+
+# ✓ Good — scoped to exactly what we need
+promql 'rate(http_requests_total{job="api", instance="api-1:8080", path="/v1/users"}[5m])' --start 1h
+```
+
+If label values are unknown at the start of a session, use `promql labels` and `promql labels <metric> <label>` to discover them before building the query.
+
+**Prefer short intervals with multiple queries over one long query:**
+
+```bash
+# ✗ Bad — loads 30 days in one shot; likely slow or timeout
+promql 'rate(http_requests_total[5m])' --start 720h --output graph
+
+# ✓ Good — three focused queries, narrow then broaden
+promql 'rate(http_requests_total{job="api"}[5m])' --start 1h --output graph   # recent
+promql 'rate(http_requests_total{job="api"}[5m])' --start 1d --output graph   # today
+promql 'rate(http_requests_total{job="api"}[5m])' --start 7d --output graph   # week trend
+```
+
+**Aggregate in Prometheus, not in the agent** — never pull raw series and sum/average in a Python script, shell pipeline, or via the Prometheus HTTP API. Push aggregation into PromQL; Prometheus collapses them server-side and the CLI returns a compact result:
+
+```bash
+# ✗ Bad — fetches all series as raw JSON, agent has to parse and aggregate
+promql 'http_requests_total' --output json | python3 -c "import sys,json; ..."
+
+# ✗ Bad — calls the HTTP API directly, bypasses CLI formatting and auth handling
+curl http://prometheus:9090/api/v1/query?query=http_requests_total | jq ...
+
+# ✓ Good — Prometheus aggregates server-side, CLI returns one row per job
+promql 'sum by(job)(rate(http_requests_total[5m]))' --output table
+```
+
+**Prefer ASCII charts over raw data** — always reach for `--output graph` before `--output json` or `--output csv`. A sparkline conveys trend, spike, and plateau in a few dozen tokens; raw data with timestamps inflates context and forces the model to interpret numbers mentally. When exact values are also needed, run `--output graph` first to identify the relevant window, then `--output table` on that narrow range only.
+
+```bash
+# ✓ Good — trend visible at a glance, low token cost
+promql 'rate(http_requests_total{job="api"}[5m])' --start 1h --output graph
+
+# Then zoom in on the spike window only
+promql 'rate(http_requests_total{job="api"}[5m])' --start 2024-01-15T14:00:00Z --end 2024-01-15T14:30:00Z --output table
+```
+
+**If a query takes >15s, it's too broad** — add label filters, shorten `--start`, or add an aggregation wrapper, then retry. A slow query is a signal, not a fluke: adapt all subsequent queries in the session to the same narrowed scope.
+
+## Diagnosing Data Gaps
+
+When a metric shows a gap (flat line, NaN, or missing data), verify whether the exporter was down before diagnosing application issues — a missing exporter looks identical to a metric dropping to zero.
+
+```bash
+# Was the exporter reachable during the gap?
+promql 'up{job="my-service", instance="host:9100"}' --start 2h --output graph
+
+# Was the scrape itself slow or failing?
+promql 'scrape_duration_seconds{job="my-service"}' --start 2h --output graph
+promql 'scrape_samples_scraped{job="my-service"}' --start 2h --output graph
+```
+
+A `0` value in `up` during the gap confirms the exporter (or the scrape target) was down — this is infrastructure, not application behavior. Only investigate the application metric if `up` stayed `1` throughout the gap window.
