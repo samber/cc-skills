@@ -1,0 +1,255 @@
+# Submission Tracker Template
+
+Copy this to a Google Sheet, Excel, or CSV file. Track every submission.
+
+## Columns
+
+| Column | Description | Example |
+|---|---|---|
+| Tier | Tier number (1-13) | 1 |
+| Directory | Directory name | Product Hunt |
+| URL | Submission URL | https://producthunt.com/products/new |
+| Status | not-started / submitted / pending-review / live / rejected / needs-update | submitted |
+| Submission Date | Date submitted (YYYY-MM-DD) | 2025-01-15 |
+| Live Date | Date listing went live (YYYY-MM-DD) | 2025-01-20 |
+| Moderator Notes | Any feedback from moderators | "Needs higher-res screenshots" |
+| Backlink Verified | yes / no / n/a | yes |
+| Backlink URL | Direct URL to your listing | https://producthunt.com/products/your-product |
+| Dofollow | yes / no / unknown | yes |
+| DR | Domain Rating of directory (from Ahrefs) | 91 |
+| Traffic | Estimated monthly traffic (from Ahrefs/SimilarWeb) | 500000 |
+| Category Tags Used | Tags submitted | developer-tools, saas, ai, launch |
+| Tagline Used | Tagline submitted | "Product — The AI-powered X for Y" |
+| Description Used | Short description (60 chars) | "Product helps developers build X faster" |
+| Long Description Used | Long description (150 words) | "Product is a..." |
+| Screenshots Used | Which screenshots (1-8) | 1,2,3,4,5 |
+| Video URL | Demo video URL | https://youtube.com/watch?v=abc123 |
+| Founder Story Used | Founder story variant | "I built this because..." |
+| Referral Traffic (30d) | Sessions from this directory (GA4/PostHog) | 150 |
+| Signups (30d) | Signups attributed to this directory | 12 |
+| Notes | Internal notes | "Hunter: @username. Upcoming page created 1/1." |
+
+---
+
+## CSV Template (copy below into a .csv file)
+
+```csv
+Tier,Directory,URL,Status,Submission Date,Live Date,Moderator Notes,Backlink Verified,Backlink URL,Dofollow,DR,Traffic,Category Tags Used,Tagline Used,Description Used,Long Description Used,Screenshots Used,Video URL,Founder Story Used,Referral Traffic (30d),Signups (30d),Notes
+1,Product Hunt,https://producthunt.com/products/new,not-started,,,,,,,,,,,,,,,,,
+1,BetaList,https://betalist.com/submit,not-started,,,,,,,,,,,,,,,,,
+1,Hacker News Show HN,https://news.ycombinator.com/submit,not-started,,,,,,,,,,,,,,,,,
+1,DevHunt,https://devhunt.org/submit,not-started,,,,,,,,,,,,,,,,,
+1,Fazier,https://fazier.co/submit,not-started,,,,,,,,,,,,,,,,,
+2,AlternativeTo,https://alternativeto.net/add-application/,not-started,,,,,,,,,,,,,,,,,
+2,SaaSHub,https://saashub.com/submit,not-started,,,,,,,,,,,,,,,,,
+2,G2,https://g2.com/products/new,not-started,,,,,,,,,,,,,,,,,
+2,Capterra,https://capterra.com/vendors/signup,not-started,,,,,,,,,,,,,,,,,
+2,F6S,https://f6s.com/startups/new,not-started,,,,,,,,,,,,,,,,,
+2,SourceForge,https://sourceforge.net/directory/add/,not-started,,,,,,,,,,,,,,,,,
+2,Slashdot,https://slashdot.org/submit,not-started,,,,,,,,,,,,,,,,,
+2,Crunchbase,https://crunchbase.com/organization/new,not-started,,,,,,,,,,,,,,,,,
+2,AngelList,https://angel.co/company/new,not-started,,,,,,,,,,,,,,,,,
+3,There's An AI For That,https://theresanaiforthat.com/submit/,not-started,,,,,,,,,,,,,,,,,
+3,Futurepedia,https://futurepedia.io/submit-tool,not-started,,,,,,,,,,,,,,,,,
+3,Toolify,https://toolify.ai/submit,not-started,,,,,,,,,,,,,,,,,
+3,Future Tools,https://futuretools.io/submit,not-started,,,,,,,,,,,,,,,,,
+3,AI Tools Inc,https://aitools.inc/submit,not-started,,,,,,,,,,,,,,,,,
+3,AI Stage,https://aistage.io/submit,not-started,,,,,,,,,,,,,,,,,
+3,TopAI Tools,https://topai.tools/submit,not-started,,,,,,,,,,,,,,,,,
+3,AI Tool Hunt,https://ai-toolhunt.com/submit,not-started,,,,,,,,,,,,,,,,,
+3,AI Depot,https://aidepot.com/submit,not-started,,,,,,,,,,,,,,,,,
+3,All Things AI,https://allthingsai.com/submit,not-started,,,,,,,,,,,,,,,,,
+4,Glama,https://glama.ai/submit,not-started,,,,,,,,,,,,,,,,,
+4,APITracker,https://apitracker.com/submit,not-started,,,,,,,,,,,,,,,,,
+4,LF MCP Registry,https://lf-mcp-registry.org/submit,not-started,,,,,,,,,,,,,,,,,
+4,AI Agents List,https://aiagentslist.com/submit,not-started,,,,,,,,,,,,,,,,,
+4,AgentOps,https://agentops.ai/submit,not-started,,,,,,,,,,,,,,,,,
+4,LangChain Hub,https://hub.langchain.com/submit,not-started,,,,,,,,,,,,,,,,,
+4,AutoGPT Marketplace,https://marketplace.agpt.co/submit,not-started,,,,,,,,,,,,,,,,,
+4,Camel-AI Marketplace,https://camel-ai.org/submit,not-started,,,,,,,,,,,,,,,,,
+4,CrewAI Hub,https://crewai.com/submit,not-started,,,,,,,,,,,,,,,,,
+5,NoCodeFinder,https://nocodefinder.com/submit,not-started,,,,,,,,,,,,,,,,,
+5,No Code MBA,https://nocode.mba/submit,not-started,,,,,,,,,,,,,,,,,
+5,We Are No Code,https://wearenocode.com/submit,not-started,,,,,,,,,,,,,,,,,
+5,MakerPad,https://makerpad.co/submit,not-started,,,,,,,,,,,,,,,,,
+5,Zeroqode,https://zeroqode.com/submit,not-started,,,,,,,,,,,,,,,,,
+5,NoCode.Tech,https://nocode.tech/submit,not-started,,,,,,,,,,,,,,,,,
+5,NoCode List,https://nocodelist.co/submit,not-started,,,,,,,,,,,,,,,,,
+5,NoCode Tools,https://nocodetools.io/submit,not-started,,,,,,,,,,,,,,,,,
+6,Best of Listicle Outreach,-,not-started,,,,,,,,,,,,,,,,,
+7,Zapier,https://zapier.com/platform,not-started,,,,,,,,,,,,,,,,,
+7,HubSpot,https://ecosystem.hubspot.com/marketplace/listing/create,not-started,,,,,,,,,,,,,,,,,
+7,Slack,https://api.slack.com/apps,not-started,,,,,,,,,,,,,,,,,
+7,Airtable,https://airtable.com/marketplace/submit,not-started,,,,,,,,,,,,,,,,,
+7,Notion,https://notion.so/marketplace/submit,not-started,,,,,,,,,,,,,,,,,
+7,Make,https://make.com/en/integrations/submit,not-started,,,,,,,,,,,,,,,,,
+7,n8n,https://n8n.io/integrations/submit,not-started,,,,,,,,,,,,,,,,,
+7,Pipedream,https://pipedream.com/apps/submit,not-started,,,,,,,,,,,,,,,,,
+7,Tray.io,https://tray.io/integrations/submit,not-started,,,,,,,,,,,,,,,,,
+7,Workato,https://workato.com/connectors/submit,not-started,,,,,,,,,,,,,,,,,
+8,GitHub,https://github.com/new,not-started,,,,,,,,,,,,,,,,,
+8,GitLab,https://gitlab.com/projects/new,not-started,,,,,,,,,,,,,,,,,
+8,Bitbucket,https://bitbucket.org/repo/create,not-started,,,,,,,,,,,,,,,,,
+8,WordPress.com,https://wordpress.com/start,not-started,,,,,,,,,,,,,,,,,
+8,Substack,https://substack.com/signup,not-started,,,,,,,,,,,,,,,,,
+8,Dev.to,https://dev.to/new,not-started,,,,,,,,,,,,,,,,,
+8,Hashnode,https://hashnode.com/new,not-started,,,,,,,,,,,,,,,,,
+8,Medium,https://medium.com/new-story,not-started,,,,,,,,,,,,,,,,,
+8,SlideShare,https://slideshare.net/upload,not-started,,,,,,,,,,,,,,,,,
+8,Behance,https://behance.net/new,not-started,,,,,,,,,,,,,,,,,
+8,Dribbble,https://dribbble.com/shots/new,not-started,,,,,,,,,,,,,,,,,
+8,Product Hunt Profile,https://producthunt.com/@username,not-started,,,,,,,,,,,,,,,,,
+8,Indie Hackers,https://indiehackers.com/post/new,not-started,,,,,,,,,,,,,,,,,
+8,Makerlog,https://makerlog.org/new,not-started,,,,,,,,,,,,,,,,,
+8,WIP,https://wip.chat/new,not-started,,,,,,,,,,,,,,,,,
+8,Twitter/X,https://twitter.com/compose/tweet,not-started,,,,,,,,,,,,,,,,,
+8,LinkedIn,https://linkedin.com/feed,not-started,,,,,,,,,,,,,,,,,
+8,YouTube,https://youtube.com/upload,not-started,,,,,,,,,,,,,,,,,
+8,TikTok,https://tiktok.com/upload,not-started,,,,,,,,,,,,,,,,,
+8,Instagram,https://instagram.com/create,not-started,,,,,,,,,,,,,,,,,
+8,Reddit,https://reddit.com/submit,not-started,,,,,,,,,,,,,,,,,
+8,Quora,https://quora.com/add/question,not-started,,,,,,,,,,,,,,,,,
+8,Stack Overflow,https://stackoverflow.com/questions/ask,not-started,,,,,,,,,,,,,,,,,
+8,Stack Exchange,https://stackexchange.com/sites,not-started,,,,,,,,,,,,,,,,,
+8,Hacker News,https://news.ycombinator.com/submit,not-started,,,,,,,,,,,,,,,,,
+8,Lobste.rs,https://lobste.rs/submit,not-started,,,,,,,,,,,,,,,,,
+8,Designer News,https://designernews.co/stories/new,not-started,,,,,,,,,,,,,,,,,
+8,GrowthHackers,https://growthhackers.com/submit,not-started,,,,,,,,,,,,,,,,,
+8,Inbound.org,https://inbound.org/submit,not-started,,,,,,,,,,,,,,,,,
+8,Product Hunt Comments,https://producthunt.com/products/your-product,not-started,,,,,,,,,,,,,,,,,
+8,Indie Hackers Comments,https://indiehackers.com/product/your-product,not-started,,,,,,,,,,,,,,,,,
+9,Google Business Profile,https://business.google.com/create,not-started,,,,,,,,,,,,,,,,,
+9,Yelp,https://biz.yelp.com/signup,not-started,,,,,,,,,,,,,,,,,
+9,Bing Places,https://bingplaces.microsoft.com/,not-started,,,,,,,,,,,,,,,,,
+9,Apple Maps,https://mapsconnect.apple.com/,not-started,,,,,,,,,,,,,,,,,
+9,Facebook Business,https://business.facebook.com/,not-started,,,,,,,,,,,,,,,,,
+9,Foursquare,https://foursquare.com/claim,not-started,,,,,,,,,,,,,,,,,
+9,Yellow Pages,https://yellowpages.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,Manta,https://manta.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,Hotfrog,https://hotfrog.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,Locanto,https://locanto.com/add,not-started,,,,,,,,,,,,,,,,,
+9,MerchantCircle,https://merchantcircle.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,Superpages,https://superpages.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,Citysearch,https://citysearch.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,DexKnows,https://dexknows.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,Local.com,https://local.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,EZLocal,https://ezlocal.com/add-business,not-started,,,,,,,,,,,,,,,,,
+9,MyLocalServices,https://mylocalservices.com/add,not-started,,,,,,,,,,,,,,,,,
+9,Thumbtack,https://pro.thumbtack.com/signup,not-started,,,,,,,,,,,,,,,,,
+9,Angie's List,https://angieslist.com/business-center,not-started,,,,,,,,,,,,,,,,,
+9,HomeAdvisor,https://homeadvisor.com/pro,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/SideProject,https://reddit.com/r/SideProject/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/SaaS,https://reddit.com/r/SaaS/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/startups,https://reddit.com/r/startups/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/Entrepreneur,https://reddit.com/r/Entrepreneur/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/nocode,https://reddit.com/r/nocode/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/IndieHackers,https://reddit.com/r/IndieHackers/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/alphaandbetausers,https://reddit.com/r/alphaandbetausers/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/webdev,https://reddit.com/r/webdev/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/artificial,https://reddit.com/r/artificial/submit,not-started,,,,,,,,,,,,,,,,,
+10,Reddit r/LocalLLaMA,https://reddit.com/r/LocalLLaMA/submit,not-started,,,,,,,,,,,,,,,,,
+10,SitePoint,https://sitepoint.com/forums/newthread,not-started,,,,,,,,,,,,,,,,,
+10,GrowthHackers,https://growthhackers.com/submit,not-started,,,,,,,,,,,,,,,,,
+10,Warrior Forum,https://warriorforum.com/newthread,not-started,,,,,,,,,,,,,,,,,
+10,Designer News,https://designernews.co/stories/new,not-started,,,,,,,,,,,,,,,,,
+10,Indie Hackers Forum,https://indiehackers.com/forum/new,not-started,,,,,,,,,,,,,,,,,
+11,PRLog,https://prlog.org/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR.com,https://pr.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,EzineArticles,https://ezinearticles.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Feedspot,https://feedspot.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Newswire,https://prnewswire.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Business Wire,https://businesswire.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PRWeb,https://prweb.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,EIN Presswire,https://einpresswire.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,24-7 Press Release,https://24-7pressrelease.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Newswire Today,https://newswiretoday.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Press Release Point,https://pressreleasepoint.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Free Press Release,https://free-press-release.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Free,https://prfree.org/submit,not-started,,,,,,,,,,,,,,,,,
+11,Press Release Distribution,https://pressreleasedistribution.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,NewsWire,https://newswire.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Underground,https://prunderground.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Log,https://prlog.org/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Sync,https://prsync.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Press Box,https://pressbox.co.uk/submit,not-started,,,,,,,,,,,,,,,,,
+11,Media Relations,https://mediarelations.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Leap,https://prleap.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,1888 Press Release,https://1888pressrelease.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,Press Release Jet,https://pressreleasejet.com/submit,not-started,,,,,,,,,,,,,,,,,
+11,PR Fire,https://prfire.co.uk/submit,not-started,,,,,,,,,,,,,,,,,
+11,OpenPR,https://openpr.com/submit,not-started,,,,,,,,,,,,,,,,,
+12,Scoop.it,https://scoop.it/submit,not-started,,,,,,,,,,,,,,,,,
+12,Diigo,https://diigo.com/submit,not-started,,,,,,,,,,,,,,,,,
+12,Pearltrees,https://pearltrees.com/submit,not-started,,,,,,,,,,,,,,,,,
+12,Pocket,https://getpocket.com/save,not-started,,,,,,,,,,,,,,,,,
+12,Mix,https://mix.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,Justia,https://justia.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,Avvo,https://avvo.com/lawyers/profile,not-started,,,,,,,,,,,,,,,,,
+13,FindLaw,https://lawyers.findlaw.com/claim,not-started,,,,,,,,,,,,,,,,,
+13,Porch,https://porch.com/pro,not-started,,,,,,,,,,,,,,,,,
+13,Houzz,https://houzz.com/pro,not-started,,,,,,,,,,,,,,,,,
+13,LandBook,https://land-book.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,SiteInspire,https://siteinspire.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,Awwwards,https://awwwards.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,CSS Design Awards,https://cssdesignawards.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,BuiltWith,https://builtwith.com/add,not-started,,,,,,,,,,,,,,,,,
+13,StoreLeads,https://storeleads.app/submit,not-started,,,,,,,,,,,,,,,,,
+13,DevTools,https://devtools.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,LibHunt,https://libhunt.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,Awesome Lists,https://github.com/sindresorhus/awesome/pulls,not-started,,,,,,,,,,,,,,,,,
+13,RapidAPI,https://rapidapi.com/hub/submit,not-started,,,,,,,,,,,,,,,,,
+13,APILayer,https://apilayer.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,Public APIs,https://github.com/public-apis/public-apis/pulls,not-started,,,,,,,,,,,,,,,,,
+13,Papers With Code,https://paperswithcode.com/submit,not-started,,,,,,,,,,,,,,,,,
+13,Hugging Face,https://huggingface.co/new,not-started,,,,,,,,,,,,,,,,,
+13,ModelScope,https://modelscope.cn/submit,not-started,,,,,,,,,,,,,,,,,
+```
+
+---
+
+## Google Sheets Setup Instructions
+
+1. Create new Google Sheet
+2. File → Import → Upload the CSV above
+3. Add these additional columns for tracking:
+   - **Week** (1, 2, 3, Ongoing) — auto-calculate from Submission Date
+   - **Priority** (High/Medium/Low) — High for Tier 1-3, Medium for 4-7, Low for 8-13
+   - **Owner** — team member responsible
+   - **Blocker** — yes/no + description
+
+4. Set up conditional formatting:
+   - Status = "live" → Green row
+   - Status = "rejected" → Red row
+   - Status = "pending-review" → Yellow row
+   - Backlink Verified = "no" AND Status = "live" → Orange highlight (action needed)
+
+5. Add filter views:
+   - By Tier
+   - By Status
+   - By Week
+   - By Owner
+
+6. Share with team (Viewer access for stakeholders, Editor for executors)
+
+---
+
+## Weekly Review Checklist (Monday)
+
+- [ ] Filter Status = "submitted" or "pending-review" → check for updates
+- [ ] Filter Status = "live" AND Backlink Verified = "no" → verify backlinks
+- [ ] Filter Week = current week → ensure all planned submissions done
+- [ ] Update Referral Traffic and Signups from analytics
+- [ ] Move any "rejected" with fixable issues back to "not-started" with notes
+- [ ] Plan next week's batch (next 15-20 submissions)
+
+---
+
+## Monthly Review Checklist (1st of month)
+
+- [ ] Export CSV backup
+- [ ] Calculate conversion rates per tier (Signups / Referral Traffic)
+- [ ] Identify top 5 performing directories → double down
+- [ ] Identify bottom 5 (zero traffic after 60 days) → consider removal
+- [ ] Check DR changes for key directories (Ahrefs)
+- [ ] Update "Notes" with learnings for next launch
+- [ ] Share summary with team/stakeholders
