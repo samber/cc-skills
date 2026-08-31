@@ -1,6 +1,6 @@
 ---
 name: technical-article-writer
-description: "Write compelling technical articles and blog posts for developer audiences. Use this skill whenever the user asks to write a blog post, technical article, or any long-form technical content. Also trigger when the user says 'write about [technical topic]', 'help me draft an article', 'turn this into a blog post', 'write a post about', 'I want to publish something about', or mentions writing for a developer audience. Covers the full pipeline: idea sharpening, hook/title generation, article structure, body drafting, and editing. Even if the user just says 'I want to write about X' without specifying format, use this skill. Do NOT use for platform-specific optimization, newsletter strategy, or ghostwriting voice matching."
+description: "Write technical articles and blog posts for developer audiences — tutorials, explainers, benchmarks, bug hunts, postmortems, and 'we rewrote it in X' posts — with title variants and developer-grade article structure. Use whenever the user asks to write a blog post, technical article, dev.to or Medium post, or any long-form technical content, including 'write about [technical topic]', 'turn this into a blog post', or 'I want to publish something about X', even without naming a format. Do NOT use for newsletter or Substack issues — use samber/cc-skills@substack-ghostwriting instead. Do NOT use for codifying an author's voice — use samber/cc-skills@copywriting-prose-creator instead."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude or similar AI agents.

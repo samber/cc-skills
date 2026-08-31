@@ -1,6 +1,6 @@
 ---
 name: chrome-extension
-description: "Comprehensive guide for building Chrome extensions with Manifest V3. Use this skill whenever the user mentions Chrome extension, browser extension, manifest.json, content script, service worker (in extension context), popup, side panel, chrome.runtime, chrome.tabs, chrome.storage, chrome.scripting, background script, MV3, Manifest V3, or any Chrome extension API. Also trigger when the user wants to inject scripts into web pages, communicate between page and background, bypass CSP from a content script, build an RPC layer over chrome messaging, or publish to the Chrome Web Store. Covers both new extension projects and adding features to existing ones. Do NOT use for framework-specific questions."
+description: "Build Chrome extensions with Manifest V3. Use this skill whenever the user mentions Chrome extension, browser extension, manifest.json, content script, service worker (in extension context), popup, side panel, chrome.runtime, chrome.tabs, chrome.storage, chrome.scripting, or any Chrome extension API. Also trigger when the user wants to inject scripts into web pages, communicate between page and background, bypass CSP from a content script, build an RPC layer over chrome messaging, or publish to the Chrome Web Store. Covers both new extension projects and adding features to existing ones. Do NOT use for CRXJS/Vite-based builds with HMR — use samber/cc-skills@crxjs instead."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness. Requires git, node.
