@@ -6,6 +6,8 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is a Claude Code plugin containing AI agent skills covering engineering, marketing, and productivity domains. The repository provides reusable skill definitions that Claude Code can invoke across projects.
 
+**Where content belongs:** CLAUDE.md holds facts about this repository — structure, conventions, policy. Skills hold procedures and domain expertise for tasks Claude performs elsewhere. Never copy a CLAUDE.md fact into a skill body: the two drift, and a stale copy later contradicts the source with no signal which one is right.
+
 ## Project Structure
 
 ```
@@ -43,6 +45,12 @@ New skills go in `skills/<skill-name>/SKILL.md`. Each SKILL.md has YAML frontmat
 **Choosing `user-invocable`:** Use `false` (contextual) for domain expertise that enriches any relevant conversation without being explicitly asked — code style, security patterns, brand voice, commit conventions. Use `true` (user-invocable) for multi-step workflows the user explicitly triggers — ghostwriting a post, running a full audit, generating a commit message.
 
 Do not add a `turbo_safe`-style field (seen on Antigravity, marks a skill safe for unattended execution) — it conflicts with this project's confirm-before-risky-action policy (see "Executing actions with care" in the top-level instructions). The same restriction applies to any harness-specific equivalent, e.g. Mistral Vibe's per-tool `permission = "always"` in generated agent configs (`.vibe/agents/*.toml`) — default write/shell/exec permissions to `"ask"`, not `"always"`, even when the harness makes unattended execution easy to opt into.
+
+**Frontmatter cautions:**
+
+- Quote any `description` containing a colon-space or an unescaped `[`, `]`, `<`, `>`. YAML mis-parses those, and the skill drops out of the listing with no error surfaced to the author. Use a block scalar (`description: >-`) or wrap the value in double quotes — `skills/copywriting-hooks/SKILL.md` already ships the block-scalar form.
+- Never write a top-level `version:` key. It is not a recognized field and hard-fails packaging on strict validators. Version lives at `metadata.version`, nowhere else.
+- Check harness tolerance before shipping extra fields. Strict validators accept only the six spec-core fields (`name`, `description`, `license`, `compatibility`, `metadata`, `allowed-tools`) and hard-fail on anything beyond them — including this project's required `user-invocable` and the optional `paths`/`dependencies`. Claude Code accepts every field above; treat the risk as cross-harness portability, and keep a stripped variant when a target validator is strict.
 
 Example frontmatter:
 
@@ -196,6 +204,8 @@ Two exceptions:
 - **Generated artifacts.** A fenced block the skill writes to disk as a harness-specific file (e.g. a Claude Code agent definition with its own `tools:` frontmatter) is allowed to name real tools — genericizing the artifact's content would produce a broken file. Label the block with the harness it targets and, where feasible, note the equivalent for other harnesses.
 - **`Bash(cmd:*)`-style scoping** in `allowed-tools` only has effect on Claude Code. Cursor, Copilot CLI, OpenCode, and Antigravity each use a different permission syntax in a separate settings/permissions file, not in SKILL.md — treat this scoping as documentation for Claude Code, not a portable guarantee.
 
+**Qualify every MCP tool with its server.** An MCP entry in `allowed-tools` carries its server name — `mcp__context7__resolve-library-id`, not a bare `resolve-library-id`. Several servers can expose the same tool name, so an unqualified entry resolves to nothing and the harness reports "tool not found". The double-underscore form in the extras table above _is_ that qualification.
+
 Before committing, grep skill bodies for leftover hardcoded names:
 
 ```bash
@@ -217,6 +227,7 @@ A skill is executable content a user installs on trust. Apply the **Principle of
 
 - Grant least privilege in `allowed-tools`. A skill that seems to need unscoped `Bash(*)` needs redesign — scope it to specific subcommands instead (→ See the extras table in [Allowed Tools](#allowed-tools)).
 - Review `allowed-tools` before running an agent in a cloned or untrusted repository. A project skill's declaration grants access without prompting the user, so a malicious repo can ship broad permissions that execute silently.
+- Never treat `allowed-tools` as containment. It is an allow-list that skips the permission prompt for what it names; it does not stop an unlisted tool from running once approved another way. Real blocking needs `disallowed-tools` or the harness's permission-rule configuration.
 
 **Installation rule:**
 
@@ -242,6 +253,7 @@ Body content is a **recurring** cost, not a one-time one. Once a skill is invoke
 - **< 500 lines per SKILL.md** — move detail out to `references/` the moment the body passes ~250 lines. The Agent Skills ecosystem median is 147 lines; a skill nearing 500 is usually two skills or one skill plus a `references/` file.
 - **Use secondary markdown files for depth** — Claude reads these on demand, so they don't count against context until needed
 - **2-4 skills loaded simultaneously** in a typical session
+- **Prune past ~20–50 _installed_ skills** — installed count is not loaded count. Every installed description competes at trigger time, before anything loads, so a bloated catalog degrades selection for skills that are individually well-written. Retire overlapping or unused skills instead of only adding.
 - **Stay below ~10k tokens of total loaded SKILL.md** to avoid degrading response quality
 - **Only the first ~5.000 tokens of a skill survive auto-compaction**, out of a ~25.000-token budget shared by all currently-loaded skills. That 25k is the harness ceiling; the ~10k above is the stricter quality target this project aims for. Put load-bearing rules early — the tail is the first casualty when context gets tight.
 
@@ -458,6 +470,8 @@ Always use the fully-qualified `owner/repo@skill` form in backticks, even for re
 
 **Inline:** see the `samber/cc-skills@conventional-git` skill. **Arrow-prefixed lists:** "→ See `samber/cc-skills@conventional-git` skill for …"
 
+Keep the identifier inert. It is text a reader resolves, never a live import — always in backticks, never as a bare `@skill-name`. Some harnesses read an `@`-prefixed reference as an eager-load directive and pull the whole referenced skill into context, spending the full body budget on a passing mention.
+
 **Install mapping:** the identifier maps to skills CLI commands:
 
 - `samber/cc-skills@conventional-git` → `npx skills add samber/cc-skills --skill conventional-git`
@@ -535,6 +549,22 @@ Transformation patterns:
 - **Code example comments**: carry the reasoning — `// ✗ Bad — mutating props breaks unidirectional data flow; copy before modifying`
 - **Section intros**: add a 1-2 sentence framing paragraph that establishes the mental model before listing specifics
 
+### Avoid time-sensitive facts
+
+Never assert something holds "as of" or "after" a date or release — "since August 2026", "the current version is 3.2". Such claims go stale silently: the reader gets no signal the sentence is now wrong and acts on it anyway. State the rule, not the calendar.
+
+When a skill must show a deprecated approach alongside the current one — a live migration, a library that changed API — wrap the old one in a collapsed block so it reads as history, not as an option:
+
+```md
+<details><summary>Old pattern (pre-v3)</summary>
+
+...
+
+</details>
+```
+
+→ See [Checking for outdated skills](#checking-for-outdated-skills) for the `skill-library-version` mechanism that detects staleness a skill cannot avoid.
+
 ### Tool and platform-specific skills
 
 When a skill describes a third-party library, CLI tool, or external platform (e.g. `samber/cc-skills@promql-cli`, `samber/cc-skills@linkedin-ghostwriting`), the skill instructions **must** cover the following depending on the type:
@@ -591,6 +621,7 @@ Store your evaluation scenarios in `skills/{name}/evals/evals.json`.
 - **Isolate the evaluated skill.** When running "without" evals, do NOT load any skill that covers overlapping content — a colliding skill would give the model guidance it shouldn't have, inflating the "without" score and masking the evaluated skill's true uplift. When running "with" evals, load only the skill under test (and its explicit cross-references if needed).
 - **Prefer positive trigger tests over negative ones.** Testing "don't do X when not applicable" is weak — models have a strong prior of not acting when uncertain. Every eval should test the model _doing_ something correctly, not refraining.
 - **Target rules that are saturated in training data last.** General writing conventions (short paragraphs, no burying the lede), widely-documented syntax, and standard platform idioms appear in countless guides and produce little or no delta. Focus first on the rules that are counterintuitive, tool-specific, or unique to the skill's domain.
+- **Re-measure on every target model.** Uplift does not transfer across models — a skill that lifts one can measurably hurt another, since each has different priors about what the skill corrects. Validate against each harness and model the skill is expected to run on before trusting a single number.
 - **Don't let prompt context substitute for skill knowledge.** If the eval describes the problem with enough specificity that the model can reason to the correct answer, the skill becomes redundant. Present the problem as an opaque or misleading scenario where the skill's rule resolves an ambiguity the model would otherwise get wrong.
 
 **Anti-patterns to avoid:**
@@ -636,6 +667,35 @@ See `EVALUATIONS.md` for the canonical format.
 After updating `EVALUATIONS.md` sum all the skill reports and update the table in `Skill evaluations` section of README.md.
 
 Also update the **Summary table** at the top of `EVALUATIONS.md`: add a new row for the skill (or update the existing row if re-running), then recompute the **Total** row by summing all numerators and denominators across all skills. The table is ordered by Delta ascending (low → high). Populate the Concern column using these rules: "Low delta" (≤32pp), "High without" (Without ≥65%), "Low with-skill score" (With ≤90%) — combine when multiple apply. Use bold on Concern values to draw attention. The **Uplift** column shows `With / Without` rounded to 2 decimal places and suffixed with `×` (e.g. `1.64×`); recompute it for every row including the Total.
+
+## Anti-patterns
+
+Cheat-sheet index of the failure modes this document covers. Each row links to the section that explains why.
+
+| ❌ Anti-pattern | Symptom | Fix |
+| --- | --- | --- |
+| [Vague description](#description-quality) | Never triggers | Add concrete nouns + pushy "use when" |
+| [First-person description](#description-quality) | Erratic triggering | Rewrite in third person |
+| [Monolithic 600-line body](#token-budgets) | Token bloat, ignored tail | Split into `references/` |
+| [Nested reference chains](#skill-body) | Partial reads, missing info | Flatten to one level |
+| [Restating model knowledge](#avoid-duplicating-well-known-conventions) | Wasted tokens | Delete; assume competence |
+| [Caps-lock `MUST`/`NEVER` everywhere](#teach-reasoning-not-only-rules) | Brittle, poor edge-case handling | Explain the why |
+| [Time-sensitive facts ("after August 2026…")](#avoid-time-sensitive-facts) | Silently wrong later | Collapsed "Old patterns" `<details>` |
+| [Windows backslash paths](#bundle-scripts) | Breaks on Unix | Forward slashes always |
+| [Menu of five options](#one-default-one-escape-hatch) | Model dithers | One default + escape hatch |
+| [Extra frontmatter fields](#frontmatter) | Hard error on upload | Restrict to the six |
+| [Unqualified MCP tool name](#tool-names-belong-in-frontmatter-not-in-the-body) | "tool not found" | `ServerName:tool_name` |
+| [Magic constants in scripts](#bundle-scripts) | Unmaintainable | Name and justify them |
+| [Script defers errors to the model](#bundle-scripts) | Flaky runs | Handle in the script |
+| [Duplicating CLAUDE.md](#project-overview) | Conflicting instructions | Facts in CLAUDE.md, procedures in skills |
+| [No evals](#adversarial-evaluation-design) | Cannot prove value | 2–3 cases + baseline |
+| [Unquoted `: ` or `[ ] < >` in description](#frontmatter) | Skill silently dropped from listing | Block scalar `>-` or quote it |
+| [Workflow steps in the description](#description-quality) | Agent acts on the description, skips the body | Describe what + when only |
+| [Top-level `version:`](#frontmatter) | Hard-fails packaging | Move to `metadata.version` |
+| [Trusting `allowed-tools` to restrict](#security) | False sense of containment | Use `disallowed-tools` / permission rules |
+| [`@`-referencing another skill](#cross-skill-references) | Force-loads it, blowing the budget | Reference by name |
+| [Too many installed skills](#token-budgets) | Discovery degrades for all of them | Prune; reconsider past ~20–50 |
+| [Skill validated on one model only](#adversarial-evaluation-design) | Effect flips sign on another | Re-measure per target model |
 
 ## Workflows
 
