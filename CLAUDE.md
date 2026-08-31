@@ -689,7 +689,7 @@ Cheat-sheet index of the failure modes this document covers. Each row links to t
 | [Script defers errors to the model](#bundle-scripts) | Flaky runs | Handle in the script |
 | [Duplicating CLAUDE.md](#project-overview) | Conflicting instructions | Facts in CLAUDE.md, procedures in skills |
 | [No evals](#adversarial-evaluation-design) | Cannot prove value | 2–3 cases + baseline |
-| [Unquoted `: ` or `[ ] < >` in description](#frontmatter) | Skill silently dropped from listing | Block scalar `>-` or quote it |
+| [Unquoted colon-space or `[ ] < >` in description](#frontmatter) | Skill silently dropped from listing | Block scalar `>-` or quote it |
 | [Workflow steps in the description](#description-quality) | Agent acts on the description, skips the body | Describe what + when only |
 | [Top-level `version:`](#frontmatter) | Hard-fails packaging | Move to `metadata.version` |
 | [Trusting `allowed-tools` to restrict](#security) | False sense of containment | Use `disallowed-tools` / permission rules |
