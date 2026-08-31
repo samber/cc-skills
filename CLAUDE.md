@@ -206,7 +206,7 @@ Expected hits: `allowed-tools:` lines and labeled artifact blocks only.
 
 ## Skill Body
 
-The body contains step-by-step instructions. Use secondary markdown files in `references/` for depth (referenced via relative links like `[Details](references/details.md)`). Keep file references one level deep from SKILL.md — avoid deeply nested reference chains. For engineering skills this typically means command references, API docs, and usage examples; for content skills it means writing frameworks, worked examples, hook libraries, and editorial templates.
+The body contains step-by-step instructions. Use secondary markdown files in `references/` for depth (referenced via relative links like `[Details](references/details.md)`). Keep file references one level deep from SKILL.md — a reference file must never point at another reference file. Nested chains get read partially, and the truncation is silent: the reader sees a prefix, never learns what it missed, and acts on half a rule. For engineering skills this typically means command references, API docs, and usage examples; for content skills it means writing frameworks, worked examples, hook libraries, and editorial templates.
 
 **Important:** When including non-markdown content (configuration files, scripts, templates, linter configs, etc.), create them as separate files in `assets/` rather than embedding them directly in markdown. Reference these files from your markdown using relative links (e.g., `[View config](assets/example.yml)`). This keeps markdown files clean, makes assets reusable, and allows proper syntax highlighting when the files are viewed separately.
 
@@ -214,13 +214,16 @@ Polanyi's paradox: most operational knowledge is tacit and resists explicit desc
 
 ### Token budgets
 
+Body content is a **recurring** cost, not a one-time one. Once a skill is invoked, its rendered body stays in context for every later turn — never re-read, never re-summarized. Every extra line is paid again on each turn.
+
 - **~100 tokens per description** — loaded at startup for all skills
 - **< 5.000 tokens per SKILL.md** (spec recommendation) — keep focused on essentials
 - **< 2.500 tokens per SKILL.md** (project recommendation)
-- **< 500 lines per SKILL.md**, aiming under 250 — move detailed reference material to `references/`. The Agent Skills ecosystem median is 147 lines; a skill nearing 500 is usually two skills or one skill plus a `references/` file.
+- **< 500 lines per SKILL.md** — move detail out to `references/` the moment the body passes ~250 lines. The Agent Skills ecosystem median is 147 lines; a skill nearing 500 is usually two skills or one skill plus a `references/` file.
 - **Use secondary markdown files for depth** — Claude reads these on demand, so they don't count against context until needed
 - **2-4 skills loaded simultaneously** in a typical session
 - **Stay below ~10k tokens of total loaded SKILL.md** to avoid degrading response quality
+- **Only the first ~5.000 tokens of a skill survive auto-compaction**, out of a ~25.000-token budget shared by all currently-loaded skills. That 25k is the harness ceiling; the ~10k above is the stricter quality target this project aims for. Put load-bearing rules early — the tail is the first casualty when context gets tight.
 
 This is a budget. A 100 lines SKILL.md is even better. Feel free to stay far below the limits.
 
@@ -344,7 +347,14 @@ promql 'up' --output json                            # JSON output
 
 When the tool has **sub-commands, flags, or configuration files**, showcase them generously — list every useful sub-command with a realistic example, show flag combinations for common workflows, and include sample config files with inline comments. Developers discover tool capabilities through examples, not by reading `--help` output.
 
-Link to this reference from the main SKILL.md using relative markdown links.
+Organize references by domain — `references/aws.md`, `references/gcp.md` — so a question about one domain loads that file alone instead of the whole reference set.
+
+Point to each reference from SKILL.md with a relative link **and** the condition that opens it. A bare link carries no cue and gets skipped:
+
+- ✓ Good — "For the full field list, read `references/schema.md`."
+- ✗ Bad — "See [schema](references/schema.md)."
+
+Add a table of contents to any reference file over 100 lines. Reads of long files truncate silently, and a TOC at the top exposes the file's full scope even when the rest is cut.
 
 For content and platform skills (e.g. `linkedin-ghostwriting`, `content-strategy`), `references/` files serve the same progressive-disclosure purpose but contain writing frameworks, worked examples, editorial checklists, templates, or hook libraries — not command references. The same principle applies: keep SKILL.md focused on essentials and move depth to `references/` so it is loaded only when needed.
 
@@ -358,7 +368,9 @@ Skills are structured for efficient context use:
 4. **Instructions** (< 10.000 tokens recommended by me): full SKILL.md body + secondary files loaded when skill activates
 5. **Resources** (as needed): files in `scripts/`, `references/`, `assets/` loaded only when required
 
-Keep SKILL.md under 500 lines, targeting under 250 (→ See [Token budgets](#token-budgets)). Move detailed reference material to separate files.
+Keep SKILL.md under 500 lines; move detailed reference material to `references/` as soon as the body passes ~250 lines (→ See [Token budgets](#token-budgets)).
+
+Order the body by importance, since these levels load top-down and compaction trims from the end. Rules the skill cannot work without belong before the nice-to-haves.
 
 This is a budget. A 100 lines SKILL.md is even better. Feel free to stay below the limits.
 
