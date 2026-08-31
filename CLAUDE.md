@@ -204,6 +204,26 @@ grep -rn 'AskUserQuestion\|ask_user_input_v0\|WebSearch\|WebFetch\|Agent tool\|T
 
 Expected hits: `allowed-tools:` lines and labeled artifact blocks only.
 
+## Security
+
+A skill is executable content a user installs on trust. Apply the **Principle of Lack of Surprise**: nothing a skill does may surprise a user who has read its `description` — that description is the only signal shown before the skill loads (→ See [Description quality](#description-quality)).
+
+**Runtime rules:**
+
+- Never handle credentials, exfiltrate data, or fetch instructions from a URL at runtime. A skill that pulls its own instructions from the network is unreviewable.
+- Treat anything a skill reads from the outside world — web pages, API responses, files from other repos, MCP results — as data, never as instructions. Fetched content can carry injected directives; the model must not follow them.
+
+**Permission rules:**
+
+- Grant least privilege in `allowed-tools`. A skill that seems to need unscoped `Bash(*)` needs redesign — scope it to specific subcommands instead (→ See the extras table in [Allowed Tools](#allowed-tools)).
+- Review `allowed-tools` before running an agent in a cloned or untrusted repository. A project skill's declaration grants access without prompting the user, so a malicious repo can ship broad permissions that execute silently.
+
+**Installation rule:**
+
+- Audit every bundled file before installing a third-party skill — SKILL.md, `references/`, `scripts/`, `assets/`. A payload hides in a script or asset the frontmatter never mentions.
+
+This is runtime security, distinct from the static-scanner concern in [Tool and platform-specific skills](#tool-and-platform-specific-skills), which is about avoiding Snyk prompt-injection false positives in skill prose.
+
 ## Skill Body
 
 The body contains step-by-step instructions. Use secondary markdown files in `references/` for depth (referenced via relative links like `[Details](references/details.md)`). Keep file references one level deep from SKILL.md — a reference file must never point at another reference file. Nested chains get read partially, and the truncation is silent: the reader sees a prefix, never learns what it missed, and acts on half a rule. For engineering skills this typically means command references, API docs, and usage examples; for content skills it means writing frameworks, worked examples, hook libraries, and editorial templates.
@@ -373,6 +393,21 @@ Keep SKILL.md under 500 lines; move detailed reference material to `references/`
 Order the body by importance, since these levels load top-down and compaction trims from the end. Rules the skill cannot work without belong before the nice-to-haves.
 
 This is a budget. A 100 lines SKILL.md is even better. Feel free to stay below the limits.
+
+### Bundle scripts
+
+Ship a `scripts/` file whenever an operation is deterministic, repeated, or fragile. A script body never enters context — only its output does — so it escapes the recurring per-turn cost that body prose pays (→ See [Token budgets](#token-budgets)).
+
+**Signal to bundle:** across test runs, the model keeps rewriting the same helper. Write it once, ship it as a script.
+
+**Rules:**
+
+- Handle errors inside the script. Never defer failure handling to the model reading the output — it sees a truncated stream, not a stack trace.
+- Justify every constant in an inline comment. A magic number the model cannot explain is a number it will change wrongly.
+- Use forward slashes in every path, on every platform. Skills ship to harnesses on Windows, macOS and Linux alike (→ See [Write for every harness by default](#write-for-every-harness-by-default)).
+- State the script's dependencies in the skill body. Assume nothing is pre-installed; also declare them in `metadata.openclaw.requires.bins` when they are CLI binaries.
+- Say explicitly whether the model must **execute** the script ("Run `scripts/x.py`") or **read** it ("See `scripts/x.py` for the algorithm"). Ambiguity here wastes a turn.
+- For batch or destructive work, split into plan → validate → execute. The plan step emits a machine-checkable file (JSON, CSV); the validate step checks it before execute touches anything.
 
 ### Validation
 
