@@ -6,7 +6,7 @@ compatibility: Designed for Claude Code, Codex or similar harness. Requires inte
 user-invocable: true
 metadata:
   author: samber
-  version: "2.0.0"
+  version: "2.0.1"
   openclaw:
     emoji: "📊"
     homepage: https://github.com/samber/cc-skills

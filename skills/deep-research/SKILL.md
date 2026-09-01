@@ -9,7 +9,7 @@ metadata:
   authors:
     - Maxme Courant (github.com/mcourant)
     - Samuel Berthe (github.com/samber)
-  version: "1.2.0"
+  version: "1.2.1"
   openclaw:
     emoji: "🔎"
     homepage: https://github.com/samber/cc-skills

@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.0.2"
+  version: "1.0.3"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills

@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude, ChatGPT or similar harness.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "🤖"
     homepage: https://github.com/samber/cc-skills
