@@ -1,14 +1,14 @@
 ---
 name: copywriting-hooks
 description: >
-  Generate opening hooks and post titles for long-form articles in EN or FR — blog posts, Substack/Medium/dev.to, LinkedIn long-form, paid newsletters, opinion essays, reported features, deep-dives. Trigger whenever the user asks for a hook, opening, lede, intro, first sentence/paragraph, opener, accroche, attaque, phrase d'accroche, or première phrase — including making a flat intro punchier or rewriting a draft opening. Also trigger when user asks for a post title, titre d'article, headline, or when ghostwriting skills reach the opening or titling step. Proposes 3-4 hooks pulling psychological levers (curiosity gap, contrarian, scene, promise, authority), 2 candidates waits for pick. Do NOT trigger for social posts (LinkedIn feed, Twitter/X, TikTok, Bluesky, Threads), READMEs or doc first lines, taglines, email subjects or openers, ad copy (Google/Meta Ads), landing-page headlines, press releases, SEO meta, fiction openings, talk/podcast/video script intros, or body rewrites.
+  Writes opening hooks and post titles for long-form articles in EN or FR — blog posts, Substack/Medium/dev.to, LinkedIn long-form, newsletters, essays. Trigger whenever the user asks for a hook, opening, lede, intro, first sentence/paragraph, opener, accroche, attaque, phrase d'accroche, or première phrase — including punching up a flat intro or draft opening — or for a post title, titre d'article, or headline. Do NOT trigger for social posts (LinkedIn feed, Twitter/X, TikTok, Bluesky), READMEs, taglines, email subjects, ad copy, landing-page headlines, press releases, SEO meta, or body rewrites. Do NOT use for end-of-article CTAs — use samber/cc-skills@copywriting-cta instead.
 
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "🪝"
     homepage: https://github.com/samber/cc-skills

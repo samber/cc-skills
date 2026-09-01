@@ -1,12 +1,12 @@
 ---
 name: humaniseur-fr
-description: "Remove AI-writing patterns from French text and inject voice, personality, and soul. Use when editing, reviewing, rewriting, or cleaning up French content that reads like ChatGPT/Claude output. Humanize, humanise, déslopifier. Detects and fixes 38 patterns: AI vocabulary overuse (crucial, essentiel, également, notamment, défi, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), copula avoidance, formulaic openings (À l'ère de, Dans un monde où), superficial participle analyses (-ant), em dash overuse, redundant adjective doublets, rule of three, sycophantic tone, decorative emojis, residual Markdown artifacts, fiction-register lyricism (instant suspendu, promesse murmurée), typographic inconsistency (mixed quote and apostrophe styles), uniform sentence length. Trigger on: humaniser, déslopifier, rendre plus humain, nettoyer le texte IA, enlever le slop, réécrire pour que ça sonne humain, make it sound human."
+description: "Remove AI-writing patterns from French text and inject voice and personality. Use when editing, reviewing, or rewriting French content that reads like ChatGPT or Claude output. Detects and fixes 38 patterns: AI vocabulary (crucial, essentiel, notamment, dans le paysage), anglicisms from English-first models (faire du sens, adresser un problème), formulaic openings (À l'ère de, Dans un monde où), participle clauses in -ant, em dash overuse, decorative emojis, mixed guillemets and apostrophes, uniform sentence length. Trigger on humaniser, déslopifier, nettoyer le texte IA, enlever le slop, make it sound human. Do NOT use for English text — use samber/cc-skills@humanizer-en-asd-ste100 instead."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude, ChatGPT or similar harness.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "🤖"
     homepage: https://github.com/samber/cc-skills

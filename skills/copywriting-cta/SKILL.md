@@ -1,12 +1,12 @@
 ---
 name: copywriting-cta
-description: Design end-of-article CTAs (calls-to-action placed at the bottom of blog posts, newsletters, essays, articles, or any long-form content). Use this skill whenever the user asks to write, design, review, or improve a CTA at the bottom of an article, blog post, or essay; mentions "end-of-post CTA", "bottom of the article", "call-to-action", "signup box", "newsletter CTA", "subscribe block", "what should I put at the bottom", "how do I get readers to subscribe / share / book a call / buy / follow / join / download"; or asks how to convert article readers into subscribers, leads, customers, community members, or supporters. Also trigger when the user wants A/B testing guidance or accessibility review for a CTA block. Covers independent / personal writing, newsletter publications, and brand / content-marketing blogs across any topic — tech, finance, food, climate, design, lifestyle, B2B, B2C. Produces both the copy (content) and the structural / visual design (form), matched to the user's objective and audience.
+description: Designs end-of-article CTAs — copy, layout, placement, A/B test plan, accessibility — for blog posts, newsletters, and essays. Use whenever the user asks to write, review, or improve a CTA at the bottom of an article; mentions "end-of-post CTA", "call-to-action", "signup box", "newsletter CTA", "subscribe block", or "what should I put at the bottom"; or asks how to turn readers into subscribers, leads, customers, or paying supporters. Covers personal blogs, paid newsletters (Substack, beehiiv, Ghost), and brand content-marketing blogs. Do NOT use for opening hooks, ledes, or post titles — use samber/cc-skills@copywriting-hooks instead. Not for landing-page, ad, or email copy.
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.0"
+  version: "1.1.1"
   openclaw:
     emoji: "🎯"
     homepage: https://github.com/samber/cc-skills

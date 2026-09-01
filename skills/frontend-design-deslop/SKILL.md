@@ -1,12 +1,12 @@
 ---
 name: frontend-design-deslop
-description: Produce distinctive, non-generic UI and design applications well, working strategy-first. Identify the project (landing page, SaaS app, dashboard, ecommerce, presentation, docs, portfolio...) and its positioning and personality, commit to brand adjectives, translate into a typography and color system, then apply the craft layer (layout, components and states, motion, iconography, imagery, dark mode and theming, accessibility), avoiding the AI-slop / Claude-esque default. This is both a de-slop and an expert app-design skill. Use this whenever building or styling any web frontend, app, dashboard, landing page, deck, or artifact, or when the user says "make it not look like AI", "de-slopify", "deslop", "less generic", "give it character", "design a UI for X", "design an app", "update DESIGN.md", or complains the output looks like every other AI site. Trigger even when the user just says "build a UI for X" without naming an aesthetic, because the default without this skill is slop.
+description: Designs distinctive, non-generic UI — typography, OKLCH color, design tokens (DESIGN.md), layout, components, motion, dark mode, accessibility — for landing pages, SaaS apps, dashboards, ecommerce, decks, docs, portfolios, avoiding the AI-slop / Claude-esque default look. Use whenever building or styling any web frontend, app, dashboard, landing page, deck, or artifact, or when the user says "make it not look like AI", "de-slopify", "deslop", "less generic", "give it character", "design a UI for X", "design an app", "update DESIGN.md", or complains the output looks like every other AI site. Trigger even on a bare "build a UI for X" with no aesthetic named. Not for writing marketing copy.
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
-  version: "1.2.0"
+  version: "1.2.1"
   openclaw:
     emoji: "🎨"
     homepage: https://github.com/samber/cc-skills

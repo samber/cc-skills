@@ -1,12 +1,12 @@
 ---
 name: press-release-writer
-description: "Write professional press releases for any occasion, media type, and country. Use when the user wants to write, draft, or improve a press release, communiqué de presse, media announcement, news release, or PR statement — including product launches, funding rounds, partnerships, crisis communications, earnings, executive hires, events, M&A, open source milestones, and media advisories. Covers all release types, media targets (print, digital/wire, broadcast, social/SMPR, trade press), and region-specific conventions (Western/Eastern Europe, Americas, Middle East, Africa, Asia, Oceania). Also trigger when the user says 'I need to announce something' or 'how do I tell the press about X.'"
+description: "Write professional press releases for any occasion, media type, and region. Use when the user wants to write, draft, or improve a press release, communiqué de presse, media announcement, or news release — including product launches, funding rounds, partnerships, crisis communications, executive hires, events, M&A, and open source milestones. Covers media targets (print, digital/wire, broadcast, social/SMPR, trade press) and region-specific conventions worldwide. Also trigger on 'I need to announce something' or 'how do I tell the press about X'. Do NOT use for blog posts or technical articles — use samber/cc-skills@technical-article-writer instead; for newsletter issues, use samber/cc-skills@substack-ghostwriting."
 user-invocable: true
 license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.0.2"
+  version: "1.0.3"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills
