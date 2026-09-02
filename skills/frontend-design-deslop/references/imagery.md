@@ -1,6 +1,14 @@
 # Imagery, illustration, and graphic devices
 
-Imagery is where AI-generated UI most loudly announces itself: stock people pointing at laptops, glossy isometric tech illustrations, gradient blobs and floating orbs, corporate-Memphis figures, default Midjourney renders. Imagery is also where a committed direction differentiates fastest, because almost no one art-directs it. Treat imagery as a system with rules, the same as type and color. Named brands are inspiration to transpose one move from, never to copy.
+Imagery is where AI-generated UI most loudly announces itself:
+
+- Stock people pointing at laptops
+- Glossy isometric tech illustrations
+- Gradient blobs and floating orbs
+- Corporate-Memphis figures
+- Default Midjourney renders
+
+Imagery is also where a committed direction differentiates fastest, because almost no one art-directs it. Treat imagery as a system with rules, the same as type and color. Named brands are inspiration to transpose one move from, never to copy.
 
 ## Contents
 
@@ -17,19 +25,38 @@ Imagery is where AI-generated UI most loudly announces itself: stock people poin
 
 ## 1. Art direction as a layer
 
-Art direction is the strategic layer above graphic design: it decides the single visual point of view (lighting, composition, color grading, subject treatment, environment, pacing) so that different people produce work that feels like one mind made it. Graphic design executes; art direction decides. Build an imagery direction during the system phase, with reference images and do/don't pairs, not as a last-minute search for a hero picture. For motion imagery, art direction also governs rhythm, transition, and pacing.
+Art direction is the strategic layer above graphic design: it decides the single visual point of view (lighting, composition, color grading, subject treatment, environment, pacing) so that different people produce work that feels like one mind made it. Graphic design executes; art direction decides.
+
+Build an imagery direction during the system phase, with reference images and do/don't pairs, not as a last-minute search for a hero picture. For motion imagery, art direction also governs rhythm, transition, and pacing.
 
 ## 2. Photography direction
 
-A photography direction specifies, in words and references: lighting (hard vs soft, direction, warmth), composition (tight vs environmental, rule-of-thirds vs centered, negative space), color treatment (graded to the brand palette, duotone, desaturated, high-contrast), subject treatment (candid vs posed, people vs product vs abstract, how people are framed), and post-processing (grain, overlay, crop ratios). The test: two photos from different shoots should look like the same brand. Always regrade stock or third-party photography toward the brand palette so it does not read as bought. When imagery sits behind text, guarantee contrast with an overlay or by lowering the image contrast, never by hoping.
+A photography direction specifies, in words and references:
+
+- **Lighting** — hard vs soft, direction, warmth
+- **Composition** — tight vs environmental, rule-of-thirds vs centered, negative space
+- **Color treatment** — graded to the brand palette, duotone, desaturated, high-contrast
+- **Subject treatment** — candid vs posed, people vs product vs abstract, how people are framed
+- **Post-processing** — grain, overlay, crop ratios
+
+The test: two photos from different shoots should look like the same brand. Always regrade stock or third-party photography toward the brand palette so it does not read as bought. When imagery sits behind text, guarantee contrast with an overlay or by lowering the image contrast, never by hoping.
 
 ## 3. The AI and stock image fingerprint
 
-AI-generated images carry recognizable tells: too-perfect lighting, plastic or over-manicured skin, slightly wrong hand and finger proportions, indecipherable background text, implausible reflections and details, and an overall averageness because the model outputs the statistical mean of visual culture. Stock-photo clichés are their own slop: people pointing at laptops, the generic diverse team in an open-plan office, handshakes, glossy isometric server-and-cloud illustrations, abstract 3D gradient blobs and floating orbs. All of these read as filler that any competitor could have used. If imagery could belong to any brand in the category, it is slop.
+AI-generated images carry recognizable tells:
+
+- Too-perfect lighting, plastic or over-manicured skin
+- Slightly wrong hand and finger proportions
+- Indecipherable background text, implausible reflections and details
+- An overall averageness, because the model outputs the statistical mean of visual culture
+
+Stock-photo clichés are their own slop: people pointing at laptops, the generic diverse team in an open-plan office, handshakes, glossy isometric server-and-cloud illustrations, abstract 3D gradient blobs and floating orbs. All of these read as filler that any competitor could have used. If imagery could belong to any brand in the category, it is slop.
 
 ## 4. Real product imagery beats stock
 
-For software, the strongest hero is the product itself: a real, well-composed interface screenshot or a short product demo, not stock or abstract decoration. The best current SaaS sites lead with real product visuals and let the interface carry the credibility. Custom imagery that explains (how data flows, how pieces connect, what the product actually does) beats decorative imagery that fills space. When you cannot show the product, commission illustration with a point of view rather than reaching for a 3D blob.
+For software, the strongest hero is the product itself: a real, well-composed interface screenshot or a short product demo, not stock or abstract decoration. The best current SaaS sites lead with real product visuals and let the interface carry the credibility.
+
+Custom imagery that explains — how data flows, how pieces connect, what the product actually does — beats decorative imagery that fills space. When you cannot show the product, commission illustration with a point of view rather than reaching for a 3D blob.
 
 ## 5. Illustration systems
 
@@ -44,7 +71,13 @@ An illustration system defines a repeatable style so commissioned or generated a
 
 ## 7. Graphic devices and texture
 
-Graphic devices are the non-photographic, non-illustrative marks that carry identity: a structural grid or dot pattern, noise and grain, halftone, ASCII, generative or p5.js fields, custom SVG patterns. They are also the main antidote to flat-slop, which is partly a texture problem. Grain over a flat color or gradient adds depth and a tactile, intentional feel (SVG `feTurbulence` plus a contrast/brightness filter, or a noise PNG overlay at low opacity). A faint background grid or dot field (popularized by developer-tool sites) implies structure; note it is now widely copied, so use it as one element of a larger system rather than the whole identity. A repeated motif (a specific shape, a halftone, a generative pattern with a per-page seed) used consistently becomes ownable. Texture and a signature device are often a faster route off the flat AI default than any color or type change.
+Graphic devices are the non-photographic, non-illustrative marks that carry identity — a structural grid or dot pattern, noise and grain, halftone, ASCII, generative or p5.js fields, custom SVG patterns. They are also the main antidote to flat-slop, which is partly a texture problem.
+
+- **Grain** — over a flat color or gradient, adds depth and a tactile, intentional feel (SVG `feTurbulence` plus a contrast/brightness filter, or a noise PNG overlay at low opacity)
+- **Background grid or dot field** — implies structure, but is now popularized by developer-tool sites and widely copied; use it as one element of a larger system, not the whole identity
+- **Repeated motif** — a specific shape, a halftone, a generative pattern with a per-page seed, used consistently, becomes ownable
+
+Texture and a signature device are often a faster route off the flat AI default than any color or type change.
 
 ## 8. Specifying imagery in the design system
 

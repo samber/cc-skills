@@ -1,6 +1,11 @@
 # Catalogs: components and inspiration
 
-Once the direction is committed (artifact type, adjectives, aesthetic, type and color system, signature move) and before or during building, scan these catalogs for concrete ideas and ready implementations. They are accelerators, not the design. Two cautions hold throughout. First, transpose, never adopt wholesale: pull a layout idea, an interaction, or a component implementation and refit it to the committed tokens, because several of these catalogs have a recognizable house style that is itself becoming a tell (animated-gradient hero blocks, beam/spotlight borders, the same Aceternity/Magic flourishes everywhere). Run anything you borrow through `references/slop-checklist.md`. Second, check the license before shipping: some are MIT copy-paste, some are free plus paid tiers, some are community registries with mixed licenses, and some are paid.
+Once the direction is committed (artifact type, adjectives, aesthetic, type and color system, signature move) and before or during building, scan these catalogs for concrete ideas and ready implementations. They are accelerators, not the design.
+
+Two cautions hold throughout:
+
+1. **Transpose, never adopt wholesale** — pull a layout idea, an interaction, or a component implementation and refit it to the committed tokens, because several of these catalogs have a recognizable house style that is itself becoming a tell (animated-gradient hero blocks, beam/spotlight borders, the same Aceternity/Magic flourishes everywhere). Run anything you borrow through `references/slop-checklist.md`.
+2. **Check the license before shipping** — some are MIT copy-paste, some are free plus paid tiers, some are community registries with mixed licenses, and some are paid.
 
 ## Component catalogs (implementation and patterns)
 

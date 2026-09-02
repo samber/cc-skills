@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
-  version: "1.2.1"
+  version: "1.2.2"
   openclaw:
     emoji: "🎨"
     homepage: https://github.com/samber/cc-skills
@@ -17,19 +17,37 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebSearch WebFetc
 
 # frontend design deslop
 
-AI-generated UI looks generic for two reasons. First, with no constraints the model samples the statistical median of 2019-2024 web code, which is Tailwind UI's `bg-indigo-500`, Inter, rounded cards, and soft shadows. You cannot out-prompt a vacuum. Second, and deeper: designing before you know what you are designing. A corporate landing page, a creative portfolio, a developer-tool landing page, an analytics dashboard, and an ecommerce product page share almost no design DNA. A beautiful aesthetic that fights the artifact's job is its own slop.
+AI-generated UI looks generic for two reasons:
 
-The fix is a discipline borrowed from brand design: strategy drives design. Commit to words first (what this is, who it serves, the adjectives it must feel like), then translate those words into a typography and color system, then build from tokens, then apply the craft layer (layout, components, motion, iconography, imagery, dark mode, accessibility), then audit. Never pick aesthetics first. Target the convergence mechanism, not a frozen blocklist; the slop fingerprint shifts over time (purple gradients in 2022, cream backgrounds and italic-serif heroes in 2026).
+1. **No constraints.** The model samples the statistical median of 2019-2024 web code — Tailwind UI's `bg-indigo-500`, Inter, rounded cards, soft shadows. You cannot out-prompt a vacuum.
+2. **Designing before knowing what you're designing.** A corporate landing page, a creative portfolio, a developer-tool landing page, an analytics dashboard, and an ecommerce product page share almost no design DNA — a beautiful aesthetic that fights the artifact's job is its own slop.
+
+The fix is a discipline borrowed from brand design: strategy drives design, never aesthetics first.
+
+1. Commit to words first — what this is, who it serves, the adjectives it must feel like.
+2. Translate those words into a typography and color system.
+3. Build from tokens.
+4. Apply the craft layer (layout, components, motion, iconography, imagery, dark mode, accessibility).
+5. Audit.
+
+Target the convergence mechanism, not a frozen blocklist; the slop fingerprint shifts over time (purple gradients in 2022, cream backgrounds and italic-serif heroes in 2026).
 
 This skill does two jobs at once: it de-slops the default AI look, and it designs applications well. A distinctive theme on top of careless components, weak layout, or thoughtless motion still reads as amateur. The mechanisms behind every choice live in `references/design-theory.md` (hierarchy, Gestalt, CRAP, signal-vs-noise, affordances, the interaction laws); read it once so the rest is reasoning rather than rule-following.
 
 ## Asking questions (CRITICAL)
 
-Every single user question must go through the question tool (see the **Questions:** directive above) — never as plain-text prose. Discipline on top: batch related questions, offer 2 to 4 concrete options each, and ask only the high-signal subset that changes the design system. Infer from context first and confirm inferences rather than re-asking. The bank is generous; the asking is selective. Do not interrogate.
+Every single user question must go through the question tool (see the **Questions:** directive above) — never as plain-text prose. The bank is generous; the asking is selective. Do not interrogate.
+
+- Batch related questions; offer 2 to 4 concrete options each.
+- Ask only the high-signal subset that changes the design system.
+- Infer from context first and confirm inferences rather than re-asking.
 
 ## Phase 0: Discover and commit to words (do this FIRST, before any code)
 
-First, check for an existing `DESIGN.md` at the project root (and common locations like `docs/`). If one exists, read it, honor its tokens, skip the questions it already answers, and extend it rather than starting over. If none exists, resolve three things before any pixel. Read `references/discovery.md` for the full protocol, question bank, and the personality-to-token translation table, and `references/artifact-types.md` for per-type priorities.
+Check for an existing `DESIGN.md` at the project root (and common locations like `docs/`) before writing any code.
+
+- **Exists** — read it, honor its tokens, skip the questions it already answers, and extend it rather than starting over.
+- **Missing** — resolve three things below before any pixel. Read `references/discovery.md` for the full protocol, question bank, and the personality-to-token translation table, and `references/artifact-types.md` for per-type priorities.
 
 1. **WHAT is the artifact?** Classify it: marketing/landing page, pricing page, SaaS application, dashboard/data tool, ecommerce, marketplace, mobile app, AI/conversational interface, email/newsletter, blog/editorial publication, onboarding/auth flow, settings/admin/CMS, presentation/deck, docs/API reference, portfolio/brand site, or one of the long-tail types in `references/artifact-types.md`. Each optimizes for a different thing and has its own layout grammar and density. A composite artifact (a marketing site with an embedded app, an AI chat inside a SaaS app) is designed region by region.
 2. **WHO and WHY?** Audience, positioning (corporate vs creative vs technical vs luxury vs playful), and the single primary action or outcome.
@@ -55,7 +73,9 @@ State these commitments in prose, briefly. Each must follow from Phase 0, not fr
 
 ## Phase 2: Apply the system to the interface (the craft layer)
 
-Tokens make a UI consistent; the craft layer makes it good. This is the "design an application" half of the skill and the half most AI output skips. Apply each of the following to the artifact, pulling the matching reference on demand. Density and emphasis vary by artifact type (see `references/artifact-types.md`); a dashboard applies these very differently from a landing page.
+Tokens make a UI consistent; the craft layer makes it good — this is the "design an application" half of the skill, and the half most AI output skips.
+
+Apply each of the following to the artifact, pulling the matching reference on demand. Density and emphasis vary by artifact type (see `references/artifact-types.md`); a dashboard applies these very differently from a landing page.
 
 1. **Layout and composition.** Compose space with intent: a base spacing unit, spacing that is tight within groups and generous between sections, an intentional grid (12-column, modular, or bento where content genuinely varies), at least one brief-specific layout move, and whitespace as a signal of confidence. Break the centered-max-width-column reflex. See `references/layout.md`.
 
@@ -75,7 +95,17 @@ At the end of conception, once the direction and craft decisions are locked, sug
 
 ## Phase 3: Write DESIGN.md (the durable output)
 
-Everything this skill produces lives in a single `DESIGN.md` at the project root: the discovery context, the committed aesthetic and signature move, the typography and color systems, the tokens, the spacing/radius/shadow rules, the craft-layer decisions (layout, components, motion, iconography, imagery, dark mode, accessibility), and the slop-audit result. Write or update it before or alongside building components, using the schema in `references/design-md.md`. DESIGN.md is the single source of truth; the CSS, the adapter, and the components are projections of it. If they ever drift, DESIGN.md wins. On later sessions, Phase 0 reads this file instead of re-running discovery.
+Everything this skill produces lives in a single `DESIGN.md` at the project root:
+
+- Discovery context
+- Committed aesthetic and signature move
+- Typography and color systems
+- Tokens
+- Spacing/radius/shadow rules
+- Craft-layer decisions (layout, components, motion, iconography, imagery, dark mode, accessibility)
+- Slop-audit result
+
+Write or update it before or alongside building components, using the schema in `references/design-md.md`. DESIGN.md is the single source of truth — if the CSS, the adapter, or the components ever drift from it, DESIGN.md wins. On later sessions, Phase 0 reads this file instead of re-running discovery.
 
 ## Token-first generation rules
 
@@ -93,7 +123,16 @@ Craft-layer NEVERs: do not ship components with only a resting state; do not use
 
 ## Self-audit before finishing
 
-Run the generated UI against `references/slop-checklist.md` and score it. Verify it serves the artifact type's priorities from `references/artifact-types.md` (a dashboard that reads as a portfolio piece, or a landing page with no clear primary action, has failed even if it is beautiful), and that the type and color choices match the committed adjectives. Verify the craft layer: components have full state matrices, layout has rhythm and an intentional move, motion is communicative and respects reduced-motion, icons are one coherent system, imagery is not stock/AI slop, and dark mode (if present) is designed not inverted. Run the accessibility gate in `references/accessibility.md` (focus, keyboard, contrast, targets, color independence); accessibility is a pass/fail gate, not a nicety. A tell-by-tell checklist pass alone can score clean on output that is still generic; also re-read the DESIGN.md aesthetic commitment against the actual render as if seeing it for the first time, and do the bare-structure check in `references/divergence.md` §6-7. If any tell fires or the fit is wrong, regenerate that section before presenting. Record the result in the DESIGN.md slop-audit section and bump its changelog. State the artifact type, positioning, adjectives, aesthetic, type system, palette, and signature move used. All checklist items are detectable within a single build; do not invent cross-generation rules the model cannot verify. A subset needs the rendered page rather than just source (see `references/slop-checklist.md`'s "Layout defects" and "Build correctness" sections) — run those whenever a screenshot or live browser is available.
+Run the generated UI against `references/slop-checklist.md` and score it.
+
+1. Verify it serves the artifact type's priorities from `references/artifact-types.md` — a dashboard that reads as a portfolio piece, or a landing page with no clear primary action, has failed even if it is beautiful — and that the type and color choices match the committed adjectives.
+2. Verify the craft layer: components have full state matrices, layout has rhythm and an intentional move, motion is communicative and respects reduced-motion, icons are one coherent system, imagery is not stock/AI slop, and dark mode (if present) is designed not inverted.
+3. Run the accessibility gate in `references/accessibility.md` (focus, keyboard, contrast, targets, color independence); accessibility is a pass/fail gate, not a nicety.
+4. Re-read the DESIGN.md aesthetic commitment against the actual render as if seeing it for the first time, and do the bare-structure check in `references/divergence.md` §6-7 — a tell-by-tell checklist pass alone can score clean on output that is still generic.
+5. If any tell fires or the fit is wrong, regenerate that section before presenting.
+6. Record the result in the DESIGN.md slop-audit section and bump its changelog, stating the artifact type, positioning, adjectives, aesthetic, type system, palette, and signature move used.
+
+All checklist items are detectable within a single build; do not invent cross-generation rules the model cannot verify. A subset needs the rendered page rather than just source (see `references/slop-checklist.md`'s "Layout defects" and "Build correctness" sections) — run those whenever a screenshot or live browser is available.
 
 ## Reference files
 

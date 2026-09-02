@@ -1,8 +1,16 @@
 # Typography strategy
 
-Type is voice made visible. Every typeface carries personality, every hierarchy guides attention, every spacing decision affects comprehension. The goal is not a beautiful font but the right one: the one that serves the message and the reader. Start from brand personality (the adjectives locked in discovery), then translate to typographic form. Never the reverse.
+Type is voice made visible. Every typeface carries personality, every hierarchy guides attention, every spacing decision affects comprehension. The goal is not a beautiful font but the right one: the one that serves the message and the reader.
 
-Anchoring quotes: "Typography exists to honor content" (Bringhurst). "Typography and design should enhance communication, not just look attractive" (Spiekermann). "If you have fewer choices, it often makes your life easier" (Spiekermann). The frameworks below draw on Bringhurst (proportion, rhythm, harmony), Ellen Lupton (Letter, Text, Grid), Spiekermann (type serving communication), and Paula Scher and Matthew Carter (bold identities, screen-legible type).
+Start from brand personality (the adjectives locked in discovery), then translate to typographic form. Never the reverse.
+
+Anchoring quotes:
+
+- "Typography exists to honor content" (Bringhurst)
+- "Typography and design should enhance communication, not just look attractive" (Spiekermann)
+- "If you have fewer choices, it often makes your life easier" (Spiekermann)
+
+The frameworks below draw on Bringhurst (proportion, rhythm, harmony), Ellen Lupton (Letter, Text, Grid), Spiekermann (type serving communication), and Paula Scher and Matthew Carter (bold identities, screen-legible type).
 
 ## Contents
 
@@ -54,7 +62,9 @@ Match the class to the committed adjectives.
 
 ## 3. Serif vs sans decision
 
-Choose serif when the brand leans artisanal, authoritative, or editorial; long-form print or reading leads; you want tradition, trust, premium positioning; the audience expects established credibility (boutique hotels, legal, investment, craft, heritage). Choose sans when 70 percent or more of touchpoints are digital UI; quick legibility is paramount; you want modernity, accessibility, innovation (tech, startups, digital products, contemporary retail, healthcare). High-resolution displays have largely closed the screen legibility gap, so the specific typeface and context matter more than the class alone. A serif display over a sans body (or the reverse) is a reliable de-slop move because it breaks the sans-everything default.
+Choose serif when the brand leans artisanal, authoritative, or editorial; long-form print or reading leads; you want tradition, trust, premium positioning; the audience expects established credibility (boutique hotels, legal, investment, craft, heritage). Choose sans when 70 percent or more of touchpoints are digital UI; quick legibility is paramount; you want modernity, accessibility, innovation (tech, startups, digital products, contemporary retail, healthcare).
+
+High-resolution displays have largely closed the screen legibility gap, so the specific typeface and context matter more than the class alone. A serif display over a sans body (or the reverse) is a reliable de-slop move because it breaks the sans-everything default.
 
 ## 4. Typeface evaluation criteria
 
@@ -203,7 +213,14 @@ font-family:
 
 ## 16. Print vs digital
 
-Resolution 300dpi vs 72 to 100ppi. Body 10 to 12pt print vs 15 to 25px digital. Print allows any font; digital is limited by availability and licensing. Print renders consistently; screens vary by device. For cross-channel work, choose faces designed for both, test in both, consider superfamilies, ensure licensing covers all uses, and document per-medium size adjustments.
+Print vs digital facts:
+
+- Resolution: 300dpi vs 72 to 100ppi
+- Body: 10 to 12pt print vs 15 to 25px digital
+- Print allows any font; digital is limited by availability and licensing
+- Print renders consistently; screens vary by device
+
+For cross-channel work, choose faces designed for both, test in both, consider superfamilies, ensure licensing covers all uses, and document per-medium size adjustments.
 
 ## 17. Font licensing
 
@@ -211,7 +228,10 @@ License types: Desktop (users/devices), Web (page views, domains), App (download
 
 ## 18. Anti-slop sourcing and ban-list
 
-The de-slop constraint sits on top of all the strategy above. Some technically excellent fonts are slop tells purely because of ubiquity in AI output and starter templates. Ban as the PRIMARY/display face: Inter, Roboto, Arial, Open Sans, Lato, Montserrat, Poppins, system-ui. These are good fonts; their problem is that they are the statistical median. Inter is acceptable only as a body/fallback when nothing else fits, never as the brand voice. Use only with clear intent (now themselves tells): Space Grotesk, Geist, Instrument Serif.
+The de-slop constraint sits on top of all the strategy above. Some technically excellent fonts are slop tells purely because of ubiquity in AI output and starter templates.
+
+- **Ban as the PRIMARY/display face**: Inter, Roboto, Arial, Open Sans, Lato, Montserrat, Poppins, system-ui — these are good fonts, but their problem is that they are the statistical median. Inter is acceptable only as a body/fallback when nothing else fits, never as the brand voice.
+- **Use only with clear intent** (now themselves tells): Space Grotesk, Geist, Instrument Serif.
 
 ## 19. Recommended distinctive fonts
 

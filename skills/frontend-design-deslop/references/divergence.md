@@ -15,27 +15,39 @@ Everything else in this skill describes _what_ slop looks like. This file descri
 
 ## 1. The core finding: it's variance, not creativity
 
-Asking a model to "be creative," "think differently," or "avoid the obvious" through a dozen different framings (a pep talk, an impossible client, taste vocabulary, a world-building metaphor) still converges on the same concept almost every time. The model is not short on ideas; it is short on **variance between attempts**. Exhortation prose changes the wording of the answer, not the answer. Do not spend effort rephrasing "be original" — spend it on a mechanism that forces a different output.
+Asking a model to "be creative," "think differently," or "avoid the obvious" through a dozen different framings (a pep talk, an impossible client, taste vocabulary, a world-building metaphor) still converges on the same concept almost every time. The model is not short on ideas; it is short on **variance between attempts**.
+
+Exhortation prose changes the wording of the answer, not the answer. Do not spend effort rephrasing "be original" — spend it on a mechanism that forces a different output.
 
 ## 2. Rejection advances a queue, it does not generate
 
-"Write your first three ideas, discard them unseen, build the fourth" reliably escapes the model's single most-probable concept — but it lands on its _second_ most-probable one, every time. A model's concept prior for a given brief is roughly two ideas deep. Telling it to avoid something produces the runner-up rut, not fresh thinking. Use rejection to escape idea #1, not as a general-purpose creativity instruction, and do not expect a second round of rejection to keep paying off the same way.
+"Write your first three ideas, discard them unseen, build the fourth" reliably escapes the model's single most-probable concept — but it lands on its _second_ most-probable one, every time. A model's concept prior for a given brief is roughly two ideas deep, so telling it to avoid something produces the runner-up rut, not fresh thinking.
+
+Use rejection to escape idea #1, not as a general-purpose creativity instruction, and do not expect a second round of rejection to keep paying off the same way.
 
 ## 3. A model cannot pick its own diverse output
 
-Forcing a real derivation procedure — seven candidate directions, each with a written rationale, genuinely different from each other — works: the _list_ is diverse. Then asking the model to pick "the most resonant one" from its own list collapses back to the same winner every run. Diversity lives in generation and dies at selection, because one model scoring its own candidates is one deterministic function (argmax), regardless of how the prompt is worded. Handing the shortlist to a simulated persona, a veto rule, or "pick what a user would like" does not fix this — it still reverts to the model's own taste function most of the time.
+Forcing a real derivation procedure — seven candidate directions, each with a written rationale, genuinely different from each other — works: the _list_ is diverse. Then asking the model to pick "the most resonant one" from its own list collapses back to the same winner every run, because one model scoring its own candidates is one deterministic function (argmax), regardless of how the prompt is worded.
 
-**What works:** separate generation from selection. The model derives a grounded shortlist of candidate directions (with rationale for each, so the candidates are real, not decorative). Something outside the model's own judgment — a die roll, a fixed index, a coin flip — picks which one gets built. This is not about literal randomness; it is about removing the model's argmax from the selection step. If no external picker is available, a cheap proxy works: ask for the shortlist in one pass, then in a _fresh_ pass (no memory of ranking them) ask only "build candidate #3" with no discussion of the others.
+Diversity lives in generation and dies at selection. Handing the shortlist to a simulated persona, a veto rule, or "pick what a user would like" does not fix this — it still reverts to the model's own taste function most of the time.
+
+**What works:** separate generation from selection. The model derives a grounded shortlist of candidate directions (with rationale for each, so the candidates are real, not decorative). Something outside the model's own judgment — a die roll, a fixed index, a coin flip — picks which one gets built; this is not about literal randomness, it is about removing the model's argmax from the selection step.
+
+If no external picker is available, a cheap proxy works: ask for the shortlist in one pass, then in a _fresh_ pass (no memory of ranking them) ask only "build candidate #3" with no discussion of the others.
 
 ## 4. Ground borrowed forms in something specific, not a mood
 
 When deriving candidate directions, the depth of the list is bounded by how much cultural material the brief actually contains. A brief rooted in a specific, textured domain (a regional TV culture, a niche hobby, a historic print medium) yields a deep, specific candidate list. A generic brief (another SaaS dashboard, another admin panel) yields a shallow one — terminals and postmortems, again — no matter how hard the model tries.
 
-When the brief itself is thin, do not force the model to invent depth it does not have. Instead, deliberately borrow a **specific, produced graphic system** from outside the product's own domain — a naturalist's field guide, a broadsheet sports section, a teletext service, a transit map — and adapt it. A world is a graphic system with real production history (palette, type, composition, a topology), never a vague material, mood, or place. "1950s Blue Note sleeve," not "record covers." Weigh a borrowed form on two axes before committing: does the audience recognize or identify with it, and does it make the product clearer, not just decorated.
+When the brief itself is thin, do not force the model to invent depth it does not have. Instead, deliberately borrow a **specific, produced graphic system** from outside the product's own domain — a naturalist's field guide, a broadsheet sports section, a teletext service, a transit map — and adapt it. A world is a graphic system with real production history (palette, type, composition, a topology), never a vague material, mood, or place: "1950s Blue Note sleeve," not "record covers."
+
+Weigh a borrowed form on two axes before committing: does the audience recognize or identify with it, and does it make the product clearer, not just decorated.
 
 ## 5. Commit fully before you soften — not the reverse
 
-An instinct to add an "anti-gimmick" guard — "if a visitor would notice the borrowed form before the product, reject it" — sounds responsible but is usually the actual ceiling on the work. A fully-committed borrowed form (a page built entirely as teletext, entirely as a terminal session) is _supposed_ to be noticed; that is what makes it memorable, and it still works because the underlying task stays easy to complete. Every hedge, caveat, and "keep it professional" instruction in a brief is a brake; every "commit," "go all the way," "own it" instruction is an accelerator. If the brakes outnumber the accelerators, the output lands timid, and timid reads as bland regardless of the underlying idea.
+An instinct to add an "anti-gimmick" guard — "if a visitor would notice the borrowed form before the product, reject it" — sounds responsible but is usually the actual ceiling on the work. A fully-committed borrowed form (a page built entirely as teletext, entirely as a terminal session) is _supposed_ to be noticed; that is what makes it memorable, and it still works because the underlying task stays easy to complete.
+
+Every hedge, caveat, and "keep it professional" instruction in a brief is a brake; every "commit," "go all the way," "own it" instruction is an accelerator. If the brakes outnumber the accelerators, the output lands timid, and timid reads as bland regardless of the underlying idea.
 
 **Sequence matters more than the words used.** Land the concept fully committed first — that is the hard, high-variance part. Only in a later pass check legibility, restraint, and whether it still serves the artifact's job (see `references/artifact-types.md`). Committing-then-clarifying consistently outperforms clarifying-while-committing; asking for both at once produces neither.
 

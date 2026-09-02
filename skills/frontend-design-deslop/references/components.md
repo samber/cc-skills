@@ -1,6 +1,8 @@
 # Component and interaction craft
 
-This is the "expert at designing an application" layer: the part most AI output skips. A beautiful theme on top of careless components still reads as amateur. Components are judged by their states and their behavior under real conditions (loading, empty, error, dense data), not by their resting appearance. The discipline below draws on Refactoring UI (Wathan and Schoger), Rauno Freiberg's interface guidelines, Nielsen Norman Group, and the patterns codified by Apple HIG, Material Design 3, IBM Carbon, Atlassian, Shopify Polaris, and GitHub Primer. Mine those systems for any component not covered here.
+This is the "expert at designing an application" layer: the part most AI output skips. A beautiful theme on top of careless components still reads as amateur. Components are judged by their states and their behavior under real conditions (loading, empty, error, dense data), not by their resting appearance.
+
+The discipline below draws on Refactoring UI (Wathan and Schoger), Rauno Freiberg's interface guidelines, Nielsen Norman Group, and the patterns codified by Apple HIG, Material Design 3, IBM Carbon, Atlassian, Shopify Polaris, and GitHub Primer. Mine those systems for any component not covered here.
 
 ## Contents
 
@@ -18,11 +20,28 @@ This is the "expert at designing an application" layer: the part most AI output 
 
 ## 1. The universal state matrix
 
-Every interactive component needs every state specified, not just its default. The matrix: default, hover, active/pressed, focus (keyboard-visible), disabled, loading, error, and where relevant selected and read-only. Two rules prevent the most common defects. First, font weight must not change between states (regular to bold on hover or selected) because it shifts layout; change color, background, or a border instead, or reserve space for the bold weight. Second, use box-shadow for focus rings, not outline, so the ring follows border-radius (older Safari ignored radius on outline). Specify the matrix once per component and reuse it.
+Every interactive component needs every state specified, not just its default. The matrix: default, hover, active/pressed, focus (keyboard-visible), disabled, loading, error, and where relevant selected and read-only.
+
+Two rules prevent the most common defects:
+
+1. **Font weight must not change between states** (regular to bold on hover or selected) — it shifts layout; change color, background, or a border instead, or reserve space for the bold weight.
+2. **Use box-shadow for focus rings, not outline** — so the ring follows border-radius (older Safari ignored radius on outline).
+
+Specify the matrix once per component and reuse it.
 
 ## 2. Buttons
 
-Hierarchy by importance, not by semantic color. One primary action per view (solid, highest contrast), secondary actions (outlined or low-contrast fill), tertiary actions (styled like text or links). Do not paint every button with its meaning (green save, blue edit, red delete); that destroys hierarchy. Destructive actions get the loud red treatment only when destruction is the primary action of that surface, such as the confirm button inside a delete dialog; elsewhere a delete is a quiet tertiary action. Always: a hover state, an active/pressed state (a subtle scale to 0.97 or a darkened fill reads as physical), a keyboard focus ring, and a disabled state. Async buttons need a loading state and should disable on submit to prevent duplicate network requests. Size by context: comfortable touch targets (at least 44px tall) on mobile and primary CTAs, tighter in dense toolbars. Label with a verb describing the outcome ("Create project", not "Submit").
+Hierarchy by importance, not by semantic color:
+
+- **One primary action per view** — solid, highest contrast
+- **Secondary actions** — outlined or low-contrast fill
+- **Tertiary actions** — styled like text or links
+
+Do not paint every button with its meaning (green save, blue edit, red delete); that destroys hierarchy. Destructive actions get the loud red treatment only when destruction is the primary action of that surface, such as the confirm button inside a delete dialog; elsewhere a delete is a quiet tertiary action.
+
+Always specify: a hover state, an active/pressed state (a subtle scale to 0.97 or a darkened fill reads as physical), a keyboard focus ring, and a disabled state. Async buttons need a loading state and should disable on submit to prevent duplicate network requests.
+
+Size by context: comfortable touch targets (at least 44px tall) on mobile and primary CTAs, tighter in dense toolbars. Label with a verb describing the outcome ("Create project", not "Submit").
 
 ## 3. Forms and inputs
 
@@ -48,15 +67,25 @@ Forms are where craft is most visible and most often missing.
 
 ## 5. Navigation and command surfaces
 
-Choose sidebar vs topbar by information architecture depth: sidebar for many sections and nested areas, topbar for shallow IA and marketing. Breadcrumbs for deep hierarchies. For power-user products, a command palette (the cmd-K pattern) is the fastest navigation and action surface; the cmdk library by Paco Coursey is the de facto React implementation. Make the current location obvious (one accent on the active item, never weight change). Dropdown and menu triggers can open on mousedown rather than click for perceived immediacy. For nested menus, use a prediction cone (a triangular safe zone toward the submenu) so the pointer can travel diagonally without the submenu closing.
+Choose sidebar vs topbar by information architecture depth: sidebar for many sections and nested areas, topbar for shallow IA and marketing. Breadcrumbs for deep hierarchies. For power-user products, a command palette (the cmd-K pattern) is the fastest navigation and action surface; the cmdk library by Paco Coursey is the de facto React implementation.
+
+Make the current location obvious (one accent on the active item, never weight change). Dropdown and menu triggers can open on mousedown rather than click for perceived immediacy. For nested menus, use a prediction cone (a triangular safe zone toward the submenu) so the pointer can travel diagonally without the submenu closing.
 
 ## 6. Overlays: modals, dialogs, sheets, drawers, popovers
 
-Use the lightest overlay that fits: a popover for a small contextual choice, a sheet or drawer for a focused subtask, a modal dialog only for a decision that must block the flow. Requirements: trap focus inside while open, return focus to the trigger on close, close on Escape, close on backdrop click for non-destructive dialogs, and scale or slide from a sensible origin (a popover scales from its trigger via a transform-origin variable, not from center; a sheet slides from the edge). Drawers should resist accidental dismissal (a short delay or velocity threshold before drag-to-dismiss fires). Keep modals shallow; a modal that opens another modal is a flow smell.
+Use the lightest overlay that fits: a popover for a small contextual choice, a sheet or drawer for a focused subtask, a modal dialog only for a decision that must block the flow. Requirements:
+
+- Trap focus inside while open; return focus to the trigger on close
+- Close on Escape; close on backdrop click for non-destructive dialogs
+- Scale or slide from a sensible origin (a popover scales from its trigger via a transform-origin variable, not from center; a sheet slides from the edge)
+
+Drawers should resist accidental dismissal (a short delay or velocity threshold before drag-to-dismiss fires). Keep modals shallow; a modal that opens another modal is a flow smell.
 
 ## 7. Feedback: toasts, inline validation, optimistic updates
 
-Give feedback where the action happened. A copy-to-clipboard button shows an inline checkmark on itself, not a toast across the screen. Toasts are for background or cross-surface events (saved, synced, failed), are brief, stack sanely, and never carry the only copy of an error the user must act on. Prefer optimistic updates for local actions: apply the change immediately, then reconcile with the server and roll back visibly with an explanation if it fails. Server-side gate redirects (auth) before the client renders so the user never sees a flash of the wrong screen.
+Give feedback where the action happened. A copy-to-clipboard button shows an inline checkmark on itself, not a toast across the screen. Toasts are for background or cross-surface events (saved, synced, failed), are brief, stack sanely, and never carry the only copy of an error the user must act on.
+
+Prefer optimistic updates for local actions: apply the change immediately, then reconcile with the server and roll back visibly with an explanation if it fails. Server-side gate redirects (auth) before the client renders so the user never sees a flash of the wrong screen.
 
 ## 8. Empty, loading, and error states
 

@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents. Optional internet access for category research and external style guide lookups.
 metadata:
   author: samber
-  version: "1.2.1"
+  version: "1.2.2"
   openclaw:
     emoji: "📝"
     homepage: https://github.com/samber/cc-skills
@@ -15,7 +15,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 
 **Persona:** You are a prose engineer. Prose is reproducible craft, not art — codify lexicon, syntax, rhythm, structure, and voice markers so any writer (human, ghostwriter, or AI) can hit the same fingerprint.
 
-**Thinking mode:** Reason as thoroughly as possible for every BUILD and ADAPT invocation. Prose codification synthesizes multi-input artifacts (SOUL.md + TONE.md + corpus + interview), arbitrates conformity-vs-differentiation against category defaults, and projects rules onto multiple supports. Shallow reasoning produces generic guides that flatten into LLM-default register — the exact failure mode this skill exists to prevent. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
+**Thinking mode:** Reason as thoroughly as possible for every BUILD and ADAPT invocation — prose codification synthesizes multi-input artifacts (SOUL.md + TONE.md + corpus + interview), arbitrates conformity-vs-differentiation against category defaults, and projects rules onto multiple supports. Shallow reasoning produces generic guides that flatten into LLM-default register — the exact failure mode this skill exists to prevent. On Claude Code, use `ultrathink` to trigger extended thinking explicitly.
 
 **Modes:**
 
@@ -27,7 +27,7 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch WebSearc
 
 # Copywriting Prose
 
-Produces `PROSE.md`: a brand-specific prose guide that codifies _how_ a brand writes, independent of _what it feels like_. Prose is the observable craft a forensic linguist could measure on a page — sentence length, clause depth, lexicon, parallelism, signature moves. Tone is the emotional posture, handled separately. Two brands with identical tones can have non-interchangeable prose; that is what this guide captures.
+Produces `PROSE.md`: a brand-specific prose guide that codifies _how_ a brand writes, independent of _what it feels like_. Prose is the observable craft a forensic linguist could measure on a page — sentence length, clause depth, lexicon, parallelism, signature moves. Tone is the emotional posture, handled separately — two brands with identical tones can have non-interchangeable prose, which is what this guide captures.
 
 The slogan: **tone is the music, prose is the score.** This skill codifies the score.
 
@@ -256,6 +256,10 @@ A complete PROSE.md is 20–60 pages depending on category coverage and channel 
 
 ## Disclaimer
 
-This skill is not exhaustive. The 11 category playbooks compress a much larger landscape — refer to the brand's own corpus, the linked frameworks (Mailchimp, IBM Carbon, GOV.UK, Microsoft, Atlassian, Buffer), and canonical references (Ann Handley _Everybody Writes_, Joseph Williams _Style_, Roy Peter Clark _Writing Tools_, Margot Bloomstein _Trustworthy_) when the playbook does not cover the situation. For uncovered categories, invoke `samber/cc-skills@deep-research` and feed its output back into BUILD Phase 2. Prose guides decay; a PROSE.md not re-audited every 12 months is a snapshot, not a living document.
+This skill is not exhaustive.
+
+- The 11 category playbooks compress a much larger landscape — refer to the brand's own corpus, the linked frameworks (Mailchimp, IBM Carbon, GOV.UK, Microsoft, Atlassian, Buffer), and canonical references (Ann Handley _Everybody Writes_, Joseph Williams _Style_, Roy Peter Clark _Writing Tools_, Margot Bloomstein _Trustworthy_) when the playbook does not cover the situation.
+- For uncovered categories, invoke `samber/cc-skills@deep-research` and feed its output back into BUILD Phase 2.
+- Prose guides decay; a PROSE.md not re-audited every 12 months is a snapshot, not a living document.
 
 If you encounter a bug or unexpected behavior, open an issue at <https://github.com/samber/cc-skills/issues>.

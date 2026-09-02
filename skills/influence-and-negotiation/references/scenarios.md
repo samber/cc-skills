@@ -36,7 +36,9 @@ This shifts the conversation from your AE-level authority (limited) to your VP's
 
 ## Enterprise RFP + fiscal-year leverage
 
-**Context.** You're an AE on a $2M TCV deal with a 50,000-person enterprise. You're 1 of 3 vendors short-listed after a 4-month RFP. Procurement has just sent the "best and final" letter on the buyer's MSA template, with redlines that include uncapped liability, no-cause termination, and a 90-day exit clause that's effectively a free pilot. They want a response in 5 business days. Your CFO is breathing down your neck for a quarter-end close.
+**Context.** You're an AE on a $2M TCV deal with a 50,000-person enterprise. You're 1 of 3 vendors short-listed after a 4-month RFP.
+
+Procurement has just sent the "best and final" letter on the buyer's MSA template, with redlines that include uncapped liability, no-cause termination, and a 90-day exit clause that's effectively a free pilot. They want a response in 5 business days. Your CFO is breathing down your neck for a quarter-end close.
 
 **The trap.** Two parallel traps. (1) Sign the redlines because the deal is "too important to lose," eating uncapped liability your legal team would never approve in normal circumstances. (2) Use quarter-end internal pressure as your reason to discount, signalling to procurement that you'll fold under deadline pressure.
 
@@ -101,7 +103,9 @@ The calibrated question forces them to either show real precedents (which would 
 
 Multi-thread aggressively. Find the actual technical buyer who needs your product to ship a feature their CEO is asking about. Make them aware that the procurement terms are forcing you to walk away (they don't want that).
 
-**The walk-away lever.** Asymmetric power is asymmetric only if you cannot walk away. Once you can — once your mandate explicitly authorises _"no deal"_ on these terms — the dynamic flips. Procurement is not used to small vendors walking away with discipline. The principle from Phase 0 applies: the party more emotionally invested loses, including in asymmetric situations.
+**The walk-away lever.** Asymmetric power is asymmetric only if you cannot walk away. Once you can — once your mandate explicitly authorises _"no deal"_ on these terms — the dynamic flips.
+
+Procurement is not used to small vendors walking away with discipline. The principle from Phase 0 applies: the party more emotionally invested loses, including in asymmetric situations.
 
 > _"I appreciate the offer. We've worked through it carefully internally, and three of the four terms — SLA, MFN, and competitor lock-out — would constrain our business in ways we can't accept at this scale. We're happy to grant source-code escrow, and we'd love to find a structure that works. But if the four-term package is non-negotiable, we'd rather pass on this engagement and revisit when our relative scale changes. What would you like to do?"_
 
@@ -113,7 +117,9 @@ Multi-thread aggressively. Find the actual technical buyer who needs your produc
 
 ## Annual collective bargaining opening + strike de-escalation
 
-**Context.** You're the CHRO of a 1,200-person industrial site. Annual collective bargaining opens in two weeks. Sector wage growth has been 2.8% YoY; your company's net margin dropped from 4.1% to 2.6% over the last 18 months due to raw-material cost inflation. The CGT (largest French labour confederation) delegation is asking for 5% across-the-board plus a 13th month bonus and a structural reduction in overtime. The previous CHRO gave the team _"hold the line, give nothing"_ before annual collective bargaining last year, and an 8-day strike followed.
+**Context.** You're the CHRO of a 1,200-person industrial site. Annual collective bargaining opens in two weeks. Sector wage growth has been 2.8% YoY; your company's net margin dropped from 4.1% to 2.6% over the last 18 months due to raw-material cost inflation.
+
+The CGT (largest French labour confederation) delegation is asking for 5% across-the-board plus a 13th month bonus and a structural reduction in overtime. The previous CHRO gave the team _"hold the line, give nothing"_ before annual collective bargaining last year, and an 8-day strike followed.
 
 **The trap.** Two parallel traps. (1) Repeat the previous CHRO's error — give a fuzzy mandate ("hold the line, see what happens") and improvise live, which produces concession errors, escalation, or another strike. (2) Pre-concede on the headline number to avoid a strike, signalling weakness that union delegates will exploit on every secondary axis (comp-time days, telework, training budget).
 
@@ -149,7 +155,9 @@ If the delegates accept the SCO, you've shifted from positionnisme to coopetitio
 
 ## Salary ask: "envelope closed" + counter-offer
 
-**Context.** You're a senior staff engineer at a 600-person growth-stage SaaS company. You've been at $185k base for two years; market for your role is now $215k–$240k. You've taken on tech-lead scope on top of IC work. You raised the ask 3 weeks ago. Your manager just replied: _"I really value your impact. The envelope's closed for this cycle — let's revisit at the next review in 8 months."_ Two days later, a recruiter from a peer company makes a verbal offer at $235k base + $80k sign-on + meaningful equity refresh.
+**Context.** You're a senior staff engineer at a 600-person growth-stage SaaS company. You've been at $185k base for two years; market for your role is now $215k–$240k. You've taken on tech-lead scope on top of IC work.
+
+You raised the ask 3 weeks ago. Your manager just replied: _"I really value your impact. The envelope's closed for this cycle — let's revisit at the next review in 8 months."_ Two days later, a recruiter from a peer company makes a verbal offer at $235k base + $80k sign-on + meaningful equity refresh.
 
 **The trap.** Two parallel traps. (1) Accept the "next review" deferral and let 8 months pass without a structural commitment. (2) Use the external offer as a threat ("match this or I leave"), forcing your manager into reactive matching mode that may resolve the compensation gap but breaks the trust contract — which is half the reason most counter-offer-accepters leave within 12 months anyway.
 

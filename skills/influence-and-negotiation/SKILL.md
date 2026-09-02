@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "🤝"
     homepage: https://github.com/samber/cc-skills
@@ -206,11 +206,15 @@ Triage the pushback type by reading [references/objections.md#refusal-triage](re
 
 For the four root commercial objections (price, timing, authority, no-need) and cross-domain equivalents, see [references/objections.md#four-root](references/objections.md#the-four-root-commercial-objections).
 
-**No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case. The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbooks.md#jolt](references/playbooks.md#jolt--the-no-decision-protocol). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
+**No-decision diagnostic (JOLT).** When the counterparty is engaged but not converging — saying yes to capability and no to commitment, or the deal stalls late without a substantive new objection — treat it as a no-decision case, not a loss to a competitor or a "needs more time" case.
+
+The intervention is different: Judge / Offer / Limit / Take risk off — see [references/playbooks.md#jolt](references/playbooks.md#jolt--the-no-decision-protocol). 40–60% of pipeline that doesn't close is no-decision; classical urgency tactics make it worse. The same pattern applies in promotion conversations (manager agrees in principle but never schedules HR sign-off) and in M&A (boards agree on strategic fit but defer signature indefinitely).
 
 **Manipulation taxonomy.** When the counterparty's pushback fits a named manipulation pattern (bad faith, bluff, intimidation, punching-ball, faux pivot, feigned indifference, false cooperation, tactical silence, defeatism induction, closing manipulation), see [references/manipulation.md](references/manipulation.md) for detection and counter-protocols that don't escalate.
 
-**Wrap-up before any agreement.** Run a back-brief — see [references/tactics.md](references/tactics.md#back-brief-and-wrap-up). The counterparty reformulates each axis in their own words. This is your defence against selective memory, closing manipulation, and genuine misunderstanding. At signature (or at the end of a salary conversation), run the Negotiation Pipeline closing checklist — see [references/tactics.md](references/tactics.md#negotiation-pipeline--the-closing-checklist).
+**Wrap-up before any agreement.** Run a back-brief — see [references/tactics.md](references/tactics.md#back-brief-and-wrap-up). The counterparty reformulates each axis in their own words.
+
+This is your defence against selective memory, closing manipulation, and genuine misunderstanding. At signature (or at the end of a salary conversation), run the Negotiation Pipeline closing checklist — see [references/tactics.md](references/tactics.md#negotiation-pipeline--the-closing-checklist).
 
 ### Phase 7: Debrief
 

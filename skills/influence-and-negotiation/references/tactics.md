@@ -145,7 +145,9 @@ The four ways you can show up emotionally with the counterparty:
 | Empathie | Perception + verbalisation + acceptance of legitimacy, **without sharing** | Productive, lowers heat |
 | Sympathie | Sharing the emotion | Dangerous — costs you objectivity |
 
-The right stance in any professional negotiation is **empathie**, not sympathie. Verbalise their emotion without absorbing it. Sympathie ("I feel terrible too about this contract delay") collapses your distance and removes your ability to push back when needed. The manager who absorbs a report's frustration personally cannot then deliver a hard performance message.
+The right stance in any professional negotiation is **empathie**, not sympathie. Verbalise their emotion without absorbing it.
+
+Sympathie ("I feel terrible too about this contract delay") collapses your distance and removes your ability to push back when needed. The manager who absorbs a report's frustration personally cannot then deliver a hard performance message.
 
 ## Anchoring
 
@@ -283,6 +285,8 @@ The Pipe at signature time — three worked examples:
 | Title | IC senior | Staff | Staff | ✓ |
 | Review cadence | 18-month | 12-month | 12-month | ✓ |
 
-Run before signature in any domain. If any axis is below rupture, **stop**. No pressure, no "we've come this far." Either escalate to the decision-maker for an exception, or no-agreement. The Negotiation Pipeline protects against target fascination — the natural urge to land the outcome even when the landing has gone wrong.
+Run before signature in any domain. If any axis is below rupture, **stop**. No pressure, no "we've come this far."
+
+Either escalate to the decision-maker for an exception, or no-agreement. The Negotiation Pipeline protects against target fascination — the natural urge to land the outcome even when the landing has gone wrong.
 
 Diagnostic counter-question. When you're tempted to skip the Pipe ("it's done, why slow it down"), that urge is itself the signal that you should run it. Calm, well-going closes survive the Pipe trivially. Closes that are tempting to rush are the ones that produce 6-month-out churn / regret.

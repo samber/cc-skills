@@ -86,7 +86,11 @@ Almost all commercial objections reduce to one of four. Knowing which root you'r
 
 **Then trade, don't discount.** _"I might be able to find some flexibility on price if we can align on multi-year term and reference rights. Let me explore — what would help most on your side: lower upfront, or lower total?"_
 
-**When the same objection repeats across 3+ calls** — especially price or budget — it is almost never the actual reason. The buyer's stated demand (the **position**) is masking a deeper **stake** (career stake, board mandate, internal political risk, fear of being held responsible if it goes wrong). See the POS iceberg (Position / Objective / Stake) in [references/prepare.md](prepare.md#pos--position--objective--stake). The right next move is not another budget play — it's a calibrated question to your champion targeting their personal stake: _"What's at stake for you personally if this works — or doesn't?"_ The repeated objection won't be solved by re-pitching value; it'll be solved by addressing whatever is making the champion unable to push internally.
+**When the same objection repeats across 3+ calls** — especially price or budget — it is almost never the actual reason.
+
+- The buyer's stated demand (the **position**) is masking a deeper **stake** (career stake, board mandate, internal political risk, fear of being held responsible if it goes wrong) — see the POS iceberg (Position / Objective / Stake) in [references/prepare.md](prepare.md#pos--position--objective--stake).
+- The right next move is not another budget play — it's a calibrated question to your champion targeting their personal stake: _"What's at stake for you personally if this works — or doesn't?"_
+- The repeated objection won't be solved by re-pitching value; it'll be solved by addressing whatever is making the champion unable to push internally.
 
 ### 2. Timing
 
@@ -142,7 +146,11 @@ The same four roots appear in other domains under different surface forms. The d
 | **Internal management** | "I don't have the headcount / promotion budget" | "Let's revisit at the next cycle" | "I'd need to escalate to my N+1 / HR" | "You're doing fine, no change needed" |
 | **Recruitment** | "Your compensation expectation is above our band" | "We're not hiring this quarter" | "I need to validate with the hiring committee" | "We're not sure we need this role yet" |
 
-The diagnostic questions translate directly. _"How was that number set?"_ becomes _"How was the band set?"_ in salary, _"How was the wage envelope sized?"_ in annual collective bargaining. _"What happens if we miss [date]?"_ works unchanged across all domains. _"Walk me through how a decision like this typically gets made here?"_ is the universal authority diagnostic.
+The diagnostic questions translate directly across domains:
+
+- _"How was that number set?"_ becomes _"How was the band set?"_ in salary, _"How was the wage envelope sized?"_ in annual collective bargaining.
+- _"What happens if we miss [date]?"_ works unchanged across all domains.
+- _"Walk me through how a decision like this typically gets made here?"_ is the universal authority diagnostic.
 
 ---
 
@@ -219,7 +227,11 @@ Buyer drafts the MSA on **their paper** to anchor terms. Procurement and legal c
 
 **Late-stage redline injection.** A specific procurement variant: legal redlines arrive 24–72 hours before the planned signature, often on items that weren't raised during the negotiation. The pressure to close vs the cost of renegotiating produces over-concession.
 
-_Counter script._ "Adding new terms at signature changes the deal structure. If we hold the original signature date, the discount we agreed to comes off the table — I need the trade to justify the new terms internally. If you'd rather keep the discount, we can extend the signature date to allow proper review." This forces a choice — date or price — and refuses the false binary the procurement move sets up.
+_Counter script._
+
+> "Adding new terms at signature changes the deal structure. If we hold the original signature date, the discount we agreed to comes off the table — I need the trade to justify the new terms internally. If you'd rather keep the discount, we can extend the signature date to allow proper review."
+
+This forces a choice — date or price — and refuses the false binary the procurement move sets up.
 
 ### MFN clauses — the AE-escalation default
 
@@ -259,7 +271,9 @@ This invites a "no" (which the counterparty experiences as safe — see [referen
 
 Two procurement contacts — one collaborative, one hostile — extracting concessions from both sides. The "good cop" softens you for the bad cop's hard ask.
 
-**Counter.** Name it without escalation. _"I want to make sure I'm hearing one position. I can negotiate against one set of terms — I can't negotiate against two. Which of you should I be aligning with?"_ Forces them to either consolidate or expose the dynamic. Either result removes the leverage.
+**Counter.** Name it without escalation: _"I want to make sure I'm hearing one position. I can negotiate against one set of terms — I can't negotiate against two. Which of you should I be aligning with?"_
+
+Forces them to either consolidate or expose the dynamic — either result removes the leverage.
 
 ### Bogey — the false-priority diversion
 

@@ -1,6 +1,8 @@
 # Context intake
 
-70% of the outcome is set before the room. Context degrades across sessions and tools — users remember recent events and forget earlier anchors, paste what's top of mind and omit what feels obvious. No single source is complete; searching across many surfaces the contradictions and signals that change the strategy. Run these three steps before any intake question.
+70% of the outcome is set before the room. Context degrades across sessions and tools — users remember recent events and forget earlier anchors, paste what's top of mind and omit what feels obvious.
+
+No single source is complete; searching across many surfaces the contradictions and signals that change the strategy. Run these three steps before any intake question.
 
 ## Step 1: Collect raw material
 

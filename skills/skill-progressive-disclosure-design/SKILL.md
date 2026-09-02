@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.0.0"
+  version: "1.0.1"
   openclaw:
     emoji: "👷"
     homepage: https://github.com/samber/cc-skills
@@ -249,7 +249,7 @@ If the answer to question 1 is unclear, do not split.
 
 ## Evaluating skill architecture
 
-Architecture evaluation is different from output evaluation. Output evals ask "did the skill produce the right thing?". Architecture evals ask "did the skill load the right files for the right reasons, at acceptable cost?". Same harness, different metrics. Run both. Output quality is the floor; architecture is optimization above that floor.
+Architecture evaluation is different from output evaluation. Output evals ask "did the skill produce the right thing?"; architecture evals ask "did the skill load the right files for the right reasons, at acceptable cost?" Same harness, different metrics — run both: output quality is the floor, architecture is optimization above it.
 
 **Pros of running architecture evals:**
 

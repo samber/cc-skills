@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude, ChatGPT or similar harness. Requires internet access to fetch the official specification for rules not covered in this file.
 metadata:
   author: samber
-  version: "1.0.1"
+  version: "1.0.2"
   openclaw:
     emoji: "📐"
     homepage: https://github.com/samber/cc-skills
@@ -21,7 +21,12 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion WebFetch
 
 ## Attribution
 
-The rules below are defined by **ASD-STE100, Issue 9 (published 2025-01-15)**, the Simplified Technical English standard maintained by the ASD Simplified Technical English Maintenance Group (STEMG) on behalf of the Aerospace, Security and Defence Industries Association of Europe (ASD). ASD-STE100 is copyright © ASD and a registered EU trademark (No. 017966390). This skill is an independent writing aid. It is **not endorsed, certified, or authorized by ASD or the STEMG**, and it does not reproduce the ASD-STE100 dictionary. Cite every rule by its official number (`ASD-STE100 rule 5.1`), not as house style. The specification is the authority whenever this skill and the specification disagree. The full standard is free to download at <https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf>.
+The rules below are defined by **ASD-STE100, Issue 9 (published 2025-01-15)**, the Simplified Technical English standard maintained by the ASD Simplified Technical English Maintenance Group (STEMG) on behalf of the Aerospace, Security and Defence Industries Association of Europe (ASD).
+
+- ASD-STE100 is copyright © ASD and a registered EU trademark (No. 017966390).
+- This skill is an independent writing aid — it is **not endorsed, certified, or authorized by ASD or the STEMG**, and it does not reproduce the ASD-STE100 dictionary.
+- Cite every rule by its official number (`ASD-STE100 rule 5.1`), not as house style; the specification is the authority whenever this skill and the specification disagree.
+- The full standard is free to download at <https://www.asd-ste100.org/assets/files/ASD-STE100_ISSUE9.pdf>.
 
 ## Precedence: this skill yields to context
 
@@ -130,7 +135,13 @@ These are structural tells, not lexical ones — a passage can pass every word-l
 
 Use only: a word with its approved dictionary meaning and part of speech (1.1–1.4), a **technical noun** (1.5–1.11), or a **technical verb** (1.12–1.13). American spelling throughout (1.14) — except quoted text (a screen string, a placard) already in British spelling, which stays as written.
 
-**Technical nouns** name a concept specific to a subject field — the dictionary cannot list them because every field has its own set. A word qualifies only when it falls into one of 22 official categories: parts information; vehicles/machines and their locations; tools and support equipment; materials, consumables, and unwanted material; facilities and logistics; systems, components, and circuits; mathematical, scientific, and engineering terms; navigation and geography; numbers, units, and time; quoted text; roles, individuals, organizations, and geopolitical entities; body parts; personal effects, food, and beverages; medical terms; official documents, parts of documentation, and standards; environmental and operational conditions; **colors (category 17)**; damage terms; computing, information, and communication technology (**category 19**); civil and military operations; law and regulations; and animals, plants, and other life forms. A technical noun still needs to be short, common, and not regional, slang, or jargon (1.9–1.10) — `brick` for "make a device unusable" is technical slang even in a software context, not a valid technical noun. Category 19 (computing/ICT) is why `database`, `firewall`, `token`, and `update` are legitimate technical nouns in a software document even though none of them are in the general dictionary — `interface` is a different case, an ordinary approved dictionary noun, not an example of a category-only word. A word not approved in the dictionary can still be legal as a technical noun in the right category (1.6); the two checks are independent, not "dictionary first, category as a fallback for everything else."
+**Technical nouns** name a concept specific to a subject field — the dictionary cannot list them because every field has its own set. A word qualifies only when it falls into one of 22 official categories:
+
+parts information; vehicles/machines and their locations; tools and support equipment; materials, consumables, and unwanted material; facilities and logistics; systems, components, and circuits; mathematical, scientific, and engineering terms; navigation and geography; numbers, units, and time; quoted text; roles, individuals, organizations, and geopolitical entities; body parts; personal effects, food, and beverages; medical terms; official documents, parts of documentation, and standards; environmental and operational conditions; **colors (category 17)**; damage terms; computing, information, and communication technology (**category 19**); civil and military operations; law and regulations; and animals, plants, and other life forms.
+
+- A technical noun still needs to be short, common, and not regional, slang, or jargon (1.9–1.10) — `brick` for "make a device unusable" is technical slang even in a software context, not a valid technical noun.
+- Category 19 (computing/ICT) is why `database`, `firewall`, `token`, and `update` are legitimate technical nouns in a software document even though none of them are in the general dictionary — `interface` is a different case, an ordinary approved dictionary noun, not an example of a category-only word.
+- A word not approved in the dictionary can still be legal as a technical noun in the right category (1.6); the two checks are independent, not "dictionary first, category as a fallback for everything else."
 
 **Colors (category 17) take no comparative or superlative form.** `blacker`, `the reddest` — treat these as non-compliant even though they are ordinary English adjective inflections. Rewrite as plain, absolute color statements (`The insulation on the left is black.`), or, when the actual comparison matters for identification, label the parts instead of ranking their color (`connector A`, `connector B`).
 
@@ -147,7 +158,12 @@ Two guardrails for technical nouns:
 
 ## Section 2 — Multi-word nouns (rules 2.1–2.2)
 
-Keep multi-word nouns to **3 words maximum**. `Actuator operating rod` is fine; `Horizontal cylinder pivot bearing` is not. When a concept genuinely needs more than 3 words, first try to break it apart with a preposition (`of`, `on`, `in`, `for`): `Runway light connection resistance calibration` (5 words) becomes `Calibration of the resistance of the runway light connection.` When the term is a fixed technical noun from an official source and cannot be split, write it out in full on first use, then either give a short form (an approved abbreviation, used carefully — a procedure full of abbreviations is hard to read) or connect the words that act as one unit with hyphens (`cutoff-switch power connection`). A hyphenated group still counts as one multi-word noun and stays under the 3-word cap — do not chain more than 3 words with hyphens to dodge the limit (`main-gear-door-retraction-winch` is not STE; `main-gear-door retraction-winch` is). Never add or remove a hyphen in an already-approved technical noun.
+Keep multi-word nouns to **3 words maximum**. `Actuator operating rod` is fine; `Horizontal cylinder pivot bearing` is not.
+
+- When a concept genuinely needs more than 3 words, first try to break it apart with a preposition (`of`, `on`, `in`, `for`): `Runway light connection resistance calibration` (5 words) becomes `Calibration of the resistance of the runway light connection.`
+- When the term is a fixed technical noun from an official source and cannot be split, write it out in full on first use, then either give a short form (an approved abbreviation, used carefully — a procedure full of abbreviations is hard to read) or connect the words that act as one unit with hyphens (`cutoff-switch power connection`).
+- A hyphenated group still counts as one multi-word noun and stays under the 3-word cap — do not chain more than 3 words with hyphens to dodge the limit (`main-gear-door-retraction-winch` is not STE; `main-gear-door retraction-winch` is).
+- Never add or remove a hyphen in an already-approved technical noun.
 
 ## Section 3 — Verbs (rules 3.1–3.7)
 
@@ -155,7 +171,11 @@ Keep multi-word nouns to **3 words maximum**. `Actuator operating rod` is fine; 
 
 **Explicitly banned:** present perfect (`has adjusted`), past perfect (`had adjusted`), progressive (`is adjusting`), and any other auxiliary combined with a **past participle** used as a verb — not auxiliaries in general, so a modal with a bare infinitive (`can adjust`, `must adjust`, `will adjust`, all covered by the allowed forms above) stays legal. `The operator has adjusted the linkage.` → `The operator adjusted the linkage.` `The seat is to be installed before you install the cushion.` → `Before you install the cushion, install the seat.`
 
-**The past participle as adjective** is not passive voice — it is a state. Allowed before a noun (`the disassembled unit`) or after any form of `to be`, `to become`, or `to stay` (`When the unit is fully disassembled, clean all the parts.`). The gate is that the past participle form itself must be in the dictionary — true for any approved verb's own forms (`disassembled` from the approved verb `disassemble`). Separately, a handful of past participles of verbs that are _not_ approved are still listed as approved adjectives in their own right (`permitted`, `damaged`) — those may be used even though the underlying verb may not be.
+**The past participle as adjective** is not passive voice — it is a state.
+
+- Allowed before a noun (`the disassembled unit`) or after any form of `to be`, `to become`, or `to stay` (`When the unit is fully disassembled, clean all the parts.`).
+- The gate is that the past participle form itself must be in the dictionary — true for any approved verb's own forms (`disassembled` from the approved verb `disassemble`).
+- Separately, a handful of past participles of verbs that are _not_ approved are still listed as approved adjectives in their own right (`permitted`, `damaged`) — those may be used even though the underlying verb may not be.
 
 **The `-ing` form is banned as a verb.** It is permitted only as a technical noun (`Cleaning`, `Troubleshooting`, `Handling`) or as a modifier inside a technical noun, where it functions as an adjective related to the item's function (`air-conditioning system`, `welding torch`, `grinding wheel`). A small closed set of `-ing` words is approved outright, each bound to one specific part of speech, not usable as a verb: nouns `lighting`, `opening`, `routing`, `servicing`; adjectives `mating`, `missing`, `remaining`; the pronoun `something`; the preposition `during`. Any other `-ing` word needs one of the two escape hatches above or it is not STE.
 
