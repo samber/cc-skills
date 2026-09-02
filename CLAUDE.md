@@ -248,14 +248,16 @@ Polanyi's paradox: most operational knowledge is tacit and resists explicit desc
 Body content is a **recurring** cost, not a one-time one. Once a skill is invoked, its rendered body stays in context for every later turn — never re-read, never re-summarized. Every extra line is paid again on each turn.
 
 - **~100 tokens per description** — loaded at startup for all skills
-- **< 5.000 tokens per SKILL.md** (spec recommendation) — keep focused on essentials
-- **< 2.500 tokens per SKILL.md** (project recommendation)
+- **≤ 3 sentences per prose paragraph** — longer means it is two items, or it belongs in a bullet list, numbered steps, or a table instead of prose (→ See [Format 5](#format-5-imperative-prose)). Check with `scripts/check-prose-density.sh`.
+- **"Why" clauses ride in the rule's own sentence** — a second sentence explaining the first is the paragraph-level version of the same bloat (→ See [Teach reasoning, not only rules](#teach-reasoning-not-only-rules)).
+- **< 2.500 tokens per SKILL.md** — the authoritative project target for the body alone.
+- **< 5.000 tokens per SKILL.md** — the upstream Agent Skills spec ceiling. A compatibility floor other harnesses may enforce, not a goal to write toward.
+- **< 10k tokens per session** — body plus every `references/` file actually opened in one session, not a per-file number.
 - **< 500 lines per SKILL.md** — move detail out to `references/` the moment the body passes ~250 lines. The Agent Skills ecosystem median is 147 lines; a skill nearing 500 is usually two skills or one skill plus a `references/` file.
 - **Use secondary markdown files for depth** — Claude reads these on demand, so they don't count against context until needed
 - **2-4 skills loaded simultaneously** in a typical session
 - **Prune past ~20–50 _installed_ skills** — installed count is not loaded count. Every installed description competes at trigger time, before anything loads, so a bloated catalog degrades selection for skills that are individually well-written. Retire overlapping or unused skills instead of only adding.
-- **Stay below ~10k tokens of total loaded SKILL.md** to avoid degrading response quality
-- **Only the first ~5.000 tokens of a skill survive auto-compaction**, out of a ~25.000-token budget shared by all currently-loaded skills. That 25k is the harness ceiling; the ~10k above is the stricter quality target this project aims for. Put load-bearing rules early — the tail is the first casualty when context gets tight.
+- **Only the first ~5.000 tokens of a skill survive auto-compaction**, out of a ~25.000-token budget shared by all currently-loaded skills. That 25k is the harness ceiling; the 2,500-token body target above is the stricter quality target this project aims for. Put load-bearing rules early — the tail is the first casualty when context gets tight.
 
 This is a budget. A 100 lines SKILL.md is even better. Feel free to stay far below the limits.
 
@@ -395,10 +397,8 @@ For content and platform skills (e.g. `linkedin-ghostwriting`, `content-strategy
 Skills are structured for efficient context use:
 
 1. **Metadata** (~100 tokens): `name` and `description` are loaded at startup for all skills
-2. **Instructions** (< 5.000 tokens recommended by AgentMD specification): full SKILL.md body loaded when skill activates
-3. **Instructions** (< 2.500 tokens recommended by me): SKILL.md body loaded when skill activates
-4. **Instructions** (< 10.000 tokens recommended by me): full SKILL.md body + secondary files loaded when skill activates
-5. **Resources** (as needed): files in `scripts/`, `references/`, `assets/` loaded only when required
+2. **Instructions**: full SKILL.md body loaded when skill activates — target and ceiling numbers are in [Token budgets](#token-budgets)
+3. **Resources** (as needed): files in `scripts/`, `references/`, `assets/` loaded only when required
 
 Keep SKILL.md under 500 lines; move detailed reference material to `references/` as soon as the body passes ~250 lines (→ See [Token budgets](#token-budgets)).
 
@@ -526,7 +526,7 @@ Assume competence. Cut any paragraph explaining a well-known technology, format,
 
 ### Teach reasoning, not only rules
 
-Skills MUST teach Claude how to think about problems, not just list prescriptive rules. Every recommendation needs a "why" — what goes wrong without it, what consequence the reader avoids. Reasoning outperforms rigid directives because it covers the edge cases the author never foresaw; a bare imperative like "NEVER do X" covers only the case the author imagined.
+Skills MUST teach Claude how to think about problems, not just list prescriptive rules. Every recommendation needs a "why" — what goes wrong without it, what consequence the reader avoids. Reasoning outperforms rigid directives because it covers the edge cases the author never foresaw; a bare imperative like "NEVER do X" covers only the case the author imagined. The "why" rides inside the rule's own sentence, never a separate one — a rule plus its explanation is one sentence, not a paragraph (→ See the paragraph cap in [Token budgets](#token-budgets)).
 
 Treat all-caps `ALWAYS`/`NEVER` in a skill body as a smell. Reserve them for genuinely order-dependent or destructive steps, and reframe the rest as reasoning the model can apply judgment against — "Copy props before modifying; mutation breaks unidirectional data flow" beats "NEVER mutate props". This scopes to skill bodies only: this file's own RFC-style MUST/SHOULD is a separate, deliberate convention (→ See [Format 4](#format-4-numbered-rfc-style-rules-mustmayshould)).
 
@@ -696,6 +696,7 @@ Cheat-sheet index of the failure modes this document covers. Each row links to t
 | [`@`-referencing another skill](#cross-skill-references) | Force-loads it, blowing the budget | Reference by name |
 | [Too many installed skills](#token-budgets) | Discovery degrades for all of them | Prune; reconsider past ~20–50 |
 | [Skill validated on one model only](#adversarial-evaluation-design) | Effect flips sign on another | Re-measure per target model |
+| [Paragraph over 3 sentences](#token-budgets) | Recurring context cost, reader skims | Bullet list, numbered steps, or table |
 
 ## Workflows
 
@@ -713,15 +714,16 @@ After making changes, suggest the following as next steps for the developer to r
 2. ~~Validate against the spec: `skills-ref validate ./skills/{name}`~~ (disabled — [skills-ref doesn't support `user-invocable` yet](https://github.com/agentskills/agentskills/issues/105))
 3. Run the portability grep from "Tool names belong in frontmatter, not in the body" (under Allowed Tools) against the changed skill(s). Fix any hit that isn't an `allowed-tools:` line or a labeled generated-artifact block.
 4. Reformat markdowns with `npx prettier --write *.md "**/*.md"` then lint with `markdownlint-cli2 --config .markdownlint-cli2.jsonc ./` — run before measuring tokens, as formatting changes token counts
-5. Measure token counts:
+5. Run `./scripts/check-prose-density.sh skills/{name}` and rewrite every flagged paragraph into a bullet list, numbered steps, or a table until the script reports zero.
+6. Measure token counts:
    - **Description (tok)**: `awk 'NR==1 && /^---$/{found=1; next} found && /^---$/{exit} found && /^description:/{print}' skills/{name}/SKILL.md | tiktoken-cli`
    - **SKILL.md (tok)**: `tiktoken-cli skills/{name}/SKILL.md`
    - **Directory (tok)**: `tiktoken-cli --exclude "evals" skills/{name}/` (exclude `evals/` subdirectory)
-6. Update the README.md table with the measured token counts, update the total rows, and update the **Error rate gap** column (`Without - With`, expressed as a negative percentage, e.g. `-39%`)
-7. Increment `metadata.version` in the changed SKILL.md and the plugin version in `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json` and `gemini-extension.json` — all three plugin files MUST have the same version.
-8. Run the [Description Optimization Loop](#description-optimization-loop) — mandatory for new skills, required for updates when `description` or scope changed.
-9. Run skill evaluation via `/skill-creator`: 10+ evals, run them with and without the skill via parallel subagents, grade with LLM-as-judge (no human in the loop), print results, suggest improvements if needed, and append/update the report to `EVALUATIONS.md` following the format in [Evaluation Reporting](#evaluation-reporting)
-10. Depending on evaluation final report, suggest improvements and loop
+7. Update the README.md table with the measured token counts, update the total rows, and update the **Error rate gap** column (`Without - With`, expressed as a negative percentage, e.g. `-39%`)
+8. Increment `metadata.version` in the changed SKILL.md and the plugin version in `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json` and `gemini-extension.json` — all three plugin files MUST have the same version.
+9. Run the [Description Optimization Loop](#description-optimization-loop) — mandatory for new skills, required for updates when `description` or scope changed.
+10. Run skill evaluation via `/skill-creator`: 10+ evals, run them with and without the skill via parallel subagents, grade with LLM-as-judge (no human in the loop), print results, suggest improvements if needed, and append/update the report to `EVALUATIONS.md` following the format in [Evaluation Reporting](#evaluation-reporting)
+11. Depending on evaluation final report, suggest improvements and loop
 
 For initial evaluation of skills, use Human-as-Judge.
 
@@ -748,14 +750,6 @@ Plugin metadata is defined in `.claude-plugin/plugin.json`, `.cursor-plugin/plug
 ## Formats
 
 Write short sentences.
-
-### Format 5: Imperative Prose (recommended by skill-creator)
-
-```md
-## Writing Rules
-
-Cut ruthlessly — every word must work. Remove filler words like "very", "really", "incredibly". Use active voice. Vary sentence length: 3-5 words for impact, then medium length for explanation.
-```
 
 ### Format 1: Categorized examples (Good / Bad)
 
@@ -807,3 +801,13 @@ ALWAYS use this exact template:
 3. A scope MAY be provided after a type, in parentheses
 4. A description MUST immediately follow the colon and space
 ```
+
+### Format 5: Imperative Prose
+
+```md
+## Writing Rules
+
+Cut ruthlessly — every word must work. Remove filler words like "very", "really", "incredibly". Use active voice. Vary sentence length: 3-5 words for impact, then medium length for explanation.
+```
+
+Reserve prose for standalone rules that don't reduce to a list — a single principle, a piece of reasoning, a transition. Enumerable content (options, flags, modes, common mistakes) stays a bullet list or table (Formats 1–4), never prose padded to look complete.
