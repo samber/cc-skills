@@ -276,7 +276,10 @@ The archetypes are designed to work across topics: a personal essay on indie fil
 - Layout: button + 1-2 lines of risk-reversal subtext directly below.
 - Proof co-located: small testimonial or logo wall above or below the block.
 
-**Critical:** The button verb must match the offer. PartnerStack's documented test moved "Book a Demo" → "Get Started" and lifted conversion 111.55%. Mailmodo's documented test moved "Book a Demo" → "Talk to a Human" and lifted conversion 110.35%. "Book a Demo" is the lowest-converting BOFU verb in the published record.
+**Critical:** The button verb must match the offer — "Book a Demo" is the lowest-converting BOFU verb in the published record.
+
+- PartnerStack's documented test moved "Book a Demo" → "Get Started" and lifted conversion 111.55%.
+- Mailmodo's documented test moved "Book a Demo" → "Talk to a Human" and lifted conversion 110.35%.
 
 **Conversion expectation:** 1-3% of blog readers → MQL on a well-targeted BOFU post. 6-11% on a dedicated landing page reached from the post.
 

@@ -38,7 +38,11 @@ Twelve failure modes that recur across end-of-article CTAs. When the user's inpu
 
 ## 5. Hard-sell CTA ("Book a Demo" / "Talk to Sales") on a TOFU post
 
-**Why it fails:** Top-of-funnel readers are discovering the topic, not ready to buy. A hard-sell ask at the bottom collapses credibility for the rest of the article retroactively. For sophisticated audiences (technical, professional, niche-expert), the effect is even stronger. Yacine Hmito (Head of Technology, Fabriq): "If I see 'Book a demo' or 'Talk to Sales,' I am out." The same reflex applies to readers in professional services, healthcare, journalism, and any context where credibility is the readership currency.
+**Why it fails:**
+
+- Top-of-funnel readers are discovering the topic, not ready to buy — a hard-sell ask at the bottom collapses credibility for the rest of the article retroactively.
+- The effect is even stronger for sophisticated audiences (technical, professional, niche-expert). Yacine Hmito (Head of Technology, Fabriq): "If I see 'Book a demo' or 'Talk to Sales,' I am out."
+- The same reflex applies to readers in professional services, healthcare, journalism, and any context where credibility is the readership currency.
 
 **Fix:** Use a transitional asset (PDF, template, calculator, checklist) if this is brand content. Use an author-signature subscribe if this is independent content. Save "Book a Demo" for BOFU content that explicitly precedes a buying decision — and even then, prefer "Talk to a Human" or "Get a 20-min audit" verbs (both produced documented 110%+ conversion lifts vs. "Book a Demo").
 
@@ -46,7 +50,10 @@ Twelve failure modes that recur across end-of-article CTAs. When the user's inpu
 
 ## 6. Buzzword stacking
 
-**Why it fails:** Generic adjectives stack without adding information. Every industry has its own catalog: tech ("AI-infused," "enterprise-grade," "single pane of glass," "synergy," "leverage," "seamless," "scalable," "at scale," "digital transformation" — Redis published an audit of buzzwords developers hate), finance ("alpha," "asymmetric upside," "best-in-class"), wellness ("transformative," "holistic," "intentional," "elevated"), B2B SaaS ("unlock," "empower," "supercharge"). Each empty word cuts credibility. By word four, the reader has tuned out.
+**Why it fails:**
+
+- Generic adjectives stack without adding information — each empty word cuts credibility, and by word four the reader has tuned out.
+- Every industry has its own catalog: tech ("AI-infused," "enterprise-grade," "single pane of glass," "synergy," "leverage," "seamless," "scalable," "at scale," "digital transformation" — Redis published an audit of buzzwords developers hate), finance ("alpha," "asymmetric upside," "best-in-class"), wellness ("transformative," "holistic," "intentional," "elevated"), B2B SaaS ("unlock," "empower," "supercharge").
 
 **Fix:** Replace every adjective with a concrete number or example. "Enterprise-grade reliability" → "99.99% uptime, measured over the last 24 months." "Seamless integration" → "Three steps, works with [specific tools]." "Transformative coaching" → "12-week program, 1:1, every session recorded."
 
@@ -101,7 +108,13 @@ For technical blogs specifically, Cecilia Stallsmith (Calyx) put it this way: "R
 
 **Why it fails:** A "Subscribe to the newsletter" CTA glued to the bottom of every post — tutorial, opinion essay, release announcement, conference recap — treats every reader the same. Tutorial readers want depth; release-announcement readers want to try the code; conference-recap readers want next year's event.
 
-**Fix:** Three to five CTA templates, one per post type. Tutorial → newsletter or related deep-dive. Product / project release announcement → try-it action + source link. Opinion piece → reply prompt + newsletter. Conference / event recap → next event registration + photo album. Review post → comments + related reviews. The post tells you which template fits; never default to one.
+**Fix:** Three to five CTA templates, one per post type — the post tells you which template fits; never default to one.
+
+- Tutorial → newsletter or related deep-dive.
+- Product / project release announcement → try-it action + source link.
+- Opinion piece → reply prompt + newsletter.
+- Conference / event recap → next event registration + photo album.
+- Review post → comments + related reviews.
 
 ---
 

@@ -12,11 +12,15 @@ Monospace family for everything (JetBrains Mono, IBM Plex Mono, Fira Code). Dark
 
 ## Neo-brutalism
 
-The single most recognizable trait: hard offset drop shadow, solid, no blur, often colored. Plus thick black borders (2-3px), flat saturated color fills, sharp edges (zero radius), bold sans headlines at huge size. Buttons: thick border + flat fill + hard offset shadow. Reference: Gumroad, Figma brand refresh. Defining trait: `box-shadow: 6px 6px 0 #000` with no blur, thick borders, zero radius.
+The single most recognizable trait: hard offset drop shadow, solid, no blur, often colored. Plus thick black borders (2-3px), flat saturated color fills, sharp edges (zero radius), bold sans headlines at huge size.
+
+Buttons: thick border + flat fill + hard offset shadow. Reference: Gumroad, Figma brand refresh. Defining trait: `box-shadow: 6px 6px 0 #000` with no blur, thick borders, zero radius.
 
 ## Brutalism / raw
 
-Raw unstyled-HTML feel, monochrome or one harsh accent, oversized sans or system/monospace type, exposed structure, visible grid, near-zero decoration, hard edges. High contrast (black on concrete-gray + one loud accent like acid green or red). Reference: brutalistwebsites.com, Drudge Report. Defining trait: deliberate absence of polish; structure exposed rather than hidden.
+Raw unstyled-HTML feel, monochrome or one harsh accent, oversized sans or system/monospace type, exposed structure, visible grid, near-zero decoration, hard edges. High contrast (black on concrete-gray + one loud accent like acid green or red).
+
+Reference: brutalistwebsites.com, Drudge Report. Defining trait: deliberate absence of polish; structure exposed rather than hidden.
 
 ## Swiss / international typographic
 

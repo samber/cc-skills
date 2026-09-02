@@ -1,6 +1,8 @@
 # Color strategy and OKLCH
 
-Color is a strategic decision, not an aesthetic preference. Snap judgments about products form within about 90 seconds and 62 to 90 percent of that assessment is color-driven; consistent color use can raise brand recognition by up to 80 percent. Color is a first impression that shapes all later perception. So choose for fit and differentiation, specify exactly, author in a perceptual model, and verify accessibility.
+Color is a strategic decision, not an aesthetic preference. Snap judgments about products form within about 90 seconds and 62 to 90 percent of that assessment is color-driven; consistent color use can raise brand recognition by up to 80 percent.
+
+Color is a first impression that shapes all later perception. So choose for fit and differentiation, specify exactly, author in a perceptual model, and verify accessibility.
 
 Frameworks below draw on Elliot and Maier (color-in-context), Singh (the 62 to 90 percent finding), Eiseman (color harmony), Neumeier (brand as gut feeling), and Blue Ocean strategy (Kim and Mauborgne).
 
@@ -28,19 +30,38 @@ Frameworks below draw on Elliot and Maier (color-in-context), Singh (the 62 to 9
 
 ## 1. Color-in-context theory
 
-Color effects are neither universal nor arbitrary; they depend on context. Meaning varies with the psychological context, some responses are biological and others learned, and hue, lightness, and chroma all matter. Red is danger in one context, attractiveness in another; urgency on a sale banner, warning in a health app, love on Valentine's. Always reason about the context the color will be seen in. Never treat a hue's meaning as fixed.
+Color effects are neither universal nor arbitrary; they depend on context. Meaning varies with the psychological context, some responses are biological and others learned, and hue, lightness, and chroma all matter.
+
+Red is danger in one context, attractiveness in another; urgency on a sale banner, warning in a health app, love on Valentine's. Always reason about the context the color will be seen in. Never treat a hue's meaning as fixed.
 
 ## 2. The appropriateness principle
 
-Color effectiveness depends on perceived fit with the brand, product, and context. An appropriate color outperforms a theoretically better one that feels wrong. Blue works for finance because trust signals are expected there; it would not work for a children's candy brand. Appropriateness may be the single most important factor in color effectiveness.
+Color effectiveness depends on perceived fit with the brand, product, and context. An appropriate color outperforms a theoretically better one that feels wrong.
+
+Blue works for finance because trust signals are expected there; it would not work for a children's candy brand. Appropriateness may be the single most important factor in color effectiveness.
 
 ## 3. Blue Ocean differentiation (the strategic anti-indigo)
 
-In a crowded category everyone uses the same cues (a red ocean); find uncontested visual territory (blue ocean). For AI-generated UI, the indigo/violet band is the reddest ocean: it is the literal default. Avoid OKLCH hue ~250 to 320 for accents unless the brief demands it. Process: audit what competitors and the AI default use; find the absent or underused hue; check it still fits brand personality and audience; decide whether you can own it credibly. Precedents: Lufthansa yellow among blue airlines; T-Mobile magenta among blue/red telecoms; Apple white/silver among black/gray hardware; ING orange in blue banking; Tiffany trademarked its blue-green (PMS 1837) so the color alone triggers recognition.
+In a crowded category everyone uses the same cues (a red ocean); find uncontested visual territory (blue ocean). For AI-generated UI, the indigo/violet band is the reddest ocean: it is the literal default. Avoid OKLCH hue ~250 to 320 for accents unless the brief demands it.
+
+Process:
+
+1. Audit what competitors and the AI default use.
+2. Find the absent or underused hue.
+3. Check it still fits brand personality and audience.
+4. Decide whether you can own it credibly.
+
+Precedents: Lufthansa yellow among blue airlines; T-Mobile magenta among blue/red telecoms; Apple white/silver among black/gray hardware; ING orange in blue banking; Tiffany trademarked its blue-green (PMS 1837) so the color alone triggers recognition.
 
 ## 4. OKLCH primer and hue points
 
-Author in OKLCH because it is perceptually uniform: lightness matches perceived brightness, scale steps come out even without manual correction, and gradients avoid gray dead-zones. Format `oklch(L C H)`: L 0 to 1, C 0 to about 0.37 (sRGB max, P3 about 0.4), H 0 to 360. Hue points: red ~20, orange ~40, yellow ~90, green ~140, teal ~195, blue ~220, purple ~320. Accents far from indigo: orange `oklch(0.70 0.19 40)`, brick `oklch(0.53 0.15 30)`, crimson `oklch(0.64 0.22 0.6)`, grass `oklch(0.65 0.14 145)`, teal `oklch(0.70 0.12 195)`, amber `oklch(0.835 0.146 86)`. Chroma is gamut-limited per hue; high C at some hues (teal ~195) clips on sRGB. Verify at oklch.com and ship a hex fallback: `.accent{ background:#12A594; background:oklch(0.70 0.12 195); }`.
+Author in OKLCH because it is perceptually uniform: lightness matches perceived brightness, scale steps come out even without manual correction, and gradients avoid gray dead-zones. Format `oklch(L C H)`: L 0 to 1, C 0 to about 0.37 (sRGB max, P3 about 0.4), H 0 to 360.
+
+- **Hue points**: red ~20, orange ~40, yellow ~90, green ~140, teal ~195, blue ~220, purple ~320.
+- **Accents far from indigo**: orange `oklch(0.70 0.19 40)`, brick `oklch(0.53 0.15 30)`, crimson `oklch(0.64 0.22 0.6)`, grass `oklch(0.65 0.14 145)`, teal `oklch(0.70 0.12 195)`, amber `oklch(0.835 0.146 86)`.
+- **Gamut**: chroma is gamut-limited per hue; high C at some hues (teal ~195) clips on sRGB.
+
+Verify at oklch.com and ship a hex fallback: `.accent{ background:#12A594; background:oklch(0.70 0.12 195); }`.
 
 ## 5. Color harmony systems
 
@@ -124,7 +145,9 @@ For each important color, generate a 100 (lightest) to 900 (darkest) ramp with 5
 
 ## 13. Neutrals
 
-Do not use pure black or pure white. Soften to a near-black ink and an off-white, often tinted slightly toward the brand hue (lower the L and C of the brand color). State why: softer on the eyes, warmer, more intentional. On colored backgrounds use the same hue darker and desaturated, never gray.
+Do not use pure black or pure white. Soften to a near-black ink and an off-white, often tinted slightly toward the brand hue (lower the L and C of the brand color).
+
+State why: softer on the eyes, warmer, more intentional. On colored backgrounds use the same hue darker and desaturated, never gray.
 
 ## 14. Color combinations and proportions
 

@@ -41,7 +41,9 @@ The CRO, VP Sales, or executive who can sign exceptions to the mandate. The disc
 
 #### Scapegoat
 
-The N1's most useful refusal: _"I'd love to do that. I genuinely don't have the authority — let me check with my CRO."_ This is not weakness; it's a structural block on the buyer's escalation pressure. The negotiator cannot be argued past their authority limit because they don't have it. The CRO, in turn, has the discretion to grant the exception or hold the line — without the buyer feeling personally rebuffed.
+The N1's most useful refusal: _"I'd love to do that. I genuinely don't have the authority — let me check with my CRO."_ This is not weakness; it's a structural block on the buyer's escalation pressure.
+
+The negotiator cannot be argued past their authority limit because they don't have it. The CRO, in turn, has the discretion to grant the exception or hold the line — without the buyer feeling personally rebuffed.
 
 The fuse only works if the decision-maker is genuinely absent from the room. Reps who let the decision-maker join early lose the fuse and now have to argue the mandate themselves. The discipline is to keep the decision-maker dialled in only at moments where their presence creates value: a senior alignment meeting, signature, or escalation arbitration.
 

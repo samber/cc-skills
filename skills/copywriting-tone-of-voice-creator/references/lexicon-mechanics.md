@@ -1,6 +1,6 @@
 # Lexicon & Mechanics
 
-The vocabulary and grammar layer of voice. **Banned-word lists do more work than power-word lists** — prevention is cheaper than prescription. A writer encountering "we don't use 'leverage' (unless in the financial sense)" never reaches for it again. A power-words list, by contrast, rarely gets consulted in the moment of drafting.
+The vocabulary and grammar layer of voice. **Banned-word lists do more work than power-word lists** — prevention is cheaper than prescription. A writer encountering "we don't use 'leverage' (unless in the financial sense)" never reaches for it again, while a power-words list, by contrast, rarely gets consulted in the moment of drafting.
 
 ---
 

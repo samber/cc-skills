@@ -18,7 +18,16 @@ The intake that produces the design system. Strategy drives design: resolve what
 
 ## 1. Asking questions (CRITICAL)
 
-Ask through the question tool, one at a time — never as plain-text prose (see the SKILL.md **Questions:** directive). Use it to gather preferences before deciding, present options with clear tradeoffs, validate direction before building, and confirm outputs before finishing. Never make a significant design decision without user input; the result belongs to them. Discipline on top: batch related questions, give 2 to 4 concrete options each, infer from context first and confirm inferences, ask only the high-signal subset. Do not interrogate.
+Ask through the question tool, one at a time — never as plain-text prose (see the SKILL.md **Questions:** directive). Use it to gather preferences before deciding, present options with clear tradeoffs, validate direction before building, and confirm outputs before finishing. Never make a significant design decision without user input; the result belongs to them.
+
+Discipline on top:
+
+- Batch related questions
+- Give 2 to 4 concrete options each
+- Infer from context first and confirm inferences
+- Ask only the high-signal subset
+
+Do not interrogate.
 
 ## 2. Protocol
 
@@ -74,7 +83,14 @@ Built on Aaker's five brand-personality dimensions plus the sliders. Turn adject
 | Sophisticated / premium | elegant serif display or refined sans | muted or jewel, near-black + off-white, metallic accent | vast whitespace, large type | minimal radius, sharp | slow, deliberate | high-quality, sparse |
 | Rugged / industrial | condensed or monospace, heavy weights | high contrast, muted base + one hazard accent | dense, functional grid | zero to small radius, hard edges | abrupt or none | utilitarian, textured |
 
-Slider deltas (stack on top): more expressive -> add a second typeface, more color, more motion. More minimal -> fewer colors, more whitespace, one family across weights. More playful -> rounder shapes, brighter accent, micro-interactions. More serious -> tighter grid, restrained palette, sharper shapes. Denser -> smaller spacing and type steps. Airier -> larger spacing, fewer elements per view.
+Slider deltas (stack on top):
+
+- More expressive -> add a second typeface, more color, more motion
+- More minimal -> fewer colors, more whitespace, one family across weights
+- More playful -> rounder shapes, brighter accent, micro-interactions
+- More serious -> tighter grid, restrained palette, sharper shapes
+- Denser -> smaller spacing and type steps
+- Airier -> larger spacing, fewer elements per view
 
 ## 8. Which questions matter, by artifact type
 
@@ -97,7 +113,13 @@ Before building, decide what is fixed and what can flex, so the system scales wi
 
 ## 10. Human-sounding writing protocol
 
-If the skill also generates copy, avoid AI-writing tells. Avoid vocabulary like delve, tapestry, multifaceted, leverage, crucial, comprehensive, foster, harness, navigate, landscape, realm, beacon, pivotal. Avoid openers like "It's important to note", "In today's fast-paced world", "At its core", "Let me explain". Avoid uniform sentence lengths, excessive tricolons (rule of three), and em-dash-as-rhythm. Vary sentence structure instead. For French copy or deep cleanup, defer to the user's humanizer and humaniseur-fr skills.
+If the skill also generates copy, avoid AI-writing tells:
+
+- Vocabulary: delve, tapestry, multifaceted, leverage, crucial, comprehensive, foster, harness, navigate, landscape, realm, beacon, pivotal
+- Openers: "It's important to note", "In today's fast-paced world", "At its core", "Let me explain"
+- Uniform sentence lengths, excessive tricolons (rule of three), and em-dash-as-rhythm — vary sentence structure instead
+
+For French copy or deep cleanup, defer to the user's humanizer and humaniseur-fr skills.
 
 ## 11. Reference transposition recipe
 

@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness. Requires internet access for research on uncovered brand categories.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "🎙️"
     homepage: https://github.com/samber/cc-skills
@@ -32,7 +32,7 @@ Produce a `TONE.md` brand voice guide that downstream content skills can mechani
 
 Most tone-of-voice work ends up as a PDF nobody reads. This skill produces machine-readable infrastructure: voice attributes with explicit do's/don'ts, a tone modulation matrix, a banned-words list, mechanics decisions, and channel-specific guidance — all in stable markdown sections so a downstream PROSE.md generator (or any writing skill or bot) can parse and apply it.
 
-**Voice vs tone is load-bearing.** Voice is the fixed personality of the brand (does not change). Tone is the contextual modulation across channel, audience, situation. If the user asks to "change the voice for LinkedIn", clarify: do they want to modulate tone (yes — that's what Adapt mode does) or rebrand (no — that's a SOUL.md change). Confusing the two is the single most common failure mode in this work.
+**Voice vs tone is load-bearing.** Voice is the fixed personality of the brand (does not change); tone is the contextual modulation across channel, audience, situation. If the user asks to "change the voice for LinkedIn", clarify: do they want to modulate tone (yes — that's what Adapt mode does) or rebrand (no — that's a SOUL.md change). Confusing the two is the single most common failure mode in this work.
 
 ## When to invoke
 
@@ -184,7 +184,10 @@ For porting an existing TONE.md to a new support or channel without rebuilding t
 
 ## Disclaimer
 
-This skill is not exhaustive. The discipline of tone of voice is evolving rapidly, especially as AI-generated content shifts where differentiation lives. Refer to canonical sources for current best practice: Mailchimp's content style guide, GOV.UK's style guide, Nielsen Norman Group's _The Four Dimensions of Tone of Voice_, Karen Yin's Conscious Style Guide, Margot Bloomstein's _Trustworthy_, and the published voice guides of the brands in [references/reference-brands.md](references/reference-brands.md). Voice norms vary by category and locale; verify any pattern that surprises you against the brand's actual category and market before committing it to TONE.md.
+This skill is not exhaustive. The discipline of tone of voice is evolving rapidly, especially as AI-generated content shifts where differentiation lives.
+
+- Refer to canonical sources for current best practice: Mailchimp's content style guide, GOV.UK's style guide, Nielsen Norman Group's _The Four Dimensions of Tone of Voice_, Karen Yin's Conscious Style Guide, Margot Bloomstein's _Trustworthy_, and the published voice guides of the brands in [references/reference-brands.md](references/reference-brands.md).
+- Voice norms vary by category and locale; verify any pattern that surprises you against the brand's actual category and market before committing it to TONE.md.
 
 ## References
 

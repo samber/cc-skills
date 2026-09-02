@@ -1,6 +1,10 @@
 # Motion and animation
 
-Motion is a design layer, not a finishing sprinkle. Good motion communicates causality (this opened from that), spatial relationships (this slid in from the edge), and state changes; it makes a product feel fast and physical. Bad motion is the opposite of deslop: bounce on everything, fade-up on every section, scale-on-hover by reflex. The default for most UI is restraint. The concrete values below come from production systems and from design engineers who ship motion (Emil Kowalski of Linear, author of Sonner and Vaul; Rauno Freiberg; Josh Comeau) and from Material, Carbon, and Apple. Treat the token blocks as copy-pasteable starting points.
+Motion is a design layer, not a finishing sprinkle. Good motion communicates causality (this opened from that), spatial relationships (this slid in from the edge), and state changes; it makes a product feel fast and physical.
+
+Bad motion is the opposite of deslop: bounce on everything, fade-up on every section, scale-on-hover by reflex. The default for most UI is restraint.
+
+The concrete values below come from production systems and from design engineers who ship motion (Emil Kowalski of Linear, author of Sonner and Vaul; Rauno Freiberg; Josh Comeau) and from Material, Carbon, and Apple. Treat the token blocks as copy-pasteable starting points.
 
 ## Contents
 
@@ -18,11 +22,15 @@ Motion is a design layer, not a finishing sprinkle. Good motion communicates cau
 
 ## 1. The two questions before animating
 
-Before adding any animation, answer: does it communicate something (causality, hierarchy, state, spatial origin), and how often will the user trigger it? Animation that communicates earns its time budget. Animation on high-frequency or keyboard-initiated actions (a power user opening a menu 200 times a day) is friction; Raycast ships almost no animation and feels right because of it. The gate: animate meaningful, low-frequency transitions; do not animate frequent, utilitarian ones.
+Before adding any animation, answer: does it communicate something (causality, hierarchy, state, spatial origin), and how often will the user trigger it? Animation that communicates earns its time budget.
+
+Animation on high-frequency or keyboard-initiated actions (a power user opening a menu 200 times a day) is friction; Raycast ships almost no animation and feels right because of it. The gate: animate meaningful, low-frequency transitions; do not animate frequent, utilitarian ones.
 
 ## 2. Duration scale
 
-Most UI animations should stay under 300ms. A 180ms dropdown feels more responsive than a 400ms one. Rough map: micro feedback (button press, toggle, tooltip) 100 to 150ms; standard transitions (menus, popovers, fades) 150 to 250ms; larger surfaces (sheets, drawers, modals) 250 to 500ms, where ~500ms with an iOS-like curve makes a drawer feel substantial; full-screen or page transitions can run longer. Duration scales with travel distance and element size: a small tooltip is fast, a full-height sheet is slower. Build a token scale (see below) and pull from it rather than picking ad hoc milliseconds.
+Most UI animations should stay under 300ms. A 180ms dropdown feels more responsive than a 400ms one. Rough map: micro feedback (button press, toggle, tooltip) 100 to 150ms; standard transitions (menus, popovers, fades) 150 to 250ms; larger surfaces (sheets, drawers, modals) 250 to 500ms, where ~500ms with an iOS-like curve makes a drawer feel substantial; full-screen or page transitions can run longer.
+
+Duration scales with travel distance and element size: a small tooltip is fast, a full-height sheet is slower. Build a token scale (see below) and pull from it rather than picking ad hoc milliseconds.
 
 ## 3. Easing: the heart of feel
 
@@ -35,7 +43,12 @@ Easing is what makes motion feel designed. Defaults:
 
 ## 4. Spring physics
 
-Springs often feel more natural than bezier curves because they model real physics: an element has mass and settles like a physical object, and an interrupted spring redirects smoothly from its current velocity. Comeau's observation is that it is hard to make a nice bezier and easy to make a nice spring. Springs are parameterized by stiffness/response and damping rather than duration. SwiftUI's defaults are a useful reference: default spring is roughly response 0.55 and damping fraction 0.825; a snappy interactive spring is much shorter. On the web, springs come from libraries (Framer Motion, React Spring) or, increasingly, from the CSS `linear()` timing function, which approximates a spring with many sampled points and can overshoot past 1 to create a settle. Use springs for direct-manipulation and physical surfaces (drag, sheets, drawers); use eased durations for discrete state changes (a fade, a color change). A discipline check from Comeau: if more than roughly a fifth of your transitions need bespoke timing functions, your tokens are wrong.
+Springs often feel more natural than bezier curves because they model real physics: an element has mass and settles like a physical object, and an interrupted spring redirects smoothly from its current velocity. Comeau's observation is that it is hard to make a nice bezier and easy to make a nice spring.
+
+- Springs are parameterized by stiffness/response and damping rather than duration. SwiftUI's defaults are a useful reference: default spring is roughly response 0.55 and damping fraction 0.825; a snappy interactive spring is much shorter.
+- On the web, springs come from libraries (Framer Motion, React Spring) or, increasingly, from the CSS `linear()` timing function, which approximates a spring with many sampled points and can overshoot past 1 to create a settle.
+- Use springs for direct-manipulation and physical surfaces (drag, sheets, drawers); use eased durations for discrete state changes (a fade, a color change).
+- A discipline check from Comeau: if more than roughly a fifth of your transitions need bespoke timing functions, your tokens are wrong.
 
 ## 5. Scale, origin, and masking
 
@@ -46,7 +59,9 @@ Springs often feel more natural than bezier curves because they model real physi
 
 ## 6. What to animate (performance)
 
-Animate only `transform` and `opacity`. These are composited on the GPU and do not trigger layout or paint, so they stay at 60fps. Animating `width`, `height`, `top`, `left`, `margin`, or `box-shadow` forces layout/paint and janks; achieve the same effects with `transform: scale()` / `translate()` and with opacity. CSS transitions are interruptible mid-flight (good for hover and toggles that can reverse); keyframe animations are not, so use transitions for reversible state and keyframes for fire-and-forget. Keep `will-change` rare and targeted.
+Animate only `transform` and `opacity`. These are composited on the GPU and do not trigger layout or paint, so they stay at 60fps. Animating `width`, `height`, `top`, `left`, `margin`, or `box-shadow` forces layout/paint and janks; achieve the same effects with `transform: scale()` / `translate()` and with opacity.
+
+CSS transitions are interruptible mid-flight (good for hover and toggles that can reverse); keyframe animations are not, so use transitions for reversible state and keyframes for fire-and-forget. Keep `will-change` rare and targeted.
 
 ## 7. Orchestration and staggering
 
@@ -54,7 +69,11 @@ When multiple elements enter (a list, a menu of items, a grid), stagger them by 
 
 ## 8. Reduced motion and accessibility
 
-Honor `prefers-reduced-motion`. Motion can trigger vestibular discomfort; large movement, parallax, and scaling are the risky kinds, while opacity fades are generally safe. The robust pattern inverts the default: define no transition by default and enable motion inside `@media (prefers-reduced-motion: no-preference)`, or, when reduced motion is requested, swap movement for an opacity-only fade rather than removing feedback entirely. Avoid the blunt global override that zeroes all animation durations; it can break JS-driven springs and removes safe fades along with the harmful motion. Gate hover-triggered animation behind `@media (hover: hover)` so touch devices do not fire phantom hover states.
+Honor `prefers-reduced-motion`. Motion can trigger vestibular discomfort; large movement, parallax, and scaling are the risky kinds, while opacity fades are generally safe.
+
+- The robust pattern inverts the default: define no transition by default and enable motion inside `@media (prefers-reduced-motion: no-preference)`, or, when reduced motion is requested, swap movement for an opacity-only fade rather than removing feedback entirely.
+- Avoid the blunt global override that zeroes all animation durations; it can break JS-driven springs and removes safe fades along with the harmful motion.
+- Gate hover-triggered animation behind `@media (hover: hover)` so touch devices do not fire phantom hover states.
 
 ## 9. Motion slop tells
 

@@ -177,22 +177,22 @@ Each skill lives in `skills/<name>/` with a `SKILL.md` entry point. The `SKILL.m
 | `chrome-extension` | — | 137 | 3,909 | 36,173 |
 | `crxjs` | — | 185 | 2,697 | 2,697 |
 | `site-launch-checklist` | -59% | 198 | 7,784 | 17,896 |
-| `frontend-design-deslop` | -28% | 220 | 3,947 | 41,234 |
+| `frontend-design-deslop` | -28% | 168 | 4,294 | 45,097 |
 | `linkedin-ghostwriting` | -31% | 87 | 1,045 | 1,993 |
-| `substack-ghostwriting` | -51% | 205 | 3,315 | 10,720 |
-| `technical-article-writer` | -33% | 147 | 2,755 | 6,197 |
-| `press-release-writer` | -34% | 149 | 1,532 | 17,829 |
-| `humaniseur-fr` | -14% | 249 | 5,895 | 5,895 |
-| `humanizer-en-asd-ste100` | -16% | 205 | 8,173 | 8,173 |
+| `substack-ghostwriting` | -51% | 154 | 3,416 | 10,821 |
+| `technical-article-writer` | -33% | 157 | 2,809 | 6,251 |
+| `press-release-writer` | -34% | 159 | 1,686 | 17,981 |
+| `humaniseur-fr` | -14% | 166 | 10,782 | 10,782 |
+| `humanizer-en-asd-ste100` | -16% | 141 | 9,594 | 9,594 |
 | `snyk-agent-scan-compliance` | -27% | 144 | 1,904 | 5,612 |
 | `training-report` | -61% | 179 | 2,392 | 8,222 |
 | `deep-research` | -51% | 316 | 2,997 | 14,125 |
-| `influence-and-negotiation` | -68% | 232 | 6,667 | 49,043 |
-| `skill-progressive-disclosure-design` | -58% | 154 | 3,533 | 3,533 |
-| `copywriting-hooks` | — | 213 | 6,764 | 13,508 |
-| `copywriting-cta` | — | 229 | 2,937 | 14,475 |
-| `copywriting-prose-creator` | — | 219 | 5,008 | 24,955 |
-| `copywriting-tone-of-voice-creator` | — | 223 | 4,100 | 22,358 |
+| `influence-and-negotiation` | -68% | 162 | 6,592 | 48,996 |
+| `skill-progressive-disclosure-design` | -58% | 154 | 3,607 | 3,607 |
+| `copywriting-hooks` | — | 169 | 6,705 | 13,484 |
+| `copywriting-cta` | — | 165 | 2,873 | 14,424 |
+| `copywriting-prose-creator` | — | 166 | 4,952 | 24,900 |
+| `copywriting-tone-of-voice-creator` | — | 181 | 4,056 | 22,315 |
 
 ## 🧪 Skill evaluations
 

@@ -36,7 +36,9 @@ negotiation-{slug}/
   strategy.md     ← decisions made, rationale, next session plan
 ```
 
-Six files is the default. **The structure may be adapted** — if the negotiation is simple, merge files; if it's complex, add domain-specific files. Whatever structure is used, it must be declared in `memory.md` under a `## Structure` section so any agent can discover it. Never rely on assumed structure — always read `memory.md` first.
+Six files is the default. **The structure may be adapted** — if the negotiation is simple, merge files; if it's complex, add domain-specific files.
+
+Whatever structure is used, it must be declared in `memory.md` under a `## Structure` section so any agent can discover it. Never rely on assumed structure — always read `memory.md` first.
 
 ## Taking initiative
 

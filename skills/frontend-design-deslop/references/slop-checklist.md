@@ -1,6 +1,8 @@
 # Slop self-audit checklist
 
-Run the generated UI against this before presenting. Score 0-10. If any item fires, regenerate that section. Every item is detectable within a single build; most are verifiable from source alone, but the "Layout defects" and "Build correctness" sections need the rendered page (a screenshot or a live browser check), not just a source read — run those whenever that capability is available.
+Run the generated UI against this before presenting. Score 0-10. If any item fires, regenerate that section.
+
+Every item is detectable within a single build; most are verifiable from source alone, but the "Layout defects" and "Build correctness" sections need the rendered page (a screenshot or a live browser check), not just a source read — run those whenever that capability is available.
 
 The fingerprint shifts over time, so the underlying test is always: "Is this the most probable output, or a committed choice?" The lists below are the current (2022-2026) tells, cross-checked against a public AI-slop anti-pattern catalog.
 

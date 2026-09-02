@@ -4,7 +4,10 @@ For brands operating across languages (especially EN/FR — the dominant case fo
 
 ## Why per-language guides
 
-A translated guide propagates the source language's rhythm into the target. French sentence structure produces long sentences with subordinate clauses; English brand prose typically favors shorter sentences. A French→English translation that preserves sentence boundaries reads as labored English. An English→French translation that preserves the original mean sentence length reads as choppy French.
+A translated guide propagates the source language's rhythm into the target — French sentence structure favors long sentences with subordinate clauses, while English brand prose typically favors shorter ones.
+
+- A French→English translation that preserves sentence boundaries reads as labored English.
+- An English→French translation that preserves the original mean sentence length reads as choppy French.
 
 The standard is to **retarget, not translate**. Translators must follow the target-language guide as if writing fresh.
 

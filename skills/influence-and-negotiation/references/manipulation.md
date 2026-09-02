@@ -22,7 +22,10 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator assumes the assertion is honest and concedes to a non-existent constraint.
 
-**Response.** Calibrated questions to test the substance. _"What would help me understand the constraint? Is there context you can share about how that number was set?"_ A real constraint survives the question with specifics; a bluff produces vague reassurance. If you suspect a bluff, behave as if it isn't binding and propose your real number — see what happens.
+**Response.** Calibrated questions to test the substance: _"What would help me understand the constraint? Is there context you can share about how that number was set?"_
+
+- A real constraint survives the question with specifics; a bluff produces vague reassurance.
+- If you suspect a bluff, behave as if it isn't binding and propose your real number — see what happens.
 
 ### 3. Intimidation
 
@@ -30,7 +33,10 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator feels their personal reputation or career is on the line and concedes to protect themselves rather than the organisation.
 
-**Response.** Maintain emotional control. Verbalise the underlying concern, not the threat. _"It seems like the timing is creating real pressure on your side. Help me understand the deadline so we can think through it together."_ Refuse to engage with the personal frame; redirect to the SCO (Shared Common Objective — see [references/tactics.md](tactics.md#sco--shared-common-objective)).
+**Response.** Maintain emotional control.
+
+- Verbalise the underlying concern, not the threat: _"It seems like the timing is creating real pressure on your side. Help me understand the deadline so we can think through it together."_
+- Refuse to engage with the personal frame; redirect to the SCO (Shared Common Objective — see [references/tactics.md](tactics.md#sco--shared-common-objective)).
 
 ### 4. Punching-ball (verbal harassment)
 
@@ -38,7 +44,11 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator loses cognitive bandwidth, makes errors, or concedes just to escape the discomfort.
 
-**Response.** This is a **non-negotiable** behaviour — see [references/objections.md](objections.md#the-non-negotiable). _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_ Then call a tactical pause — see [references/tactics.md](tactics.md#tactical-pause--the-strategic-break). If the behaviour continues on resumption, end the meeting.
+**Response.** This is a **non-negotiable** behaviour — see [references/objections.md](objections.md#the-non-negotiable).
+
+- Say it plainly: _"I hear that you're under pressure. The tone won't help us reach a deal — and I won't be useful to you if we continue this way. Let's pause for ten minutes and come back to it."_
+- Call a tactical pause — see [references/tactics.md](tactics.md#tactical-pause--the-strategic-break).
+- If the behaviour continues on resumption, end the meeting.
 
 ### 5. Faux pivot (false-pivot diversion)
 
@@ -70,7 +80,10 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator escalates concessions in the follow-up emails ("happy to revisit pricing if helpful") to break the silence — concessions the buyer didn't ask for.
 
-**Response.** Don't fill the silence with concessions. Use the **negative reverse**: _"I haven't heard back — I want to make sure I'm not assuming something. Should I close the opportunity for now?"_ This invites a "no" that breaks the silence, and if the answer is "yes, close it," you've saved months of misallocated effort. See [references/objections.md](objections.md#late-stage-stall--ghosting).
+**Response.** Don't fill the silence with concessions.
+
+- Use the **negative reverse**: _"I haven't heard back — I want to make sure I'm not assuming something. Should I close the opportunity for now?"_
+- This invites a "no" that breaks the silence, and if the answer is "yes, close it," you've saved months of misallocated effort. See [references/objections.md](objections.md#late-stage-stall--ghosting).
 
 ### 9. Defeatism Induction
 
@@ -86,7 +99,10 @@ For each: the tell, why it works on average negotiators, and the response that n
 
 **Why it works.** The negotiator has mentally booked the deal, has internal pressure to close, and concedes to avoid re-opening.
 
-**Response.** Always run a **wrap-up / back-brief** before signature — see [references/tactics.md](tactics.md#back-brief-and-wrap-up). Have the buyer reformulate every key term in their own words. New asks at signature are an explicit signal to delay: _"Adding that changes the deal structure. Let me take it back internally and come back to you with what's possible."_ The buyer's urgency is your leverage in this round; trade it.
+**Response.** Always run a **wrap-up / back-brief** before signature — see [references/tactics.md](tactics.md#back-brief-and-wrap-up). Have the buyer reformulate every key term in their own words.
+
+- New asks at signature are an explicit signal to delay: _"Adding that changes the deal structure. Let me take it back internally and come back to you with what's possible."_
+- The buyer's urgency is your leverage in this round; trade it.
 
 ## Detection summary — the four tells
 

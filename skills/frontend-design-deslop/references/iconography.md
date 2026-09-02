@@ -1,6 +1,8 @@
 # Iconography
 
-Icons are a system, not a grab bag. Inconsistent stroke weights, mixed grids, and the default starter-kit set are quiet but reliable slop tells. A coherent icon system reads as care; the wrong default reads as a template. The mechanics below let you either build a small custom set or adapt an existing one so it stops looking generic. Named sets are inspiration, not endorsements; the right choice follows from the brand adjectives.
+Icons are a system, not a grab bag. Inconsistent stroke weights, mixed grids, and the default starter-kit set are quiet but reliable slop tells. A coherent icon system reads as care; the wrong default reads as a template.
+
+The mechanics below let you either build a small custom set or adapt an existing one so it stops looking generic. Named sets are inspiration, not endorsements; the right choice follows from the brand adjectives.
 
 ## Contents
 
@@ -18,15 +20,22 @@ Icons are a system, not a grab bag. Inconsistent stroke weights, mixed grids, an
 
 ## 1. The grid and live area
 
-Design or choose icons on one grid and never mix. The common standard is a 24 by 24 grid with a 2px stroke (Lucide, Tabler, Material). Sets designed for small sizes use a 16 by 16 grid (Phosphor) so detail survives. Define a live area inside the canvas with consistent padding (for example a 24 by 24 canvas with 2px padding gives a 20 by 20 live area), so icons share visual size even when their shapes differ. All icons in the set share the same canvas, padding, and stroke, or they will not sit together.
+- Design or choose icons on one grid and never mix. The common standard is a 24 by 24 grid with a 2px stroke (Lucide, Tabler, Material); sets designed for small sizes use a 16 by 16 grid (Phosphor) so detail survives.
+- Define a live area inside the canvas with consistent padding (for example a 24 by 24 canvas with 2px padding gives a 20 by 20 live area), so icons share visual size even when their shapes differ.
+- All icons in the set share the same canvas, padding, and stroke, or they will not sit together.
 
 ## 2. Stroke, caps, and joins
 
-Pick one stroke width and hold it across the set (2px on a 24px grid is typical). Decide how the stroke scales: some sets scale stroke mathematically with size (Lucide's default), others keep it visually constant via an option, others are hand-drawn per weight (Phosphor's six weights are individually optimized rather than interpolated). Standardize line caps (round vs butt) and joins (round, miter, bevel). Round caps and joins read softer and friendlier; butt caps and miter joins read more technical and precise. These two choices, applied consistently, are most of what makes a set feel like one voice.
+- Pick one stroke width and hold it across the set (2px on a 24px grid is typical).
+- Decide how the stroke scales: some sets scale stroke mathematically with size (Lucide's default), others keep it visually constant via an option, others are hand-drawn per weight (Phosphor's six weights are individually optimized rather than interpolated).
+- Standardize line caps (round vs butt) and joins (round, miter, bevel) — round caps and joins read softer and friendlier, butt caps and miter joins read more technical and precise.
+- These two choices, applied consistently, are most of what makes a set feel like one voice.
 
 ## 3. Corner radius as brand signal
 
-The corner radius on icon shapes carries personality the same way component radius does. 0px corners read technical, serious, industrial. 2 to 4px reads friendly and contemporary. Large radii read playful or soft. Match the icon radius to the overall radius decision in the token set so icons and components agree. A mismatch (sharp icons in a soft-radius UI) is subtly wrong.
+The corner radius on icon shapes carries personality the same way component radius does: 0px corners read technical, serious, industrial; 2 to 4px reads friendly and contemporary; large radii read playful or soft.
+
+Match the icon radius to the overall radius decision in the token set so icons and components agree. A mismatch (sharp icons in a soft-radius UI) is subtly wrong.
 
 ## 4. Optical balance and equal weight
 
@@ -38,19 +47,32 @@ Snap icon coordinates to whole pixels where possible, and offset by 0.5px when a
 
 ## 6. Filled vs outline, and sizing
 
-Decide the primary style (outline is the contemporary default; filled reads bolder and works for active or selected states). A common pattern: outline by default, filled for the selected nav item. Do not scale a 16px-designed icon up to 48px and expect it to hold; redraw a simplified or more detailed version per size band (small, default, large), as you would for type. Optical-size axes (Material Symbols) do this automatically.
+- Decide the primary style (outline is the contemporary default; filled reads bolder and works for active or selected states) — a common pattern is outline by default, filled for the selected nav item.
+- Do not scale a 16px-designed icon up to 48px and expect it to hold; redraw a simplified or more detailed version per size band (small, default, large), as you would for type. Optical-size axes (Material Symbols) do this automatically.
 
 ## 7. When a default set becomes slop
 
-Excellent icon sets become tells purely through ubiquity in starter kits and AI output. Lucide is the shadcn default and is now baked into countless templates and generated components, so it signals "generic template" even though it is well made. Heroicons (by the Tailwind team) is heavily used in templates and AI UI and reads as familiar rather than distinctive. The problem is not quality; it is that these are the statistical median of generated UIs. Using them is acceptable when nothing else fits and the rest of the system carries the identity, but they should not be the thing that defines the look.
+Excellent icon sets become tells purely through ubiquity in starter kits and AI output. Lucide is the shadcn default and is now baked into countless templates and generated components, so it signals "generic template" even though it is well made. Heroicons (by the Tailwind team) is heavily used in templates and AI UI and reads as familiar rather than distinctive.
+
+The problem is not quality; it is that these are the statistical median of generated UIs. Using them is acceptable when nothing else fits and the rest of the system carries the identity, but they should not be the thing that defines the look.
 
 ## 8. Differentiating without drawing 300 icons
 
-You rarely need a full custom set to escape the default. Options, cheapest first: switch to a distinctive set whose voice matches the brand (Phosphor for its weight range and friendly geometry, Tabler for breadth on a strict 24px/2px grid, Iconoir or Hugeicons for a distinct hand); adjust the default set's stroke width and corner radius to match your tokens (a 1.5px or 2.5px stroke instantly looks less like the 2px default); draw only the handful of brand-critical icons custom (the logo mark, the one or two icons that appear in the hero or nav) and use a consistent set for the long tail; or commit to one weight and one style rigorously, which alone reads as intentional. Whatever the choice, normalize stroke and grid across any mixed sources.
+You rarely need a full custom set to escape the default. Options, cheapest first:
+
+- Switch to a distinctive set whose voice matches the brand (Phosphor for its weight range and friendly geometry, Tabler for breadth on a strict 24px/2px grid, Iconoir or Hugeicons for a distinct hand).
+- Adjust the default set's stroke width and corner radius to match your tokens (a 1.5px or 2.5px stroke instantly looks less like the 2px default).
+- Draw only the handful of brand-critical icons custom (the logo mark, the one or two icons that appear in the hero or nav) and use a consistent set for the long tail.
+- Commit to one weight and one style rigorously, which alone reads as intentional.
+
+Whatever the choice, normalize stroke and grid across any mixed sources.
 
 ## 9. Accessibility
 
-Icon-only interactive elements (icon buttons) require an explicit text alternative (`aria-label`) so screen readers announce the action. Decorative icons that sit beside a text label should be hidden from assistive tech (`aria-hidden`) to avoid double announcement. Icons that carry meaning on their own (a status indicator) must also encode that meaning in text or shape, never color alone. Ensure icon-bearing targets meet the minimum target size (see accessibility.md).
+- Icon-only interactive elements (icon buttons) require an explicit text alternative (`aria-label`) so screen readers announce the action.
+- Decorative icons that sit beside a text label should be hidden from assistive tech (`aria-hidden`) to avoid double announcement.
+- Icons that carry meaning on their own (a status indicator) must also encode that meaning in text or shape, never color alone.
+- Ensure icon-bearing targets meet the minimum target size (see accessibility.md).
 
 ## 10. Icon system slop tells
 

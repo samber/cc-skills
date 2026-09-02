@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude, ChatGPT or similar harness.
 metadata:
   author: samber
-  version: "1.1.2"
+  version: "1.1.3"
   openclaw:
     emoji: "🤖"
     homepage: https://github.com/samber/cc-skills
@@ -29,7 +29,11 @@ When given French text to humanize:
 
 ## The 80 % rule: imperfect compliance is the point
 
-Follow the humanizer rules _most of the time_ — not always. It is fine to leave roughly 20 % of this skill's instructions unapplied. Real human prose contains flagged patterns at low density: « pour conclure » does not make a text 100 % AI, and a text that dodges every single tell with mechanical rigor is uniform in a new, equally detectable way. Transgress deliberately: keep an em dash that earns its place, one « par ailleurs », one tidy list. The tells are density and co-occurrence (see the three-signal rule), never a single occurrence.
+Follow the humanizer rules _most of the time_ — not always. It is fine to leave roughly 20 % of this skill's instructions unapplied.
+
+- Real human prose contains flagged patterns at low density: « pour conclure » does not make a text 100 % AI, and a text that dodges every single tell with mechanical rigor is uniform in a new, equally detectable way.
+- Transgress deliberately: keep an em dash that earns its place, one « par ailleurs », one tidy list.
+- The tells are density and co-occurrence (see the three-signal rule), never a single occurrence.
 
 **One pass only.** Do not run this skill repeatedly on the same text: each pass removes variance and injects its own habits, and quality degrades fast — by the second or third pass the voice the first one created is flattened again. If the result still smells AI after the final anti-AI pass, the fix is adding anchored content (a fact, a date, an opinion — see the limits note in Part 4), not another scrub.
 
@@ -49,7 +53,11 @@ French professional writing is inherently more formal than English. Connectors l
 
 Do NOT over-correct toward informal French. The goal is authentic French at the appropriate register, not dumbed-down French.
 
-**Ne jamais abaisser le registre de langue.** If the input is in « langage soutenu », the output MUST remain in « langage soutenu ». Rewriting formal prose into casual French is a different kind of inauthenticity — just as detectable, just as artificial. The enemy is _formulaic_ writing, not _formal_ writing. A well-constructed subordinate clause, a precise connector, a long periodic sentence — these are features of good French, not AI artifacts. Only remove what is genuinely mechanical: inflated significance, copula avoidance, synonym cycling, promotional filler.
+**Ne jamais abaisser le registre de langue.** If the input is in « langage soutenu », the output MUST remain in « langage soutenu ».
+
+- Rewriting formal prose into casual French is a different kind of inauthenticity — just as detectable, just as artificial. The enemy is _formulaic_ writing, not _formal_ writing.
+- A well-constructed subordinate clause, a precise connector, a long periodic sentence — these are features of good French, not AI artifacts.
+- Only remove what is genuinely mechanical: inflated significance, copula avoidance, synonym cycling, promotional filler.
 
 ---
 
@@ -449,7 +457,11 @@ Human texts have an origin (an incident, a question someone asked, a release, an
 
 ### Préserver le registre
 
-Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après réécriture. Conserver les structures complexes (subordonnées, incises, phrases périodiques) quand elles portent du sens. Ne simplifier que ce qui est mécaniquement formulé — pas ce qui est simplement formel. Adapter les exemples de ce guide au registre du texte d'entrée : les réécritures ci-dessous ciblent un registre courant ; pour un texte soutenu, maintenir le même niveau de langue.
+Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après réécriture.
+
+- Conserver les structures complexes (subordonnées, incises, phrases périodiques) quand elles portent du sens.
+- Ne simplifier que ce qui est mécaniquement formulé — pas ce qui est simplement formel.
+- Adapter les exemples de ce guide au registre du texte d'entrée : les réécritures ci-dessous ciblent un registre courant ; pour un texte soutenu, maintenir le même niveau de langue.
 
 ### Signs of soulless writing (even if technically clean)
 
@@ -487,7 +499,11 @@ Formal ≠ AI. Un texte en langage soutenu ne doit pas devenir familier après r
 - **Québec** : niaiser, jaser, magasiner, pantoute, c'est plate, c'est correct, un char, un dépanneur, une blonde / un chum, avoir de la misère, être dans le champ, ça prend pas la tête à Papineau, c'est tiguidou, se faire passer un sapin, présentement, à matin
 - **Suisse romande** : un natel, septante / huitante / nonante, une panosse, un cornet (= sac plastique), ça joue, se réjouir de (= avoir hâte), un linge (= serviette), une votation, faire la pièce droite
 
-**Ancrer géographiquement.** AI defaults to Parisian standard French. Regionalisms are strong authenticity markers where they fit the author — and their systematic absence in a supposedly Québécois, Belgian or Swiss author's text is itself a tell. Never force them: a misused regionalism (or the clichéd Belgian « une fois ») is worse than none. Match the author's real origin, medium and register.
+**Ancrer géographiquement.** AI defaults to Parisian standard French.
+
+- Regionalisms are strong authenticity markers where they fit the author — and their systematic absence in a supposedly Québécois, Belgian or Swiss author's text is itself a tell.
+- Never force them: a misused regionalism (or the clichéd Belgian « une fois ») is worse than none.
+- Match the author's real origin, medium and register.
 
 **Assumer l'oralité (registre familier uniquement).** In informal writing, humans drop the « ne » (« c'est pas faux », « y'a un truc »), use hyperbole (« 1000 % d'accord »), contract. AI keeps full negation everywhere. Never force this into formal prose — register first.
 

@@ -142,7 +142,10 @@ For categories not in this file, invoke `samber/cc-skills@deep-research` to map 
 
 ## Multi-category brands
 
-A brand may sit in two categories simultaneously (e.g., a B2B SaaS that markets like a consumer brand — Notion, Linear). In that case, write **one PROSE.md per audience segment**, not a blended guide. A blended guide collapses to the lowest common denominator and loses both audiences. Maintain a mapping document for shared pillars and divergent rules.
+A brand may sit in two categories simultaneously (e.g., a B2B SaaS that markets like a consumer brand — Notion, Linear).
+
+- Write **one PROSE.md per audience segment**, not a blended guide — a blended guide collapses to the lowest common denominator and loses both audiences.
+- Maintain a mapping document for shared pillars and divergent rules.
 
 ## Disclaimer
 

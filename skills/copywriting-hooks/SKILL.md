@@ -8,7 +8,7 @@ license: MIT
 compatibility: Designed for Claude Code, Codex or similar harness.
 metadata:
   author: samber
-  version: "1.1.1"
+  version: "1.1.2"
   openclaw:
     emoji: "🪝"
     homepage: https://github.com/samber/cc-skills
@@ -340,7 +340,11 @@ For the extended anti-pattern list, see `references/anti-patterns.md`.
 
 ## Language handling
 
-**If the audience is French**: write in French. Apply the _attaque journalistique_ register: concrete scene-setting, restrained tone, dated anchors, formal "vous" or restrained tutoiement. Do not translate American hype tropes literally. "You'll never believe..." becomes "Vous n'allez pas en croire vos yeux", which reads as scam in French. French marketing-skepticism baseline is higher than English; high promises trigger _réactance_ faster.
+**If the audience is French**: write in French, applying the _attaque journalistique_ register.
+
+- Concrete scene-setting, restrained tone, dated anchors, formal "vous" or restrained tutoiement.
+- Do not translate American hype tropes literally — "You'll never believe..." becomes "Vous n'allez pas en croire vos yeux", which reads as scam in French.
+- French marketing-skepticism baseline is higher than English; high promises trigger _réactance_ faster.
 
 **If English**: default to direct-response register for marketing or tutorial content, longform register for essays and reported pieces.
 
@@ -398,7 +402,11 @@ Slightly clickbait but honest — maximum tension with a real promise:
 - Use "the real reason" or "what nobody tells you" — they signal a non-consensus view you must substantiate
 - Add a bracket `[Étude]`, `[Template]`, `[Benchmark]` to signal payoff type
 
-**FR — putaclic carries stronger pejorative weight.** Apply the **70/30 rule**: 70% information, 30% mystery. Tension and contradiction work; faux drama ("J'arrête tout 😱") destroys credibility immediately in French professional contexts. Canonical FR structure: "Tout le monde vous dit de faire A. Voici pourquoi je fais B." Formulas saturated on LinkedIn FR in 2025+: "J'ai fait une erreur, voici ce que j'ai appris", "J'arrête [plateforme]".
+**FR — putaclic carries stronger pejorative weight.** Apply the **70/30 rule**: 70% information, 30% mystery.
+
+- Tension and contradiction work; faux drama ("J'arrête tout 😱") destroys credibility immediately in French professional contexts.
+- Canonical FR structure: "Tout le monde vous dit de faire A. Voici pourquoi je fais B."
+- Formulas saturated on LinkedIn FR in 2025+: "J'ai fait une erreur, voici ce que j'ai appris", "J'arrête [plateforme]".
 
 ### Platform constraints
 

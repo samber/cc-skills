@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.3.1"
+  version: "1.3.2"
   openclaw:
     emoji: "📝"
     homepage: https://github.com/samber/cc-skills
@@ -177,7 +177,10 @@ After the draft is complete, suggest **1-3 images** with specific placement in t
 - **Purpose**: What the image adds (break up a long text section, illustrate a concept, set the tone, visualize data)
 - **Description**: What the image should depict
 
-Offer to generate a **Midjourney prompt** for each suggested image. If the user accepts, use the latest Midjourney model conventions to write the prompt. Use `--ar 16:9` or `--ar 3:1` for hero/cover images and wide illustrations (optimal for article headers), `--ar 3:2` for smaller inline images. Refer to up-to-date Midjourney documentation for current prompt syntax and parameters.
+Offer to generate a **Midjourney prompt** for each suggested image. If the user accepts, use the latest Midjourney model conventions to write the prompt.
+
+- Use `--ar 16:9` or `--ar 3:1` for hero/cover images and wide illustrations (optimal for article headers), `--ar 3:2` for smaller inline images.
+- Refer to up-to-date Midjourney documentation for current prompt syntax and parameters.
 
 ### Phase 7: Title finalization
 

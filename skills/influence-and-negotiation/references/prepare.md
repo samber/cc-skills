@@ -46,7 +46,9 @@ The "own side" varies by domain:
 - **Diplomatic / cross-cultural:** the mandate is signed by ministry / executive sponsor and accounts for protocol.
 - **Recruitment:** the mandate is the compensation band, scope, and start-date flexibility approved by HR + hiring executive.
 
-A mandate is not "close the deal at any cost" or "don't lose this one." It's a written, axis-by-axis specification of what you can sign. Co-build it bottom-up — you know the operational reality better than your decision-maker does. If the mandate amounts to _"hold the line, give nothing"_, that's a refusal to mandate, not a strong mandate. Push back: a director told their team _"hold the line, give nothing"_ before a labor negotiation; the team had no margin, the union escalated, and an 11-day strike followed. The instruction wasn't strength — it was the absence of a strategy.
+A mandate is not "close the deal at any cost" or "don't lose this one." It's a written, axis-by-axis specification of what you can sign. Co-build it bottom-up — you know the operational reality better than your decision-maker does.
+
+If the mandate amounts to _"hold the line, give nothing"_, that's a refusal to mandate, not a strong mandate. A director once told their team exactly that before a labor negotiation; the team had no margin, the union escalated, and an 11-day strike followed. The instruction wasn't strength — it was the absence of a strategy.
 
 What a clear mandate looks like:
 
@@ -77,7 +79,14 @@ Worked examples across domains:
 | **Manager → report raise** (mid-cycle) | +6% | +5% | +4% | +2% (escalate to N+2) | 0% (delay 6 months) |
 | **Recruitment package** (top candidate) | Listed band low | Listed band mid | Band ceiling | +10% off-band (HR sign-off) | +20% off-band (no offer) |
 
-Define a Mandascan for **every** axis. In commercial deals: price, term length, payment terms, services scope, SLAs, IP, exclusivity, references, expansion rights, auto-renewal, change-control, security clauses. In salary: base, variable, equity, leave, training budget, telework, title, review cadence. In annual collective bargaining: general raise, individual raise, primes, working time, telework policy. In recruitment: base, sign-on, equity, start date, title, scope, non-compete length. Negotiators who Mandascan only the headline axis get steamrolled on the secondary ones.
+Define a Mandascan for **every** axis, per domain:
+
+- **Commercial deals:** price, term length, payment terms, services scope, SLAs, IP, exclusivity, references, expansion rights, auto-renewal, change-control, security clauses.
+- **Salary:** base, variable, equity, leave, training budget, telework, title, review cadence.
+- **Annual collective bargaining:** general raise, individual raise, primes, working time, telework policy.
+- **Recruitment:** base, sign-on, equity, start date, title, scope, non-compete length.
+
+Negotiators who Mandascan only the headline axis get steamrolled on the secondary ones.
 
 ## POS — Position / Objective / Stake
 
@@ -126,7 +135,9 @@ Two layered diagrams. Most systems-of-record (CRM, HRIS, EHR) only capture the f
 
 **Org chart** — formal hierarchy. Title, role, reports-to. Build by reading the public-facing organisational structure (company website, LinkedIn, filings; the union's federation chart; the family's stated decision-makers; the hiring committee roster). White-source intel.
 
-**Influence map** — real influence relationships. Who actually persuades whom? Who has the CFO's / CHRO's / treating consultant's ear? Who's the "informal" decision-maker who never shows up on the org chart? Build by listening to your champion / advocate and by behavioural reading during meetings (who do people glance at before answering?).
+**Influence map** — real influence relationships. Who actually persuades whom? Who has the CFO's / CHRO's / treating consultant's ear?
+
+Who's the "informal" decision-maker who never shows up on the org chart? Build by listening to your champion / advocate and by behavioural reading during meetings (who do people glance at before answering?).
 
 In every domain studied: the real decision often passes through informal influencers invisible on the formal map. Negotiators who only map the formal hierarchy get ambushed in the closing meeting by a person they didn't know existed — the procurement consultant, the spouse, the federation lawyer, the supervising consultant, the recruiter's manager.
 
@@ -233,7 +244,9 @@ A discovery framework built on tens of thousands of recorded sales calls. **Disc
 - **I**mplication — the consequences of those problems. **This is where deals are won.** ("What happens to your billing accuracy when a controller is on vacation? What does that cost you per quarter?") You're building the cost of inaction.
 - **N**eed-payoff — the buyer articulates the value of solving. ("If you could close the books in 5 days instead of 15, what would that enable?") You don't pitch — they sell themselves.
 
-Implication is where mediocre AEs collapse. They go from Problem straight to demo, missing the consequence step that makes the deal urgent. The "happy ears" trap (cognitive bias toward positive signals) lives in skipped Implication. Test pain depth with: _"What happens if you do nothing?"_ Real pain has a specific, dated consequence; preference doesn't.
+Implication is where mediocre AEs collapse. They go from Problem straight to demo, missing the consequence step that makes the deal urgent. The "happy ears" trap (cognitive bias toward positive signals) lives in skipped Implication.
+
+Test pain depth with: _"What happens if you do nothing?"_ Real pain has a specific, dated consequence; preference doesn't.
 
 ## Upfront contract
 

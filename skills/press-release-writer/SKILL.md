@@ -6,7 +6,7 @@ license: MIT
 compatibility: Designed for Claude or similar AI agents.
 metadata:
   author: samber
-  version: "1.0.3"
+  version: "1.0.4"
   openclaw:
     emoji: "📰"
     homepage: https://github.com/samber/cc-skills
@@ -17,7 +17,10 @@ allowed-tools: Read Edit Write Glob Grep Agent AskUserQuestion
 
 ## Core Philosophy
 
-A press release is a **news document**, not an advertisement. If there is no genuine news, no amount of craft will save the release. 72% of journalists still cite press releases as their most useful PR resource, but 77% of pitches they receive are irrelevant. Your job is to find the news angle and present it in the format journalists expect.
+A press release is a **news document**, not an advertisement. If there is no genuine news, no amount of craft will save the release.
+
+- 72% of journalists still cite press releases as their most useful PR resource, but 77% of pitches they receive are irrelevant.
+- Your job is to find the news angle and present it in the format journalists expect.
 
 ## Workflow
 
