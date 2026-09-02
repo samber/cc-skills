@@ -248,7 +248,7 @@ Polanyi's paradox: most operational knowledge is tacit and resists explicit desc
 Body content is a **recurring** cost, not a one-time one. Once a skill is invoked, its rendered body stays in context for every later turn — never re-read, never re-summarized. Every extra line is paid again on each turn.
 
 - **~100 tokens per description** — loaded at startup for all skills
-- **≤ 3 sentences per prose paragraph** — longer means it is two items, or it belongs in a bullet list, numbered steps, or a table instead of prose (→ See [Format 5](#format-5-imperative-prose)). Check with `scripts/check-prose-density.sh`.
+- **≤ 3 sentences per prose paragraph** — longer means it is two items, or it belongs in a bullet list, numbered steps, or a table instead of prose (→ See [Format 5](#format-5-imperative-prose)).
 - **"Why" clauses ride in the rule's own sentence** — a second sentence explaining the first is the paragraph-level version of the same bloat (→ See [Teach reasoning, not only rules](#teach-reasoning-not-only-rules)).
 - **< 2.500 tokens per SKILL.md** — the authoritative project target for the body alone.
 - **< 5.000 tokens per SKILL.md** — the upstream Agent Skills spec ceiling. A compatibility floor other harnesses may enforce, not a goal to write toward.
@@ -714,16 +714,15 @@ After making changes, suggest the following as next steps for the developer to r
 2. ~~Validate against the spec: `skills-ref validate ./skills/{name}`~~ (disabled — [skills-ref doesn't support `user-invocable` yet](https://github.com/agentskills/agentskills/issues/105))
 3. Run the portability grep from "Tool names belong in frontmatter, not in the body" (under Allowed Tools) against the changed skill(s). Fix any hit that isn't an `allowed-tools:` line or a labeled generated-artifact block.
 4. Reformat markdowns with `npx prettier --write *.md "**/*.md"` then lint with `markdownlint-cli2 --config .markdownlint-cli2.jsonc ./` — run before measuring tokens, as formatting changes token counts
-5. Run `./scripts/check-prose-density.sh skills/{name}` and rewrite every flagged paragraph into a bullet list, numbered steps, or a table until the script reports zero.
-6. Measure token counts:
+5. Measure token counts:
    - **Description (tok)**: `awk 'NR==1 && /^---$/{found=1; next} found && /^---$/{exit} found && /^description:/{print}' skills/{name}/SKILL.md | tiktoken-cli`
    - **SKILL.md (tok)**: `tiktoken-cli skills/{name}/SKILL.md`
    - **Directory (tok)**: `tiktoken-cli --exclude "evals" skills/{name}/` (exclude `evals/` subdirectory)
-7. Update the README.md table with the measured token counts, update the total rows, and update the **Error rate gap** column (`Without - With`, expressed as a negative percentage, e.g. `-39%`)
-8. Increment `metadata.version` in the changed SKILL.md and the plugin version in `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json` and `gemini-extension.json` — all three plugin files MUST have the same version.
-9. Run the [Description Optimization Loop](#description-optimization-loop) — mandatory for new skills, required for updates when `description` or scope changed.
-10. Run skill evaluation via `/skill-creator`: 10+ evals, run them with and without the skill via parallel subagents, grade with LLM-as-judge (no human in the loop), print results, suggest improvements if needed, and append/update the report to `EVALUATIONS.md` following the format in [Evaluation Reporting](#evaluation-reporting)
-11. Depending on evaluation final report, suggest improvements and loop
+6. Update the README.md table with the measured token counts, update the total rows, and update the **Error rate gap** column (`Without - With`, expressed as a negative percentage, e.g. `-39%`)
+7. Increment `metadata.version` in the changed SKILL.md and the plugin version in `.claude-plugin/plugin.json`, `.cursor-plugin/plugin.json` and `gemini-extension.json` — all three plugin files MUST have the same version.
+8. Run the [Description Optimization Loop](#description-optimization-loop) — mandatory for new skills, required for updates when `description` or scope changed.
+9. Run skill evaluation via `/skill-creator`: 10+ evals, run them with and without the skill via parallel subagents, grade with LLM-as-judge (no human in the loop), print results, suggest improvements if needed, and append/update the report to `EVALUATIONS.md` following the format in [Evaluation Reporting](#evaluation-reporting)
+10. Depending on evaluation final report, suggest improvements and loop
 
 For initial evaluation of skills, use Human-as-Judge.
 
