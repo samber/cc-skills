@@ -487,7 +487,7 @@ When a skill requires broad understanding of a large body of content (e.g. migra
 
 ## Writing Guidelines
 
-When editing skill files, fix grammar mistakes if you find some.
+Load the `writing-clearly-and-concisely` skill before editing or writing skill files. Fix grammar mistakes if you find some.
 
 ### Write for every harness by default
 
