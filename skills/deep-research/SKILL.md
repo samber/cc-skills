@@ -94,6 +94,7 @@ The skill uses a **dual-output** structure in `./research/`:
 - **Notes directory (optional):** `./research/{date}-{type}-{topic}/` — per-axis research notes from sub-agents (one `.md` file per axis). Create this when using parallel fan-out (Steps 2–4). The agent decides when to use the directory; both can exist simultaneously.
 
 Example:
+
 ```
 research/
 ├── 2025-01-15-market-ai-coding-assistants.md      # final report
@@ -111,6 +112,7 @@ First, get today's date: `date +%Y-%m-%d`. Use it for all date-filtered searches
 **Check for existing research:** Look in `./research/` for reports on this topic. If found, summarize what they cover and ask: extend, update, or start fresh?
 
 **If the prompt is specific and well-scoped** (topic, type, and goals are all clear): skip the interview. Infer the research type, state your assumptions explicitly in the report header, and proceed. Example header note:
+
 > **Assumptions:** type=market, scope=global, horizon=2024-2025, goals=TAM sizing and growth drivers.
 
 **If the prompt is vague or ambiguous** (e.g., "Research blockchain", "Tell me about AI"): ask the user:
@@ -120,6 +122,7 @@ First, get today's date: `date +%Y-%m-%d`. Use it for all date-filtered searches
 3. **Any geographic, time, or segment constraints?**
 
 Research types:
+
 - `market` — customers, competition, sizing, pricing, trends
 - `domain` — industry structure, regulatory landscape, ecosystem
 - `technical` — architecture, tools, benchmarks, integration
@@ -134,6 +137,7 @@ Research types:
 - If none fit, infer the type and design your own axis breakdown — the process (fan-out, citation discipline, write-as-you-go, synthesis) is the same regardless of type.
 
 Set output paths:
+
 - Report: `./research/{date}-{type}-{topic}.md` (lowercase, hyphens; date first, then type, then topic; under 50 chars for topic portion)
 - Notes directory (if using parallel fan-out): `./research/{date}-{type}-{topic}/`
 
@@ -144,6 +148,7 @@ Ask if the user wants a different path. Load `assets/report-template.md` and wri
 Load `references/citations.md`, `references/parallel-search.md`, and `references/researcher.md`. Load the type-specific reference file.
 
 Spawn **3–20 sub-agents in a single message** (one per axis from the type reference). Each agent:
+
 - Reads `references/researcher.md` first
 - Searches its axis on the web and fetches the sources it cites
 - Writes findings as prose paragraphs with inline citations — not bullet lists
@@ -197,6 +202,7 @@ Save your output notes to {absolute path to notes-dir}/{axis}.md
 ```
 
 Example for a market research axis:
+
 ```
 **Topic:** AI coding assistants market
 **Your axis:** Market size and growth (TAM/SAM/SOM, historical growth, projections)
@@ -219,6 +225,7 @@ Spawn sub-agents covering the deep-dive axes for the chosen type (see type refer
 ## Step 4.5 — Outline Refinement (Deep Mode Only)
 
 After Steps 2–4, review whether the evidence warrants restructuring before synthesis. Ask:
+
 - Did findings contradict the initial scope assumptions?
 - Did an important angle emerge that wasn't in the original plan?
 - Are any sections underpowered by evidence — or overloaded?
@@ -291,6 +298,7 @@ After the Markdown report is final, offer this step if the user wants a PDF.
 Try each tool in order, stop at the first that works:
 
 1. **Pandoc** (best output quality):
+
    ```bash
    pandoc report.md -o report.pdf --pdf-engine=wkhtmltopdf
    # or with weasyprint:
@@ -311,16 +319,19 @@ Check which tools are available with `which pandoc`, `which md-to-pdf` before ch
 This skill supports MCP connectors for extending research beyond web searches:
 
 **Examples of Public Open Knowledge MCP:**
+
 - `arxiv-mcp`: Search academic papers by subject, author, date, or citations. Returns abstracts, PDF links, and citation graphs.
 - `reddit-mcp`: Access subreddit data — top posts, comments, discussion threads. Good for community insights and developer sentiment.
 - `serp-mcp`: Wraps search engines (Google, Bing, DuckDuckGo) to return structured results: titles, snippets, URLs, related questions.
 
 **Examples of Private Data MCP:**
+
 - `gmail-mcp`: Queries email threads, attachments, senders, dates. Requires OAuth read-only scope.
 - `notion-mcp`: Accesses databases, pages, and their properties. Searchable by title, content, last edited, or custom properties.
 - `confluence-mcp`, `sharepoint-mcp`, or custom wiki MCPs for internal knowledge bases.
 
 **MCP in the Research Workflow:**
+
 - Spawn sub-agents against different MCP endpoints in parallel (Step 2 fan-out)
 - When an MCP returns no results, flag the evidence gap explicitly per critical rule #7
 - Critical claims from a single MCP source get `confidence: Low` per critical rule #4 except if from private high-value sources
