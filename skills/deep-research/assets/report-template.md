@@ -3,7 +3,7 @@ topic: "{TOPIC}"
 type: "{market|domain|technical|competitive|product|academic|person-org|financial|legal|trend|community}"
 goals: "{GOALS}"
 date: "{YYYY-MM-DD}"
-methodology: "Parallel web research via sub-agents. Citations inline per references/citations.md. Confidence levels: High / Medium / Low."
+methodology: "Parallel web research via sub-agents. Citations inline per references/citations.md. Confidence levels: High / Medium / Low. Source tiers: Primary / Established / Low. Dual output: flat report + per-axis notes in research/{date}-{type}-{topic}/."
 ---
 
 # Research Report — {TOPIC}
@@ -15,6 +15,7 @@ methodology: "Parallel web research via sub-agents. Citations inline per referen
 ---
 
 <!-- Steps 2–4: findings are appended here as sub-agents complete. Do not leave this comment in the final report. -->
+<!-- Dual output: final report at ./research/{date}-{type}-{topic}.md; per-axis notes at ./research/{date}-{type}-{topic}/{axis}.md -->
 
 <!-- TYPE: market -->
 
