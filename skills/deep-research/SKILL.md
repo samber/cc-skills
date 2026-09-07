@@ -308,6 +308,7 @@ Try each tool in order, stop at the first that works:
    ```
 
 2. **`md-to-pdf`** (Node, no LaTeX required):
+
    ```bash
    md-to-pdf report.md
    ```
