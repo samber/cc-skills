@@ -105,13 +105,19 @@ OpenCode auto-discovers skills from `.agents/skills/`, `.opencode/skills/`, and 
 <details>
 <summary>Codex (OpenAI)</summary>
 
-Clone into the cross-client discovery path:
+Install the plugin via the Codex CLI:
+
+```bash
+codex plugin add github:samber/cc-skills
+```
+
+Update with `codex plugin update cc-skills`. Falls back to a manual clone if the marketplace path is unavailable:
 
 ```bash
 git clone https://github.com/samber/cc-skills.git ~/.agents/skills/cc-skills
 ```
 
-Codex auto-discovers skills from `~/.agents/skills/` and `.agents/skills/`. Update with `cd ~/.agents/skills/cc-skills && git pull`.
+Codex auto-discovers skills from `~/.agents/skills/` and `.agents/skills/`.
 
 </details>
 
